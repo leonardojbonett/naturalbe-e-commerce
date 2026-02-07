@@ -36,7 +36,7 @@ Proyecto HTML/CSS/JS sin backend. Home, PLP y PDP se renderizan con data local e
 - En Hostinger sube: `index.html`, `category.html`, `product.html`, `static/`, `assets/products/`, `robots.txt`, `sitemap.xml`.
 
 ## Deploy limpio (Hostinger)
-- Elimina archivos JS obsoletos en `/public_html/static/js/` antes de subir (ej: `product.bundle.min.js`, `bundle.min.js`).
+- Elimina archivos JS obsoletos en `/public_html/static/js/` antes de subir (ej: `product.bundle.min.js`, `bundle.min.js`, `inline/product.bundle.min.js`).
 - Borra el cache del Service Worker: en Chrome DevTools > Application > Service Workers > Unregister, y limpia `Cache Storage`.
 - Vuelve a subir todo el contenido del repo para evitar residuos de despliegues previos.
 

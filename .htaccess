@@ -67,8 +67,7 @@ AddCharset UTF-8 .html .css .js .xml .txt .json .svg
   # Agregar .html si falta en URLs de productos
   RewriteRule ^producto/([A-Za-z0-9-]+)/?$ /producto/$1.html [R=301,L]
 
-  # Fallback: si la página de producto no existe, servir product.html con slug
-  RewriteCond %{REQUEST_FILENAME} !-f
+  # Servir siempre product.html para /producto/*.html (evita HTML estático obsoleto)
   RewriteRule ^producto/([A-Za-z0-9-]+)\.html$ /product.html?slug=$1 [L,QSA]
   
   # Redireccionar URLs antiguas con query strings
