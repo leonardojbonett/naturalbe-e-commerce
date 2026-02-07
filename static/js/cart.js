@@ -17,6 +17,9 @@ let currentQuery = '';
 let productsMap = {};
 let currentSort = 'featured';
 const NB_MINI_CART_ENABLED = window.NB_MINI_CART_ENABLED !== false;
+const FUSE_THRESHOLD = 0.4;
+let fuseIndex = null;
+let fuseSource = null;
 
 // Función para ignorar tildes y mayúsculas
 function normalizeText(text) {
@@ -48,6 +51,59 @@ const sanitizeUrl = (value) => {
 };
 const toJsString = (value) => JSON.stringify(String(value || ''));
 const toJsStringAttr = (value) => escapeHtml(toJsString(value));
+
+function normalizeCategory(value) {
+    return normalizeText(value).replace(/[_-]+/g, ' ').trim();
+}
+
+function getProductCategory(product) {
+    return product?.category || product?.categoria || '';
+}
+
+function getSearchableText(product) {
+    if (!product) return '';
+    const name = product.name || product.nombre || '';
+    const brand = product.marca || product.brand || '';
+    const tags = Array.isArray(product.tags) ? product.tags.join(' ') : '';
+    const benefits = Array.isArray(product.beneficios_bullet) ? product.beneficios_bullet.join(' ') : '';
+    return normalizeText([name, brand, tags, benefits].join(' '));
+}
+
+function buildFuseIndex(products) {
+    if (!window.Fuse || !Array.isArray(products) || !products.length) return null;
+    const docs = products.map(product => ({
+        ...product,
+        __search_blob: getSearchableText(product)
+    }));
+    fuseSource = products;
+    fuseIndex = new window.Fuse(docs, {
+        includeScore: true,
+        threshold: FUSE_THRESHOLD,
+        ignoreLocation: true,
+        minMatchCharLength: 2,
+        keys: ['__search_blob']
+    });
+    return fuseIndex;
+}
+
+function getFuseIndex() {
+    if (!window.Fuse || typeof PRODUCTS === 'undefined') return null;
+    if (!fuseIndex || fuseSource !== PRODUCTS) {
+        return buildFuseIndex(PRODUCTS);
+    }
+    return fuseIndex;
+}
+
+function fuzzySearchProducts(query, candidates) {
+    const normalizedQuery = normalizeText(query || '');
+    if (!normalizedQuery) return candidates;
+    const fuse = getFuseIndex();
+    if (!fuse) return null;
+    const candidateMap = new Map(candidates.map(p => [String(p.id), p]));
+    return fuse.search(normalizedQuery)
+        .map(result => candidateMap.get(String(result.item.id)))
+        .filter(Boolean);
+}
 
 const isPackProduct = (typeof window.isPackProduct === 'function')
     ? window.isPackProduct
@@ -539,59 +595,62 @@ function getRecommendedProducts(cartItems, maxItems = 3) {
 
     const cartIds = new Set(cartItems.map(item => String(item.id)));
     const cartProducts = PRODUCTS.filter(p => cartIds.has(String(p.id)));
-
-    const categorySet = new Set();
-    const interestTags = new Set();
-
-    cartProducts.forEach(p => {
-        if (p.category) categorySet.add(p.category);
-        (p.tags || []).forEach(tag => interestTags.add(String(tag).toLowerCase()));
-        (p.recommendedFor || []).forEach(tag => interestTags.add(String(tag).toLowerCase()));
-    });
-
     const candidates = PRODUCTS.filter(p => !cartIds.has(String(p.id)) && !isPromoProduct(p));
-    
-    let scored = candidates.map(p => {
-        let score = 0;
-        if (categorySet.has(p.category)) score += 2;
 
-        // Optimizado: No copiar arrays, iterar directamente
-        if (p.tags && Array.isArray(p.tags)) {
-            for (const tag of p.tags) {
-                if (interestTags.has(String(tag).toLowerCase())) {
-                    score += 1;
-                }
-            }
+    const recommendations = [];
+    const recommendedIds = new Set(cartIds);
+
+    const addRecommendations = (items) => {
+        for (const product of items) {
+            if (recommendations.length >= maxItems) break;
+            const id = String(product.id);
+            if (recommendedIds.has(id)) continue;
+            recommendedIds.add(id);
+            recommendations.push(product);
         }
-        
-        if (p.recommendedFor && Array.isArray(p.recommendedFor)) {
-            for (const tag of p.recommendedFor) {
-                if (interestTags.has(String(tag).toLowerCase())) {
-                    score += 1;
-                }
-            }
-        }
+    };
 
-        if (p.isPopular) score += 0.5;
+    const cartCategories = cartProducts
+        .map(p => normalizeCategory(getProductCategory(p)))
+        .filter(Boolean);
+    const cartText = cartProducts.map(p => getSearchableText(p)).join(' ');
+    const hasFacialCare = cartCategories.some(cat =>
+        cat.includes('cuidado') && (cat.includes('facial') || cat.includes('piel') || cat.includes('personal'))
+    );
+    const hasProtein = cartText.includes('proteina');
 
-        return score > 0 ? { product: p, score } : null;
-    }).filter(Boolean);
+    const pickByKeyword = (keyword) => {
+        const terms = normalizeText(keyword).split(' ').filter(Boolean);
+        if (!terms.length) return [];
+        return candidates.filter(product => {
+            const blob = getSearchableText(product);
+            return terms.every(term => blob.includes(term));
+        });
+    };
 
-    if (scored.length === 0) {
-        scored = candidates
-            .filter(p => p.isPopular)
-            .map(p => ({ product: p, score: 0.25 }));
+    if (hasFacialCare) {
+        addRecommendations(pickByKeyword('bloqueador solar'));
     }
 
-    if (scored.length === 0) {
-        scored = candidates.slice(0, maxItems).map(p => ({ product: p, score: 0 }));
-        return scored.map(item => item.product);
+    if (hasProtein) {
+        addRecommendations(pickByKeyword('creatina'));
     }
 
-    return scored
-        .sort((a, b) => b.score - a.score)
-        .map(item => item.product)
-        .slice(0, maxItems);
+    if (recommendations.length < maxItems) {
+        const lowStock = candidates.filter(p => p.stock_bajo);
+        addRecommendations(lowStock);
+    }
+
+    if (recommendations.length < maxItems) {
+        const popular = candidates.filter(p => p.isPopular || String(p.badge || '').toLowerCase().includes('vendido'));
+        addRecommendations(popular);
+    }
+
+    if (recommendations.length < maxItems) {
+        addRecommendations(candidates);
+    }
+
+    return recommendations.slice(0, maxItems);
 }
 
 function renderRecommended(cartItems) {
@@ -883,20 +942,23 @@ function filterByCategory(category) {
 function filterProductsAdvanced(queryOverride) {
     if (typeof PRODUCTS === 'undefined') return [];
     const q = typeof queryOverride === 'string' ? queryOverride : currentQuery;
-    const filtered = PRODUCTS.filter(p => {
+    const normalizedQuery = normalizeText(q);
+    const baseList = PRODUCTS.filter(p => {
         if (isPromoProduct(p)) return false;
         const byCategory = currentCategory === 'all' ? true : (p.category && p.category.includes(currentCategory));
         const byPrice = getPriceFilter(currentPriceRange, p.price);
-        const query = q.toLowerCase();
-        const byText = query
-            ? (p.name.toLowerCase().includes(query) ||
-               (p.description && p.description.toLowerCase().includes(query)) ||
-               (p.seo_title && p.seo_title.toLowerCase().includes(query)) ||
-               (p.seo_description && p.seo_description.toLowerCase().includes(query)) ||
-               (p.tags || []).some(t => t.toLowerCase().includes(query)))
-            : true;
-        return byCategory && byPrice && byText;
+        return byCategory && byPrice;
     });
+
+    let filtered = baseList;
+    if (normalizedQuery) {
+        const fuzzyResults = fuzzySearchProducts(normalizedQuery, baseList);
+        if (Array.isArray(fuzzyResults)) {
+            filtered = fuzzyResults;
+        } else {
+            filtered = baseList.filter(p => getSearchableText(p).includes(normalizedQuery));
+        }
+    }
     const ordered = sortProductsList(filtered);
     renderProducts(ordered);
     if (typeof logEvent === 'function') {
