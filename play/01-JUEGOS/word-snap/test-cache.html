@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Cache - Word Snap</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .test-box {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        button {
+            background: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        button:hover {
+            background: #45a049;
+        }
+        pre {
+            background: #f4f4f4;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        .success { color: #4CAF50; }
+        .error { color: #f44336; }
+    </style>
+</head>
+<body>
+    <h1>🧪 Test de Caché - Word Snap</h1>
+    
+    <div class="test-box">
+        <h2>Tema de Hoy</h2>
+        <p id="todayDate"></p>
+        <button onclick="loadToday()">Cargar Tema del Día</button>
+        <pre id="todayResult"></pre>
+    </div>
+    
+    <div class="test-box">
+        <h2>Temas Fallback</h2>
+        <button onclick="loadFallback()">Cargar Temas de Respaldo</button>
+        <pre id="fallbackResult"></pre>
+    </div>
+    
+    <div class="test-box">
+        <h2>Limpiar Caché</h2>
+        <button onclick="clearCache()">🗑️ Limpiar Caché del Navegador</button>
+        <button onclick="hardReload()">🔄 Recarga Forzada</button>
+        <p id="cacheResult"></p>
+    </div>
+
+    <script>
+        const today = new Date().toISOString().split('T')[0];
+        document.getElementById('todayDate').textContent = `Fecha: ${today}`;
+
+        async function loadToday() {
+            const result = document.getElementById('todayResult');
+            result.textContent = 'Cargando...';
+            
+            try {
+                const timestamp = new Date().getTime();
+                const response = await fetch(`themes.json?v=${timestamp}`, {
+                    cache: 'no-store'
+                });
+                const data = await response.json();
+                
+                if (data.dailyThemes && data.dailyThemes[today]) {
+                    const theme = data.dailyThemes[today];
+                    result.innerHTML = `<span class="success">✅ Tema encontrado:</span>\n` +
+                        `Tema: ${theme.emoji} ${theme.tema}\n` +
+                        `Palabras: ${theme.palabras.join(', ')}\n` +
+                        `Descripción: ${theme.descripcion}`;
+                } else {
+                    result.innerHTML = `<span class="error">❌ No hay tema para hoy</span>\n` +
+                        `Temas disponibles: ${Object.keys(data.dailyThemes).join(', ')}`;
+                }
+            } catch (error) {
+                result.innerHTML = `<span class="error">❌ Error: ${error.message}</span>`;
+            }
+        }
+
+        async function loadFallback() {
+            const result = document.getElementById('fallbackResult');
+            result.textContent = 'Cargando...';
+            
+            try {
+                const timestamp = new Date().getTime();
+                const response = await fetch(`themes.json?v=${timestamp}`, {
+                    cache: 'no-store'
+                });
+                const data = await response.json();
+                
+                if (data.fallbackThemes) {
+                    result.innerHTML = `<span class="success">✅ ${data.fallbackThemes.length} temas de respaldo:</span>\n\n` +
+                        data.fallbackThemes.map(t => 
+                            `${t.emoji} ${t.tema}: ${t.palabras.join(', ')}`
+                        ).join('\n');
+                } else {
+                    result.innerHTML = `<span class="error">❌ No hay temas de respaldo</span>`;
+                }
+            } catch (error) {
+                result.innerHTML = `<span class="error">❌ Error: ${error.message}</span>`;
+            }
+        }
+
+        function clearCache() {
+            const result = document.getElementById('cacheResult');
+            
+            if ('caches' in window) {
+                caches.keys().then(names => {
+                    names.forEach(name => {
+                        caches.delete(name);
+                    });
+                    result.innerHTML = '<span class="success">✅ Caché limpiado</span>';
+                });
+            } else {
+                result.innerHTML = '<span class="error">⚠️ API de caché no disponible</span>';
+            }
+            
+            // Limpiar localStorage también
+            localStorage.clear();
+            result.innerHTML += '<br><span class="success">✅ LocalStorage limpiado</span>';
+        }
+
+        function hardReload() {
+            location.reload(true);
+        }
+
+        // Cargar automáticamente al abrir
+        window.onload = () => {
+            loadToday();
+        };
+    </script>
+</body>
+</html>

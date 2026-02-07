@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NaturalBe Games - Portal de Juegos</title>
+    <meta name="description" content="Portal de juegos de NaturalBe. Juega Word Snap, Trivia Challenge y más juegos adictivos gratis.">
+    <link rel="stylesheet" href="styles-v2.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .portal-container {
+            max-width: 900px;
+            width: 100%;
+        }
+        
+        .portal-header {
+            text-align: center;
+            margin-bottom: 40px;
+            color: white;
+        }
+        
+        .portal-logo {
+            font-size: 3em;
+            margin-bottom: 10px;
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .portal-title {
+            font-size: 2.5em;
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+        
+        .portal-subtitle {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        
+        .games-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .game-card {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            transition: all 0.3s;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .game-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        
+        .game-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+        }
+        
+        .game-icon {
+            font-size: 4em;
+            margin-bottom: 15px;
+            display: block;
+        }
+        
+        .game-title {
+            font-size: 1.8em;
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+        
+        .game-description {
+            color: #666;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        
+        .game-stats {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+            font-size: 0.9em;
+            color: #888;
+        }
+        
+        .game-stat {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .play-btn {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 12px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .play-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+        }
+        
+        .portal-footer {
+            text-align: center;
+            color: white;
+            opacity: 0.8;
+            margin-top: 40px;
+        }
+        
+        .coming-soon {
+            opacity: 0.6;
+            pointer-events: none;
+        }
+        
+        .coming-soon-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: #FFD700;
+            color: #333;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            font-weight: bold;
+        }
+        
+        @media (max-width: 768px) {
+            .portal-title {
+                font-size: 2em;
+            }
+            
+            .portal-subtitle {
+                font-size: 1em;
+            }
+            
+            .games-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .game-card {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="portal-container">
+        <!-- Header -->
+        <div class="portal-header">
+            <div style="position: absolute; top: 20px; right: 20px;">
+                <button class="control-btn" onclick="window.location.href='profile-screen.html'" style="font-size: 1.2em;">
+                    👤 Perfil
+                </button>
+            </div>
+            <div class="portal-logo">🎮</div>
+            <h1 class="portal-title">NaturalBe Games</h1>
+            <p class="portal-subtitle">Juegos adictivos y divertidos para todos</p>
+        </div>
+        
+        <!-- Games Grid -->
+        <div class="games-grid">
+            <!-- Word Snap -->
+            <div class="game-card" onclick="window.location.href='word-snap.html'">
+                <span class="game-icon">🔤</span>
+                <h2 class="game-title">Word Snap</h2>
+                <p class="game-description">
+                    Encuentra palabras ocultas en una sopa de letras. 100 niveles únicos con diferentes categorías y dificultades.
+                </p>
+                <div class="game-stats">
+                    <div class="game-stat">
+                        <span>📚</span>
+                        <span>100 Niveles</span>
+                    </div>
+                    <div class="game-stat">
+                        <span>⭐</span>
+                        <span>XP & Logros</span>
+                    </div>
+                </div>
+                <button class="play-btn">▶️ Jugar Ahora</button>
+            </div>
+            
+            <!-- Trivia Challenge -->
+            <div class="game-card" onclick="window.location.href='trivia-challenge.html'">
+                <span class="game-icon">🧠</span>
+                <h2 class="game-title">Trivia Challenge</h2>
+                <p class="game-description">
+                    Pon a prueba tus conocimientos con 100 preguntas de cultura general en 7 categorías diferentes.
+                </p>
+                <div class="game-stats">
+                    <div class="game-stat">
+                        <span>❓</span>
+                        <span>100 Preguntas</span>
+                    </div>
+                    <div class="game-stat">
+                        <span>🏆</span>
+                        <span>7 Categorías</span>
+                    </div>
+                </div>
+                <button class="play-btn">▶️ Jugar Ahora</button>
+            </div>
+            
+            <!-- Memory Flip -->
+            <div class="game-card" onclick="window.location.href='memory-flip.html'">
+                <span class="game-icon">🧩</span>
+                <h2 class="game-title">Memory Flip</h2>
+                <p class="game-description">
+                    Pon a prueba tu memoria encontrando todas las parejas. 3 niveles de dificultad y múltiples sets de cartas.
+                </p>
+                <div class="game-stats">
+                    <div class="game-stat">
+                        <span>🎴</span>
+                        <span>3 Dificultades</span>
+                    </div>
+                    <div class="game-stat">
+                        <span>⏱️</span>
+                        <span>Contrarreloj</span>
+                    </div>
+                </div>
+                <button class="play-btn">▶️ Jugar Ahora</button>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <div class="portal-footer">
+            <p>© 2025 NaturalBe Games - 3 juegos disponibles</p>
+        </div>
+    </div>
+    
+    <script src="global-player.js"></script>
+    <script>
+        // Prevenir que los botones disparen el click del card
+        document.querySelectorAll('.play-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.stopPropagation();
+            });
+        });
+        
+        // Actualizar última vez jugado
+        if (typeof globalPlayer !== 'undefined') {
+            globalPlayer.profile.lastPlayed = Date.now();
+            globalPlayer.saveProfile();
+        }
+    </script>
+</body>
+</html>

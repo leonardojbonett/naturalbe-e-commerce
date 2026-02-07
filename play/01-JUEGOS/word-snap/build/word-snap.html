@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Snap - Juego de Palabras Adictivo</title>
+    <meta name="description" content="Encuentra palabras ocultas en la sopa de letras. 100 niveles únicos. Juego adictivo con skins, logros y modo maratón.">
+    <link rel="stylesheet" href="styles-v2.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="theme-pattern" id="themePattern">✨</div>
+        
+        <div class="game-content">
+            <div class="header">
+                <a href="index.html" class="back-link">← Volver al Portal</a>
+                <h1>🔤 Word Snap</h1>
+                <div class="level-badge" id="levelBadge">
+                    Nivel 1 - Países del mundo
+                </div>
+                <div class="level-info" id="levelInfo">
+                    Nivel 1 de 100 • Cultura general
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill" style="width: 1%;"></div>
+                </div>
+            </div>
+
+            <!-- Display de Monedas y XP -->
+            <div style="text-align: center; margin-bottom: 15px;">
+                <div class="coins-display">
+                    <span>💰</span>
+                    <span id="coinsDisplay">0</span>
+                </div>
+                <div class="player-level-display" style="margin-top: 10px;">
+                    Nivel <span id="playerLevelDisplay">1</span> ⭐
+                </div>
+                <div class="xp-bar-container">
+                    <div class="xp-bar" id="xpBar" style="width: 0%;"></div>
+                    <div class="xp-text" id="xpText">0/100</div>
+                </div>
+            </div>
+
+            <div class="controls">
+                <button class="control-btn active" onclick="game.setDifficulty('normal', event)">
+                    😊 Normal
+                </button>
+                <button class="control-btn" onclick="game.setDifficulty('easy', event)">
+                    😌 Fácil
+                </button>
+                <button class="control-btn" onclick="game.setDifficulty('hard', event)">
+                    😈 Difícil
+                </button>
+                <button class="control-btn" onclick="game.setDifficulty('expert', event)">
+                    🔥 Experto
+                </button>
+                <button class="control-btn" onclick="game.setDifficulty('master', event)">
+                    👑 Maestro
+                </button>
+            </div>
+
+            <div class="controls" style="margin-top: 10px;">
+                <button class="control-btn" onclick="game.toggleDarkMode()">
+                    🌙 Oscuro
+                </button>
+                <button class="control-btn" id="levelSelectBtn">
+                    📚 Niveles
+                </button>
+                <button class="control-btn" id="soundBtn">
+                    🔊 Sonido
+                </button>
+                <button class="control-btn" onclick="window.location.href='marathon.html'">
+                    🏃 Maratón
+                </button>
+                <button class="control-btn" onclick="window.location.href='trivia-challenge.html'">
+                    🧠 Trivia
+                </button>
+                <button class="control-btn" onclick="dailyRewards.showDailyRewardModal()">
+                    🎁 Diario
+                </button>
+                <button class="control-btn" onclick="skinsSystem.showShop()">
+                    🛒 Tienda
+                </button>
+                <button class="control-btn" onclick="achievementsManager.showAchievementsModal()">
+                    🏆 Logros
+                </button>
+                <button class="control-btn" onclick="weeklyEvent.showWeeklyModal()">
+                    🌎 Semanal
+                </button>
+            </div>
+
+            <div class="stats">
+                <div class="stat-item">
+                    <span class="stat-label">⏱️ Tiempo</span>
+                    <span class="stat-value" id="timer">120</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">📝 Palabras</span>
+                    <span class="stat-value" id="wordsFound">0/5</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">⭐ Puntos</span>
+                    <span class="stat-value" id="score">0</span>
+                </div>
+            </div>
+
+            <div class="current-word-display" id="currentWord">...</div>
+
+            <div class="grid-container">
+                <div class="letter-grid" id="letterGrid"></div>
+            </div>
+
+            <div class="words-list" id="wordsList"></div>
+
+            <button class="start-btn" id="startBtn" onclick="game.toggleStart()">
+                ▶️ Jugar Nivel 1
+            </button>
+        </div>
+    </div>
+
+    <!-- Modal de Resultados -->
+    <div class="modal" id="gameOverModal">
+        <div class="modal-content">
+            <h2 id="modalTitle">🎉 ¡Nivel Completado!</h2>
+            <div class="level-complete-badge" id="completeBadge">
+                ¡Excelente trabajo!
+            </div>
+            <div class="final-score" id="finalScore">0</div>
+            <p id="resultMessage"></p>
+            <div class="metrics">
+                <div class="metric-item">
+                    <div class="metric-value" id="wordsFoundMetric">0</div>
+                    <div class="metric-label">Palabras</div>
+                </div>
+                <div class="metric-item">
+                    <div class="metric-value" id="timeUsedMetric">0s</div>
+                    <div class="metric-label">Tiempo</div>
+                </div>
+                <div class="metric-item">
+                    <div class="metric-value" id="streakMetric">0</div>
+                    <div class="metric-label">Racha</div>
+                </div>
+            </div>
+            <div class="metrics" style="margin-top: 10px;">
+                <div class="metric-item">
+                    <div class="metric-value" id="daysPlayedMetric">0</div>
+                    <div class="metric-label">Días Jugados</div>
+                </div>
+                <div class="metric-item">
+                    <div class="metric-value" id="maxScoreMetric">0</div>
+                    <div class="metric-label">Mejor Score</div>
+                </div>
+                <div class="metric-item">
+                    <div class="metric-value" id="maxLevelMetric">0</div>
+                    <div class="metric-label">Nivel Máximo</div>
+                </div>
+            </div>
+            <div class="modal-actions">
+                <button class="modal-btn secondary" onclick="game.shareScore()">
+                    📤 Compartir
+                </button>
+                <button class="modal-btn primary" id="nextLevelBtn" onclick="game.nextLevel()">
+                    ➡️ Siguiente Nivel
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Selector de Niveles -->
+    <div class="modal" id="levelSelectorModal">
+        <div class="modal-content" style="max-width: 600px;">
+            <h2>📚 Seleccionar Nivel</h2>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+                <div style="font-size: 0.9em; color: #666;">
+                    <span id="levelsCompleted">0</span> / <span id="totalLevels">100</span> completados
+                </div>
+                <button class="modal-btn secondary" id="closeLevelSelect" style="padding: 8px 15px;">
+                    ✕ Cerrar
+                </button>
+            </div>
+            <div class="levels-grid" id="levelSelectorGrid">
+                <!-- Los niveles se generan dinámicamente -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="word-snap-levels.js?v=2"></script>
+    <script src="audio-manager.js"></script>
+    <script src="coins-manager.js"></script>
+    <script src="daily-rewards.js"></script>
+    <script src="skins-system.js"></script>
+    <script src="ad-manager.js"></script>
+    <script src="xp-manager.js"></script>
+    <script src="achievements.js"></script>
+    <script src="weekly-event.js"></script>
+    <script src="error-manager.js"></script>
+    <script src="performance-optimizer.js"></script>
+    <script src="word-snap-campaign.js"></script>
+    
+    <script>
+        // Inicializar sistemas al cargar
+        window.addEventListener('load', () => {
+            // Aplicar skin guardado
+            if (window.skinsSystem) {
+                skinsSystem.applySkin();
+            }
+            // Actualizar display de monedas
+            if (window.coinsManager) {
+                coinsManager.updateCoinsDisplay();
+            }
+            // Actualizar XP
+            if (window.xpManager) {
+                xpManager.updateUI();
+            }
+        });
+    </script>
+</body>
+</html>

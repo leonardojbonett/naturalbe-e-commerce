@@ -1,0 +1,101 @@
+/* Estilos específicos de páginas de producto */
+.product-page {
+  padding-top: 140px;
+}
+
+.breadcrumb {
+  max-width: 1200px;
+  margin: 0 auto 1rem;
+  padding: 0 1.5rem;
+  display: flex;
+  gap: 0.35rem;
+  align-items: center;
+  font-size: 0.95rem;
+  color: #1f2937;
+}
+
+.breadcrumb a {
+  color: #0f3c24;
+  text-decoration: none;
+}
+
+.breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+.product-status {
+  max-width: 1200px;
+  margin: 0 auto 1rem;
+  padding: 0 1.5rem;
+  color: #b91c1c;
+  font-weight: 700;
+}
+
+.product-hero {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto 2rem;
+  padding: 0 1.5rem;
+}
+
+.product-hero-info h1 {
+  margin: 0 0 0.5rem;
+}
+
+.product-price {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #0f3c24;
+}
+
+.pack-badge {
+  display: inline-block;
+  background: linear-gradient(135deg, #22c55e 0%, #15803d 100%);
+  color: #e8f5ec;
+  padding: 0.35rem 0.8rem;
+  border-radius: 999px;
+  font-weight: 800;
+  margin: 0.15rem 0 0.35rem;
+}
+
+.pack-pricing {
+  margin: 0 0 1rem;
+  padding: 0.75rem 1rem;
+  border-radius: 12px;
+  background: #f1f8f3;
+  border: 1px solid #d7e8dc;
+  color: #0f3c24;
+  font-weight: 700;
+}
+
+.product-cta {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.product-cta .cta-button {
+  border-radius: 14px;
+}
+
+.product-benefits,
+.product-pack,
+.product-reviews,
+.related-products {
+  max-width: 1200px;
+  margin: 0 auto 2rem;
+  padding: 0 1.5rem;
+}
+
+.related-grid {
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+@media (max-width: 640px) {
+  .product-page {
+    padding-top: 120px;
+  }
+}

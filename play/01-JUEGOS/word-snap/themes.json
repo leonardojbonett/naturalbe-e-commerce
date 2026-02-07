@@ -1,0 +1,89 @@
+{
+  "version": "2.0",
+  "lastUpdate": "2025-11-26",
+  "dailyThemes": {
+    "2025-11-26": {
+      "tema": "Memes TikTok",
+      "emoji": "🎭",
+      "color": "#f093fb",
+      "descripcion": "Los memes más virales de TikTok",
+      "palabras": ["SKIBIDI", "RIZZ", "GYATT", "OHIO", "CAPCUT"]
+    },
+    "2025-11-27": {
+      "tema": "Series Netflix",
+      "emoji": "📺",
+      "color": "#e50914",
+      "descripcion": "Las series más populares del momento",
+      "palabras": ["STRANGER", "SQUID", "CROWN", "WITCHER", "NARCOS"]
+    },
+    "2025-11-28": {
+      "tema": "Reggaeton",
+      "emoji": "🎵",
+      "color": "#1DB954",
+      "descripcion": "Los artistas más escuchados",
+      "palabras": ["FEID", "KAROL", "PESO", "PLUMA", "BIZARRAP"]
+    },
+    "2025-11-29": {
+      "tema": "Celebridades",
+      "emoji": "⭐",
+      "color": "#FFD700",
+      "descripcion": "Las estrellas más famosas",
+      "palabras": ["SHAKIRA", "MESSI", "ROSALIA", "ANUEL", "MALUMA"]
+    },
+    "2025-11-30": {
+      "tema": "Gaming",
+      "emoji": "🎮",
+      "color": "#667eea",
+      "descripcion": "Los juegos más jugados",
+      "palabras": ["FORTNITE", "MINECRAFT", "ROBLOX", "VALORANT", "APEX"]
+    },
+    "2025-12-01": {
+      "tema": "TikTok Trends",
+      "emoji": "📱",
+      "color": "#00f2ea",
+      "descripcion": "Las tendencias del momento",
+      "palabras": ["DANCE", "VIRAL", "TREND", "DUET", "FILTER"]
+    },
+    "2025-12-02": {
+      "tema": "Futbol",
+      "emoji": "⚽",
+      "color": "#00A859",
+      "descripcion": "Los mejores del fútbol mundial",
+      "palabras": ["MADRID", "BARCA", "MBAPPE", "HAALAND", "VINICIUS"]
+    }
+  },
+  "fallbackThemes": [
+    {
+      "id": "memes-2024",
+      "tema": "Memes Virales 2024",
+      "emoji": "😂",
+      "color": "#f093fb",
+      "descripcion": "Los memes más virales del año",
+      "palabras": ["SKIBIDI", "RIZZ", "SIGMA", "GYATT", "OHIO"]
+    },
+    {
+      "id": "anime",
+      "tema": "Anime Popular",
+      "emoji": "🎌",
+      "color": "#FF6B6B",
+      "descripcion": "Los personajes más icónicos",
+      "palabras": ["NARUTO", "GOKU", "LUFFY", "EREN", "TANJIRO"]
+    },
+    {
+      "id": "kpop",
+      "tema": "K-Pop",
+      "emoji": "🎤",
+      "color": "#FF69B4",
+      "descripcion": "Los grupos más populares",
+      "palabras": ["BTS", "BLACKPINK", "TWICE", "STRAY", "NEWJEANS"]
+    },
+    {
+      "id": "marvel",
+      "tema": "Marvel Heroes",
+      "emoji": "🦸",
+      "color": "#ED1D24",
+      "descripcion": "Los superhéroes favoritos",
+      "palabras": ["SPIDERMAN", "IRONMAN", "HULK", "THOR", "CAPTAIN"]
+    }
+  ]
+}

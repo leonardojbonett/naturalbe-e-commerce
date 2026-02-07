@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Snap - Modo Maratón</title>
+    <meta name="description" content="Modo Maratón de Word Snap - Completa niveles contra el tiempo">
+    <link rel="stylesheet" href="styles-v2.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="theme-pattern" id="themePattern">🏃</div>
+        
+        <div class="game-content">
+            <div class="header">
+                <a href="word-snap.html" class="back-link">← Volver a Campaña</a>
+                <h1>🏃 Modo Maratón</h1>
+                <div class="level-badge" id="levelBadge">
+                    🏃 Modo Maratón
+                </div>
+                <div class="level-info" id="levelInfo">
+                    Completa niveles mientras tengas tiempo
+                </div>
+            </div>
+
+            <div class="controls">
+                <button class="control-btn" onclick="game.toggleDarkMode()">
+                    🌙 Modo Oscuro
+                </button>
+                <button class="control-btn" id="soundBtn">
+                    🔊 Sonido
+                </button>
+            </div>
+
+            <div class="stats">
+                <div class="stat-item">
+                    <span class="stat-label">⏱️ Tiempo</span>
+                    <span class="stat-value" id="timer">90</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">📝 Palabras</span>
+                    <span class="stat-value" id="wordsFound">0/5</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">⭐ Puntos</span>
+                    <span class="stat-value" id="score">0</span>
+                </div>
+            </div>
+
+            <div class="current-word-display" id="currentWord">...</div>
+
+            <div class="grid-container">
+                <div class="letter-grid" id="letterGrid"></div>
+            </div>
+
+            <div class="words-list" id="wordsList"></div>
+
+            <button class="start-btn" id="startBtn" onclick="game.toggleStart()">
+                ▶️ Iniciar Maratón
+            </button>
+        </div>
+    </div>
+
+    <!-- Modal de Resultados -->
+    <div class="modal" id="gameOverModal">
+        <div class="modal-content">
+            <h2 id="modalTitle">🏃 Maratón Terminado</h2>
+            <div class="level-complete-badge" id="completeBadge">
+                0 niveles completados
+            </div>
+            <div class="final-score" id="finalScore">0</div>
+            <p id="resultMessage"></p>
+            <div class="metrics">
+                <div class="metric-item">
+                    <div class="metric-value" id="wordsFoundMetric">0</div>
+                    <div class="metric-label">Niveles</div>
+                </div>
+                <div class="metric-item">
+                    <div class="metric-value" id="timeUsedMetric">90s</div>
+                    <div class="metric-label">Tiempo</div>
+                </div>
+                <div class="metric-item">
+                    <div class="metric-value" id="streakMetric">0 🏃</div>
+                    <div class="metric-label">Récord</div>
+                </div>
+            </div>
+            <div class="modal-actions">
+                <button class="modal-btn secondary" onclick="game.shareScore()">
+                    📤 Compartir
+                </button>
+                <button class="modal-btn primary" onclick="game.restart()">
+                    🔄 Reintentar
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="word-snap-levels.js"></script>
+    <script src="audio-manager.js"></script>
+    <script src="coins-manager.js"></script>
+    <script src="error-manager.js"></script>
+    <script src="performance-optimizer.js"></script>
+    <script src="word-snap-marathon.js"></script>
+    
+    <script>
+        // Inicializar botón de sonido
+        const soundBtn = document.getElementById('soundBtn');
+        if (window.audioManager && !audioManager.enabled) {
+            soundBtn.textContent = '🔇 Sonido';
+        }
+        soundBtn.addEventListener('click', () => {
+            const enabled = audioManager.toggle();
+            soundBtn.textContent = enabled ? '🔊 Sonido' : '🔇 Sonido';
+        });
+    </script>
+</body>
+</html>

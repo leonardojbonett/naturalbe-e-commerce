@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{TITULO}} | Academia Natural Be</title>
+  <meta name="description" content="{{META_DESCRIPCION}}">
+  <link rel="canonical" href="{{CANONICAL}}">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="{{TITULO}}">
+  <meta property="og:description" content="{{META_DESCRIPCION}}">
+  <meta property="og:url" content="{{CANONICAL}}">
+  <meta property="og:image" content="https://naturalbe.com.co/static/img/og-naturalbe.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Article",
+    "headline":"{{TITULO}}",
+    "datePublished":"{{FECHA_PUBLICACION}}",
+    "dateModified":"{{FECHA_ACTUALIZACION}}",
+    "author":{"@type":"Organization","name":"Academia Natural Be"},
+    "publisher":{"@type":"Organization","name":"Academia Natural Be"},
+    "mainEntityOfPage":"{{CANONICAL}}"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"BreadcrumbList",
+    "itemListElement":[
+      {"@type":"ListItem","position":1,"name":"Inicio","item":"https://academia.naturalbe.com.co/"},
+      {"@type":"ListItem","position":2,"name":"{{CATEGORIA}}","item":"{{CATEGORIA_URL}}"},
+      {"@type":"ListItem","position":3,"name":"{{TITULO}}","item":"{{CANONICAL}}"}
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {
+        "@type":"Question",
+        "name":"{{FAQ_PREGUNTA_1}}",
+        "acceptedAnswer":{"@type":"Answer","text":"{{FAQ_RESPUESTA_1}}"}
+      },
+      {
+        "@type":"Question",
+        "name":"{{FAQ_PREGUNTA_2}}",
+        "acceptedAnswer":{"@type":"Answer","text":"{{FAQ_RESPUESTA_2}}"}
+      }
+    ]
+  }
+  </script>
+</head>
+<body class="page">
+  <header class="header">
+    <div class="container nav">
+      <div class="brand">
+        <span>Academia Natural Be</span>
+        <small>Artículo educativo</small>
+      </div>
+      <button class="nav-toggle" data-nav-toggle aria-expanded="false">Menú</button>
+      <nav class="nav-links" data-nav-links>
+        <a href="/">Inicio</a>
+        <a href="{{CATEGORIA_URL}}">{{CATEGORIA}}</a>
+        <a href="/guias/guia-suplementacion-inteligente.html">Guía definitiva</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="article-hero">
+    <div class="container">
+      <div class="breadcrumbs">Inicio / {{CATEGORIA}} / {{TITULO}}</div>
+      <h1>{{TITULO}}</h1>
+      <div class="meta-row">
+        <span class="badge">{{CATEGORIA}}</span>
+        <span>Actualizado: {{FECHA_ACTUALIZACION}}</span>
+        <span>Lectura: {{MINUTOS_LECTURA}}</span>
+      </div>
+    </div>
+  </main>
+
+  <main class="section">
+    <div class="container article-body">
+      <div class="toc">
+        <strong>En esta guía</strong>
+        <ul>
+          <li><a href="#intro">Introducción</a></li>
+          <li><a href="#puntos">Puntos clave</a></li>
+          <li><a href="#recomendaciones">Recomendaciones prácticas</a></li>
+          <li><a href="#faq">Preguntas frecuentes</a></li>
+        </ul>
+      </div>
+
+      <section id="intro">
+        {{INTRO}}
+      </section>
+
+      <section id="puntos">
+        {{PUNTOS_CLAVE}}
+      </section>
+
+      <section id="recomendaciones">
+        {{RECOMENDACIONES}}
+      </section>
+
+      <section id="faq">
+        {{FAQ}}
+      </section>
+
+      <section class="callout">
+        <strong>Recomendación contextual</strong>
+        <p>Si buscas productos confiables, revisa el catálogo principal de Natural Be. Solo te llevamos cuando aporta valor.</p>
+        <a href="https://naturalbe.com.co" target="_blank" rel="noopener">Ver catálogo principal</a>
+      </section>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="brand">
+        <span>Academia Natural Be</span>
+        <small>Educación para bienestar sostenible.</small>
+      </div>
+      <div>
+        <small>&copy; <span data-year></span> Academia Natural Be.</small>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/assets/js/main.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+[
+  {
+    "id": "word-snap",
+    "title": "Word Snap",
+    "tagline": "Sopa de letras con retos diarios",
+    "difficulty": "Media",
+    "duration": "2-3 min",
+    "path": "01-JUEGOS/word-snap/word-snap.html",
+    "image": "assets/cover-placeholder.svg",
+    "priority": true
+  },
+  {
+    "id": "trivia-challenge",
+    "title": "Trivia Challenge",
+    "tagline": "Cultura general en 10 rondas",
+    "difficulty": "Media",
+    "duration": "3-4 min",
+    "path": "01-JUEGOS/trivia-challenge/trivia-challenge.html",
+    "image": "assets/cover-placeholder.svg",
+    "priority": true
+  },
+  {
+    "id": "memory-flip",
+    "title": "Memory Flip",
+    "tagline": "Encuentra todas las parejas",
+    "difficulty": "Variable",
+    "duration": "2-4 min",
+    "path": "01-JUEGOS/memory-flip/memory-flip.html",
+    "image": "assets/cover-placeholder.svg",
+    "priority": true
+  },
+  {
+    "id": "color-match",
+    "title": "Color Match Rush",
+    "tagline": "Reto rapido de colores",
+    "difficulty": "Facil",
+    "duration": "30-60 s",
+    "path": "01-JUEGOS/color-match/color-match.html",
+    "image": "assets/cover-placeholder.svg",
+    "priority": false
+  },
+  {
+    "id": "reflex-test",
+    "title": "Reflex Master",
+    "tagline": "Mide tu tiempo de reaccion",
+    "difficulty": "Facil",
+    "duration": "30-60 s",
+    "path": "01-JUEGOS/reflex-test/reflex-test.html",
+    "image": "assets/cover-placeholder.svg",
+    "priority": false
+  }
+]

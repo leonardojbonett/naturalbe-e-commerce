@@ -1,0 +1,35 @@
+═══════════════════════════════════════════════════════════
+  🚀 SUBIR ESTOS 3 ARCHIVOS A HOSTINGER
+═══════════════════════════════════════════════════════════
+
+📍 DESTINO: public_html/play/
+
+📦 ARCHIVOS A SUBIR:
+
+1. ✅ styles-v2.css       (NUEVO - subir)
+2. ✅ index.html          (REEMPLAZAR el existente)
+3. ✅ marathon.html       (REEMPLAZAR el existente)
+
+═══════════════════════════════════════════════════════════
+
+⏱️ TIEMPO: 5 minutos
+🎯 RESULTADO: Todos los dispositivos verán el diseño nuevo
+
+═══════════════════════════════════════════════════════════
+
+📖 INSTRUCCIONES DETALLADAS:
+   Ver archivo: FIX-CACHE-INSTRUCCIONES.md
+
+═══════════════════════════════════════════════════════════
+
+✅ DESPUÉS DE SUBIR:
+
+1. Abrir: https://play.naturalbe.com.co
+2. Presionar: Ctrl+F5 (limpiar caché)
+3. Verificar: Diseño morado/azul perfecto
+
+═══════════════════════════════════════════════════════════
+
+🎉 ¡LISTO! El problema de caché está resuelto.
+
+═══════════════════════════════════════════════════════════

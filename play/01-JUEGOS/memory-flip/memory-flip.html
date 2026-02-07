@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Flip | Natural Be Play</title>
+    <meta property="og:title" content="Memory Flip | Natural Be Play">
+    <meta property="og:description" content="Encuentra todas las parejas y gana puntos.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://play.naturalbe.com.co/01-JUEGOS/memory-flip/memory-flip.html">
+    <meta property="og:image" content="https://play.naturalbe.com.co/assets/cover-placeholder.svg">
+    <meta name="theme-color" content="#667eea">
+    <meta name="description" content="Pon a prueba tu memoria con Memory Flip. Encuentra todas las parejas en el menor tiempo posible.">
+    <link rel="stylesheet" href="../word-snap/build/styles-v2.css">
+    <style>
+        /* Estilos específicos de Memory Flip */
+        .memory-container {
+            max-width: 800px;
+        }
+        
+        /* Grid de cartas */
+        .cards-grid {
+            display: grid;
+            gap: 10px;
+            margin: 20px 0;
+            perspective: 1000px;
+        }
+        
+        .cards-grid.easy {
+            grid-template-columns: repeat(4, 1fr);
+        }
+        
+        .cards-grid.medium {
+            grid-template-columns: repeat(4, 1fr);
+        }
+        
+        .cards-grid.hard {
+            grid-template-columns: repeat(5, 1fr);
+        }
+        
+        /* Carta */
+        .card {
+            aspect-ratio: 1;
+            position: relative;
+            cursor: pointer;
+            transform-style: preserve-3d;
+            transition: transform 0.4s ease;
+        }
+        
+        .card.flipped {
+            transform: rotateY(180deg);
+        }
+        
+        .card.matched {
+            animation: matchPulse 0.5s ease;
+            pointer-events: none;
+        }
+        
+        .card.wrong {
+            animation: shake 0.5s ease;
+        }
+        
+        .card-face {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            font-size: 2.5em;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .card-front {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        
+        .card-back {
+            background: white;
+            transform: rotateY(180deg);
+            border: 3px solid #e0e0e0;
+        }
+        
+        .card.matched .card-back {
+            background: #e8f5e9;
+            border-color: #4caf50;
+        }
+        
+        /* Animaciones */
+        @keyframes matchPulse {
+            0%, 100% { transform: rotateY(180deg) scale(1); }
+            50% { transform: rotateY(180deg) scale(1.1); }
+        }
+        
+        @keyframes shake {
+            0%, 100% { transform: rotateY(180deg) translateX(0); }
+            25% { transform: rotateY(180deg) translateX(-10px); }
+            75% { transform: rotateY(180deg) translateX(10px); }
+        }
+        
+        @keyframes fadeInScale {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        
+        .cards-grid {
+            animation: fadeInScale 0.5s ease;
+        }
+        
+        /* Selector de dificultad */
+        .difficulty-selector {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+        
+        .difficulty-btn {
+            padding: 15px 30px;
+            border: 2px solid #667eea;
+            background: white;
+            border-radius: 12px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: all 0.3s;
+            min-width: 120px;
+        }
+        
+        .difficulty-btn:hover {
+            background: #667eea;
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        .difficulty-btn.selected {
+            background: #667eea;
+            color: white;
+        }
+        
+        /* Timer y stats */
+        .game-timer {
+            font-size: 2em;
+            font-weight: bold;
+            color: #667eea;
+            text-align: center;
+            margin: 15px 0;
+        }
+        
+        .game-timer.warning {
+            color: #f44336;
+            animation: pulse 1s infinite;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .card-face {
+                font-size: 2em;
+            }
+            
+            .cards-grid {
+                gap: 8px;
+            }
+            
+            .difficulty-btn {
+                padding: 12px 20px;
+                min-width: 100px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .card-face {
+                font-size: 1.5em;
+            }
+            
+            .cards-grid {
+                gap: 5px;
+            }
+            
+            .cards-grid.hard {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="game-container memory-container">
+        <div class="theme-pattern">🧩</div>
+        
+        <div class="game-content">
+            <!-- Header -->
+            <div class="header">
+                <a href="../../index.html" class="back-link">← Volver al Portal</a>
+                <h1>🧩 Memory Flip</h1>
+                <p style="text-align: center; color: #666; margin-bottom: 20px;">
+                    Encuentra todas las parejas
+                </p>
+            </div>
+            
+            <!-- Pantalla de Inicio -->
+            <div id="startScreen">
+                <div style="text-align: center; padding: 20px 0;">
+                    <h2 style="color: #667eea; margin-bottom: 20px;">Selecciona la Dificultad</h2>
+                    
+                    <div class="difficulty-selector">
+                        <button class="difficulty-btn selected" onclick="memoryGame.selectDifficulty('EASY', event)">
+                            <div style="font-size: 2em; margin-bottom: 5px;">😊</div>
+                            <div>Fácil</div>
+                            <div style="font-size: 0.8em; color: #888;">4x4 - Sin límite</div>
+                        </button>
+                        <button class="difficulty-btn" onclick="memoryGame.selectDifficulty('MEDIUM', event)">
+                            <div style="font-size: 2em; margin-bottom: 5px;">🤔</div>
+                            <div>Medio</div>
+                            <div style="font-size: 0.8em; color: #888;">5x4 - 2 min</div>
+                        </button>
+                        <button class="difficulty-btn" onclick="memoryGame.selectDifficulty('HARD', event)">
+                            <div style="font-size: 2em; margin-bottom: 5px;">😈</div>
+                            <div>Difícil</div>
+                            <div style="font-size: 0.8em; color: #888;">6x5 - 2:30 min</div>
+                        </button>
+                    </div>
+                    
+                    <button class="start-btn" style="margin-top: 30px;" onclick="memoryGame.startGame()">
+                        ▶️ Comenzar Juego
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Pantalla de Juego -->
+            <div id="gameScreen" style="display: none;">
+                <!-- Stats -->
+                <div class="stats">
+                    <div class="stat-item">
+                        <span class="stat-label">⏱️ Tiempo</span>
+                        <span class="stat-value" id="timer">0:00</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">🔄 Movimientos</span>
+                        <span class="stat-value" id="moves">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">✅ Parejas</span>
+                        <span class="stat-value" id="pairs">0/8</span>
+                    </div>
+                </div>
+                
+                <!-- Grid de Cartas -->
+                <div class="cards-grid easy" id="cardsGrid">
+                    <!-- Las cartas se generan dinámicamente -->
+                </div>
+            </div>
+            
+            <!-- Pantalla de Resultados -->
+            <div id="resultsScreen" style="display: none;">
+                <div style="text-align: center; padding: 20px 0;">
+                    <h2 id="resultsTitle" style="color: #667eea; margin-bottom: 20px;">🎉 ¡Completado!</h2>
+                    <div class="final-score" id="finalScore">0</div>
+                    <p id="resultsMessage" style="margin-bottom: 20px;"></p>
+                    
+                    <div class="metrics">
+                        <div class="metric-item">
+                            <div class="metric-value" id="finalTime">0:00</div>
+                            <div class="metric-label">Tiempo</div>
+                        </div>
+                        <div class="metric-item">
+                            <div class="metric-value" id="finalMoves">0</div>
+                            <div class="metric-label">Movimientos</div>
+                        </div>
+                        <div class="metric-item">
+                            <div class="metric-value" id="accuracy">100%</div>
+                            <div class="metric-label">Precisión</div>
+                        </div>
+                    </div>
+                    
+                    <div class="metrics" style="margin-top: 15px;">
+                        <div class="metric-item">
+                            <div class="metric-value" id="xpEarned">0</div>
+                            <div class="metric-label">XP Ganado</div>
+                        </div>
+                        <div class="metric-item">
+                            <div class="metric-value" id="coinsEarned">0</div>
+                            <div class="metric-label">Monedas</div>
+                        </div>
+                        <div class="metric-item">
+                            <div class="metric-value" id="ranking">⭐⭐⭐</div>
+                            <div class="metric-label">Ranking</div>
+                        </div>
+                    </div>
+                    
+                    <div id="shopCta" style="margin-top: 20px;"></div>
+                    <div class="modal-actions" style="margin-top: 30px;">
+                        <button class="modal-btn secondary" onclick="memoryGame.shareScore()">
+                            📤 Compartir
+                        </button>
+                        <button class="modal-btn primary" onclick="memoryGame.restart()">
+                            🔄 Jugar de Nuevo
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Scripts -->
+    <script src="../../sdk/analytics.js"></script>
+    <script src="../../sdk/storage.js"></script>
+    <script src="../../sdk/ui.js"></script>
+    <script src="../../sdk/share.js"></script>
+    <script src="memory-data.js"></script>
+    <script src="../word-snap/xp-manager.js"></script>
+    <script src="../word-snap/coins-manager.js"></script>
+    <script src="../word-snap/achievements.js"></script>
+    <script src="../word-snap/audio-manager.js"></script>
+    <script src="../word-snap/error-manager.js"></script>
+    <script src="memory-flip.js"></script>
+</body>
+</html>

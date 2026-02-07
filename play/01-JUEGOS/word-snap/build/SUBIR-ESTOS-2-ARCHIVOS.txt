@@ -1,0 +1,13 @@
+📦 SUBIR ESTOS 2 ARCHIVOS A HOSTINGER
+==========================================
+
+Destino: public_html/play/
+
+1. word-snap-levels.js
+2. memory-flip.html
+
+Acción: SOBRESCRIBIR los archivos existentes
+
+Después de subir:
+- Probar en modo incógnito
+- Ver instrucciones en: SUBIR-AHORA-CORRECCIONES.md

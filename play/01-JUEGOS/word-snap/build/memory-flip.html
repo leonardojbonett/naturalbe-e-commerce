@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Flip - Juego de Memoria</title>
+    <meta name="description" content="Pon a prueba tu memoria con Memory Flip. Encuentra todas las parejas en el menor tiempo posible.">
+    <link rel="stylesheet" href="styles-v2.css">
+    <style>
+        /* Estilos específicos de Memory Flip */
+        .memory-container {
+            max-width: 800px;
+        }
+        
+        /* Grid de cartas */
+        .cards-grid {
+            display: grid;
+            gap: 10px;
+            margin-top: 20px;
+            perspective: 1000px;
+        }
+        
+        .cards-grid.easy {
+            grid-template-columns: repeat(4, 1fr);
+        }
+        
+        .cards-grid.medium {
+            grid-template-columns: repeat(4, 1fr);
+        }
+        
+        .cards-grid.hard {
+            grid-template-columns: repeat(5, 1fr);
+        }
+        
+        /* Carta */
+        .card {
+            aspect-ratio: 1;
+            position: relative;
+            cursor: pointer;
+            transform-style: preserve-3d;
+            transition: transform 0.4s ease, box-shadow 0.2s ease;
+        }
+        
+        .card.disabled {
+            pointer-events: none;
+            opacity: 0.6;
+        }
+        
+        .card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+        }
+        
+        .card-front,
+        .card-back {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            backface-visibility: hidden;
+        }
+        
+        .card-front {
+            background: rgba(255, 255, 255, 0.9);
+            border: 2px solid rgba(0, 0, 0, 0.06);
+            font-size: 2rem;
+        }
+        
+        .card-back {
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            transform: rotateY(180deg);
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+        
+        .card.flipped .card-inner {
+            transform: rotateY(180deg);
+        }
+        
+        .card.matched .card-front {
+            background: #ecfdf3;
+            border-color: #22c55e;
+        }
+        
+        .card.matched {
+            box-shadow: 0 0 0 2px rgba(34, 197, 94, 0.5);
+        }
+        
+        .card.wrong {
+            animation: shake 0.25s ease;
+            box-shadow: 0 0 0 2px rgba(248, 113, 113, 0.7);
+        }
+        
+        .card.correct {
+            animation: pulse 0.3s ease;
+            box-shadow: 0 0 0 2px rgba(52, 211, 153, 0.8);
+        }
+        
+        /* Animaciones */
+        @keyframes shake {
+            10%, 90% { transform: translateX(-1px); }
+            20%, 80% { transform: translateX(2px); }
+            30%, 50%, 70% { transform: translateX(-4px); }
+            40%, 60% { transform: translateX(4px); }
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .stat-warning {
+            color: #f97316;
+            font-weight: 600;
+        }
+        
+        .life-low {
+            animation: lifePulse 0.8s infinite;
+        }
+        
+        @keyframes lifePulse {
+            0%, 100% { color: #f97316; transform: scale(1); }
+            50% { color: #ef4444; transform: scale(1.08); }
+        }
+        
+        .difficulty-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 4px 10px;
+            border-radius: 999px;
+            font-size: 0.8rem;
+            background: rgba(15, 23, 42, 0.04);
+            color: #334155;
+        }
+        
+        .difficulty-tag span {
+            font-size: 0.9rem;
+        }
+        
+        .set-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 4px 10px;
+            border-radius: 999px;
+            font-size: 0.8rem;
+            background: rgba(59, 130, 246, 0.06);
+            color: #1d4ed8;
+        }
+        
+        .set-pill span {
+            font-size: 0.9rem;
+        }
+        
+        .best-stats {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            font-size: 0.8rem;
+            color: #64748b;
+            margin-top: 6px;
+        }
+        
+        .best-stat-item {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+        }
+        
+        .best-stat-item span {
+            font-size: 0.9rem;
+        }
+        
+        .results-icon {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .results-summary {
+            font-size: 0.95rem;
+            color: #4b5563;
+            margin-bottom: 16px;
+        }
+        
+        .results-metrics {
+            display: flex;
+            justify-content: center;
+            gap: 18px;
+            margin-top: 10px;
+        }
+        
+        .results-metric-item {
+            text-align: center;
+        }
+        
+        .results-metric-value {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #111827;
+        }
+        
+        .results-metric-label {
+            font-size: 0.8rem;
+            color: #6b7280;
+        }
+        
+        @media (max-width: 640px) {
+            .memory-container {
+                padding: 16px;
+            }
+            .cards-grid {
+                gap: 8px;
+            }
+            .card-front {
+                font-size: 1.6rem;
+            }
+            .card-back {
+                font-size: 1.3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="game-container memory-container">
+        <div class="theme-pattern" id="themePattern">🧩</div>
+        
+        <div class="game-content">
+            <div class="header">
+                <a href="index.html" class="back-link">← Volver al Portal</a>
+                <h1>🧩 Memory Flip</h1>
+                <div class="level-badge" id="memoryTitle">
+                    Nivel 1 - Naturaleza
+                </div>
+                <div class="level-info" id="memorySubtitle">
+                    Encuentra todas las parejas
+                </div>
+            </div>
+
+            <div class="stats">
+                <div class="stat-item">
+                    <span class="stat-label">⏱️ Tiempo</span>
+                    <span class="stat-value" id="memoryTime">0:00</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">🔁 Movimientos</span>
+                    <span class="stat-value" id="memoryMoves">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">🎯 Parejas</span>
+                    <span class="stat-value" id="memoryPairs">0/10</span>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-bottom: 10px;">
+                <span class="difficulty-tag" id="difficultyTag">
+                    <span>😊</span> Fácil
+                </span>
+                <span class="set-pill" id="setTag" style="margin-left: 8px;">
+                    <span>🌱</span> Naturaleza
+                </span>
+                <div class="best-stats" id="bestStats">
+                    <div class="best-stat-item">
+                        🕒 Mejor tiempo: <span id="bestTimeText">--:--</span>
+                    </div>
+                    <div class="best-stat-item">
+                        🔁 Mejores movs: <span id="bestMovesText">--</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="controls" style="margin-bottom: 10px;">
+                <button class="control-btn active" id="easyBtn" onclick="memoryGame.setDifficulty('easy', event)">
+                    😌 Fácil
+                </button>
+                <button class="control-btn" id="mediumBtn" onclick="memoryGame.setDifficulty('medium', event)">
+                    🙂 Medio
+                </button>
+                <button class="control-btn" id="hardBtn" onclick="memoryGame.setDifficulty('hard', event)">
+                    😈 Difícil
+                </button>
+            </div>
+
+            <div class="controls" style="margin-bottom: 10px;">
+                <button class="control-btn" onclick="memoryGame.previousSet()">
+                    ⬅️ Set anterior
+                </button>
+                <button class="control-btn" onclick="memoryGame.nextSet()">
+                    ➡️ Siguiente set
+                </button>
+                <button class="control-btn" onclick="memoryGame.restart()">
+                    🔄 Reiniciar
+                </button>
+            </div>
+
+            <div class="grid-container">
+                <div id="cardsGrid" class="cards-grid easy">
+                    <!-- Cartas generadas dinámicamente -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Resultados -->
+    <div class="modal" id="memoryResultsModal">
+        <div class="modal-content" style="max-width: 480px;">
+            <div class="results-icon" id="resultsIcon">🎉</div>
+            <h2 id="resultsTitle">¡Reto completado!</h2>
+            <p class="results-summary" id="resultsSummary">
+                Encontraste todas las parejas. ¿Listo para otro reto?
+            </p>
+
+            <div class="results-metrics">
+                <div class="results-metric-item">
+                    <div class="results-metric-value" id="resultTimeValue">0:00</div>
+                    <div class="results-metric-label">Tiempo</div>
+                </div>
+                <div class="results-metric-item">
+                    <div class="results-metric-value" id="resultMovesValue">0</div>
+                    <div class="results-metric-label">Movimientos</div>
+                </div>
+                <div class="results-metric-item">
+                    <div class="results-metric-value" id="resultScoreValue">0</div>
+                    <div class="results-metric-label">Puntuación</div>
+                </div>
+            </div>
+
+            <div class="best-stats" style="margin-top: 14px;" id="resultsBestStats">
+                <div class="best-stat-item">
+                    🕒 Mejor tiempo: <span id="resultsBestTime">--:--</span>
+                </div>
+                <div class="best-stat-item">
+                    🔁 Mejores movs: <span id="resultsBestMoves">--</span>
+                </div>
+            </div>
+
+            <div class="modal-actions" style="margin-top: 24px;">
+                <button class="modal-btn secondary" onclick="memoryGame.shareScore()">
+                    📤 Compartir
+                </button>
+                <button class="modal-btn primary" onclick="memoryGame.nextChallenge()">
+                    ➡️ Siguiente Reto
+                </button>
+                <button class="modal-btn secondary" onclick="memoryGame.restart()">
+                    🔄 Reintentar
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="memory-data.js"></script>
+    <script src="global-player.js"></script>
+    <script src="xp-manager.js"></script>
+    <script src="coins-manager.js"></script>
+    <script src="achievements.js"></script>
+    <script src="audio-manager.js"></script>
+    <script src="error-manager.js"></script>
+    <script src="memory-flip.js?v=2"></script>
+</body>
+</html>

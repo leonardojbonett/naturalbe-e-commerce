@@ -1,0 +1,153 @@
+// Word Snap - Sistema de 100 Niveles
+// Datos embebidos para evitar problemas de CORS
+
+const GAME_LEVELS = {
+    version: "3.0",
+    totalLevels: 100,
+    levels: [
+        {nivel: 1, tema: "Países del mundo", icono: "🌍", categoria: "Cultura general", color: "#4CAF50", palabras: ["PERU", "CHILE", "CUBA", "MEXICO", "BRASIL"], palabraOculta: "PANAMA"},
+        {nivel: 2, tema: "Capitales famosas", icono: "🏙️", categoria: "Cultura general", color: "#2196F3", palabras: ["MADRID", "PARIS", "LONDRES", "BERLIN", "ROMA"]},
+        {nivel: 3, tema: "Maravillas naturales", icono: "🌋", categoria: "Cultura general", color: "#FF5722", palabras: ["EVEREST", "AMAZONAS", "SAHARA", "NIAGARA", "IGUAZU"]},
+        {nivel: 4, tema: "Monumentos famosos", icono: "🗽", categoria: "Cultura general", color: "#9C27B0", palabras: ["TORRE", "COLISEO", "PIRAMIDE", "TEMPLO", "MURALLA"]},
+        {nivel: 5, tema: "Fenómenos del clima", icono: "⛈️", categoria: "Ciencia", color: "#607D8B", palabras: ["HURACAN", "TORNADO", "LLUVIA", "NEVADA", "GRANIZO"]},
+        {nivel: 6, tema: "Objetos del espacio", icono: "🌌", categoria: "Ciencia", color: "#3F51B5", palabras: ["PLANETA", "ESTRELLA", "GALAXIA", "COMETA", "ASTEROIDE"]},
+        {nivel: 7, tema: "Conceptos de ciencia", icono: "🧪", categoria: "Ciencia", color: "#00BCD4", palabras: ["ATOMO", "MOLECULA", "CELULA", "ENERGIA", "FUERZA"]},
+        {nivel: 8, tema: "Autores importantes", icono: "✍️", categoria: "Arte y cultura", color: "#795548", palabras: ["CERVANTES", "BORGES", "LORCA", "NERUDA", "GARCIA"]},
+        {nivel: 9, tema: "Películas icónicas", icono: "🎬", categoria: "Cine y TV", color: "#E91E63", palabras: ["TITANIC", "STARWARS", "MATRIX", "PADRINO", "AVATAR"]},
+        {nivel: 10, tema: "Canciones famosas", icono: "🎵", categoria: "Música", color: "#FF9800", palabras: ["IMAGINE", "THRILLER", "DESPACITO", "BOHEMIAN", "SHAPE"], palabraOculta: "YESTERDAY"},
+        {nivel: 11, tema: "Océanos y mares", icono: "🌊", categoria: "Geografía", color: "#0288D1", palabras: ["ATLANTICO", "PACIFICO", "INDICO", "ARTICO", "MEDITERRANEO"]},
+        {nivel: 12, tema: "Comidas del mundo", icono: "🍽️", categoria: "Cultura general", color: "#FF5722", palabras: ["PIZZA", "TACO", "SUSHI", "PASTA", "PAELLA"]},
+        {nivel: 13, tema: "Palabras comunes", icono: "🗣️", categoria: "Idioma", color: "#4CAF50", palabras: ["CASA", "FAMILIA", "AMIGO", "ESCUELA", "TRABAJO"]},
+        {nivel: 14, tema: "Fútbol mundial", icono: "⚽", categoria: "Deportes", color: "#4CAF50", palabras: ["GOL", "PENALTI", "PORTERO", "DELANTERO", "DEFENSA"], palabraOculta: "ARBITRO"},
+        {nivel: 15, tema: "Baloncesto", icono: "🏀", categoria: "Deportes", color: "#FF9800", palabras: ["TRIPLE", "REBOTE", "DRIBLE", "PIVOT", "BASE"]},
+        {nivel: 16, tema: "Tenis", icono: "🎾", categoria: "Deportes", color: "#CDDC39", palabras: ["SAQUE", "VOLEA", "SET", "RAQUETA", "RED"]},
+        {nivel: 17, tema: "Fútbol americano", icono: "🏈", categoria: "Deportes", color: "#795548", palabras: ["TACKLE", "PASE", "PATADA", "LINEA", "CASCO"]},
+        {nivel: 18, tema: "Béisbol", icono: "⚾", categoria: "Deportes", color: "#F44336", palabras: ["JONRON", "PITCHER", "CATCHER", "BATEADOR", "BASE"]},
+        {nivel: 19, tema: "Voleibol", icono: "🏐", categoria: "Deportes", color: "#2196F3", palabras: ["SAQUE", "REMATE", "BLOQUEO", "LIBERO", "RECEPCION"]},
+        {nivel: 20, tema: "Fórmula 1", icono: "🏎️", categoria: "Deportes", color: "#F44336", palabras: ["PODIO", "POLE", "PITSTOP", "CASCO", "MONOPLAZA"]},
+        {nivel: 21, tema: "Ciclismo", icono: "🚴", categoria: "Deportes", color: "#FFEB3B", palabras: ["ETAPA", "PELOTON", "SPRINT", "ESCALADOR", "MAILLOT"]},
+        {nivel: 22, tema: "Boxeo", icono: "🥊", categoria: "Deportes", color: "#F44336", palabras: ["RING", "KO", "GUANTES", "ROUND", "CATEGORIA"]},
+        {nivel: 23, tema: "Artes marciales", icono: "🥋", categoria: "Deportes", color: "#9C27B0", palabras: ["KARATE", "JUDO", "TAEKWONDO", "AIKIDO", "KUNGFU"]},
+        {nivel: 24, tema: "Deportes acuáticos", icono: "🏊", categoria: "Deportes", color: "#00BCD4", palabras: ["NATACION", "WATERPOLO", "SURF", "VELA", "REMO"]},
+        {nivel: 25, tema: "Mundial de fútbol", icono: "🏆", categoria: "Deportes", color: "#FFD700", palabras: ["COPAMUNDO", "QATAR", "RUSIA", "BRASIL", "ALEMANIA"]},
+        {nivel: 26, tema: "Estadios famosos", icono: "🏟️", categoria: "Deportes", color: "#4CAF50", palabras: ["MARACANA", "WEMBLEY", "BOMBONERA", "CAMPNOU", "BERNABEU"]},
+        {nivel: 27, tema: "Deportistas legendarios", icono: "👟", categoria: "Deportes", color: "#FF9800", palabras: ["PELE", "MARADONA", "MESSI", "RONALDO", "JORDAN"]},
+        {nivel: 28, tema: "Juegos Olímpicos", icono: "🏅", categoria: "Deportes", color: "#FFD700", palabras: ["ATLETISMO", "MARATON", "ORO", "PLATA", "BRONCE"]},
+        {nivel: 29, tema: "Civilizaciones antiguas", icono: "🏺", categoria: "Historia", color: "#795548", palabras: ["EGIPCIOS", "GRIEGOS", "ROMANOS", "MAYAS", "AZTECAS"]},
+        {nivel: 30, tema: "Edad Media", icono: "🏰", categoria: "Historia", color: "#607D8B", palabras: ["CASTILLO", "CABALLERO", "ARMADURA", "FEUDALISMO", "REINO"]},
+        {nivel: 31, tema: "Imperio romano", icono: "🗡️", categoria: "Historia", color: "#F44336", palabras: ["CESAR", "SENADO", "LEGION", "GLADIADOR", "COLISEO"]},
+        {nivel: 32, tema: "Samuráis", icono: "🎌", categoria: "Historia", color: "#E91E63", palabras: ["SAMURAI", "KATANA", "SHOGUN", "DAIMYO", "BUSHIDO"]},
+        {nivel: 33, tema: "Grandes exploradores", icono: "🧭", categoria: "Historia", color: "#00BCD4", palabras: ["COLON", "MAGALLANES", "DAGAMA", "MARCOPOLO", "COOK"]},
+        {nivel: 34, tema: "Historia de USA", icono: "🗽", categoria: "Historia", color: "#2196F3", palabras: ["INDEPENDENCIA", "LINCOLN", "WASHINGTON", "GUERRACIVIL", "CONSTITUCION"]},
+        {nivel: 35, tema: "Reyes y reinas", icono: "👑", categoria: "Historia", color: "#9C27B0", palabras: ["ISABEL", "ENRIQUE", "CARLOSMAGNO", "FELIPE", "VICTORIA"]},
+        {nivel: 36, tema: "Revolución francesa", icono: "🇫🇷", categoria: "Historia", color: "#2196F3", palabras: ["BASTILLA", "GUILLOTINA", "ROBESPIERRE", "NAPOLEON", "REPUBLICA"]},
+        {nivel: 37, tema: "Segunda Guerra Mundial", icono: "🎖️", categoria: "Historia", color: "#607D8B", palabras: ["ALIADOS", "EJE", "BLITZKRIEG", "NORMANDIA", "HITLER"]},
+        {nivel: 38, tema: "Imperios árabes", icono: "🕌", categoria: "Historia", color: "#4CAF50", palabras: ["CALIFATO", "CORDOBA", "DAMASCO", "BAGDAD", "OMAYAS"]},
+        {nivel: 39, tema: "Filosofía clásica", icono: "📜", categoria: "Historia", color: "#795548", palabras: ["PLATON", "ARISTOTELES", "SOCRATES", "ETICA", "LOGICA"]},
+        {nivel: 40, tema: "Egipto antiguo", icono: "🦂", categoria: "Historia", color: "#FFD700", palabras: ["NILO", "FARAON", "PIRAMIDE", "MOMIA", "TUTANKAMON"]},
+        {nivel: 41, tema: "Descubrimientos", icono: "💡", categoria: "Historia", color: "#FFEB3B", palabras: ["PENICILINA", "VACUNA", "ELECTRICIDAD", "IMPRENTA", "RADIO"]},
+        {nivel: 42, tema: "Inventos", icono: "⚙️", categoria: "Historia", color: "#607D8B", palabras: ["RUEDA", "IMPRENTA", "MOTOR", "COMPUTADORA", "TELEVISION"]},
+        {nivel: 43, tema: "Líderes históricos", icono: "🧑‍⚖️", categoria: "Historia", color: "#3F51B5", palabras: ["GANDHI", "MANDELA", "WASHINGTON", "LINCOLN", "BOLIVAR"]},
+        {nivel: 44, tema: "Biología", icono: "🧬", categoria: "Ciencia", color: "#4CAF50", palabras: ["ADN", "ARN", "CELULA", "TEJIDO", "ORGANISMO"]},
+        {nivel: 45, tema: "Genética", icono: "🧪", categoria: "Ciencia", color: "#9C27B0", palabras: ["GENOTIPO", "FENOTIPO", "ALELO", "HERENCIA", "CRUZAMIENTO"]},
+        {nivel: 46, tema: "Química básica", icono: "⚗️", categoria: "Ciencia", color: "#00BCD4", palabras: ["ELEMENTO", "COMPUESTO", "ATOMO", "MOLECULA", "REACCION"]},
+        {nivel: 47, tema: "Física fundamental", icono: "⚛️", categoria: "Ciencia", color: "#3F51B5", palabras: ["MASA", "VELOCIDAD", "ACELERACION", "FUERZA", "TRABAJO"]},
+        {nivel: 48, tema: "Astronomía", icono: "🌠", categoria: "Ciencia", color: "#673AB7", palabras: ["PLANETA", "ESTRELLA", "GALAXIA", "NEBULOSA", "ORBITA"]},
+        {nivel: 49, tema: "Exploración espacial", icono: "🚀", categoria: "Ciencia", color: "#FF5722", palabras: ["APOLO", "COHETE", "ASTRONAUTA", "NAVE", "MODULO"]},
+        {nivel: 50, tema: "Inteligencia artificial", icono: "🤖", categoria: "Tecnología", color: "#607D8B", palabras: ["ALGORITMO", "APRENDIZAJE", "REDNEURONAL", "DATOS", "MODELO"], palabraOculta: "CHATGPT"},
+        {nivel: 51, tema: "Informática", icono: "💻", categoria: "Tecnología", color: "#2196F3", palabras: ["PROGRAMA", "CODIGO", "SOFTWARE", "HARDWARE", "PROCESADOR"]},
+        {nivel: 52, tema: "Tecnología moderna", icono: "📱", categoria: "Tecnología", color: "#9C27B0", palabras: ["SMARTPHONE", "TABLET", "NUBE", "WIFI", "BLUETOOTH"]},
+        {nivel: 53, tema: "Ciencias de la tierra", icono: "🌋", categoria: "Ciencia", color: "#FF5722", palabras: ["PLACA", "VOLCAN", "TERREMOTO", "TSUNAMI", "EROSION"]},
+        {nivel: 54, tema: "Neurociencia", icono: "🧠", categoria: "Ciencia", color: "#E91E63", palabras: ["NEURONA", "SINAPSIS", "AXON", "CORTEX", "MEMORIA"]},
+        {nivel: 55, tema: "Herramientas científicas", icono: "🔬", categoria: "Ciencia", color: "#00BCD4", palabras: ["MICROSCOPIO", "TELESCOPIO", "TERMOMETRO", "BALANZA", "PROBETA"]},
+        {nivel: 56, tema: "Satélites", icono: "🛰️", categoria: "Ciencia", color: "#607D8B", palabras: ["SATELITE", "ORBITA", "COMUNICACION", "GPS", "TELECOM"]},
+        {nivel: 57, tema: "Animales", icono: "🐾", categoria: "Ciencia", color: "#795548", palabras: ["MAMIFEROS", "AVES", "REPTILES", "ANFIBIOS", "PECES"]},
+        {nivel: 58, tema: "Botánica", icono: "🌱", categoria: "Ciencia", color: "#4CAF50", palabras: ["RAIZ", "TALLO", "HOJA", "FLOR", "FRUTO"]},
+        {nivel: 59, tema: "Teatro", icono: "🎭", categoria: "Arte y cultura", color: "#E91E63", palabras: ["ESCENA", "ACTOR", "GUION", "DIRECTOR", "TRAGEDIA"]},
+        {nivel: 60, tema: "Pintores famosos", icono: "🎨", categoria: "Arte y cultura", color: "#FF9800", palabras: ["PICASSO", "VANGOGH", "REMBRANDT", "DAVINCI", "GOYA"]},
+        {nivel: 61, tema: "Obras de arte", icono: "🖼️", categoria: "Arte y cultura", color: "#9C27B0", palabras: ["MONALISA", "GUERNICA", "NOCHE", "GRITO", "CENA"]},
+        {nivel: 62, tema: "Literatura universal", icono: "📚", categoria: "Arte y cultura", color: "#795548", palabras: ["QUIJOTE", "ODISEA", "ILIADA", "HAMLET", "FAUSTO"]},
+        {nivel: 63, tema: "Música clásica", icono: "🎼", categoria: "Música", color: "#3F51B5", palabras: ["BEETHOVEN", "MOZART", "BACH", "CHOPIN", "VIVALDI"]},
+        {nivel: 64, tema: "Cantantes famosos", icono: "🎤", categoria: "Música", color: "#E91E63", palabras: ["SHAKIRA", "ADELE", "MICHAEL", "MADONNA", "BADBUNNY"]},
+        {nivel: 65, tema: "Hollywood", icono: "🎞️", categoria: "Cine y TV", color: "#FFD700", palabras: ["CASABLANCA", "CHAPLIN", "HITCHCOCK", "MARILYN", "OSCARS"]},
+        {nivel: 66, tema: "Series icónicas", icono: "📺", categoria: "Cine y TV", color: "#F44336", palabras: ["FRIENDS", "BREAKING", "GAMEOFTHRONES", "LOST", "STRANGER"]},
+        {nivel: 67, tema: "Videojuegos retro", icono: "🕹️", categoria: "Videojuegos", color: "#9C27B0", palabras: ["MARIO", "ZELDA", "TETRIS", "PACMAN", "SONIC"]},
+        {nivel: 68, tema: "Videojuegos modernos", icono: "🎮", categoria: "Videojuegos", color: "#2196F3", palabras: ["FORTNITE", "MINECRAFT", "GTA", "FIFA", "LOL"]},
+        {nivel: 69, tema: "Caricaturas", icono: "📺", categoria: "Cine y TV", color: "#FF9800", palabras: ["SPONGEBOB", "DORA", "POKEMON", "DRAGONBALL", "RUGRATS"]},
+        {nivel: 70, tema: "Cultura pop", icono: "🪩", categoria: "Cultura general", color: "#E91E63", palabras: ["MEME", "HASHTAG", "TIKTOK", "INFLUENCER", "STREAMER"]},
+        {nivel: 71, tema: "Instrumentos musicales", icono: "🎹", categoria: "Música", color: "#795548", palabras: ["GUITARRA", "PIANO", "BATERIA", "BAJO", "VIOLIN"]},
+        {nivel: 72, tema: "Bailes del mundo", icono: "💃", categoria: "Cultura general", color: "#F44336", palabras: ["SALSA", "TANGO", "FLAMENCO", "SAMBA", "REGGAETON"]},
+        {nivel: 73, tema: "Fotografía", icono: "📸", categoria: "Arte y cultura", color: "#607D8B", palabras: ["LENTE", "ENFOQUE", "FLASH", "EXPOSICION", "TRIPODE"]},
+        {nivel: 74, tema: "Continentes", icono: "🌍", categoria: "Geografía", color: "#4CAF50", palabras: ["AFRICA", "AMERICA", "ASIA", "EUROPA", "OCEANIA"]},
+        {nivel: 75, tema: "Cordilleras", icono: "⛰️", categoria: "Geografía", color: "#795548", palabras: ["ANDES", "ALPES", "HIMALAYA", "ROCOSAS", "APENINOS"]},
+        {nivel: 76, tema: "Volcanes", icono: "🌋", categoria: "Geografía", color: "#FF5722", palabras: ["VESUBIO", "ETNA", "POPOCATEPETL", "KRAKATOA", "FUJI"]},
+        {nivel: 77, tema: "Ríos del mundo", icono: "🌊", categoria: "Geografía", color: "#2196F3", palabras: ["NILO", "AMAZONAS", "YANGTSE", "MISISIPI", "DANUBIO"]},
+        {nivel: 78, tema: "Desiertos", icono: "🏜️", categoria: "Geografía", color: "#FFD700", palabras: ["SAHARA", "GOBI", "KALAHARI", "ATACAMA", "ARABIGO"]},
+        {nivel: 79, tema: "Zonas polares", icono: "❄️", categoria: "Geografía", color: "#00BCD4", palabras: ["ARTICO", "ANTARTIDA", "GLACIAR", "HIELO", "ICEBERG"]},
+        {nivel: 80, tema: "Playas famosas", icono: "🏖️", categoria: "Geografía", color: "#FFEB3B", palabras: ["COPACABANA", "MIAMI", "CANCUN", "MALDIVAS", "BORABORA"]},
+        {nivel: 81, tema: "Ciudades populares", icono: "🌆", categoria: "Geografía", color: "#607D8B", palabras: ["TOKIO", "NUEVAYORK", "LONDRES", "PARIS", "MADRID"]},
+        {nivel: 82, tema: "América Latina", icono: "🇲🇽", categoria: "Geografía", color: "#4CAF50", palabras: ["MEXICO", "ARGENTINA", "CHILE", "COLOMBIA", "PERU"]},
+        {nivel: 83, tema: "España", icono: "🇪🇸", categoria: "Geografía", color: "#F44336", palabras: ["MADRID", "BARCELONA", "SEVILLA", "VALENCIA", "BILBAO"]},
+        {nivel: 84, tema: "Francia", icono: "🇫🇷", categoria: "Geografía", color: "#2196F3", palabras: ["PARIS", "LYON", "MARSELLA", "NIZA", "BURDEOS"]},
+        {nivel: 85, tema: "Japón", icono: "🇯🇵", categoria: "Geografía", color: "#E91E63", palabras: ["TOKIO", "OSAKA", "KYOTO", "HIROSHIMA", "NARA"]},
+        {nivel: 86, tema: "Italia", icono: "🇮🇹", categoria: "Geografía", color: "#4CAF50", palabras: ["ROMA", "MILAN", "VENECIA", "FLORENCIA", "NAPOLES"]},
+        {nivel: 87, tema: "China", icono: "🇨🇳", categoria: "Geografía", color: "#F44336", palabras: ["PEKIN", "SHANGHAI", "CANTON", "HONGKONG", "MURALLA"]},
+        {nivel: 88, tema: "Estados Unidos", icono: "🇺🇸", categoria: "Geografía", color: "#2196F3", palabras: ["NUEVAYORK", "LOSANGELES", "CHICAGO", "MIAMI", "HOUSTON"]},
+        {nivel: 89, tema: "Dinosaurios", icono: "🦕", categoria: "Ciencia", color: "#4CAF50", palabras: ["TIRANOSAURIO", "TRICERATOPS", "VELOCIRAPTOR", "BRONTOSAURIO", "ESTEGOSAURIO"]},
+        {nivel: 90, tema: "Culturas del mundo", icono: "🎎", categoria: "Cultura general", color: "#9C27B0", palabras: ["SAMURAI", "FLAMENCO", "MARIACHI", "YOGA", "TANGO"]},
+        {nivel: 91, tema: "Juegos de mesa", icono: "♟️", categoria: "Cultura general", color: "#795548", palabras: ["AJEDREZ", "DOMINO", "PARQUES", "MONOPOLY", "GO"]},
+        {nivel: 92, tema: "Misterios famosos", icono: "🕵️", categoria: "Cultura general", color: "#607D8B", palabras: ["ATLANTIDA", "AREA51", "BIGFOOT", "YETI", "OVNI"]},
+        {nivel: 93, tema: "Mitología griega", icono: "⚡", categoria: "Historia", color: "#FFD700", palabras: ["ZEUS", "HERA", "POSEIDON", "HADES", "AFRODITA"]},
+        {nivel: 94, tema: "Mitología universal", icono: "🐉", categoria: "Historia", color: "#F44336", palabras: ["ODIN", "THOR", "RA", "ANUBIS", "QUETZALCOATL"]},
+        {nivel: 95, tema: "Supersticiones", icono: "🔮", categoria: "Cultura general", color: "#9C27B0", palabras: ["ESPEJO", "GATO", "ESCALERA", "SAL", "AMULETO"]},
+        {nivel: 96, tema: "Enigmas", icono: "🧩", categoria: "Cultura general", color: "#3F51B5", palabras: ["CODIGO", "CLAVE", "ACERTIJO", "ENIGMA", "RIDDLE"]},
+        {nivel: 97, tema: "Misterios del espacio", icono: "👽", categoria: "Ciencia", color: "#673AB7", palabras: ["AGUJERONEGRO", "MATERIAOSCURA", "ENERGIAOSCURA", "PULSAR", "CUASAR"]},
+        {nivel: 98, tema: "Símbolos universales", icono: "❤️", categoria: "Cultura general", color: "#E91E63", palabras: ["PAZ", "AMOR", "JUSTICIA", "LIBERTAD", "IGUALDAD"]},
+        {nivel: 99, tema: "Emociones humanas", icono: "😊", categoria: "Cultura general", color: "#FFEB3B", palabras: ["ALEGRIA", "TRISTEZA", "MIEDO", "IRA", "SORPRESA"]},
+        {nivel: 100, tema: "Valores universales", icono: "🌟", categoria: "Cultura general", color: "#FFD700", palabras: ["ESPERANZA", "UNION", "FAMILIA", "AMISTAD", "RESPETO"], palabraOculta: "GRATITUD"}
+    ]
+};
+
+// Colores por categoría para fondos temáticos
+const CATEGORY_THEMES = {
+    "Deportes": {
+        background: "linear-gradient(135deg, #4CAF50 0%, #45a049 100%)",
+        emoji: "⚽🏀🏈⚾🎾",
+        pattern: "⚽"
+    },
+    "Historia": {
+        background: "linear-gradient(135deg, #795548 0%, #5d4037 100%)",
+        emoji: "🏺📜🏰⚔️👑",
+        pattern: "📜"
+    },
+    "Ciencia": {
+        background: "linear-gradient(135deg, #2196F3 0%, #1976D2 100%)",
+        emoji: "🔬🧪⚛️🧬🌌",
+        pattern: "⚛️"
+    },
+    "Geografía": {
+        background: "linear-gradient(135deg, #4CAF50 0%, #388E3C 100%)",
+        emoji: "🌍🗺️🏔️🌊🏜️",
+        pattern: "🗺️"
+    },
+    "Arte y cultura": {
+        background: "linear-gradient(135deg, #9C27B0 0%, #7B1FA2 100%)",
+        emoji: "🎨🎭🎬🎵📚",
+        pattern: "🎨"
+    },
+    "Música": {
+        background: "linear-gradient(135deg, #FF9800 0%, #F57C00 100%)",
+        emoji: "🎵🎸🎹🎤🎼",
+        pattern: "🎵"
+    },
+    "Tecnología": {
+        background: "linear-gradient(135deg, #607D8B 0%, #455A64 100%)",
+        emoji: "💻📱🤖🛰️⚙️",
+        pattern: "💻"
+    },
+    "Cultura general": {
+        background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
+        emoji: "🌟✨💫⭐🎯",
+        pattern: "✨"
+    }
+};

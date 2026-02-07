@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Natural Be Play | Microjuegos</title>
+  <meta name="description" content="Microjuegos rapidos para retarte y ganar beneficios en Natural Be. Juega desde tu movil y canjea puntos.">
+  <meta property="og:title" content="Natural Be Play | Microjuegos">
+  <meta property="og:description" content="Juega, gana puntos y canjea beneficios en Natural Be.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://play.naturalbe.com.co/">
+  <meta property="og:image" content="https://play.naturalbe.com.co/assets/cover-placeholder.svg">
+  <meta name="theme-color" content="#0f172a">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0b1220;
+      --bg-accent: #0f172a;
+      --card: #0f172a;
+      --text: #f8fafc;
+      --muted: #cbd5f5;
+      --accent: #22c55e;
+      --accent-dark: #15803d;
+      --chip: rgba(255,255,255,0.1);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Outfit', 'Space Grotesk', sans-serif;
+      background: radial-gradient(circle at 10% 20%, rgba(34,197,94,0.25), transparent 40%),
+                  radial-gradient(circle at 80% 0%, rgba(56,189,248,0.2), transparent 35%),
+                  var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      padding: 32px 20px 60px;
+    }
+
+    .container { max-width: 1100px; margin: 0 auto; }
+
+    header {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      margin-bottom: 32px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .brand-title {
+      font-size: clamp(2rem, 3vw, 3rem);
+      font-weight: 700;
+    }
+
+    .brand-sub {
+      color: var(--muted);
+      font-size: 1.05rem;
+      max-width: 580px;
+    }
+
+    .cta-row {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 12px 18px;
+      border-radius: 14px;
+      border: none;
+      font-weight: 600;
+      text-decoration: none;
+      color: #0b1220;
+      background: var(--accent);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      box-shadow: 0 12px 20px rgba(34,197,94,0.25);
+    }
+
+    .btn.secondary {
+      background: #111827;
+      color: var(--text);
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.15);
+    }
+
+    .btn:hover { transform: translateY(-2px); }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 16px;
+      margin-top: 8px;
+    }
+
+    .stat-card {
+      background: var(--card);
+      border-radius: 16px;
+      padding: 16px;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .stat-card h3 { font-size: 1.6rem; }
+    .stat-card p { color: var(--muted); font-size: 0.95rem; }
+
+    .games-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+      margin-top: 24px;
+    }
+
+    .game-card {
+      background: var(--card);
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.08);
+      display: flex;
+      flex-direction: column;
+      min-height: 100%;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .game-card:hover { transform: translateY(-4px); box-shadow: 0 20px 40px rgba(15,23,42,0.4); }
+
+    .game-card img { width: 100%; height: 160px; object-fit: cover; }
+
+    .game-body { padding: 16px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
+
+    .game-title { font-size: 1.2rem; font-weight: 600; }
+    .game-tagline { color: var(--muted); font-size: 0.95rem; }
+
+    .meta { display: flex; flex-wrap: wrap; gap: 8px; }
+    .chip {
+      background: var(--chip);
+      color: var(--text);
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 0.78rem;
+    }
+
+    .card-actions { display: flex; gap: 10px; margin-top: auto; }
+
+    .priority {
+      border: 1px solid rgba(34,197,94,0.5);
+      box-shadow: 0 0 0 1px rgba(34,197,94,0.25);
+    }
+
+    footer { margin-top: 40px; color: var(--muted); font-size: 0.9rem; text-align: center; }
+
+    @media (max-width: 600px) {
+      body { padding: 24px 16px 40px; }
+      .btn { width: 100%; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div>
+          <div class="brand-title">Natural Be Play</div>
+          <div class="brand-sub">Microjuegos rapidos para entrenar mente, reflexos y memoria. Juega desde tu movil y gana puntos para canjear beneficios en Natural Be.</div>
+        </div>
+        <div class="cta-row">
+          <a class="btn" href="https://naturalbe.com.co/#productos">Comprar suplementos</a>
+          <a class="btn secondary" href="https://wa.me/573137212923">WhatsApp Natural Be</a>
+        </div>
+      </div>
+      <div class="stats">
+        <div class="stat-card">
+          <h3 id="gamesCount">0</h3>
+          <p>Juegos activos</p>
+        </div>
+        <div class="stat-card">
+          <h3>100%</h3>
+          <p>Movil primero</p>
+        </div>
+        <div class="stat-card">
+          <h3>1 codigo</h3>
+          <p>Beneficio local inmediato</p>
+        </div>
+      </div>
+    </header>
+
+    <section>
+      <h2 style="font-size:1.6rem; margin-bottom: 12px;">Juegos destacados</h2>
+      <div class="games-grid" id="gamesGrid"></div>
+    </section>
+
+    <footer>Natural Be Play · Juega, suma puntos y canjea beneficios en la tienda.</footer>
+  </div>
+
+  <script>
+    const grid = document.getElementById('gamesGrid');
+    const countEl = document.getElementById('gamesCount');
+
+    fetch('data/games.json')
+      .then(res => res.json())
+      .then(games => {
+        countEl.textContent = games.length;
+        grid.innerHTML = games.map(game => {
+          const meta = [game.duration, game.difficulty].filter(Boolean)
+            .map(item => `<span class="chip">${item}</span>`).join('');
+          const priority = game.priority ? 'priority' : '';
+          return `
+            <article class="game-card ${priority}">
+              <img src="${game.image}" alt="${game.title}" loading="lazy" onerror="this.src='assets/cover-placeholder.svg'">
+              <div class="game-body">
+                <div class="game-title">${game.title}</div>
+                <div class="game-tagline">${game.tagline || ''}</div>
+                <div class="meta">${meta}</div>
+                <div class="card-actions">
+                  <a class="btn" href="${game.path}">Jugar</a>
+                  <a class="btn secondary" href="https://naturalbe.com.co/#productos">Comprar suplementos</a>
+                </div>
+              </div>
+            </article>
+          `;
+        }).join('');
+      })
+      .catch(() => {
+        grid.innerHTML = '<p>No se pudo cargar el catalogo de juegos.</p>';
+      });
+  </script>
+</body>
+</html>

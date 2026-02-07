@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trivia Challenge - Juego de Cultura General</title>
+    <meta name="description" content="Pon a prueba tus conocimientos con Trivia Challenge. 100 preguntas de cultura general en 7 categorías.">
+    <link rel="stylesheet" href="styles-v2.css">
+    <style>
+        /* Estilos específicos de Trivia Challenge */
+        .trivia-container {
+            max-width: 600px;
+        }
+        
+        .category-badge {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            display: inline-block;
+            font-size: 0.9em;
+            margin-bottom: 15px;
+        }
+        
+        .question-card {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            min-height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        
+        .question-text {
+            font-size: 1.2em;
+            font-weight: 500;
+            color: #333;
+        }
+        
+        .answers-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .answer-btn {
+            padding: 20px;
+            border: 2px solid #e0e0e0;
+            background: white;
+            border-radius: 12px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-align: left;
+        }
+        
+        .answer-btn:hover {
+            border-color: #667eea;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.2);
+        }
+        
+        .answer-btn.correct {
+            background: #4caf50;
+            color: white;
+            border-color: #4caf50;
+            animation: correctPulse 0.5s ease;
+        }
+        
+        .answer-btn.incorrect {
+            background: #f44336;
+            color: white;
+            border-color: #f44336;
+            animation: shake 0.5s ease;
+        }
+        
+        @keyframes correctPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-10px); }
+            75% { transform: translateX(10px); }
+        }
+        
+        .answer-btn:disabled {
+            cursor: not-allowed;
+            opacity: 0.7;
+        }
+        
+        .timer-bar {
+            width: 100%;
+            height: 8px;
+            background: #e0e0e0;
+            border-radius: 4px;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+        
+        .timer-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #4CAF50, #45a049);
+            transition: width 0.1s linear;
+        }
+        
+        .timer-fill.warning {
+            background: linear-gradient(90deg, #ff9800, #f44336);
+        }
+        
+        .lives-display {
+            display: flex;
+            gap: 5px;
+            font-size: 1.5em;
+        }
+        
+        .streak-badge {
+            background: linear-gradient(135deg, #FFD700, #FFA500);
+            color: #333;
+            padding: 5px 15px;
+            border-radius: 15px;
+            font-weight: bold;
+            display: inline-block;
+        }
+        
+        /* Vida baja - parpadeo */
+        .lives-display.low-life {
+            animation: blink 1s infinite;
+        }
+        
+        @keyframes blink {
+            0%, 50%, 100% { opacity: 1; }
+            25%, 75% { opacity: 0.3; }
+        }
+        
+        /* Responsive mejorado */
+        @media (max-width: 768px) {
+            .question-text {
+                font-size: 1em;
+                line-height: 1.4;
+            }
+            
+            .answer-btn {
+                padding: 15px;
+                font-size: 0.9em;
+            }
+            
+            .answers-grid {
+                gap: 10px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .question-card {
+                padding: 15px;
+                min-height: 100px;
+            }
+            
+            .question-text {
+                font-size: 0.95em;
+            }
+            
+            .answer-btn {
+                padding: 12px;
+                font-size: 0.85em;
+                word-wrap: break-word;
+            }
+            
+            .answers-grid {
+                grid-template-columns: 1fr;
+                gap: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="game-container trivia-container">
+        <div class="theme-pattern">🧠</div>
+        
+        <div class="game-content">
+            <!-- Header -->
+            <div class="header">
+                <h1>🧠 Trivia Challenge</h1>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+                    <div class="coins-display">
+                        <span>💰</span>
+                        <span id="coinsDisplay">0</span>
+                    </div>
+                    <div class="player-level-display">
+                        Nivel <span id="playerLevelDisplay">1</span> ⭐
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Pantalla de Inicio -->
+            <div id="startScreen">
+                <div style="text-align: center; padding: 30px 0;">
+                    <h2 style="color: #667eea; margin-bottom: 20px;">¡Pon a prueba tus conocimientos!</h2>
+                    <p style="margin-bottom: 30px; color: #666;">
+                        100 preguntas de cultura general en 7 categorías.<br>
+                        ¡Demuestra cuánto sabes!
+                    </p>
+                    <div style="display: grid; gap: 10px; margin-bottom: 30px;">
+                        <div style="background: #f8f9fa; padding: 15px; border-radius: 10px;">
+                            <strong>📚 Categorías:</strong> Historia, Ciencia, Geografía, Cultura Pop, Deportes, Tecnología, Arte
+                        </div>
+                        <div style="background: #f8f9fa; padding: 15px; border-radius: 10px;">
+                            <strong>⏱️ Tiempo:</strong> 15 segundos por pregunta
+                        </div>
+                        <div style="background: #f8f9fa; padding: 15px; border-radius: 10px;">
+                            <strong>❤️ Vidas:</strong> 3 oportunidades
+                        </div>
+                    </div>
+                    <button class="start-btn" onclick="triviaGame.startGame()">
+                        ▶️ Comenzar Trivia
+                    </button>
+                    <button class="control-btn" style="margin-top: 10px; width: 100%;" onclick="window.location.href='index.html'">
+                        ← Volver al Portal
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Pantalla de Juego -->
+            <div id="gameScreen" style="display: none;">
+                <!-- Stats -->
+                <div class="stats">
+                    <div class="stat-item">
+                        <span class="stat-label">❤️ Vidas</span>
+                        <div class="lives-display" id="livesDisplay">❤️❤️❤️</div>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">📝 Pregunta</span>
+                        <span class="stat-value" id="questionNumber">1/10</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">⭐ Puntos</span>
+                        <span class="stat-value" id="score">0</span>
+                    </div>
+                </div>
+                
+                <!-- Racha -->
+                <div style="text-align: center; margin-bottom: 15px;" id="streakContainer" style="display: none;">
+                    <div class="streak-badge">
+                        🔥 Racha: <span id="streakDisplay">0</span>
+                    </div>
+                </div>
+                
+                <!-- Categoría -->
+                <div style="text-align: center;">
+                    <div class="category-badge" id="categoryDisplay">Historia</div>
+                </div>
+                
+                <!-- Timer -->
+                <div class="timer-bar">
+                    <div class="timer-fill" id="timerFill" style="width: 100%;"></div>
+                </div>
+                
+                <!-- Pregunta -->
+                <div class="question-card">
+                    <div class="question-text" id="questionText">
+                        Cargando pregunta...
+                    </div>
+                </div>
+                
+                <!-- Respuestas -->
+                <div class="answers-grid" id="answersGrid">
+                    <button class="answer-btn" onclick="triviaGame.selectAnswer(0)">A) Opción 1</button>
+                    <button class="answer-btn" onclick="triviaGame.selectAnswer(1)">B) Opción 2</button>
+                    <button class="answer-btn" onclick="triviaGame.selectAnswer(2)">C) Opción 3</button>
+                    <button class="answer-btn" onclick="triviaGame.selectAnswer(3)">D) Opción 4</button>
+                </div>
+            </div>
+            
+            <!-- Pantalla de Resultados -->
+            <div id="resultsScreen" style="display: none;">
+                <div style="text-align: center; padding: 20px 0;">
+                    <h2 id="resultsTitle" style="color: #667eea; margin-bottom: 20px;">¡Partida Terminada!</h2>
+                    <div class="final-score" id="finalScore">0</div>
+                    <p id="resultsMessage" style="margin-bottom: 20px;"></p>
+                    
+                    <div class="metrics">
+                        <div class="metric-item">
+                            <div class="metric-value" id="correctAnswers">0</div>
+                            <div class="metric-label">Correctas</div>
+                        </div>
+                        <div class="metric-item">
+                            <div class="metric-value" id="maxStreak">0</div>
+                            <div class="metric-label">Racha Máx</div>
+                        </div>
+                        <div class="metric-item">
+                            <div class="metric-value" id="coinsEarned">0</div>
+                            <div class="metric-label">Monedas</div>
+                        </div>
+                    </div>
+                    
+                    <div class="metrics" style="margin-top: 15px;">
+                        <div class="metric-item">
+                            <div class="metric-value" id="xpEarned">0</div>
+                            <div class="metric-label">XP Ganado</div>
+                        </div>
+                        <div class="metric-item">
+                            <div class="metric-value" id="accuracy">0%</div>
+                            <div class="metric-label">Precisión</div>
+                        </div>
+                        <div class="metric-item">
+                            <div class="metric-value" id="totalQuestions">0</div>
+                            <div class="metric-label">Preguntas</div>
+                        </div>
+                    </div>
+                    
+                    <div class="modal-actions" style="margin-top: 30px;">
+                        <button class="modal-btn secondary" onclick="triviaGame.shareScore()">
+                            📤 Compartir
+                        </button>
+                        <button class="modal-btn primary" onclick="triviaGame.restart()">
+                            🔄 Jugar de Nuevo
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Scripts -->
+    <script src="trivia-data.js"></script>
+    <script src="xp-manager.js"></script>
+    <script src="coins-manager.js"></script>
+    <script src="achievements.js"></script>
+    <script src="audio-manager.js"></script>
+    <script src="ad-manager.js"></script>
+    <script src="error-manager.js"></script>
+    <script src="trivia-challenge.js"></script>
+</body>
+</html>

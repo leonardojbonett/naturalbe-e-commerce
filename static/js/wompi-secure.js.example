@@ -1,0 +1,519 @@
+// ============================================
+// WOMPI INTEGRATION - VERSIÓN SEGURA
+// Validación robusta y referencias seguras
+// ============================================
+
+(() => {
+'use strict';
+
+// ============================================
+// CONFIGURACIÓN SEGURA
+// ============================================
+
+/**
+ * Obtiene configuración desde meta tags (más seguro que hardcode)
+ */
+function getWompiConfig() {
+    const metaKey = document.querySelector('meta[name="wompi-public-key"]');
+    const publicKey = metaKey?.getAttribute('content');
+    
+    if (!publicKey) {
+        console.error('Wompi public key not found in meta tags');
+        return null;
+    }
+    
+    return {
+        publicKey: publicKey.trim(),
+        currency: 'COP',
+        successUrl: `${window.location.origin}/pago-exitoso.html`,
+        cancelUrl: `${window.location.origin}/pago-cancelado.html`,
+        storeName: 'Natural Be',
+        storePhone: '+573137212923',
+        storeEmail: 'contacto@naturalbe.com.co'
+    };
+}
+
+const WOMPI_CONFIG = getWompiConfig();
+if (!WOMPI_CONFIG) {
+    console.error('No se pudo cargar la configuración de Wompi');
+}
+
+// ============================================
+// VALIDACIÓN DE DATOS
+// ============================================
+
+const VALIDATORS = {
+    name: (value) => {
+        const trimmed = value.trim();
+        if (trimmed.length < 2) {
+            return 'El nombre debe tener al menos 2 caracteres';
+        }
+        if (trimmed.length > 100) {
+            return 'El nombre es demasiado largo';
+        }
+        // Permitir letras, espacios, acentos y caracteres comunes en nombres
+        if (!/^[a-zA-ZáéíóúÁÉÍÓÚñÑüÜ\s'-]+$/.test(trimmed)) {
+            return 'El nombre solo puede contener letras y espacios';
+        }
+        return null;
+    },
+    
+    email: (value) => {
+        const trimmed = value.trim().toLowerCase();
+        if (trimmed.length === 0) {
+            return 'El email es requerido';
+        }
+        if (trimmed.length > 254) {
+            return 'El email es demasiado largo';
+        }
+        // RFC 5322 compliant (simplificado)
+        const emailRegex = /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;
+        if (!emailRegex.test(trimmed)) {
+            return 'El formato del email no es válido';
+        }
+        return null;
+    },
+    
+    phone: (value) => {
+        const digits = value.replace(/\D/g, '');
+        if (digits.length < 10) {
+            return 'El teléfono debe tener al menos 10 dígitos';
+        }
+        if (digits.length > 15) {
+            return 'El teléfono es demasiado largo';
+        }
+        // Validar formato colombiano (empezar con 3)
+        if (!/^3[0-9]{9}$/.test(digits)) {
+            return 'Debe ser un número colombiano válido (empezar con 3)';
+        }
+        return null;
+    },
+    
+    city: (value) => {
+        const trimmed = value.trim();
+        if (trimmed.length === 0) {
+            return 'Debes seleccionar una ciudad';
+        }
+        const validCities = [
+            'Barranquilla', 'Bogotá', 'Medellín', 'Cali', 
+            'Cartagena', 'Santa Marta', 'Bucaramanga', 'Otra'
+        ];
+        if (!validCities.includes(trimmed)) {
+            return 'Ciudad no válida';
+        }
+        return null;
+    },
+    
+    address: (value) => {
+        const trimmed = value.trim();
+        if (trimmed.length < 10) {
+            return 'La dirección debe tener al menos 10 caracteres';
+        }
+        if (trimmed.length > 200) {
+            return 'La dirección es demasiado larga';
+        }
+        // Permitir caracteres comunes en direcciones
+        if (!/^[a-zA-Z0-9áéíóúÁÉÍÓÚñÑ\s#\-.,°]+$/.test(trimmed)) {
+            return 'La dirección contiene caracteres inválidos';
+        }
+        return null;
+    }
+};
+
+/**
+ * Valida un campo del formulario
+ */
+function validateField(fieldId, validator) {
+    const field = document.getElementById(fieldId);
+    if (!field) return false;
+    
+    const value = field.value;
+    const error = validator(value);
+    
+    // Mostrar/ocultar error
+    let errorEl = document.getElementById(`${fieldId}Error`);
+    if (!errorEl) {
+        errorEl = document.createElement('div');
+        errorEl.id = `${fieldId}Error`;
+        errorEl.className = 'field-error';
+        field.parentNode.appendChild(errorEl);
+    }
+    
+    if (error) {
+        field.classList.add('error');
+        errorEl.textContent = error;
+        errorEl.style.display = 'block';
+        return false;
+    } else {
+        field.classList.remove('error');
+        errorEl.style.display = 'none';
+        return true;
+    }
+}
+
+/**
+ * Valida todo el formulario
+ */
+function validateForm() {
+    const fields = [
+        { id: 'wompiCustomerName', validator: VALIDATORS.name },
+        { id: 'wompiCustomerEmail', validator: VALIDATORS.email },
+        { id: 'wompiCustomerPhone', validator: VALIDATORS.phone },
+        { id: 'wompiCustomerCity', validator: VALIDATORS.city },
+        { id: 'wompiCustomerAddress', validator: VALIDATORS.address }
+    ];
+    
+    let isValid = true;
+    fields.forEach(({ id, validator }) => {
+        if (!validateField(id, validator)) {
+            isValid = false;
+        }
+    });
+    
+    return isValid;
+}
+
+// ============================================
+// GENERACIÓN DE REFERENCIA SEGURA
+// ============================================
+
+/**
+ * Genera una referencia criptográficamente segura
+ */
+function generateSecureReference(phone) {
+    const timestamp = Date.now();
+    
+    // Usar crypto API para generar valores aleatorios seguros
+    const randomArray = new Uint32Array(2);
+    crypto.getRandomValues(randomArray);
+    
+    // Crear hash único combinando timestamp y valores aleatorios
+    const hashInput = `${timestamp}-${randomArray[0]}-${randomArray[1]}-${phone}`;
+    
+    // Crear hash simple (en producción, usar crypto.subtle.digest)
+    let hash = 0;
+    for (let i = 0; i < hashInput.length; i++) {
+        const char = hashInput.charCodeAt(i);
+        hash = ((hash << 5) - hash) + char;
+        hash = hash & hash; // Convertir a 32bit integer
+    }
+    
+    // Convertir a string base36 (más corto)
+    const hashStr = Math.abs(hash).toString(36).substring(0, 8).toUpperCase();
+    const phoneLast4 = phone.replace(/\D/g, '').slice(-4);
+    
+    return `NB-${timestamp}-${hashStr}-${phoneLast4}`;
+}
+
+// ============================================
+// VALIDACIÓN DE INTEGRIDAD DEL CARRITO
+// ============================================
+
+/**
+ * Valida que el carrito no haya sido manipulado
+ */
+async function validateCartIntegrity() {
+    if (typeof cart === 'undefined' || !Array.isArray(cart) || cart.length === 0) {
+        return { valid: false, error: 'El carrito está vacío' };
+    }
+    
+    // Verificar que todos los productos existen y tienen precios válidos
+    if (typeof PRODUCTS === 'undefined' || !Array.isArray(PRODUCTS)) {
+        return { valid: false, error: 'Catálogo de productos no disponible' };
+    }
+    
+    const invalidItems = [];
+    cart.forEach(item => {
+        const product = PRODUCTS.find(p => String(p.id) === String(item.id));
+        
+        if (!product) {
+            invalidItems.push({ id: item.id, reason: 'Producto no encontrado' });
+        } else if (Number(product.precio || product.price) !== Number(item.price)) {
+            invalidItems.push({ 
+                id: item.id, 
+                reason: 'Precio no coincide',
+                expected: product.precio || product.price,
+                actual: item.price
+            });
+        } else if (!product.disponible && product.disponible !== undefined) {
+            invalidItems.push({ id: item.id, reason: 'Producto no disponible' });
+        }
+    });
+    
+    if (invalidItems.length > 0) {
+        return { 
+            valid: false, 
+            error: 'Algunos productos del carrito no son válidos',
+            invalidItems 
+        };
+    }
+    
+    return { valid: true };
+}
+
+/**
+ * Calcula hash del carrito para verificación de integridad
+ */
+async function hashCart(cartItems) {
+    // Ordenar items por ID para consistencia
+    const sorted = [...cartItems].sort((a, b) => String(a.id).localeCompare(String(b.id)));
+    const cartString = JSON.stringify(sorted);
+    
+    // Usar Web Crypto API para hash seguro
+    const encoder = new TextEncoder();
+    const data = encoder.encode(cartString);
+    
+    try {
+        const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+        const hashArray = Array.from(new Uint8Array(hashBuffer));
+        return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+    } catch (e) {
+        // Fallback simple si crypto no está disponible
+        let hash = 0;
+        for (let i = 0; i < cartString.length; i++) {
+            const char = cartString.charCodeAt(i);
+            hash = ((hash << 5) - hash) + char;
+            hash = hash & hash;
+        }
+        return Math.abs(hash).toString(16);
+    }
+}
+
+// ============================================
+// PROCESAMIENTO DE PAGO SEGURO
+// ============================================
+
+async function processWompiPayment(event) {
+    event.preventDefault();
+    
+    // Validar formulario
+    if (!validateForm()) {
+        alert('Por favor corrige los errores en el formulario');
+        return;
+    }
+    
+    // Validar integridad del carrito
+    const cartValidation = await validateCartIntegrity();
+    if (!cartValidation.valid) {
+        alert(`Error: ${cartValidation.error}`);
+        console.error('Cart validation failed:', cartValidation);
+        return;
+    }
+    
+    // Obtener datos del formulario
+    const formData = {
+        name: document.getElementById('wompiCustomerName').value.trim(),
+        email: document.getElementById('wompiCustomerEmail').value.trim().toLowerCase(),
+        phone: document.getElementById('wompiCustomerPhone').value.trim(),
+        city: document.getElementById('wompiCustomerCity').value.trim(),
+        address: document.getElementById('wompiCustomerAddress').value.trim()
+    };
+    
+    // Calcular totales
+    const subtotal = typeof getCartTotal === 'function' ? getCartTotal() : 0;
+    const shippingCost = typeof calculateShippingWompi === 'function' 
+        ? calculateShippingWompi() 
+        : 0;
+    const total = subtotal + shippingCost;
+    const amountInCents = Math.round(total * 100);
+    
+    // Validar monto
+    if (!Number.isFinite(amountInCents) || amountInCents <= 0) {
+        alert('El monto del pedido no es válido');
+        console.error('Invalid amount:', { amountInCents, total, subtotal, shippingCost });
+        return;
+    }
+    
+    // Generar referencia segura
+    const reference = generateSecureReference(formData.phone);
+    
+    // Generar hash del carrito para verificación
+    const cartHash = await hashCart(cart);
+    
+    // Guardar referencia de orden (sin datos sensibles)
+    try {
+        sessionStorage.setItem('nb_last_order', JSON.stringify({
+            reference,
+            cartHash,
+            amount: total,
+            currency: WOMPI_CONFIG.currency,
+            timestamp: Date.now()
+        }));
+    } catch (e) {
+        console.warn('No se pudo guardar referencia de orden:', e);
+    }
+    
+    // Cargar Wompi si no está cargado
+    if (typeof WidgetCheckout === 'undefined') {
+        try {
+            await loadWompiScript();
+        } catch (e) {
+            alert('No se pudo cargar el sistema de pagos. Por favor intenta de nuevo.');
+            console.error('Wompi load failed:', e);
+            return;
+        }
+    }
+    
+    if (typeof WidgetCheckout === 'undefined') {
+        alert('El sistema de pagos no está disponible. Por favor intenta de nuevo.');
+        return;
+    }
+    
+    // Configurar checkout de Wompi
+    try {
+        const checkout = new WidgetCheckout({
+            currency: WOMPI_CONFIG.currency,
+            amountInCents: amountInCents,
+            reference: reference,
+            publicKey: WOMPI_CONFIG.publicKey,
+            redirectUrl: `${WOMPI_CONFIG.successUrl}?ref=${encodeURIComponent(reference)}`,
+            customerData: {
+                email: formData.email,
+                fullName: formData.name,
+                phoneNumber: formData.phone.replace(/\D/g, ''),
+                phoneNumberPrefix: '+57'
+            },
+            shippingAddress: {
+                addressLine1: formData.address,
+                city: formData.city,
+                phoneNumber: formData.phone.replace(/\D/g, ''),
+                region: 'Colombia',
+                country: 'CO'
+            }
+        });
+        
+        // Abrir widget
+        checkout.open(function(result) {
+            handleWompiResult(result, reference, total);
+        });
+        
+    } catch (error) {
+        console.error('Error procesando pago con Wompi:', error);
+        alert('Hubo un error al procesar el pago. Por favor intenta de nuevo o contacta soporte.');
+    }
+}
+
+/**
+ * Maneja el resultado del pago de Wompi
+ */
+function handleWompiResult(result, reference, total) {
+    if (result.transaction) {
+        switch (result.transaction.status) {
+            case 'APPROVED':
+                handlePaymentSuccess(reference, total);
+                break;
+            case 'DECLINED':
+                handlePaymentDeclined(reference, total);
+                break;
+            case 'PENDING':
+                handlePaymentPending(reference, total);
+                break;
+            default:
+                handlePaymentError(reference, 'Estado desconocido');
+        }
+    } else {
+        // Usuario cerró el widget
+        handlePaymentCancelled(reference);
+    }
+}
+
+function handlePaymentSuccess(reference, total) {
+    // Tracking
+    if (typeof nbGa4EcomEvent === 'function') {
+        const ecommerceItems = typeof buildCartEcomItems === 'function' 
+            ? buildCartEcomItems(cart) 
+            : cart;
+        nbGa4EcomEvent('purchase', ecommerceItems, total, {
+            transaction_id: reference,
+            currency: WOMPI_CONFIG.currency,
+            payment_method: 'wompi'
+        });
+    }
+    
+    // Limpiar carrito
+    if (typeof clearCartForce === 'function') {
+        clearCartForce();
+    }
+    
+    // Redirigir
+    window.location.href = `${WOMPI_CONFIG.successUrl}?ref=${encodeURIComponent(reference)}`;
+}
+
+function handlePaymentDeclined(reference, total) {
+    if (typeof logEvent === 'function') {
+        logEvent('checkout_wompi_declined', { total, reference, items: cart });
+    }
+    alert('Tu pago fue rechazado. Por favor intenta con otro método de pago.');
+    window.location.href = `${WOMPI_CONFIG.cancelUrl}?ref=${encodeURIComponent(reference)}&retry=1`;
+}
+
+function handlePaymentPending(reference, total) {
+    if (typeof logEvent === 'function') {
+        logEvent('checkout_wompi_pending', { total, reference, items: cart });
+    }
+    alert('Tu pago está pendiente de confirmación. Te notificaremos cuando se complete.');
+    window.location.href = `${WOMPI_CONFIG.cancelUrl}?ref=${encodeURIComponent(reference)}&retry=1`;
+}
+
+function handlePaymentError(reference, error) {
+    console.error('Payment error:', error);
+    alert('Hubo un error al procesar el pago. Por favor intenta de nuevo.');
+    window.location.href = `${WOMPI_CONFIG.cancelUrl}?ref=${encodeURIComponent(reference)}&error=1`;
+}
+
+function handlePaymentCancelled(reference) {
+    console.log('Payment cancelled by user');
+    window.location.href = `${WOMPI_CONFIG.cancelUrl}?ref=${encodeURIComponent(reference)}&cancelled=1`;
+}
+
+// ============================================
+// VALIDACIÓN EN TIEMPO REAL
+// ============================================
+
+function setupFormValidation() {
+    const fields = [
+        { id: 'wompiCustomerName', validator: VALIDATORS.name },
+        { id: 'wompiCustomerEmail', validator: VALIDATORS.email },
+        { id: 'wompiCustomerPhone', validator: VALIDATORS.phone },
+        { id: 'wompiCustomerCity', validator: VALIDATORS.city },
+        { id: 'wompiCustomerAddress', validator: VALIDATORS.address }
+    ];
+    
+    fields.forEach(({ id, validator }) => {
+        const field = document.getElementById(id);
+        if (field) {
+            field.addEventListener('blur', () => validateField(id, validator));
+            field.addEventListener('input', () => {
+                // Limpiar error mientras el usuario escribe
+                const errorEl = document.getElementById(`${id}Error`);
+                if (errorEl && field.classList.contains('error')) {
+                    const error = validator(field.value);
+                    if (!error) {
+                        field.classList.remove('error');
+                        errorEl.style.display = 'none';
+                    }
+                }
+            });
+        }
+    });
+}
+
+// ============================================
+// EXPORTAR FUNCIONES
+// ============================================
+
+window.processWompiPayment = processWompiPayment;
+window.validateForm = validateForm;
+window.setupFormValidation = setupFormValidation;
+
+// Configurar validación cuando se muestra el formulario
+if (typeof showCustomerFormWompi === 'function') {
+    const originalShowForm = showCustomerFormWompi;
+    window.showCustomerFormWompi = function() {
+        originalShowForm();
+        // Esperar a que el DOM se actualice
+        setTimeout(setupFormValidation, 100);
+    };
+}
+
+})();
