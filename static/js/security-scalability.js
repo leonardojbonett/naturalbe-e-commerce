@@ -855,7 +855,6 @@
     setupCriticalResourcePreloading() {
       const criticalResources = [
         '/static/css/main.min.css',
-        '/static/js/bundle.min.js',
         '/static/img/logo.webp'
       ];
 
