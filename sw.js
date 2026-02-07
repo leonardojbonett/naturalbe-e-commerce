@@ -1,7 +1,7 @@
-// Service Worker para Natural Be - v2026-02-05
-const CACHE_NAME = 'natural-be-v2026-02-05';
-const STATIC_CACHE = 'natural-be-static-v2026-02-05';
-const RUNTIME_CACHE = 'natural-be-runtime-v2026-02-05';
+// Service Worker para Natural Be - v2026-02-07
+const CACHE_NAME = 'natural-be-v2026-02-07';
+const STATIC_CACHE = 'natural-be-static-v2026-02-07';
+const RUNTIME_CACHE = 'natural-be-runtime-v2026-02-07';
 
 // Recursos estáticos críticos para cachear
 const STATIC_ASSETS = [
@@ -9,7 +9,8 @@ const STATIC_ASSETS = [
   '/index.html',
   '/category.html',
   '/static/css/main.min.css?v=2026-01-11',
-  '/static/js/bundle.min.js?v=2026-02-05',
+  '/static/js/cart.min.js',
+  '/static/js/search-engine.js',
   '/static/js/webp-support.js?v=2026-02-05',
   '/static/img/logo.webp',
   '/static/img/placeholder.webp',
@@ -26,6 +27,7 @@ const STATIC_ASSETS = [
 const NETWORK_CACHE_PATTERNS = [
   /^https:\/\/fonts\.googleapis\.com/,
   /^https:\/\/fonts\.gstatic\.com/,
+  /^https:\/\/cdn\.jsdelivr\.net/,
   /^https:\/\/naturalbe\.com\.co\/static\/data\/productos\.json/,
   /^https:\/\/www\.googletagmanager\.com/,
   /^https:\/\/connect\.facebook\.net/,

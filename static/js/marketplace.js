@@ -331,61 +331,65 @@
     });
   };
 
-  // Load products data from JSON
+  // Load products data from JSON (use central loader if available)
   let productsCache = null;
-  const loadProductsData = async (options = {}) => {
-    if (!options.force && productsCache) {
-      return Promise.resolve(productsCache);
-    }
-    
-    try {
-      const version = window.NB_DATA_VERSION || "2026-02-05";
-      // Try multiple paths for compatibility
+  let loadProductsData = window.loadProductsData;
+  if (typeof loadProductsData !== "function") {
+    loadProductsData = async (options = {}) => {
+      if (!options.force && productsCache) {
+        return Promise.resolve(productsCache);
+      }
+      
+      try {
+        const version = window.NB_DATA_VERSION || "2026-02-05";
+        // Try multiple paths for compatibility
       const paths = [
+        `/productos.json?v=${encodeURIComponent(version)}`,
         `/static/data/productos.json?v=${encodeURIComponent(version)}`,
         `./static/data/productos.json?v=${encodeURIComponent(version)}`,
         `https://naturalbe.com.co/static/data/productos.json?v=${encodeURIComponent(version)}`
       ];
-      
-      let response = null;
-      let lastError = null;
-      
-      for (const url of paths) {
-        try {
-          response = await fetch(url);
-          if (response.ok) {
-            break;
+        
+        let response = null;
+        let lastError = null;
+        
+        for (const url of paths) {
+          try {
+            response = await fetch(url);
+            if (response.ok) {
+              break;
+            }
+          } catch (err) {
+            lastError = err;
+            continue;
           }
-        } catch (err) {
-          lastError = err;
-          continue;
         }
-      }
-      
-      if (!response || !response.ok) {
-        throw new Error(`Failed to load products from all paths. Last error: ${lastError?.message}`);
-      }
-      
-      const data = await response.json();
-      window.ALL_PRODUCTS = Array.isArray(data) ? data : data.productos || [];
-      
-      // Create index by slug for quick lookup
-      window.PRODUCTS_BY_SLUG = {};
-      window.ALL_PRODUCTS.forEach(product => {
-        if (product.slug) {
-          window.PRODUCTS_BY_SLUG[product.slug] = product;
+        
+        if (!response || !response.ok) {
+          throw new Error(`Failed to load products from all paths. Last error: ${lastError?.message}`);
         }
-      });
-      
-      productsCache = window.ALL_PRODUCTS;
-      window.NB_CATALOG_ERROR = false;
-      return window.ALL_PRODUCTS;
-    } catch (error) {
-      window.ALL_PRODUCTS = [];
-      window.NB_CATALOG_ERROR = true;
-      return [];
-    }
-  };
+        
+        const data = await response.json();
+        window.ALL_PRODUCTS = Array.isArray(data) ? data : data.productos || [];
+        
+        // Create index by slug for quick lookup
+        window.PRODUCTS_BY_SLUG = {};
+        window.ALL_PRODUCTS.forEach(product => {
+          if (product.slug) {
+            window.PRODUCTS_BY_SLUG[product.slug] = product;
+          }
+        });
+        
+        productsCache = window.ALL_PRODUCTS;
+        window.NB_CATALOG_ERROR = false;
+        return window.ALL_PRODUCTS;
+      } catch (error) {
+        window.ALL_PRODUCTS = [];
+        window.NB_CATALOG_ERROR = true;
+        return [];
+      }
+    };
+  }
 
   document.addEventListener("DOMContentLoaded", () => {
     initSearchForms();
@@ -400,5 +404,7 @@
     renderProductGrid
   };
 
-  window.loadProductsData = loadProductsData;
+  if (typeof window.loadProductsData !== "function") {
+    window.loadProductsData = loadProductsData;
+  }
 })();

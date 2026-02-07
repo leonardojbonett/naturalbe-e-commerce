@@ -76,6 +76,14 @@
     return normalized;
   }
 
+  function getSearchEngine() {
+    return window.NB_SEARCH_ENGINE || null;
+  }
+
+  function getProductId(product) {
+    return String(product?.id || product?.slug || '');
+  }
+
   /**
    * Índice de búsqueda pre-calculado por producto
    * Se calcula una sola vez por producto
@@ -192,6 +200,14 @@
 
     const normalizedQuery = normalizeTextCached(query);
     if (!normalizedQuery) return true;
+
+    const engine = getSearchEngine();
+    if (engine && typeof engine.getResultSet === 'function') {
+      const resultSet = engine.getResultSet(normalizedQuery);
+      if (resultSet) {
+        return resultSet.has(getProductId(product));
+      }
+    }
 
     const index = getSearchIndex(product);
     const isSimpleQuery = normalizedQuery.split(' ').length === 1;

@@ -17,9 +17,6 @@ let currentQuery = '';
 let productsMap = {};
 let currentSort = 'featured';
 const NB_MINI_CART_ENABLED = window.NB_MINI_CART_ENABLED !== false;
-const FUSE_THRESHOLD = 0.4;
-let fuseIndex = null;
-let fuseSource = null;
 
 // Función para ignorar tildes y mayúsculas
 function normalizeText(text) {
@@ -69,40 +66,8 @@ function getSearchableText(product) {
     return normalizeText([name, brand, tags, benefits].join(' '));
 }
 
-function buildFuseIndex(products) {
-    if (!window.Fuse || !Array.isArray(products) || !products.length) return null;
-    const docs = products.map(product => ({
-        ...product,
-        __search_blob: getSearchableText(product)
-    }));
-    fuseSource = products;
-    fuseIndex = new window.Fuse(docs, {
-        includeScore: true,
-        threshold: FUSE_THRESHOLD,
-        ignoreLocation: true,
-        minMatchCharLength: 2,
-        keys: ['__search_blob']
-    });
-    return fuseIndex;
-}
-
-function getFuseIndex() {
-    if (!window.Fuse || typeof PRODUCTS === 'undefined') return null;
-    if (!fuseIndex || fuseSource !== PRODUCTS) {
-        return buildFuseIndex(PRODUCTS);
-    }
-    return fuseIndex;
-}
-
-function fuzzySearchProducts(query, candidates) {
-    const normalizedQuery = normalizeText(query || '');
-    if (!normalizedQuery) return candidates;
-    const fuse = getFuseIndex();
-    if (!fuse) return null;
-    const candidateMap = new Map(candidates.map(p => [String(p.id), p]));
-    return fuse.search(normalizedQuery)
-        .map(result => candidateMap.get(String(result.item.id)))
-        .filter(Boolean);
+function getSearchEngine() {
+    return window.NB_SEARCH_ENGINE || null;
 }
 
 const isPackProduct = (typeof window.isPackProduct === 'function')
@@ -244,11 +209,17 @@ function ensureProductsReady() {
         return loadProductsData().then(() => {
             if (Array.isArray(window.PRODUCTS)) {
                 productsMap = (typeof buildProductsMap === 'function') ? buildProductsMap(window.PRODUCTS) : {};
+                if (window.NB_SEARCH_ENGINE && typeof window.NB_SEARCH_ENGINE.setProducts === 'function') {
+                    window.NB_SEARCH_ENGINE.setProducts(window.PRODUCTS);
+                }
             }
         });
     }
     if (Array.isArray(window.PRODUCTS)) {
         productsMap = (typeof buildProductsMap === 'function') ? buildProductsMap(window.PRODUCTS) : {};
+        if (window.NB_SEARCH_ENGINE && typeof window.NB_SEARCH_ENGINE.setProducts === 'function') {
+            window.NB_SEARCH_ENGINE.setProducts(window.PRODUCTS);
+        }
     }
     return Promise.resolve(typeof PRODUCTS !== 'undefined' ? PRODUCTS : []);
 }
@@ -952,9 +923,9 @@ function filterProductsAdvanced(queryOverride) {
 
     let filtered = baseList;
     if (normalizedQuery) {
-        const fuzzyResults = fuzzySearchProducts(normalizedQuery, baseList);
-        if (Array.isArray(fuzzyResults)) {
-            filtered = fuzzyResults;
+        const engine = getSearchEngine();
+        if (engine && typeof engine.searchProducts === 'function') {
+            filtered = engine.searchProducts(normalizedQuery, baseList);
         } else {
             filtered = baseList.filter(p => getSearchableText(p).includes(normalizedQuery));
         }

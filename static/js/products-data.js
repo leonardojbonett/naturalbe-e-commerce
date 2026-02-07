@@ -1,8 +1,9 @@
 // Catalogo dinamico Natural Be - fuente unica: /static/data/productos.json
 (function () {
   const CATALOG_URLS = [
-    './static/data/productos.json',
-    '/static/data/productos.json'
+    '/productos.json',
+    '/static/data/productos.json',
+    './static/data/productos.json'
   ];
   const DEFAULT_CATALOG_VERSION = '1';
   const FALLBACK_IMAGE = './static/img/placeholder.webp';
@@ -206,4 +207,3 @@
   // Disparar evento cuando products-data está listo
   window.dispatchEvent(new CustomEvent('ProductsDataReady'));
 })();
-

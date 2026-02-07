@@ -493,7 +493,7 @@
       document.documentElement.style.setProperty('--promo-offset', `${height}px`);
     });
   </script>
-  <script src="./static/js/products-data.min.js?v=2026-01-13"></script>
+  <script src="./static/js/products-data.min.js?v=2026-02-07" defer></script>
   <script>
     (function () {
       function formatCOP(value){
@@ -541,7 +541,8 @@
       if (slugParam) return slugParam;
       
       // Also check if URL path contains /producto/SLUG.html pattern
-      const pathMatch = window.location.pathname.match(/\/producto\/([^/]+?)(?:\.html)?$/);
+      const path = new URL(window.location.href).pathname;
+      const pathMatch = path.match(/\/producto\/([^/]+?)(?:\.html)?$/);
       if (pathMatch && pathMatch[1]) return decodeURIComponent(pathMatch[1]);
       
       return '';
@@ -861,7 +862,8 @@
     })();
   </script>
   <script src="./static/js/wompi-config.js" defer></script>
-  <script src="./static/js/cart.min.js?v=2026-01-11" defer></script>
+  <script src="./static/js/search-engine.js?v=2026-02-07" defer></script>
+  <script src="./static/js/cart.min.js?v=2026-02-07" defer></script>
   <script src="./static/js/nav.js" defer></script>
   <script src="./static/js/marketplace.js?v=2026-01-13" defer></script>
   <script src="./static/js/product-schema.js" defer></script>
