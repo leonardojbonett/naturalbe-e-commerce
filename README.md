@@ -41,10 +41,13 @@ Proyecto HTML/CSS/JS sin backend. Home, PLP y PDP se renderizan con data local e
 - Vuelve a subir todo el contenido del repo para evitar residuos de despliegues previos.
   - Script: `powershell -File scripts/clean-hostinger.ps1 -RootPath C:\path\to\public_html`
   - Dry run: `powershell -File scripts/clean-hostinger.ps1 -RootPath C:\path\to\public_html -DryRun`
+ - Predeploy checks: `powershell -File scripts/predeploy.ps1`
 
 ## Smoke test rapido
 - Validar que no haya `https://` sueltos (sin comillas) que rompan el bundle:
   - `powershell -File scripts/smoke-product.ps1`
+- Validar rutas absolutas en HTML/JS (evita assets rotos en subcarpetas):
+  - `powershell -File scripts/check-static-paths.ps1`
 
 ## Sitemap y paginas de producto
 - Genera paginas estaticas: `npm run products:pages` (salida en `producto/`).
