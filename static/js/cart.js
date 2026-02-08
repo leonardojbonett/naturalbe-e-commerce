@@ -83,7 +83,7 @@ const nbViewedItems = (typeof Set !== 'undefined') ? new Set() : [];
 let lastCartFocused = null;
 let cartTrapHandlerBound = false;
 let wompiLoader = null;
-const NB_BASE_PATH = window.NB_BASE_PATH || './';
+const NB_BASE_PATH = (window.location && window.location.protocol === 'file:') ? './' : '/';
 
 function wompiCheckoutStub() {
     ensureWompiReady()
