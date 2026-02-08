@@ -339,7 +339,7 @@
       grid.innerHTML = products.map(product => {
         const name = product.nombre || product.name || '';
         const price = product.precio_oferta || product.precio || product.price || 0;
-        const image = product.imagen_principal || product.image || './static/img/placeholder.webp';
+        const image = product.imagen_principal || product.image || '/static/img/placeholder.webp';
         const url = product.url || `./producto/${product.slug}.html`;
 
         return `
@@ -350,7 +350,7 @@
                    loading="lazy"
                    width="80" 
                    height="80"
-                   onerror="this.src='./static/img/placeholder.webp'">
+                   onerror="this.src='/static/img/placeholder.webp'">
             </a>
             <div class="recommended-info">
               <a href="${this.escapeHtml(url)}" class="recommended-name">

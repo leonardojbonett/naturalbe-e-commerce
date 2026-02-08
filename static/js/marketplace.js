@@ -1,7 +1,10 @@
 (() => {
   const DATA_VERSION = "2026-02-05";
   window.NB_DATA_VERSION = window.NB_DATA_VERSION || DATA_VERSION;
-  const PLACEHOLDER_IMAGE = "./static/img/placeholder.webp";
+  const PLACEHOLDER_IMAGE = "/static/img/placeholder.webp";
+  const SITE_ORIGIN = String(
+    window.NB_SITE_ORIGIN || (window.location && window.location.origin) || "https://naturalbe.com.co"
+  ).replace(/\/+$/, "");
 
   // Cache reset helper: use ?clearcache=1 to unregister SW + clear caches
   (function handleCacheReset() {
@@ -99,7 +102,7 @@
     const url = sanitizeUrl(
       (window.NaturalBe && typeof window.NaturalBe.buildProductURL === 'function')
         ? window.NaturalBe.buildProductURL(product)
-        : (product.slug ? `./product.html?slug=${encodeURIComponent(product.slug)}` : './product.html')
+        : (product.slug ? `/product.html?slug=${encodeURIComponent(product.slug)}` : '/product.html')
     );
     const safeName = escapeHtml(product.nombre || product.name || "");
     const safeDesc = escapeHtml(description || "");
@@ -344,10 +347,9 @@
         const version = window.NB_DATA_VERSION || "2026-02-05";
         // Try multiple paths for compatibility
       const paths = [
-        `/productos.json?v=${encodeURIComponent(version)}`,
         `/static/data/productos.json?v=${encodeURIComponent(version)}`,
         `./static/data/productos.json?v=${encodeURIComponent(version)}`,
-        `https://naturalbe.com.co/static/data/productos.json?v=${encodeURIComponent(version)}`
+        `${SITE_ORIGIN}/static/data/productos.json?v=${encodeURIComponent(version)}`
       ];
         
         let response = null;
@@ -401,7 +403,8 @@
   window.nbMarketplace = {
     formatCOP,
     buildProductCardHtml,
-    renderProductGrid
+    renderProductGrid,
+    initCarousels
   };
 
   if (typeof window.loadProductsData !== "function") {

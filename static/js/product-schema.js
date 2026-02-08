@@ -8,18 +8,37 @@
 
     // Obtener datos del producto desde la página
     function getProductData() {
-        // Intentar obtener del objeto global PRODUCTS
-        const urlParams = new URLSearchParams(window.location.search);
-        const productId = urlParams.get('id');
-        
-        if (!productId || typeof PRODUCTS === 'undefined') {
+        if (typeof window.PRODUCTS_BY_SLUG === 'undefined') {
+            console.warn("PRODUCTS_BY_SLUG no está disponible.");
             return null;
         }
 
-        const product = PRODUCTS.find(p => String(p.id) === String(productId));
-        if (!product) return null;
+        // 1. Intentar obtener el slug de la URL
+        const urlParams = new URLSearchParams(window.location.search);
+        let slug = urlParams.get('slug') || urlParams.get('producto'); // Preferir 'slug' o 'producto' param
+        
+        // Si no hay slug en los parámetros, intentar del pathname (ej. /producto/mi-slug.html)
+        if (!slug) {
+            const path = new URL(window.location.href).pathname;
+            const pathMatch = path.match(/\/producto\/([^/]+?)(?:\.html)?$/);
+            if (pathMatch && pathMatch[1]) {
+                slug = decodeURIComponent(pathMatch[1]);
+            }
+        }
 
-        return product;
+        if (slug) {
+            const product = window.PRODUCTS_BY_SLUG[slug];
+            if (product) return product;
+        }
+
+        // Fallback: Si no se encontró por slug, intentar por ID si está presente
+        const productId = urlParams.get('id');
+        if (productId && typeof window.PRODUCTS_BY_ID !== 'undefined') {
+            const product = window.PRODUCTS_BY_ID[productId];
+            if (product) return product;
+        }
+        
+        return null;
     }
 
     // Construir schema Product
@@ -31,7 +50,7 @@
         const currency = 'COP';
         
         // Disponibilidad
-        const availability = product.stock === 0 || product.disponible === false 
+        const availability = product.disponible === false || (product.quantity && product.quantity <= 0)
             ? 'https://schema.org/OutOfStock'
             : 'https://schema.org/InStock';
         
@@ -40,13 +59,10 @@
         if (image && !image.startsWith('http')) {
             image = `${baseUrl}/${image.replace(/^\.?\//, '')}`;
         }
-        // Convertir WebP a JPG para mejor compatibilidad
-        if (image.endsWith('.webp')) {
-            image = image.replace('.webp', '.jpg');
-        }
+        // No convertir WebP a JPG: mantener el formato original
         
         // URL del producto
-        const productUrl = product.url || product.link || `${baseUrl}/product.html?id=${product.id}`;
+        const productUrl = product.url || product.link || `${baseUrl}/product.html?slug=${product.slug}`;
         
         // Marca
         const brand = product.marca || product.brand || 'Natural Be';
@@ -55,7 +71,7 @@
         const description = product.descripcion_larga || product.descripcion_corta || product.description || '';
         
         // SKU
-        const sku = product.sku || product.product_id || `NB-${product.id}`;
+        const sku = product.sku || product.product_id || product.id;
         
         // Construir schema
         const schema = {
@@ -75,7 +91,7 @@
                 "priceCurrency": currency,
                 "price": price,
                 "availability": availability,
-                "priceValidUntil": "2027-12-31",
+                "priceValidUntil": "2027-12-31", // Considerar generar dinámicamente
                 "seller": {
                     "@type": "Organization",
                     "name": "Natural Be"

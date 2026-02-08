@@ -1,7 +1,7 @@
-// Service Worker para Natural Be - v2026-02-07
-const CACHE_NAME = 'natural-be-v2026-02-07';
-const STATIC_CACHE = 'natural-be-static-v2026-02-07';
-const RUNTIME_CACHE = 'natural-be-runtime-v2026-02-07';
+// Service Worker para Natural Be - v2026-02-08
+const CACHE_NAME = 'natural-be-v2026-02-08';
+const STATIC_CACHE = 'natural-be-static-v2026-02-08';
+const RUNTIME_CACHE = 'natural-be-runtime-v2026-02-08';
 
 // Recursos estáticos críticos para cachear
 const STATIC_ASSETS = [
@@ -16,11 +16,11 @@ const STATIC_ASSETS = [
   '/static/img/placeholder.webp',
   '/static/img/og-naturalbe.jpg',
   '/static/img/og-naturalbe.webp',
-  '/static/favicon.ico',
-  '/static/favicon-32x32.png',
-  '/static/favicon-16x16.png',
-  '/static/android-chrome-192x192.png',
-  '/static/apple-touch-icon.png'
+  '/static/img/favicon.ico',
+  '/static/img/favicon-32x32.png',
+  '/static/img/favicon-16x16.png',
+  '/static/img/android-chrome-192x192.png',
+  '/static/img/apple-touch-icon.png'
 ];
 
 // Recursos de red que pueden cachearse

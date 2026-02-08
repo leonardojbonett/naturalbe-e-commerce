@@ -16,7 +16,7 @@
   // Crear picture element con WebP fallback
   function createPictureElement(src, alt, width, height, loading = 'lazy', eager = false) {
     const isFile = window.location && window.location.protocol === 'file:';
-    const basePath = isFile ? './' : (window.NB_BASE_PATH || '/');
+    const basePath = isFile ? './' : '/';
     
     // Generar URLs WebP y fallback
     const webpSrc = src.replace(/\.(jpg|jpeg|png)$/i, '.webp');
@@ -71,13 +71,13 @@
     const description = product.descripcion_corta || product.description || "";
     
     // URLs optimizadas
-    const url = sanitizeUrl(product.url || (product.slug ? `./product.html?slug=${encodeURIComponent(product.slug)}` : `/product.html`));
+    const url = sanitizeUrl(product.url || (product.slug ? `/product.html?slug=${encodeURIComponent(product.slug)}` : `/product.html`));
     const safeName = escapeHtml(product.nombre || product.name || "");
     const safeDesc = escapeHtml(description || "");
     const safeUrl = escapeHtml(url);
     
     // Imagen con WebP
-    const imgSrc = sanitizeUrl(product.imagen_principal || product.imagen_principal_webp || product.image || './static/img/placeholder.webp');
+    const imgSrc = sanitizeUrl(product.imagen_principal || product.imagen_principal_webp || product.image || '/static/img/placeholder.webp');
     const webpSrc = product.imagen_principal_webp || imgSrc.replace(/\.(jpg|jpeg|png)$/i, '.webp');
     const loading = eager ? 'eager' : 'lazy';
     const fetchpriority = eager ? 'fetchpriority="high"' : '';
@@ -92,7 +92,7 @@
              width="320" 
              height="240"
              ${fetchpriority}
-             onerror="this.onerror=null;this.src='./static/img/placeholder.webp';">
+             onerror="this.onerror=null;this.src='/static/img/placeholder.webp';">
       </picture>
     `;
     

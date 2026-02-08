@@ -125,6 +125,9 @@
 
     // Configurar headers de seguridad
     setupSecurityHeaders() {
+      if (document.querySelector('meta[http-equiv="Content-Security-Policy"]')) {
+        return;
+      }
       // Meta tags de seguridad
       const securityMeta = document.createElement('meta');
       securityMeta.httpEquiv = 'Content-Security-Policy';

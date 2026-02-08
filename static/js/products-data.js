@@ -1,12 +1,11 @@
 // Catalogo dinamico Natural Be - fuente unica: /static/data/productos.json
 (function () {
   const CATALOG_URLS = [
-    '/productos.json',
     '/static/data/productos.json',
     './static/data/productos.json'
   ];
   const DEFAULT_CATALOG_VERSION = '1';
-  const FALLBACK_IMAGE = './static/img/placeholder.webp';
+  const FALLBACK_IMAGE = '/static/img/placeholder.webp';
 
   /*
     Esquema de producto normalizado:

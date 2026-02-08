@@ -516,7 +516,7 @@
           <div class="payment-option__header">
             <input type="radio" name="payment_method" value="${key}" id="payment_${key}">
             <label for="payment_${key}">
-              <img src="./static/img/${key}-logo.png" alt="${payment.name}" class="payment-logo">
+              <img src="/static/img/${key}-logo.png" alt="${payment.name}" class="payment-logo">
               <span>${payment.name}</span>
             </label>
           </div>
@@ -554,7 +554,7 @@
           <div class="payment-option__header">
             <input type="radio" name="payment_method" value="pse" id="payment_pse">
             <label for="payment_pse">
-              <img src="./static/img/pse-logo.png" alt="PSE" class="payment-logo">
+              <img src="/static/img/pse-logo.png" alt="PSE" class="payment-logo">
               <span>PSE - Transferencia bancaria</span>
             </label>
           </div>
@@ -581,7 +581,7 @@
           <div class="payment-option__header">
             <input type="radio" name="payment_method" value="${key}" id="payment_${key}">
             <label for="payment_${key}">
-              <img src="./static/img/${key}-logo.png" alt="${payment.name}" class="payment-logo">
+              <img src="/static/img/${key}-logo.png" alt="${payment.name}" class="payment-logo">
               <span>${payment.name}</span>
             </label>
           </div>
@@ -606,7 +606,7 @@
           <div class="payment-option__header">
             <input type="radio" name="payment_method" value="${key}" id="payment_${key}">
             <label for="payment_${key}">
-              <img src="./static/img/${key}-logo.png" alt="${payment.name}" class="payment-logo">
+              <img src="/static/img/${key}-logo.png" alt="${payment.name}" class="payment-logo">
               <span>${payment.name}</span>
             </label>
           </div>
