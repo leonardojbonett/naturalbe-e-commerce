@@ -692,6 +692,7 @@
     }
     function renderProduct(p){
       if(!p)return;
+      const isStatic = Boolean(window.NB_CATALOG_SOURCE === 'fallback' || window.NB_CATALOG_ERROR);
       const safeName=p.nombre||'';
       document.title=p.seo_title||`${safeName} | Natural Be Colombia`;
       const metaDesc=document.querySelector('meta[name="description"]');
