@@ -1421,9 +1421,136 @@
             outline-offset: 2px;
         }
 
-        .mobile-menu.open {
-            transform: translateX(0);
-        }
+.mobile-menu.open {
+    transform: translateX(0);
+}
+
+.hero-slide { aspect-ratio: 520/640; }
+.hero-actions--spaced { margin-top: 1.5rem; }
+.trust-band--enhanced {
+    background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+    padding: 20px;
+    border-radius: 8px;
+    border-left: 4px solid #0284c7;
+}
+.trust-compact {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    font-weight: 600;
+    color: #0c4a6e;
+}
+.trust-compact__item { display: flex; align-items: center; gap: 8px; }
+.trust-compact__icon { font-size: 20px; }
+.trust-compact__title { font-size: 14px; }
+.trust-compact__subtitle { font-size: 12px; font-weight: 400; color: #0369a1; }
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+    margin-top: 32px;
+}
+.testimonial-card {
+    background: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 20px;
+    position: relative;
+}
+.testimonial-stars { display: flex; gap: 8px; margin-bottom: 12px; color: #fbbf24; }
+.testimonial-text { font-size: 14px; line-height: 1.6; margin-bottom: 16px; color: #374151; }
+.testimonial-author { display: flex; align-items: center; gap: 8px; }
+.testimonial-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+}
+.testimonial-avatar--blue { background: #dbeafe; color: #0284c7; }
+.testimonial-avatar--green { background: #dcfce7; color: #16a34a; }
+.testimonial-avatar--pink { background: #fce7f3; color: #be185d; }
+.testimonial-name { font-weight: 600; color: #111827; }
+.testimonial-verified { font-size: 12px; color: #6b7280; }
+
+.page-shell--spaced { margin-top: 3rem; }
+.guide-copy { max-width: 900px; margin: 0 auto; line-height: 1.8; color: #4b5563; }
+.guide-heading { color: #0f3c24; margin-top: 2rem; margin-bottom: 1rem; }
+.guide-list { margin-left: 2rem; margin-bottom: 1.5rem; }
+.guide-highlight {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: #f0fdf4;
+    border-left: 4px solid #22c55e;
+    border-radius: 8px;
+}
+.guide-highlight__link { color: #15803d; font-weight: 700; }
+
+.email-popup-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+}
+.email-popup-card {
+    background: white;
+    border-radius: 12px;
+    padding: 40px;
+    max-width: 420px;
+    width: 90%;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+.email-popup-close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #9ca3af;
+}
+.email-popup-icon { margin-bottom: 16px; font-size: 32px; }
+.email-popup-title { font-size: 18px; font-weight: 700; margin-bottom: 8px; color: #111827; }
+.email-popup-text { font-size: 14px; color: #6b7280; margin-bottom: 24px; }
+.email-popup-form { display: flex; flex-direction: column; gap: 12px; }
+.email-popup-input {
+    padding: 10px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-size: 14px;
+}
+.email-popup-submit {
+    background: linear-gradient(135deg, #059669 0%, #047857 100%);
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 14px;
+}
+.email-popup-consent {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    font-size: 12px;
+    color: #6b7280;
+    margin-top: 12px;
+}
+.email-popup-consent__input { margin-top: 2px; }
+.email-popup-footer { font-size: 12px; color: #9ca3af; margin-top: 16px; text-align: center; }
+.email-popup-footer__link { color: #059669; text-decoration: none; font-weight: 600; }
 
         .mobile-menu a {
             text-decoration: none;

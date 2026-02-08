@@ -210,13 +210,13 @@
           const priority = game.priority ? 'priority' : '';
           return `
             <article class="game-card ${priority}">
-              <img src="${game.image}" alt="${game.title}" loading="lazy" onerror="this.src='assets/cover-placeholder.svg'">
+              <img src="/${game.image}" alt="${game.title}" loading="lazy" onerror="this.src='assets/cover-placeholder.svg'">
               <div class="game-body">
                 <div class="game-title">${game.title}</div>
                 <div class="game-tagline">${game.tagline || ''}</div>
                 <div class="meta">${meta}</div>
                 <div class="card-actions">
-                  <a class="btn" href="${game.path}">Jugar</a>
+                  <a class="btn" href="/${game.path}">Jugar</a>
                   <a class="btn secondary" href="https://naturalbe.com.co/#productos">Comprar suplementos</a>
                 </div>
               </div>
@@ -230,3 +230,4 @@
   </script>
 </body>
 </html>
+
