@@ -47,6 +47,7 @@
 - Total: 0
 
 
+
 ## Seleccion final - Destacados de nuestras marcas
 - Total seleccionados: 8
 - Healthy America: Cal-Citrate Complete - 120 tablets (cal-citrate-complete-120tablets) | score=79.0 | marca objetivo, imagen real, intencion de busqueda, precio medio

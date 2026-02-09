@@ -224,6 +224,24 @@
     window.NB_SITE_ORIGIN = window.NB_SITE_ORIGIN || (window.location && window.location.origin) || "https://naturalbe.com.co";
   </script>
   <link rel="stylesheet" href="/static/css/main.min.css?v=2026-01-11">
+  <style>
+    .nb-featured-grid,
+    .nb-best-grid {
+      display: grid;
+      gap: 1.2rem;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    @media (min-width: 768px) {
+      .nb-featured-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+
+      .nb-best-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+  </style>
   
   <!-- Page Loader eliminado para evitar bloqueo visual -->
 </head>
@@ -475,7 +493,7 @@
           </div>
         </div>
         <div class="catalog-status" id="nbFeaturedStatus" role="status"></div>
-        <div class="product-grid" id="nb-featured-brands" data-image-status="#nbFeaturedStatus"></div>
+        <div class="product-grid nb-featured-grid" id="nb-featured-brands" data-image-status="#nbFeaturedStatus"></div>
       </section>
 
       <section id="mas-vendidos" class="page-shell">
@@ -486,7 +504,7 @@
           </div>
         </div>
         <div class="catalog-status" id="nbBestSellersStatus" role="status"></div>
-        <div class="product-grid" id="nb-best-sellers" data-image-status="#nbBestSellersStatus"></div>
+        <div class="product-grid nb-best-grid" id="nb-best-sellers" data-image-status="#nbBestSellersStatus"></div>
       </section>
 
     <section class="page-shell">

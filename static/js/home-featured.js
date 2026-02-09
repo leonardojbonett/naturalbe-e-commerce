@@ -4,6 +4,9 @@
   const FEATURED_LIMIT = 8;
   const BEST_SELLERS_LIMIT = 6;
   const BEST_SELLERS_MIN_SIGNALS = 4;
+  const BEST_SELLERS_HOME_PRIORITY_MIN = 2;
+  const HOME_PRIORITY_BONUS = 60;
+  const HOME_PRIORITY_CAP = 20;
 
   const TARGET_BRANDS = [
     { name: 'Healthy America', aliases: ['healthy america'] },
@@ -113,11 +116,13 @@
 
   const hasBestSellerSignal = (product) => {
     const badge = badgeText(product);
+    const homePriority = getHomePriority(product);
     return product?.isPopular === true ||
       badge.includes('mas vendido') ||
       badge.includes('más vendido') ||
       badge.includes('top ventas') ||
-      badge.includes('best seller');
+      badge.includes('best seller') ||
+      (homePriority && homePriority >= BEST_SELLERS_HOME_PRIORITY_MIN);
   };
 
   const hasSecondarySignal = (product) => {
@@ -168,7 +173,7 @@
 
     const homePriority = getHomePriority(product);
     if (homePriority) {
-      score += 60 + Math.min(20, homePriority * 5);
+      score += HOME_PRIORITY_BONUS + Math.min(HOME_PRIORITY_CAP, homePriority * 5);
       reasons.push('home_priority');
     }
 
