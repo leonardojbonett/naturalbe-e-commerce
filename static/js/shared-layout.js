@@ -78,7 +78,7 @@
           </div>
         </div>
         <nav class="market-links" aria-label="Navegacion rapida">
-          <a href="${linkTo('index.html#top-ventas')}">Top ventas</a>
+          <a href="${linkTo('index.html#destacados-marcas')}">Destacados</a>
           <a href="${linkTo('index.html#ofertas')}">Ofertas</a>
           <a href="${linkTo('index.html#nuevos')}">Nuevos</a>
           <a href="${linkTo('index.html#categorias')}">Categorias</a>
@@ -95,7 +95,7 @@
       <nav class="nav-mobile" aria-label="Navegacion principal">
         <a href="${linkTo('index.html#inicio')}">Inicio</a>
         <a href="${linkTo('catalogo-suplementos.html')}">Catalogo</a>
-        <a href="${linkTo('index.html#top-ventas')}">Top ventas</a>
+        <a href="${linkTo('index.html#destacados-marcas')}">Destacados</a>
         <a href="${linkTo('index.html#ofertas')}">Ofertas</a>
         <a href="${linkTo('index.html#nuevos')}">Nuevos</a>
         <a href="${linkTo('index.html#categorias')}">Categorias</a>
