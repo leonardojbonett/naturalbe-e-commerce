@@ -21,7 +21,7 @@
   <link rel="icon" type="image/png" sizes="16x16" href="https://naturalbe.com.co/static/img/favicon-16x16.png">
   <link rel="icon" type="image/png" sizes="192x192" href="https://naturalbe.com.co/static/img/android-chrome-192x192.png">
   <link rel="apple-touch-icon" sizes="180x180" href="https://naturalbe.com.co/static/img/apple-touch-icon.png">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
   <title>Natural Be | Producto</title>
   <meta name="description" content="Descubre suplementos Natural Be con pagos seguros, envíos rápidos y asesoría por WhatsApp.">
@@ -167,7 +167,7 @@
         </div>
       </div>
       <nav class="market-links" aria-label="Navegación rápida">
-        <a href="/index.html#top-ventas">Top ventas</a>
+        <a href="/index.html#destacados-marcas">Destacados</a>
         <a href="/index.html#ofertas">Ofertas</a>
         <a href="/index.html#nuevos">Nuevos</a>
         <a href="/index.html#categorias">Categorías</a>
@@ -202,7 +202,7 @@
     <nav class="nav-mobile" aria-label="Navegación principal">
       <a href="/index.html#inicio">Inicio</a>
       <a href="/catalogo-suplementos.html">Catálogo</a>
-      <a href="/index.html#top-ventas">Top ventas</a>
+      <a href="/index.html#destacados-marcas">Destacados</a>
       <a href="/index.html#ofertas">Ofertas</a>
       <a href="/index.html#nuevos">Nuevos</a>
       <a href="/index.html#categorias">Categorías</a>
@@ -402,6 +402,11 @@
       </div>
     </section>
   </main>
+
+  <div class="pdp-sticky-cta" id="pdpStickyCta" aria-label="Acciones rápidas de compra">
+    <button class="btn-primary" type="button" data-sticky-add-to-cart>Agregar al carrito</button>
+    <a class="btn-outline" id="pdpStickyWhatsapp" href="https://wa.me/573137212923?utm_source=naturalbe&utm_medium=website&utm_campaign=retail&utm_content=product_whatsapp" target="_blank" rel="noopener">Comprar por WhatsApp</a>
+  </div>
 
   <a href="https://wa.me/573137212923?text=Hola!%20Quiero%20información%20sobre%20los%20productos%20de%20Natural%20Be&utm_source=naturalbe&utm_medium=website&utm_campaign=retail&utm_content=float_whatsapp"
      class="whatsapp-float" id="floatWhatsappLink" data-wa-content="float_whatsapp" target="_blank" aria-label="Contactar por WhatsApp">WA</a>
@@ -792,8 +797,23 @@
       const advText=p.raw?.advertencias||'';
       if(advEl && (advText || !isStatic)) advEl.textContent=advText;
           const waLink=`https://wa.me/573137212923?text=Hola!%20Quiero%20comprar%20${encodeURIComponent(p.nombre)}%20en%20Natural%20Be&utm_source=naturalbe&utm_medium=website&utm_campaign=retail&utm_content=product_whatsapp`;
-      const btnWa=document.getElementById('btnWhatsapp');if(btnWa)btnWa.href=waLink;
-      const btnAdd=document.getElementById('btnAddToCart');if(btnAdd){btnAdd.addEventListener('click',()=>{if(typeof addToCart==='function'){addToCart(p.id,p.nombre,productPrice,p.imagen_principal);}});}
+        const btnWa=document.getElementById('btnWhatsapp');if(btnWa)btnWa.href=waLink;
+        const stickyWa=document.getElementById('pdpStickyWhatsapp');if(stickyWa)stickyWa.href=waLink;
+        const btnAdd=document.getElementById('btnAddToCart');
+        if(btnAdd){
+          btnAdd.addEventListener('click',()=>{
+            if(typeof addToCart==='function'){
+              addToCart(p.id,p.nombre,productPrice,p.imagen_principal);
+            } else {
+              console.error('addToCart function is missing. cart.js may not have loaded.');
+              alert('Lo sentimos, el carrito no está listo. Por favor recarga la página.');
+            }
+          });
+        }
+        const stickyAdd=document.querySelector('[data-sticky-add-to-cart]');
+        if(stickyAdd){
+          stickyAdd.addEventListener('click',()=>{ if(btnAdd) btnAdd.click(); });
+        }
       buildBreadcrumb(p);
       const reviews=renderProductReviews(p);
       updateProductSchema(p,reviews);

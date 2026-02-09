@@ -5821,3 +5821,178 @@ textarea {
     display: none;
   }
 }
+
+/* Mobile-first UX upgrades (iHerb-inspired, Natural Be) */
+:root {
+    --nb-container-padding: 16px;
+    --nb-container-max: 1100px;
+    --nb-mobile-gap: 14px;
+    --nb-radius-md: 14px;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    font-size: 1rem;
+    line-height: 1.55;
+    -webkit-text-size-adjust: 100%;
+}
+
+img,
+picture,
+video {
+    max-width: 100%;
+    height: auto;
+}
+
+html,
+body {
+    overflow-x: hidden;
+}
+
+.page-shell,
+body.marketplace .page-shell {
+    max-width: var(--nb-container-max);
+    padding-left: var(--nb-container-padding);
+    padding-right: var(--nb-container-padding);
+}
+
+.section-title {
+    font-size: clamp(1.4rem, 2.4vw, 2rem);
+    line-height: 1.2;
+}
+
+.section-subtitle {
+    font-size: clamp(0.95rem, 1.8vw, 1.1rem);
+    line-height: 1.5;
+}
+
+.pdp-sticky-cta {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #fff;
+    border-top: 1px solid var(--market-line);
+    padding: 0.75rem 1rem;
+    display: none;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+    z-index: 1600;
+    box-shadow: 0 -10px 24px rgba(15, 60, 36, 0.12);
+}
+
+.pdp-sticky-cta .btn-primary,
+.pdp-sticky-cta .btn-outline {
+    width: 100%;
+    min-height: 44px;
+    font-size: 0.95rem;
+}
+
+@media (max-width: 768px) {
+    .market-header__top {
+        grid-template-columns: auto 1fr auto;
+        gap: 0.75rem;
+        padding: 0.5rem 1rem;
+    }
+
+    .brand-logo span {
+        font-size: 0.95rem;
+    }
+
+    .market-search {
+        min-height: 44px;
+    }
+
+    .market-search input {
+        font-size: 1rem;
+    }
+
+    .market-action-link {
+        display: none;
+    }
+
+    .market-actions {
+        gap: 0.5rem;
+    }
+
+    .market-header__nav {
+        padding: 0.4rem 1rem 0.6rem;
+    }
+
+    .market-links {
+        gap: 0.5rem;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .market-links a {
+        white-space: nowrap;
+        font-size: 0.9rem;
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: var(--nb-mobile-gap);
+        padding: 0;
+        justify-items: stretch;
+    }
+
+    .product-card {
+        border-radius: var(--nb-radius-md);
+    }
+
+    .product-card__media {
+        aspect-ratio: 1 / 1;
+        min-height: 0;
+    }
+
+    .product-card__media img {
+        object-fit: cover;
+    }
+
+    .product-card__title {
+        font-size: 0.95rem;
+        line-height: 1.3;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    .product-card__desc {
+        -webkit-line-clamp: 2;
+        font-size: 0.85rem;
+    }
+
+    .product-card__price {
+        font-size: 0.95rem;
+    }
+
+    .product-card__actions .btn-primary,
+    .product-card__actions .btn-outline,
+    .product-card__actions .btn-ghost {
+        min-height: 44px;
+        font-size: 0.9rem;
+    }
+
+    .pdp-grid {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+        padding-bottom: 5.5rem;
+    }
+
+    #productName {
+        font-size: clamp(1.5rem, 4.8vw, 2rem);
+    }
+
+    .product-price {
+        font-size: 1.35rem;
+    }
+
+    .pdp-sticky-cta {
+        display: grid;
+    }
+}
