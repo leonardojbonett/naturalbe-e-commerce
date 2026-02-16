@@ -99,7 +99,7 @@
       seo_description: p.seo_description || '',
       rating_value: Number(p.rating_value || 0),
       rating_count: Number(p.rating_count || 0),
-      url: p.url || p.link || (slug ? `${basePath}product.html?slug=${encodeURIComponent(slug)}` : `${basePath}product.html`),
+      url: p.url || p.link || (slug ? `/producto/${encodeURIComponent(slug)}` : '/product.html'),
       product_id: productId,
       // Compatibilidad con codigo existente
       name: p.nombre || p.name || '',

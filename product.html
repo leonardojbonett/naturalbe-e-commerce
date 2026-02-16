@@ -25,12 +25,10 @@
 
   <title>Natural Be | Producto</title>
   <meta name="description" content="Descubre suplementos Natural Be con pagos seguros, envíos rápidos y asesoría por WhatsApp.">
-  <link rel="canonical" href="https://naturalbe.com.co/product.html">
 
   <meta property="og:type" content="product">
   <meta property="og:title" content="Natural Be | Producto">
   <meta property="og:description" content="Compra suplementos naturales con envíos rápidos en Colombia.">
-  <meta property="og:url" content="https://naturalbe.com.co/product.html">
   <meta property="og:image" content="https://naturalbe.com.co/static/img/og-naturalbe.jpg">
   <meta property="og:site_name" content="Natural Be">
   <meta name="twitter:card" content="summary_large_image">
@@ -41,7 +39,29 @@
   <link rel="preconnect" href="https://wa.me">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Noto+Sans:wght@400;600;700&display=optional" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Noto+Sans:wght@400;600;700&display=optional" rel="stylesheet"></noscript>
+  <style>
+    body{font-family:'Plus Jakarta Sans',sans-serif;line-height:1.5;margin:0}
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+    .pdp-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:1rem}
+    .pdp-grid > :first-child{min-width:0}
+    .pdp-grid > :last-child{min-width:0}
+    @media (min-width: 960px){
+      .pdp-grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+    }
+    .product-hero-media{position:relative;aspect-ratio:1/1;min-height:320px}
+    .product-hero-media picture{display:block;height:100%}
+    .product-hero-media picture img{display:block;width:100%;height:100%;object-fit:contain}
+    .pdp-grid > :first-child .pdp-panel{min-height:380px}
+    .pdp-grid > :last-child .pdp-panel:first-child{min-height:520px}
+    #productBadges{min-height:1.8rem}
+    #productName{min-height:2.5em}
+    #productPrice{min-height:1.6em}
+    #productTrust{min-height:1.4em}
+  </style>
+  <link rel="preload" href="/static/css/main.min.css?v=2026-01-11" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="/static/css/main.min.css?v=2026-01-11"></noscript>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -81,7 +101,6 @@
       window.NB_BASE_PATH = '/';
     }
   </script>
-  <link rel="stylesheet" href="/static/css/main.min.css?v=2026-01-11">
 </head>
 <body class="marketplace">
   <!-- Google Tag Manager (noscript) -->
@@ -247,7 +266,7 @@
         <div class="product-hero-media">
           <picture>
             <source id="heroWebp" type="image/webp">
-            <img id="heroImg" src="" alt="" width="720" height="720" loading="eager" decoding="async" fetchpriority="high">
+            <img id="heroImg" src="/static/img/placeholder.webp" alt="" width="720" height="720" loading="eager" decoding="async" fetchpriority="high">
           </picture>
           <div class="product-card__badges" id="productBadges"></div>
         </div>
@@ -488,7 +507,7 @@
     </div>
   </footer>
 
-  <script src="/static/js/nb-core.js" defer></script>
+  <script src="/static/js/nb-core.js?v=2026-02-14" defer></script>
   <script src="/static/js/promo.js" defer></script>
   <script>
     // FIX: sincronizar offset del header con la promo bar
@@ -499,7 +518,7 @@
       document.documentElement.style.setProperty('--promo-offset', `${height}px`);
     });
   </script>
-  <script src="/static/js/products-data.min.js?v=2026-02-07" defer></script>
+  <script src="/static/js/products-data.min.js?v=2026-02-14" defer></script>
   <script>
     (function () {
       function formatCOP(value){
@@ -544,6 +563,50 @@
       }
       return `<img src="${escapeHtml(imgSrc)}" alt="${escapeHtml(p.nombre||'')}" loading="lazy" decoding="async"${cls}${w}${h}${onErr}>`;
     }
+    function normalizeTextValue(value){
+      return String(value || '').trim();
+    }
+    function isWeakSeoTitle(value){
+      const text = normalizeTextValue(value).toLowerCase();
+      if (!text) return true;
+      if (text === 'natural be | producto') return true;
+      return /suplemento general|producto\s*-\s*natural be|uso tópico/.test(text);
+    }
+    function isWeakSeoDescription(value){
+      const text = normalizeTextValue(value).toLowerCase();
+      if (!text) return true;
+      if (text.includes('descubre suplementos natural be')) return true;
+      return /ideal para complementar tu rutina diaria|compra online en natural be/.test(text);
+    }
+    function humanizeTerm(value){
+      return String(value || '')
+        .replace(/[-_]+/g, ' ')
+        .replace(/\s+/g, ' ')
+        .trim()
+        .replace(/\b\w/g, (letter) => letter.toUpperCase());
+    }
+    function buildSeoTitle(p){
+      const name = normalizeTextValue(p.nombre || p.name || 'Producto');
+      const brand = normalizeTextValue(p.marca || 'Natural Be');
+      const category = humanizeTerm(p.categoria || p.category || '');
+      if (brand && brand.toLowerCase() !== 'natural be' && category) {
+        return `${name} - ${brand} | ${category} en Colombia`;
+      }
+      if (brand && brand.toLowerCase() !== 'natural be') {
+        return `${name} - ${brand} | Natural Be Colombia`;
+      }
+      return `${name} | Suplemento en Colombia - Natural Be`;
+    }
+    function buildSeoDescription(p){
+      const name = normalizeTextValue(p.nombre || p.name || 'este suplemento');
+      const brand = normalizeTextValue(p.marca || 'Natural Be');
+      const category = humanizeTerm(p.categoria || p.category || 'suplementos');
+      const shortDesc = normalizeTextValue(p.descripcion_corta || p.description || '');
+      if (shortDesc) {
+        return `Compra ${name} de ${brand} en Colombia. ${shortDesc} Envio 24-48h y pago seguro en Natural Be.`;
+      }
+      return `Compra ${name} de ${brand} en Colombia. Suplemento de ${category} con envio 24-48h y pago seguro en Natural Be.`;
+    }
     function getSlugFromUrl(){
       if (window.NB_PRODUCT_SLUG) return String(window.NB_PRODUCT_SLUG);
       const dataSlug=document.body?.dataset?.productSlug;
@@ -563,11 +626,21 @@
     function updateCanonical(p){
       const slug=p?.slug||getSlugFromUrl();
       if(!slug)return;
-      const canonical=`https://naturalbe.com.co/producto/${encodeURIComponent(slug)}.html`;
-      const link=document.querySelector('link[rel="canonical"]');
-      if(link) link.setAttribute('href', canonical);
-      const ogUrl=document.querySelector('meta[property="og:url"]');
-      if(ogUrl) ogUrl.setAttribute('content', canonical);
+      const canonical=`https://naturalbe.com.co/producto/${encodeURIComponent(slug)}`;
+      let link=document.querySelector('link[rel="canonical"]');
+      if(!link){
+        link=document.createElement('link');
+        link.setAttribute('rel','canonical');
+        document.head.appendChild(link);
+      }
+      link.setAttribute('href', canonical);
+      let ogUrl=document.querySelector('meta[property="og:url"]');
+      if(!ogUrl){
+        ogUrl=document.createElement('meta');
+        ogUrl.setAttribute('property','og:url');
+        document.head.appendChild(ogUrl);
+      }
+      ogUrl.setAttribute('content', canonical);
     }
     const initialSlug=getSlugFromUrl();
     if(initialSlug) updateCanonical({ slug: initialSlug });
@@ -699,19 +772,22 @@
       if(!p)return;
       const isStatic = Boolean(window.NB_CATALOG_SOURCE === 'fallback' || window.NB_CATALOG_ERROR);
       const safeName=p.nombre||'';
-      document.title=p.seo_title||`${safeName} | Natural Be Colombia`;
+      const preferredTitle = isWeakSeoTitle(p.seo_title) ? buildSeoTitle(p) : p.seo_title;
+      document.title=preferredTitle||`${safeName} | Natural Be Colombia`;
       const metaDesc=document.querySelector('meta[name="description"]');
-      const descriptionText=p.seo_description||p.descripcion_corta||`Compra ${safeName} original en Colombia. Envío gratis y pago seguro.`;
+      const descriptionText = isWeakSeoDescription(p.seo_description)
+        ? buildSeoDescription(p)
+        : (p.seo_description||p.descripcion_corta||`Compra ${safeName} original en Colombia. Envío gratis y pago seguro.`);
       if(metaDesc)metaDesc.setAttribute('content', descriptionText);
       const ogTitle=document.querySelector('meta[property="og:title"]');
-      if(ogTitle) ogTitle.setAttribute('content', p.seo_title||`${safeName} | Natural Be`);
+      if(ogTitle) ogTitle.setAttribute('content', preferredTitle||`${safeName} | Natural Be`);
       const ogDesc=document.querySelector('meta[property="og:description"]');
       if(ogDesc) ogDesc.setAttribute('content', descriptionText);
       const ogImage=document.querySelector('meta[property="og:image"]');
       const imageUrl=p.imagen_principal_webp||p.imagen_principal||'https://naturalbe.com.co/static/img/og-naturalbe.jpg';
       if(ogImage) ogImage.setAttribute('content', imageUrl);
       const twitterTitle=document.querySelector('meta[name="twitter:title"]');
-      if(twitterTitle) twitterTitle.setAttribute('content', p.seo_title||`${safeName} | Natural Be`);
+      if(twitterTitle) twitterTitle.setAttribute('content', preferredTitle||`${safeName} | Natural Be`);
       const twitterDesc=document.querySelector('meta[name="twitter:description"]');
       if(twitterDesc) twitterDesc.setAttribute('content', descriptionText);
       const twitterImage=document.querySelector('meta[name="twitter:image"]');
@@ -842,8 +918,8 @@
         return;
       }
       const basePath=window.NB_BASE_PATH||'/';
-      const buildUrl=(slug)=>`${basePath}producto/${encodeURIComponent(slug)}.html`;
-      rg.innerHTML=list.map(r=>`<a class="related-product-card" href="/${buildUrl(r.slug)}">${buildPictureHtml(r,260,160)}<h3>${escapeHtml(r.nombre||'')}</h3><p class="price">${formatCOP(r.precio)}</p></a>`).join('');
+      const buildUrl=(slug)=>`/producto/${encodeURIComponent(slug)}`;
+      rg.innerHTML=list.map(r=>`<a class="related-product-card" href="${buildUrl(r.slug)}">${buildPictureHtml(r,260,160)}<h3>${escapeHtml(r.nombre||'')}</h3><p class="price">${formatCOP(r.precio)}</p></a>`).join('');
     }
     function refreshProductShipping(){
       if(typeof renderShippingWidget!=='function'||typeof computeCartSubtotal!=='function'||typeof getFreeShippingState!=='function') return;
@@ -859,6 +935,12 @@
     function initProductPage(){
       const slug=getSlugFromUrl();
       const status=document.getElementById('productStatus');
+      const params=new URLSearchParams(window.location.search);
+      const idParam=params.get('id');
+      const slugParam=params.get('slug')||params.get('producto');
+      const pathName=window.location.pathname||'';
+      const onProductHtml=/\/product\.html$/i.test(pathName)||pathName==='/product.html';
+      const inPrettyPath=pathName.indexOf('/producto/')===0;
       
       loadProductsData().then(()=>{
         let product = null;
@@ -871,6 +953,18 @@
             if (idParam && window.PRODUCTS_BY_ID) {
                 product = window.PRODUCTS_BY_ID[idParam];
             }
+        }
+
+        // Canonicaliza rutas legacy en cliente sin crear entrada extra en historial.
+        if (onProductHtml && !inPrettyPath) {
+          if (slugParam && product && product.slug) {
+            window.location.replace(`/producto/${encodeURIComponent(product.slug)}`);
+            return;
+          }
+          if (idParam && !slugParam && product && product.slug) {
+            window.location.replace(`/producto/${encodeURIComponent(product.slug)}`);
+            return;
+          }
         }
 
         if(!product){
@@ -913,10 +1007,11 @@
   <script src="/static/js/search-engine.js?v=2026-02-07" defer></script>
   <script src="/static/js/cart.js?v=2026-02-07" defer></script>
   <script src="/static/js/nav.js" defer></script>
-  <script src="/static/js/marketplace.js?v=2026-01-13" defer></script>
-  <script src="/static/js/product-schema.js" defer></script>
+  <script src="/static/js/marketplace.js?v=2026-02-14" defer></script>
+  <script src="/static/js/product-schema.js?v=2026-02-14" defer></script>
 </body>
 </html>
+
 
 
 
