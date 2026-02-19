@@ -1,0 +1,58 @@
+﻿{
+    "generated_at":  "2026-02-17T17:42:37-05:00",
+    "preset":  "perf",
+    "runs":  3,
+    "pages":  [
+                  {
+                      "url":  "http://127.0.0.1:4173/index.html",
+                      "slug":  "index-html",
+                      "runs_requested":  3,
+                      "runs_ok":  0,
+                      "median":  {
+                                     "score":  null,
+                                     "lcp":  null,
+                                     "cls":  null,
+                                     "tbt":  null,
+                                     "speed_index":  null,
+                                     "inp":  null
+                                 },
+                      "runs":  [
+
+                               ]
+                  },
+                  {
+                      "url":  "http://127.0.0.1:4173/category.html?category=suplementos",
+                      "slug":  "category-html",
+                      "runs_requested":  3,
+                      "runs_ok":  0,
+                      "median":  {
+                                     "score":  null,
+                                     "lcp":  null,
+                                     "cls":  null,
+                                     "tbt":  null,
+                                     "speed_index":  null,
+                                     "inp":  null
+                                 },
+                      "runs":  [
+
+                               ]
+                  },
+                  {
+                      "url":  "http://127.0.0.1:4173/product.html?slug=omega-3-6-9",
+                      "slug":  "product-html",
+                      "runs_requested":  3,
+                      "runs_ok":  0,
+                      "median":  {
+                                     "score":  null,
+                                     "lcp":  null,
+                                     "cls":  null,
+                                     "tbt":  null,
+                                     "speed_index":  null,
+                                     "inp":  null
+                                 },
+                      "runs":  [
+
+                               ]
+                  }
+              ]
+}

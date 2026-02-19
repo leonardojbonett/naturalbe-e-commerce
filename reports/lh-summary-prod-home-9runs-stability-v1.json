@@ -1,0 +1,24 @@
+﻿{
+    "generated_at":  "2026-02-18T20:49:40-05:00",
+    "preset":  "perf",
+    "runs":  9,
+    "pages":  [
+                  {
+                      "url":  "https://naturalbe.com.co/",
+                      "slug":  "home",
+                      "runs_requested":  9,
+                      "runs_ok":  0,
+                      "median":  {
+                                     "score":  null,
+                                     "lcp":  null,
+                                     "cls":  null,
+                                     "tbt":  null,
+                                     "speed_index":  null,
+                                     "inp":  null
+                                 },
+                      "runs":  [
+
+                               ]
+                  }
+              ]
+}

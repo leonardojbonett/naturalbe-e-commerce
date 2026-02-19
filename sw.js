@@ -1,17 +1,20 @@
-// Service Worker para Natural Be - v2026-02-08
-const CACHE_NAME = 'natural-be-v2026-02-08';
-const STATIC_CACHE = 'natural-be-static-v2026-02-08';
-const RUNTIME_CACHE = 'natural-be-runtime-v2026-02-08';
+// Service Worker para Natural Be - v2026-02-16
+const CACHE_NAME = 'natural-be-v2026-02-16';
+const STATIC_CACHE = 'natural-be-static-v2026-02-16';
+const RUNTIME_CACHE = 'natural-be-runtime-v2026-02-16';
+const OFFLINE_FALLBACK = '/index.html';
 
 // Recursos estáticos críticos para cachear
 const STATIC_ASSETS = [
   '/',
   '/index.html',
   '/category.html',
-  '/static/css/main.min.css?v=2026-01-11',
+  '/product.html',
+  '/static/css/main.min.css',
   '/static/js/cart.min.js',
   '/static/js/search-engine.js',
-  '/static/js/webp-support.js?v=2026-02-05',
+  '/static/js/webp-support.js',
+  '/static/js/tracking.js',
   '/static/img/logo.webp',
   '/static/img/placeholder.webp',
   '/static/img/og-naturalbe.jpg',
@@ -41,10 +44,7 @@ self.addEventListener('install', (event) => {
   
   event.waitUntil(
     caches.open(STATIC_CACHE)
-      .then((cache) => {
-        console.log('[SW] Caching static assets');
-        return cache.addAll(STATIC_ASSETS);
-      })
+      .then((cache) => precacheAssets(cache, STATIC_ASSETS))
       .then(() => {
         console.log('[SW] Static assets cached successfully');
         return self.skipWaiting();
@@ -85,8 +85,18 @@ self.addEventListener('fetch', (event) => {
   const { request } = event;
   const url = new URL(request.url);
   
-  // Solo cachear peticiones GET y HTTPS
-  if (request.method !== 'GET' || url.protocol !== 'https:') {
+  // Solo cachear peticiones GET
+  if (request.method !== 'GET') {
+    return;
+  }
+
+  // Ignorar esquemas no soportados por SW
+  if (!['http:', 'https:'].includes(url.protocol)) {
+    return;
+  }
+
+  // No interceptar extensiones del navegador ni GTM preview
+  if (url.pathname.startsWith('/chrome-extension/') || url.searchParams.has('gtm_debug')) {
     return;
   }
   
@@ -99,7 +109,8 @@ self.addEventListener('fetch', (event) => {
     event.respondWith(
       caches.open(STATIC_CACHE)
         .then((cache) => {
-          return cache.match(request)
+          const cacheLookupOptions = { ignoreSearch: true };
+          return cache.match(request, cacheLookupOptions)
             .then((response) => {
               if (response) {
                 // Devolver del caché y actualizar en background
@@ -178,8 +189,36 @@ function fetchAndCache(request, cache) {
     })
     .catch((error) => {
       console.error('[SW] Fetch failed:', error);
-      throw error;
+      return cache.match(request, { ignoreSearch: true }).then((cached) => {
+        if (cached) return cached;
+        if (request.mode === 'navigate') {
+          return caches.match(OFFLINE_FALLBACK);
+        }
+        return Response.error();
+      });
     });
+}
+
+async function precacheAssets(cache, assets) {
+  console.log('[SW] Caching static assets');
+  const jobs = assets.map(async (asset) => {
+    try {
+      const req = new Request(asset, { cache: 'no-cache' });
+      const res = await fetch(req);
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      await cache.put(asset, res.clone());
+      return { asset, ok: true };
+    } catch (error) {
+      console.warn('[SW] Skipping precache asset:', asset, error && error.message ? error.message : error);
+      return { asset, ok: false };
+    }
+  });
+
+  const results = await Promise.all(jobs);
+  const failed = results.filter((r) => !r.ok).map((r) => r.asset);
+  if (failed.length) {
+    console.warn('[SW] Precache completed with skipped assets:', failed);
+  }
 }
 
 // Background Sync para carrito offline

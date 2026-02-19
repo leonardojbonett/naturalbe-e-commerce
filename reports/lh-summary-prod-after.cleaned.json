@@ -1,0 +1,40 @@
+{
+  "generated_at": "2026-02-17T19:07:55-05:00",
+  "preset": "perf",
+  "runs": 3,
+  "pages": [
+    {
+      "slug": "home",
+      "runs_ok": 3,
+      "median": {
+        "score": 56.00000000000001,
+        "lcp": 3414.786,
+        "cls": 0.027080271568955597,
+        "tbt": 1698.5359999999991,
+        "speed_index": 5334.0
+      }
+    },
+    {
+      "slug": "producto-omega-3-6-9",
+      "runs_ok": 2,
+      "median": {
+        "score": 39.5,
+        "lcp": 17096.7805,
+        "cls": 0.05117324815562305,
+        "tbt": 1703.4150000000002,
+        "speed_index": 11431.0
+      }
+    },
+    {
+      "slug": "categoria-suplementos",
+      "runs_ok": 3,
+      "median": {
+        "score": 53.0,
+        "lcp": 3935.931,
+        "cls": 0.02196042698429727,
+        "tbt": 1910.9109999999991,
+        "speed_index": 4195.0
+      }
+    }
+  ]
+}

@@ -1,0 +1,1524 @@
+Datos estructurados de carrusel (ItemList)
+Un carrusel es un resultado enriquecido, similar a una lista que puedes deslizar, que los usuarios pueden consultar desde sus dispositivos móviles. Muestra varias tarjetas de un mismo sitio, denominado "carrusel de host". Si quieres que tu sitio pueda tener un resultado enriquecido de carrusel de host, añade datos estructurados de ItemList junto con una de las siguientes funciones de datos estructurados compatibles:
+
+Lista de cursos
+Película
+Receta
+Restaurante
+A continuación, se muestra el aspecto que pueden tener los carruseles en la Búsqueda de Google si se añaden etiquetas de ItemList junto con un tipo de contenido compatible:
+
+Ilustración de cómo puede aparecer una lista de cursos en la Búsqueda de Google. Muestra 3 cursos diferentes del mismo sitio web en formato de lista, de forma que los usuarios pueden consultar y seleccionar un curso específico.Ilustración de cómo puede aparecer un carrusel de host de películas en la Búsqueda de Google. Muestra 3 películas diferentes del mismo sitio web en formato de carrusel, de forma que los usuarios pueden consultar y seleccionar una película específica.
+Nota: Hay otras funciones similares a un carrusel en la Búsqueda de Google, como Noticias destacadas, que muestran resultados de diferentes sitios, aunque no es posible controlarlas con etiquetas de carrusel.
+Añadir datos estructurados
+Los datos estructurados son un formato estandarizado con el que se puede proporcionar información sobre una página y clasificar su contenido. Consulta cómo funcionan los datos estructurados si aún no te has familiarizado con ellos.
+
+A continuación, se muestra una descripción general de cómo añadir datos estructurados a tu sitio.
+
+Decide qué página contendrá los datos estructurados del carrusel. Hay dos opciones:
+Una página de resumen y varias páginas de detalles: la página de resumen tiene una breve descripción de cada elemento de la lista, y cada descripción redirige a una página de detalles dedicada por completo a un elemento. Por ejemplo, una página de resumen en la que figuran las mejores recetas de galletas y donde cada descripción incluye un enlace a la receta completa.
+Lista única todo en uno: una página que contiene toda la información de la lista, incluido el texto completo de cada elemento. Por ejemplo, una lista con las mejores películas del 2020 en una sola página.
+Añade las propiedades obligatorias. Consulta más información sobre dónde insertar datos estructurados en una página en función del formato que estés utilizando.
+¿Usas un CMS? Quizá sea más fácil que uses un complemento que esté integrado en tu CMS.
+¿Usas JavaScript? Consulta cómo generar datos estructurados con JavaScript.
+Añade las propiedades obligatorias y recomendadas para el tipo de contenido específico del carrusel:
+Curso
+Película
+Receta
+Restaurante
+Sigue las directrices.
+Valida tu código con la prueba de resultados enriquecidos.
+Crea varias páginas que incluyan tus datos estructurados y comprueba cómo las ve Google con la herramienta de inspección de URLs. Asegúrate de que Google pueda acceder a tu página y de que no esté bloqueada por un archivo robots.txt, por la etiqueta noindex ni por requisitos de inicio de sesión. Si la página se ve bien, puedes solicitar que Google vuelva a rastrear tus URLs.
+Nota: Da cierto margen de tiempo a Google para que vuelva a rastrear e indexar tus páginas. Recuerda que Google puede tardar varios días en encontrar y rastrear una página después de publicarse.
+Para que Google siempre tenga la versión actualizada de tus páginas, te recomendamos que envíes un sitemap. Puedes automatizar este envío con la API Sitemap de Search Console.
+Una página de resumen y varias páginas de detalles
+La página de resumen tiene una breve descripción de cada elemento de la lista, y cada descripción redirige a una página de detalles dedicada por completo a un elemento.
+
+Página de resumen 
+Define un elemento ItemList, donde cada elemento ListItem solo tiene tres propiedades: @type (que es "ListItem"), position (la posición en la lista) y url (la URL de una página con todos los detalles sobre ese elemento).
+
+Este es un ejemplo de página de resumen:
+
+
+
+<html>
+  <head>
+    <title>Best cookie recipes</title>
+    <script type="application/ld+json">
+    {
+      "@context":"https://schema.org",
+      "@type":"ItemList",
+      "itemListElement":[
+        {
+          "@type":"ListItem",
+          "position":1,
+          "url":"https://example.com/peanut-butter-cookies.html"
+        },
+        {
+          "@type":"ListItem",
+          "position":2,
+          "url":"https://example.com/triple-chocolate-chunk.html"
+        },
+        {
+          "@type":"ListItem",
+          "position":3,
+          "url":"https://example.com/snickerdoodles.html"
+        }
+      ]
+    }
+    </script>
+  </head>
+  <body>
+    <p>
+      Here are the best cookie recipes of all time.
+    </p>
+    <h2>
+      Peanut Butter Cookies
+    </h2>
+    <p>
+      This <a href="https://example.com/peanut-butter-cookies.html">Peanut Butter Cookie recipe</a> is the tastiest one you'll find.
+    </p>
+    <h2>
+      Triple Chocolate Chunk Cookies
+    </h2>
+    <p>
+      This <a href="https://example.com/triple-chocolate-chunk.html">Triple Chocolate Chunk Cookies recipe</a> is the tastiest one you'll find.
+    </p>
+    <h2>
+      Snickerdoodles
+    </h2>
+    <p>
+      This <a href="https://example.com/snickerdoodles.html">Snickerdoodles recipe</a> is the tastiest one you'll find.
+    </p>
+  </body>
+</html>
+Página de detalles 
+En las páginas de detalles se define el tipo de datos estructurados específico de un carrusel. Por ejemplo, si la página de resumen trata sobre las mejores recetas de galletas, cada página de detalles contendría datos estructurados de tipo Recipe para una receta específica.
+
+A continuación se muestra un ejemplo de cómo son las páginas de detalles:
+
+Galletas de mantequilla de cacahuete
+Galletas de tres chocolates
+Galletas de azúcar y canela
+
+
+<html>
+  <head>
+    <title>Peanut Butter Cookies</title>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org/",
+      "@type": "Recipe",
+      "name": "Peanut Butter Cookies",
+      "image": [
+        "https://example.com/photos/1x1/photo.jpg",
+        "https://example.com/photos/4x3/photo.jpg",
+        "https://example.com/photos/16x9/photo.jpg"
+      ],
+      "author": {
+        "@type": "Person",
+        "name": "Wendy Darling"
+      },
+      "datePublished": "2024-03-10",
+      "description": "This Peanut Butter Cookie recipe is everyone's favorite",
+      "prepTime": "PT10M",
+      "cookTime": "PT25M",
+      "totalTime": "PT35M",
+      "recipeCuisine": "French",
+      "recipeCategory": "Cookies",
+      "keywords": "peanut butter, cookies",
+      "recipeYield": 24,
+      "nutrition": {
+        "@type": "NutritionInformation",
+        "calories": "120 calories"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": 5,
+        "ratingCount": 18
+      },
+      "recipeIngredient": [
+        "2 cups of peanut butter",
+        "1/3 cup of sugar"
+      ],
+      "recipeInstructions": [
+        {
+          "@type": "HowToStep",
+          "text": "Mix together the peanut butter and sugar."
+        },
+        {
+          "@type": "HowToStep",
+          "text": "Roll cookie dough into small balls and place on a cookie sheet."
+        },
+        {
+          "@type": "HowToStep",
+          "text": "Bake for 25 minutes."
+        }
+      ],
+      "video": {
+        "@type": "VideoObject",
+        "name": "How to Peanut Butter Cookies",
+        "description": "This is how you make peanut butter cookies.",
+        "thumbnailUrl": [
+          "https://example.com/photos/1x1/photo.jpg",
+          "https://example.com/photos/4x3/photo.jpg",
+          "https://example.com/photos/16x9/photo.jpg"
+         ],
+        "contentUrl": "https://www.example.com/video123.mp4",
+        "embedUrl": "https://www.example.com/videoplayer?video=123",
+        "uploadDate": "2024-02-05T08:00:00+08:00",
+        "duration": "PT1M33S",
+        "interactionStatistic": {
+          "@type": "InteractionCounter",
+          "interactionType": { "@type": "WatchAction" },
+          "userInteractionCount": 2347
+        },
+        "expires": "2025-02-05T08:00:00+08:00"
+       }
+    }
+    </script>
+  </head>
+  <body>
+    <p>
+      Here's how to make peanut butter cookies.
+    </p>
+    <ol>
+      <li>Mix together the peanut butter and sugar.</li>
+      <li>Roll cookie dough into small balls and place on a cookie sheet.</li>
+      <li>Bake for 25 minutes.</li>
+    </ol>
+  </body>
+</html>
+Lista única todo en uno
+Una lista única con todo en una página que aloja toda la información de un carrusel, incluido el texto completo de cada elemento. Por ejemplo, una lista con las mejores películas del 2020 en una sola página. Esta página no incluye enlaces a otras páginas de detalles.
+
+A continuación se muestra un ejemplo de una página todo en uno:
+
+
+
+<html>
+  <head>
+    <title>The Best Movies from the Oscars - 2024</title>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@type": "Movie",
+            "url": "https://example.com/2024-best-picture-noms#a-star-is-born",
+            "name": "A Star Is Born",
+            "image": "https://example.com/photos/6x9/photo.jpg",
+            "dateCreated": "2024-10-05",
+            "director": {
+                "@type": "Person",
+                "name": "Bradley Cooper"
+              },
+            "review": {
+              "@type": "Review",
+              "reviewRating": {
+                "@type": "Rating",
+                "ratingValue": 5
+              },
+              "author": {
+                "@type": "Person",
+                "name": "John D."
+              }
+            },
+              "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": 90,
+                "bestRating": 100,
+                "ratingCount": 19141
+              }
+            }
+          },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@type": "Movie",
+            "name": "Bohemian Rhapsody",
+            "url": "https://example.com/2024-best-picture-noms#bohemian-rhapsody",
+            "image": "https://example.com/photos/6x9/photo.jpg",
+            "dateCreated": "2024-11-02",
+            "director": {
+                "@type": "Person",
+                "name": "Bryan Singer"
+              },
+            "review": {
+              "@type": "Review",
+              "reviewRating": {
+                "@type": "Rating",
+                "ratingValue": 3
+              },
+              "author": {
+                "@type": "Person",
+                "name": "Vin S."
+              }
+            },
+              "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": 61,
+                "bestRating": 100,
+                "ratingCount": 21985
+              }
+            }
+          },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "item": {
+            "@type": "Movie",
+            "name": "Black Panther",
+            "url": "https://example.com/2024-best-picture-noms#black-panther",
+            "image": "https://example.com/photos/6x9/photo.jpg",
+            "dateCreated": "2024-02-16",
+            "director": {
+                "@type": "Person",
+                "name": "Ryan Coogler"
+              },
+            "review": {
+              "@type": "Review",
+              "reviewRating": {
+                "@type": "Rating",
+                "ratingValue": 2
+              },
+              "author": {
+                "@type": "Person",
+                "name": "Trevor R."
+              }
+            },
+              "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": 96,
+                "bestRating": 100,
+                "ratingCount": 88211
+              }
+            }
+          }
+      ]
+    }
+    </script>
+  </head>
+  <body>
+  </body>
+</html>
+Directrices
+Para que tu página pueda aparecer en resultados enriquecidos de carrusel, debes seguir las Directrices básicas de la Búsqueda y las directrices generales de datos estructurados. Además, las siguientes directrices se aplican a datos estructurados de carrusel:
+
+Todos los elementos de la lista deben ser del mismo tipo. Por ejemplo, si una lista está relacionada con recetas, incluye solo elementos Recipe. No combines varios tipos.
+Comprueba que los datos estructurados de un carrusel están completos y que contienen todos los elementos que aparecen en la página relacionada.
+El texto visible para el usuario debe ser similar a la información contenida en los datos estructurados de la página.
+Los elementos que aparecen en formato de lista se mostrarán en el orden especificado por la propiedad position.
+Validar e implementar datos estructurados 
+Valida tu código con la prueba de resultados enriquecidos. En el caso de las páginas de resumen, debes verificar lo siguiente:
+Comprueba que el valor itemListElement contenga dos o más elementos ListItem.
+Asegúrate de que todos los elementos ListItem sean del mismo tipo (por ejemplo, que todos estén relacionados con recetas).
+Valida cada URL mencionada en la lista mediante la prueba de resultados enriquecidos. Cada página de la lista debe contener datos estructurados válidos según la documentación correspondiente a alguno de estos tipos de contenido compatibles: receta, curso, restaurante y película.
+Crea varias páginas que incluyan tus datos estructurados y comprueba cómo las ve Google con la herramienta de inspección de URLs. Asegúrate de que Google pueda acceder a tu página y de que no esté bloqueada por un archivo robots.txt, por la etiqueta noindex ni por requisitos de inicio de sesión. Si la página se ve bien, puedes solicitar que Google vuelva a rastrear tus URLs.
+Nota: Da cierto margen de tiempo a Google para que vuelva a rastrear e indexar tus páginas. Recuerda que Google puede tardar varios días en encontrar y rastrear una página después de publicarse.
+Para que Google siempre tenga la versión actualizada de tus páginas, te recomendamos que envíes un sitemap. Puedes automatizar este envío con la API Sitemap de Search Console.
+Definiciones de tipos de datos estructurados
+Debes incluir las propiedades obligatorias para que tu contenido pueda mostrarse como un resultado enriquecido.
+
+ItemList
+ItemList es el elemento que contiene todos los elementos de la lista. Si se usa en una página de resumen, todas las URLs de la lista deben dirigir a diferentes páginas del mismo dominio. Si se utiliza en una lista todo en uno, deben dirigir a la página que aloja los datos estructurados de la lista.
+
+Puedes consultar la definición completa de ItemList en schema.org/ItemList.
+
+Las propiedades que admite Google son las siguientes:
+
+Propiedades obligatorias
+itemListElement	
+ListItem
+
+Es una lista de elementos. Para especificar una lista, define un valor ItemList que contenga al menos dos elementos ListItem. Todos los elementos deben ser del mismo tipo. Consulta más información sobre ListItem.
+
+ListItem
+ListItem contiene detalles sobre un elemento concreto de la lista.
+
+Si se trata de una página de resumen, incluye solo las propiedades type, position y url en ListItem.
+Si se trata de una lista todo en uno, incluye todas las propiedades adicionales de schema.org del tipo de datos que describe. Los tipos de datos compatibles son los siguientes:
+Curso
+Película
+Receta
+Restaurante
+Puedes consultar la definición completa de ListItem en schema.org/ListItem.
+
+Páginas de resumen
+Páginas todo en uno
+Las siguientes propiedades se aplican a las páginas de resumen:
+
+Propiedades obligatorias
+position	
+Integer
+
+Indica la posición del elemento en el carrusel. Se trata de un número que tomará como referencia el 1.
+
+url	
+URL
+
+Indica la URL canónica de la página de detalles de un elemento. Todas las URLs que aparecen en la lista deben ser únicas, pero tienen que pertenecer al mismo dominio o al mismo subdominio o superdominio que la página actual.
+
+Solucionar problemas
+Si tienes problemas para implementar o depurar datos estructurados, a continuación se incluyen algunos recursos que pueden serte útiles.
+
+Si usas un sistema de gestión de contenido (CMS) o alguien se encarga de gestionar tu sitio, pídele ayuda. No olvides reenviarle cualquier mensaje de Search Console que incluya información sobre el problema en cuestión.
+Google no garantiza que las funciones que utilizan datos estructurados aparezcan en los resultados de búsqueda. Para ver una lista con motivos habituales por los que Google no muestra tu contenido en resultados enriquecidos, consulta las directrices generales de datos estructurados.
+Es posible que haya un error en tus datos estructurados. Consulta la lista de errores de datos estructurados y el informe de datos estructurados que no se pueden analizar.
+Si se ha aplicado una acción manual de datos estructurados a tu página, se ignorarán sus datos estructurados, aunque la página puede seguir apareciendo en los resultados de la Búsqueda de Google. Para solucionar problemas de datos estructurados, usa el informe "Acciones manuales".
+Revisa las directrices para comprobar si tu contenido no las cumple. El problema podría deberse a que la página incluye contenido engañoso o etiquetas con contenido fraudulento. No obstante, es posible que el problema no se deba a la sintaxis, por lo que la prueba de resultados enriquecidos no podrá ayudarte a identificarlo.
+Solucionar problemas si faltan resultados enriquecidos o si se ha reducido el número total de resultados enriquecidos.
+Da cierto margen a Google para que vuelva a rastrear e indexar tu página. Recuerda que Google puede tardar varios días en encontrar y rastrear una página después de publicarse. Consulta las preguntas frecuentes sobre el rastreo y la indexación de la Búsqueda de Google.
+Publica una pregunta en el foro del Centro de la Búsqueda de Google.
+Datos estructurados de lista de cursos (Course)Ilustración de cómo puede aparecer una lista de cursos en la Búsqueda de Google. Muestra 3 cursos diferentes del mismo sitio web en formato de lista, de forma que los usuarios pueden consultar y seleccionar un curso específico.
+Con los datos estructurados de lista de cursos, puedes proporcionar más información sobre tus cursos para que posibles alumnos los encuentren en la Búsqueda de Google. Puedes incluir información detallada como los nombres de los cursos, quién los ofrece y una breve descripción.
+
+Disponibilidad de la función
+Los resultados enriquecidos de listas de cursos están disponibles en inglés en todos los países en los que se puede usar la Búsqueda de Google.
+
+Cómo añadir datos estructurados 
+Los datos estructurados son un formato estandarizado con el que se puede proporcionar información sobre una página y clasificar su contenido. Consulta cómo funcionan los datos estructurados si aún no te has familiarizado con ellos.
+
+A continuación se explica a grandes rasgos cómo crear, probar y publicar datos estructurados.
+
+Añade las propiedades obligatorias. Consulta más información sobre dónde insertar datos estructurados en una página en función del formato que estés utilizando.
+¿Usas un CMS? Quizá sea más fácil que uses un complemento que esté integrado en tu CMS.
+¿Usas JavaScript? Consulta cómo generar datos estructurados con JavaScript.
+Sigue las directrices.
+Valida tu código con la prueba de resultados enriquecidos y corrige los errores críticos. Te recomendamos que también corrijas los problemas no críticos que puedan marcarse en la herramienta, ya que pueden ayudar a mejorar la calidad de los datos estructurados (sin embargo, esto no es necesario para que se muestren los resultados enriquecidos).
+Crea varias páginas que incluyan tus datos estructurados y comprueba cómo las ve Google con la herramienta de inspección de URLs. Asegúrate de que Google pueda acceder a tu página y de que no esté bloqueada por un archivo robots.txt, por la etiqueta noindex ni por requisitos de inicio de sesión. Si la página se ve bien, puedes solicitar que Google vuelva a rastrear tus URLs.
+Nota: Da cierto margen de tiempo a Google para que vuelva a rastrear e indexar tus páginas. Recuerda que Google puede tardar varios días en encontrar y rastrear una página después de publicarse.
+Para que Google siempre tenga la versión actualizada de tus páginas, te recomendamos que envíes un sitemap. Puedes automatizar este envío con la API Sitemap de Search Console.
+Ejemplos
+Página de detalles del curso individual 
+A continuación se muestra un ejemplo de una página de detalles del curso individual. Esta página debe estar emparejada con una página de resumen que contenga las etiquetas ItemList.
+
+Es posible que veas errores de otros tipos de resultados enriquecidos en la prueba de resultados enriquecidos. Para poder optar a participar en la función de listas de cursos, presta atención a las advertencias o errores que aparezcan en la sección del elemento de la lista de cursos; los demás errores puedes ignorarlos.
+
+<html>
+  <head>
+    <title>Introduction to Computer Science and Programming</title>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Course",
+      "name": "Introduction to Computer Science and Programming",
+      "description": "Introductory CS course laying out the basics.",
+      "provider": {
+        "@type": "Organization",
+        "name": "University of Technology - Eureka",
+        "sameAs": "https://www.example.com"
+      }
+    }
+    </script>
+  </head>
+  <body>
+  </body>
+</html>
+Página única todo en uno 
+A continuación, se muestra un ejemplo de una página única todo en uno: En esta configuración de la página se incluyen tanto la etiqueta de lista como los detalles de cada curso en la misma página.
+
+Es posible que veas errores de otros tipos de resultados enriquecidos en la prueba de resultados enriquecidos. Para poder optar a participar en la función de la lista de cursos, presta atención a las advertencias o errores que aparezcan en las secciones de los elementos de listas de cursos y carruseles; los demás errores puedes ignorarlos.
+
+<html>
+  <head>
+    <title>Computer Science Courses</title>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@type": "Course",
+            "url":"https://www.example.com/courses#intro-to-cs",
+            "name": "Introduction to Computer Science and Programming",
+            "description": "This is an introductory CS course laying out the basics.",
+            "provider": {
+              "@type": "Organization",
+              "name": "University of Technology - Example",
+              "sameAs": "https://www.example.com"
+           }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@type": "Course",
+            "url":"https://www.example.com/courses#intermediate-cs",
+            "name": "Intermediate Computer Science and Programming",
+            "description": "This is a CS course that builds on the basics learned in the Introduction course.",
+            "provider": {
+              "@type": "Organization",
+              "name": "University of Technology - Example",
+              "sameAs": "https://www.example.com"
+           }
+         }
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "item": {
+            "@type": "Course",
+            "url":"https://www.example.com/courses#advanced-cs",
+            "name": "Advanced Computer Science and Programming",
+            "description": "This CS course covers advanced programming principles.",
+            "provider": {
+              "@type": "Organization",
+              "name": "University of Technology - Eureka",
+              "sameAs": "https://www.example.com"
+           }
+          }
+        }
+      ]
+    }
+    </script>
+  </head>
+  <body>
+  </body>
+</html>
+Directrices
+Debes seguir estas directrices para poder aparecer en una lista de cursos.
+
+Advertencia: Si tu sitio infringe una o varias de estas directrices, es posible que apliquemos alguna acción manual contra el sitio. Una vez hayas solucionado el problema, puedes enviar tu sitio para que se reconsidere la acción que tomamos.
+Directrices de contenido
+Directrices técnicas
+Directrices de carruseles
+Directrices básicas de la Búsqueda
+Directrices generales sobre datos estructurados
+Directrices de contenido 
+Usa la etiqueta Course únicamente para contenido educativo que encaje con esta definición de curso: "unidad o conjunto de unidades de un plan de estudios que incluye clases magistrales, lecciones o módulos de una materia o tema en particular".
+Un curso debe tener como objetivo explícito la obtención de conocimientos o habilidades sobre una materia o tema en particular, y lo debe impartir al menos un instructor a un conjunto de estudiantes.
+Un evento público general como "Día de la Astronomía" o un vídeo de dos minutos titulado "Cómo preparar un bocadillo" no se consideran cursos.
+Directrices técnicas
+
+Debes marcar al menos tres cursos. Los cursos pueden estar en páginas de detalles independientes o en una página todo en uno.
+
+Debes añadir etiquetas de carrusel a una página de resumen o a una página todo en uno.
+
+En cada curso deben figurar propiedades válidas de nombre y de proveedor. Por ejemplo, los siguientes tipos de nomenclatura no se consideran válidos:
+
+Frases promocionales: "La mejor escuela del mundo"
+Precios en títulos de cursos: "Aprende ukelele ¡por solo 30 €!"
+Títulos que no describen un curso: "¡Gana dinero rápido con esta clase!"
+Descuentos u oportunidades de compra: "Los líderes en sus campos comparten sus secretos. ¡Con un 25 % de descuento!"
+Definiciones de tipos de datos estructurados
+Debes incluir las propiedades obligatorias para que tu contenido pueda mostrarse como un resultado enriquecido. Si quieres, puedes especificar también las propiedades recomendadas para proporcionar más información sobre tu contenido y, así, ofrecer una mejor experiencia de usuario.
+
+Course
+Usa las siguientes propiedades para marcar al menos tres cursos. Los cursos pueden estar en páginas de detalles independientes o en una página todo en uno.
+
+Puedes consultar la definición completa de Course en schema.org/Course. Las propiedades que admite Google son las siguientes:
+
+Propiedades obligatorias
+description	
+Text
+
+Indica la descripción de un curso. Límite de visualización de 60 caracteres.
+
+name	
+Text
+
+Indica el título de un curso.
+
+Propiedades recomendadas
+provider	
+Organization
+
+Indica la organización que publica el contenido original de un curso. Por ejemplo, UC Berkeley.
+
+ItemList
+Además de las propiedades Course, añade las siguientes propiedades para especificar la lista. Puedes añadir estas propiedades a una página de resumen o a una página todo en uno.
+
+Puedes consultar la definición completa de ItemList en schema.org/ItemList.
+
+Propiedades obligatorias
+itemListElement	
+ListItem
+
+Es la anotación de la página de un solo elemento.
+
+ListItem.position	
+Integer
+
+Indica la posición ordinal de un elemento de página en una lista.
+
+ListItem.url	
+URL
+
+Es la URL canónica de la página del elemento. Cada elemento debe tener una URL única.
+
+Solucionar problemas
+Si tienes problemas para implementar o depurar datos estructurados, a continuación se incluyen algunos recursos que pueden serte útiles.
+
+Si usas un sistema de gestión de contenido (CMS) o alguien se encarga de gestionar tu sitio, pídele ayuda. No olvides reenviarle cualquier mensaje de Search Console que incluya información sobre el problema en cuestión.
+Google no garantiza que las funciones que utilizan datos estructurados aparezcan en los resultados de búsqueda. Para ver una lista con motivos habituales por los que Google no muestra tu contenido en resultados enriquecidos, consulta las directrices generales de datos estructurados.
+Es posible que haya un error en tus datos estructurados. Consulta la lista de errores de datos estructurados y el informe de datos estructurados que no se pueden analizar.
+Si se ha aplicado una acción manual de datos estructurados a tu página, se ignorarán sus datos estructurados, aunque la página puede seguir apareciendo en los resultados de la Búsqueda de Google. Para solucionar problemas de datos estructurados, usa el informe "Acciones manuales".
+Revisa las directrices para comprobar si tu contenido no las cumple. El problema podría deberse a que la página incluye contenido engañoso o etiquetas con contenido fraudulento. No obstante, es posible que el problema no se deba a la sintaxis, por lo que la prueba de resultados enriquecidos no podrá ayudarte a identificarlo.
+Solucionar problemas si faltan resultados enriquecidos o si se ha reducido el número total de resultados enriquecidos.
+Da cierto margen a Google para que vuelva a rastrear e indexar tu página. Recuerda que Google puede tardar varios días en encontrar y rastrear una página después de publicarse. Consulta las preguntas frecuentes sobre el rastreo y la indexación de la Búsqueda de Google.
+Publica una pregunta en el foro del Centro de la Búsqueda de Google.
+Datos estructurados de conjuntos de datos (Dataset, DataCatalog y DataDownload)
+Los conjuntos de datos son más fáciles de encontrar en la herramienta Búsqueda de conjuntos de datos cuando proporcionas información de apoyo (por ejemplo, su nombre, descripción, creador y formatos de distribución) como datos estructurados. El enfoque de Google con respecto al descubrimiento de conjuntos de datos es emplear schema.org y otros estándares de metadatos que se pueden añadir a las páginas que describen conjuntos de datos. El propósito de estas etiquetas es mejorar el descubrimiento de conjuntos de datos de campos como las ciencias biológicas, las ciencias sociales, el aprendizaje automático, los datos de la comunidad y gubernamentales, etc.
+
+ejemplo de Búsqueda de Datasets
+Nota: Es posible que no coincidan con el aspecto que tendrán en los resultados de búsqueda. Puedes previsualizar la mayoría de las funciones con la prueba de resultados enriquecidos.
+A continuación se muestran algunos ejemplos que pueden considerarse conjuntos de datos:
+
+Una tabla o un archivo CSV con algunos datos
+Una colección organizada de tablas
+Un archivo en un formato de propiedad que contiene datos
+Una colección de archivos que, juntos, constituyen un conjunto de datos representativo
+Un objeto estructurado con datos en algún otro formato que quizá te interese cargar en una herramienta especial para procesarlo
+Imágenes que capturan datos
+Archivos relacionados con el aprendizaje automático, como parámetros entrenados o definiciones de estructura de red neuronal
+Cómo añadir datos estructurados 
+Los datos estructurados son un formato estandarizado con el que se puede proporcionar información sobre una página y clasificar su contenido. Consulta cómo funcionan los datos estructurados si aún no te has familiarizado con ellos.
+
+A continuación se explica a grandes rasgos cómo crear, probar y publicar datos estructurados.
+
+Añade las propiedades obligatorias. Consulta más información sobre dónde insertar datos estructurados en una página en función del formato que estés utilizando.
+¿Usas un CMS? Quizá sea más fácil que uses un complemento que esté integrado en tu CMS.
+¿Usas JavaScript? Consulta cómo generar datos estructurados con JavaScript.
+Sigue las directrices.
+Valida tu código con la prueba de resultados enriquecidos y corrige los errores críticos. Te recomendamos que también corrijas los problemas no críticos que puedan marcarse en la herramienta, ya que pueden ayudar a mejorar la calidad de los datos estructurados (sin embargo, esto no es necesario para que se muestren los resultados enriquecidos).
+Crea varias páginas que incluyan tus datos estructurados y comprueba cómo las ve Google con la herramienta de inspección de URLs. Asegúrate de que Google pueda acceder a tu página y de que no esté bloqueada por un archivo robots.txt, por la etiqueta noindex ni por requisitos de inicio de sesión. Si la página se ve bien, puedes solicitar que Google vuelva a rastrear tus URLs.
+Nota: Da cierto margen de tiempo a Google para que vuelva a rastrear e indexar tus páginas. Recuerda que Google puede tardar varios días en encontrar y rastrear una página después de publicarse.
+Para que Google siempre tenga la versión actualizada de tus páginas, te recomendamos que envíes un sitemap. Puedes automatizar este envío con la API Sitemap de Search Console.
+Eliminar un conjunto de datos de los resultados de Búsqueda de Datasets
+Si no quieres que se muestre un conjunto de datos en los resultados de Búsqueda de Datasets, puedes controlar cómo se indexa el conjunto de datos mediante la etiqueta meta robots. Ten en cuenta que es posible que los cambios tarden algún tiempo (días o semanas, en función de la programación de rastreo) en reflejarse en los resultados de Búsqueda de Datasets.
+
+Nuestro enfoque con respecto al descubrimiento de conjuntos de datos
+Podemos interpretar los datos estructurados que haya en páginas web sobre conjuntos de datos si están marcados con etiquetas Dataset de schema.org o estructuras equivalentes representadas en el formato Data Catalog Vocabulary (DCAT) de W3C. También estamos experimentando con una compatibilidad con datos estructurados basados en W3C CSVW, y esperamos avanzar e ir adaptando nuestro enfoque a medida que surjan prácticas recomendadas para describir conjuntos de datos. Consulta más información sobre cómo hacemos que descubrir conjuntos de datos sea más fácil.
+
+Ejemplos
+A continuación se muestra un ejemplo de conjuntos de datos que usan JSON-LD y la sintaxis de schema.org (opción recomendada) en la prueba de resultados enriquecidos. El mismo vocabulario de schema.org se puede usar en las sintaxis de RDFa 1.1 o de microdatos. También puedes describir los metadatos con el vocabulario W3C DCAT. El siguiente ejemplo se basa en una descripción de un conjunto de datos real.
+
+JSON-LD
+RDFa
+A continuación se muestra un ejemplo de un conjunto de datos en JSON-LD:
+
+
+
+<html>
+  <head>
+    <title>NCDC Storm Events Database</title>
+    <script type="application/ld+json">
+    {
+      "@context":"https://schema.org/",
+      "@type":"Dataset",
+      "name":"NCDC Storm Events Database",
+      "description":"Storm Data is provided by the National Weather Service (NWS) and contain statistics on...",
+      "url":"https://catalog.data.gov/dataset/ncdc-storm-events-database",
+      "sameAs":"https://gis.ncdc.noaa.gov/geoportal/catalog/search/resource/details.page?id=gov.noaa.ncdc:C00510",
+      "identifier": ["https://doi.org/10.1000/182",
+                     "https://identifiers.org/ark:/12345/fk1234"],
+      "keywords":[
+         "ATMOSPHERE > ATMOSPHERIC PHENOMENA > CYCLONES",
+         "ATMOSPHERE > ATMOSPHERIC PHENOMENA > DROUGHT",
+         "ATMOSPHERE > ATMOSPHERIC PHENOMENA > FOG",
+         "ATMOSPHERE > ATMOSPHERIC PHENOMENA > FREEZE"
+      ],
+      "license" : "https://creativecommons.org/publicdomain/zero/1.0/",
+      "isAccessibleForFree" : true,
+      "hasPart" : [
+        {
+          "@type": "Dataset",
+          "name": "Sub dataset 01",
+          "description": "Informative description of the first subdataset...",
+          "license" : "https://creativecommons.org/publicdomain/zero/1.0/",
+          "creator":{
+             "@type":"Organization",
+             "name": "Sub dataset 01 creator"
+          }
+        },
+        {
+          "@type": "Dataset",
+          "name": "Sub dataset 02",
+          "description": "Informative description of the second subdataset...",
+          "license" : "https://creativecommons.org/publicdomain/zero/1.0/",
+          "creator":{
+             "@type":"Organization",
+             "name": "Sub dataset 02 creator"
+          }
+        }
+      ],
+      "creator":{
+         "@type":"Organization",
+         "url": "https://www.ncei.noaa.gov/",
+         "name":"OC/NOAA/NESDIS/NCEI > National Centers for Environmental Information, NESDIS, NOAA, U.S. Department of Commerce",
+         "contactPoint":{
+            "@type":"ContactPoint",
+            "contactType": "customer service",
+            "telephone":"+1-828-271-4800",
+            "email":"ncei.orders@noaa.gov"
+         }
+      },
+      "funder":{
+         "@type": "Organization",
+         "sameAs": "https://ror.org/00tgqzw13",
+         "name": "National Weather Service"
+      },
+      "includedInDataCatalog":{
+         "@type":"DataCatalog",
+         "name":"data.gov"
+      },
+      "distribution":[
+         {
+            "@type":"DataDownload",
+            "encodingFormat":"CSV",
+            "contentUrl":"https://www.ncdc.noaa.gov/stormevents/ftp.jsp"
+         },
+         {
+            "@type":"DataDownload",
+            "encodingFormat":"XML",
+            "contentUrl":"https://gis.ncdc.noaa.gov/all-records/catalog/search/resource/details.page?id=gov.noaa.ncdc:C00510"
+         }
+      ],
+      "temporalCoverage":"1950-01-01/2013-12-18",
+      "spatialCoverage":{
+         "@type":"Place",
+         "geo":{
+            "@type":"GeoShape",
+            "box":"18.0 -65.0 72.0 172.0"
+         }
+      }
+    }
+    </script>
+  </head>
+  <body>
+  </body>
+</html>
+Directrices
+Los sitios deben seguir las directrices de datos estructurados, y además recomendamos las siguientes prácticas recomendadas de sitemaps y sobre fuentes y procedencias.
+
+Prácticas recomendadas de sitemaps
+Usa un archivo de sitemap para ayudar a Google a encontrar tus URLs. Si usas archivos de sitemap y las etiquetas sameAs, te será más fácil documentar cómo se publican las descripciones del conjunto de datos en todo tu sitio.
+
+Si tienes un repositorio de conjuntos de datos, es probable que tengas al menos dos tipos de páginas: páginas canónicas ("de destino") de cada conjunto de datos, y páginas que enumeran múltiples conjuntos de datos (por ejemplo, resultados de búsqueda o algún subconjunto de conjuntos de datos). Te recomendamos que añadas datos estructurados sobre un conjunto de datos a las páginas canónicas. Usa la propiedad sameAs para incluir enlaces a la página canónica si añades datos estructurados a varias copias del conjunto de datos, como fichas en las páginas de resultados de búsqueda.
+
+En Google, no necesitamos que todas las menciones del mismo conjunto de datos se etiqueten explícitamente, pero si lo haces por otras razones, te recomendamos encarecidamente que uses sameAs.
+Prácticas recomendadas sobre fuentes y procedencias
+Es habitual que los conjuntos de datos abiertos se vuelvan a publicar, se acumulen y se basen en otros conjuntos de datos. Este es un esquema inicial de nuestro enfoque para representar situaciones en las que un conjunto de datos es una copia de otro conjunto de datos o se basa en él.
+
+Usa la propiedad sameAs para indicar las URLs más canónicas del original en los casos en que el conjunto de datos o la descripción sea solamente una nueva publicación de materiales ya publicados en otro lugar. El valor de sameAs debe indicar de forma inequívoca la identidad del conjunto de datos; es decir, dos conjuntos de datos distintos no pueden tener el mismo valor sameAs.
+Usa la propiedad isBasedOn en los casos en que el conjunto de datos que se ha vuelto a publicar (incluidos sus metadatos) haya cambiado significativamente.
+Cuando un conjunto de datos deriva de varios originales o los acumula, usa la propiedad isBasedOn.
+Con la propiedad identifier, puedes adjuntar cualquier identificador de objeto digital (DOI) o identificador compacto. Si el conjunto de datos tiene más de un identificador, repite la propiedad identifier. Si usas JSON-LD, esto se representa mediante la sintaxis de lista JSON.
+Esperamos mejorar nuestras recomendaciones a partir de los comentarios, en particular en torno a la descripción de procedencia, el control de versiones y las fechas asociadas con la publicación de series temporales. Únete a las conversaciones de la comunidad.
+
+Recomendaciones de propiedad textual
+Recomendamos limitar todas las propiedades textuales a un máximo de 5000 caracteres. Google Búsqueda de Datasets solo usa los primeros 5000 caracteres de las propiedades textuales. Los nombres y títulos suelen ser unas pocas palabras o una oración corta.
+
+Advertencias y errores conocidos
+Es posible que veas errores o advertencias en la prueba de resultados enriquecidos de Google y en otros sistemas de validación. Concretamente, los sistemas de validación pueden sugerir que las organizaciones deben tener información de contacto, incluido un tipo de contactType. Entre valores útiles se incluyen customer service, emergency, journalist, newsroom y public engagement. También puedes ignorar los errores que indican que csvw:Table es un valor inesperado en la propiedad mainEntity.
+
+Definiciones de tipos de datos estructurados
+Debes incluir las propiedades obligatorias para que tu contenido pueda mostrarse como un resultado enriquecido. Si quieres, puedes especificar también las propiedades recomendadas para proporcionar más información sobre tu contenido y, así, ofrecer una mejor experiencia a los usuarios.
+
+Con la prueba de resultados enriquecidos, puedes validar tus etiquetas.
+
+El objetivo es describir información sobre un conjunto de datos (sus metadatos) y representar su contenido. Por ejemplo, los metadatos del conjunto de datos indican de qué se trata el conjunto de datos, qué variables mide, quién lo ha creado, etc., y no contiene, por poner un caso, valores específicos de las variables.
+
+Dataset
+Puedes consultar la definición completa de Dataset en schema.org/Dataset.
+
+Puedes describir información adicional sobre la publicación del conjunto de datos, como la licencia, cuándo se publicó, su DOI o un valor sameAs que dirige a una versión canónica del conjunto de datos en un repositorio diferente. Añade identifier, license y sameAs a los conjuntos de datos que proporcionan información de procedencia y licencia.
+
+Las propiedades que admite Google son las siguientes:
+
+Propiedades obligatorias
+description	Text
+Es un resumen breve que describe un conjunto de datos.
+
+Directrices
+
+El resumen debe tener una longitud de entre 50 y 5000 caracteres.
+El resumen puede incluir la sintaxis Markdown. Las imágenes insertadas deben usar URLs de ruta absoluta (en lugar de rutas relativas).
+Cuando utilices el formato JSON-LD, indica las líneas nuevas con \n (dos caracteres: barra invertida y letra minúscula "n").
+name	Text
+Es el nombre descriptivo de un conjunto de datos; por ejemplo, "Acumulación de nieve en el hemisferio norte".
+
+Directrices
+
+Siempre que sea posible, pon nombres únicos a los diferentes conjuntos de datos.
+Recomendado: tener dos conjuntos de datos diferentes con los nombres "Snow depth in the Northern Hemisphere" y "Snow depth in the Southern Hemisphere".
+
+No recomendado: tener dos conjuntos de datos diferentes con los nombres "Snow depth" y "Snow depth".
+
+Propiedades recomendadas
+alternateName	Text
+Son nombres alternativos que se han utilizado para hacer referencia a este conjunto de datos, como alias o abreviaturas. Ejemplo (en formato JSON-LD):
+
+
+"name": "The Quick, Draw! Dataset"
+"alternateName": ["Quick Draw Dataset", "quickdraw-dataset"]
+creator	Person o Organization
+Es el creador o autor de este conjunto de datos. Para identificar de forma exclusiva a las personas, usa ORCID ID como el valor de la propiedad sameAs del tipo Person. Para identificar de manera única las instituciones y organizaciones, usa ROR ID. Ejemplo (en formato JSON-LD):
+
+
+"creator": [
+  {
+    "@type": "Person",
+    "sameAs": "https://orcid.org/0000-0000-0000-0000",
+    "givenName": "Jane",
+    "familyName": "Foo",
+    "name": "Jane Foo"
+  },
+  {
+    "@type": "Person",
+    "sameAs": "https://orcid.org/0000-0000-0000-0001",
+    "givenName": "Jo",
+    "familyName": "Bar",
+    "name": "Jo Bar"
+  },
+  {
+    "@type": "Organization",
+    "sameAs": "https://ror.org/xxxxxxxxx",
+    "name": "Fictitious Research Consortium"
+  }
+]
+citation	Text o CreativeWork
+Identifica los artículos académicos recomendados por el proveedor de datos que se citan además del conjunto de datos en sí. Proporciona la cita del conjunto de datos con otras propiedades, como name, identifier, creator y publisher. Por ejemplo, esta propiedad puede identificar de forma exclusiva una publicación académica relacionada, como un descriptor de datos, un documento de datos o un artículo para el que este conjunto de datos es material complementario. Ejemplos (en formato JSON-LD):
+
+
+"citation": "https://doi.org/10.1111/111"
+
+"citation": "https://identifiers.org/pubmed:11111111"
+
+"citation": "https://identifiers.org/arxiv:0111.1111v1"
+
+"citation":
+ "Doe J (2014) Influence of X ... https://doi.org/10.1111/111"
+Directrices adicionales
+
+No uses esta propiedad para proporcionar información de citas en el conjunto de datos en sí. Su objetivo es identificar artículos académicos relacionados, no el conjunto de datos en sí. Para proporcionar la información necesaria para citar el conjunto de datos, usa mejor las propiedades name, identifier, creator y publisher.
+Cuando completes la propiedad de cita con un fragmento de cita, proporciona el identificador del artículo (como un DOI) siempre que sea posible.
+Recomendado: "Doe J (2014) Influence of X. Biomics 1(1). https://doi.org/10.1111/111"
+
+No recomendado: "Doe J (2014) Influence of X. Biomics 1(1)."
+
+funder	Person o Organization
+Persona u organización que proporciona ayuda financiera para este conjunto de datos. Para identificar de forma exclusiva a las personas, usa ORCID ID como el valor de la propiedad sameAs del tipo Person. Para identificar de manera única las instituciones y organizaciones, usa ROR ID. Ejemplo (en formato JSON-LD):
+
+
+"funder": [
+  {
+    "@type": "Person",
+    "sameAs": "https://orcid.org/0000-0000-0000-0002",
+    "givenName": "Jane",
+    "familyName": "Funder",
+    "name": "Jane Funder"
+  },
+  {
+    "@type": "Organization",
+    "sameAs": "https://ror.org/yyyyyyyyy",
+    "name": "Fictitious Funding Organization"
+  }
+]
+hasPart o isPartOf	URL o Dataset
+Si el conjunto de datos es una colección de conjuntos de datos más pequeños, indica la relación con la propiedad hasPart. Por el contrario, si el conjunto de datos forma parte de un conjunto de datos más grande, usa isPartOf. Los valores de ambas propiedades pueden ser una URL o una instancia de Dataset. En el caso de que se utilice Dataset como valor, debe incluir todas las propiedades obligatorias para un Dataset independiente. Ejemplos:
+
+
+"hasPart" : [
+  {
+    "@type": "Dataset",
+    "name": "Sub dataset 01",
+    "description": "Informative description of the first subdataset...",
+    "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "creator": {
+      "@type":"Organization",
+      "name": "Sub dataset 01 creator"
+    }
+  },
+  {
+    "@type": "Dataset",
+    "name": "Sub dataset 02",
+    "description": "Informative description of the second subdataset...",
+    "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "creator": {
+      "@type":"Organization",
+      "name": "Sub dataset 02 creator"
+    }
+  }
+]
+
+"isPartOf" : "https://example.com/aggregate_dataset"
+identifier	URL, Text o PropertyValue
+Es un identificador, como un DOI, o un identificador compacto. Si el conjunto de datos tiene más de un identificador, repite la propiedad identifier. Si usas JSON-LD, esto se representa mediante la sintaxis de lista JSON.
+
+isAccessibleForFree	Boolean
+Indica si se puede acceder al conjunto de datos sin tener que pagar.
+
+keywords	Text
+Son palabras clave que resumen el conjunto de datos.
+
+license	URL o CreativeWork
+Indica una licencia con la que se distribuye el conjunto de datos. Por ejemplo:
+
+
+"license" : "https://creativecommons.org/publicdomain/zero/1.0/"
+
+"license" : {
+  "@type": "CreativeWork",
+  "name": "Custom license",
+  "url": "https://example.com/custom_license"
+  }
+Directrices adicionales
+
+Proporciona una URL que identifique inequívocamente una versión específica de la licencia utilizada.
+Recomendado
+
+
+"license" : "https://creativecommons.org/licenses/by/4.0"
+No recomendado
+
+
+"license" : "https://creativecommons.org/licenses/by"
+measurementTechnique	Text o URL
+La técnica, la tecnología o la metodología con las que se ha recopilado un conjunto de datos; esta propiedad puede corresponderse con las variables descritas en variableMeasured.
+
+La propiedad measurementTechnique es una propuesta y está pendiente de estandarización en schema.org. Animamos a los editores a que compartan sus comentarios sobre esta propiedad con la comunidad de schema.org.
+sameAs	URL
+La URL de una página web de referencia donde se identifica de manera inequívoca al conjunto de datos.
+
+spatialCoverage	Text o Place
+Puedes proporcionar un único punto que describa el aspecto espacial del conjunto de datos. Incluye esta propiedad solo si el conjunto de datos tiene una dimensión espacial. Por ejemplo, un punto único donde se recopilaron todas las mediciones, o las coordenadas de un cuadro delimitador de un área.
+
+Puntos
+
+
+"spatialCoverage:" {
+  "@type": "Place",
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 39.3280,
+    "longitude": 120.1633
+  }
+}
+Formas
+
+Usa GeoShape para describir áreas de diferentes formas. Por ejemplo, para especificar un cuadro delimitador.
+
+
+"spatialCoverage:" {
+  "@type": "Place",
+  "geo": {
+    "@type": "GeoShape",
+    "box": "39.3280 120.1633 40.445 123.7878"
+  }
+}
+Los puntos dentro de las propiedades box, circle, line o polygon deben expresarse como un par de dos valores separados por espacios correspondientes a la latitud y la longitud (en ese orden).
+
+Ubicaciones con nombre
+
+
+"spatialCoverage:" "Tahoe City, CA"
+temporalCoverage	Text
+Los datos en el conjunto de datos cubren un intervalo de tiempo específico. Incluye esta propiedad solo si el conjunto de datos tiene una dimensión temporal. Schema.org utiliza el estándar ISO 8601 para describir intervalos de tiempo y puntos de tiempo. Puedes describir las fechas de manera diferente según el intervalo del conjunto de datos. Indica intervalos abiertos con dos puntos decimales (..).
+
+Fecha única
+
+
+"temporalCoverage" : "2008"
+Periodo
+
+
+"temporalCoverage" : "1950-01-01/2013-12-18"
+Periodo abierto
+
+
+"temporalCoverage" : "2013-12-19/.."
+variableMeasured	Text o PropertyValue
+Indica la variable que mide este conjunto de datos. Por ejemplo, temperatura o presión.
+
+La propiedad variableMeasured es una propuesta y está pendiente de estandarización en schema.org. Animamos a los editores a que compartan sus comentarios sobre esta propiedad con la comunidad de schema.org.
+version	Text o Number
+Es el número de versión del conjunto de datos.
+
+url	URL
+Indica la ubicación de una página que describe el conjunto de datos.
+
+DataCatalog
+Puedes consultar la definición completa de DataCatalog en schema.org/DataCatalog.
+
+Los conjuntos de datos a menudo se publican en repositorios que contienen muchos otros conjuntos de datos. El mismo conjunto de datos se puede incluir en más de uno de estos repositorios. Puedes hacer referencia directa a un catálogo de datos al que pertenece este conjunto de datos mediante las siguientes propiedades:
+
+Propiedades recomendadas
+includedInDataCatalog	DataCatalog
+Es el catálogo al que pertenece el conjunto de datos.
+
+
+DataDownload
+Puedes consultar la definición completa de DataDownload en schema.org/DataDownload. Además de las propiedades del conjunto de datos, añade las siguientes propiedades para los conjuntos de datos que proporcionan opciones de descarga.
+
+La propiedad distribution describe cómo obtener el conjunto de datos en sí porque la URL a menudo apunta a la página de destino que describe el conjunto de datos. La propiedad distribution describe dónde obtener los datos y en qué formato. Esta propiedad puede tener varios valores; por ejemplo, una versión CSV tiene una URL y una versión de Excel está disponible en otra.
+
+Propiedades obligatorias
+distribution.contentUrl	URL
+Indica el enlace para realizar la descarga.
+
+Propiedades recomendadas
+distribution	DataDownload
+Es la descripción de la ubicación donde descargar el conjunto de datos y el formato de archivo en el que se descarga.
+
+
+distribution.encodingFormat	Text o URL
+Indica el formato de archivo de la distribución.
+
+
+Conjuntos de datos tabulares
+Beta: este enfoque se encuentra actualmente en versión beta y, por lo tanto, está sujeto a cambios.
+Un conjunto de datos tabular es un conjunto organizado principalmente a partir de una cuadrícula de filas y columnas. En el caso de las páginas que incorporan conjuntos de datos tabulares, también puedes crear etiquetas más explícitas a partir del enfoque básico. Actualmente comprendemos una variación de CSVW ("CSV en la Web", consulta W3C), que se proporciona en paralelo al contenido tabular orientado al usuario en la página HTML.
+
+A continuación se proporciona un ejemplo que muestra una pequeña tabla codificada en formato CSVW JSON-LD. Hay algunos errores conocidos en la prueba de resultados enriquecidos.
+
+
+
+<html>
+  <head>
+    <title>American Humane Association</title>
+    <script type="application/ld+json">
+    {
+      "@context": ["https://schema.org", {"csvw": "https://www.w3.org/ns/csvw#"}],
+      "@type": "Dataset",
+      "name":"AMERICAN HUMANE ASSOCIATION",
+      "description": "ProPublica's Nonprofit Explorer lets you view summaries of 2.2 million tax returns from tax-exempt organizations and see financial details such as their executive compensation and revenue and expenses. You can browse raw IRS data released since 2013 and access over 9.4 million tax filing documents going back as far as 2001.",
+      "publisher": {
+        "@type": "Organization",
+        "name": "ProPublica"
+      },
+      "mainEntity" : {
+        "@type" : "csvw:Table",
+        "csvw:tableSchema": {
+          "csvw:columns": [
+            {
+              "csvw:name": "Year",
+              "csvw:datatype": "string",
+              "csvw:cells": [
+                {
+                  "csvw:value": "2024",
+                  "csvw:primaryKey": "2024"
+                },
+                {
+                  "csvw:value": "2024",
+                  "csvw:primaryKey": "2024"
+                }]
+            },
+            {
+              "csvw:name": "Organization name",
+              "csvw:datatype": "string",
+              "csvw:cells": [
+                {
+                  "csvw:value": "AMERICAN HUMANE ASSOCIATION",
+                  "csvw:primaryKey": "2024"
+                },
+                {
+                  "csvw:value": "AMERICAN HUMANE ASSOCIATION",
+                  "csvw:primaryKey": "2024"
+                }]
+            },
+            {
+              "csvw:name": "Organization address",
+              "csvw:datatype": "string",
+              "csvw:cells": [
+                {
+                  "csvw:value": "1400 16TH STREET NW",
+                  "csvw:primaryKey": "2024"
+                },
+                {
+                  "csvw:value": "1400 16TH STREET NW",
+                  "csvw:primaryKey": "2024"
+                }]
+            },
+            {
+              "csvw:name": "Organization NTEE Code",
+              "csvw:datatype": "string",
+              "csvw:cells": [
+                {
+                  "csvw:value": "D200",
+                  "csvw:notes": "Animal Protection and Welfare",
+                  "csvw:primaryKey": "2024"
+                },
+                {
+                  "csvw:value": "D200",
+                  "csvw:notes": "Animal Protection and Welfare",
+                  "csvw:primaryKey": "2024"
+                }]
+            },
+            {
+              "csvw:name": "Total functional expenses ($)",
+              "csvw:datatype": "integer",
+              "csvw:cells": [
+                {
+                  "csvw:value": "13800212",
+                  "csvw:primaryKey": "2024"
+                },
+                {
+                  "csvw:value": "13800212",
+                  "csvw:primaryKey": "2024"
+                }]
+            }]
+        }
+      }
+    }
+    </script>
+  </head>
+  <body>
+  </body>
+</html>
+Monitorizar resultados enriquecidos con Search Console
+Search Console es una herramienta que te ayuda a monitorizar el rendimiento de tus páginas en la Búsqueda de Google. No hace falta que te registres en Search Console para que tu sitio web aparezca en los resultados de la Búsqueda de Google, pero, si lo haces, sabrás cómo lo ve Google y qué puedes hacer para mejorarlo. Te recomendamos que consultes Search Console en los siguientes casos:
+
+Después de implementar datos estructurados por primera vez
+Después de publicar plantillas nuevas o modificar el código
+Al hacer el análisis periódico del tráfico
+
+Después de implementar datos estructurados por primera vez 
+Una vez que Google haya indexado tus páginas, puedes comprobar si hay algún problema en el informe de estado de resultados enriquecidos correspondiente. Lo ideal es que haya un aumento en el número de elementos válidos y que no lo haya en el número de elementos no válidos. Si detectas problemas en tus datos estructurados, haz lo siguiente:
+
+Corrige los elementos no válidos.
+Inspecciona la URL en tiempo real para ver si el problema continúa.
+Solicita que se valide la corrección desde el informe de estado.
+Después de publicar plantillas nuevas o modificar el código 
+Cuando hagas cambios significativos en tu sitio web, observa si se incrementa la cantidad de elementos no válidos de datos estructurados.
+Si notas que hay más elementos no válidos, quizá sea porque has implementado una plantilla que no funciona, o puede que tu sitio esté interactuando con la plantilla que utilizas de un modo diferente que no es adecuado.
+Si notas que hay menos elementos válidos, pero no hay un incremento de elementos no válidos, es posible que hayas dejado de insertar datos estructurados en tus páginas. Para saber cuál es la causa del problema, utiliza la herramienta de inspección de URLs.
+Al hacer el análisis periódico del tráfico 
+Consulta el informe de rendimiento para analizar el tráfico de tus páginas en la Búsqueda de Google. En él, verás con qué frecuencia aparece tu página como resultado enriquecido en la Búsqueda, cada cuánto hacen clic en ella los usuarios y cuál es la posición media que ocupa tu sitio web en los resultados de búsqueda. También puedes obtener automáticamente estos resultados con la API de Search Console.
+Solucionar problemas
+Si tienes problemas para implementar o depurar datos estructurados, a continuación se incluyen algunos recursos que pueden serte útiles.
+
+Si usas un sistema de gestión de contenido (CMS) o alguien se encarga de gestionar tu sitio, pídele ayuda. No olvides reenviarle cualquier mensaje de Search Console que incluya información sobre el problema en cuestión.
+Google no garantiza que las funciones que utilizan datos estructurados aparezcan en los resultados de búsqueda. Para ver una lista con motivos habituales por los que Google no muestra tu contenido en resultados enriquecidos, consulta las directrices generales de datos estructurados.
+Es posible que haya un error en tus datos estructurados. Consulta la lista de errores de datos estructurados y el informe de datos estructurados que no se pueden analizar.
+Si se ha aplicado una acción manual de datos estructurados a tu página, se ignorarán sus datos estructurados, aunque la página puede seguir apareciendo en los resultados de la Búsqueda de Google. Para solucionar problemas de datos estructurados, usa el informe "Acciones manuales".
+Revisa las directrices para comprobar si tu contenido no las cumple. El problema podría deberse a que la página incluye contenido engañoso o etiquetas con contenido fraudulento. No obstante, es posible que el problema no se deba a la sintaxis, por lo que la prueba de resultados enriquecidos no podrá ayudarte a identificarlo.
+Solucionar problemas si faltan resultados enriquecidos o si se ha reducido el número total de resultados enriquecidos.
+Da cierto margen a Google para que vuelva a rastrear e indexar tu página. Recuerda que Google puede tardar varios días en encontrar y rastrear una página después de publicarse. Consulta las preguntas frecuentes sobre el rastreo y la indexación de la Búsqueda de Google.
+Publica una pregunta en el foro del Centro de la Búsqueda de Google.
+Un conjunto de datos concreto no aparece en los resultados de Búsqueda de Datasets
+error Causa del problema: tu sitio web no contiene datos estructurados en los que se describan los conjuntos de datos o la página aún no se ha rastreado.
+
+done Corrige el problema
+
+Copia el enlace de la página que esperas que aparezca en los resultados de Búsqueda de Datasets y pégalo en la prueba de resultados enriquecidos. Si aparece un mensaje que indica que la página no es apta para este tipo de resultados o que no todas las etiquetas son aptas para generar resultados enriquecidos, significa que no hay etiquetas de conjunto de datos en la página o que no son correctas. Para solucionar el problema, consulta la sección Cómo añadir datos estructurados.
+Si la página tiene etiquetas, es posible que no se haya rastreado todavía. Puedes comprobar el estado del rastreo con Search Console.
+Falta el logotipo de la empresa o no aparece correctamente en los resultados
+error Causa del problema: quizá tu página no incluye las etiquetas de schema.org para logotipos de organizaciones o no has dado información sobre tu empresa a Google.
+
+done Corrige el problema
+
+Añade datos estructurados de logotipo en tu página.
+Proporciona información sobre tu empresa a Google.
+Datos estructurados de foros de debate (DiscussionForumPosting)Ilustración de la función de debates y foros
+Las etiquetas de foros de debate están diseñadas para los sitios de tipo foro en los que los usuarios comparten perspectivas de primera mano. Cuando los sitios de foros añaden estas etiquetas, la Búsqueda de Google puede identificar mejor los debates online en la Web y usarlas en funciones como los debates y foros.
+
+¿Tu foro sigue un patrón de preguntas y respuestas? Usa etiquetas de preguntas.
+Cómo usar DiscussionForumPosting en un foro
+Por lo general, te recomendamos que anides los comentarios debajo de la publicación con la que estén relacionados. Si el foro tiene su propia estructura organizada en conversaciones, utiliza un árbol de comentarios para representarla:
+
+
+{
+  "@context": "https://schema.org",
+  "@type": "DiscussionForumPosting",
+  "headline": "Very Popular Thread",
+  ...
+  "comment": [{
+    "@type": "Comment",
+    "text": "This should not be this popular",
+    ...
+    "comment": [{
+      "@type": "Comment",
+      "text": "Yes it should",
+      ...
+    }]
+  }]
+}
+Si la naturaleza es más lineal (por ejemplo, una publicación original seguida de una serie de respuestas), anídalas todas debajo de la publicación original como comentarios. Lo ideal es que las páginas posteriores de contenido de los foros de varias páginas incluyan la publicación original con la URL de la página principal:
+
+
+{
+  // JSON-LD on non-threaded forum at https://example.com/post/very-popular-thread/14
+  "@context": "https://schema.org",
+  "@type": "DiscussionForumPosting",
+  "headline": "Very Popular Thread", // Only the headline/topic is explicitly present
+  "url": "https://example.com/post/very-popular-thread",
+  ...
+  "comment": [{
+    "@type": "Comment",
+    "text": "First Post on this Page",
+    ...
+  },{
+    "@type": "Comment",
+    "text": "Second Post on this Page",
+    ...
+  }]
+}
+Si la URL se refiere principalmente a una única publicación, utiliza mainEntity (o mainEntityOfPage) para identificar el código DiscussionForumPosting principal:
+
+
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "url": "https://example.com/post/very-popular-thread",
+  "mainEntity": {
+    "@type": "DiscussionForumPosting"
+    ...
+  }
+}
+Las páginas web que tienen una lista de publicaciones (por ejemplo, en una página de perfil, tema o categoría) es habitual que no tengan toda la información presente en la misma página y requieran que el usuario haga clic para obtener información adicional (como respuestas). Puedes elegir incluir solo la información que está presente en la página (e incluir la URL de la publicación específica del debate).
+
+No marques una publicación de la página como entidad principal si no es una página de debate de esa publicación. Para mostrar que las páginas son un conjunto de publicaciones relacionadas, puede ser útil adjuntarlas todas a una Collection o ItemList.
+
+Cómo añadir datos estructurados 
+Los datos estructurados son un formato estandarizado con el que se puede proporcionar información sobre una página y clasificar su contenido. Consulta cómo funcionan los datos estructurados si aún no te has familiarizado con ellos.
+
+A continuación se explica a grandes rasgos cómo crear, probar y publicar datos estructurados.
+
+Añade las propiedades obligatorias. Consulta más información sobre dónde insertar datos estructurados en una página en función del formato que estés utilizando.
+¿Usas un CMS? Quizá sea más fácil que uses un complemento que esté integrado en tu CMS.
+¿Usas JavaScript? Consulta cómo generar datos estructurados con JavaScript.
+Sigue las directrices.
+Valida tu código con la prueba de resultados enriquecidos y corrige los errores críticos. Te recomendamos que también corrijas los problemas no críticos que puedan marcarse en la herramienta, ya que pueden ayudar a mejorar la calidad de los datos estructurados (sin embargo, esto no es necesario para que se muestren los resultados enriquecidos).
+Crea varias páginas que incluyan tus datos estructurados y comprueba cómo las ve Google con la herramienta de inspección de URLs. Asegúrate de que Google pueda acceder a tu página y de que no esté bloqueada por un archivo robots.txt, por la etiqueta noindex ni por requisitos de inicio de sesión. Si la página se ve bien, puedes solicitar que Google vuelva a rastrear tus URLs.
+Nota: Da cierto margen de tiempo a Google para que vuelva a rastrear e indexar tus páginas. Recuerda que Google puede tardar varios días en encontrar y rastrear una página después de publicarse.
+Para que Google siempre tenga la versión actualizada de tus páginas, te recomendamos que envíes un sitemap. Puedes automatizar este envío con la API Sitemap de Search Console.
+Ejemplos
+En el siguiente ejemplo de etiquetas se muestra una página de foro lineal y sin conversaciones:
+
+JSON-LD
+Microdatos
+
+
+<html>
+  <head>
+    <title>I went to the concert!</title>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "DiscussionForumPosting",
+      "mainEntityOfPage": "https://example.com/post/very-popular-thread",
+      "headline": "I went to the concert!",
+      "text": "Look at how cool this concert was!",
+      "video": {
+        "@type": "VideoObject",
+        "contentUrl": "https://example.com/media/super-cool-concert.mp4",
+        "name": "Video of concert",
+        "uploadDate": "2024-03-01T06:34:34+02:00",
+        "thumbnailUrl": "https://example.com/media/super-cool-concert-snap.jpg"
+      },
+      "url": "https://example.com/post/very-popular-thread",
+      "author": {
+        "@type": "Person",
+        "name": "Katie Pope",
+        "url": "https://example.com/user/katie-pope",
+        "agentInteractionStatistic": {
+          "@type": "InteractionCounter",
+          "interactionType": "https://schema.org/WriteAction",
+          "userInteractionCount": 8
+        }
+      },
+      "datePublished": "2024-03-01T08:34:34+02:00",
+      "interactionStatistic": {
+        "@type": "InteractionCounter",
+        "interactionType": "https://schema.org/LikeAction",
+        "userInteractionCount": 27
+      },
+      "comment": [{
+        "@type": "Comment",
+        "text": "Who's the person you're with?",
+        "author": {
+          "@type": "Person",
+          "name": "Saul Douglas",
+          "url": "https://example.com/user/saul-douglas",
+          "agentInteractionStatistic": {
+            "@type": "InteractionCounter",
+            "interactionType": "https://schema.org/WriteAction",
+            "userInteractionCount": 167
+          }
+        },
+        "datePublished": "2024-03-01T09:46:02+02:00"
+      },{
+        "@type": "Comment",
+        "text": "That's my mom, isn't she cool?",
+        "author": {
+          "@type": "Person",
+          "name": "Katie Pope",
+          "url": "https://example.com/user/katie-pope",
+          "agentInteractionStatistic": {
+            "@type": "InteractionCounter",
+            "interactionType": "https://schema.org/WriteAction",
+            "userInteractionCount": 8
+          }
+        },
+        "datePublished": "2024-03-01T09:50:25+02:00",
+        "interactionStatistic": {
+          "@type": "InteractionCounter",
+          "interactionType": "https://schema.org/LikeAction",
+          "userInteractionCount": 7
+        }
+      }]
+    }
+  </script>
+</head>
+<body>
+</body>
+</html>
+Directrices
+Para que los datos estructurados de tu foro de debate se puedan utilizar en la Búsqueda de Google, debes seguir estas directrices:
+
+Directrices generales sobre datos estructurados
+Directrices básicas de la Búsqueda
+Directrices de contenido
+Directrices técnicas
+Directrices de contenido
+Usa la etiqueta DiscussionForumPosting solo para describir una publicación generada por un usuario en un sitio web. No utilices estas etiquetas en contenido creado principalmente por los editores del sitio web o sus agentes.
+Si tu sitio se parece más a una plataforma genérica de redes sociales, puedes usar SocialMediaPosting, que es el tipo superior de DiscussionForumPosting, con los mismos requisitos.
+Aunque recomendamos las etiquetas válidas de otros tipos (Article, ImageObject, VideoObject) que puedan utilizar unas etiquetas muy similares con comentarios, información del autor y estadísticas de interacción, no se deberían usar las etiquetas DiscussionForumPosting. Ejemplos:
+Casos prácticos que son válidos:
+
+Una página del foro de una comunidad en la que los usuarios pueden hablar sobre un juego determinado
+Una plataforma de foro genérica que aloja una gran variedad de contenido de subforo
+Una red social donde los usuarios pueden publicar y responder a comentarios o contenido multimedia
+Casos prácticos que no son válidos:
+
+Un artículo o blog escrito directamente por un agente para el sitio web (incluso con comentarios).
+Reseñas de usuarios sobre un producto
+Ten en cuenta que, en la mayoría de los casos prácticos de Google, una página de preguntas se considera un caso especial de una página de foro de debate. Si la estructura del sitio web del foro está compuesta principalmente por preguntas con respuestas, te recomendamos que uses etiquetas de preguntas. Si la estructura es más general y no suele ser contenido de preguntas y respuestas, DiscussionForumPosting es una mejor opción.
+Comprueba que en cada elemento DiscussionForumPosting se incluye el texto completo de la publicación y que en cada elemento Comment se incluye el texto completo de la respuesta si se encuentra en esa página.
+Directrices técnicas
+A diferencia de nuestra preferencia general de datos estructurados, te recomendamos que proporciones las etiquetas DiscussionForumPosting en microdatos (o RDFa) si es posible. De esta forma, no tendrás que duplicar bloques de texto grandes en las etiquetas. Sin embargo, se trata solo de una recomendación, y JSON-LD sigue siendo totalmente compatible.
+Definiciones de tipos de datos estructurados
+En esta sección se describen los tipos de datos estructurados relacionados con DiscussionForumPosting.
+
+Debes incluir las propiedades obligatorias para que tu contenido pueda usarse en la Búsqueda de Google. También puedes especificar las propiedades recomendadas para proporcionar más información sobre las páginas de tu foro de debate y, así, ofrecer una mejor experiencia de usuario.
+
+DiscussionForumPosting (o SocialMediaPosting)
+Aunque Google admite etiquetas SocialMediaPosting, los requisitos son los mismos, y para la mayoría de los sitios web (concretamente los foros) puede ser más adecuado usar DiscussionForumPosting. Por ello, en esta sección usamos DiscussionForumPosting en las descripciones.
+El tipo DiscussionForumPosting define una publicación original que será tema de debate. Aunque este tipo de contenido generalmente se compone de texto, es posible tener una publicación en el foro que solo contenga contenido multimedia.
+
+Propiedades obligatorias
+author
+Person o Organization
+Información sobre el autor de la publicación. Para ayudar a Google a identificar mejor a los autores en distintas funciones, te recomendamos que sigas las prácticas recomendadas para etiquetar autores.
+
+Incluye todas las propiedades que sean relevantes para el autor con las propiedades admitidas de los datos estructurados de artículos y páginas de perfil.
+
+author.name
+Text
+Nombre del autor de la publicación.
+
+datePublished
+DateTime
+
+Indica la fecha y la hora de la publicación en formato ISO 8601.
+
+text, image o video	
+Para representar el contenido de la publicación, debes incluir una de las siguientes propiedades:
+
+text
+image
+video
+No es necesario si representas una publicación en otra página (con un url externo), como en las páginas posteriores de foros o las páginas de categorías de foros.
+
+Propiedades recomendadas
+author.url
+URL
+
+Indica el enlace a una página web que solo identifica al autor de la publicación, probablemente una página de perfil del foro. Te recomendamos que marques esa página con datos estructurados de página de perfil.
+
+comment	
+Comment
+
+Un comentario sobre la publicación o una respuesta a ella, si procede. Marca los comentarios en el orden en el que aparecen en la página.
+
+creativeWorkStatus	
+Text
+
+Si la publicación se ha eliminado, pero sigue estando disponible para contextualizarla o organizarla en conversaciones, asigna el valor Deleted a esta propiedad, si procede.
+
+dateModified	
+DateTime
+
+Indica la fecha y la hora en la que se editó la publicación en formato ISO 8601, si corresponde. Si no se han hecho cambios, no es necesario duplicar la fecha de publicación.
+
+headline
+Text
+Título de la publicación. Si no hay un título independiente, no dupliques ni trunques el texto para convertirlo en un título. No se recomienda para un SocialMediaPosting.
+
+image	
+ImageObject o URL
+
+Cualquier imagen insertada en la publicación, si procede. Si no hay imágenes, no incluyas imágenes predeterminadas, de icono ni de marcador de posición en este campo.
+
+interactionStatistic	
+InteractionCounter
+
+Estadísticas de usuario aplicadas a la publicación principal, si procede.
+
+Google admite las siguientes interactionTypes:
+
+https://schema.org/LikeAction: número de Me gusta o votos a favor.
+https://schema.org/DislikeAction: número de No me gusta o votos en contra.
+https://schema.org/ViewAction: número de visualizaciones.
+https://schema.org/CommentAction o https://schema.org/ReplyAction: número de comentarios.
+https://schema.org/ShareAction: número de veces que se ha compartido.
+isPartOf	
+CreativeWork o URL
+
+Fuente principal de la publicación en caso de que aparezca en una parte concreta de todo el sitio web, si procede. Por ejemplo, un subforo o un grupo dentro del sitio web general. Si se utiliza CreativeWork (como WebPage), usa la propiedad URL para especificar su URL.
+
+sharedContent
+CreativeWork
+El contenido principal compartido en la publicación, si procede. La forma más habitual de utilizarlo es compartir WebPages (con URLs) como un tema de debate, pero también se pueden utilizar imágenes o vídeos con esta propiedad, sobre todo si son el contenido principal del comentario.
+
+Aquí tienes un ejemplo de cómo indicar que hay un enlace compartido en la publicación:
+
+
+  ...
+  "sharedContent": { "@type": "WebPage", url: "https://example.com/external-url" }
+  ...
+text	
+Text
+
+Texto de la publicación, si procede. Es muy habitual, pero en algunos casos se puede omitir si hay otro contenido multimedia en la publicación.
+
+url
+URL
+URL canónica del debate. En las conversaciones de varias páginas, asigna a esta propiedad la URL de la primera página. En el caso de ser un debate de una página, suele ser la URL actual.
+
+video	
+VideoObject
+
+Cualquier vídeo insertado en la publicación, si procede.
+
+Comment
+El tipo Comment define un comentario en un CreativeWork original. En este caso, es un objeto DiscussionForumPosting. Comparte muchas de las propiedades con nuestras directrices de DiscussionForumPosting.
+
+Propiedades obligatorias
+author
+Person o Organization
+Información sobre el autor del comentario. Para ayudar a Google a identificar mejor a los autores en distintas funciones, te recomendamos que sigas las prácticas recomendadas para etiquetar autores.
+
+Incluye todas las propiedades que sean relevantes para el autor con las propiedades admitidas de los datos estructurados de artículos y páginas de perfil.
+
+datePublished
+DateTime
+
+Indica la fecha y la hora en las que se publicó el comentario en formato ISO 8601. Si no se han hecho cambios, no es necesario duplicar la fecha de publicación.
+
+text, image o video	
+Para representar el contenido del comentario, debes incluir una de las siguientes propiedades:
+
+text
+image
+video
+Propiedades recomendadas
+author.url
+URL
+
+Indica el enlace a una página web que solo identifica al autor del comentario, probablemente una página de perfil del foro. Te recomendamos que marques esa página con datos estructurados de página de perfil.
+
+comment	
+Comment
+
+Otro comentario sobre el comentario o en respuesta a este, si procede. Marca los comentarios en el orden en el que aparecen en la página.
+
+creativeWorkStatus	
+Text
+
+Si el comentario se ha eliminado, pero sigue estando disponible para contextualizarlo o organizarlo en conversaciones, asigna el valor Deleted a esta propiedad, si procede.
+
+dateModified	
+DateTime
+
+Indica la fecha y la hora en la que se editó por última vez el comentario en formato ISO 8601, si corresponde.
+
+image	
+ImageObject o URL
+
+Cualquier imagen insertada en el comentario, si procede. Si no hay imágenes, no incluyas imágenes predeterminadas, de icono ni de marcador de posición en este campo.
+
+interactionStatistic	
+InteractionCounter
+
+Estadísticas de usuario aplicadas al comentario, si procede.
+
+Google admite las siguientes interactionTypes:
+
+https://schema.org/LikeAction: número de Me gusta o votos a favor.
+https://schema.org/DislikeAction: número de No me gusta o votos en contra.
+https://schema.org/ViewAction: número de visualizaciones.
+https://schema.org/CommentAction o https://schema.org/ReplyAction: número de comentarios.
+https://schema.org/ShareAction: número de veces que se ha compartido.
+sharedContent
+CreativeWork
+El contenido principal compartido en el comentario, si procede. La forma más habitual de utilizarlo es compartir WebPages (con URLs) como un tema de debate, pero también se pueden utilizar imágenes o vídeos con esta propiedad, sobre todo si son el contenido principal del comentario.
+
+Aquí tienes un ejemplo de cómo indicar que hay un enlace compartido en el comentario:
+
+
+  ...
+  "sharedContent": { "@type": "WebPage", url: "https://example.com/external-url" }
+  ...
+url
+URL
+La URL de ese comentario concreto de la página, si procede. No incluyas esta propiedad si solo es la URL de la publicación original.
+
+video	
+VideoObject
+
+Cualquier vídeo insertado en el comentario, si procede.
+
+InteractionCounter
+InteractionCounter permite asociar un recuento a un determinado tipo de interacción. Se puede utilizar tanto en propiedades de contenido (DiscussionForumPosting y Comment) como en propiedades author.
+
+Propiedades obligatorias
+userInteractionCount
+Integer
+El número de veces que se ha realizado esta interacción.
+
+interactionType
+Subtipo de Action
+
+Para ver una lista con los subtipos de Action válidos para esta propiedad, comprueba la propiedad que usa InteractionCounter (por ejemplo, interactionStatistic).
+
+Monitorizar resultados enriquecidos con Search Console
+Search Console es una herramienta que te ayuda a monitorizar el rendimiento de tus páginas en la Búsqueda de Google. No hace falta que te registres en Search Console para que tu sitio web aparezca en los resultados de la Búsqueda de Google, pero, si lo haces, sabrás cómo lo ve Google y qué puedes hacer para mejorarlo. Te recomendamos que consultes Search Console en los siguientes casos:
+
+Después de implementar datos estructurados por primera vez
+Después de publicar plantillas nuevas o modificar el código
+Al hacer el análisis periódico del tráfico
+
+Después de implementar datos estructurados por primera vez 
+Una vez que Google haya indexado tus páginas, puedes comprobar si hay algún problema en el informe de estado de resultados enriquecidos correspondiente. Lo ideal es que haya un aumento en el número de elementos válidos y que no lo haya en el número de elementos no válidos. Si detectas problemas en tus datos estructurados, haz lo siguiente:
+
+Corrige los elementos no válidos.
+Inspecciona la URL en tiempo real para ver si el problema continúa.
+Solicita que se valide la corrección desde el informe de estado.
+Después de publicar plantillas nuevas o modificar el código 
+Cuando hagas cambios significativos en tu sitio web, observa si se incrementa la cantidad de elementos no válidos de datos estructurados.
+Si notas que hay más elementos no válidos, quizá sea porque has implementado una plantilla que no funciona, o puede que tu sitio esté interactuando con la plantilla que utilizas de un modo diferente que no es adecuado.
+Si notas que hay menos elementos válidos, pero no hay un incremento de elementos no válidos, es posible que hayas dejado de insertar datos estructurados en tus páginas. Para saber cuál es la causa del problema, utiliza la herramienta de inspección de URLs.
+Al hacer el análisis periódico del tráfico 
+Consulta el informe de rendimiento para analizar el tráfico de tus páginas en la Búsqueda de Google. En él, verás con qué frecuencia aparece tu página como resultado enriquecido en la Búsqueda, cada cuánto hacen clic en ella los usuarios y cuál es la posición media que ocupa tu sitio web en los resultados de búsqueda. También puedes obtener automáticamente estos resultados con la API de Search Console.
+Solucionar problemas
+Si tienes problemas para implementar o depurar datos estructurados, a continuación se incluyen algunos recursos que pueden serte útiles.
+
+Si usas un sistema de gestión de contenido (CMS) o alguien se encarga de gestionar tu sitio, pídele ayuda. No olvides reenviarle cualquier mensaje de Search Console que incluya información sobre el problema en cuestión.
+Google no garantiza que las funciones que utilizan datos estructurados aparezcan en los resultados de búsqueda. Para ver una lista con motivos habituales por los que Google no muestra tu contenido en resultados enriquecidos, consulta las directrices generales de datos estructurados.
+Es posible que haya un error en tus datos estructurados. Consulta la lista de errores de datos estructurados y el informe de datos estructurados que no se pueden analizar.
+Si se ha aplicado una acción manual de datos estructurados a tu página, se ignorarán sus datos estructurados, aunque la página puede seguir apareciendo en los resultados de la Búsqueda de Google. Para solucionar problemas de datos estructurados, usa el informe "Acciones manuales".
+Revisa las directrices para comprobar si tu contenido no las cumple. El problema podría deberse a que la página incluye contenido engañoso o etiquetas con contenido fraudulento. No obstante, es posible que el problema no se deba a la sintaxis, por lo que la prueba de resultados enriquecidos no podrá ayudarte a identificarlo.
+Solucionar problemas si faltan resultados enriquecidos o si se ha reducido el número total de resultados enriquecidos.
+Da cierto margen a Google para que vuelva a rastrear e indexar tu página. Recuerda que Google puede tardar varios días en encontrar y rastrear una página después de publicarse. Consulta las preguntas frecuentes sobre el rastreo y la indexación de la Búsqueda de Google.
+Publica una pregunta en el foro del Centro de la Búsqueda de Google.

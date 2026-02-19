@@ -82,10 +82,24 @@ function setupNav() {
 
     // Shrink header on scroll (desktop + mobile)
     let lastY = window.scrollY;
+    let allowCompactHeader = false;
     let ticking = false;
+
+    const enableCompactHeader = () => {
+        allowCompactHeader = true;
+    };
+
+    ['wheel', 'touchmove', 'pointerdown', 'keydown'].forEach((evt) => {
+        window.addEventListener(evt, enableCompactHeader, { once: true, passive: true });
+    });
+
     const onScroll = () => {
+        if (!allowCompactHeader) {
+            ticking = false;
+            return;
+        }
         const y = window.scrollY;
-        const goingDown = y > lastY && y > 20;
+        const goingDown = y > lastY + 6 && y > 140;
         document.body.classList.toggle('nb-scroll-down', goingDown);
         lastY = y;
         ticking = false;

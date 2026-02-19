@@ -1,0 +1,78 @@
+{
+  "generated_at": "2026-02-17T23:12:56.570Z",
+  "source_summary": "reports/lh-summary-prod-now.json",
+  "rows": [
+    {
+      "page": "home",
+      "current": {
+        "score": 34,
+        "lcp": 5903,
+        "cls": 0.0016,
+        "tbt": 5063,
+        "speed_index": 8370
+      },
+      "baseline": {
+        "score": 67.8,
+        "lcp": 3246,
+        "cls": 0.028,
+        "tbt": 498,
+        "speed_index": 8024
+      },
+      "delta": {
+        "score": -33.8,
+        "lcp": 2657,
+        "cls": -0.0264,
+        "tbt": 4565,
+        "speed_index": 346
+      }
+    },
+    {
+      "page": "category",
+      "current": {
+        "score": 28,
+        "lcp": 8423,
+        "cls": 0.0219,
+        "tbt": 4249,
+        "speed_index": 8524
+      },
+      "baseline": {
+        "score": 83,
+        "lcp": 3444,
+        "cls": 0.0251,
+        "tbt": 192,
+        "speed_index": 4929
+      },
+      "delta": {
+        "score": -55,
+        "lcp": 4979,
+        "cls": -0.0032,
+        "tbt": 4058,
+        "speed_index": 3595
+      }
+    },
+    {
+      "page": "product",
+      "current": {
+        "score": 19,
+        "lcp": 15454,
+        "cls": 0.3372,
+        "tbt": 3168,
+        "speed_index": 8161
+      },
+      "baseline": {
+        "score": 61,
+        "lcp": 6347,
+        "cls": 0.0859,
+        "tbt": 288,
+        "speed_index": 8746
+      },
+      "delta": {
+        "score": -42,
+        "lcp": 9108,
+        "cls": 0.2513,
+        "tbt": 2880,
+        "speed_index": -585
+      }
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "generated_at": "2026-02-17T22:29:34.712Z",
+  "source_summary": "reports/lh-summary-smoke.json",
+  "rows": [
+    {
+      "page": "home",
+      "current": {
+        "score": null,
+        "lcp": null,
+        "cls": null,
+        "tbt": null,
+        "speed_index": null
+      },
+      "baseline": {
+        "score": 67.8,
+        "lcp": 3246,
+        "cls": 0.028,
+        "tbt": 498,
+        "speed_index": 8024
+      },
+      "delta": {
+        "score": null,
+        "lcp": null,
+        "cls": null,
+        "tbt": null,
+        "speed_index": null
+      }
+    },
+    {
+      "page": "category",
+      "current": {
+        "score": null,
+        "lcp": null,
+        "cls": null,
+        "tbt": null,
+        "speed_index": null
+      },
+      "baseline": {
+        "score": 83,
+        "lcp": 3444,
+        "cls": 0.0251,
+        "tbt": 192,
+        "speed_index": 4929
+      },
+      "delta": {
+        "score": null,
+        "lcp": null,
+        "cls": null,
+        "tbt": null,
+        "speed_index": null
+      }
+    },
+    {
+      "page": "product",
+      "current": {
+        "score": null,
+        "lcp": null,
+        "cls": null,
+        "tbt": null,
+        "speed_index": null
+      },
+      "baseline": {
+        "score": 61,
+        "lcp": 6347,
+        "cls": 0.0859,
+        "tbt": 288,
+        "speed_index": 8746
+      },
+      "delta": {
+        "score": null,
+        "lcp": null,
+        "cls": null,
+        "tbt": null,
+        "speed_index": null
+      }
+    }
+  ]
+}

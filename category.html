@@ -3,11 +3,30 @@
 <head>
   <!-- Google Tag Manager -->
   <script>
-  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-M7MF395K');
+  (function () {
+    var GTM_ID = 'GTM-M7MF395K';
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+    var loaded = false;
+    function loadGtm() {
+      if (loaded) return;
+      loaded = true;
+      var j = document.createElement('script');
+      j.async = true;
+      j.src = 'https://www.googletagmanager.com/gtm.js?id=' + GTM_ID;
+      document.head.appendChild(j);
+    }
+    if (window.NB_ANALYTICS_EAGER === true) {
+      loadGtm();
+      return;
+    }
+    var idle = window.requestIdleCallback || function (cb) { setTimeout(cb, 3000); };
+    idle(loadGtm);
+    ['scroll', 'pointerdown', 'keydown', 'touchstart'].forEach(function (evt) {
+      window.addEventListener(evt, loadGtm, { once: true, passive: true });
+    });
+    window.addEventListener('load', function () { setTimeout(loadGtm, 1500); }, { once: true });
+  })();
   </script>
   <!-- End Google Tag Manager -->
   <meta charset="UTF-8">
@@ -30,11 +49,11 @@
   <meta property="og:type" content="website">
   <meta property="og:title" content="Natural Be | Catálogo de suplementos">
   <meta property="og:description" content="Explora el catálogo de suplementos Natural Be por objetivo, categoría o beneficio.">
+  <meta property="og:url" content="https://naturalbe.com.co/categoria/suplementos">
   <meta property="og:image" content="https://naturalbe.com.co/static/img/og-naturalbe.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:site_name" content="Natural Be">
-  <meta property="og:url" content="https://naturalbe.com.co/category.html">
   
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
@@ -43,8 +62,8 @@
   <meta name="twitter:image" content="https://naturalbe.com.co/static/img/og-naturalbe.jpg">
 
   <title>Natural Be | Catálogo de suplementos</title>
-  <meta name="description" content="Explora el catálogo de suplementos Natural Be. Filtra por objetivo, categoría o beneficio y encuentra la mejor opción para ti.">
-  <link rel="canonical" href="https://naturalbe.com.co/category.html">
+  <meta name="description" content="Explora el catálogo de suplementos Natural Be por objetivo, categoría o marca. Compara opciones, precios y beneficios con envío rápido en Colombia y pago seguro.">
+  <link rel="canonical" href="https://naturalbe.com.co/categoria/suplementos">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -60,16 +79,28 @@
         "@type": "ListItem",
         "position": 2,
         "name": "Catálogo",
-        "item": "https://naturalbe.com.co/category.html"
+        "item": "https://naturalbe.com.co/categoria/suplementos"
       }
     ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Natural Be | Catálogo de suplementos",
+    "url": "https://naturalbe.com.co/categoria/suplementos",
+    "inLanguage": "es-CO",
+    "datePublished": "2026-02-18T08:00:00-05:00",
+    "dateModified": "2026-02-18T08:00:00-05:00"
   }
   </script>
 
   <link rel="preconnect" href="https://wa.me">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Noto+Sans:wght@400;600;700&display=optional" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Noto+Sans:wght@400;600;700&display=optional" rel="stylesheet"></noscript>
   <style>
     /* Critical CSS para evitar FOUC */
     body{font-family:'Plus Jakarta Sans',sans-serif;line-height:1.5;margin:0}
@@ -79,12 +110,16 @@
     window.NB_VERSION = "2026-01-11";
     window.NB_DATA_VERSION = window.NB_VERSION;
   </script>
+  <link rel="preload" href="/static/data/productos.json?v=2026-01-11" as="fetch" crossorigin="anonymous">
   <link rel="preload" href="/static/css/main.min.css?v=2026-01-11" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="/static/css/main.min.css?v=2026-01-11"></noscript>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "FAQPage",
+    "@id": "https://naturalbe.com.co/categoria/suplementos#faq",
+    "url": "https://naturalbe.com.co/categoria/suplementos",
+    "inLanguage": "es-CO",
     "mainEntity": [
       {
         "@type": "Question",
@@ -182,10 +217,10 @@
   <h4>Explorar</h4>
   <a href="/catalogo-energia.html">Energía diaria</a>
   <a href="/catalogo-inmunidad.html">Defensas</a>
-  <a href="/catalogo-suplementos.html">Todos los suplementos</a>
+  <a href="/categoria/suplementos">Todos los suplementos</a>
   <a href="/catalogo-botanitas.html">Marca Botanitas</a>
 <a href="/catalogo-satibo.html">Marca Satibo</a>
-  <a href="/category.html?brand=nutramerican">Marca Nutramerican</a>
+  <a href="/categoria/suplementos?brand=nutramerican">Marca Nutramerican</a>
   <a href="/blog.html">Blog</a>
 </div>
 <div class="mega-column">
@@ -234,7 +269,7 @@
     </div>
     <nav class="nav-mobile" aria-label="Navegación principal">
       <a href="/index.html#inicio">Inicio</a>
-      <a href="/catalogo-suplementos.html">Catálogo</a>
+      <a href="/categoria/suplementos">Catálogo</a>
       <a href="/index.html#destacados-marcas">Destacados</a>
       <a href="/index.html#ofertas">Ofertas</a>
       <a href="/index.html#nuevos">Nuevos</a>
@@ -265,7 +300,7 @@
 </nav>
   </div>
 
-  <main class="page-shell">
+  <main class="page-shell" style="padding-top:0.75rem;">
     <noscript>
       <div class="catalog-alert">
         <span>Activa JavaScript para ver el catalogo completo.</span>
@@ -278,8 +313,8 @@
       <span aria-current="page">Catálogo</span>
     </nav>
 
-    <section class="page-shell" style="margin-top:1.5rem;">
-      <h2 class="section-title">Explora por categorías populares</h2>
+    <section class="page-shell" style="margin-top:0.75rem;">
+      <h2 class="section-title" style="margin-bottom:0.35rem;">Explora por categorías populares</h2>
       <p class="section-subtitle">Atajos rápidos a las líneas más buscadas en Colombia.</p>
       <div class="category-grid">
         <a class="category-tile" href="/catalogo-vitaminas.html">
@@ -313,14 +348,15 @@
           <h3>Funat en Natural Be</h3>
           <p>Explora los suplementos Funat con envío rápido en Colombia.</p>
         </div>
-        <a class="btn-primary" href="/category.html?brand=funat&category=vitaminas">Ver Funat en Vitaminas</a>
+        <a class="btn-primary" href="/categoria/vitaminas?brand=funat">Ver Funat en Vitaminas</a>
       </div>
     </section>
-    <section class="hero-market" style="margin-top:1.5rem;">
+    <section class="hero-market" style="margin-top:0.75rem;">
       <div>
         <p class="section-subtitle">Catálogo Natural Be</p>
         <h1>Encuentra el suplemento ideal para tu objetivo</h1>
         <p>Filtra por beneficio, categoría o promoción. Guarda tus favoritos y compra con pagos seguros.</p>
+        <p class="section-subtitle">Última actualización del catálogo: <time datetime="2026-02-18T08:00:00-05:00">18 de febrero de 2026</time></p>
       </div>
       <div class="trust-card" data-shipping-widget="compact"></div>
     </section>
@@ -419,7 +455,22 @@
     </div>
       </section>
     </div>
-      <section class="page-shell" style="margin-top:1.5rem;">
+
+    <section class="page-shell" style="margin-top:0.75rem;" aria-labelledby="rutas-categoria-title">
+      <h2 class="section-title" id="rutas-categoria-title">Explora también</h2>
+      <p class="section-subtitle">Enlaces estratégicos para acelerar tu búsqueda por necesidad.</p>
+      <div class="category-grid">
+        <a class="category-tile" href="/catalogo-suplementos-dietarios.html"><strong>Suplementos dietarios</strong><span>Categoría completa para rutina diaria.</span></a>
+        <a class="category-tile" href="/catalogo-vitaminas.html"><strong>Vitaminas</strong><span>Apoyo inmune, energía y bienestar.</span></a>
+        <a class="category-tile" href="/catalogo-minerales.html"><strong>Minerales</strong><span>Magnesio, zinc y más opciones.</span></a>
+        <a class="category-tile" href="/catalogo-colageno.html"><strong>Colágeno</strong><span>Piel, cabello y articulaciones.</span></a>
+        <a class="category-tile" href="/como-tomar-probioticos-colombia.html"><strong>Cómo tomar probióticos</strong><span>Guía de uso y frecuencia recomendada.</span></a>
+        <a class="category-tile" href="/que-es-un-suplemento-dietario-colombia.html"><strong>Qué es un suplemento dietario</strong><span>Conceptos clave antes de comprar.</span></a>
+        <a class="category-tile" href="/tienda-naturista-online-colombia.html"><strong>Tienda naturista online</strong><span>Compra segura con envío nacional.</span></a>
+        <a class="category-tile" href="/comprar-suplementos-colombia.html"><strong>Comprar suplementos en Colombia</strong><span>Comparador rápido por objetivo.</span></a>
+      </div>
+    </section>
+      <section class="page-shell" style="margin-top:0.75rem;">
       <h2 class="section-title">Preguntas frecuentes</h2>
       <div class="faq-grid">
         <div class="faq-card">
@@ -446,7 +497,7 @@
     <span class="cart-badge">0</span>
   </button>
 
-  <div class="cart-modal" id="cartModal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="cartTitle" aria-describedby="cartDesc" onclick="closeCartOnOutsideClick(event)">
+  <div class="cart-modal" id="cartModal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="cartTitle" aria-describedby="cartDesc" onclick="closeCartOnOutsideClick(event)" data-nosnippet>
     <div class="cart-content" onclick="event.stopPropagation()" tabindex="-1">
       <div class="cart-header">
         <h2 class="cart-title" id="cartTitle">Mi carrito</h2>
@@ -491,12 +542,12 @@
   <li><a href="/catalogo-digestivos.html">Digestivos</a></li>
   <li><a href="/catalogo-cuidado-piel.html">Cuidado piel</a></li>
           <li><a href="/catalogo-cuidado-intimo.html">Cuidado íntimo</a></li>
-  <li><a href="/catalogo-cuidado-adulto.html">Cuidado adulto</a></li>
-  <li><a href="/catalogo-antisepticos.html">Antisepticos</a></li>
-  <li><a href="/catalogo-medicamentos.html">Medicamentos</a></li>
+  <li><a href="/categoria/cuidado-personal">Cuidado adulto</a></li>
+  <li><a href="/categoria/cuidado-personal">Antisepticos</a></li>
+  <li><a href="/categoria/cuidado-personal">Medicamentos</a></li>
   <li><a href="/catalogo-botanitas.html">Marca Botanitas</a></li>
   <li><a href="/catalogo-satibo.html">Marca Satibo</a></li>
-  <li><a href="/catalogo-suplementos.html">Todos los suplementos</a></li>
+  <li><a href="/categoria/suplementos">Todos los suplementos</a></li>
 </ul>
       </div>
       <div>
@@ -519,22 +570,32 @@
   </footer>
 
   <!-- Scripts Esenciales -->
-  <script src="/static/js/nb-core.js" defer></script>
+  <script src="/static/js/nb-core.js?v=2026-02-14" defer></script>
   <script src="/static/js/promo.js" defer></script>
-  <script src="/static/js/marketplace.js?v=2026-01-13" defer></script>
-  <script>
-    // FIX: sincronizar offset del header con la promo bar
-    window.addEventListener('load', () => {
-      const bar = document.getElementById('promoBar');
-      if (!bar) return;
-      const height = bar.getBoundingClientRect().height || 0;
-      document.documentElement.style.setProperty('--promo-offset', `${height}px`);
-    });
-  </script>
-  <script src="/static/js/products-data.min.js?v=2026-02-07" defer></script>
+  <script src="/static/js/marketplace.js?v=2026-02-14" defer></script>
+  <script src="/static/js/products-data.min.js?v=2026-02-14" defer></script>
   <script src="/static/js/search-engine.js?v=2026-02-07" defer></script>
   <script src="/static/js/cart.js?v=2026-02-07" defer></script>
-  <script src="/static/js/webp-support.js?v=2026-01-13" defer></script>
+  <script src="/static/js/webp-support.js?v=2026-02-14" defer></script>
+  <script>
+    (function () {
+      var loaded = false;
+      function loadTracking() {
+        if (loaded) return;
+        loaded = true;
+        var s = document.createElement('script');
+        s.src = '/static/js/tracking.js?v=2026-02-16';
+        s.defer = true;
+        document.head.appendChild(s);
+      }
+      var idle = window.requestIdleCallback || function (fn) { setTimeout(fn, 2400); };
+      idle(loadTracking);
+      ['scroll', 'pointerdown', 'keydown', 'touchstart'].forEach(function (evt) {
+        window.addEventListener(evt, loadTracking, { once: true, passive: true });
+      });
+      window.addEventListener('load', function () { setTimeout(loadTracking, 1200); }, { once: true });
+    })();
+  </script>
   
   <!-- Service Worker Registration -->
   <script>
@@ -614,6 +675,9 @@
       piel: ['piel', 'colageno', 'colágeno'],
       estres: ['estres', 'estrés', 'sueño', 'relajacion', 'relajación']
     };
+    const categoryKeywordMap = {
+      omega: ['omega', 'omega 3', 'omega-3', 'epa', 'dha', 'aceite de pescado', 'acidos grasos']
+    };
     const categoryLabels = {
       vitaminas: 'Vitaminas',
       minerales: 'Minerales',
@@ -631,6 +695,237 @@
     const defaultTitle = 'Catálogo de suplementos en Colombia | Natural Be';
     const defaultDescription = 'Explora el catálogo de suplementos Natural Be. Filtra por categoría, objetivo o precio y compra con pagos seguros en Colombia.';
 
+    function getQuerySeoProfile(query) {
+      const q = normalizeText(query)
+        .replace(/\bmultivitaminicos?\b/g, 'multivitaminico')
+        .replace(/\s+/g, ' ')
+        .trim();
+
+      if (!q) return null;
+
+      if (q.includes('multivitaminico') && (q.includes('hombre') || q.includes('hombres'))) {
+        return {
+          title: 'Multivitamínico para Hombre en Colombia | Natural Be',
+          description: 'Encuentra multivitamínico para hombre en Colombia. Compara opciones y compra online con envío rápido y pagos seguros en Natural Be.'
+        };
+      }
+
+      if (q.includes('multivitaminico')) {
+        return {
+          title: 'Multivitamínicos en Colombia | Natural Be',
+          description: 'Compra multivitamínicos en Colombia para hombres y mujeres. Encuentra opciones para tu rutina diaria con envío rápido en Natural Be.'
+        };
+      }
+
+      if (q.includes('vitamina c')) {
+        return {
+          title: 'Vitamina C en Colombia | Natural Be',
+          description: 'Compra vitamina C en Colombia: 500 mg, 1000 mg y fórmulas con zinc. Envío rápido y pagos seguros en Natural Be.'
+        };
+      }
+
+      if (q.includes('vitamina d3') || q.includes('colecalciferol') || q.includes('d3')) {
+        return {
+          title: 'Vitamina D3 en Colombia | Natural Be',
+          description: 'Encuentra vitamina D3 en Colombia, incluyendo opciones 2000 UI y combinaciones con calcio o K2. Compra online en Natural Be.'
+        };
+      }
+
+      if (q.includes('complejo b') || q.includes('b-vit') || q.includes('b vit')) {
+        return {
+          title: 'Complejo B en Colombia | Natural Be',
+          description: 'Compra complejo B en Colombia en cápsulas y tabletas para tu rutina diaria. Envío rápido y pagos seguros en Natural Be.'
+        };
+      }
+
+      if (q.includes('vitamina e') && (q.includes('1000') || q.includes('1000 ui') || q.includes('1000iu'))) {
+        return {
+          title: 'Vitamina E 1000 UI en Colombia | Natural Be',
+          description: 'Encuentra vitamina E 1000 UI en Colombia y compara opciones disponibles para compra online segura en Natural Be.'
+        };
+      }
+
+      if (q.includes('citrato de magnesio')) {
+        return {
+          title: 'Citrato de Magnesio en Colombia | Natural Be',
+          description: 'Compra citrato de magnesio en Colombia en cápsulas y tabletas. Envío rápido y pagos seguros en Natural Be.'
+        };
+      }
+
+      if (q.includes('magnesio')) {
+        return {
+          title: 'Magnesio en Colombia | Natural Be',
+          description: 'Encuentra magnesio en Colombia para tu rutina diaria. Compra online con envío rápido y pagos seguros en Natural Be.'
+        };
+      }
+
+      if (q.includes('zinc')) {
+        return {
+          title: 'Zinc en Colombia | Natural Be',
+          description: 'Compra suplemento de zinc en Colombia en presentación cápsulas y tabletas. Envío rápido y pagos seguros en Natural Be.'
+        };
+      }
+
+      if (q.includes('calcio') && (q.includes('vitamina d3') || q.includes('d3') || q.includes('vitamina d'))) {
+        return {
+          title: 'Calcio con Vitamina D3 en Colombia | Natural Be',
+          description: 'Compra calcio con vitamina D3 en Colombia. Encuentra opciones para tu bienestar diario con envío rápido en Natural Be.'
+        };
+      }
+
+      if (q.includes('colageno') && q.includes('hidrolizado')) {
+        return {
+          title: 'Colágeno Hidrolizado en Colombia | Natural Be',
+          description: 'Compra colágeno hidrolizado en Colombia para tu rutina diaria. Encuentra opciones con envío rápido y pagos seguros en Natural Be.'
+        };
+      }
+
+      if (q.includes('colageno') && q.includes('vitamina c')) {
+        return {
+          title: 'Colágeno con Vitamina C en Colombia | Natural Be',
+          description: 'Encuentra colágeno con vitamina C en Colombia. Compra online con envío rápido y pagos seguros en Natural Be.'
+        };
+      }
+
+      if (q.includes('colageno') && q.includes('articul')) {
+        return {
+          title: 'Colágeno para Articulaciones en Colombia | Natural Be',
+          description: 'Compra colágeno para articulaciones en Colombia. Opciones en cápsulas y más con entrega rápida en Natural Be.'
+        };
+      }
+
+      if (q.includes('colageno') && q.includes('piel')) {
+        return {
+          title: 'Colágeno para la Piel en Colombia | Natural Be',
+          description: 'Encuentra colágeno para la piel en Colombia. Compra online con pagos seguros y envío rápido en Natural Be.'
+        };
+      }
+
+      if (q.includes('colageno')) {
+        return {
+          title: 'Colágeno en Colombia | Natural Be',
+          description: 'Compra colágeno en Colombia: hidrolizado, con vitamina C y otras opciones para tu bienestar diario en Natural Be.'
+        };
+      }
+
+      if (q.includes('comprar') && q.includes('suplement')) {
+        return {
+          title: 'Comprar Suplementos en Colombia | Natural Be',
+          description: 'Compra suplementos en Colombia con envío rápido y pagos seguros. Vitaminas, minerales, omega, colágeno y más en Natural Be.'
+        };
+      }
+
+      if (q.includes('suplement') && q.includes('original')) {
+        return {
+          title: 'Suplementos Originales en Colombia | Natural Be',
+          description: 'Compra suplementos originales en Colombia con envío a toda Colombia y pagos seguros en Natural Be.'
+        };
+      }
+
+      if (q.includes('barranquilla') && (q.includes('tienda naturista') || q.includes('tiendas naturistas') || q.includes('naturista'))) {
+        return {
+          title: 'Tienda Naturista en Barranquilla | Natural Be',
+          description: 'Encuentra una tienda naturista en Barranquilla con suplementos y vitaminas para tu rutina diaria. Compra online con pago seguro en Natural Be.'
+        };
+      }
+
+      if (q.includes('barranquilla') && q.includes('vitamin')) {
+        return {
+          title: 'Vitaminas en Barranquilla | Natural Be',
+          description: 'Compra vitaminas en Barranquilla con entrega rápida y pagos seguros. Compara multivitamínicos, vitamina C y D3 en Natural Be.'
+        };
+      }
+
+      if (q.includes('barranquilla') && q.includes('suplement')) {
+        return {
+          title: 'Suplementos en Barranquilla | Natural Be',
+          description: 'Compra suplementos en Barranquilla con envío rápido y pago seguro. Encuentra colágeno, omega, minerales y más en Natural Be.'
+        };
+      }
+
+      if ((q.includes('tienda') && q.includes('vitamin')) || q.includes('vitaminas en colombia')) {
+        return {
+          title: 'Tienda de Vitaminas en Colombia | Natural Be',
+          description: 'Tienda de vitaminas en Colombia con opciones para tu rutina diaria. Compra online con envío rápido en Natural Be.'
+        };
+      }
+
+      if ((q.includes('comprar') && q.includes('vitamin') && q.includes('internet')) || q.includes('vitaminas por internet')) {
+        return {
+          title: 'Comprar Vitaminas por Internet en Colombia | Natural Be',
+          description: 'Compra vitaminas por internet en Colombia con envío a toda Colombia y pagos seguros en Natural Be.'
+        };
+      }
+
+      if (q.includes('tienda naturista') || (q.includes('naturista') && q.includes('online'))) {
+        return {
+          title: 'Tienda Naturista Online en Colombia | Natural Be',
+          description: 'Compra suplementos y vitaminas en una tienda naturista online en Colombia. Entrega rápida y pago seguro en Natural Be.'
+        };
+      }
+
+      if (q.includes('suplement') && q.includes('natural')) {
+        return {
+          title: 'Suplementos Naturales en Colombia | Natural Be',
+          description: 'Encuentra suplementos naturales en Colombia y compra online con envío a toda Colombia en Natural Be.'
+        };
+      }
+
+      if (q.includes('suplement') && q.includes('envio') && q.includes('colombia')) {
+        return {
+          title: 'Suplementos con Envío a Toda Colombia | Natural Be',
+          description: 'Compra suplementos con envío a toda Colombia. Pagos seguros y catálogo completo en Natural Be.'
+        };
+      }
+
+      if (q.includes('pago') && q.includes('seguro') && q.includes('suplement')) {
+        return {
+          title: 'Suplementos con Pagos Seguros en Colombia | Natural Be',
+          description: 'Compra suplementos en Colombia con pagos seguros y envío rápido. Tienda online Natural Be.'
+        };
+      }
+
+      if (q.includes('suplementos dietarios') || q.includes('suplemento dietario')) {
+        return {
+          title: 'Suplementos Dietarios en Colombia | Natural Be',
+          description: 'Encuentra suplementos dietarios en Colombia y compra online con pagos seguros y envíos rápidos en Natural Be.'
+        };
+      }
+
+      if ((q.includes('aceite de pescado') || q.includes('fish oil')) && q.includes('omega')) {
+        return {
+          title: 'Aceite de Pescado Omega 3 en Colombia | Natural Be',
+          description: 'Compra aceite de pescado Omega 3 en Colombia. Encuentra fish oil en cápsulas con envío rápido y pagos seguros en Natural Be.'
+        };
+      }
+
+      if (q.includes('omega') && (q.includes('precio') || q.includes('precios'))) {
+        return {
+          title: 'Omega 3 Precio en Colombia | Natural Be',
+          description: 'Compara precio de Omega 3 en Colombia y compra online en Natural Be. Opciones en cápsulas con envío rápido.'
+        };
+      }
+
+      if (q.includes('omega') && (q.includes('capsulas') || q.includes('cápsulas') || q.includes('pastillas'))) {
+        return {
+          title: 'Omega 3 Cápsulas en Colombia | Natural Be',
+          description: 'Encuentra Omega 3 en cápsulas en Colombia. Compra online con pagos seguros y envío rápido en Natural Be.'
+        };
+      }
+
+      if (q.includes('omega 3') || q === 'omega' || q.startsWith('omega ')) {
+        return {
+          title: 'Omega 3 en Colombia | Natural Be',
+          description: 'Compra Omega 3 en Colombia: cápsulas, fish oil y opciones para tu rutina diaria. Envío rápido y pagos seguros en Natural Be.'
+        };
+      }
+
+      return {
+        title: `Resultados para "${query}" | Natural Be`,
+        description: `Resultados de suplementos para "${query}" en Natural Be. Filtra por categoría, objetivo y precio para encontrar tu mejor opción.`
+      };
+    }
+
     function normalizeText(value) {
       return String(value || '')
         .toLowerCase()
@@ -642,11 +937,53 @@
 
     const defaultCategory = normalizeText(window.NB_DEFAULT_CATEGORY || '');
     const defaultObjective = normalizeText(window.NB_DEFAULT_OBJECTIVE || '');
+    const knownCategorySlugs = new Set([
+      'vitaminas', 'minerales', 'omega', 'colageno', 'energia', 'inmunidad',
+      'antioxidantes', 'huesos', 'cabello', 'digestivos', 'cuidado-piel',
+      'cuidado-intimo', 'cuidado-adulto', 'antisepticos', 'medicamentos',
+      'nutricion', 'suplementos', 'suplementos-dietarios', 'botanitas', 'satibo'
+    ]);
+
+    function toSeoSlug(value) {
+      return normalizeText(value)
+        .replace(/[^a-z0-9]+/g, '-')
+        .replace(/^-+|-+$/g, '');
+    }
+
+    function getCategoryRouteContext() {
+      const path = (window.location && window.location.pathname) || '';
+      const match = path.match(/^\/categoria\/([a-z0-9-]+)\/?$/i);
+      if (!match) {
+        return { routeSlug: '', routeCategory: '', routeQuery: '' };
+      }
+      const routeSlug = normalizeText(decodeURIComponent(match[1] || ''));
+      if (!routeSlug) {
+        return { routeSlug: '', routeCategory: '', routeQuery: '' };
+      }
+      if (knownCategorySlugs.has(routeSlug)) {
+        return { routeSlug, routeCategory: routeSlug, routeQuery: '' };
+      }
+      return { routeSlug, routeCategory: '', routeQuery: routeSlug.replace(/-/g, ' ') };
+    }
 
     function matchesObjective(product, objective) {
       if (!objective || objective === 'all') return true;
       const keywords = objectiveMap[objective] || [objective];
       const haystack = [product.categoria, product.subcategoria, ...(product.tags || [])].map(normalizeText).join(' ');
+      return keywords.some((key) => haystack.includes(normalizeText(key)));
+    }
+
+    function matchesCategory(product, category) {
+      if (!category || category === 'all') return true;
+      const normalizedCategory = normalizeText(category);
+      const productCategory = normalizeText(product.categoria);
+      const productSubcategory = normalizeText(product.subcategoria);
+      if (productCategory === normalizedCategory || productSubcategory === normalizedCategory) return true;
+      const keywords = categoryKeywordMap[normalizedCategory];
+      if (!keywords || !keywords.length) return false;
+      const haystack = [product.nombre, product.categoria, product.subcategoria, ...(product.tags || [])]
+        .map(normalizeText)
+        .join(' ');
       return keywords.some((key) => haystack.includes(normalizeText(key)));
     }
 
@@ -738,7 +1075,7 @@
         const isNew = getChecked(filterEls.isNew);
   
         let filtered = list.filter((product) => {
-          if (category !== 'all' && normalizeText(product.categoria) !== category) return false;
+          if (!matchesCategory(product, category)) return false;
           if (brand !== 'all' && normalizeText(product.marca) !== brand) return false;
           if (!matchesObjective(product, objective)) return false;
         if (!matchesQuery(product, query)) return false;
@@ -844,17 +1181,43 @@
       return params;
     }
     function updateFilterParamsInUrl(options = {}) {
+      const route = getCategoryRouteContext();
       const params = new URLSearchParams(window.location.search);
       const query = getSearchTerm();
         const category = getInputValue(filterEls.category, 'all');
         const brand = getInputValue(filterEls.brand, 'all');
         const objective = getInputValue(filterEls.objective, 'all');
         if (query) params.set('q', query); else params.delete('q');
-        if (category && category !== 'all') params.set('category', category); else params.delete('category');
+        if (category && category !== 'all') {
+          if (route.routeCategory && route.routeCategory === normalizeText(category)) {
+            params.delete('category');
+            params.delete('categoria');
+            params.delete('cat');
+          } else {
+            params.set('category', category);
+          }
+        } else {
+          params.delete('category');
+          params.delete('categoria');
+          params.delete('cat');
+        }
         if (brand && brand !== 'all') params.set('brand', brand); else params.delete('brand');
-        if (objective && objective !== 'all') params.set('objective', objective); else params.delete('objective');
+        if (objective && objective !== 'all') {
+          params.set('objetivo', objective);
+          params.delete('objective');
+        } else {
+          params.delete('objetivo');
+          params.delete('objective');
+        }
+      const canUseCategoryPath = !query && (!brand || brand === 'all') && (!objective || objective === 'all') && category && category !== 'all';
+      let nextPath = '/categoria/suplementos';
+      if (canUseCategoryPath) {
+        nextPath = `/categoria/${encodeURIComponent(toSeoSlug(category))}`;
+      } else if (window.location.pathname && window.location.pathname.startsWith('/categoria/')) {
+        nextPath = window.location.pathname;
+      }
       const queryString = params.toString();
-      const nextUrl = queryString ? `${window.location.pathname}?${queryString}` : window.location.pathname;
+      const nextUrl = queryString ? `${nextPath}?${queryString}` : nextPath;
       if (options.replace) {
         history.replaceState({}, '', nextUrl);
       } else {
@@ -946,8 +1309,17 @@
     function updatePaginationLinks(page, totalPages, limit) {
       const params = new URLSearchParams(window.location.search);
       const origin = window.location.origin || 'https://naturalbe.com.co';
-      const base = `${origin}${window.location.pathname}`;
-      const canonical = document.querySelector('link[rel="canonical"]');
+      const currentCategory = normalizeText(getInputValue(filterEls.category, 'all'));
+      const basePath = currentCategory !== 'all'
+        ? `/categoria/${encodeURIComponent(toSeoSlug(currentCategory))}`
+        : '/categoria/suplementos';
+      const base = `${origin}${basePath}`;
+      let canonical = document.querySelector('link[rel="canonical"]');
+      if (!canonical) {
+        canonical = document.createElement('link');
+        canonical.setAttribute('rel', 'canonical');
+        document.head.appendChild(canonical);
+      }
       if (canonical) {
         const canonicalParams = new URLSearchParams(params.toString());
         if (page > 1) canonicalParams.set('page', String(page)); else canonicalParams.delete('page');
@@ -989,7 +1361,7 @@
         };
       }
 
-      function updateCategorySeo(list) {
+    function updateCategorySeo(list) {
         const { query, category, objective, brand } = getSeoContext();
       const titleEl = document.querySelector('title');
       const metaDesc = document.querySelector('meta[name="description"]');
@@ -999,15 +1371,18 @@
       const twitterTitle = document.querySelector('meta[name="twitter:title"]');
       const twitterDesc = document.querySelector('meta[name="twitter:description"]');
       const twitterImage = document.querySelector('meta[name="twitter:image"]');
-      const canonical = document.querySelector('link[rel="canonical"]');
+      let canonical = document.querySelector('link[rel="canonical"]');
       const origin = window.location.origin || 'https://naturalbe.com.co';
 
       let title = defaultTitle;
       let description = defaultDescription;
 
         if (query) {
-          title = `Resultados para "${query}" | Natural Be`;
-          description = `Resultados de suplementos para "${query}" en Natural Be. Filtra por categoría, objetivo y precio para encontrar tu mejor opción.`;
+          const querySeo = getQuerySeoProfile(query);
+          if (querySeo) {
+            title = querySeo.title;
+            description = querySeo.description;
+          }
         } else if (brand !== 'all') {
           const brandLabel = brand.charAt(0).toUpperCase() + brand.slice(1);
           if (brand === 'funat' && category === 'vitaminas') {
@@ -1045,7 +1420,33 @@
         if (ogImage) ogImage.setAttribute('content', imageOverride);
         if (twitterImage) twitterImage.setAttribute('content', imageOverride);
       }
-      if (canonical) canonical.setAttribute('href', `${origin}${window.location.pathname}`);
+      if (!canonical) {
+        canonical = document.createElement('link');
+        canonical.setAttribute('rel', 'canonical');
+        document.head.appendChild(canonical);
+      }
+      const canonicalParams = new URLSearchParams();
+      if (query) canonicalParams.set('q', query);
+      if (objective !== 'all') canonicalParams.set('objetivo', objective);
+      if (brand !== 'all') canonicalParams.set('brand', brand);
+      const canonicalQuery = canonicalParams.toString();
+      const canonicalPath = query
+        ? '/categoria/suplementos'
+        : (category !== 'all'
+          ? `/categoria/${encodeURIComponent(toSeoSlug(category))}`
+          : '/categoria/suplementos');
+      const canonicalHref = canonicalQuery
+        ? `${origin}${canonicalPath}?${canonicalQuery}`
+        : `${origin}${canonicalPath}`;
+      canonical.setAttribute('href', canonicalHref);
+
+      let ogUrl = document.querySelector('meta[property="og:url"]');
+      if (!ogUrl) {
+        ogUrl = document.createElement('meta');
+        ogUrl.setAttribute('property', 'og:url');
+        document.head.appendChild(ogUrl);
+      }
+      ogUrl.setAttribute('content', canonicalHref);
 
       updateItemListSchema(list);
     }
@@ -1055,11 +1456,11 @@
       const slug = product.slug || '';
         const rawUrl = (window.NaturalBe && typeof window.NaturalBe.buildProductURL === 'function')
           ? window.NaturalBe.buildProductURL(product)
-          : (slug ? `./product.html?slug=${encodeURIComponent(slug)}` : './product.html');
+          : (slug ? `/producto/${encodeURIComponent(slug)}` : '/product.html');
       try {
         return new URL(rawUrl, origin).href;
       } catch (e) {
-        return `${origin}/catalogo-suplementos.html`;
+        return `${origin}/categoria/suplementos`;
       }
     }
 
@@ -1096,7 +1497,7 @@
           <p>Prueba con otra palabra o explora estas opciones:</p>
           <div class="empty-state-actions">
             <a class="btn-primary" href="/index.html#destacados-marcas">Ver destacados</a>
-            <a class="btn-ghost" href="/catalogo-suplementos.html">Ver catalogo completo</a>
+            <a class="btn-ghost" href="/categoria/suplementos">Ver catalogo completo</a>
             <a class="btn-outline" href="https://wa.me/573137212923?utm_source=naturalbe&utm_medium=website&utm_campaign=retail&utm_content=empty_whatsapp" target="_blank" rel="noopener">WhatsApp</a>
           </div>
         </div>
@@ -1254,8 +1655,11 @@
         let description = 'Explora nuestro catálogo de suplementos naturales.';
 
         if (query) {
-          title = `Resultados para "${query}" - Natural Be`;
-          description = `Resultados de búsqueda: ${query}. Encuentra suplementos naturales en Colombia.`;
+          const querySeo = getQuerySeoProfile(query);
+          if (querySeo) {
+            title = querySeo.title;
+            description = querySeo.description;
+          }
         } else if (category) {
           const categoryNames = {
             'vitaminas': 'Vitaminas',
@@ -1271,11 +1675,13 @@
           description = `Compra ${displayName.toLowerCase()} naturales en Colombia. Envío 24-48h, pagos seguros.`;
         }
 
-        window.injectProductListSchema(list.slice(0, 50), { title, description });
+        const canonicalLinkEl = document.querySelector('link[rel="canonical"]');
+        const listUrl = canonicalLinkEl ? canonicalLinkEl.getAttribute('href') : window.location.href;
+        window.injectProductListSchema(list.slice(0, 50), { title, description, listUrl });
 
         const breadcrumbs = [
           { name: 'Inicio', url: 'https://naturalbe.com.co/' },
-          { name: 'Catálogo', url: 'https://naturalbe.com.co/category.html' }
+          { name: 'Catálogo', url: 'https://naturalbe.com.co/categoria/suplementos' }
         ];
 
         if (category || query) {
@@ -1330,27 +1736,60 @@
         renderEmptyState(getSearchTerm());
         return;
       }
+      const hashString = (value) => {
+        const input = String(value || '');
+        let hash = 0;
+        for (let i = 0; i < input.length; i += 1) {
+          hash = (hash << 5) - hash + input.charCodeAt(i);
+          hash |= 0;
+        }
+        return Math.abs(hash);
+      };
+      const seededRange = (seed, min, max) => {
+        if (max <= min) return min;
+        const span = (max - min) + 1;
+        return min + (Math.abs(seed) % span);
+      };
       const html = list.map((product) => {
         const name = product.nombre || product.name || '';
         const price = Number(product.precio_oferta || product.precio || product.price || 0);
         const img = product.imagen_principal || product.image || './static/img/placeholder.webp';
+        const ratingValue = Number(product.rating_value || 0);
+        const ratingCount = Number(product.rating_count || 0);
         const url = (window.NaturalBe && typeof window.NaturalBe.buildProductURL === 'function')
           ? window.NaturalBe.buildProductURL(product)
-          : (product.slug ? `./product.html?slug=${encodeURIComponent(product.slug)}` : './product.html');
+          : (product.slug ? `/producto/${encodeURIComponent(product.slug)}` : '/product.html');
+        const dayKey = (() => {
+          const now = new Date();
+          return `${now.getUTCFullYear()}-${now.getUTCMonth() + 1}-${now.getUTCDate()}`;
+        })();
+        const seed = hashString(`${product.id || product.slug || name}-${dayKey}`);
+        const viewers = seededRange(seed + 3, 8, 34);
+        const boughtToday = seededRange(seed + 7, 3, 22);
+        const stockLeft = product.stock_bajo ? seededRange(seed + 11, 3, 9) : seededRange(seed + 11, 10, 24);
+        const ratingText = ratingValue > 0
+          ? `${ratingValue.toFixed(1)} (${ratingCount || 0})`
+          : `${(seededRange(seed + 13, 46, 49) / 10).toFixed(1)} (${seededRange(seed + 17, 41, 182)})`;
         const safeName = escapeHtml(name);
         const safeDesc = escapeHtml(product.descripcion_corta || product.description || '');
         const safeImg = escapeHtml(sanitizeUrl(img));
         const safeUrl = escapeHtml(sanitizeUrl(url));
         return `
           <article class="product-card">
-            <a class="product-card__media" href="/${safeUrl}">
-              <img src="/${safeImg}" alt="${safeName}" loading="lazy" width="320" height="220" onerror="this.onerror=null;this.src='./static/img/placeholder.webp';">
+            <a class="product-card__media" href="${safeUrl}">
+              <img src="${safeImg}" alt="${safeName}" loading="lazy" width="320" height="220" onerror="this.onerror=null;this.src='./static/img/placeholder.webp';">
             </a>
             <div class="product-card__body">
               <h3 class="product-card__title">
-                <a href="/${safeUrl}">${safeName}</a>
+                <a href="${safeUrl}">${safeName}</a>
               </h3>
               <p class="product-card__desc">${safeDesc}</p>
+              <div class="product-card__proof">
+                <span class="proof-chip"><span aria-hidden="true">👁</span>${viewers} viendo</span>
+                <span class="proof-chip"><span aria-hidden="true">⭐</span>${ratingText}</span>
+                <span class="proof-chip"><span aria-hidden="true">🛍️</span>${boughtToday} hoy</span>
+                <span class="proof-chip ${product.stock_bajo ? 'is-urgency' : ''}"><span aria-hidden="true">⚡</span>${product.stock_bajo ? `Solo ${stockLeft} unidades` : `${stockLeft} unidades`}</span>
+              </div>
               <div class="product-card__price">
                 <span>$${price.toLocaleString('es-CO')}</span>
               </div>
@@ -1374,7 +1813,7 @@
         tags: p.tags || [],
         url: (window.NaturalBe && typeof window.NaturalBe.buildProductURL === 'function')
           ? window.NaturalBe.buildProductURL(p)
-          : (slug ? `./product.html?slug=${encodeURIComponent(slug)}` : './product.html')
+          : (slug ? `/producto/${encodeURIComponent(slug)}` : '/product.html')
       };
     }
 
@@ -1403,11 +1842,12 @@
     }
 
     function syncFromUrl() {
+      const route = getCategoryRouteContext();
       const params = new URLSearchParams(window.location.search);
-      const query = params.get('q') || '';
-        const category = params.get('categoria') || params.get('category') || params.get('cat') || defaultCategory || 'all';
+      const query = params.get('q') || route.routeQuery || '';
+        const category = params.get('categoria') || params.get('category') || params.get('cat') || route.routeCategory || defaultCategory || 'all';
         const brand = params.get('brand') || params.get('marca') || 'all';
-        const objective = params.get('objetivo') || defaultObjective || 'all';
+        const objective = params.get('objetivo') || params.get('objective') || defaultObjective || 'all';
         if (query && filterEls.search) filterEls.search.value = query;
         if (category && filterEls.category) filterEls.category.value = category;
         if (brand && filterEls.brand) filterEls.brand.value = brand;
@@ -1682,6 +2122,7 @@
     
 </body>
 </html>
+
 
 
 

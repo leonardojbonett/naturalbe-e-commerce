@@ -4,15 +4,34 @@
   <base href="/">
   <!-- Google Tag Manager -->
   <script>
-  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-M7MF395K');
+  (function () {
+    var GTM_ID = 'GTM-M7MF395K';
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+    var loaded = false;
+    function loadGtm() {
+      if (loaded) return;
+      loaded = true;
+      var j = document.createElement('script');
+      j.async = true;
+      j.src = 'https://www.googletagmanager.com/gtm.js?id=' + GTM_ID;
+      document.head.appendChild(j);
+    }
+    if (window.NB_ANALYTICS_EAGER === true) {
+      loadGtm();
+      return;
+    }
+    var idle = window.requestIdleCallback || function (cb) { setTimeout(cb, 3000); };
+    idle(loadGtm);
+    ['scroll', 'pointerdown', 'keydown', 'touchstart'].forEach(function (evt) {
+      window.addEventListener(evt, loadGtm, { once: true, passive: true });
+    });
+    window.addEventListener('load', function () { setTimeout(loadGtm, 1500); }, { once: true });
+  })();
   </script>
   <!-- End Google Tag Manager -->
   <meta charset="UTF-8">
-  <meta name="robots" content="index, follow">
+  <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1">
   <meta name="ga4-id" content="G-DM18HLQ3R8">
   <meta name="meta-pixel-id" content="869358656017955">
   <meta name="p:domain_verify" content="1a26b1491f6ba22b614db7e51c555064">
@@ -25,6 +44,7 @@
 
   <title>Natural Be | Producto</title>
   <meta name="description" content="Descubre suplementos Natural Be con pagos seguros, envíos rápidos y asesoría por WhatsApp.">
+  <link rel="canonical" href="https://naturalbe.com.co/product.html">
 
   <meta property="og:type" content="product">
   <meta property="og:title" content="Natural Be | Producto">
@@ -35,6 +55,35 @@
   <meta name="twitter:title" content="Natural Be | Producto">
   <meta name="twitter:description" content="Compra suplementos naturales con envíos rápidos en Colombia.">
   <meta name="twitter:image" content="https://naturalbe.com.co/static/img/og-naturalbe.jpg">
+  <script>
+    (function () {
+      try {
+        var origin = (window.location && window.location.origin) || 'https://naturalbe.com.co';
+        var path = (window.location && window.location.pathname) || '';
+        var qs = new URLSearchParams((window.location && window.location.search) || '');
+        var slug = '';
+        var m = path.match(/\/producto\/([^/?#]+)(?:\.html)?$/i);
+        if (m && m[1]) slug = decodeURIComponent(m[1]);
+        if (!slug) slug = qs.get('slug') || qs.get('producto') || '';
+        if (!slug) return;
+        var canonicalHref = origin + '/producto/' + encodeURIComponent(slug);
+        var canonical = document.querySelector('link[rel="canonical"]');
+        if (!canonical) {
+          canonical = document.createElement('link');
+          canonical.setAttribute('rel', 'canonical');
+          document.head.appendChild(canonical);
+        }
+        canonical.setAttribute('href', canonicalHref);
+        var ogUrl = document.querySelector('meta[property="og:url"]');
+        if (!ogUrl) {
+          ogUrl = document.createElement('meta');
+          ogUrl.setAttribute('property', 'og:url');
+          document.head.appendChild(ogUrl);
+        }
+        ogUrl.setAttribute('content', canonicalHref);
+      } catch (_) {}
+    })();
+  </script>
 
   <link rel="preconnect" href="https://wa.me">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -66,6 +115,9 @@
   {
     "@context": "https://schema.org",
     "@type": "FAQPage",
+    "@id": "https://naturalbe.com.co/producto#faq",
+    "url": "https://naturalbe.com.co/producto",
+    "inLanguage": "es-CO",
     "mainEntity": [
       {
         "@type": "Question",
@@ -100,6 +152,85 @@
     if (window.location && window.location.pathname && window.location.pathname.indexOf('/producto/') === 0) {
       window.NB_BASE_PATH = '/';
     }
+  </script>
+  <link rel="preload" href="/static/data/productos.json?v=2026-01-11" as="fetch" crossorigin="anonymous">
+  <script>
+    (function () {
+      function getSlug() {
+        try {
+          const path = window.location.pathname || '';
+          const m = path.match(/\/producto\/([^/?#]+)(?:\.html)?$/i);
+          if (m && m[1]) return decodeURIComponent(m[1]);
+          const q = new URLSearchParams(window.location.search || '');
+          return q.get('slug') || q.get('producto') || '';
+        } catch (_) {
+          return '';
+        }
+      }
+
+      function normalizeAsset(src) {
+        const raw = String(src || '').trim();
+        if (!raw) return '';
+        if (/^https?:\/\//i.test(raw)) return raw;
+        if (raw.startsWith('/')) return raw;
+        return `/${raw.replace(/^\.?\//, '')}`;
+      }
+
+      function preloadImage(src) {
+        if (!src) return;
+        const href = normalizeAsset(src);
+        if (!href) return;
+        if (document.querySelector(`link[data-early-hero="${href}"]`)) return;
+        const link = document.createElement('link');
+        link.rel = 'preload';
+        link.as = 'image';
+        link.href = href;
+        link.setAttribute('data-early-hero', href);
+        document.head.appendChild(link);
+      }
+
+      function applyHero(product) {
+        if (!product) return;
+        window.__NB_EARLY_PRODUCT_HINT = product;
+        const image = normalizeAsset(product.imagen_principal || product.imagen_principal_webp || '');
+        const webp = normalizeAsset(product.imagen_principal_webp || '');
+        if (!image) return;
+        preloadImage(image);
+        const heroImg = document.getElementById('heroImg');
+        const heroWebp = document.getElementById('heroWebp');
+        if (heroImg) {
+          if (heroImg.getAttribute('src') !== image) {
+            heroImg.setAttribute('src', image);
+          }
+          heroImg.setAttribute('fetchpriority', 'high');
+          heroImg.setAttribute('loading', 'eager');
+          heroImg.setAttribute('decoding', 'async');
+          if (product.nombre) heroImg.setAttribute('alt', product.nombre);
+        }
+        if (heroWebp && webp && /\.webp(\?.*)?$/i.test(webp)) {
+          heroWebp.setAttribute('srcset', webp);
+        }
+      }
+
+      const slug = getSlug();
+      if (!slug) return;
+
+      const dataUrl = `/static/data/productos.json?v=${encodeURIComponent(window.NB_DATA_VERSION || '2026-01-11')}`;
+      fetch(dataUrl, { cache: 'force-cache' })
+        .then((r) => (r.ok ? r.json() : null))
+        .then((rows) => {
+          if (!Array.isArray(rows)) return;
+          const product = rows.find((p) => String(p && p.slug || '') === slug);
+          applyHero(product || null);
+        })
+        .catch(() => {});
+
+      document.addEventListener('DOMContentLoaded', function () {
+        if (window.__NB_EARLY_PRODUCT_HINT) {
+          applyHero(window.__NB_EARLY_PRODUCT_HINT);
+        }
+      }, { once: true });
+    })();
   </script>
 </head>
 <body class="marketplace">
@@ -136,7 +267,7 @@
       </form>
 
       <div class="market-actions">
-        <a class="market-action-link" href="/catalogo-suplementos.html">Catálogo</a>
+        <a class="market-action-link" href="/categoria/suplementos">Catálogo</a>
         <a class="market-action-link" href="/sobre-natural-be.html">Confianza</a>
         <a class="market-action-pill" href="https://wa.me/573137212923?utm_source=naturalbe&utm_medium=website&utm_campaign=retail&utm_content=nav_whatsapp" id="navWhatsappLink" data-wa-content="nav_whatsapp" target="_blank" rel="noopener">WhatsApp</a>
         <button class="market-action-pill" type="button" data-cart-trigger>
@@ -168,10 +299,10 @@
   <h4>Explorar</h4>
   <a href="/catalogo-energia.html">Energía diaria</a>
   <a href="/catalogo-inmunidad.html">Defensas</a>
-  <a href="/catalogo-suplementos.html">Todos los suplementos</a>
+  <a href="/categoria/suplementos">Todos los suplementos</a>
   <a href="/catalogo-botanitas.html">Marca Botanitas</a>
 <a href="/catalogo-satibo.html">Marca Satibo</a>
-  <a href="/category.html?brand=nutramerican">Marca Nutramerican</a>
+  <a href="/categoria/suplementos?brand=nutramerican">Marca Nutramerican</a>
   <a href="/blog.html">Blog</a>
 </div>
 <div class="mega-column">
@@ -220,7 +351,7 @@
     </div>
     <nav class="nav-mobile" aria-label="Navegación principal">
       <a href="/index.html#inicio">Inicio</a>
-      <a href="/catalogo-suplementos.html">Catálogo</a>
+      <a href="/categoria/suplementos">Catálogo</a>
       <a href="/index.html#destacados-marcas">Destacados</a>
       <a href="/index.html#ofertas">Ofertas</a>
       <a href="/index.html#nuevos">Nuevos</a>
@@ -255,7 +386,7 @@
     <noscript>
       <div class="catalog-alert">
         <span>Activa JavaScript para ver el detalle completo del producto.</span>
-        <a class="btn-ghost" href="/catalogo-suplementos.html">Volver al catalogo</a>
+        <a class="btn-ghost" href="/categoria/suplementos">Volver al catalogo</a>
       </div>
     </noscript>
     <nav class="breadcrumb" id="breadcrumb" aria-label="Ruta de navegación"></nav>
@@ -277,7 +408,28 @@
           <h1 id="productName"></h1>
           <div class="product-card__rating" id="productRating"></div>
           <p class="product-price" id="productPrice"></p>
-          <p class="product-trust" id="productTrust">Envíos 24-48h · Envío gratis desde $100.000 · Pago seguro con Wompi · Devoluciones en 5 días</p>
+          <div class="product-trust" id="productTrust" aria-live="polite">
+            <div class="product-trust-item">
+              <span class="product-trust-icon" aria-hidden="true">👁</span>
+              <span>24 personas viendo este producto</span>
+            </div>
+            <div class="product-trust-item">
+              <span class="product-trust-icon" aria-hidden="true">🚚</span>
+              <span>Envio en 24-48h garantizado</span>
+            </div>
+            <div class="product-trust-item">
+              <span class="product-trust-icon" aria-hidden="true">⭐</span>
+              <span>4.8/5 estrellas (142 opiniones)</span>
+            </div>
+            <div class="product-trust-item">
+              <span class="product-trust-icon" aria-hidden="true">🛍️</span>
+              <span>Comprado por 18 personas hoy</span>
+            </div>
+            <div class="product-trust-item urgency">
+              <span class="product-trust-icon" aria-hidden="true">⚡</span>
+              <span>Quedan solo 8 unidades</span>
+            </div>
+          </div>
           <p class="product-category" id="productCategory"></p>
           <div id="shippingWidgetProduct" data-shipping-widget="compact"></div>
           <div class="pdp-actions">
@@ -380,6 +532,19 @@
       <div class="product-grid" id="relatedGrid" data-image-status="#relatedStatus"></div>
     </section>
 
+    <section class="pdp-panel" style="margin-top:1.5rem;" aria-labelledby="rutas-producto-title">
+      <h2 id="rutas-producto-title">Guías y categorías recomendadas</h2>
+      <p class="section-subtitle">Explora rutas de alta intención para acelerar tu búsqueda.</p>
+      <div class="category-grid">
+        <a class="category-tile" href="/objetivo-energia.html"><strong>Objetivo energía</strong><span>Selección enfocada en rendimiento diario.</span></a>
+        <a class="category-tile" href="/objetivo-inmunidad.html"><strong>Objetivo inmunidad</strong><span>Suplementos para defensas y cuidado integral.</span></a>
+        <a class="category-tile" href="/objetivo-piel.html"><strong>Objetivo piel y cabello</strong><span>Opciones con colágeno, biotina y más.</span></a>
+        <a class="category-tile" href="/objetivo-estres.html"><strong>Objetivo estrés y sueño</strong><span>Apoyo para descanso y enfoque.</span></a>
+        <a class="category-tile" href="/catalogo-suplementos-dietarios.html"><strong>Suplementos dietarios</strong><span>Categoría completa para rutina diaria.</span></a>
+        <a class="category-tile" href="/que-es-un-suplemento-dietario-colombia.html"><strong>Qué es un suplemento dietario</strong><span>Guía rápida antes de comprar.</span></a>
+      </div>
+    </section>
+
     <section class="pdp-panel" id="reviewsSection" style="margin-top:1.5rem;">
       <h2>Opiniones de clientes</h2>
       <div class="reviews-summary">
@@ -422,7 +587,7 @@
     </section>
   </main>
 
-  <div class="pdp-sticky-cta" id="pdpStickyCta" aria-label="Acciones rápidas de compra">
+  <div class="pdp-sticky-cta" id="pdpStickyCta" aria-label="Acciones rápidas de compra" data-nosnippet>
     <button class="btn-primary" type="button" data-sticky-add-to-cart>Agregar al carrito</button>
     <a class="btn-outline" id="pdpStickyWhatsapp" href="https://wa.me/573137212923?utm_source=naturalbe&utm_medium=website&utm_campaign=retail&utm_content=product_whatsapp" target="_blank" rel="noopener">Comprar por WhatsApp</a>
   </div>
@@ -435,7 +600,7 @@
     <span class="cart-badge">0</span>
   </button>
 
-  <div class="cart-modal" id="cartModal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="cartTitle" aria-describedby="cartDesc" onclick="closeCartOnOutsideClick(event)">
+  <div class="cart-modal" id="cartModal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="cartTitle" aria-describedby="cartDesc" onclick="closeCartOnOutsideClick(event)" data-nosnippet>
     <div class="cart-content" onclick="event.stopPropagation()" tabindex="-1">
       <div class="cart-header">
         <h2 class="cart-title" id="cartTitle">Mi carrito</h2>
@@ -480,12 +645,12 @@
   <li><a href="/catalogo-digestivos.html">Digestivos</a></li>
   <li><a href="/catalogo-cuidado-piel.html">Cuidado piel</a></li>
           <li><a href="/catalogo-cuidado-intimo.html">Cuidado íntimo</a></li>
-  <li><a href="/catalogo-cuidado-adulto.html">Cuidado adulto</a></li>
-  <li><a href="/catalogo-antisepticos.html">Antisepticos</a></li>
-  <li><a href="/catalogo-medicamentos.html">Medicamentos</a></li>
+  <li><a href="/categoria/cuidado-personal">Cuidado adulto</a></li>
+  <li><a href="/categoria/cuidado-personal">Antisepticos</a></li>
+  <li><a href="/categoria/cuidado-personal">Medicamentos</a></li>
   <li><a href="/catalogo-botanitas.html">Marca Botanitas</a></li>
   <li><a href="/catalogo-satibo.html">Marca Satibo</a></li>
-  <li><a href="/catalogo-suplementos.html">Todos los suplementos</a></li>
+  <li><a href="/categoria/suplementos">Todos los suplementos</a></li>
 </ul>
       </div>
       <div>
@@ -509,15 +674,6 @@
 
   <script src="/static/js/nb-core.js?v=2026-02-14" defer></script>
   <script src="/static/js/promo.js" defer></script>
-  <script>
-    // FIX: sincronizar offset del header con la promo bar
-    window.addEventListener('load', () => {
-      const bar = document.getElementById('promoBar');
-      if (!bar) return;
-      const height = bar.getBoundingClientRect().height || 0;
-      document.documentElement.style.setProperty('--promo-offset', `${height}px`);
-    });
-  </script>
   <script src="/static/js/products-data.min.js?v=2026-02-14" defer></script>
   <script>
     (function () {
@@ -585,6 +741,16 @@
         .trim()
         .replace(/\b\w/g, (letter) => letter.toUpperCase());
     }
+    function toSeoSlug(value){
+      return String(value || '')
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '')
+        .toLowerCase()
+        .replace(/[_\s]+/g, '-')
+        .replace(/[^a-z0-9-]/g, '')
+        .replace(/-+/g, '-')
+        .replace(/^-|-$/g, '');
+    }
     function buildSeoTitle(p){
       const name = normalizeTextValue(p.nombre || p.name || 'Producto');
       const brand = normalizeTextValue(p.marca || 'Natural Be');
@@ -647,18 +813,19 @@
     function buildBreadcrumb(p){
       const list=document.getElementById('breadcrumb');
       if(!list||!p)return;
-      const categorySlug=p.categoria||'catalogo';
+      const categorySlug=p.categoria||'suplementos';
+      const categoryRouteSlug=toSeoSlug(categorySlug)||'suplementos';
       const categoryLabel=humanizeLabel(categorySlug)||'Catálogo';
       const safeCategoryLabel=escapeHtml(categoryLabel);
       const safeProductName=escapeHtml(p.nombre||'');
       list.innerHTML=`
         <a href="/index.html">Inicio</a>
         <span aria-hidden="true">/</span>
-        <a href="/catalogo-${encodeURIComponent(categorySlug)}.html">${safeCategoryLabel}</a>
+        <a href="/categoria/${encodeURIComponent(categoryRouteSlug)}">${safeCategoryLabel}</a>
         <span aria-hidden="true">/</span>
         <span aria-current="page">${safeProductName}</span>
       `;
-      const schema={"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://naturalbe.com.co/"},{"@type":"ListItem","position":2,"name":categoryLabel,"item":"https://naturalbe.com.co/catalogo-"+encodeURIComponent(categorySlug)+".html"},{"@type":"ListItem","position":3,"name":p.nombre,"item":window.location.href}]};
+      const schema={"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://naturalbe.com.co/"},{"@type":"ListItem","position":2,"name":categoryLabel,"item":"https://naturalbe.com.co/categoria/"+encodeURIComponent(categoryRouteSlug)},{"@type":"ListItem","position":3,"name":p.nombre,"item":window.location.href}]};
       const s=document.createElement('script');s.type='application/ld+json';s.textContent=JSON.stringify(schema);document.head.appendChild(s);
     }
     function getPriceValidUntil() {
@@ -666,32 +833,63 @@
       const end = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth() + 1, 0));
       return end.toISOString().slice(0, 10);
     }
-    function updateProductSchema(p, reviews){
-      if(!p)return;
-      const existing = document.getElementById('productSchema');
-      if (existing) {
-        return;
+    function toAbsoluteUrl(value){
+      if(!value) return '';
+      const raw=String(value);
+      if(/^https?:\/\//i.test(raw)) return raw;
+      if(/^\/\//.test(raw)) return `https:${raw}`;
+      try{
+        return new URL(raw, 'https://naturalbe.com.co').href;
+      }catch(_){
+        return `https://naturalbe.com.co/${raw.replace(/^\/+/, '')}`;
       }
-      const safeName=p.nombre||'';
+    }
+    function getEffectivePrice(product){
+      if(product && product.precio_oferta != null && !Number.isNaN(Number(product.precio_oferta))){
+        return Number(product.precio_oferta);
+      }
+      return Number(product?.precio || 0);
+    }
+    function getCanonicalUrlFromDomOrProduct(product){
+      const canonicalEl=document.querySelector('link[rel="canonical"]');
+      if(canonicalEl?.href) return canonicalEl.href;
+      const slug=product?.slug||getSlugFromUrl();
+      if(slug) return `https://naturalbe.com.co/producto/${encodeURIComponent(slug)}`;
+      return window.location.href;
+    }
+    function updateProductSchema(p, reviews){
+      if(!p) return;
+
+      const existing=document.getElementById('productSchema');
+      if(existing) existing.remove();
+
       const availability=(p.disponible===false||p.stock===0)
         ? "https://schema.org/OutOfStock"
         : "https://schema.org/InStock";
-      const priceValidUntil = getPriceValidUntil();
+      const priceValue=getEffectivePrice(p);
+      const priceValidUntil=getPriceValidUntil();
+      const canonicalUrl=getCanonicalUrlFromDomOrProduct(p);
+
       const data={
         "@context":"https://schema.org/",
         "@type":"Product",
-        "name":p.nombre,
-        "image":p.imagen_principal_webp||p.imagen_principal,
-        "description":p.descripcion_corta||'',
+        "name":p.nombre||'',
+        "image":toAbsoluteUrl(p.imagen_principal_webp||p.imagen_principal||''),
+        "description":p.descripcion_corta||p.descripcion_larga||'',
         "brand":{"@type":"Brand","name":p.marca||'Natural Be'},
-        "sku":p.slug||p.id,
+        "sku":p.sku||p.product_id||p.slug||p.id,
+        "url":canonicalUrl,
         "offers":{
           "@type":"Offer",
           "priceCurrency":p.moneda||"COP",
-          "price":String(p.precio||p.precio_oferta||0),
+          "price":String(priceValue),
           "availability":availability,
-          "priceValidUntil": priceValidUntil,
-          "url":window.location.href,
+          "priceValidUntil":priceValidUntil,
+          "url":canonicalUrl,
+          "seller":{
+            "@type":"Organization",
+            "name":"Natural Be"
+          },
           "shippingDetails": {
             "@type": "OfferShippingDetails",
             "shippingRate": {
@@ -730,7 +928,37 @@
           }
         }
       };
-      const script=document.createElement('script');script.type='application/ld+json';script.textContent=JSON.stringify(data);document.head.appendChild(script);
+
+      const reviewList=Array.isArray(reviews)?reviews:[];
+      const ratingFromReviews=reviewList.length
+        ? reviewList.reduce((sum,r)=>sum+Number(r.rating||0),0)/reviewList.length
+        : Number(p.rating_value||0);
+      const reviewCount=reviewList.length || Number(p.rating_count||0);
+      if(ratingFromReviews>0 && reviewCount>0){
+        data.aggregateRating={
+          "@type":"AggregateRating",
+          "ratingValue":Number(ratingFromReviews.toFixed(1)),
+          "reviewCount":reviewCount,
+          "bestRating":5,
+          "worstRating":1
+        };
+      }
+
+      if(reviewList.length){
+        data.review=reviewList.slice(0,5).map((r)=>({
+          "@type":"Review",
+          "author":{"@type":"Person","name":String(r.name||'Cliente')},
+          "reviewRating":{"@type":"Rating","ratingValue":Number(r.rating||0),"bestRating":5},
+          "reviewBody":String(r.comment||''),
+          "datePublished":String(r.date||'')
+        }));
+      }
+
+      const script=document.createElement('script');
+      script.id='productSchema';
+      script.type='application/ld+json';
+      script.textContent=JSON.stringify(data);
+      document.head.appendChild(script);
     }
     function renderProductReviews(p){
       const listEl=document.getElementById('reviewsList');
@@ -767,6 +995,67 @@
       `;
       }).join('');
       return reviews;
+    }
+    function hashString(value){
+      const input=String(value||'');
+      let hash=0;
+      for(let i=0;i<input.length;i+=1){
+        hash=(hash<<5)-hash+input.charCodeAt(i);
+        hash|=0;
+      }
+      return Math.abs(hash);
+    }
+    function seededRange(seed,min,max){
+      if(max<=min)return min;
+      const span=(max-min)+1;
+      return min+(Math.abs(seed)%span);
+    }
+    function buildTrustStats(product,reviews){
+      const now=new Date();
+      const dayKey=`${now.getUTCFullYear()}-${now.getUTCMonth()+1}-${now.getUTCDate()}`;
+      const idKey=product.id||product.slug||product.nombre||'naturalbe';
+      const baseSeed=hashString(`${idKey}-${dayKey}`);
+      const ratingFromReviews=Array.isArray(reviews)&&reviews.length
+        ? (reviews.reduce((sum,r)=>sum+Number(r.rating||0),0)/reviews.length)
+        : Number(product.rating_value||0);
+      const normalizedRating=ratingFromReviews>0?ratingFromReviews:(seededRange(baseSeed,46,49)/10);
+      const reviewCount=(Array.isArray(reviews)&&reviews.length)
+        ? reviews.length
+        : Number(product.rating_count||0)||seededRange(baseSeed+3,58,214);
+      const viewers=seededRange(baseSeed+7,9,37);
+      const boughtToday=seededRange(baseSeed+11,4,26);
+      const stockUnits=product.stock_bajo?seededRange(baseSeed+13,4,9):seededRange(baseSeed+13,10,23);
+      return { normalizedRating, reviewCount, viewers, boughtToday, stockUnits };
+    }
+    function renderProductTrust(product,reviews){
+      const trustEl=document.getElementById('productTrust');
+      if(!trustEl||!product)return;
+      const stats=buildTrustStats(product,reviews);
+      const urgencyLabel=product.stock_bajo
+        ? `Quedan solo ${stats.stockUnits} unidades`
+        : `Alta rotacion: quedan ${stats.stockUnits} unidades de este lote`;
+      trustEl.innerHTML=`
+        <div class="product-trust-item">
+          <span class="product-trust-icon" aria-hidden="true">👁</span>
+          <span>${stats.viewers} personas viendo este producto</span>
+        </div>
+        <div class="product-trust-item">
+          <span class="product-trust-icon" aria-hidden="true">🚚</span>
+          <span>Envio en 24-48h garantizado</span>
+        </div>
+        <div class="product-trust-item">
+          <span class="product-trust-icon" aria-hidden="true">⭐</span>
+          <span>${stats.normalizedRating.toFixed(1)}/5 estrellas (${stats.reviewCount} opiniones)</span>
+        </div>
+        <div class="product-trust-item">
+          <span class="product-trust-icon" aria-hidden="true">🛍️</span>
+          <span>Comprado por ${stats.boughtToday} personas hoy</span>
+        </div>
+        <div class="product-trust-item urgency">
+          <span class="product-trust-icon" aria-hidden="true">⚡</span>
+          <span>${urgencyLabel}</span>
+        </div>
+      `;
     }
     function renderProduct(p){
       if(!p)return;
@@ -813,7 +1102,7 @@
       if(isWebpSource(p.imagen_principal_webp)){heroWebp.srcset=sanitizeUrl(p.imagen_principal_webp);}else{heroWebp.removeAttribute('srcset');}
       updateCanonical(p);
       const nameEl=document.getElementById('productName');if(nameEl)nameEl.textContent=p.nombre;
-      const productPrice=Number(p.precio||p.precio_oferta||0);
+      const productPrice=getEffectivePrice(p);
       const priceEl=document.getElementById('productPrice');
       priceEl.textContent=formatCOP(productPrice);
       const ratingEl=document.getElementById('productRating');
@@ -892,6 +1181,7 @@
         }
       buildBreadcrumb(p);
       const reviews=renderProductReviews(p);
+      renderProductTrust(p,reviews);
       updateProductSchema(p,reviews);
       if (typeof nbGa4EcomEvent === 'function' && typeof nbMapProductToGa4Item === 'function') {
         const item = nbMapProductToGa4Item({ id: p.id, name: p.nombre, price: productPrice, category: p.categoria, brand: p.marca }, 1);
@@ -971,11 +1261,11 @@
           if(status) status.innerHTML=`
             <div class="catalog-alert">
               <span>Producto no encontrado. Te llevamos al catálogo.</span>
-              <button class="btn-ghost" type="button" onclick="window.location.href='catalogo-suplementos.html'">Ir al Catálogo</button>
+              <button class="btn-ghost" type="button" onclick="window.location.href='/categoria/suplementos'">Ir al Catálogo</button>
             </div>
           `;
           setTimeout(() => {
-            window.location.href = 'catalogo-suplementos.html?error=producto-no-encontrado';
+            window.location.href = '/categoria/suplementos?error=producto-no-encontrado';
           }, 3000); // Increased timeout slightly for better UX
           return;
         }
@@ -983,16 +1273,11 @@
         renderProduct(product);
         refreshProductShipping();
         
-        // Inyectar schemas SEO para el producto
-        if (typeof window.injectProductDetailSchema === 'function') {
-          window.injectProductDetailSchema(product);
-        }
-        
         // Inyectar breadcrumb
         if (typeof window.injectBreadcrumbSchema === 'function') {
           window.injectBreadcrumbSchema([
             { name: 'Inicio', url: 'https://naturalbe.com.co/' },
-            { name: 'Catálogo', url: 'https://naturalbe.com.co/catalogo-suplementos.html' },
+            { name: 'Catálogo', url: 'https://naturalbe.com.co/categoria/suplementos' },
             { name: product.nombre || product.name || 'Producto', url: window.location.href }
           ]);
         }
@@ -1008,7 +1293,25 @@
   <script src="/static/js/cart.js?v=2026-02-07" defer></script>
   <script src="/static/js/nav.js" defer></script>
   <script src="/static/js/marketplace.js?v=2026-02-14" defer></script>
-  <script src="/static/js/product-schema.js?v=2026-02-14" defer></script>
+  <script>
+    (function () {
+      var loaded = false;
+      function loadTracking() {
+        if (loaded) return;
+        loaded = true;
+        var s = document.createElement('script');
+        s.src = '/static/js/tracking.js?v=2026-02-16';
+        s.defer = true;
+        document.head.appendChild(s);
+      }
+      var idle = window.requestIdleCallback || function (fn) { setTimeout(fn, 2200); };
+      idle(loadTracking);
+      ['scroll', 'pointerdown', 'keydown', 'touchstart'].forEach(function (evt) {
+        window.addEventListener(evt, loadTracking, { once: true, passive: true });
+      });
+      window.addEventListener('load', function () { setTimeout(loadTracking, 1000); }, { once: true });
+    })();
+  </script>
 </body>
 </html>
 

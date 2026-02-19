@@ -1,0 +1,690 @@
+Directrices básicas de la Búsqueda de Google
+Las Directrices básicas de la Búsqueda de Google constituyen los componentes principales de lo que hace que tu contenido web (páginas web, imágenes, vídeos u otro material disponible públicamente que Google encuentra en la Web) pueda aparecer y tener un buen rendimiento en la Búsqueda de Google:
+
+Requisitos técnicos: lo que Google necesita de una página web para mostrarla en la Búsqueda de Google.
+Políticas de spam: los comportamientos y las tácticas que pueden hacer que el posicionamiento sea más bajo o a omitirse por completo de los resultados de la Búsqueda de Google.
+Prácticas recomendadas clave: son los aspectos principales que pueden ayudarte a mejorar la forma en que tu sitio aparece en los resultados de la Búsqueda de Google.
+Que no te engañen: aparecer en los resultados de la Búsqueda de Google no tiene ningún coste económico. Es importante tener en cuenta que el hecho de que una página cumpla todos estos requisitos y prácticas recomendadas no implica que Google vaya a rastrear, indexar o servir su contenido. Más información sobre cómo funciona la Búsqueda
+
+Requisitos técnicos 
+Los requisitos técnicos cubren los requisitos mínimos que necesita la Búsqueda de Google para mostrar una página web en los resultados de búsqueda. Son muy pocas las medidas técnicas que se deben implementar en una página web. La mayoría de los sitios cumplen los requisitos técnicos sin darse cuenta.
+
+Políticas de spam 
+En las políticas de spam se detallan los comportamientos y las tácticas que pueden hacer que una página o todo un sitio se clasifique en una posición más baja o que se omita por completo en la Búsqueda de Google. Los sitios que se centran en proporcionar la mejor experiencia y contenido a los usuarios y mantener el espíritu de nuestros principios tienen más posibilidades de obtener buenos resultados en la Búsqueda de Google.
+
+Prácticas recomendadas clave 
+Aunque hay muchas cosas que puedes hacer para mejorar el SEO de tu sitio, hay algunas prácticas principales que pueden tener un mayor impacto en el posicionamiento y la aparición de tu contenido web en la Búsqueda de Google:
+
+Crea contenido útil, fiable y centrado en las personas.
+Incluye palabras que los usuarios usarían para buscar tu contenido y ubícalas en lugares destacados de la página, como el título y el encabezado principal de una página, y en otras ubicaciones descriptivas, como el texto alternativo y el texto del enlace.
+Haz que se puedan rastrear tus enlaces para que Google pueda encontrar otras páginas de tu sitio mediante los enlaces de tu página.
+Háblales a las personas de tu sitio. Participa de forma activa en las comunidades donde puedas hablar con personas que piensan como tú sobre los servicios y productos que mencionas en tu sitio.
+Si tienes otro tipo de contenido, como imágenes, vídeos, datos estructurados y JavaScript, asegúrate de seguir las prácticas recomendadas específicas para que podamos entender también esas partes de la página.
+Mejora cómo aparece tu sitio en la Búsqueda de Google habilitando las funciones adecuadas para tu sitio.
+Si tienes contenido que no debería estar en los resultados de búsqueda o quieres inhabilitarlo por completo, usa el método que corresponda para controlar cómo se muestra tu contenido en la Búsqueda de Google.
+Requisitos técnicos de la Búsqueda de Google
+Conseguir que tu página aparezca en los resultados de búsqueda no cuesta nada, aunque alguien te diga lo contrario. Siempre que tu página cumpla estos requisitos técnicos mínimos, puede aparecer en la Búsqueda de Google:
+
+El robot de Google no está bloqueado.
+La página funciona; es decir, Google recibe un código de estado HTTP 200 (success).
+La página tiene contenido indexable.
+El hecho de que una página cumpla estos requisitos no significa que se vaya a indexar; la indexación no está garantizada.
+El robot de Google no está bloqueado (puede encontrar la página y acceder a ella)
+Google solo indexa las páginas de la Web que son de acceso público y que no impiden que nuestro rastreador, el robot de Google, las rastree. Si una página es privada, por ejemplo, porque es necesario iniciar sesión para verla, el robot de Google no la rastreará. Del mismo modo, si se utiliza uno de los varios mecanismos que hay para impedir que Google indexe la página, tampoco se indexará.
+
+Comprobar si el robot de Google puede encontrar y acceder a tu página
+Es poco probable que las páginas que se hayan bloqueado con un archivo robots.txt aparezcan en los resultados de la Búsqueda de Google. Para ver una lista de las páginas a las que Google no puede acceder (pero que querrías que aparecieran en los resultados de la Búsqueda), consulta el informe "Indexación de páginas" y el informe "Estadísticas de rastreo" de Search Console. Cada informe puede contener información diferente sobre tus URLs, por lo que te recomendamos que consultes los dos.
+
+Para probar una página concreta, usa la herramienta de inspección de URLs.
+
+La página funciona (no es una página de error)
+Google solo indexa las páginas que se sirven con un código de estado HTTP 200 (success). Las páginas de error del cliente y del servidor no se indexan. Puedes comprobar el código de estado HTTP de una página determinada con la herramienta de inspección de URLs.
+
+La página tiene contenido indexable
+Una vez que el robot de Google puede encontrar y acceder a una página que funciona, Google comprueba si tiene contenido indexable. Contenido indexable significa que cumple estos requisitos:
+
+El contenido textual está en un tipo de archivo compatible con la Búsqueda de Google.
+El contenido no infringe nuestras políticas de spam.
+Aunque impidas que el robot de Google rastree una página con un archivo robots.txt, la URL de esa página podría seguir apareciendo en los resultados de búsqueda. Para indicar a Google que no indexe una página, utiliza noindex y permite que Google rastree la URL.
+Políticas de spam de la Búsqueda web de Google
+En el contexto de la Búsqueda de Google, el "spam" hace referencia a las técnicas que se utilizan para engañar a los usuarios o manipular nuestros sistemas de búsqueda para que posicionen contenido en una posición alta. Nuestras políticas de spam ayudan a proteger a los usuarios y a mejorar la calidad de los resultados de la Búsqueda. Para que un contenido (páginas web, imágenes, vídeos, contenido de noticias u otro material que Google encuentre en la Web) pueda aparecer en los resultados de búsqueda web de Google, debe cumplir las políticas generales de la Búsqueda de Google y las políticas de spam que se indican en esta página. Estas políticas se aplican a todos los resultados de búsqueda web, incluidos los de las propiedades de Google.
+
+Detectamos prácticas que infringen las políticas a través de sistemas automatizados y, si es necesario, mediante una revisión humana que puede dar lugar a una acción manual. Los sitios que infringen nuestras políticas pueden obtener un posicionamiento más bajo en los resultados o dejar de aparecer en ellos.
+
+Si crees que un sitio infringe las políticas de spam de Google, comunícanoslo enviando una denuncia de usuario de calidad de la búsqueda. Nos centramos en desarrollar soluciones escalables y automatizadas a los problemas, y utilizaremos estas denuncias para seguir mejorando nuestros sistemas de detección de spam.
+
+Nuestras políticas abarcan prácticas de spam habituales, pero Google puede tomar medidas contra cualquier tipo de prácticas de spam que detecte.
+
+Encubrimiento
+El encubrimiento hace referencia a la práctica de mostrar un contenido distinto a los usuarios y a los buscadores para manipular el posicionamiento en la búsqueda y engañar a los usuarios. Estos son algunos ejemplos de encubrimiento:
+
+Mostrar una página sobre destinos de viaje a los buscadores y una página sobre fármacos con descuento a los usuarios
+Insertar texto o palabras clave en una página solo cuando el user-agent que solicita la página es un buscador y no un usuario
+Si tu sitio incluye tecnologías a las que los buscadores no pueden acceder, como JavaScript o imágenes, consulta nuestras recomendaciones para que tanto los buscadores como los usuarios puedan acceder al contenido sin encubrimiento.
+
+Si un hacker piratea un sitio, es bastante habitual que emplee esta práctica para que al propietario del sitio le cueste más detectarlo. Consulta más información sobre cómo corregir sitios pirateados y evitar que los pirateen.
+
+Si gestionas un muro de pago o un mecanismo de restricción de contenido, no consideramos que se trate de encubrimiento si Google puede ver el contenido completo que hay detrás del muro de pago, al igual que haría cualquier usuario con acceso al material restringido, y si sigues nuestras directrices generales sobre las muestras flexibles.
+
+Abuso de páginas puerta
+El abuso de páginas puerta se produce cuando se crean sitios o páginas para que aparezcan como respuesta a consultas de búsqueda similares y específicas. Dirigen a los usuarios a páginas intermedias que no son tan útiles como el destino final. Estos son algunos ejemplos de abuso de páginas puerta:
+
+Tener varios sitios web con ligeras variaciones en la URL y en la página principal para maximizar la cobertura de cualquier consulta concreta
+Tener varias páginas o nombres de dominio orientados a regiones o ciudades específicas que canalizan usuarios a una página
+Generar páginas para dirigir a los visitantes a la parte realmente útil o relevante del sitio
+Crear páginas considerablemente similares que obedecen más a resultados de búsqueda que a una jerarquía claramente definida en la que se pueda buscar
+Abuso de dominio caducado
+El abuso de dominio caducado consiste en comprar y reutilizar un nombre de dominio para manipular el posicionamiento en los resultados de búsqueda alojando contenido que aporta poco o ningún valor a los usuarios. Estos son algunos ejemplos ilustrativos:
+
+Contenido de afiliado en un sitio utilizado anteriormente por un organismo público
+Vender productos médicos comerciales en un sitio utilizado anteriormente por una organización benéfica médica sin ánimo de lucro
+Contenido relacionado con casinos en un antiguo sitio de una escuela de primaria
+Contenido pirateado
+El contenido pirateado (o hacking) es contenido que se coloca en tu sitio sin tu permiso porque se ha vulnerado su seguridad. El contenido pirateado da resultados de búsqueda insuficientes a nuestros usuarios y puede instalar contenido malicioso en sus equipos. Estos son algunos ejemplos de hacking:
+
+Inyección de código: cuando los hackers obtienen acceso a tu sitio web, pueden intentar inyectar código malicioso en las páginas de tu sitio. Por lo general, suele tratarse de JavaScript malicioso que se inyecta directamente en el código del sitio o en iframes.
+Inyección de páginas: a veces, si hay algún fallo de seguridad, los hackers pueden añadir a tu sitio páginas nuevas con contenido engañoso o malicioso. El objetivo de estas páginas suele ser manipular los buscadores o intentar una operación de phishing. Es posible que no veas ningún indicio de que te hayan pirateado alguna página; no obstante, estas páginas nuevas pueden dañar a tus visitantes o perjudicar tu posicionamiento en los resultados de búsqueda.
+Inyección de contenido: los hackers también pueden manipular sutilmente las páginas de tu sitio. Su objetivo es añadir contenido que ni tú ni tus usuarios podéis ver, pero que sí detectan los buscadores. Para conseguirlo, pueden incluir enlaces o texto ocultos en páginas mediante CSS o HTML, o bien usar técnicas más complejas, como el encubrimiento.
+Redirecciones: los hackers pueden inyectar código malicioso en tu sitio web para redirigir a algunos de tus usuarios a páginas dañinas o con contenido engañoso. El tipo de redirección que utilicen puede depender de la URL referente, del user-agent o del dispositivo. Por ejemplo, es posible que se te redirija a una página sospechosa al hacer clic en una URL de los resultados de la Búsqueda de Google, pero no si accedes a esa misma URL directamente desde un navegador.
+Consulta nuestros consejos sobre cómo corregir sitios pirateados y evitar que los pirateen.
+
+Abuso de texto oculto y enlaces
+El abuso de texto oculto o de enlaces consiste en colocar contenido en una página para manipular los buscadores, pero de forma que los visitantes no puedan verlo fácilmente. Estos son algunos ejemplos de abuso de texto oculto o de enlaces:
+
+Usar texto blanco con fondo blanco
+Ocultar texto detrás de una imagen
+Usar CSS para incluir texto fuera de la pantalla
+Seleccionar el valor 0 como tamaño de fuente u opacidad
+Ocultar un enlace incluyendo un hipervínculo en solo un carácter (por ejemplo, en una coma en mitad de un párrafo)
+Hay muchos elementos de diseño web que muestran y ocultan contenido de forma dinámica para mejorar la experiencia de usuario. Estos elementos no infringen nuestras políticas:
+
+Contenido en forma de acordeón o en pestañas que permite ocultar o mostrar contenido adicional
+Diapositivas o controles deslizantes que cambian entre varias imágenes o párrafos de texto
+Descripción emergente o texto similar que muestra contenido adicional cuando los usuarios interactúan con un elemento
+Texto al que solo se puede acceder con lectores de pantalla y cuyo objetivo es mejorar la experiencia de los usuarios de lectores de pantalla
+Exceso de palabras clave
+El exceso de palabras clave hace referencia a la práctica de llenar una página web con palabras clave o números para intentar manipular su posicionamiento en los resultados de la Búsqueda de Google. Estas palabras clave suelen aparecer en listas, en grupo o fuera de contexto, no en un texto redactado de forma natural. A continuación te presentamos algunos ejemplos de exceso de palabras clave:
+
+Listados de números de teléfono sin un valor añadido sustancial.
+Bloques de texto que enumeran las ciudades y países en las que una página web intenta obtener un buen posicionamiento.
+Repetir las mismas palabras o frases con tanta frecuencia que no suene natural. Por ejemplo:
+Saldo de la tienda de aplicaciones ilimitado. Hay muchos sitios que afirman ofrecer crédito de la tienda de aplicaciones por 0 €, pero son falsos y engañan a los usuarios que buscan saldo de la tienda de aplicaciones ilimitado. Puedes obtener crédito ilimitado para la tienda de aplicaciones en este sitio web. Visita nuestra página de crédito de la tienda de aplicaciones ilimitado y consíguelo hoy mismo.
+Spam de enlaces
+El spam de enlaces es la práctica de crear enlaces a un sitio o desde él principalmente para manipular el posicionamiento de búsqueda. Estos son algunos ejemplos de spam de enlaces:
+
+Comprar o vender enlaces con fines de posicionamiento. Entre las páginas que no se transcodifican, se incluyen las siguientes:
+El intercambio de dinero por enlaces o por publicaciones que contengan enlaces
+El intercambio de productos o servicios por enlaces
+El envío productos a usuarios a cambio de que escriban sobre ellos e incluyan un enlace
+El exceso de intercambio de enlaces ("enlaza con mi sitio y yo enlazaré con el tuyo") o de páginas de socios por el mero hecho de intercambiar enlaces
+El uso de programas o servicios automáticos para crear enlaces que lleven a tu sitio
+La obligación de incluir enlaces como parte de los términos del servicio, de contratos o de acuerdos similares sin permitir que un propietario de contenido de terceros pueda calificar el enlace de salida, si quiere
+Anuncios de texto o enlaces de texto que no bloquean el crédito de posicionamiento
+Anuncios editoriales o publicidad nativa en los que se recibe un pago por artículos que incluyen enlaces que contribuyen a mejorar el posicionamiento o enlaces con el texto de enlace optimizado en artículos, publicaciones de invitados o notas de prensa distribuidas en otros sitios. Por ejemplo:
+Hay muchos anillos de boda en el mercado. Si quieres casarte, tendrás que elegir el mejor anillo, como comprar flores y el vestido de novia.
+Enlaces a sitios de marcadores o directorios de poca calidad
+Enlaces llenos de palabras clave, ocultos o de baja calidad insertados en widgets que se distribuyen en varios sitios
+Enlaces distribuidos en pies de página o plantillas de varios sitios
+Comentarios de foros que incluyen enlaces optimizados en la publicación o en la firma. Por ejemplo:
+¡Gracias por la información!
+- Pablo
+pizza casa pablo pizzas en san diego mejor pizza de san diego
+Crear contenido de bajo valor principalmente para manipular enlaces y factores de posicionamiento
+Google entiende que la compra y la venta de enlaces son actividades económicas normales en la Web si se realizan con fines publicitarios y de patrocinio. No se considera una infracción de nuestras políticas tener estos enlaces siempre que estén calificados con un valor de atributo rel="nofollow" o rel="sponsored" en la etiqueta <a>.
+
+Tráfico generado automáticamente
+El tráfico generado automáticamente (también denominado tráfico automatizado) hace referencia a la práctica de enviar consultas automatizadas a Google. Esto incluye el raspado de datos de los resultados para comprobar el posicionamiento u otros tipos de acceso automatizado a la Búsqueda de Google sin permiso explícito El tráfico generado automáticamente consume recursos e interfiere con nuestra capacidad para ofrecer un mejor servicio a los usuarios. Estas actividades infringen nuestras políticas de spam y los Términos del Servicio de Google.
+
+Malware y prácticas maliciosas
+Google comprueba si los sitios web alojan malware o software no deseado que afecte negativamente a la experiencia de usuario.
+
+Malware es cualquier software o aplicación móvil que se haya diseñado específicamente para perjudicar a los usuarios o dañar los ordenadores, los dispositivos móviles o el software que se ejecute en ellos. Este tipo de software realiza acciones maliciosas, como instalar programas dañinos (por ejemplo, virus) o software sin el consentimiento de los usuarios. A veces, los propietarios de sitios no se dan cuenta de que sus archivos descargables se consideran malware, por lo que quizá alojen esos binarios sin saberlo.
+
+El software no deseado son archivos ejecutables o aplicaciones móviles que se comportan de manera engañosa o inesperada, o que perjudican de otro modo a los usuarios cuando navegan o utilizan sus dispositivos. Por ejemplo, software que provoca cambios en la página principal o en otros ajustes del navegador sin que lo solicites, o aplicaciones que filtran información privada o personal sin avisarte.
+
+Los propietarios de sitios deben asegurarse de que no infringen la Política de Software No Deseado y de seguir nuestras directrices.
+
+Funciones engañosas 
+La función engañosa hace referencia a la práctica de crear sitios de forma intencionada que engañan a los usuarios para que piensen que pueden acceder a determinados contenidos o servicios, cuando en realidad no es así. Ejemplos de funciones engañosas:
+
+Un sitio con un generador falso que afirma ofrecer crédito de la tienda de aplicaciones, pero no lo hace realmente
+Un sitio que afirma ofrecer determinadas funciones (por ejemplo, combinación de PDFs, temporizador de cuenta atrás o un servicio de diccionario online), pero que dirige a los usuarios de forma intencionada a publicidad engañosa en lugar de proporcionar los servicios mencionados.
+Abuso de contenido a gran escala
+El abuso de contenido a gran escala es cuando se generan muchas páginas con la finalidad principal de manipular el posicionamiento de los resultados de búsqueda en lugar de ayudar a los usuarios. Esta práctica abusiva suele centrarse en crear grandes cantidades de contenido no original que aporta poco o ningún valor a los usuarios, independientemente de cómo se haya creado.
+
+Estos son algunos ejemplos de abuso de contenido a gran escala:
+
+Utilizar herramientas de IA generativa u otras herramientas similares para generar muchas páginas sin añadir valor para los usuarios
+Raspar feeds, resultados de búsqueda u otro contenido para generar muchas páginas (incluso a través de transformaciones automatizadas, como sinónimos, traducciones u otras técnicas de ofuscación), que aportan poco valor a los usuarios
+Generar texto mediante la combinación de contenido de varias páginas web sin añadir ningún valor
+Crear varios sitios con la intención de ocultar la naturaleza a gran escala del contenido
+Crear muchas páginas cuyo contenido tenga poco o ningún sentido para los usuarios, pero que contenga palabras clave de búsqueda
+Si alojas este tipo de contenido en tu sitio, exclúyelo de la Búsqueda.
+
+Raspado de datos
+El raspado hace referencia a la práctica de tomar contenido de otros sitios, a menudo de forma automatizada, y alojarlo con el objetivo de manipular el posicionamiento en los resultados de búsqueda. Ejemplos de contenido copiado de forma abusiva:
+
+Volver a publicar contenido de otros sitios sin aportar contenido original ni valor añadido, ni siquiera citar la fuente original
+Copiar contenido de otros sitios, modificarlo ligeramente (por ejemplo, sustituyendo sinónimos o usando técnicas automáticas) y volver a publicarlo
+Reproducir feeds de contenido de otros sitios sin proporcionar ningún tipo de beneficio único al usuario
+Crear sitios dedicados a insertar o compilar contenido, como vídeos, imágenes u otros contenidos multimedia, de otros sitios, sin aportar un valor añadido significativo al usuario
+Abuso de reputación del sitio
+El abuso de la reputación de un sitio es una táctica en la que se publica contenido de terceros en un sitio anfitrión principalmente debido a los factores de posicionamiento que ya tiene ese sitio, que se han ganado principalmente a partir de su contenido propio. El objetivo de esta táctica es que el contenido se posicione mejor de lo que podría hacerlo por sí solo.
+
+El
+contenido de terceros es el que ha creado una entidad independiente del sitio de alojamiento consolidado. Algunos ejemplos de entidades independientes son los usuarios de ese sitio, los autónomos, los servicios de marca blanca y el contenido creado por personas que no están contratadas directamente por el sitio anfitrión.
+El hecho de tener contenido de terceros por sí solo no infringe la política sobre abuso de la reputación del sitio. Solo se considera una infracción si el contenido de terceros se publica en un sitio anfitrión principalmente para aprovechar los factores de posicionamiento que ya tiene ese sitio. Entre los ejemplos ilustrativos de abuso de reputación del sitio se incluyen:
+
+Un sitio educativo que aloja una página sobre reseñas patrocinadas de préstamos de nóminas escritas por terceros y que distribuye la misma página a otros sitios de la Web
+Un sitio médico que aloja una página publicitaria de terceros sobre "los mejores casinos" que los lectores no esperarían y que se coloca en el sitio para mejorar el posicionamiento gracias a los factores de posicionamiento del sitio establecido
+Un sitio de reseñas de películas que aloja páginas de terceros sobre temas que podrían resultar confusos para los usuarios en un sitio de reseñas de películas (como "formas de comprar seguidores en sitios de redes sociales", "los mejores sitios de adivinación" y "los mejores servicios de redacción de ensayos")
+Un sitio de noticias que aloja cupones proporcionados por un servicio de marca blanca de terceros en el que la principal razón para publicar los cupones en el sitio de noticias es sacar provecho de la reputación del sitio de noticias
+Un sitio propio consolidado diversificado en un nuevo ámbito utilizando principalmente contenido de autónomos porque este contenido tendrá un mejor posicionamiento en el sitio propio que de otra manera.
+Si alojas páginas que infrinjan esta política, consulta cómo corregir este problema.
+
+Estos son algunos ejemplos que NO se consideran abuso de reputación del sitio:
+
+Sitios de servicios de noticias o comunicados de prensa
+Publicaciones de noticias que han sindicado contenido de noticias de otras publicaciones de noticias
+Sitios diseñados para permitir contenido generado por usuarios, como el sitio web de un foro o secciones de comentarios
+Columnas, artículos de opinión, artículos y otras obras de naturaleza editorial
+Contenido de terceros (por ejemplo, páginas de tipo "editorial" o "publicidad nativa") cuyo objetivo sea compartir contenido directamente con los lectores (por ejemplo, a través de la promoción en la propia publicación), en lugar de alojar el contenido para manipular el posicionamiento en la búsqueda
+Usar enlaces de afiliado en una página tratándolos de forma adecuada o insertar bloques de anuncios de terceros en una página
+Cupones que proceden directamente de comerciantes y de otras empresas que prestan servicios a los consumidores
+Redirecciones engañosas
+Una redirección es el acto de enviar a un visitante a una URL distinta de la que ha solicitado inicialmente. La redirección engañosa es la práctica de hacerlo de forma malintencionada para mostrar a los usuarios y a los buscadores un contenido diferente o para mostrar a los usuarios contenido inesperado que no se ajuste a sus necesidades originales. Estos son algunos ejemplos de redirecciones engañosas:
+
+Mostrar a los buscadores un tipo de contenido mientras se redirige a los usuarios a algo bastante diferente
+Mostrar a los usuarios de ordenadores una página normal y redirigir a los usuarios de dispositivos móviles a un dominio de spam totalmente distinto
+Aunque la redirección engañosa es un tipo de spam, hay muchos motivos legítimos distintos al spam para redirigir una URL a otra. Estos son algunos ejemplos de redirecciones legítimas:
+
+Trasladar tu sitio a otra dirección
+Combinar varias páginas en una
+Redirigir a los usuarios a una página interna cuando inician sesión
+A la hora de examinar si una redirección es engañosa, plantéate si la redirección se ha diseñado para engañar a los usuarios o a los buscadores. Consulta más información sobre cómo utilizar redirecciones de forma adecuada en tu sitio.
+
+Afiliación de enlaces sin valor
+La afiliación de enlaces sin valor es la práctica de publicar contenido con enlaces afiliados a productos en los que las descripciones y las reseñas de los productos se copian directamente del comercio original sin ningún tipo de contenido original ni valor añadido.
+
+Las páginas de enlaces afiliados se pueden considerar sin valor si forman parte de un programa que distribuye su contenido por una red de afiliados sin ofrecer valor adicional. Estos sitios suelen mostrarse como sitios modelo o plantillas de contenido similar o idéntico de un mismo sitio o de varios dominios o idiomas. Cuando una página de resultados de la Búsqueda devuelve varios de estos sitios, todos con el mismo contenido, las páginas de enlaces afiliados sin valor generan una experiencia de usuario frustrante.
+
+No todos los sitios que participan en programas de afiliados se consideran afiliados sin valor. Los sitios de afiliados que aportan buenos resultados ofrecen valor añadido mediante contenido o funciones útiles. Algunos ejemplos de páginas de afiliados adecuadas son las que ofrecen información adicional sobre los precios, reseñas de productos originales, pruebas y valoraciones rigurosas, navegación por productos o categorías y comparaciones de productos.
+
+Spam generado por usuarios
+El spam generado por usuarios es contenido engañoso que los usuarios añaden a un sitio a través de un canal en el que pueden generar contenido. A menudo, los propietarios de sitios no son conscientes de este contenido con spam. Estos son algunos ejemplos de spam generado por usuarios:
+
+Cuentas fraudulentas en servicios de alojamiento en los que puede registrarse cualquier persona
+Publicaciones con spam en conversaciones de foros
+Comentarios spam en un blog
+Archivos con contenido inadecuado que se suben a plataformas de alojamiento de archivos
+Consulta nuestros consejos para evitar el uso inadecuado de las secciones públicas de tu sitio. Consulta nuestros consejos sobre cómo corregir sitios pirateados y evitar que los pirateen.
+
+Otras prácticas que pueden provocar una disminución de las posiciones o una retirada
+Retiradas de contenido por motivos legales
+Cuando recibimos un volumen significativo de solicitudes de retirada por infracción de derechos de autor válidas relacionadas con un sitio concreto, podemos usar este hecho para disminuir el posicionamiento de otros contenidos del sitio en nuestros resultados. De esta forma, si hay otro contenido infractor, es menos probable que los usuarios encuentren ese en vez del contenido original. Aplicamos señales de disminución de posicionamiento similares a las reclamaciones relacionadas con la difamación, los productos falsificados y las retiradas por resolución judicial. En el caso del material de abuso sexual infantil, siempre lo retiramos cuando lo identificamos y disminuimos el posicionamiento de todo el contenido de los sitios con una proporción significativa de contenido de abuso sexual infantil.
+
+Retiradas de información personal
+Si procesamos un volumen significativo de solicitudes de retirada de información personal relacionadas con un sitio web en el que se llevan a cabo prácticas abusivas de retirada de contenido, disminuimos el posicionamiento de otros contenidos de ese sitio web en nuestros resultados de búsqueda. También comprobamos si el mismo patrón de comportamiento se repite en otros sitios y, si es así, disminuimos el posicionamiento del contenido de dichos sitios. Podemos aplicar prácticas similares para disminuir la posición de los sitios que reciben un volumen significativo de retiradas de contenido que incluya contenido de doxxing, imágenes explícitas creadas o compartidas sin consentimiento o contenido falso explícito no consentido.
+
+Elusión de políticas
+Si un sitio sigue participando en acciones que pretenden eludir nuestras políticas de spam o las políticas de contenido de la Búsqueda de Google, podremos tomar las medidas oportunas, como restringir o quitarte la posibilidad de aparecer en algunas de nuestras funciones de resultados de la Búsqueda (por ejemplo, Noticias destacadas o Discover) y tomar medidas más amplias en la Búsqueda de Google (por ejemplo, retirar más secciones de un sitio de los resultados de búsqueda). Estos son algunos ejemplos de elusión de políticas:
+
+Usar o crear dominios, subdirectorios o sitios web con la intención de seguir infringiendo nuestras políticas
+Usar otros métodos para seguir distribuyendo contenido o participando en un comportamiento que infrinja nuestras políticas.
+Estafa y fraude
+Hay estafas y fraudes de muchas formas, entre las que se incluyen suplantar la identidad de una empresa o un servicio oficiales mediante sitios falsos, mostrar intencionadamente información falsa sobre una empresa o un servicio, o atraer a los usuarios a un sitio con pretextos falsos. Con la ayuda de sistemas automatizados, Google intenta identificar las páginas que incluyen contenido fraudulento y, por tanto, evitar que aparezcan en los resultados de la Búsqueda de Google. Estos son algunos ejemplos de estafas y fraudes online:
+
+Suplantar la identidad de una empresa o un proveedor de servicios conocidos para engañar a los usuarios de forma que paguen al sitio fraudulento por error
+Crear sitios engañosos que simulan ofrecer un servicio de asistencia oficial en nombre de una empresa legítima o que proporcionan información de contacto falsa de dicha empresa
+Guía de optimización en buscadores (SEO) para principiantes
+Cuando creaste tu sitio web, lo más probable es que lo hicieras pensando en tus usuarios con la intención de facilitarles la búsqueda y la exploración de tu contenido. Algunos de estos usuarios son buscadores que ayudan a que otros usuarios descubran tu contenido. El SEO, que es la abreviatura en inglés de "optimización en buscadores", consiste en ayudar a los buscadores a entender tu contenido y a los usuarios a encontrar tu sitio y tomar una decisión sobre si deben visitarlo a través de un buscador.
+
+En las Directrices básicas de la Búsqueda se describen los elementos más importantes para que tu sitio web pueda aparecer en la Búsqueda de Google. Aunque no garantizamos que un sitio concreto se añada al índice de Google, los sitios que siguen las Directrices básicas de la Búsqueda tienen más probabilidades de aparecer en los resultados de búsqueda de Google. El SEO consiste en dar el siguiente paso y trabajar para mejorar la presencia de tu sitio en la Búsqueda. En esta guía se describen algunas de las mejoras más habituales y eficaces que puedes aplicar en tu sitio.
+
+Lo sentimos, pero no hay ningún secreto para posicionar automáticamente tu sitio en el primer lugar en Google. De hecho, es posible que algunas de las sugerencias ni siquiera sean aplicables a tu empresa. No obstante, si sigues las prácticas recomendadas, los buscadores (no solo Google) podrán rastrear, indexar y comprender tu contenido más fácilmente.
+
+¿Cómo funciona la Búsqueda de Google?
+Google es un buscador totalmente automatizado que utiliza unos programas denominados "rastreadores" para explorar la Web constantemente en busca de páginas que puedan añadirse a nuestro índice. Normalmente basta con que publiques tu sitio en la Web. De hecho, la gran mayoría de los sitios que aparecen en nuestros resultados se encuentran y se añaden automáticamente cuando rastreamos la Web. Si quieres obtener más información, consulta la documentación disponible sobre cómo descubre, rastrea y publica Google páginas web.
+
+¿Tienes poco tiempo o no quieres aventurarte? Te recomendamos que contrates a un profesional. Ten en cuenta lo siguiente.
+¿Cuánto tiempo tardaré en ver un cambio en los resultados de búsqueda?
+Todos los cambios que hagas tardarán un tiempo en reflejarse en Google. Algunos cambios pueden tardar varias horas en aplicarse, mientras que otros pueden tardar varios meses. En general, lo más probable es que tengas que esperar unas semanas para evaluar si tu trabajo ha influido de forma positiva en los resultados de la Búsqueda de Google. Ten en cuenta que no todos los cambios que hagas en tu sitio web tendrán un impacto significativo en los resultados de búsqueda. Si no te convencen tus resultados y tus estrategias empresariales lo permiten, prueba a repetir los cambios y ver si suponen una diferencia.
+
+Ayudar a Google a encontrar contenido
+Antes de hacer nada de lo que se indica en esta sección, comprueba si Google ya ha encontrado tu contenido (quizá no es necesario que hagas nada). Prueba a buscar tu sitio en Google con site: search operator. Si ves resultados que apuntan a tu sitio, significa que estás en el índice. Por ejemplo, al buscar site:wikipedia.org, se devuelven estos resultados. Si no ves tu sitio, consulta los requisitos técnicos para asegurarte de que no haya nada que impida técnicamente que tu sitio se muestre en la Búsqueda de Google y, después, vuelve aquí.
+
+Google encuentra páginas principalmente a través de enlaces de otras páginas que ya ha rastreado. En muchos casos, se trata de otros sitios web que enlazan a tus páginas. Que otros sitios incluyan enlaces al tuyo es algo natural a la larga. También puedes promocionar tu sitio para animar a los usuarios a descubrir tu contenido.
+
+Además, si quieres añadir un poco de dificultad técnica, puedes enviar un sitemap, que es un archivo que contiene todas las URLs de tu sitio que consideras importantes. Es posible que algunos sistemas de gestión de contenido (CMS) lo hagan por ti de forma automática. Sin embargo, esto no es obligatorio, y primero debes centrarte en asegurarte de que los usuarios conozcan tu sitio.
+
+Comprueba si Google puede ver tu página de la misma forma que lo hace un usuario
+Cuando Google rastrea una página, lo ideal es que la vea de la misma forma que lo hace un usuario medio. Para ello, Google necesita acceder a los mismos recursos que el navegador del usuario. Si tu sitio oculta componentes importantes (como CSS y JavaScript), es posible que Google no pueda entender tus páginas, por lo que puede que no aparezcan en los resultados de búsqueda o que no obtengan un buen posicionamiento para los términos a los que las orientas.
+
+Si la información de tus páginas varía en función de la ubicación física de los usuarios, asegúrate de que te convence la información que Google ve desde la ubicación del rastreador, que suele ser Estados Unidos.
+
+Para comprobar cómo ve Google tu página, usa la herramienta de inspección de URLs de Search Console.
+
+¿No quieres una página aparezca en los resultados de búsqueda de Google?
+Es posible que debas inhabilitar todo tu sitio o algunas secciones para que no aparezcan en los resultados de búsqueda. Por ejemplo, puede que no quieras que tus publicaciones sobre tu nuevo corte de pelo embarazoso aparezcan en los resultados de búsqueda. Google ofrece varias formas de inhabilitar el rastreo y la indexación de tus URLs. Si tienes que bloquear algunos archivos, directorios o incluso todo tu sitio para que no aparezcan en la Búsqueda de Google, consulta nuestra guía sobre formas de evitar que determinado contenido se muestre en los resultados de búsqueda.
+
+Organiza tu sitio
+Al configurar o rehacer tu sitio, puede ser útil organizarlo de forma lógica, ya que puede ayudar a los buscadores y a los usuarios a entender cómo se relacionan tus páginas con el resto del sitio. Tampoco hace falta que dejes de hacer lo que estés haciendo y empieces a reorganizar tu sitio en estos momentos. Si bien estas sugerencias pueden ser útiles a largo plazo (especialmente si trabajas en un sitio web más grande), es probable que los buscadores entiendan tus páginas tal y como son ahora mismo, independientemente de cómo esté organizado su sitio.
+
+Utiliza URLs descriptivas
+Algunas partes de las URLs pueden mostrarse en los resultados de búsqueda como rutas de exploración, de forma que los usuarios también puedan utilizarlas para saber si un resultado les será útil.
+
+Dominio
+
+Ruta de exploración
+
+Google aprende automáticamente las rutas de exploración en función de las palabras de la URL, pero también puedes influir en ellas con datos estructurados si quieres añadirle dificultad técnica. Intenta incluir palabras en la URL que puedan ser útiles para los usuarios. Por ejemplo:
+
+https://www.example.com/pets/cats.html
+
+Una URL que solo contiene identificadores aleatorios resulta menos útil para los usuarios. Por ejemplo:
+
+https://www.example.com/2/6772756D707920636174
+
+Agrupa páginas temáticas similares en directorios
+Ilustración de cómo agrupar páginas en directorios
+Si hay miles de URLs en tu sitio, la forma en que organices tu contenido puede influir en el modo en que Google rastrea e indexa tu sitio. En concreto, utilizar directorios (o carpetas) para agrupar temas similares puede ayudar a Google a saber con qué frecuencia cambian las URLs de directorios concretos.
+
+Tomemos como ejemplo las siguientes URLs:
+
+https://www.example.com/policies/return-policy.html
+
+https://www.example.com/promotions/new-promos.html
+
+El contenido del directorio policies rara vez cambia, pero es probable que el contenido del directorio promotions cambie con mucha frecuencia. Google puede obtener esta información y rastrear los directorios con distintas frecuencias. Para obtener más información sobre las estructuras de sitio optimizadas para la búsqueda, consulta nuestra guía para sitios de comercio electrónico, ya que en estos sitios es más importante tener una buena estructura de URL debido a que suelen ser más grandes.
+
+Reduce el contenido duplicado
+Algunos sitios web muestran el mismo contenido en URLs diferentes. Esto se denomina contenido duplicado. Los buscadores eligen una única URL (la URL canónica) que mostrar a los usuarios por fragmento de contenido.
+
+Tener contenido duplicado en tu sitio no supone una infracción de nuestras políticas de spam, pero puede ofrecer una mala experiencia de usuario, y los buscadores podrían malgastar recursos de rastreo en URLs que ni siquiera te interesan. Si quieres aventurarte, merece la pena averiguar si puedes especificar una versión canónica para tus páginas. No obstante, si no canonicalizas tus URLs, Google intentará hacerlo automáticamente.
+
+Cuando trabajes en la canonicalización, asegúrate de que solo se pueda acceder a cada fragmento del contenido de tu sitio a través de una única URL. Si tienes dos páginas que contienen la misma información sobre tus promociones, la experiencia de usuario puede resultar confusa (por ejemplo, puede que los usuarios se pregunten cuál es la página adecuada y si hay alguna diferencia entre ellas).
+
+Si tienes varias páginas con la misma información, prueba a configurar una redirección de las URLs no deseadas a la URL que mejor represente esa información. Si no puedes hacer la redirección, utiliza el elemento link rel="canonical". De todas formas, no te preocupes en exceso por esto, los buscadores pueden averiguarlo por sí mismos la mayoría de las veces.
+
+Haz que tu sitio web sea interesante y útil
+Crear contenido que los usuarios encuentren atractivo y útil tendrá sin duda una mayor influencia en la presencia de tu sitio web en los resultados de búsqueda que cualquier otra sugerencia de esta guía. Aunque el término "contenido atractivo y útil" puede significar una cosa distinta según la persona, este tipo de contenido suele tener en común ciertos atributos, como los siguientes:
+
+El texto es fácil de leer y está bien organizado: redacta el contenido de forma natural y asegúrate de que esté bien escrito, sea fácil de seguir y no contenga errores ortográficos ni gramaticales. Divide el contenido extenso en párrafos y secciones, y proporciona títulos para ayudar a los usuarios a desplazarse por tus páginas.
+El contenido es único: cuando redactes contenido nuevo, no copies el contenido de otras personas; ni de forma parcial ni total. Crea tú el contenido en función de lo que sabes sobre el tema. No te limites a repetir lo que otros ya han publicado.
+El contenido está actualizado: consulta el contenido publicado anteriormente y actualízalo según sea necesario o elimínalo si ya no es relevante.
+El contenido es útil, fiable y está dirigido a las personas: asegúrate de que tu contenido sea útil y fiable para los lectores. Por ejemplo, en un artículo puedes hacer referencia a autores expertos para que los usuarios entiendan el nivel de especialización.
+Anticípate a los términos de búsqueda de tus lectores
+Piensa en las palabras que los usuarios pueden utilizar para encontrar un fragmento de tu contenido. Es posible que los usuarios que dominen un tema utilicen palabras clave diferentes en sus consultas de búsqueda que las que emplearían usuarios menos familiarizados con él. Por ejemplo, algunos usuarios pueden buscar "charcutería", mientras que otros pueden buscar "tabla de queso". Si te anticipas a estas diferencias de comportamiento de búsqueda y escribes teniendo en cuenta a los lectores, es posible que haya un efecto positivo en el rendimiento de tu sitio en los resultados de búsqueda.
+
+No obstante, no tienes de qué preocuparte si no prevés todas las variaciones en las que podría buscar tu contenido un usuario. Los sistemas de coincidencia de idiomas de Google son sofisticados y pueden entender cómo se relaciona tu página con muchas consultas, aunque no uses explícitamente los términos exactos en ellas.
+
+Evita anuncios que distraigan
+Aunque los anuncios forman parte de Internet y están diseñados para que los vean los usuarios, no dejes que distraigan demasiado ni que impidan que los usuarios lean tu contenido. Por ejemplo, procura no mostrar anuncios ni páginas intersticiales que entorpezcan la experiencia de los usuarios. Las páginas intersticiales son páginas que aparecen antes o después de acceder al contenido al que se quiere ir.
+
+Incluye enlaces a recursos pertinentes
+Los enlaces son una buena forma de conectar a tus usuarios y los buscadores con otras partes de tu sitio o con páginas relevantes de otros sitios. De hecho, la gran mayoría de las páginas nuevas que Google encuentra cada día se hacen a través de enlaces, por lo que son un recurso esencial para que pueda descubrir tus páginas y que puedan aparecer en los resultados de búsqueda. Además, los enlaces también pueden aportar valor, ya que conectan a los usuarios (y a Google) a otro recurso que corrobora lo que escribes.
+
+Ilustración que muestra cómo una página web enlaza a otros recursos relevantes
+Comprueba que el texto de los enlaces sea adecuado
+El texto de enlace es la parte del texto de un enlace que puedes ver. Este texto proporciona a los usuarios y a Google información sobre la página enlazada. Con el texto de enlace adecuado, los usuarios y los buscadores pueden comprender fácilmente lo que contienen las páginas enlazadas antes de visitarlas.Ilustración que muestra parte del texto de un enlace
+
+Incluye enlaces cuando lo necesites
+Los enlaces pueden proporcionar más contexto sobre un tema, tanto para los usuarios como para los buscadores, lo que puede ayudarte a demostrar tus conocimientos sobre él. No obstante, si incluyes enlaces a páginas que están fuera de tu control (por ejemplo, el contenido de otros sitios), asegúrate de que el recurso al que enlaces sea de confianza. Si no puedes confiar en el contenido y quieres enlazarlo igualmente, añade una anotación nofollow o alguna similar al enlace para evitar que los buscadores asocien tu sitio a él. Así, evitarás posibles consecuencias negativas en tu posicionamiento en la Búsqueda de Google.
+
+Si aceptas contenido generado por usuarios en tu sitio, como publicaciones en foros o comentarios, asegúrate de que todos los enlaces que publiquen los usuarios tengan una anotación nofollow o similar añadida automáticamente por tu CMS. En este caso, como no creas tú el contenido, es probable que no quieras que tu sitio se asocie a ciegas con los sitios a los que los usuarios enlazan. Esto también puede disuadir a los spammers de hacer un uso inadecuado de tu sitio web.
+
+Influye en cómo se ve tu sitio en la Búsqueda de Google
+
+Una página de resultados de la Búsqueda de Google típica consta de varios elementos visuales que puedes modificar para que los usuarios decidan si quieren visitar tu sitio a través de estos resultados de búsqueda. En esta sección, nos centramos en los enlaces de título y los fragmentos porque son los elementos visualmente más significativos.
+
+Influye en tus enlaces de título
+El enlace de título es la parte del título del resultado de búsqueda y puede ayudar a los usuarios a decidir en qué resultado de búsqueda hacer clic. Google usa varias fuentes para generar este enlace de título, incluidas las palabras que contiene el elemento <title> (también llamado "texto del título") y otros encabezados de la página. Este texto del título también se puede utilizar para el título que se muestra en los navegadores y los marcadores.
+
+Cómo hacer tu propio aceite de chile
+
+Si utilizas un CMS, es posible que no necesites modificar nada técnico en tus títulos, más allá de centrarte en escribir títulos adecuados. La mayoría de los CMS pueden convertir automáticamente los títulos que escribes en elementos <title> del HTML.
+Ilustración en la que se muestra cómo queda el texto del título en una página web y cómo se ve en el código HTML
+Para influir en los enlaces de título de la Búsqueda, usa títulos adecuados. Un título adecuado debe ser único para la página, claro y conciso, y describir con precisión el contenido de la página. Por ejemplo, el título puede incluir el nombre de tu sitio web o de tu empresa, otros datos importantes, como la ubicación física de la empresa, y quizá información sobre lo que la página concreta ofrece usuarios. En nuestra documentación sobre enlaces de título encontrarás más consejos sobre cómo crear títulos eficaces y cómo influir en los enlaces de título de los resultados de búsqueda de tu sitio.
+
+Controlar tus fragmentos
+Debajo del enlace del título, los resultados de búsqueda suelen incluir una descripción de la página de destino para ayudar a los usuarios a decidir si deben hacer clic en el resultado de búsqueda. Esta descripción se conoce como fragmento.
+
+Aprende a cocinar huevos con esta guía completa en menos de 5 minutos. Explicamos todos los métodos: fritos, cocidos y poché.
+
+El fragmento se extrae del contenido real de la página a la que enlaza el resultado de búsqueda, por lo que tienes todo el control sobre las palabras que se pueden utilizar para generar el fragmento. En ocasiones, es posible que el fragmento se obtenga del contenido de la etiqueta de metadescripción, que suele ser un resumen breve de una o dos frases de la página. Una buena metadescripción es breve, única para una página en particular e incluye los puntos más relevantes de la página. Si necesitas más inspiración, consulta nuestros consejos sobre cómo escribir metadescripciones buenas.
+
+Añade imágenes a tu sitio y optimízalas
+Muchas personas hacen búsquedas de forma visual, y las imágenes pueden ser la forma con la que encuentren tu sitio web por primera vez. Por ejemplo, si tienes un blog de recetas, los usuarios pueden encontrar tu contenido buscando "recetas de tartas de frutas" y viendo fotos de distintos tipos de tartas.
+
+Cuando añadas imágenes a tu sitio, asegúrate de que los usuarios y los buscadores puedan encontrarlas y entenderlas.
+
+Añade imágenes de alta calidad junto a texto relevante
+Al utilizar imágenes de alta calidad, ofreces a los usuarios contexto y detalles suficientes para decidir qué imagen se ajusta mejor a lo que buscan. Por ejemplo, si los usuarios buscan "margaritas" y se encuentran con una flor de las nieves en los resultados de búsqueda, una imagen de mayor calidad les ayudaría a distinguirlas.
+
+Utiliza imágenes nítidas y claras, y colócalas cerca de texto que sea relevante para la imagen. El texto que aparece junto a las imágenes puede ayudar a Google a entender mejor de qué trata cada imagen y qué significa en el contexto de tu página.
+
+Por ejemplo, si la página hace una reseña de tiendas de lanas de Londres, lo mejor sería insertar una foto de la tienda en la sección en la que se detalle su ubicación, su descripción y la información de reseñas de esa tienda. Esto ayuda a Google y a los usuarios a asociar la imagen con un texto que proporciona más contexto sobre lo que trata la página.
+
+Añade texto alternativo descriptivo a la imagen
+El texto alternativo es un texto breve y descriptivo que explica la relación entre la imagen y el contenido. Como ayuda a los buscadores a entender de qué trata tu imagen y cuál es su relación con tu página, es muy importante escribir texto alternativo adecuado. Puedes añadirlo al código HTML con el atributo alt del elemento img. Tu CMS también puede ofrecer una forma sencilla de especificar una descripción para una imagen cuando la subas a tu sitio. Consulta más información sobre cómo escribir texto alternativo adecuado y cómo añadirlo a tus imágenes.
+
+Optimiza tus vídeos
+Si tu sitio web incluye páginas que tratan principalmente sobre vídeos concretos, es posible que los usuarios también puedan descubrirlo a través de los resultados de vídeos de la Búsqueda de Google. Muchas de las prácticas recomendadas sobre imágenes y texto también se aplican a los vídeos:
+
+Crea contenido de vídeo de alta calidad e inserta el vídeo en una página independiente, cerca de texto relevante para ese vídeo.
+Escribe un texto descriptivo en los campos del título y la descripción del vídeo (el título del vídeo no deja de ser un título, así que puedes aplicar las prácticas recomendadas para escribir títulos).
+Si tu sitio está especialmente centrado en los vídeos, sigue leyendo sobre otras formas de optimizar tus vídeos para los buscadores.
+
+Promocionar un sitio web
+Si promocionas eficazmente el contenido nuevo, conseguirás que los buscadores y los usuarios interesados en el tema descubran tu sitio web más rápidamente. Puedes hacerlo de muchas formas:
+
+Promoción en redes sociales
+Interacción con la comunidad
+Publicidad, tanto online como offline
+Boca a boca y muchos otros métodos
+Una de las formas más eficaces y duraderas es el boca a boca, es decir, las personas que están familiarizadas con tu sitio hablan sobre él a sus amigos, quienes a su vez lo visitan. Esto puede llevar tiempo y, normalmente, debes invertir tiempo y esfuerzo en otras prácticas, como la interacción con la comunidad. Nuestros amigos de Google para creadores tienen recursos excelentes para consolidar tu audiencia e interactuar con ella.
+
+También puedes obtener buenos resultados si promocionas tu empresa o tu sitio offline. Por ejemplo, si tienes un sitio web de empresa, asegúrate de que su URL aparezca en las tarjetas de visita, el papel membretado, los pósteres y otros materiales. También puedes enviar newsletters periódicas a tu audiencia (si te han dado permiso) para informarle del contenido nuevo de tu sitio web.
+
+Como ocurre con todo en la vida, puedes excederte al promocionar tu sitio y perjudicarlo: los usuarios pueden cansarse de tus promociones y los buscadores pueden percibir algunas de estas prácticas como manipulación de los resultados de búsqueda.
+
+Aspectos en los que creemos que no debes centrarte
+A medida que el SEO ha evolucionado, también lo han hecho las ideas y las prácticas (y, en ocasiones, los mitos) relacionadas. Lo que antes se consideraba una práctica recomendada o una prioridad principal puede dejar de ser pertinente o eficaz debido al desarrollo de los buscadores (e Internet) a lo largo del tiempo.
+
+Para que puedas centrarte en los aspectos más importantes del SEO, hemos recopilado algunos de los temas más comunes y destacados que hemos visto en la Web. En general, nuestro mensaje sobre estos temas es que debes hacer lo mejor para tu área de negocio; profundizaremos en algunos puntos concretos:
+
+Palabras clave meta
+La Búsqueda de Google no usa la etiqueta meta de palabras clave.
+Exceso de palabras clave
+Repetir las mismas palabras una y otra vez (incluso con variaciones) resulta agotador para los usuarios, y el exceso de palabras clave va en contra de las políticas de spam de Google.
+Palabras clave en el nombre de dominio o en la ruta de URL
+Cuando elijas el nombre de tu sitio, haz lo que sea mejor para tu empresa. Los usuarios usarán este nombre para encontrarte, por lo que te recomendamos que sigas las prácticas recomendadas de marketing generales. Desde el punto de vista del posicionamiento, las palabras clave que solo figuran en el nombre del dominio (o la ruta de URL) apenas tienen efecto, salvo en el caso de las rutas de exploración.
+
+Sin embargo, desde el punto de vista de los nombres de dominio, el TLD (nombre de dominio que termina en ".com" o ".guru") solo es importante si se dirige a usuarios de un país concreto e, incluso, suele ser una señal de bajo impacto. Por ejemplo, si quieres vender queso neerlandés a usuarios que hacen búsquedas en Suiza, tiene sentido (tanto desde el punto de vista empresarial como desde el punto de vista del SEO) que uses un nombre de dominio .ch. De lo contrario, a la Búsqueda de Google no le importa qué TLD utilizas (ya sea .com, .org o .asia).
+
+Longitud mínima o máxima del contenido
+La longitud del contenido por sí sola no importa a efectos de posicionamiento (no hay un objetivo mágico de cantidad palabras, ni mínimo ni máximo, aunque lo más probable es que tengas al menos una palabra). Si vas cambiando palabras (es decir, si escribes con naturalidad para que el contenido no suene repetitivo), tienes más posibilidades de aparecer en la Búsqueda por el simple hecho de usar más palabras clave.
+Subdominios frente a subdirectorios
+Desde el punto de vista empresarial, haz lo que mejor se adapte a tu negocio. Por ejemplo, puede que sea más fácil gestionar el sitio si está segmentado por subdirectorios, pero otras veces puede tener sentido dividir los temas en subdominios, según el tema o el sector del sitio.
+PageRank
+Aunque PageRank usa enlaces y es uno de los algoritmos fundamentales de Google, la Búsqueda de Google ofrece mucho más que solo enlaces. Existen muchos factores de posicionamiento, y PageRank es solo uno de ellos.
+"Penalización" de contenido duplicado
+No pasa nada si tienes contenido al que se puede acceder desde varias URLs; no te preocupes. No es una opción eficiente, pero no implica que se vaya a realizar una acción manual. Copiar el contenido de otras personas es otra historia.
+Número y orden de los encabezados
+Para los lectores de pantalla es muy útil que los encabezados estén en orden semántico, pero desde la perspectiva de la Búsqueda de Google, no importa si los estás usando de forma incorrecta. En general, la Web no es un código HTML válido, por lo que la Búsqueda de Google rara vez depende de los significados semánticos ocultos en la especificación HTML.
+
+Tampoco existe la cantidad ideal de encabezados que una página determinada debería tener. Sin embargo, si crees que contiene demasiados, probablemente estés en lo cierto.
+
+Pensar que la experiencia, el conocimiento, la autoridad y la fiabilidad (E-E-A-T) son un factor de posicionamiento
+No, no lo son.
+Pasos siguientes
+Empieza a usar Search Console: configurar una cuenta de Search Console te permite monitorizar y optimizar el rendimiento de tu sitio web en la Búsqueda de Google. Consulta cómo configurar tu cuenta y qué informes consultar.
+Mantén el SEO de tu sitio web a lo largo del tiempo: consulta más información sobre cómo gestionar la presencia de tu sitio a largo plazo, y consulta tareas y situaciones de SEO más detalladas, como preparar una migración de sitio o gestionar un sitio multilingüe.
+Mejora el aspecto de tu sitio en los resultados de la Búsqueda de Google: si tienes datos estructurados válidos en tus páginas, también podrán usar muchas funciones especiales en los resultados de la Búsqueda de Google, como estrellas de reseñas, carruseles y más. Consulta la galería de tipos de resultados de búsqueda en los que puede aparecer tu página.
+Mantente al día y haz preguntas
+Durante el proceso de SEO, aquí tienes algunos recursos que pueden ayudarte a estar al día de los cambios y de los nuevos recursos que publicamos:
+
+Blog del Centro de la Búsqueda de Google: consulta la información más reciente de nuestro blog del Centro de la Búsqueda de Google. Allí puedes encontrar información sobre novedades de la Búsqueda de Google, nuevas funciones de Search Console y mucho más.
+Centro de la Búsqueda de Google en LinkedIn y X (Twitter): Síguenos para estar al tanto de las novedades sobre la Búsqueda de Google y recursos que te ayudarán a crear un sitio de gran calidad.
+Foro de ayuda del Centro de la Búsqueda de Google: publica preguntas sobre los problemas de tu sitio y busca consejos para crear sitios de alta calidad en el foro para propietarios de sitios web. Hay muchos colaboradores experimentados en el foro, incluidos Expertos de Producto y, en ocasiones, Googlers.
+Canal de YouTube del Centro de la Búsqueda de Google: consulta cientos de vídeos útiles creados para propietarios de sitios web.
+Guía detallada sobre cómo funciona la Búsqueda de Google
+
+La Búsqueda de Google es un buscador completamente automatizado que utiliza programas de software denominados "rastreadores web" para explorar la Web periódicamente en busca de páginas que pueda añadir a su índice. De hecho, la mayoría de las páginas que se muestran en los resultados de la Búsqueda no se envían manualmente, sino que se encuentran y se añaden automáticamente cuando nuestros rastreadores web exploran la Web. En este documento, se explican las fases del funcionamiento de la Búsqueda en el contexto de tu sitio web. Con estos conocimientos básicos, podrás corregir los problemas de rastreo, indexar tus páginas y obtener más información para optimizar la forma en que aparece tu sitio en la Búsqueda de Google.
+
+¿Buscas información menos técnica? Consulta el sitio Cómo funciona la Búsqueda, en el que se explica cómo funciona la Búsqueda desde el punto de vista del usuario.
+Algunas notas antes de empezar
+Antes de entrar en detalles sobre cómo funciona la Búsqueda, es importante tener en cuenta que Google no acepta pagos para rastrear sitios con mayor frecuencia ni para mejorar su posicionamiento. Si alguien te dice lo contrario, se equivoca.
+
+Google no garantiza que rastree, indexe o sirva tu página, aunque cumpla las Directrices básicas de la Búsqueda de Google.
+
+Presentamos las tres fases de la Búsqueda de Google
+La Búsqueda de Google funciona en tres fases, pero no todas las páginas pasan por cada una de ellas:
+
+Rastreo: Google descarga texto, imágenes y vídeos de páginas que encuentra en Internet mediante programas automatizados, llamados "rastreadores".
+Indexación: Google analiza el texto, las imágenes y los archivos de vídeo de las páginas y almacena la información en el índice de Google, una gran base de datos.
+Publicación de resultados de búsqueda: cuando un usuario hace una búsqueda en Google, Google devuelve información relevante sobre su consulta.
+Rastreo
+La primera fase trata de averiguar qué páginas hay en la Web. Como no hay ningún registro central con todas las páginas web, Google tiene que buscar constantemente páginas nuevas y actualizadas, y añadirlas a nuestra lista de páginas conocidas. Este proceso se denomina "descubrimiento de URL". Algunas páginas las conocemos porque Google ya las ha visitado. Otras, en cambio, las encontramos extrayendo enlaces de páginas conocidas que nos llevan a ellas; por ejemplo, una página principal, como la página de una categoría o un enlace a una nueva entrada de blog. También se descubren otras páginas cuando envías una lista de páginas (un sitemap) para que Google las rastree.
+
+
+Una vez que Google descubre la URL de una página, puede visitarla (o "rastrearla") para averiguar qué contiene. Utilizamos una enorme cantidad de ordenadores para rastrear miles de millones de páginas de la Web. El programa encargado de obtener este contenido es el Googlebot, también denominado "rastreador", "robot", "bot" o "araña". El robot de Google determina mediante algoritmos qué sitios deben rastrearse, con qué frecuencia tiene que hacerse y cuántas páginas hay que obtener de cada uno de ellos. Los rastreadores de Google también están programados para no rastrear sitios demasiado rápido y así evitar sobrecargarlos. Este mecanismo se basa en las respuestas del sitio (por ejemplo, los errores HTTP 500 significan "lentitud").
+
+Sin embargo, el robot de Google no rastrea todas las páginas que ha descubierto. Puede que el propietario del sitio web inhabilite el rastreo de algunas páginas, o puede también que no se pueda acceder a otras páginas sin antes tener que iniciar sesión en el sitio.
+
+Durante el rastreo, Google renderiza la página y ejecuta el código JavaScript que encuentre mediante una versión reciente de Chrome, similar a la forma en que tu navegador renderiza las páginas que visitas. El renderizado es importante porque los sitios web suelen usar JavaScript para añadir contenido a la página, por lo que es posible que Google no lo detecte si no se renderiza.
+
+El rastreo depende de si los rastreadores de Google pueden acceder al sitio o no. Algunos problemas habituales que puede tener el robot de Google a la hora de acceder a sitios son los siguientes:
+
+Problemas con el servidor que gestiona el sitio
+Problemas de red
+Reglas de robots.txt que impiden que el robot de Google acceda a la página
+Indexación
+Después de descubrir una página, Google intenta interpretar su contenido. Esta fase se denomina "indexación" e incluye el procesamiento y el análisis del contenido textual, así como de las etiquetas y los atributos de contenido importantes, como elementos <title>, atributos "alt", imágenes, vídeos y más.
+
+
+Durante el proceso de indexación, Google determina si una página es un duplicado de otra página de Internet o la canónica. La canónica es la página que puede aparecer en los resultados de búsqueda. Para seleccionar la canónica, primero agrupamos las páginas que hemos encontrado en Internet con contenido parecido, y después seleccionamos la más representativa del grupo. El resto de páginas del grupo son versiones alternativas que se pueden servir en diferentes contextos; por ejemplo, cuando un usuario busca desde un dispositivo móvil o si busca una página muy específica de ese clúster.
+
+Google también recoge señales sobre la página canónica y su contenido, que se puede usar en la siguiente fase, en la que servimos la página en los resultados de búsqueda. Entre estas señales, se incluyen el idioma de la página, el país en el que se encuentra el contenido y la usabilidad de la página.
+
+La información recogida sobre la página canónica y su clúster puede almacenarse en el índice de Google, una gran base de datos alojada en miles de ordenadores. No se garantiza la indexación, ya que no se indexarán todas las páginas que Google procesa.
+
+La indexación también depende del contenido de la página y de sus metadatos. Estos son algunos de los problemas de indexación más habituales:
+
+La calidad del contenido de la página es baja
+Hay reglas meta Robots que no permiten la indexación
+El diseño del sitio web puede dificultar la indexación
+Publicación de resultados de búsqueda
+No aceptamos pagos para mejorar el posicionamiento de páginas web; esta clasificación se hace automáticamente. Consulta más información sobre los anuncios en la Búsqueda de Google.
+Cuando los usuarios introducen sus consultas, nuestro sistema busca en el índice páginas que coincidan con ellas y devuelve los resultados que consideramos más relevantes y de mayor calidad. Para determinar esta relevancia, el sistema tiene en cuenta cientos de factores, como la ubicación, el idioma y el dispositivo del usuario (ordenador o teléfono). Por ejemplo, si un usuario de Barcelona busca "talleres de reparación de bicicletas", obtendrá resultados diferentes a los de los usuarios de Hong Kong que hagan la misma consulta.
+
+
+En función de la consulta del usuario, las funciones de resultados la Búsqueda que aparecen en la página de resultados de búsqueda también cambian. Por ejemplo, si un usuario busca "talleres de reparación de bicicletas", es probable que se muestren resultados locales y que no se muestren resultados de imágenes, pero si busca "bicicleta moderna", es más probable que se muestren resultados de imágenes y que no se muestren resultados locales. Puedes descubrir los elementos de la interfaz de usuario más comunes de la Búsqueda web de Google en nuestra galería de elementos visuales.
+
+Puede que en Search Console se indique que una página está indexada, pero no se muestra en los resultados de búsqueda. Esto puede deberse a los siguientes motivos:
+
+El contenido de la página es irrelevante para las consultas de los usuarios
+La calidad del contenido es baja
+Hay reglas meta Robots que impiden que se sirvan
+Aunque en esta guía se explica cómo funciona la Búsqueda, trabajamos continuamente para mejorar nuestros algoritmos. Para estar al día de todos estos cambios, sigue el blog del Centro de la Búsqueda de Google.
+Crear contenido útil, fiable y centrado en las personas
+Los sistemas de clasificación automatizados de Google están diseñados para dar prioridad a la información útil y fiable que se ha creado para ayudar a los usuarios y no al contenido que se ha creado para manipular el posicionamiento en los buscadores. Hemos preparado esta página para ayudar a los creadores a evaluar si el contenido que ofrecen cumple esos criterios.
+
+Autoevaluar tu contenido 
+Evaluar tu propio contenido con estas preguntas puede ayudarte a determinar si es útil y fiable. Además de responder a estas preguntas por tu cuenta, te recomendamos que se las hagas a personas en quien confíes, pero que no estén vinculadas con tu sitio, para que lo evalúen con sinceridad.
+
+También te recomendamos que revises las páginas que han empeorado su posicionamiento. ¿Qué tipo de páginas eran y en qué tipos de búsqueda se han visto más afectadas? Revísalas detenidamente y hazte las preguntas que se incluyen a continuación para evaluarlas.
+
+Preguntas sobre la calidad y el contenido
+¿Ofrece el contenido información, datos de informes, investigaciones o análisis originales?
+¿Proporciona el contenido una descripción sustancial, completa o exhaustiva del tema que trata?
+¿Proporciona el contenido información interesante y no trivial, o se analiza un tema con una perspectiva útil?
+Si el contenido cita otras fuentes, ¿aporta suficiente valor y originalidad o, por el contrario, se limita a copiar o reescribir información incluida en esas fuentes?
+¿Es útil y descriptivo el título del contenido o de la página?
+¿Se evitan en el título del contenido o de la página las exageraciones o las expresiones impactantes?
+¿Se trata del tipo de página que querrías añadir a tus marcadores, compartir con un amigo o recomendar a alguien?
+¿Esperarías ver este contenido en una revista, una enciclopedia o un libro, aunque sea simplemente como referencia?
+¿Proporciona el contenido información valiosa si se compara con otras páginas que aparecen en los resultados de búsqueda?
+¿El contenido tiene errores ortográficos o de estilo?
+¿Se nota que se ha dedicado tiempo y esfuerzo a crear el contenido o, por el contrario, parece descuidado o que se ha creado de forma apresurada?
+¿Está el contenido generado en masa por un gran número de redactores o repartido por una amplia red de sitios, de modo que cada página o sitio concreto no recibe demasiada atención ni cuidado?
+Preguntas sobre la autoridad del contenido
+¿Presenta el contenido la información de una forma fiable? Por ejemplo, ¿cita las fuentes de forma clara, parece que lo haya producido un experto o se proporciona información sobre el autor o el sitio que lo publica, por ejemplo mediante enlaces a una página que trate sobre ellos?
+Si alguien buscara más información sobre el sitio que publica el contenido, ¿concluiría que es de confianza o una autoridad reconocida del tema que trata?
+¿El contenido lo ha escrito o revisado un experto o entusiasta que conoce bien el tema?
+¿Se ha comprobado que no haya errores en el contenido que sean fáciles de verificar?
+Ofrecer una buena experiencia en la página 
+Los sistemas de posicionamiento principales de Google tratan de recompensar el contenido que proporciona una buena experiencia en la página. Los propietarios de sitios web que quieran obtener buenos resultados con nuestros sistemas no deben centrarse únicamente en uno o dos aspectos de la experiencia en la página, sino que deben comprobar si ofrecen una buena experiencia general en la página en muchos aspectos. Para obtener más información, consulta Qué es la experiencia en la página si estamos en el ámbito de los resultados de la Búsqueda de Google.
+
+Contenido dirigido a personas
+El contenido dirigido a personas es contenido que se crea pensando principalmente en los usuarios y no con el objetivo de manipular el posicionamiento en los buscadores. ¿Cómo puedes evaluar si estás creando contenido dirigido a personas? Si respondes de forma afirmativa a las siguientes preguntas, probablemente estés en el camino correcto siguiendo una estrategia centrada en las personas:
+
+¿Tienes una audiencia ya captada o prevista para tu empresa o sitio, a la que le resultaría útil el contenido si se pusiera en contacto directamente contigo?
+¿Tu contenido se basa claramente en experiencias de primera mano y en un conocimiento profundo del tema (como la experiencia derivada de haber usado un producto o servicio, o de haber visitado un lugar)?
+¿Tu sitio tiene un objetivo o enfoque principal?
+Después de leer tu contenido, ¿alguna persona creerá que ha aprendido lo suficiente sobre un tema como para conseguir su objetivo?
+¿Las personas que lean tu contenido sentirán que han tenido una experiencia satisfactoria?
+Evitar crear contenido centrado en los buscadores
+Para tener éxito en la Búsqueda de Google, te recomendamos que te centres en crear contenido pensando en los usuarios, en lugar de crear contenido pensando en conseguir un buen posicionamiento en los buscadores. Si respondes de forma afirmativa a todas o a alguna de las preguntas siguientes, deberías replantearte la forma de crear contenido:
+
+¿El contenido se ha creado principalmente para atraer visitas de los buscadores?
+¿Creas mucho contenido sobre muchos temas distintos con la esperanza de que alguno de ellos tenga un buen rendimiento en los resultados de búsqueda?
+¿Utilizas alguna automatización exhaustiva para crear contenido sobre muchos temas?
+¿Resumes principalmente lo que dicen los demás sin aportar ningún valor?
+¿Escribes sobre temas solo porque parece que son tendencia y no porque le interesen a tu audiencia?
+¿Las personas que lean tu contenido sentirán que tienen que volver a buscar información de mejor calidad de otras fuentes?
+¿Escribes una cantidad de palabras concreta porque has oído o has leído que Google tiene un recuento de palabras preferido? (No es cierto).
+¿Has introducido alguna temática sin tener conocimientos reales sobre ella, simplemente porque pensabas que recibirías tráfico de búsqueda?
+¿Tu contenido promete responder a una pregunta que no tiene respuesta (por ejemplo, sugiere que hay una fecha de lanzamiento para un producto, una película o una serie cuando todavía no se ha confirmado)?
+¿Cambias la fecha de las páginas para que parezca que están actualizadas cuando el contenido no ha cambiado de forma sustancial?
+¿Añades mucho contenido nuevo o retiras mucho contenido antiguo principalmente porque crees que ayudará a mejorar tu posicionamiento en las búsquedas haciendo que tu sitio parezca actualizado? (No servirá)
+¿Y qué hay del SEO? ¿Acaso no es una estrategia centrada en los buscadores?
+Hay algunas cosas que puedes hacer específicamente para ayudar a los buscadores a descubrir e interpretar mejor tu contenido. En conjunto, estas acciones se denominan "optimización en buscadores" o "SEO". En la guía de SEO de Google se indican algunas prácticas recomendadas. El SEO puede ser útil cuando se aplica a contenido centrado en las personas, no a contenido centrado en los buscadores.
+
+E-E-A-T y las directrices de los evaluadores de calidad
+Los sistemas automatizados de Google están diseñados para tener en cuenta muchos factores distintos a la hora de posicionar el contenido de calidad. Tras identificar el contenido relevante, nuestros sistemas intentan dar prioridad a los contenidos que resultan más útiles. Para ello, identifican un conjunto de factores que puede ayudar a determinar qué contenido demuestra aspectos relacionados con la experiencia, el conocimiento, la autoridad y la fiabilidad (E-E-A-T).
+
+De todos esos aspectos, la fiabilidad es el más importante. Los demás contribuyen a la fiabilidad, pero el contenido no tiene por qué demostrarlos todos. Por ejemplo, una parte del contenido podría ser útil en función de la experiencia que demuestra, mientras que otra podría serlo por el conocimiento que comparte.
+
+Aunque E-E-A-T no es un factor que influya en el posicionamiento en sí mismo, es útil combinar varios factores que identifiquen contenido con un buen nivel de experiencia, conocimiento, autoridad y fiabilidad. Por ejemplo, nuestros sistemas le dan más importancia al contenido que está estrechamente relacionado con E-E-A-T en temas que podrían afectar significativamente a la salud, a la estabilidad financiera o la seguridad de las personas, o bien al bienestar de la sociedad. Nos referimos a estos temas con el acrónimo YMYL, del inglés "Your Money or Your Life"; es decir, temas relacionados con el dinero o la vida.
+
+Los evaluadores de calidad de búsqueda son usuarios que nos informan sobre si nuestros algoritmos devuelven buenos resultados, por lo que también nos sirven para confirmar que los cambios que hacemos funcionan correctamente. En concreto, se forma a los evaluadores para identificar si un contenido se ajusta a un buen nivel de experiencia, conocimiento, autoridad y fiabilidad. Los criterios que siguen para hacerlo se detallan en nuestras directrices para evaluadores de calidad de búsqueda.
+
+Los evaluadores de la Búsqueda no tienen ningún control sobre el posicionamiento que consiguen las páginas en los resultados. Los datos que nos proporcionan no se usan directamente en nuestros algoritmos de posicionamiento, sino que nos sirven para saber si nuestros sistemas funcionan correctamente, del mismo modo que un restaurante aprovecha los comentarios de sus clientes. Estos comentarios nos ayudan a saber si nuestros sistemas funcionan correctamente.
+Consultar las directrices puede ayudarte a evaluar tu contenido según los criterios de experiencia, conocimiento, autoridad y fiabilidad (E-E-A-T), saber cómo mejorarlo y hacer que se ajuste a las diferentes señales que usan nuestros sistemas automatizados para posicionar el contenido.
+
+Preguntarse "¿Quién, cómo y por qué?" en relación al contenido
+Considera la posibilidad de evaluar tu contenido con las preguntas "¿Quién, cómo y por qué?" para asegurarte de cumplir lo que nuestros sistemas buscan recompensar.
+
+¿Quién (ha creado el contenido)?
+Algo que ayuda a las personas a entender de forma intuitiva el E-E-A-T del contenido es indicar claramente quién lo ha creado. Se trata de tener en cuenta la pregunta "¿Quién?". A continuación, te indicamos algunas preguntas que puedes hacerte al crear contenido:
+
+¿Se muestra claramente a los visitantes quién ha creado el contenido?
+¿Las páginas incluyen una firma, y se muestra en el lugar indicado?
+¿Las firmas proporcionan información adicional sobre el autor o los autores implicados, aportando datos sobre ellos y los temas sobre los que escriben?
+Si indicas claramente quién ha creado el contenido, probablemente estés en sintonía con los conceptos de E-E-A-T y el camino hacia el éxito. Te recomendamos que añadas información precisa sobre los autores, como las firmas, en aquel contenido donde los lectores esperarían encontrarla.
+
+¿Cómo (se ha creado el contenido)?
+A los lectores les resulta útil saber cómo se ha creado el contenido: corresponde a la pregunta "¿Cómo?" que debes considerar incluir en tu contenido.
+
+Por ejemplo, con las reseñas de productos, los lectores se fiarán más si se indica el número de productos probados, los resultados obtenidos y la forma en que se han probado; todo ello acompañado de evidencias sobre el proceso, como fotografías. En la página de ayuda Escribir buenas reseñas de productos, recomendamos más información que puedes compartir.
+
+Muchos tipos de contenido pueden tener el componente "Cómo". Por ejemplo, el contenido automático generado por IA, así como el asistido por IA. Compartir detalles sobre los procesos implicados puede ayudar a que los lectores y visitantes comprendan mejor cualquier función única y útil que pueda haber automatizado la función.
+
+Si la automatización se usa para generar contenido de forma sustancial, hazte las siguientes preguntas:
+
+¿El uso de la automatización, incluida la generación de IA, es evidente para los visitantes (mediante avisos u otras formas)?
+¿Proporcionas información sobre cómo se ha utilizado la automatización o la generación de IA para crear contenido?
+¿Explicas por qué la automatización o la IA han sido útiles para producir el contenido?
+En general, los avisos de IA o automatización son útiles para el contenido en el que alguien podría pensar: "¿cómo se ha creado?". Te recomendamos que las añadas cuando sea razonablemente necesario. Para obtener más información, consulta nuestra entrada de blog y las preguntas frecuentes sobre cómo ve la Búsqueda de Google el contenido generado por IA.
+
+¿Por qué (se ha creado el contenido)?
+"¿Por qué?" es probablemente la pregunta más importante que debes responder sobre tu contenido. ¿Por qué se ha creado?
+
+La respuesta a esta pregunta debe ser que creas el contenido principalmente para ayudar a las personas, y que este contenido es útil para los usuarios que visitan tu sitio directamente. Si esa es la respuesta, estarás en sintonía con E-E-A-T a nivel general y con lo que nuestros principales sistemas de posicionamiento buscan recompensar.
+
+Si la respuesta a esta pregunta es que creas el contenido principalmente para atraer visitas de los buscadores, no cumplirías con lo que nuestros sistemas buscan recompensar. Si utilizas la automatización, incluida la generación de IA, para producir contenido con la finalidad principal de manipular el posicionamiento de los resultados de búsqueda, estarás infringiendo nuestras políticas de spam.
+¿Necesitas un especialista en SEO?
+
+SEO son las siglas en inglés de Search Engine Optimization (optimización en buscadores) o Search Engine Optimizer (optimizador de buscadores). Contratar a un especialista en SEO es una decisión muy importante que puede mejorar tu sitio y ahorrarte tiempo, aunque también te arriesgas a dañar su funcionamiento y reputación. Asegúrate de investigar qué ventajas puede aportarte, así como a qué te arriesgas si el especialista en SEO no hace bien su trabajo. Muchos de ellos, así como otras agencias y consultorías, ofrecen servicios útiles a los propietarios de sitios web, como los siguientes:
+
+Revisión del contenido y la estructura del sitio web
+Asistencia técnica para el desarrollo de sitios web; por ejemplo, alojamiento, redirecciones, páginas de error, uso de JavaScript
+Desarrollo de contenidos
+Gestión de campañas de desarrollo empresarial online
+Análisis de palabras clave
+Formación en SEO
+Experiencia en zonas geográficas y mercados concretos
+Anunciarse en Google no influye en la presencia de tu sitio en los resultados de búsqueda. Google nunca acepta dinero por incluir sitios en sus resultados de búsqueda ni por influir en su posicionamiento; que aparezcan en los resultados de búsqueda orgánica no cuesta nada. Hay recursos, como Search Console, el blog oficial del Centro de la Búsqueda de Google y el foro de debate, que pueden proporcionarte gran cantidad de información sobre cómo optimizar tu sitio para que aparezca en la búsqueda orgánica.
+
+Primeros pasos con SEO
+Si diriges una pequeña empresa local, probablemente puedas hacer la mayor parte del trabajo por tu cuenta. A continuación te indicamos algunos recursos útiles:
+
+Echa un vistazo a nuestra serie de vídeos sobre cómo crear una presencia online para tu empresa.
+Directrices básicas de la Búsqueda
+Cómo rastreamos, indexamos y servimos contenido en la Web
+En la Guía de SEO para principiantes se describe gran parte de lo que hacen los especialistas en SEO. Aunque no hace falta que la estudies a fondo si contratas a un profesional que haga el trabajo por ti, puede resultarte útil estar al tanto de estas técnicas. Así, podrás saber si un especialista en SEO quiere utilizar una técnica no recomendada o, peor aún, una totalmente desaconsejada.
+Recuerda que los resultados pueden tardar en llegar; por lo general, empezarás a observar los beneficios de los cambios que hagas al cabo de entre cuatro meses y un año.
+
+Si crees que necesitas más ayuda de un profesional, sigue leyendo para saber cómo elegir un especialista en SEO.
+
+Elegir un especialista en SEO
+Si estás pensando en contratar a un especialista en SEO, es mejor que lo hagas cuanto antes. Un buen momento para contratar estos servicios es cuando vayas a cambiar el diseño de tu sitio web o cuando vayas a publicar uno nuevo. De esta forma, podrás asegurarte de que el sitio se ha diseñado conforme a los requisitos del buscador. No obstante, un buen especialista en SEO también puede ayudar a mejorar un sitio que ya esté publicado.
+
+Comprométete a implementar los cambios recomendados. Para hacer los cambios recomendados por un especialista en SEO, se necesita tiempo y esfuerzo. Si no vas a tomarte el tiempo necesario para introducirlos, no vale la pena contratar a un experto.
+Entrevista a tu posible especialista en SEO. Resulta útil hacerle, entre otras, estas preguntas:
+¿Puedes mostrarme ejemplos de tu trabajo y darme a conocer la experiencia de tus clientes?
+¿Sigues las Directrices básicas de la Búsqueda de Google?
+¿Ofreces algún servicio de marketing online o asesoramiento para complementar el negocio de búsquedas orgánicas?
+¿Qué tipo de resultados esperas obtener y en qué plazo de tiempo? ¿Cómo mides el rendimiento de los sitios web?
+¿Qué experiencia tienes en el sector en el que opera mi empresa?
+¿Qué experiencia tienes en el país y la ciudad en los que opera mi empresa?
+¿Qué experiencia tienes en el desarrollo de sitios web internacionales?
+¿Cuáles son las técnicas de optimización más importantes que utilizas?
+¿Cuánto tiempo hace que te dedicas a esto?
+¿De qué manera estaríamos en contacto? ¿Me informarás de todos los cambios que hagas en mi sitio y me ofrecerás información detallada sobre tus recomendaciones y el motivo por el que las debo hacer?
+Comprueba si el especialista en SEO está interesado en ti y en tu empresa. Si no es así, busca alguien que sí lo esté. Tu especialista en SEO debería hacer preguntas como estas:
+¿Qué hace que tu empresa o servicio sea único y valioso para los clientes?
+¿Quiénes son tus clientes?
+¿Cómo genera ingresos tu empresa y cómo pueden ayudarte los resultados de búsqueda?
+¿Qué otros canales publicitarios usas?
+¿Quiénes son tus competidores?
+Comprueba las referencias laborales del especialista en SEO. Pregunta a clientes anteriores si consideran que el especialista les proporcionó un servicio útil, si fue fácil trabajar con él y si consiguió resultados positivos.
+Solicita una auditoría técnica y de búsqueda de tu sitio para saber qué cree el especialista que debe hacerse, por qué y qué resultados cabe esperar. Es probable que tengas que pagar por este servicio y darle al especialista acceso de solo lectura a tu sitio en Search Console. Por el momento, no le des acceso de escritura. El especialista en SEO con el que quieres trabajar debería poder darte una valoración realista tanto del resultado final como del trabajo necesario para conseguirlo. Si te asegura que los cambios que haga te colocarán en el primer lugar de los resultados de búsqueda, busca a otra persona.
+Decide si vas a contratarlo.
+Precauciones
+Aunque sus servicios pueden tener mucho valor para los clientes, algunos especialistas en SEO con falta de ética han perjudicado al sector con estrategias agresivas e intentos de manipular los resultados de los buscadores de forma ilícita. Las prácticas que infringen nuestras políticas de spam pueden afectar negativamente a la presencia de tu sitio en Google o incluso provocar que lo retiremos de nuestro índice.
+
+Cuando tu especialista en SEO te recomiende una serie de medidas para mejorar tu sitio, pídele que te proporcione documentación que las avale que provenga de fuentes de confianza, como páginas de ayuda de Search Console, entradas del blog del Centro de la Búsqueda de Google o respuestas del foro aprobadas por Google.
+
+Ten en cuenta lo siguiente:
+
+Hay un tipo de práctica fraudulenta habitual que consiste en crear dominios "sombra" que dirigen a los usuarios a un sitio mediante redirecciones engañosas. Con frecuencia, esta clase de dominios son propiedad del supuesto especialista en SEO que alega estar trabajando en nombre de su cliente. Sin embargo, si la relación se deteriora, el especialista en SEO podría apuntar el dominio a un sitio distinto, o incluso a un dominio de la competencia. En este caso, el cliente habrá pagado por desarrollar un sitio de la competencia propiedad exclusiva del especialista en SEO.
+Otra práctica ilícita que existe es colocar páginas puerta llenas de palabras clave en algún lugar del sitio del cliente. El supuesto especialista en SEO promete que este proceso hará que la página sea más relevante en un mayor número de consultas. Esto es completamente falso, ya que son muy pocas las ocasiones en que una página concreta es relevante para una amplia gama de palabras clave. No obstante, es aún más problemático cuando estas páginas puerta contienen enlaces ocultos que apuntan también a otros clientes del especialista en SEO. Este tipo de páginas reduce la popularidad de los enlaces de un sitio y lo redirige al del especialista en SEO y a sus otros clientes, entre los que puede haber sitios con contenido desagradable o ilegal.
+Por último, procura no involucrarte en esquemas de enlaces, como la compra de enlaces de otros sitios para mejorar tu posicionamiento. Estas prácticas infringen las políticas de spam de Google y pueden dar lugar a una acción manual contra tu sitio o contra partes de él, lo que afectaría a su posicionamiento.
+Si crees que has sido víctima de las prácticas fraudulentas de un especialista en SEO, te recomendamos que lo denuncies.
+
+En Estados Unidos, la comisión federal de comercio (Federal Trade Commission, FTC) se encarga de gestionar denuncias por prácticas empresariales engañosas o desleales. Para presentar una reclamación, visita https://www.ftc.gov/ y haz clic en "File a Complaint Online" (Presentar una reclamación online), llama al 1-877-FTC-HELP o escribe a la siguiente dirección postal:
+
+Federal Trade Commission
+CRC-240
+Washington, D.C. 20580 (EE. UU.)
+Si tu reclamación va dirigida contra una empresa de un país distinto a Estados Unidos, preséntala en https://www.econsumer.gov/.
+
+Directrices útiles
+Desconfía de empresas de SEO y consultorías o agencias web que te envíen mensajes de correo electrónico que no hayas solicitado.
+Aunque parezca increíble, nosotros también recibimos este tipo de mensajes:
+
+"Estimado google.com:
+Hemos visitado su sitio y hemos comprobado que no está incluido en los principales buscadores y directorios..."
+Desconfía de este tipo de mensajes igual que cuando te ofrecen "pastillas adelgazantes que queman grasas mientras duermes" o una solicitud para ayudar a transferir fondos de dictadores destituidos.
+
+Nadie puede asegurarte el primer puesto en los resultados de Google.
+Desconfía de los especialistas en SEO que dicen garantizar ciertas posiciones, que afirman tener una "relación especial" con Google o que dicen disponer de un sistema de "envío prioritario" a Google, porque no hacemos distinción alguna. De hecho, la única forma de enviar un sitio a directamente a Google es mediante la herramienta de inspección de URLs, enviando un sitemap o, en caso de contenido más especializado, mediante la API Indexing de Google. Puedes hacer cualquiera de estas cosas.
+
+Desconfía de cualquier empresa con secretismos o que no explique claramente sus intenciones.
+Pide explicaciones si hay algo que no te queda claro. Si un especialista en SEO crea contenido engañoso o falso en tu nombre, como páginas puerta o dominios desechables, puede que se retire la totalidad de tu sitio del índice de Google. En última instancia, eres el responsable de las acciones de las empresas que contratas. Por lo tanto, es mejor asegurarse de que sabes exactamente cómo piensan "ayudarte". Si un especialista en SEO tiene acceso a tu servidor a través de FTP, te debe explicar todos los cambios que va a hacer en tu sitio.
+
+No deberías tener nunca un enlace al sitio web de un especialista en SEO.
+Desconfía de los especialistas en SEO que hablan sobre esquemas de popularidad de enlaces o te dicen que van a enviar tu sitio a miles de buscadores. Por lo general, se trata de medidas sin utilidad que no afectan al posicionamiento de tu sitio en las páginas de resultados de los principales buscadores, al menos no de una forma que pueda considerarse positiva en la mayor parte de los casos.
+
+Elige con sentido común.
+Cuando te decidas por un especialista en SEO, te recomendamos buscar información sobre él en sitios del sector. Por supuesto, Google es una manera de hacerlo. Aunque Google no hace comentarios sobre compañías concretas, hemos detectado empresas que se autodenominan especialistas en SEO y que presentan prácticas comerciales claramente inaceptables. Ten cuidado.
+
+Asegúrate de que haber entendido adónde va tu dinero.
+Aunque Google nunca vende mejores posiciones de un sitio en nuestros resultados de búsqueda, muchos otros buscadores combinan resultados de pago por clic o de pago por inclusión con sus resultados de búsqueda web normales. Hay especialistas en SEO que prometen una posición elevada en buscadores, pero luego colocan el sitio web en la sección publicitaria y no en los resultados. Algunos incluso cambian en tiempo real sus precios de puja para crear la ilusión de que "controlan" otros buscadores y de que pueden aparecer en el lugar que quieran. Esta trampa no funciona con Google, ya que nuestra publicidad está claramente marcada y separada de los resultados de búsqueda. No obstante, recuerda preguntar a los especialistas en SEO que estés considerando contratar qué tarifas se destinarán a mejoras permanentes en los resultados y cuáles se asignarán a publicidad temporal.
+
+¿En qué otras cosas debo fijarme?
+Hay ciertos indicios que pueden advertirte de que se trata de un especialista en SEO sin escrúpulos. La lista que se muestra a continuación no es exhaustiva, por lo que, en caso de duda, confía en tu instinto.
+
+Es propietario de dominios sombra.
+Coloca enlaces a sus otros clientes en páginas puerta.
+Ofrece vender palabras clave en la barra de direcciones.
+No distingue entre los resultados de búsqueda reales y los anuncios que aparecen en las páginas de resultados.
+Garantiza una posición concreta, pero solo con frases de palabras clave extrañas y largas que devolverían tu sitio web de todos modos.
+Trabaja con varios alias o información falsificada de WHOIS.
+Obtiene tráfico de buscadores "falsos", de software espía o de scumware.
+Tiene dominios que se han quitado del índice de Google o él mismo no está incluido en el índice de Google.
+
+
+

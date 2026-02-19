@@ -1,0 +1,334 @@
+Guía sobre los sistemas de posicionamiento de la Búsqueda de Google
+Google utiliza sistemas de posicionamiento automatizados que tienen en cuenta muchos factores y señales sobre los cientos de miles de millones de páginas web y otros contenidos de nuestro índice de la Búsqueda para mostrar los resultados más útiles y relevantes; todo ello en una fracción de segundo. Esta página sirve de guía para entender algunos de nuestros sistemas de posicionamiento más destacados. También explica algunos de los sistemas que forman parte de nuestros sistemas de posicionamiento principales, que son las tecnologías subyacentes que generan resultados de búsqueda en respuesta a las consultas, además de incluir otros sistemas relacionados con necesidades de posicionamiento específicas.
+
+Nuestros sistemas de posicionamiento están diseñados principalmente para trabajar a nivel de página, y utilizan una serie de factores y sistemas para comprender cómo se deben clasificar páginas concretas. También se utilizan señales y clasificadores a nivel de sitio, que contribuyen a que entendamos mejor las páginas. Tener algunas señales buenas a nivel de sitio no significa que todo el contenido de un sitio vaya a obtener siempre un buen posicionamiento, del mismo modo que tener algunas señales deficientes a nivel de sitio no significa que todo el contenido de un sitio vaya a obtener un mal posicionamiento.
+
+Mejoramos constantemente los sistemas de posicionamiento haciendo pruebas y evaluaciones estrictas e informamos de las actualizaciones de nuestros sistemas de posicionamiento cuando puedan resultar útiles para los creadores de contenido y otros usuarios.
+
+Puedes visitar también el sitio Cómo funciona la Búsqueda para entender cómo se utilizan nuestros sistemas de posicionamiento, en combinación con otros procesos, para que la Búsqueda de Google cumpla nuestra misión de organizar la información mundial y hacerla universalmente accesible y útil.
+
+BERT
+Las representaciones de codificador bidireccional de transformadores (BERT) son un sistema de IA que usa Google que nos permite entender cómo las combinaciones de palabras pueden expresar diferentes significados e intenciones.
+
+Sistemas de información sobre crisis
+Google ha desarrollado sistemas para proporcionar información útil y oportuna en momentos de crisis, ya sean situaciones de crisis personales, desastres naturales u otras situaciones de crisis generalizadas:
+
+Crisis personales: nuestros sistemas detectan si las personas buscan información relacionada con una crisis personal. Por ejemplo, si hacen consultas sobre temas como el suicidio, la agresión sexual, la ingestión de sustancias venenosas, la violencia de género o la adicción a las drogas. En esos casos, los resultados de búsqueda mostrarán líneas de asistencia telefónica y contenido de organizaciones de confianza. Consulta cómo se muestra la información relacionada con crisis personales en la Búsqueda de Google.
+Alertas SOS: en situaciones de desastres naturales o crisis generalizadas, nuestro sistema de alertas SOS mostrará las últimas novedades de las autoridades locales, nacionales o internacionales. Pueden mostrarse números de teléfono y sitios web de emergencia, mapas, traducciones de frases útiles y oportunidades de donación, entre otras cosas. Consulta más información sobre cómo funciona Alertas SOS y su función en el sistema de alertas de crisis de Google que ayudan en situaciones de inundaciones, incendios forestales, terremotos huracanes y otros desastres.
+Sistemas de anulación de duplicados
+Una búsqueda en Google puede devolver miles o incluso millones de páginas web que coinciden, y algunas pueden ser muy parecidas entre sí. En esos casos, nuestros sistemas solo muestran los resultados más relevantes para evitar duplicados innecesarios. Puedes consultar más información sobre cómo funciona la anulación de duplicados y cómo ver resultados omitidos.
+
+La anulación de duplicados también se aplica en los fragmentos destacados. Si la ficha de una página web acaba convirtiéndose en un fragmento destacado, no se volverá a mostrar esa ficha en la primera página de resultados. De este modo, se simplifican los resultados, y los usuarios pueden encontrar información relevante más fácilmente.
+
+Sistema de dominios de concordancia exacta
+Nuestros sistemas de posicionamiento tienen en cuenta las palabras de los nombres de dominio como uno de los muchos factores para determinar si el contenido es relevante para una búsqueda. Sin embargo, con nuestro sistema de dominios de concordancia exacta nos aseguramos de que no damos demasiado valor al contenido alojado en dominios que se hayan diseñado para coincidir exactamente con consultas concretas. Por ejemplo, alguien podría crear un nombre de dominio que contenga las palabras "mejores-sitios-para-comer" con la intención de que el contenido obtenga un mejor posicionamiento. Nuestro sistema se adapta a estas situaciones.
+
+Sistemas de actualización
+Disponemos de varios sistemas para "consultas que necesitan una actualización", diseñados para mostrar contenido más actualizado en las consultas que deberían mostrarlo. Por ejemplo, si alguien busca información sobre una película que se acaba de estrenar, seguramente quiera encontrar reseñas recientes en lugar de los artículos antiguos de la época del inicio de su producción. Otro ejemplo podría ser que normalmente, si alguien busca "terremoto" obtiene información sobre preparación y recursos. Sin embargo, si ha habido un terremoto recientemente, es posible que aparezcan noticias y contenido más reciente.
+
+Sistemas de análisis de enlaces y PageRank
+Tenemos varios sistemas que comprenden cómo se enlazan las páginas entre sí para determinar de qué trata cada una y cuáles pueden ser más útiles para responder a una consulta concreta. Uno de los principales sistemas de posicionamiento utilizado desde los inicios de Google es PageRank. Si quieres obtener más información puedes consultar el documento original de investigación de PageRank y la patente. El funcionamiento de PageRank ha evolucionado mucho desde entonces, y sigue siendo uno de nuestros sistemas de posicionamiento principales.
+
+Sistemas de noticias locales
+Tenemos sistemas que identifican y muestran las fuentes de noticias locales siempre que sean relevantes, por ejemplo utilizando nuestras funciones "Noticias destacadas" y "Noticias locales".
+
+MUM
+El modelo unificado de multitarea (MUM) es un sistema de IA capaz de comprender y generar idiomas. Por el momento, no se utiliza en el posicionamiento general de la Búsqueda, sino que se usa para algunos casos concretos, como mejorar las búsquedas de información sobre las vacunas contra el COVID‐19 y mejorar el texto destacado que mostramos de fragmentos destacados.
+
+Coincidencia neuronal
+La coincidencia neuronal es un sistema de IA que usa Google para comprender representaciones de conceptos en consultas y páginas, y relacionarlas entre sí.
+
+Sistemas de contenido original
+Tenemos sistemas que permiten asegurarnos de que el contenido original aparezca de forma destacada en los resultados de búsqueda (incluidos los reportajes originales) antes que las páginas que se limitan a citarlo. Esto incluye la compatibilidad con las etiquetas canónicas especiales que los creadores pueden usar para ayudarnos a comprender cuál es la página principal de una página que se ha duplicado en varios lugares.
+
+Sistemas de disminución de posicionamiento basados en retiradas
+Google tiene políticas que permiten la retirada de determinados tipos de contenido. Si procesamos un volumen significativo de este tipo de retiradas en relación con un sitio determinado, las utilizaremos como indicador para mejorar nuestros resultados. En particular:
+
+Retiradas de contenido por motivos legales Cuando recibimos un volumen significativo de solicitudes de retirada por infracción de derechos de autor válidas relacionadas con un sitio concreto, podemos usar este hecho para disminuir el posicionamiento de otros contenidos del sitio en nuestros resultados. De esta forma, si hay otro contenido infractor, es menos probable que los usuarios encuentren ese en vez del contenido original. Aplicamos señales de disminución de posicionamiento similares a las reclamaciones relacionadas con la difamación, los productos falsificados y las retiradas por resolución judicial. En el caso del material de abuso sexual infantil, siempre lo retiramos cuando lo identificamos y disminuimos el posicionamiento de todo el contenido de los sitios con una proporción significativa de contenido de abuso sexual infantil.
+Retiradas de información personal Si procesamos un volumen significativo de solicitudes de retirada de información personal relacionadas con un sitio web en el que se llevan a cabo prácticas abusivas de retirada de contenido, disminuimos el posicionamiento de otros contenidos de ese sitio web en nuestros resultados de búsqueda. También comprobamos si el mismo patrón de comportamiento se repite en otros sitios y, si es así, disminuimos el posicionamiento del contenido de dichos sitios. Podemos aplicar prácticas similares para disminuir la posición de los sitios que reciben un volumen significativo de retiradas de contenido que incluya contenido de doxxing, imágenes explícitas creadas o compartidas sin consentimiento o contenido falso explícito no consentido.
+Sistema de clasificación de fragmentos
+La clasificación de fragmentos es un sistema de inteligencia artificial que utilizamos para identificar secciones o fragmentos concretos de una página web para comprender mejor su relevancia.
+
+RankBrain
+RankBrain es un sistema de IA que nos ayuda a comprender cómo se relacionan las palabras con los conceptos. Esto significa que podemos mostrar contenido relevante, aunque no contenga exactamente todas las palabras utilizadas en la búsqueda, cuando sabemos que el contenido está relacionado con otras palabras y conceptos.
+
+Sistemas de información fiable
+Tenemos varios sistemas que funcionan de formas diferentes para mostrar la información más fiable posible. Por ejemplo, para destacar páginas más fiables y disminuir el posicionamiento del contenido de baja calidad y para mejorar el posicionamiento de los artículos de calidad. En los casos en los que falta información fiable, nuestros sistemas muestran automáticamente advertencias de contenido sobre temas que cambian rápidamente y cuando no tienen están seguros de la calidad general de los resultados disponibles de la búsqueda. Estas advertencias proporcionan consejos sobre cómo hacer búsquedas para obtener resultados más útiles. Más información sobre cómo ofrecer información de alta calidad en la Búsqueda
+
+Sistema de reseñas
+El objetivo del sistema de reseñas es recompensar mejor las reseñas de mayor calidad, el contenido que ofrece análisis esclarecedores e investigaciones originales, y que está escrito por expertos o entusiastas que conocen bien el tema.
+
+Sistema de diversidad de sitios
+Nuestro sistema de diversidad de sitios se asegura de que nuestros principales resultados de búsqueda no muestren más de dos fichas de páginas web del mismo sitio, para que ningún sitio domine los resultados. Sin embargo, si nuestros sistemas determinan que es especialmente relevante para una búsqueda concreta, podemos mostrar más de dos fichas. Por lo general, una diversidad de sitios trata los subdominios como parte de un dominio raíz. Por ejemplo, se considerará que las fichas de un subdominio (subdominio.example.com) y del dominio raíz (example.com) son del mismo sitio. No obstante, a veces, los subdominios se tratan como sitios independientes por razones de diversidad cuando se considera que es relevante.
+
+Sistemas de detección de spam
+A nadie le gusta que su bandeja de entrada esté llena de spam. Por eso los filtros de spam son tan útiles. La Búsqueda se enfrenta a un reto similar, ya que Internet incluye una gran cantidad de spam que, si no se controlara, no se podrían mostrar los resultados más útiles y relevantes. Contamos con una amplia gama de sistemas de detección de spam, incluido SpamBrain, para hacer frente al contenido y los comportamientos que infrinjan nuestras políticas de spam. Estos sistemas se actualizan constantemente tener en cuenta las últimas tendencias relacionadas con el desarrollo de spam.
+
+Sistemas retirados
+Los siguientes sistemas se indican con fines históricos. Estos sistemas se han integrado en otros más recientes o han pasado a formar parte de nuestros sistemas principales de posicionamiento.
+
+Sistema de contenido útil
+Anunciado en el 2022 como la "actualización de contenido útil", se trata de un sistema diseñado para garantizar que los usuarios vean contenido original, útil y escrito por personas en los resultados de búsqueda, en lugar de en contenido creado principalmente para aumentar el tráfico de los buscadores. En marzo del 2024, evolucionó y se incorporó a nuestros sistemas de posicionamiento principales, ya que nuestros sistemas utilizan una gran variedad de señales y sistemas para mostrar resultados útiles a los usuarios.
+
+Hummingbird
+Este sistema supuso una mejora significativa de nuestros sistemas de posicionamiento general. Se introdujo en agosto del 2013. Nuestros sistemas de posicionamiento han seguido evolucionando desde entonces, tal y como habían hecho antes.
+
+Sistema Panda
+Este sistema se diseñó para asegurar que se mostrara contenido original y de alta calidad en los resultados de búsqueda. Se anunció en el 2011 como "Panda". Después, evolucionó y en el 2015 pasó a formar parte de nuestros sistemas de posicionamiento principales.
+
+Sistema Penguin
+Este sistema se diseñó para combatir el spam de enlaces. Se anunció en el 2012 como una "actualización de Penguin". En el 2016, se integró en nuestros sistemas de posicionamiento principales.
+El sistema de reseñas de la Búsqueda de Google y tu sitio web
+El objetivo del sistema de reseñas es recompensar mejor las reseñas de mayor calidad, el contenido que ofrece análisis esclarecedores e investigaciones originales, y que está escrito por expertos o entusiastas que conocen bien el tema. En esta página explicamos cómo funciona el sistema de reseñas y qué puedes hacer para evaluar y mejorar tu contenido.
+
+Cómo funciona el sistema de reseñas
+El sistema de reseñas sirve para que los usuarios vean reseñas con información exhaustiva, en lugar de contenido sin valor que se limite a resumir un montón de productos. El sistema de reseñas se mejora de forma periódica y continua.
+
+El sistema de reseñas está diseñado para evaluar artículos, entradas de blog, páginas o contenido propio independiente similar escrito con la finalidad de proporcionar una recomendación, una opinión o un análisis. No evalúa las reseñas de terceros, como las que publican los usuarios en la sección de reseñas de una página de productos o servicios.
+
+Las reseñas pueden ser sobre artículos concretos, o bien tratarse de comparaciones directas o listas de clasificaciones de artículos recomendados. Las reseñas pueden tratar sobre cualquier tema. Pueden ser reseñas de productos (como portátiles o abrigos), de contenido multimedia (como películas o videojuegos), o de servicios y empresas (como restaurantes o marcas de moda).
+
+El sistema de reseñas evalúa principalmente el contenido de reseñas a nivel de página. Sin embargo, en los sitios cuyo contenido sea en su mayoría reseñas, el sistema puede provocar que se evalúe cualquier parte del sitio. Si no tienes muchas reseñas, es poco probable que se haga una evaluación de todo el sitio.
+
+Actualmente, este sistema se aplica a los siguientes idiomas en todo el mundo: alemán, español, francés, indonesio, inglés, italiano, neerlandés, polaco, portugués, ruso y vietnamita.
+
+En el caso de los productos, los datos estructurados de producto pueden ayudarnos a identificar mejor si se trata de una reseña de producto, pero no nos basamos únicamente en ellos.
+
+¿Cómo afecta este sistema a mi sitio?
+Para obtener más información sobre cómo crear contenido que no se vea afectado por el sistema de reseñas, consulta nuestra página de ayuda sobre cómo escribir reseñas de alta calidad.
+
+Es posible que el contenido afectado por el sistema de reseñas recupere su posicionamiento con el tiempo si haces mejoras en él. No obstante, recuerda que la evaluación automatizada del contenido de las reseñas es solo uno de los muchos factores que tenemos en cuenta a la hora de posicionar el contenido. Por lo tanto, puede haber cambios en cualquier momento por otros motivos.
+Las actualizaciones principales de la Búsqueda de Google y tu sitio web
+Varias veces al año, Google introduce cambios significativos en sus algoritmos y sistemas de búsqueda de forma generalizada. Cuando se produce alguno de estos cambios, que llamamos "actualizaciones principales", publicamos un aviso en nuestra lista de actualizaciones en el posicionamiento de la Búsqueda de Google.
+
+En general, la mayoría de los sitios no tienen que preocuparse de las actualizaciones principales y puede que ni siquiera se den cuenta de que han sucedido. Sin embargo, si tienes alguna pregunta sobre un cambio en el tráfico que se relaciona con una actualización principal, esta página es para ti. En esta página explicamos en qué consisten las actualizaciones principales y qué puedes hacer para evaluar y mejorar tu contenido.
+
+Cómo funcionan las actualizaciones principales
+El objetivo de las actualizaciones principales es asegurarnos de que, en términos generales, estamos cumpliendo nuestra misión de ofrecer resultados útiles y fiables a los usuarios. Estos cambios son de naturaleza amplia y no están enfocados sitios o páginas web concretos. Conforme cambia el contenido de la Web, evaluamos y actualizamos nuestros sistemas para que sigan el ritmo en su conjunto.
+
+Una forma de pensar en una actualización principal es imaginar que un amigo te pide tus principales recomendaciones gastronómicas. Aunque tienes una lista con tus 20 restaurantes favoritos, las cosas han cambiado desde que la escribiste por primera vez en el 2019. Algunos restaurantes nuevos que antes no existían ahora podrían aparecer en esa lista. Puedes volver a evaluar algunos restaurantes y darte cuenta de que los cambiarías a una posición más alta en la lista, ya sea por el número de experiencias positivas que has tenido, o bien porque tu amigo prefiere restaurantes que admitan perros. La lista va a cambiar, y puede que algún restaurante baje algún puesto, pero eso no significa que sea malo, sino que hay otros restaurantes que entran en tus 20 favoritos.
+
+Comprobar si hay un descenso del tráfico en Search Console
+Si observas un descenso en el posicionamiento y sospechas que puede estar relacionado con el plazo de una actualización principal, usa Search Console para determinar si tienes que hacer un cambio.
+
+Comprueba que la actualización principal haya terminado de implementarse. Consulta el Panel de Estado de la Búsqueda y anota las fechas de inicio y finalización de la actualización principal.
+Compara las fechas correctas: te recomendamos que esperes al menos una semana completa tras la finalización de una actualización principal antes de analizar tu sitio en Search Console. Después de una semana, prueba a comparar esta semana con una semana antes de que la actualización principal empezara a desplegarse; de esta forma, podrás determinar con mayor exactitud qué ha cambiado.
+Revisa tus páginas y consultas principales. Evalúa qué posicionamiento tenían antes y después de la actualización principal: ¿el descenso es pequeño o grande?
+Pequeño descenso en el posicionamiento (descenso de 2 a 4 en el posicionamiento): no hay que tomar medidas drásticas (de hecho, te recomendamos que no hagas cambios en el contenido que ya tenga un buen rendimiento).
+Gran descenso en el posicionamiento (descenso de 4 a 29 en el posicionamiento): realiza una evaluación más exhaustiva.
+Analiza los distintos tipos de búsqueda por separado: esto puede ayudarte a saber si el descenso que has observado se ha producido en la Búsqueda web, en Google Imágenes, en el modo Vídeo o en la pestaña Noticias.
+Evaluar un descenso importante en el posicionamiento
+Si observas un descenso considerable y prolongado de las posiciones de todo tu sitio, lee la autoevaluación para comprobar si tu sitio en general (no solo páginas concretas) ofrece contenido útil, fiable y dirigido a personas. En concreto, te recomendamos que tengas en cuenta lo siguiente:
+
+Analiza tu sitio web de cerca e intenta ser objetivo. También puedes pedir a otras personas de confianza (que no estén asociadas a tu sitio) que lo evalúen mediante las preguntas.
+Evalúa las páginas que se han visto más afectadas. Revísalas detenidamente y hazte las preguntas de autoevaluación para evaluarlas. Por ejemplo, puede haber otras páginas en la web que estén haciendo un mejor trabajo para ayudar al buscador.
+Cosas que debes tener en cuenta al hacer cambios
+Evita hacer "cambios rápidos" (por ejemplo, eliminar elementos de la página porque has oído que no es buena para SEO). En vez de eso, céntrate en hacer cambios que tengan sentido para tus usuarios y sean sostenibles a largo plazo.
+Piensa en cómo puedes mejorar tu contenido de forma significativa. Por ejemplo, puedes reescribir o reestructurar el contenido para facilitar la lectura y la navegación por la página a tu audiencia.
+Eliminar contenido es el último recurso, y solo debes tenerlo en cuenta si crees que contenido no se puede recuperar. De hecho, si estás pensando en eliminar secciones enteras de tu sitio, es probable que esas secciones se hayan creado principalmente para los buscadores y no para los usuarios. Si ese es el caso de tu sitio, eliminar el contenido que no sea útil puede mejorar el rendimiento del contenido bueno que haya en él.
+¿Cuánto tiempo se tarda en ver un efecto en los resultados de la Búsqueda?
+Si has hecho mejoras, puede que tarden un tiempo en verse reflejadas en los resultados de la Búsqueda: algunos cambios pueden aplicarse en unos días, pero nuestros sistemas pueden tardar varios meses en aprender y confirmar que el sitio en su conjunto está creando contenido útil, fiable y dirigido a personas a largo plazo. Si han pasado unos meses y sigues sin ver ningún efecto, es posible que tengas que esperar a la siguiente actualización principal.
+
+Sin embargo, no es necesario que esperes a una actualización principal importante para ver el efecto de tus mejoras. Actualizamos continuamente nuestros algoritmos de búsqueda, lo que incluye actualizaciones principales más pequeñas. No anunciamos estas actualizaciones porque no son muy evidentes, pero son otra forma de que tu contenido mejore su posición (si has hecho mejoras).
+
+Ten en cuenta que esto no garantiza que los cambios que hagas en tu sitio web tengan un efecto notable en los resultados de búsqueda y que el posicionamiento de los resultados de la Búsqueda de Google no es estático ni fijo. Los resultados de búsqueda de Google son dinámicos por naturaleza porque las expectativas de los usuarios cambian y la Web abierta está en constante cambio con contenido nuevo y actualizado. Este cambio constante puede provocar tanto aumentos como descensos del tráfico de la Búsqueda orgánica.
+Actualizaciones de spam de la Búsqueda de Google y tu sitio
+Aunque los sistemas automatizados de Google para detectar spam en las búsquedas funcionan continuamente, a veces les hacemos mejoras notables. Cuando eso ocurre, nos referimos a estas mejoras como actualizaciones de spam y las compartimos en nuestra lista de actualizaciones en el posicionamiento de la Búsqueda de Google.
+
+Por ejemplo, SpamBrain es nuestro sistema de prevención de spam basado en IA. De vez en cuando, mejoramos ese sistema para que sea más eficaz a la hora de detectar el spam y asegurarnos de que reconozca nuevos tipos de spam.
+
+Si ves un cambio en tu sitio después de una actualización de spam, consulta nuestras políticas de spam para asegurarte de que las cumples. Los sitios que infringen nuestras políticas pueden obtener un posicionamiento más bajo en los resultados o dejar de aparecer en ellos. Hacer cambios puede ayudar a un sitio a mejorar su posicionamiento si nuestros sistemas automatizados observan durante algunos meses que el sitio cumple con nuestras políticas de spam.
+
+En el caso de una actualización de spam de enlaces (una actualización que luche específicamente contra el spam de enlaces), es posible que los cambios no generen una mejora. Esto se debe a que, cuando nuestros sistemas quitan los efectos que pueden tener los enlaces de spam, se pierde cualquier ventaja de posicionamiento que los enlaces hayan generado previamente para tu sitio. No se podrán recuperar las posibles ventajas de posicionamiento generadas por esos enlaces.
+Proporcionar un nombre de sitio a la Búsqueda de Google
+Cuando Google incluye una página en los resultados de búsqueda, muestra el nombre del sitio del que procede. Esto se denomina nombre del sitio. Ten en cuenta que el nombre del sitio es diferente al de los enlaces de título por página (los enlaces de título son específicos de cada página web, mientras que el nombre del sitio es para todo el sitio).
+
+Tostada quemada
+
+Cómo hacer tostadas en una sartén
+
+Disponibilidad de la función
+Los nombres de sitio están disponibles en todos los idiomas en los que está disponible la Búsqueda de Google, tanto en dispositivos móviles como en ordenadores. Los nombres de los sitios pueden aparecer en sitios a nivel de dominio y de subdominio. Consulta más información en las directrices técnicas.
+
+Cómo se crean los nombres de los sitios en la Búsqueda de Google
+La generación de nombres de sitios que hace Google en la página de resultados de la Búsqueda de Google está completamente automatizada y tiene en cuenta tanto el contenido de la página principal de un sitio como las referencias a esa página que aparecen en la Web. El objetivo del nombre del sitio en la Búsqueda de Google es representar y describir mejor la fuente de cada resultado.
+
+Para indicar tu preferencia de nombre de sitio, añade datos estructurados WebSite a tu página principal. Nuestro sistema de nombres de sitio también tendrá en cuenta el contenido de og:site_name, <title>, los elementos de encabezado y otro texto de la página principal. Sin embargo, los datos estructurados de WebSite son más importantes si quieres especificar una preferencia.
+
+Aunque no podemos cambiar manualmente los nombres de sitios seleccionados automáticamente, puedes indicar alternativas para que nuestro sistema automatizado las tenga en cuenta si no se ha seleccionado tu preferencia principal.
+
+Elegir el nombre del sitio
+Elige un nombre único que refleje con precisión la identidad de tu sitio y que no sea engañoso para los usuarios. El nombre que elijas debe cumplir las políticas de contenido de la Búsqueda.
+Usa un nombre conciso y conocido para tu sitio (por ejemplo, "Google" en vez de "Google, Inc"). Aunque no hay límite de longitud en cuanto a los nombres de los sitios, estos pueden aparecer truncados en algunos dispositivos.
+No utilices un nombre genérico. Es poco probable que nuestro sistema seleccione un nombre genérico como "Los mejores dentistas de Madrid" como nombre del sitio, a menos que sea un nombre de marca muy conocido.
+Utiliza el nombre de tu sitio en la página principal de forma coherente. Asegúrate de que el nombre de sitio que uses en los datos estructurados sea coherente con la forma en la que haces referencia a tu sitio en otras fuentes de tu página principal que nuestro sistema tenga en cuenta.
+Proporciona un nombre alternativo. Aunque nuestro sistema de nombres de sitio intenta usar tu nombre de sitio preferido, a veces el nombre no está disponible. Por ejemplo, nuestro sistema no suele utilizar el mismo nombre para dos sitios globales diferentes. En otros casos, nuestro sistema puede determinar que un sitio es más comúnmente reconocido por un acrónimo que por un nombre completo. Proporcionar un nombre alternativo mediante la propiedad alternateName permite que Google tenga en cuenta otras opciones si no se selecciona la opción preferida.
+Añadir un nombre de sitio con datos estructurados
+
+Los datos estructurados son un formato estandarizado con el que se puede proporcionar información sobre una página y clasificar su contenido. Consulta cómo funcionan los datos estructurados si aún no te has familiarizado con ellos.
+
+En esta sección se explican las directrices técnicas, las propiedades obligatorias y cómo añadir y probar datos estructurados de nombre de sitio.
+
+¿Usas un CMS? Quizá sea más fácil que uses un complemento que esté integrado en tu CMS.
+¿Usas JavaScript? Consulta cómo generar datos estructurados con JavaScript.
+Seguir las directrices
+Para ayudar a Google a entender mejor el nombre de tu sitio, sigue las Directrices básicas de la Búsqueda, las directrices generales de datos estructurados, las directrices para elegir el nombre del sitio y las siguientes directrices técnicas:
+
+Directrices técnicas
+Solo un nombre por sitio: actualmente, la Búsqueda de Google solo admite un nombre de sitio por sitio, donde el sitio se define por el dominio o subdominio. La Búsqueda de Google no admite nombres de sitio a nivel de subdirectorio. Ten en cuenta que los nombres de subdominio que empiezan por www o m se suelen considerar equivalentes.
+Admitido: https://example.com (se trata de una página principal a nivel de dominio)
+Admitido: https://www.example.com (también se considera una página principal a nivel de dominio)
+Admitido: https://m.example.com (también se considera una página principal a nivel de dominio)
+ Admitido: https://news.example.com (se trata de una página principal a nivel de subdominio)
+No admitido: https://example.com/news (se trata de una página principal a nivel de subdirectorio)
+Los datos estructurados deben estar en la página principal de un sitio: los datos estructurados de WebSite deben estar en la página principal del sitio. Cuando decimos "página principal" nos referimos al URI raíz a nivel de dominio o subdominio. Por ejemplo, https://example.com es la página principal del dominio, mientras que https://example.com/de/index.html no lo es.
+Nota: Si no hay datos estructurados en la página principal del subdominio, se puede usar el nombre de sitio a nivel de dominio como alternativa.
+Google debe poder rastrear la página principal: si no tenemos acceso al contenido de tu página principal porque está bloqueada, es posible que no podamos generar un nombre de sitio.
+Para los sitios con páginas principales duplicadas: si tienes páginas principales duplicadas con el mismo contenido (por ejemplo, versiones HTTP y HTTPS de tu página principal, o páginas con y sin www), asegúrate de usar los mismos datos estructurados en todos los duplicados, no solo en la página canónica.
+Si ya tienes datos estructurados de WebSite en tu sitio, asegúrate de anidar las propiedades del nombre del sitio en el mismo nodo. Es decir, evita crear un bloque de datos estructurados de WebSite adicional en tu página principal, si es posible.
+Añadir las propiedades de nombre de sitio obligatorias
+Añade las propiedades obligatorias a la página principal de tu sitio web, ya sea en formato JSON-LD, RDFa o microdatos. No hace falta incluir estas etiquetas en todas las páginas de tu sitio, solo tienes que añadirlas a la página principal.
+
+Propiedades obligatorias
+name	
+Text
+
+El nombre del sitio web. Asegúrate de que el nombre cumple las directrices para elegir el nombre de tu sitio.
+
+url	
+URL
+
+La URL de la página principal del sitio. Defínela como la página principal canónica del dominio o subdominio de tu sitio. Por ejemplo, https://example.com/ o https://news.example.com/.
+
+A continuación, se muestra un ejemplo de datos estructurados de WebSite que incluye los campos obligatorios:
+
+JSON-LD
+Microdatos
+
+<html>
+  <head>
+    <title>Example: A Site about Examples</title>
+    <script type="application/ld+json">
+    {
+      "@context" : "https://schema.org",
+      "@type" : "WebSite",
+      "name" : "Example",
+      "url" : "https://example.com/"
+    }
+  </script>
+  </head>
+  <body>
+  </body>
+</html>
+Añadir un nombre de sitio alternativo
+Si quieres proporcionar una versión alternativa del nombre de tu sitio (por ejemplo, un acrónimo o un nombre más corto), puedes añadir la propiedad alternateName. Esta configuración es opcional.
+
+Propiedades recomendadas
+alternateName	
+Text
+
+El nombre alternativo del sitio web (por ejemplo, si existe un acrónimo común o un nombre más corto de tu sitio que sea conocido), si procede. Asegúrate de que el nombre cumple las directrices para elegir el nombre de tu sitio.
+
+Puedes incluir más de un nombre alternativo. Indícalos por orden de preferencia. El más importante es el primero. Por ejemplo:
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Burnt Toast",
+    "alternateName": ["BT", "B-T", "Burnt Toast Shop"],
+    "url": "https://www.example.com/"
+  }
+</script>
+A continuación se muestra un ejemplo de datos estructurados de WebSite que incluye todos los campos obligatorios y recomendados:
+
+JSON-LD
+Microdatos
+
+<html>
+  <head>
+    <title>Example: A Site about Examples</title>
+    <script type="application/ld+json">
+    {
+      "@context" : "https://schema.org",
+      "@type" : "WebSite",
+      "name" : "Example Company",
+      "alternateName" : "EC",
+      "url" : "https://example.com/"
+    }
+  </script>
+  </head>
+  <body>
+  </body>
+</html>
+Probar los datos estructurados
+Valida las etiquetas con una herramienta de prueba de esquemas (por ejemplo, Validador de marcado de esquemas) para asegurarte de que no haya errores de sintaxis. No se admiten nombres de sitios en la prueba de resultados enriquecidos.
+Usa la herramienta de inspección de URLs para probar cómo ve Google la página. Asegúrate de que Google pueda acceder a tu página principal y de que no esté bloqueada por un archivo robots.txt, por una directiva noindex ni por requisitos de inicio de sesión.
+Si la página se ve correctamente, puedes solicitar a Google que vuelva a rastrear tu URL.
+Da cierto margen a Google para que vuelva a rastrear e indexar tu página. Recuerda que Google puede tardar entre unos días y varias semanas en encontrar y rastrear una página después de su publicación.
+Qué hacer si no se selecciona tu nombre de sitio preferido 
+Por lo general, nuestro sistema intenta usar el nombre de sitio preferido indicado en los datos estructurados de WebSite. Sin embargo, si el sistema no está tan seguro del nombre que nos has proporcionado, a veces genera nombres de sitios usando otras fuentes, o muestra un nombre de dominio o subdominio.
+
+Si nuestro sistema automatizado no selecciona tu nombre de sitio preferido, sigue estos pasos:
+
+Comprueba lo siguiente:
+El nombre del sitio que aparece en los datos estructurados de WebSite de tu página principal es el que prefieres usar.
+Tus datos estructurados de WebSite no contienen errores de datos estructurados. Utiliza una herramienta de prueba de esquemas (por ejemplo, el validador de marcado de esquemas) para asegurarte de que no haya errores de sintaxis (la prueba de resultados enriquecidos no admite nombres de sitios).
+Tus datos estructurados siguen nuestras directrices.
+Comprueba que otras fuentes de tu página principal también usen el nombre que prefieres para tu sitio.
+Confirma que no estás intentando configurar un nombre de sitio para un subdirectorio. Los nombres de sitios no son compatibles con los subdirectorios (por ejemplo, https://example.com/news es una página principal a nivel de subdirectorio y no puede tener su propio nombre de sitio). Consulta nuestra guía técnica para obtener más información.
+Comprueba que las redirecciones funcionen correctamente y que el robot de Google pueda acceder a ellas. A continuación, solicita que se vuelva a rastrear la página. Si tu página redirige a una página que es visible para el robot de Google, el nombre del sitio reflejará el destino de la redirección.
+Si tienes varias versiones de tu sitio (por ejemplo, una HTTP y otra HTTPS), asegúrate de estar usando el mismo nombre de forma coherente.
+Si has actualizado los datos estructurados de nombre de sitio, deja pasar un tiempo para que Google vuelva a rastrear y procesar la nueva información. Recuerda que el rastreo puede tardar entre unos días y varias semanas, en función de la frecuencia con la que nuestros sistemas determinen que el contenido debe actualizarse. Puedes solicitar que se vuelva a rastrear una página con la herramienta de inspección de URLs.
+¿No ves el nombre de sitio que has elegido en las páginas internas? Si tu página principal ya muestra el nombre de sitio que prefieres, recuerda que también debes dejar tiempo para que Google vuelva a rastrear y procesar tus páginas internas.
+Si has seguido las directrices y sigue sin seleccionarse tu nombre de sitio preferido, considera una de estas opciones:
+
+En primer lugar, prueba a proporcionar un nombre alternativo mediante la propiedad alternateName. Si nuestro sistema de nombres de sitio no está lo suficientemente seguro como para usar tu nombre preferido, tendrá en cuenta esta opción.
+Proporciona el nombre de tu dominio o subdominio como opción alternativa. Para proporcionar tu dominio o subdominio como opción alternativa, añade el nombre de tu dominio o subdominio como nombre alternativo. El dominio o subdominio debe estar escrito en minúsculas (por ejemplo, example.com, no Example.com) para que nuestro sistema lo detecte como una preferencia de nombre de sitio. Nuestro sistema lo tendrá muy en cuenta si no se selecciona tu nombre preferido. En este ejemplo, Burnt Toast es la opción más recomendada, seguido de BT y a continuación, el dominio example.com como última opción:
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Burnt Toast",
+    "alternateName": ["BT", "B-T", "Burnt Toast Shop", "example.com"],
+    "url": "https://www.example.com/"
+  }
+</script>
+Si sigue sin funcionar, prueba a indicar el nombre de tu dominio o subdominio (en minúsculas) como nombre preferido, como último recurso. Si proporcionas tu nombre de dominio o subdominio como nombre preferido, por lo general, nuestro sistema lo seleccionará, pero te recomendamos que solo lo hagas como último recurso. En este ejemplo, la única preferencia es el dominio example.com:
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "example.com",
+    "url": "https://www.example.com/"
+  }
+</script>
+Si has seguido los pasos para solucionar el problema y todavía persiste, publícalo en la comunidad de ayuda del Centro de la Búsqueda de Google. Esto nos ayudará a buscar posibles mejoras en nuestro sistema.
+Enlaces de sitio
+Los enlaces de sitio son enlaces del mismo dominio que se agrupan en un resultado de texto. Nuestros sistemas analizan la estructura de los enlaces de tu sitio para buscar atajos que ahorren tiempo a los usuarios y les permitan encontrar rápidamente la información que están buscando.
+
+Paraíso de mascotas: comida, accesorios y suministros
+
+Productos para perros
+
+Comida para gatos
+
+Acuarios y accesorios
+
+Resultado de búsqueda principal
+
+Enlaces de sitio
+
+Solo mostramos enlaces de sitio en los resultados cuando consideramos que pueden ayudar a los usuarios. Si la estructura de tu sitio no permite que nuestros algoritmos encuentren buenos enlaces de sitio o si no consideramos que los enlaces de sitio sean adecuados para la consulta de un usuario, no los mostraremos.
+
+Prácticas recomendadas de enlaces de sitio
+Por ahora, los enlaces de sitio aparecen de forma automática. Trabajamos continuamente para mejorar nuestros algoritmos, por lo que más adelante podríamos ofrecer a los propietarios de sitios web alguna manera de darnos información al respecto. De momento, puedes seguir ciertas prácticas recomendadas para mejorar la calidad de tus enlaces de sitio.
+
+Procura que el texto de los títulos de páginas y los encabezados sea informativo, pertinente y conciso.
+Crea una estructura lógica del sitio que facilite la navegación a los usuarios y asegúrate de incluir enlaces a tus páginas más importantes en otras páginas cuando proceda.
+Asegúrate de que el texto de los enlaces internos sea conciso y pertinente en relación con la página a la que apunta.
+Evita las repeticiones en tu contenido.
+Si tienes que eliminar un enlace de sitio, quita la página de tu sitio o usa noindex.

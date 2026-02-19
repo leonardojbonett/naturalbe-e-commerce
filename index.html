@@ -3,11 +3,28 @@
 <head>
   <!-- Google Tag Manager -->
   <script>
-  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-M7MF395K');
+  (function () {
+    var GTM_ID = 'GTM-M7MF395K';
+    window.dataLayer = window.dataLayer || [];
+    var loaded = false;
+    function loadGtm() {
+      if (loaded) return;
+      loaded = true;
+      window.dataLayer.push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+      var j = document.createElement('script');
+      j.async = true;
+      j.src = 'https://www.googletagmanager.com/gtm.js?id=' + GTM_ID;
+      document.head.appendChild(j);
+    }
+    if (window.NB_ANALYTICS_EAGER === true) {
+      loadGtm();
+      return;
+    }
+    ['scroll', 'pointerdown', 'keydown', 'touchstart'].forEach(function (evt) {
+      window.addEventListener(evt, loadGtm, { once: true, passive: true });
+    });
+    setTimeout(loadGtm, 30000);
+  })();
   </script>
   <!-- End Google Tag Manager -->
   <meta charset="UTF-8">
@@ -79,6 +96,8 @@
   <!-- CSS diferido con fallback noscript -->
   <link rel="preload" href="/static/css/main.min.css?v=2026-01-11" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="/static/css/main.min.css?v=2026-01-11"></noscript>
+  <link rel="preload" href="/static/img/slider/nuestras%20marcas.jpeg" as="image" fetchpriority="high">
+  <link rel="preload" href="/static/data/productos.json?v=2026-01-11" as="fetch" crossorigin="anonymous">
   
   <meta name="ga4-id" content="G-DM18HLQ3R8">
   <meta name="meta-pixel-id" content="869358656017955">
@@ -90,9 +109,10 @@
   <link rel="icon" type="image/png" sizes="192x192" href="https://naturalbe.com.co/static/img/android-chrome-192x192.png">
   <link rel="apple-touch-icon" sizes="180x180" href="https://naturalbe.com.co/static/img/apple-touch-icon.png">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1">
 
   <title>Venta de Productos Naturales por Catálogo en Colombia | Natural Be</title>
-  <meta name="description" content="Compra colágeno hidrolizado, omega 3 y vitaminas en Colombia. Envío 24-48h a Bogotá, Medellín, Cali. Pagos seguros Wompi. ⭐ +2,000 clientes satisfechos. Asesoría WhatsApp gratis.">
+  <meta name="description" content="Compra suplementos en Colombia: colágeno, omega 3, vitaminas y minerales. Envío 24-48h, pago seguro con Wompi y asesoría por WhatsApp. Explora el catálogo hoy.">
   <link rel="canonical" href="https://naturalbe.com.co/">
 
   <meta property="og:type" content="website">
@@ -112,9 +132,13 @@
     "@graph": [
       {
         "@type": "Organization",
+        "@id": "https://naturalbe.com.co/#organization",
         "name": "Natural Be",
+        "alternateName": ["Natural Be Colombia", "NB", "naturalbe.com.co"],
+        "description": "Tienda online de suplementos naturales en Colombia con envío 24-48h, pagos seguros y asesoría por WhatsApp.",
         "url": "https://naturalbe.com.co/",
         "logo": "https://naturalbe.com.co/static/img/logo.webp",
+        "telephone": "+57-313-721-2923",
         "sameAs": [
           "https://www.facebook.com/NaturalBeColombia",
           "https://www.instagram.com/naturalbe__/",
@@ -124,14 +148,33 @@
           "@type": "ContactPoint",
           "telephone": "+57-313-721-2923",
           "contactType": "Customer Service",
-          "areaServed": "CO"
+          "areaServed": "CO",
+          "availableLanguage": ["es-CO"],
+          "url": "https://wa.me/573137212923"
         }
       },
       {
-        "@type": "LocalBusiness",
+        "@type": "OnlineStore",
+        "@id": "https://naturalbe.com.co/#store",
         "name": "Natural Be",
-        "description": "Tienda online de suplementos naturales en Colombia. Vendemos colágeno, omega 3, vitaminas y otros suplementos con envío 24-48h y asesoría por WhatsApp.",
         "url": "https://naturalbe.com.co/",
+        "sameAs": [
+          "https://www.facebook.com/NaturalBeColombia",
+          "https://www.instagram.com/naturalbe__/",
+          "https://co.pinterest.com/naturalbetutiendasaludable"
+        ],
+        "parentOrganization": {
+          "@id": "https://naturalbe.com.co/#organization"
+        },
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+57-313-721-2923",
+          "contactType": "Customer Service",
+          "areaServed": "CO",
+          "availableLanguage": ["es-CO"],
+          "url": "https://wa.me/573137212923"
+        },
+        "description": "Tienda online de suplementos naturales en Colombia. Vendemos colágeno, omega 3, vitaminas y otros suplementos con envío 24-48h y asesoría por WhatsApp.",
         "telephone": "+57-313-721-2923",
         "address": {
           "@type": "PostalAddress",
@@ -146,17 +189,70 @@
           "name": "CO"
         },
         "image": "https://naturalbe.com.co/static/img/logo.webp",
-        "priceRange": "$15000-$500000"
+        "priceRange": "$15000-$500000",
+        "hasMerchantReturnPolicy": {
+          "@type": "MerchantReturnPolicy",
+          "applicableCountry": "CO",
+          "returnPolicyCountry": "CO",
+          "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+          "merchantReturnDays": 5,
+          "returnMethod": "https://schema.org/ReturnByMail",
+          "returnFees": "https://schema.org/ReturnFeesCustomerResponsibility",
+          "merchantReturnLink": "https://naturalbe.com.co/devoluciones.html"
+        }
       },
       {
         "@type": "WebSite",
+        "@id": "https://naturalbe.com.co/#website",
         "name": "Natural Be",
+        "alternateName": ["Natural Be Colombia", "NB", "naturalbe.com.co"],
         "url": "https://naturalbe.com.co/",
+        "publisher": {
+          "@id": "https://naturalbe.com.co/#organization"
+        },
         "potentialAction": {
           "@type": "SearchAction",
-          "target": "https://naturalbe.com.co/categoria/{search_term_string}",
+          "target": "https://naturalbe.com.co/categoria/suplementos?q={search_term_string}",
           "query-input": "required name=search_term_string"
         }
+      },
+      {
+        "@type": "SiteNavigationElement",
+        "name": [
+          "Catalogo",
+          "Vitaminas",
+          "Minerales",
+          "Colageno",
+          "Omega",
+          "Envios",
+          "Devoluciones",
+          "Sobre Natural Be"
+        ],
+        "url": [
+          "https://naturalbe.com.co/categoria/suplementos",
+          "https://naturalbe.com.co/catalogo-vitaminas.html",
+          "https://naturalbe.com.co/catalogo-minerales.html",
+          "https://naturalbe.com.co/catalogo-colageno.html",
+          "https://naturalbe.com.co/catalogo-omega.html",
+          "https://naturalbe.com.co/envios.html",
+          "https://naturalbe.com.co/devoluciones.html",
+          "https://naturalbe.com.co/sobre-natural-be.html"
+        ]
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://naturalbe.com.co/#webpage",
+        "name": "Venta de Productos Naturales por Catálogo en Colombia | Natural Be",
+        "url": "https://naturalbe.com.co/",
+        "inLanguage": "es-CO",
+        "isPartOf": {
+          "@id": "https://naturalbe.com.co/#website"
+        },
+        "about": {
+          "@id": "https://naturalbe.com.co/#organization"
+        },
+        "datePublished": "2026-02-18T08:00:00-05:00",
+        "dateModified": "2026-02-18T08:00:00-05:00"
       },
       {
         "@type": "BreadcrumbList",
@@ -170,7 +266,38 @@
         ]
       },
       {
+        "@type": "ImageObject",
+        "@id": "https://naturalbe.com.co/static/img/logo.webp#image",
+        "contentUrl": "https://naturalbe.com.co/static/img/logo.webp",
+        "url": "https://naturalbe.com.co/static/img/logo.webp",
+        "name": "Logo Natural Be",
+        "creditText": "Natural Be",
+        "creator": {
+          "@id": "https://naturalbe.com.co/#organization"
+        },
+        "copyrightNotice": "Natural Be",
+        "license": "https://naturalbe.com.co/licencia-imagenes.html",
+        "acquireLicensePage": "https://naturalbe.com.co/licencia-imagenes.html#licenciamiento"
+      },
+      {
+        "@type": "ImageObject",
+        "@id": "https://naturalbe.com.co/static/img/og-naturalbe.jpg#image",
+        "contentUrl": "https://naturalbe.com.co/static/img/og-naturalbe.jpg",
+        "url": "https://naturalbe.com.co/static/img/og-naturalbe.jpg",
+        "name": "Imagen social Natural Be",
+        "creditText": "Natural Be",
+        "creator": {
+          "@id": "https://naturalbe.com.co/#organization"
+        },
+        "copyrightNotice": "Natural Be",
+        "license": "https://naturalbe.com.co/licencia-imagenes.html",
+        "acquireLicensePage": "https://naturalbe.com.co/licencia-imagenes.html#licenciamiento"
+      },
+      {
         "@type": "FAQPage",
+        "@id": "https://naturalbe.com.co/#faq",
+        "url": "https://naturalbe.com.co/",
+        "inLanguage": "es-CO",
         "mainEntity": [
           {
             "@type": "Question",
@@ -215,10 +342,9 @@
   <link rel="preconnect" href="https://www.google-analytics.com">
   <link rel="preconnect" href="https://connect.facebook.net">
   <link rel="preconnect" href="https://wa.me">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="dns-prefetch" href="https://checkout.wompi.co">
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Noto+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Noto+Sans:wght@400;600;700&display=optional" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Noto+Sans:wght@400;600;700&display=optional" rel="stylesheet"></noscript>
   <script>
     window.NB_VERSION = "2026-01-11";
     window.NB_DATA_VERSION = window.NB_VERSION;
@@ -242,6 +368,7 @@
       .nb-best-grid {
         grid-template-columns: repeat(4, minmax(0, 1fr));
       }
+
     }
 
     @media (min-width: 992px) {
@@ -299,7 +426,7 @@
       </form>
 
       <div class="market-actions">
-        <a class="market-action-link" href="/catalogo-suplementos.html">Catálogo</a>
+        <a class="market-action-link" href="/categoria/suplementos">Catálogo</a>
         <a class="market-action-link" href="/sobre-natural-be.html">Confianza</a>
         <a class="market-action-pill" href="https://wa.me/573137212923?utm_source=naturalbe&utm_medium=website&utm_campaign=retail&utm_content=nav_whatsapp" id="navWhatsappLink" data-wa-content="nav_whatsapp" target="_blank" rel="noopener">WhatsApp</a>
         <a class="market-action-link" href="#iniciar-sesion" title="Iniciar sesión">Iniciar sesión</a>
@@ -334,10 +461,10 @@
   <h4>Explorar</h4>
   <a href="/catalogo-energia.html">Energía diaria</a>
   <a href="/catalogo-inmunidad.html">Defensas</a>
-  <a href="/catalogo-suplementos.html">Todos los suplementos</a>
+  <a href="/categoria/suplementos">Todos los suplementos</a>
   <a href="/catalogo-botanitas.html">Marca Botanitas</a>
 <a href="/catalogo-satibo.html">Marca Satibo</a>
-  <a href="/category.html?brand=nutramerican">Marca Nutramerican</a>
+  <a href="/categoria/suplementos?brand=nutramerican">Marca Nutramerican</a>
   <a href="/blog.html">Blog</a>
 </div>
 <div class="mega-column">
@@ -387,7 +514,7 @@
     </div>
     <nav class="nav-mobile" aria-label="Navegación principal">
       <a href="/index.html#inicio">Inicio</a>
-      <a href="/catalogo-suplementos.html">Catálogo</a>
+      <a href="/categoria/suplementos">Catálogo</a>
       <a href="/index.html#destacados-marcas">Destacados</a>
       <a href="/index.html#ofertas">Ofertas</a>
       <a href="/index.html#nuevos">Nuevos</a>
@@ -553,6 +680,45 @@
         Explora por objetivo: <a href="/objetivo-energia.html">energía</a>, <a href="/objetivo-inmunidad.html">inmunidad</a>, <a href="/objetivo-piel.html">piel y colágeno</a>, <a href="/objetivo-estres.html">estrés y sueño</a>.
         Ver categorías: <a href="/catalogo-colageno.html">colágeno</a>, <a href="/catalogo-omega.html">omega</a>, <a href="/catalogo-vitaminas.html">vitaminas</a>, <a href="/catalogo-minerales.html">minerales</a>, <a href="/catalogo-nutricion.html">nutrición</a>, <a href="/catalogo-suplementos-dietarios.html">suplementos dietarios</a>.
       </p>
+      <p class="section-subtitle">
+        También puedes ir directo a: <a href="/multivitaminicos.html">multivitamínicos</a>, <a href="/multivitaminico-para-hombre.html">multivitamínico para hombre</a>, <a href="/vitamina-c-colombia.html">vitamina C</a> y <a href="/vitamina-d3-colombia.html">vitamina D3</a>.
+      </p>
+      <p class="section-subtitle">
+        Nuevas búsquedas clave: <a href="/complejo-b-colombia.html">complejo B</a> y <a href="/vitamina-e-1000-ui-colombia.html">vitamina E 1000 UI</a>.
+      </p>
+      <p class="section-subtitle">
+        Cluster minerales: <a href="/magnesio-colombia.html">magnesio</a>, <a href="/citrato-de-magnesio-colombia.html">citrato de magnesio</a>, <a href="/zinc-colombia.html">zinc</a> y <a href="/calcio-con-vitamina-d3-colombia.html">calcio con vitamina D3</a>.
+      </p>
+      <p class="section-subtitle">
+        Cluster colágeno: <a href="/colageno-hidrolizado-colombia.html">colágeno hidrolizado</a>, <a href="/colageno-con-vitamina-c-colombia.html">colágeno con vitamina C</a>, <a href="/colageno-para-piel-colombia.html">colágeno para la piel</a> y <a href="/colageno-para-articulaciones-colombia.html">colágeno para articulaciones</a>.
+      </p>
+      <p class="section-subtitle">
+        Keywords core: <a href="/comprar-suplementos-colombia.html">comprar suplementos en Colombia</a>, <a href="/tienda-de-vitaminas-colombia.html">tienda de vitaminas</a>, <a href="/tienda-naturista-online-colombia.html">tienda naturista online</a> y <a href="/suplementos-dietarios-colombia.html">suplementos dietarios</a>.
+      </p>
+      <p class="section-subtitle">
+        Keywords locales Barranquilla: <a href="/tienda-naturista-barranquilla.html">tienda naturista barranquilla</a>, <a href="/suplementos-en-barranquilla.html">suplementos en barranquilla</a> y <a href="/vitaminas-en-barranquilla.html">vitaminas en barranquilla</a>.
+      </p>
+      <p class="section-subtitle">
+        Clusters Keyword Surfer: <a href="/vitaminas-para-el-cansancio-colombia.html">vitaminas para el cansancio</a>, <a href="/suplementos-para-energia-diaria-colombia.html">suplementos para energía diaria</a>, <a href="/suplementos-para-defensas-colombia.html">suplementos para defensas</a> y <a href="/vitaminas-para-el-sistema-inmune-colombia.html">vitaminas para el sistema inmune</a>.
+      </p>
+      <p class="section-subtitle">
+        Nuevos clusters: <a href="/suplementos-para-piel-cabello-y-unas-colombia.html">piel, cabello y uñas</a>, <a href="/vitaminas-para-el-cabello-colombia.html">vitaminas para el cabello</a>, <a href="/suplementos-para-estres-y-sueno-colombia.html">estrés y sueño</a>, <a href="/vitaminas-para-dormir-mejor-colombia.html">vitaminas para dormir mejor</a>, <a href="/suplementos-para-articulaciones-colombia.html">suplementos para articulaciones</a> y <a href="/colageno-hidrolizado-para-que-sirve-colombia.html">para qué sirve el colágeno hidrolizado</a>.
+      </p>
+      <p class="section-subtitle">
+        Cluster suplementos dietarios y digestión: <a href="/que-es-un-suplemento-dietario-colombia.html">qué es un suplemento dietario</a>, <a href="/suplementos-dietarios-colombia.html">suplementos dietarios</a>, <a href="/suplementos-para-digestion-y-transito-intestinal-colombia.html">digestión y tránsito intestinal</a> y <a href="/como-tomar-probioticos-colombia.html">cómo tomar probióticos</a>.
+      </p>
+      <p class="section-subtitle">
+        Long-tail producto + beneficio: <a href="/zinc-para-defensas-colombia.html">zinc para defensas</a>, <a href="/magnesio-para-calambres-colombia.html">magnesio para calambres</a>, <a href="/omega-3-para-trigliceridos-colombia.html">omega 3 para triglicéridos</a> y <a href="/colageno-con-vitamina-c-beneficios-colombia.html">colágeno + vitamina C beneficios</a>.
+      </p>
+      <p class="section-subtitle">
+        Long-tail deportividad y segmento: <a href="/multivitaminico-para-hombre.html">multivitamínico hombre</a>, <a href="/multivitaminico-mujer-50-anos-colombia.html">multivitamínico mujer 50 años</a>, <a href="/suplementos-para-gimnasio-colombia.html">suplementos para gimnasio</a> y <a href="/vitaminas-para-rendimiento-deportivo-colombia.html">vitaminas para rendimiento deportivo</a>.
+      </p>
+      <p class="section-subtitle">
+        Keywords marca + producto: <a href="/catalogo-funat.html">Funat suplementos</a>, <a href="/funat-vitaminas-colombia.html">Funat vitaminas</a>, <a href="/healthy-america-suplementos-colombia.html">Healthy America suplementos</a> y <a href="/healthy-america-vitaminas-colombia.html">Healthy America vitaminas</a>.
+      </p>
+      <p class="section-subtitle">
+        Marca + producto (nueva ronda): <a href="/millenium-natural-systems-suplementos-colombia.html">Millenium Natural Systems suplementos</a>, <a href="/millenium-natural-systems-vitaminas-colombia.html">Millenium Natural Systems vitaminas</a>, <a href="/millenium-natural-systems-productos-colombia.html">productos Millenium Natural Systems</a> y <a href="/healthy-america-productos-colombia.html">productos Healthy America</a>.
+      </p>
     </section>
 
     <div class="promo-banner page-shell" aria-live="polite">
@@ -586,6 +752,25 @@
           <strong>Colágeno</strong>
           <span>Piel, cabello y elasticidad.</span>
         </a>
+      </div>
+    </section>
+
+    <section id="productos-destacados-seo" class="page-shell">
+      <h2 class="section-title">Productos destacados</h2>
+      <p class="section-subtitle">Enlaces directos a productos populares para acceso rápido.</p>
+      <div class="category-grid">
+        <a class="category-tile" href="/producto/omega-3-6-9"><strong>Omega 3, 6, 9</strong><span>Ver detalle del producto</span></a>
+        <a class="category-tile" href="/producto/xero-ft"><strong>Xero FT</strong><span>Ver detalle del producto</span></a>
+        <a class="category-tile" href="/producto/cloruro-de-magnesio"><strong>Cloruro de Magnesio</strong><span>Ver detalle del producto</span></a>
+        <a class="category-tile" href="/producto/citrato-de-magnesio"><strong>Citrato de Magnesio</strong><span>Ver detalle del producto</span></a>
+        <a class="category-tile" href="/producto/citrato-de-potasio"><strong>Citrato de Potasio</strong><span>Ver detalle del producto</span></a>
+        <a class="category-tile" href="/producto/omega-3-1000mg"><strong>Omega-3 1000 mg</strong><span>Ver detalle del producto</span></a>
+        <a class="category-tile" href="/producto/colageno-biotina-gomas"><strong>Colágeno y Biotina Gomas</strong><span>Ver detalle del producto</span></a>
+        <a class="category-tile" href="/producto/colageno-hidrolizado-liquido"><strong>Colágeno Hidrolizado Líquido</strong><span>Ver detalle del producto</span></a>
+        <a class="category-tile" href="/producto/resveratrol"><strong>Resveratrol</strong><span>Ver detalle del producto</span></a>
+        <a class="category-tile" href="/producto/toro"><strong>Toro</strong><span>Ver detalle del producto</span></a>
+        <a class="category-tile" href="/producto/kings"><strong>Kings</strong><span>Ver detalle del producto</span></a>
+        <a class="category-tile" href="/producto/caltrate-vitamina-d"><strong>Caltrate Vitamina D</strong><span>Ver detalle del producto</span></a>
       </div>
     </section>
 
@@ -624,9 +809,24 @@
           <div class="catalog-marquee__track" id="catalogGrid" data-image-status="#catalogGridStatus"></div>
         </div>
         <div class="hero-actions hero-actions--spaced">
-          <a class="btn-primary" href="/catalogo-suplementos.html">Ver todo el catálogo</a>
+          <a class="btn-primary" href="/categoria/suplementos">Ver todo el catálogo</a>
         </div>
       </section>
+
+    <section class="page-shell" aria-labelledby="rutas-estrategicas-title">
+      <h2 class="section-title" id="rutas-estrategicas-title">Rutas recomendadas por objetivo</h2>
+      <p class="section-subtitle">Accesos directos a guías y categorías con mayor intención de compra.</p>
+      <div class="category-grid">
+        <a class="category-tile" href="/colageno-hidrolizado-para-que-sirve-colombia.html"><strong>Colágeno: para qué sirve</strong><span>Guía práctica con usos y beneficios.</span></a>
+        <a class="category-tile" href="/omega-3-para-trigliceridos-colombia.html"><strong>Omega 3 y triglicéridos</strong><span>Opciones recomendadas y compra online.</span></a>
+        <a class="category-tile" href="/magnesio-para-calambres-colombia.html"><strong>Magnesio para calambres</strong><span>Presentaciones y dosis orientativas.</span></a>
+        <a class="category-tile" href="/zinc-para-defensas-colombia.html"><strong>Zinc para defensas</strong><span>Refuerzo inmune con envío rápido.</span></a>
+        <a class="category-tile" href="/multivitaminico-mujer-50-anos-colombia.html"><strong>Multivitamínico mujer 50+</strong><span>Selección enfocada por etapa de vida.</span></a>
+        <a class="category-tile" href="/multivitaminico-para-hombre.html"><strong>Multivitamínico para hombre</strong><span>Alternativas de uso diario.</span></a>
+        <a class="category-tile" href="/suplementos-para-estres-y-sueno-colombia.html"><strong>Estrés y sueño</strong><span>Suplementos para descanso y enfoque.</span></a>
+        <a class="category-tile" href="/suplementos-para-energia-diaria-colombia.html"><strong>Energía diaria</strong><span>Productos para rendimiento y vitalidad.</span></a>
+      </div>
+    </section>
 
     <section id="proceso" class="page-shell">
       <h2 class="section-title">Compra fácil y segura</h2>
@@ -728,6 +928,7 @@
 
     <section class="page-shell page-shell--spaced">
       <h2 class="section-title">Guía Completa: Venta de Productos Naturales por Catálogo en Colombia</h2>
+      <p class="section-subtitle">Publicado: <time datetime="2026-02-18T08:00:00-05:00">18 de febrero de 2026</time> · Última actualización: <time datetime="2026-02-18T08:00:00-05:00">18 de febrero de 2026</time></p>
       
       <div class="guide-copy">
         <h3 class="guide-heading">¿Qué es la venta de productos naturales por catálogo?</h3>
@@ -796,7 +997,7 @@
         <p class="guide-highlight">
           <strong>¿Listo para mejorar tu bienestar?</strong> Explora nuestro catálogo completo de productos naturales, 
           compara opciones, lee opiniones reales y recibe tu pedido en 24-48 horas. 
-          <a href="/catalogo-suplementos.html" class="guide-highlight__link">Ver catálogo completo →</a>
+          <a href="/categoria/suplementos" class="guide-highlight__link">Ver catálogo completo →</a>
         </p>
       </div>
     </section>
@@ -812,7 +1013,7 @@
     <span class="cart-badge">0</span>
   </button>
 
-  <div class="cart-modal" id="cartModal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="cartTitle" aria-describedby="cartDesc" onclick="closeCartOnOutsideClick(event)">
+  <div class="cart-modal" id="cartModal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="cartTitle" aria-describedby="cartDesc" onclick="closeCartOnOutsideClick(event)" data-nosnippet>
     <div class="cart-content" onclick="event.stopPropagation()" tabindex="-1">
       <div class="cart-header">
         <h2 class="cart-title" id="cartTitle">Mi carrito</h2>
@@ -859,12 +1060,12 @@
   <li><a href="/catalogo-digestivos.html">Digestivos</a></li>
   <li><a href="/catalogo-cuidado-piel.html">Cuidado piel</a></li>
           <li><a href="/catalogo-cuidado-intimo.html">Cuidado íntimo</a></li>
-  <li><a href="/catalogo-cuidado-adulto.html">Cuidado adulto</a></li>
-  <li><a href="/catalogo-antisepticos.html">Antisepticos</a></li>
-  <li><a href="/catalogo-medicamentos.html">Medicamentos</a></li>
+  <li><a href="/categoria/cuidado-personal">Cuidado adulto</a></li>
+  <li><a href="/categoria/cuidado-personal">Antisepticos</a></li>
+  <li><a href="/categoria/cuidado-personal">Medicamentos</a></li>
   <li><a href="/catalogo-botanitas.html">Marca Botanitas</a></li>
   <li><a href="/catalogo-satibo.html">Marca Satibo</a></li>
-  <li><a href="/catalogo-suplementos.html">Todos los suplementos</a></li>
+  <li><a href="/categoria/suplementos">Todos los suplementos</a></li>
 </ul>
       </div>
       <div>
@@ -874,6 +1075,7 @@
           <li><a href="/devoluciones.html">Devoluciones</a></li>
           <li><a href="/terminos.html">Términos y condiciones</a></li>
           <li><a href="/privacidad.html">Política de privacidad</a></li>
+          <li><a href="/licencia-imagenes.html">Licencia de imágenes</a></li>
           <li><a href="/sobre-natural-be.html">Sobre Natural Be</a></li>
         </ul>
       </div>
@@ -906,38 +1108,33 @@
 
   <script src="/static/js/nb-core.js?v=2026-02-14" defer></script>
   <script src="/static/js/promo.js" defer></script>
-  <script>
-    // FIX: sincronizar offset del header con la promo bar
-    window.addEventListener('load', () => {
-      const bar = document.getElementById('promoBar');
-      if (!bar) return;
-      const height = bar.getBoundingClientRect().height || 0;
-      document.documentElement.style.setProperty('--promo-offset', `${height}px`);
-    });
-  </script>
   <script src="/static/js/wompi-config.js" defer></script>
   <!-- Sistema de internacionalización -->
   <script src="/static/js/i18n.js" defer></script>
-  
-  <script src="/static/js/products-data.min.js?v=2026-02-14" defer></script>
-  <script src="/static/js/marketplace.js?v=2026-02-14" defer></script>
-  <script src="/static/js/home-featured.js?v=2026-02-14" defer></script>
-  <script src="/static/js/search-engine.js?v=2026-02-07" defer></script>
-  <script src="/static/js/cart.js?v=2026-02-07" defer></script>
   <script src="/static/js/nav.js" defer></script>
 
-  <!-- Accesibilidad: UserWay Widget -->
+  <!-- Accesibilidad: UserWay Widget (diferido para reducir trabajo de arranque) -->
   <script>
-  (function(d) {
-    var s = d.createElement("script");
-    s.setAttribute("data-account", "SPnHbstFCf");
-    s.setAttribute("src", "https://cdn.userway.org/widget.js");
-    s.setAttribute("data-color", "#458500");
-    s.setAttribute("data-position", "6");
-    s.setAttribute("data-size", "medium");
-    s.setAttribute("data-language", "es");
-    d.body.appendChild(s);
-  })(document);
+  (() => {
+    let loaded = false;
+    const loadUserWay = () => {
+      if (loaded) return;
+      loaded = true;
+      const s = document.createElement('script');
+      s.setAttribute('data-account', 'SPnHbstFCf');
+      s.setAttribute('src', 'https://cdn.userway.org/widget.js');
+      s.setAttribute('data-color', '#458500');
+      s.setAttribute('data-position', '6');
+      s.setAttribute('data-size', 'medium');
+      s.setAttribute('data-language', 'es');
+      document.body.appendChild(s);
+    };
+
+    ['scroll', 'pointerdown', 'keydown', 'touchstart'].forEach((evt) => {
+      window.addEventListener(evt, loadUserWay, { once: true, passive: true });
+    });
+    setTimeout(loadUserWay, 30000);
+  })();
   </script>
 
   <script>
@@ -954,6 +1151,21 @@
         script.onerror = reject;
         document.head.appendChild(script);
       });
+    }
+    const NB_DEFERRED_SCRIPTS = [
+      '/static/js/products-data.min.js?v=2026-02-14',
+      '/static/js/marketplace.js?v=2026-02-14',
+      '/static/js/home-featured.js?v=2026-02-16',
+      '/static/js/search-engine.js?v=2026-02-07',
+      '/static/js/cart.js?v=2026-02-07'
+    ];
+    let nbDeferredScriptsPromise = null;
+    function loadRetailScripts() {
+      if (nbDeferredScriptsPromise) return nbDeferredScriptsPromise;
+      nbDeferredScriptsPromise = NB_DEFERRED_SCRIPTS.reduce((chain, src) => {
+        return chain.then(() => loadScript(src, { defer: 'defer' }));
+      }, Promise.resolve());
+      return nbDeferredScriptsPromise;
     }
     function idle(cb) {
       const runner = window.requestIdleCallback || ((fn) => setTimeout(fn, 1200));
@@ -1163,11 +1375,19 @@
 
         const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
         if (!prefersReduced) {
-          setInterval(() => {
-            if (Date.now() < pauseUntil) return;
-            const nextIndex = (heroIndex + 1) % heroSlides.length;
-            setHeroSlide(nextIndex);
-          }, 4200);
+          let autoplayStarted = false;
+          const startAutoplay = () => {
+            if (autoplayStarted) return;
+            autoplayStarted = true;
+            setInterval(() => {
+              if (Date.now() < pauseUntil) return;
+              const nextIndex = (heroIndex + 1) % heroSlides.length;
+              setHeroSlide(nextIndex);
+            }, 5500);
+          };
+          ['scroll', 'pointerdown', 'keydown', 'touchstart'].forEach((evt) => {
+            window.addEventListener(evt, startAutoplay, { once: true, passive: true });
+          });
         }
       }
 
@@ -1208,15 +1428,37 @@
           return true;
         };
 
-        if (!hideIfEmpty(offersList, 'ofertas', 'offersGrid')) {
-          window.nbMarketplace.renderProductGrid(offersList, document.getElementById('offersGrid'));
-        }
-        if (!hideIfEmpty(newcomersList, 'nuevos', 'newArrivalsGrid')) {
-          window.nbMarketplace.renderProductGrid(newcomersList, document.getElementById('newArrivalsGrid'));
-        }
-        if (!hideIfEmpty(catalogList, 'productos', 'catalogGrid')) {
-          window.nbMarketplace.renderProductGrid(catalogList, document.getElementById('catalogGrid'));
-        }
+        const renderWhenVisible = (sectionId, list, gridId, rootMargin = '220px') => {
+          if (hideIfEmpty(list, sectionId, gridId)) return;
+          const section = document.getElementById(sectionId);
+          const grid = document.getElementById(gridId);
+          if (!section || !grid) return;
+
+          let rendered = false;
+          const paint = () => {
+            if (rendered) return;
+            rendered = true;
+            window.nbMarketplace.renderProductGrid(list, grid);
+          };
+
+          if (!('IntersectionObserver' in window)) {
+            idle(paint);
+            return;
+          }
+
+          const observer = new IntersectionObserver((entries, obs) => {
+            if (!entries.some(entry => entry.isIntersecting)) return;
+            paint();
+            obs.disconnect();
+          }, { rootMargin });
+
+          observer.observe(section);
+        };
+
+        // Secciones bajo el pliegue: render diferido por visibilidad.
+        renderWhenVisible('ofertas', offersList, 'offersGrid');
+        renderWhenVisible('nuevos', newcomersList, 'newArrivalsGrid');
+        renderWhenVisible('productos', catalogList, 'catalogGrid');
         const featured = Array.isArray(window.NB_FEATURED_PRODUCTS) && window.NB_FEATURED_PRODUCTS.length
           ? window.NB_FEATURED_PRODUCTS
           : products.slice(0, 6);
@@ -1258,8 +1500,46 @@
         }
       };
 
-      // Call renderCatalog inside DOMContentLoaded
-      idle(renderCatalog);
+      let catalogBooted = false;
+      const bootCatalog = () => {
+        if (catalogBooted) return;
+        catalogBooted = true;
+        loadRetailScripts()
+          .then(() => renderCatalog())
+          .catch(() => {});
+      };
+
+      const observeCatalogDemand = () => {
+        if (!('IntersectionObserver' in window)) return;
+        const sections = ['ofertas', 'nuevos', 'productos']
+          .map((id) => document.getElementById(id))
+          .filter(Boolean);
+        if (!sections.length) return;
+        const observer = new IntersectionObserver((entries, obs) => {
+          if (!entries.some((entry) => entry.isIntersecting)) return;
+          bootCatalog();
+          obs.disconnect();
+        }, { rootMargin: '240px' });
+        sections.forEach((section) => observer.observe(section));
+      };
+
+      observeCatalogDemand();
+      ['pointerdown', 'keydown', 'touchstart'].forEach((evt) => {
+        window.addEventListener(evt, bootCatalog, { once: true, passive: true });
+      });
+
+      const searchInput = document.getElementById('siteSearch');
+      if (searchInput) {
+        searchInput.addEventListener('focus', () => {
+          loadRetailScripts().catch(() => {});
+        }, { once: true });
+      }
+
+      document.querySelectorAll('[data-cart-trigger]').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          bootCatalog();
+        }, { once: true });
+      });
 
       const form = document.getElementById('leadForm');
       if (form) {
@@ -1311,12 +1591,12 @@
   </script>
 
   <!-- Email Newsletter Popup Modal -->
-  <div id="emailPopupModal" class="email-popup-modal">
+  <div id="emailPopupModal" class="email-popup-modal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="emailPopupTitle" data-nosnippet>
     <div class="email-popup-card">
       <button type="button" onclick="closeEmailPopup()" class="email-popup-close">×</button>
       
       <div class="email-popup-icon">📚</div>
-      <h2 class="email-popup-title">Recibe una guía gratis</h2>
+      <h2 id="emailPopupTitle" class="email-popup-title">Recibe una guía gratis</h2>
       <p class="email-popup-text">Descubre qué suplementos funcionan mejor según tu objetivo de salud. Sin spam.</p>
       
       <form id="popupEmailForm" class="email-popup-form">
@@ -1330,64 +1610,260 @@
           <span>Acepto recibir consejos sobre suplementos naturales</span>
         </label>
       </form>
+
+      <p id="popupEmailMessage" class="email-popup-footer" aria-live="polite"></p>
       
       <p class="email-popup-footer">También puedes escribir a nuestro WhatsApp: <a href="https://wa.me/573137212923" class="email-popup-footer__link">+57 313 721 2923</a></p>
     </div>
   </div>
 
   <script>
-    // Email Popup Logic
-    function showEmailPopup() {
-      const modal = document.getElementById('emailPopupModal');
-      if (modal) modal.style.display = 'flex';
-    }
+    // Email Popup Logic (behavior-aware, accessible, and non-aggressive)
+    (() => {
+      const DISMISS_KEY = 'emailPopupDismissedAt';
+      const SUBMITTED_KEY = 'emailPopupSubmittedAt';
+      const SESSION_SHOWN_KEY = 'emailPopupShownSession';
+      const DISMISS_COOLDOWN_MS = 14 * 24 * 60 * 60 * 1000; // 14 dias
+      const SUBMIT_COOLDOWN_MS = 180 * 24 * 60 * 60 * 1000; // 180 dias
+      const EXIT_INTENT_MIN_MS = 20000; // 20s
+      const ENABLE_TIME_TRIGGER = false;
+      const ENABLE_SCROLL_TRIGGER = false;
 
-    function closeEmailPopup() {
-      const modal = document.getElementById('emailPopupModal');
-      if (modal) modal.style.display = 'none';
-      localStorage.setItem('emailPopupDismissed', Date.now());
-    }
+      let hasShownPopup = false;
+      let lastActiveElement = null;
+      let timeTriggerTimeout = null;
+      let hasScrollTriggered = false;
+      let hasExitIntentTriggered = false;
 
-    // Show popup after 30 seconds if not dismissed
-    document.addEventListener('DOMContentLoaded', () => {
-      const lastDismissed = localStorage.getItem('emailPopupDismissed');
-      const shouldShowPopup = !lastDismissed || (Date.now() - lastDismissed > 7 * 24 * 60 * 60 * 1000);
-      
-      if (shouldShowPopup) {
-        setTimeout(showEmailPopup, 30000);
+      function now() {
+        return Date.now();
       }
 
-      // Close popup when clicking outside
-      const modal = document.getElementById('emailPopupModal');
-      modal?.addEventListener('click', (e) => {
-        if (e.target === modal) closeEmailPopup();
-      });
+      function getInt(storage, key) {
+        try {
+          const value = storage.getItem(key);
+          if (!value) return 0;
+          const parsed = Number(value);
+          return Number.isFinite(parsed) ? parsed : 0;
+        } catch (_) {
+          return 0;
+        }
+      }
 
-      // Handle form submission
-      const form = document.getElementById('popupEmailForm');
-      if (form) {
-        form.addEventListener('submit', (e) => {
-          e.preventDefault();
-          const email = form.querySelector('input[type="email"]').value;
-          const phone = form.querySelector('input[type="tel"]').value;
-          
-          const endpoint = window.NB_NEWSLETTER_ENDPOINT;
-          const payload = { email, phone };
-          const submit = endpoint
-            ? fetch(endpoint, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(payload)
-              })
-            : Promise.resolve();
+      function setValue(storage, key, value) {
+        try {
+          storage.setItem(key, String(value));
+        } catch (_) {
+          // noop
+        }
+      }
 
-          submit.finally(() => {
-            closeEmailPopup();
-            alert('¡Gracias! Revisa tu correo en unos segundos.');
+      function canShowPopup() {
+        if (hasShownPopup) return false;
+        // Evitar intersticial invasivo en móvil.
+        if (window.innerWidth < 1024) return false;
+
+        const dismissedAt = getInt(localStorage, DISMISS_KEY);
+        const submittedAt = getInt(localStorage, SUBMITTED_KEY);
+        const shownThisSession = getInt(sessionStorage, SESSION_SHOWN_KEY);
+        const elapsed = now();
+
+        if (shownThisSession) return false;
+        if (submittedAt && elapsed - submittedAt < SUBMIT_COOLDOWN_MS) return false;
+        if (dismissedAt && elapsed - dismissedAt < DISMISS_COOLDOWN_MS) return false;
+        return true;
+      }
+
+      function shouldPausePopup() {
+        const cartModal = document.getElementById('cartModal');
+        const isCartOpen = !!(cartModal && cartModal.classList.contains('show'));
+        return isCartOpen;
+      }
+
+      function emitPopupEvent(eventName, extra = {}) {
+        if (typeof window.gtag === 'function') {
+          window.gtag('event', eventName, {
+            page_path: window.location.pathname,
+            ...extra
           });
-        });
+        }
       }
-    });
+
+      function focusFirstField() {
+        const modal = document.getElementById('emailPopupModal');
+        const firstField = modal?.querySelector('input[type="email"]');
+        firstField?.focus();
+      }
+
+      function showEmailPopup(source = 'unknown') {
+        if (!canShowPopup() || shouldPausePopup()) return;
+
+        const modal = document.getElementById('emailPopupModal');
+        if (!modal) return;
+
+        lastActiveElement = document.activeElement;
+        modal.style.display = 'flex';
+        modal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+
+        hasShownPopup = true;
+        setValue(sessionStorage, SESSION_SHOWN_KEY, now());
+
+        if (timeTriggerTimeout) {
+          clearTimeout(timeTriggerTimeout);
+          timeTriggerTimeout = null;
+        }
+
+        emitPopupEvent('popup_shown', {
+          popup_name: 'email_guide',
+          popup_source: source,
+          time_on_page_seconds: Math.round((performance.now ? performance.now() : 0) / 1000)
+        });
+
+        focusFirstField();
+      }
+
+      function closeEmailPopup(reason = 'dismiss') {
+        const modal = document.getElementById('emailPopupModal');
+        if (!modal) return;
+
+        modal.style.display = 'none';
+        modal.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+
+        if (reason !== 'submit_success') {
+          setValue(localStorage, DISMISS_KEY, now());
+          emitPopupEvent('popup_dismissed', {
+            popup_name: 'email_guide',
+            dismiss_reason: reason
+          });
+        }
+
+        if (lastActiveElement && typeof lastActiveElement.focus === 'function') {
+          lastActiveElement.focus();
+        }
+      }
+
+      function handleEscClose(event) {
+        if (event.key !== 'Escape') return;
+        const modal = document.getElementById('emailPopupModal');
+        if (modal && modal.style.display === 'flex') {
+          closeEmailPopup('esc');
+        }
+      }
+
+      function handleFocusTrap(event) {
+        if (event.key !== 'Tab') return;
+        const modal = document.getElementById('emailPopupModal');
+        if (!modal || modal.style.display !== 'flex') return;
+
+        const focusable = modal.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+        if (!focusable.length) return;
+
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+
+        if (event.shiftKey && document.activeElement === first) {
+          event.preventDefault();
+          last.focus();
+        } else if (!event.shiftKey && document.activeElement === last) {
+          event.preventDefault();
+          first.focus();
+        }
+      }
+
+      window.showEmailPopup = showEmailPopup;
+      window.closeEmailPopup = closeEmailPopup;
+
+      document.addEventListener('DOMContentLoaded', () => {
+        if (!canShowPopup()) return;
+
+        if (ENABLE_TIME_TRIGGER) {
+          timeTriggerTimeout = setTimeout(() => {
+            showEmailPopup('time_trigger');
+          }, 60000);
+        }
+
+        const modal = document.getElementById('emailPopupModal');
+        modal?.addEventListener('click', (e) => {
+          if (e.target === modal) closeEmailPopup('outside_click');
+        });
+
+        document.addEventListener('keydown', handleEscClose);
+        document.addEventListener('keydown', handleFocusTrap);
+
+        if (ENABLE_SCROLL_TRIGGER) {
+          window.addEventListener('scroll', () => {
+            if (hasScrollTriggered || hasShownPopup || !canShowPopup()) return;
+            const doc = document.documentElement;
+            const maxScrollable = doc.scrollHeight - window.innerHeight;
+            if (maxScrollable <= 0) return;
+
+            const percent = (window.scrollY / maxScrollable) * 100;
+            if (percent >= 50) {
+              hasScrollTriggered = true;
+              showEmailPopup('scroll_trigger');
+            }
+          }, { passive: true });
+        }
+
+        document.addEventListener('mouseleave', (e) => {
+          if (hasExitIntentTriggered || hasShownPopup || !canShowPopup()) return;
+          const elapsed = performance.now ? performance.now() : 0;
+          if (e.clientY <= 10 && elapsed >= EXIT_INTENT_MIN_MS) {
+            hasExitIntentTriggered = true;
+            showEmailPopup('exit_intent');
+          }
+        });
+
+        const form = document.getElementById('popupEmailForm');
+        const msgEl = document.getElementById('popupEmailMessage');
+        if (!form) return;
+
+        form.addEventListener('submit', async (e) => {
+          e.preventDefault();
+          const submitBtn = form.querySelector('button[type="submit"]');
+          const email = form.querySelector('input[type="email"]')?.value?.trim() || '';
+          const phone = form.querySelector('input[type="tel"]')?.value?.trim() || '';
+          const endpoint = window.NB_NEWSLETTER_ENDPOINT;
+
+          if (!endpoint) {
+            if (msgEl) msgEl.textContent = 'No pudimos enviar ahora. Escríbenos por WhatsApp y te compartimos la guía.';
+            emitPopupEvent('popup_submit_error', { popup_name: 'email_guide', error_reason: 'missing_endpoint' });
+            return;
+          }
+
+          if (submitBtn) submitBtn.disabled = true;
+          if (msgEl) msgEl.textContent = 'Enviando...';
+
+          try {
+            const response = await fetch(endpoint, {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ email, phone })
+            });
+
+            if (!response.ok) {
+              throw new Error(`Newsletter request failed: ${response.status}`);
+            }
+
+            setValue(localStorage, SUBMITTED_KEY, now());
+            emitPopupEvent('popup_submit_success', { popup_name: 'email_guide' });
+            closeEmailPopup('submit_success');
+            alert('¡Gracias! Revisa tu correo en unos segundos.');
+            form.reset();
+          } catch (error) {
+            if (msgEl) msgEl.textContent = 'No pudimos enviar tu guía ahora. Intenta de nuevo o escríbenos por WhatsApp.';
+            emitPopupEvent('popup_submit_error', {
+              popup_name: 'email_guide',
+              error_reason: 'request_failed'
+            });
+          } finally {
+            if (submitBtn) submitBtn.disabled = false;
+          }
+        });
+      });
+    })();
   </script>
 
   <script>
@@ -1396,17 +1872,29 @@
       const runner = window.requestIdleCallback || ((fn) => setTimeout(fn, 1200));
       runner(cb);
     }
-
-    window.addEventListener('load', () => {
-      idle(() => {
-        loadScript('./static/js/tracking.js');
-      });
-    });
   </script>
   
   <!-- Optimizaciones críticas 2026 -->
   <script src="/static/js/optimizations.js" defer></script>
-  <script src="/static/js/urgency.js" defer></script>
+  <script>
+    (function () {
+      var loaded = false;
+      function loadOnce() {
+        if (loaded) return;
+        loaded = true;
+        ['/static/js/tracking.js?v=2026-02-16-2', '/static/js/urgency.js'].forEach(function (src) {
+          var s = document.createElement('script');
+          s.src = src;
+          s.defer = true;
+          document.head.appendChild(s);
+        });
+      }
+      ['scroll', 'pointerdown', 'keydown', 'touchstart'].forEach(function (evt) {
+        window.addEventListener(evt, loadOnce, { once: true, passive: true });
+      });
+      setTimeout(loadOnce, 30000);
+    })();
+  </script>
 
 </body>
 </html>

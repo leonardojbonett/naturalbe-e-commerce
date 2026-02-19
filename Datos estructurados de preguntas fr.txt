@@ -1,0 +1,1299 @@
+Datos estructurados de preguntas frecuentes (FAQPage, Question, Answer)
+¿Tu sitio permite que los usuarios envíen respuestas a una sola pregunta? En ese caso, es mejor que uses los datos estructurados QAPage.
+Resultado enriquecido de preguntas frecuentes en la Búsqueda de Google
+Nota: Es posible que no coincidan con el aspecto que tendrán en los resultados de búsqueda.
+Si tu sitio web sobre salud o sobre el gobierno tiene una lista de preguntas y respuestas, puedes usar datos estructurados de FAQPage para ayudar a los usuarios a encontrar esa información en Google. Las páginas de este tipo que estén correctamente etiquetadas pueden aparecer como resultados enriquecidos en la Búsqueda y en las acciones del Asistente de Google, lo cual puede favorecer que tu sitio llegue a los usuarios adecuados.
+
+Disponibilidad de la función
+Los resultados enriquecidos de preguntas frecuentes solo están disponibles para sitios web reconocidos y fiables, centrados en la administración pública o centrados en la salud. Esta función está disponible en ordenadores y dispositivos móviles en todos los países y en todos los idiomas en los que se puede usar la Búsqueda de Google.
+
+Cómo añadir datos estructurados 
+Los datos estructurados son un formato estandarizado con el que se puede proporcionar información sobre una página y clasificar su contenido. Consulta cómo funcionan los datos estructurados si aún no te has familiarizado con ellos.
+
+A continuación se explica a grandes rasgos cómo crear, probar y publicar datos estructurados.
+
+Añade las propiedades obligatorias. Consulta más información sobre dónde insertar datos estructurados en una página en función del formato que estés utilizando.
+¿Usas un CMS? Quizá sea más fácil que uses un complemento que esté integrado en tu CMS.
+¿Usas JavaScript? Consulta cómo generar datos estructurados con JavaScript.
+Sigue las directrices.
+Valida tu código con la prueba de resultados enriquecidos y corrige los errores críticos. Te recomendamos que también corrijas los problemas no críticos que puedan marcarse en la herramienta, ya que pueden ayudar a mejorar la calidad de los datos estructurados (sin embargo, esto no es necesario para que se muestren los resultados enriquecidos).
+Crea varias páginas que incluyan tus datos estructurados y comprueba cómo las ve Google con la herramienta de inspección de URLs. Asegúrate de que Google pueda acceder a tu página y de que no esté bloqueada por un archivo robots.txt, por la etiqueta noindex ni por requisitos de inicio de sesión. Si la página se ve bien, puedes solicitar que Google vuelva a rastrear tus URLs.
+Nota: Da cierto margen de tiempo a Google para que vuelva a rastrear e indexar tus páginas. Recuerda que Google puede tardar varios días en encontrar y rastrear una página después de publicarse.
+Para que Google siempre tenga la versión actualizada de tus páginas, te recomendamos que envíes un sitemap. Puedes automatizar este envío con la API Sitemap de Search Console.
+Ejemplos
+JSON-LD
+Microdatos
+A continuación se muestra un ejemplo de FAQPage en JSON-LD:
+
+
+
+<html>
+  <head>
+    <title>Finding an apprenticeship - Frequently Asked Questions(FAQ)</title>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [{
+        "@type": "Question",
+        "name": "How to find an apprenticeship?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "<p>We provide an official service to search through available apprenticeships. To get started, create an account here, specify the desired region, and your preferences. You will be able to search through all officially registered open apprenticeships.</p>"
+        }
+      }, {
+        "@type": "Question",
+        "name": "Whom to contact?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You can contact the apprenticeship office through our official phone hotline above, or with the web-form below. We generally respond to written requests within 7-10 days."
+        }
+      }]
+    }
+    </script>
+  </head>
+  <body>
+  </body>
+</html>
+Directrices
+Para que tu página de preguntas frecuentes pueda aparecer como resultados enriquecidos de preguntas frecuentes, debes seguir estas directrices:
+
+Directrices generales sobre datos estructurados
+Directrices básicas de la Búsqueda
+Directrices de contenido
+Directrices de contenido
+Tu sitio debe ser de organismos públicos o sanitarios. También debe ser una fuente conocida y fiable.
+Usa FAQPage solo si tu página tiene una sección de preguntas frecuentes en la que hay una única respuesta a cada pregunta. Si en tu página hay solo una pregunta y los usuarios pueden enviar varias respuestas, usa mejor QAPage. Ejemplos:
+Casos prácticos que son válidos:
+
+Una página de preguntas frecuentes redactada por el propio sitio de salud, sin posibilidad de que los usuarios envíen respuestas alternativas.
+Páginas de asistencia de organismos públicos en las que hay preguntas frecuentes, pero donde los usuarios no pueden enviar más respuestas.
+Casos prácticos que no son válidos:
+
+Página de foros donde los usuarios pueden enviar varias respuestas a una misma pregunta.
+Páginas de asistencia de un producto donde los usuarios pueden enviar varias respuestas a una misma pregunta.
+Páginas de productos en la que los usuarios pueden enviar varias preguntas y respuestas sin salir de la página.
+No utilices FAQPage con fines publicitarios.
+Comprueba que en cada elemento Question se incluye el texto completo de la pregunta y que en cada elemento Answer se incluye el texto completo de la respuesta. Se puede mostrar el texto completo de la pregunta y el texto de la respuesta.
+El contenido de preguntas y respuestas no se puede mostrar como un resultado enriquecido si incluye alguno de estos tipos de contenido: obsceno, soez, sexualmente explícito, gráficamente violento, que promocione actividades peligrosas o ilegales, o lenguaje de odio o acoso.
+Los usuarios deben poder ver todo el contenido de FAQ en la página de origen. Ejemplos:
+Casos prácticos que son válidos:
+
+La pregunta y la respuesta se pueden ver en la página.
+La pregunta se puede ver en la página y la respuesta está oculta en una sección desplegable en la que el usuario puede hacer clic para que la respuesta aparezca.
+Casos prácticos que no son válidos: el usuario no puede encontrar el contenido de preguntas frecuentes en la página.
+
+Si en tu sitio web hay contenido de preguntas frecuentes que se repite (es decir, si la misma pregunta y respuesta aparecen en varias páginas), marca el contenido solamente una vez.
+Definiciones de tipos de datos estructurados
+Debes incluir las propiedades obligatorias para que tu contenido pueda mostrarse como un resultado enriquecido. Si quieres, puedes especificar también las propiedades recomendadas para añadir más información estructurada a tus datos, lo que quizá mejore la experiencia de los usuarios.
+
+FAQPage
+Puedes leer la definición completa de FAQPage en schema.org.
+
+El tipo FAQPage indica que la página corresponde a preguntas frecuentes con respuestas. Debe haber una definición de tipo FAQPage por página.
+
+Las propiedades que admite Google son las siguientes:
+
+Propiedades obligatorias
+mainEntity	Question
+Indica una serie de elementos de Question que contengan la lista de preguntas respondidas de las que trata el objeto FAQPage. Debes especificar al menos un elemento Question válido. Un elemento Question incluye la pregunta y la respuesta.
+
+Question
+La definición completa de Question está en schema.org.
+
+El tipo Question define cada pregunta respondida dentro de una página de preguntas frecuentes. Cada instancia de Question debe estar dentro de la matriz de propiedades mainEntity de schema.org/FAQPage.
+
+Las propiedades que admite Google son las siguientes:
+
+Propiedades obligatorias
+acceptedAnswer	Answer
+Es la respuesta a la pregunta. Debe haber una por pregunta.
+
+name	Text
+Es el texto completo de la pregunta. Por ejemplo, "¿Cuánto tiempo lleva procesar un reembolso?".
+
+Answer
+La definición completa de Answer está en schema.org.
+
+El tipo Answer define el objeto acceptedAnswer que corresponde a cada Question de esta página.
+
+Las propiedades que admite Google son las siguientes:
+
+Propiedades obligatorias
+text	Text
+Es la respuesta completa a la pregunta. La respuesta puede incluir contenido HTML, como enlaces y listas. En la Búsqueda de Google se muestran las siguientes etiquetas HTML: de <h1> a <h6>, <br>, <ol>, <ul>, <li>, <a>, <p>, <div>, <b>, <strong>, <i> y <em>. Todas las demás etiquetas se ignoran.
+
+Monitorizar resultados enriquecidos con Search Console
+Search Console es una herramienta que te ayuda a monitorizar el rendimiento de tus páginas en la Búsqueda de Google. No hace falta que te registres en Search Console para que tu sitio web aparezca en los resultados de la Búsqueda de Google, pero, si lo haces, sabrás cómo lo ve Google y qué puedes hacer para mejorarlo. Te recomendamos que consultes Search Console en los siguientes casos:
+
+Después de implementar datos estructurados por primera vez
+Después de publicar plantillas nuevas o modificar el código
+Al hacer el análisis periódico del tráfico
+
+Después de implementar datos estructurados por primera vez 
+Una vez que Google haya indexado tus páginas, puedes comprobar si hay algún problema en el informe de estado de resultados enriquecidos correspondiente. Lo ideal es que haya un aumento en el número de elementos válidos y que no lo haya en el número de elementos no válidos. Si detectas problemas en tus datos estructurados, haz lo siguiente:
+
+Corrige los elementos no válidos.
+Inspecciona la URL en tiempo real para ver si el problema continúa.
+Solicita que se valide la corrección desde el informe de estado.
+Después de publicar plantillas nuevas o modificar el código 
+Cuando hagas cambios significativos en tu sitio web, observa si se incrementa la cantidad de elementos no válidos de datos estructurados.
+Si notas que hay más elementos no válidos, quizá sea porque has implementado una plantilla que no funciona, o puede que tu sitio esté interactuando con la plantilla que utilizas de un modo diferente que no es adecuado.
+Si notas que hay menos elementos válidos, pero no hay un incremento de elementos no válidos, es posible que hayas dejado de insertar datos estructurados en tus páginas. Para saber cuál es la causa del problema, utiliza la herramienta de inspección de URLs.
+Al hacer el análisis periódico del tráfico 
+Consulta el informe de rendimiento para analizar el tráfico de tus páginas en la Búsqueda de Google. En él, verás con qué frecuencia aparece tu página como resultado enriquecido en la Búsqueda, cada cuánto hacen clic en ella los usuarios y cuál es la posición media que ocupa tu sitio web en los resultados de búsqueda. También puedes obtener automáticamente estos resultados con la API de Search Console.
+Solucionar problemas
+Si tienes problemas para implementar o depurar datos estructurados, a continuación se incluyen algunos recursos que pueden serte útiles.
+
+Si usas un sistema de gestión de contenido (CMS) o alguien se encarga de gestionar tu sitio, pídele ayuda. No olvides reenviarle cualquier mensaje de Search Console que incluya información sobre el problema en cuestión.
+Google no garantiza que las funciones que utilizan datos estructurados aparezcan en los resultados de búsqueda. Para ver una lista con motivos habituales por los que Google no muestra tu contenido en resultados enriquecidos, consulta las directrices generales de datos estructurados.
+Es posible que haya un error en tus datos estructurados. Consulta la lista de errores de datos estructurados y el informe de datos estructurados que no se pueden analizar.
+Si se ha aplicado una acción manual de datos estructurados a tu página, se ignorarán sus datos estructurados, aunque la página puede seguir apareciendo en los resultados de la Búsqueda de Google. Para solucionar problemas de datos estructurados, usa el informe "Acciones manuales".
+Revisa las directrices para comprobar si tu contenido no las cumple. El problema podría deberse a que la página incluye contenido engañoso o etiquetas con contenido fraudulento. No obstante, es posible que el problema no se deba a la sintaxis, por lo que la prueba de resultados enriquecidos no podrá ayudarte a identificarlo.
+Solucionar problemas si faltan resultados enriquecidos o si se ha reducido el número total de resultados enriquecidos.
+Da cierto margen a Google para que vuelva a rastrear e indexar tu página. Recuerda que Google puede tardar varios días en encontrar y rastrear una página después de publicarse. Consulta las preguntas frecuentes sobre el rastreo y la indexación de la Búsqueda de Google.
+Publica una pregunta en el foro del Centro de la Búsqueda de Google.
+Metadatos de imagen en Google Imágenes
+Cuando especificas los metadatos de una imagen, Google Imágenes puede mostrar más detalles sobre ella, como quién la ha creado, cómo puede usarse y los créditos. Por ejemplo, proporcionar información de licencia puede hacer que la imagen sea apta para obtener la insignia Bajo licencia, que proporciona un enlace a la licencia y más detalles sobre cómo puede alguien usar la imagen.
+
+Metadatos de imagen en Google Imágenes
+Disponibilidad de la función 
+Esta función está disponible en dispositivos móviles y ordenadores en todos los territorios e idiomas en los que se puede usar la Búsqueda de Google.
+
+Preparar páginas web e imágenes 
+Para que Google pueda detectar e indexar tus imágenes, sigue estos pasos:
+
+Comprueba que los usuarios puedan acceder a tus páginas con imágenes y verlas sin necesidad de tener una cuenta ni de iniciar sesión.
+Asegúrate de que el robot de Google pueda acceder a tus páginas con imágenes; es decir, que no estén bloqueadas por un archivo robots.txt ni una etiqueta meta robots. Puedes ver todas las páginas bloqueadas de tu sitio web en el informe "Indexación de páginas". También tienes la opción de comprobar si una página concreta está bloqueada usando la herramienta de inspección de URLs.
+Sigue las Directrices básicas de la Búsqueda para asegurarte de que Google pueda encontrar tu contenido.
+Sigue las prácticas recomendadas sobre el SEO de imágenes.
+Para que Google siempre tenga la versión actualizada de tus páginas, te recomendamos que envíes un sitemap. Puedes automatizar este envío con la API Sitemap de Search Console.
+Añadir datos estructurados o metadatos de fotos del IPTC 
+Para informar a Google sobre tus metadatos de imagen, añade datos estructurados o metadatos de fotos del IPTC a cada una de las imágenes de tu sitio. Si la misma imagen aparece en varias páginas, tienes que añadir esos datos estructurados o metadatos de fotos del IPTC a cada imagen de cada página.
+
+Hay dos formas de añadir metadatos de fotos a una imagen. Para conseguir mejoras, como la insignia Bajo licencia, basta con proporcionar a Google la información necesaria mediante cualquiera de estos dos métodos:
+
+Datos estructurados: los datos estructurados asocian mediante marcado la imagen y la página en la que aparece. En consecuencia, tienes que añadirlos siempre que aparezca una imagen, aunque sea la misma.
+Metadatos de fotos del IPTC: los metadatos de fotos del International Press Telecommunications Council (IPTC) se insertan en la propia imagen, por lo que se mantienen en ella aunque la muevas de una página a otra. Por tanto, basta con insertar estos metadatos una vez por imagen.
+Si decides utilizar ambos tipos de metadatos y hay algún conflicto de información entre ellos, Google usará la información de los datos estructurados.
+En el siguiente diagrama se muestra cómo puede aparecer la información de licencia en Google Imágenes:
+
+Imagen en la que se muestran las partes de los metadatos de licencia que pueden aparecer en Google Imágenes
+La URL de una página en la que se describe la licencia que rige el uso de la imagen. Puedes indicar esta información con la propiedad license de Schema.org o con el campo Web Statement of Rights (Declaración de derechos web) del IPTC.
+La URL de una página en la que se indica a los usuarios dónde encontrar información sobre cómo obtener la licencia de esa imagen. Puedes proporcionar esta información con la propiedad acquireLicensePage de Schema.org o con el campo Licensor URL de un objeto Licensor del IPTC.
+Datos estructurados 
+Una forma de informar a Google sobre los metadatos de imagen es añadir campos de datos estructurados. Los datos estructurados son un formato estandarizado con el que se puede proporcionar información sobre una página y clasificar su contenido. Consulta cómo funcionan los datos estructurados si aún no te has familiarizado con ellos.
+
+A continuación se explica a grandes rasgos cómo crear, probar y publicar datos estructurados.
+
+Añade las propiedades obligatorias. Consulta más información sobre dónde insertar datos estructurados en una página en función del formato que estés utilizando.
+¿Usas un CMS? Quizá sea más fácil que uses un complemento que esté integrado en tu CMS.
+¿Usas JavaScript? Consulta cómo generar datos estructurados con JavaScript.
+Sigue las directrices generales de datos estructurados.
+Valida tu código con la prueba de resultados enriquecidos.
+Crea varias páginas que incluyan tus datos estructurados y comprueba cómo las ve Google con la herramienta de inspección de URLs. Asegúrate de que Google pueda acceder a tu página y de que no esté bloqueada por un archivo robots.txt, por la etiqueta noindex ni por requisitos de inicio de sesión. Si la página se ve bien, puedes solicitar que Google vuelva a rastrear tus URLs.
+Da cierto margen de tiempo a Google para que vuelva a rastrear e indexar tus páginas. Recuerda que Google puede tardar varios días en encontrar y rastrear una página después de publicarse.
+Para que Google siempre tenga la versión actualizada de tus páginas, te recomendamos que envíes un sitemap. Puedes automatizar este envío con la API Sitemap de Search Console.
+Ejemplos 
+Una sola imagen 
+A continuación se muestra un ejemplo de una página con una única imagen.
+
+JSON-LD
+RDFa
+Microdatos
+
+
+<html>
+  <head>
+    <title>Black labrador puppy</title>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org/",
+      "@type": "ImageObject",
+      "contentUrl": "https://example.com/photos/1x1/black-labrador-puppy.jpg",
+      "license": "https://example.com/license",
+      "acquireLicensePage": "https://example.com/how-to-use-my-images",
+      "creditText": "Labrador PhotoLab",
+      "creator": {
+        "@type": "Person",
+        "name": "Brixton Brownstone"
+       },
+      "copyrightNotice": "Clara Kent"
+    }
+    </script>
+  </head>
+  <body>
+    <img alt="Black labrador puppy" src="https://example.com/photos/1x1/black-labrador-puppy.jpg">
+    <p><a href="https://example.com/license">License</a></p>
+    <p><a href="https://example.com/how-to-use-my-images">How to use my images</a></p>
+    <p><b>Photographer</b>: Brixton Brownstone</p>
+    <p><b>Copyright</b>: Clara Kent</p>
+    <p><b>Credit</b>: Labrador PhotoLab</p>
+  </body>
+</html>
+Una sola imagen en una etiqueta srcset 
+A continuación, se muestra un ejemplo de una página que contiene una única imagen en una etiqueta srcset.
+
+JSON-LD
+RDFa
+Microdatos
+
+
+<html>
+  <head>
+    <title>Black labrador puppy</title>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org/",
+      "@type": "ImageObject",
+      "contentUrl": "https://example.com/photos/320/black-labrador-puppy-800w.jpg",
+      "license": "https://example.com/license",
+      "acquireLicensePage": "https://example.com/how-to-use-my-images",
+      "creditText": "Labrador PhotoLab",
+      "creator": {
+        "@type": "Person",
+        "name": "Brixton Brownstone"
+       },
+      "copyrightNotice": "Clara Kent"
+    }
+    </script>
+  </head>
+  <body>
+    <img srcset="https://example.com/photos/320/black-labrador-puppy-320w.jpg 320w,
+                   https://example.com/photos/480/black-labrador-puppy-480w.jpg 480w,
+                   https://example.com/photos/800/black-labrador-puppy-800w.jpg 800w"
+           sizes="(max-width: 320px) 280px,
+                  (max-width: 480px) 440px,
+                  800px"
+           src="https://example.com/photos/320/black-labrador-puppy-800w.jpg"
+           alt="Black labrador puppy"><br>
+    <p><a href="https://example.com/license">License</a></p>
+    <p><a href="https://example.com/how-to-use-my-images">How to use my images</a></p>
+    <p><b>Photographer</b>: Brixton Brownstone</p>
+    <p><b>Copyright</b>: Clara Kent</p>
+    <p><b>Credit</b>: Labrador PhotoLab</p>
+  </body>
+</html>
+Varias imágenes en una página 
+A continuación se muestra un ejemplo de una página que contiene varias imágenes.
+
+JSON-LD
+RDFa
+Microdatos
+
+
+<html>
+  <head>
+    <title>Photos of black labradors</title>
+    <script type="application/ld+json">
+    [{
+      "@context": "https://schema.org/",
+      "@type": "ImageObject",
+      "contentUrl": "https://example.com/photos/1x1/black-labrador-puppy.jpg",
+      "license": "https://example.com/license",
+      "acquireLicensePage": "https://example.com/how-to-use-my-images",
+      "creditText": "Labrador PhotoLab",
+      "creator": {
+        "@type": "Person",
+        "name": "Brixton Brownstone"
+       },
+      "copyrightNotice": "Clara Kent"
+    },
+   {
+      "@context": "https://schema.org/",
+      "@type": "ImageObject",
+      "contentUrl": "https://example.com/photos/1x1/adult-black-labrador.jpg",
+      "license": "https://example.com/license",
+      "acquireLicensePage": "https://example.com/how-to-use-my-images",
+      "creditText": "Labrador PhotoLab",
+      "creator": {
+        "@type": "Person",
+        "name": "Brixton Brownstone"
+       },
+      "copyrightNotice": "Clara Kent"
+    }]
+    </script>
+  </head>
+  <body>
+    <h2>Black labrador puppy</h2>
+    <img alt="Black labrador puppy" src="https://example.com/photos/1x1/black-labrador-puppy.jpg">
+    <p><a href="https://example.com/license">License</a></p>
+    <p><a href="https://example.com/how-to-use-my-images">How to use my images</a></p>
+    <p><b>Photographer</b>: Brixton Brownstone</p>
+    <p><b>Copyright</b>: Clara Kent</p>
+    <p><b>Credit</b>: Labrador PhotoLab</p>
+    <h2>Adult black labrador</h2>
+    <img alt="Adult black labrador" src="https://example.com/photos/1x1/adult-black-labrador.jpg">
+    <p><a href="https://example.com/license">License</a></p>
+    <p><a href="https://example.com/how-to-use-my-images">How to use my images</a></p>
+    <p><b>Photographer</b>: Brixton Brownstone</p>
+    <p><b>Copyright</b>: Clara Kent</p>
+    <p><b>Credit</b>: Labrador PhotoLab</p>
+  </body>
+</html>
+Definiciones de tipos de datos estructurados 
+Puedes leer la definición completa de ImageObject en schema.org/ImageObject. Las propiedades que admite Google son las siguientes:
+
+Propiedades obligatorias
+contentUrl	
+URL
+
+contentUrl es una URL que dirige al contenido de la imagen e indica a Google a qué imagen se aplican los metadatos de fotos.
+
+Si no se incluye contentUrl, Google también permite especificar la URL de la imagen con la propiedad url. Aunque la propiedad url no es tan precisa como contentUrl, que es la que recomendamos, puede haber etiquetas que sigan utilizando url.
+creator, creditText, copyrightNotice o license	
+Además de contentUrl, debes incluir una de las siguientes propiedades:
+
+creator
+creditText
+copyrightNotice
+license
+Una vez que incluyas una de estas propiedades, se recomienda incluir las otras tres en la prueba de resultados enriquecidos.
+Propiedades recomendadas
+acquireLicensePage	
+URL
+
+La URL de una página en la que los usuarios pueden encontrar información sobre cómo conseguir la licencia de esa imagen. Estos son algunos ejemplos:
+
+Una página para comprar la imagen en la que los usuarios puedan elegir resoluciones o derechos de uso concretos
+Una página general en la que se explique cómo ponerse en contacto contigo
+creator	
+Organization o Person
+
+Es el creador de la imagen. Normalmente es el fotógrafo, pero puede ser una empresa u organización (si corresponde).
+
+creator.name	
+Text
+
+Es el nombre del creador.
+
+creditText	
+Text
+
+Es el nombre de la persona o de la organización a la que se atribuye la imagen cuando se publica.
+
+copyrightNotice	
+Text
+
+Es la notificación de derechos de autor para reclamar la propiedad intelectual de esta fotografía. Sirve para identificar al titular actual de los derechos de autor de la fotografía.
+
+license	
+URL
+
+La URL de una página en la que se describe la licencia que rige el uso de la imagen. Por ejemplo, podrían ser los términos y condiciones de tu sitio web. En algunos casos, también podría ser una licencia Creative Commons (por ejemplo, BY-NC 4.0).
+
+Si utilizas datos estructurados para especificar una imagen, debes incluir la propiedad license de la imagen para que pueda mostrarse con la insignia Bajo licencia. También te recomendamos que añadas la propiedad acquireLicensePage si tienes esa información.
+
+Metadatos de fotos del IPTC
+Otra opción es insertar metadatos de fotos del IPTC directamente en una imagen. Te recomendamos que uses un software de gestión de metadatos para controlar los de tus imágenes. En la siguiente tabla se incluyen las propiedades que Google extrae:
+
+Propiedades recomendadas
+Copyright Notice	
+Es la notificación de derechos de autor para reclamar la propiedad intelectual de esta fotografía. Sirve para identificar al titular actual de los derechos de autor de la fotografía.
+
+Creator	
+Es el creador de la imagen. Suele ser el nombre del fotógrafo, pero puede ser el nombre de una empresa u organización (si procede).
+
+Credit Line	
+Es el nombre de la persona o de la organización a la que se atribuye la imagen cuando se publica.
+
+Digital Source Type	
+El tipo de fuente digital que se ha usado para crear la imagen. Google admite las siguiente IPTCs NewsCodes:
+
+trainedAlgorithmicMedia: la imagen se ha creado de forma algorítmica usando un modelo derivado del contenido de muestra.
+compositeSynthetic: la imagen es una mezcla o composición que incluye al menos un elemento sintético.
+algorithmicMedia: la imagen se ha creado exclusivamente mediante un algoritmo que no se basa en ningún dato de formación de muestra (por ejemplo, una imagen creada por software con una fórmula matemática).
+compositeWithTrainedAlgorithmicMedia: la imagen es una composición de medios algorítmicos entrenados con otros medios, como operaciones de inpainting u outpainting.
+Licensor URL	
+La URL de una página en la que los usuarios pueden encontrar información sobre cómo conseguir la licencia de esa imagen. El valor Licensor URL debe ser una propiedad de un objeto Licensor, y no del objeto de imagen. Ejemplos:
+
+Una página para comprar la imagen en la que los usuarios puedan elegir resoluciones concretas.
+Una página general en la que se explique cómo ponerse en contacto contigo
+Web Statement of Rights	
+La URL de una página en la que se describe la licencia de uso de una imagen y, de forma opcional, información sobre otros derechos. Por ejemplo, podrían ser los términos y condiciones de tu sitio web. En algunos casos, también podría ser una licencia Creative Commons (por ejemplo, BY-NC 4.0).
+
+Para que una imagen pueda mostrarse con la insignia Bajo licencia, debes incluir en ella el campo Web Statement of Rights (Declaración de derechos web). También te recomendamos que añadas el campo Licensor URL si tienes esa información.
+
+Cómo pueden aparecer los metadatos de C2PA en los resultados de la Búsqueda de Google
+Si una imagen contiene metadatos C2PA, Google puede extraer esos detalles y mostrar información en la función "Acerca de esta imagen", como cómo se creó la imagen o si se ha editado con herramientas de IA. Estos metadatos proceden de un firmante, que suele ser una aplicación, un dispositivo o un servicio (por ejemplo, un software de edición de fotos, la propia cámara u otros servicios que modifican o crean imágenes) que cumple las siguientes condiciones:
+
+La aplicación, el dispositivo o el servicio ha adoptado la versión 2.1 de C2PA o una posterior.
+El archivo de manifiesto de la imagen debe estar firmado por un certificado de una autoridad de certificación que se encuentre en la lista de confianza de C2PA.
+Solucionar problemas
+Importante: Google no garantiza que en los resultados de búsqueda aparezcan tus datos estructurados ni tus metadatos de fotos del IPTC. Para ver una lista con motivos habituales por los que es posible que Google no muestre tus datos estructurados en los resultados de búsqueda, consulta las directrices generales de datos estructurados.
+Si estás teniendo algún problema para implementar metadatos de imagen en Google Imágenes, puede que te resulten útiles los recursos que te indicamos a continuación.
+
+Si usas un sistema de gestión de contenido (CMS) o alguien se encarga de gestionar tu sitio, pídeles ayuda. No olvides reenviarles cualquier mensaje de Search Console que incluya información sobre el problema en cuestión.
+Si tienes alguna duda sobre esta función, consulta las preguntas frecuentes sobre las licencias de imágenes de Google Imágenes.
+Es posible que haya un error en tus datos estructurados. Consulta la lista de errores de datos estructurados.
+Si se ha aplicado una acción manual de datos estructurados a tu página, se ignorarán sus datos estructurados, aunque la página puede seguir apareciendo en los resultados de la Búsqueda de Google. Para solucionar problemas de datos estructurados, usa el informe "Acciones manuales".
+Revisa las directrices para comprobar si tu contenido no las cumple.
+Es posible que se haya producido un problema porque la página incluye contenido engañoso o etiquetas con contenido fraudulento. No obstante, en estos casos es posible que el problema no se deba a la sintaxis, por lo que la prueba de resultados enriquecidos no podrá ayudarte a identificarlo.
+Solucionar problemas si faltan resultados enriquecidos o si se ha reducido el número total de resultados enriquecidos.
+Consulta las preguntas frecuentes sobre el rastreo y la indexación de la Búsqueda de Google.
+Da cierto margen a Google para que vuelva a rastrear e indexar tu página. Recuerda que Google puede tardar varios días en encontrar y rastrear una página después de publicarse.
+Plantea tus dudas en las horas de consulta del Centro de la Búsqueda de Google.
+Publica una pregunta en el foro del Centro de la Búsqueda de Google. Si necesitas ayuda con los metadatos de fotos del IPTC, puedes publicar tu pregunta en su foro.
+¿Pasa algo si se quitan los metadatos de una imagen?
+Si quitas los metadatos de una imagen, puedes reducir el tamaño del archivo, lo que ayuda a que las páginas web se carguen más rápido. Sin embargo, ten cuidado, porque quitarlos puede ser ilegal en determinadas jurisdicciones. Los metadatos de las imágenes proporcionan información online sobre los derechos de autor y sobre las licencias. Google recomienda que, al menos, conserves los metadatos importantes relacionados con la información e identificación de los derechos de autor de las imágenes. Por ejemplo, siempre que sea posible, conserva los datos del creador, de la atribución y de la notificación de derechos de autor para atribuir correctamente la imagen.
+Datos estructurados de empresa local (LocalBusiness)
+Cuando los usuarios buscan empresas en la Búsqueda de Google o en Maps, los resultados de búsqueda pueden mostrar un panel de información de Google importante con detalles sobre una empresa que coincide con la consulta. Cuando los usuarios hacen una búsqueda sobre un tipo de empresa (como "los mejores restaurantes de Nueva York"), puede que vean un carrusel de empresas relacionadas con su consulta. Con los datos estructurados de empresa local, puedes indicarle a Google los horarios de apertura, los diferentes departamentos de la empresa, reseñas (si tu sitio recoge reseñas de otras empresas) y más. Si quieres ayudar a los usuarios a hacer una reserva o un pedido directamente en los resultados de búsqueda, puedes usar la API de reservas de Maps para permitir realizar reservas, pagos y otras operaciones.
+
+Cómo añadir datos estructurados 
+Los datos estructurados son un formato estandarizado con el que se puede proporcionar información sobre una página y clasificar su contenido. Consulta cómo funcionan los datos estructurados si aún no te has familiarizado con ellos.
+
+A continuación se explica a grandes rasgos cómo crear, probar y publicar datos estructurados.
+
+Añade las propiedades obligatorias. Consulta más información sobre dónde insertar datos estructurados en una página en función del formato que estés utilizando.
+¿Usas un CMS? Quizá sea más fácil que uses un complemento que esté integrado en tu CMS.
+¿Usas JavaScript? Consulta cómo generar datos estructurados con JavaScript.
+Sigue las directrices.
+Valida tu código con la prueba de resultados enriquecidos y corrige los errores críticos. Te recomendamos que también corrijas los problemas no críticos que puedan marcarse en la herramienta, ya que pueden ayudar a mejorar la calidad de los datos estructurados (sin embargo, esto no es necesario para que se muestren los resultados enriquecidos).
+Crea varias páginas que incluyan tus datos estructurados y comprueba cómo las ve Google con la herramienta de inspección de URLs. Asegúrate de que Google pueda acceder a tu página y de que no esté bloqueada por un archivo robots.txt, por la etiqueta noindex ni por requisitos de inicio de sesión. Si la página se ve bien, puedes solicitar que Google vuelva a rastrear tus URLs.
+Nota: Da cierto margen de tiempo a Google para que vuelva a rastrear e indexar tus páginas. Recuerda que Google puede tardar varios días en encontrar y rastrear una página después de publicarse.
+Para que Google siempre tenga la versión actualizada de tus páginas, te recomendamos que envíes un sitemap. Puedes automatizar este envío con la API Sitemap de Search Console.
+Ejemplos
+Fichas sencillas de empresa local
+A continuación se muestra un ejemplo de una ficha de una empresa local con JSON-LD.
+
+Ficha de empresa local en la Búsqueda de Google
+
+Nota: Es posible que no coincidan con el aspecto que tendrán en los resultados de búsqueda. Puedes previsualizar la mayoría de las funciones con la prueba de resultados enriquecidos.
+
+
+<html>
+  <head>
+    <title>Dave's Steak House</title>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Restaurant",
+      "image": [
+        "https://example.com/photos/1x1/photo.jpg",
+        "https://example.com/photos/4x3/photo.jpg",
+        "https://example.com/photos/16x9/photo.jpg"
+       ],
+      "name": "Dave's Steak House",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "148 W 51st St",
+        "addressLocality": "New York",
+        "addressRegion": "NY",
+        "postalCode": "10019",
+        "addressCountry": "US"
+      },
+      "review": {
+        "@type": "Review",
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": 4,
+          "bestRating": 5
+        },
+        "author": {
+          "@type": "Person",
+          "name": "Lillian Ruiz"
+        }
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 40.761293,
+        "longitude": -73.982294
+      },
+      "url": "https://www.example.com/restaurant-locations/manhattan",
+      "telephone": "+12122459600",
+      "servesCuisine": "American",
+      "priceRange": "$$$",
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday"
+          ],
+          "opens": "11:30",
+          "closes": "22:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Wednesday",
+            "Thursday",
+            "Friday"
+          ],
+          "opens": "11:30",
+          "closes": "23:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Saturday",
+          "opens": "16:00",
+          "closes": "23:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Sunday",
+          "opens": "16:00",
+          "closes": "22:00"
+        }
+      ],
+      "menu": "https://www.example.com/menu"
+    }
+    </script>
+  </head>
+  <body>
+  </body>
+</html>
+Carrusel de restaurantes (acceso limitado) 
+A continuación, se muestra un ejemplo de un restaurante que cumple los requisitos de una página de detalles (suponiendo que también haya una página de resumen con etiquetas de carrusel). El carrusel de restaurantes está limitado a un pequeño conjunto de proveedores de restaurantes. Si quieres participar, manifiesta tu interés en nuestro formulario.
+
+
+<html>
+  <head>
+    <title>Trattoria Luigi</title>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org/",
+      "@type": "Restaurant",
+      "name": "Trattoria Luigi",
+      "image": [
+        "https://example.com/photos/1x1/photo.jpg",
+        "https://example.com/photos/4x3/photo.jpg",
+        "https://example.com/photos/16x9/photo.jpg"
+       ],
+       "priceRange": "$$$",
+       "servesCuisine": "Italian",
+       "telephone": "+12125557234",
+       "address": {
+         "@type": "PostalAddress",
+         "streetAddress": "148 W 51st St",
+         "addressLocality": "New York",
+         "addressRegion": "NY",
+         "postalCode": "10019",
+         "addressCountry": "US"
+       }
+    }
+    </script>
+  </head>
+  <body>
+  </body>
+</html>
+Horario de apertura
+En los siguientes ejemplos se muestra cómo indicar diferentes tipos de horarios de apertura.
+
+Aceptamos tanto el esquema oficial de schema.org para indicar dayOfWeek (URLs canónicas para lunes, martes, etc.) como un formulario más corto sobre el que se está discutiendo en la comunidad de schema.org. Tenemos la intención de actualizar esta documentación para reflejar el resultado final de la discusión y de seguir aceptando ambas variaciones para aportar compatibilidad con versiones anteriores.
+Horario estándar
+Horarios nocturnos
+Horarios de todo el día
+Horario estacional
+Si se excluyen las propiedades validFrom y validThrough, significa que las horas son válidas durante todo el año. En este ejemplo se define una empresa que está abierta de lunes a viernes desde las 9:00 h hasta las 21:00 h, y durante el fin de semana desde las 10:00 h hasta las 23:00 h.
+
+
+"openingHoursSpecification": [
+  {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday"
+    ],
+    "opens": "09:00",
+    "closes": "21:00"
+  },
+  {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": [
+      "Saturday",
+      "Sunday"
+    ],
+    "opens": "10:00",
+    "closes": "23:00"
+  }
+]
+Múltiples departamentos
+En una empresa con departamentos, cada uno con sus distintas propiedades, como los horarios de apertura o los números de teléfono, puedes marcar la propiedad department con un elemento para cada departamento. Define las propiedades que difieran de la tienda principal en los elementos respectivos de cada departamento.
+
+
+<html>
+  <head>
+    <title>Dave's Department Store</title>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Store",
+      "image": [
+        "https://example.com/photos/1x1/photo.jpg",
+        "https://example.com/photos/4x3/photo.jpg",
+        "https://example.com/photos/16x9/photo.jpg"
+       ],
+      "name": "Dave's Department Store",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "1600 Saratoga Ave",
+        "addressLocality": "San Jose",
+        "addressRegion": "CA",
+        "postalCode": "95129",
+        "addressCountry": "US"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 37.293058,
+        "longitude": -121.988331
+      },
+      "url": "https://www.example.com/store-locator/sl/San-Jose-Westgate-Store/1427",
+      "priceRange": "$$$",
+      "telephone": "+14088717984",
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday"
+          ],
+          "opens": "08:00",
+          "closes": "23:59"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Sunday",
+          "opens": "08:00",
+          "closes": "23:00"
+        }
+      ],
+      "department": [
+        {
+          "@type": "Pharmacy",
+          "image": [
+        "https://example.com/photos/1x1/photo.jpg",
+        "https://example.com/photos/4x3/photo.jpg",
+        "https://example.com/photos/16x9/photo.jpg"
+       ],
+          "name": "Dave's Pharmacy",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "1600 Saratoga Ave",
+            "addressLocality": "San Jose",
+            "addressRegion": "CA",
+            "postalCode": "95129",
+            "addressCountry": "US"
+          },
+          "priceRange": "$",
+          "telephone": "+14088719385",
+          "openingHoursSpecification": [
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": [
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday"
+              ],
+              "opens": "09:00",
+              "closes": "19:00"
+            },
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": "Saturday",
+              "opens": "09:00",
+              "closes": "17:00"
+            },
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": "Sunday",
+              "opens": "11:00",
+              "closes": "17:00"
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+  </head>
+  <body>
+  </body>
+</html>
+Directrices
+Debes seguir estas directrices para que puedas aparecer en los resultados enriquecidos de empresa local.
+
+Advertencia: Si tu sitio infringe una o varias de estas directrices, es posible que tomemos una acción manual para resolver esta infracción. Una vez solucionado el problema, puedes enviar tu sitio para que se vuelva a revisar.
+Directrices básicas de la Búsqueda
+Directrices generales sobre datos estructurados
+Directrices de carrusel (si corresponde). En estos momentos, el carrusel de restaurantes está limitado a un pequeño conjunto de proveedores de restaurantes. Si quieres participar, registra tu interés en nuestro formulario.
+Definiciones de tipos de datos estructurados
+En las tablas siguientes se enumeran las propiedades, y su uso, de las empresas locales y los tipos de acciones comerciales, según las definiciones completas que puedes consultar en schema.org/LocalBusiness.
+
+Debes incluir las propiedades obligatorias para que tu contenido pueda mostrarse como un resultado enriquecido. Si quieres, puedes especificar también las propiedades recomendadas para proporcionar más información sobre tu contenido y, así, ofrecer una mejor experiencia de usuario.
+
+Puedes añadir datos estructurados de LocalBusiness a cualquier página de tu sitio, aunque puede ser más conveniente incluirlos en una página que contenga información sobre tu empresa.
+
+LocalBusiness
+Puedes consultar la definición completa de LocalBusiness en schema.org/LocalBusiness. Define cada ubicación de la empresa local como un tipo LocalBusiness. Utiliza el subtipo LocalBusiness más específico posible; por ejemplo, Restaurant, DaySpa, HealthClub, etc.
+
+Dado que LocalBusiness es un subtipo de Organization, te recomendamos que sigas los campos de Organización además de los campos obligatorios y recomendados que se indican a continuación.
+Si tienes varios tipos, especifícalos como un array (additionalType no es compatible). Por ejemplo, si tu empresa ofrece varios servicios:
+
+
+{
+  "@context": "https://schema.org",
+  "@type": ["Electrician", "Plumber", "Locksmith"],
+  ....
+}
+Las propiedades que admite Google son las siguientes:
+
+Propiedades obligatorias
+address	
+PostalAddress
+
+Indica la ubicación física de la empresa. Incluye tantas propiedades como sea posible. Cuantas más propiedades proporciones, mayor será la calidad del resultado que obtendrán los usuarios. Por ejemplo:
+
+
+"address": {
+  "@type": "PostalAddress",
+  "streetAddress": "148 W 51st St Suit 42 Unit 7",
+  "addressLocality": "New York",
+  "addressRegion": "NY",
+  "postalCode": "10019",
+  "addressCountry": "US"
+}
+name	
+Text
+
+Es el nombre de la empresa.
+
+Propiedades recomendadas
+aggregateRating	
+AggregateRating
+
+Esta propiedad solo se recomienda para sitios que capturan reseñas de otras empresas locales: la valoración media de la empresa local en función de varias valoraciones o reseñas. Sigue las directrices de fragmentos de reseñas y la lista de propiedades de reseñas agregadas obligatorias y recomendadas.
+
+department	
+LocalBusiness
+
+Indica un elemento anidado para un solo departamento. Puedes definir cualquiera de las propiedades en esta tabla para un departamento.
+
+Directrices adicionales:
+
+Incluye el nombre de la tienda con el nombre del departamento con el formato siguiente: {store name} {department name}. Por ejemplo, gMart y gMart Pharmacy.
+Si el nombre del departamento tiene una marca explícita, especifica un nombre de departamento por sí mismo. Por ejemplo: Best Buy y Geek Squad.
+geo	
+GeoCoordinates
+
+Indica las coordenadas geográficas de la empresa.
+
+geo.latitude	
+Number
+
+Indica, con una precisión de al menos 5 decimales, la latitud de la ubicación de la empresa.
+
+geo.longitude	
+Number
+
+Indica, con una precisión de al menos 5 decimales, la longitud de la ubicación de la empresa.
+
+menu	
+URL
+
+En el caso de un establecimiento de comida, la URL completa de su carta.
+
+openingHoursSpecification	
+Matriz u objeto único (se admiten ambos) de OpeningHoursSpecification
+
+Horario durante el cual la ubicación de la empresa está abierta.
+
+openingHoursSpecification.closes	
+Time
+
+Hora a la que se cierra la ubicación de la empresa, en formato hh:mm:ss.
+
+openingHoursSpecification.dayOfWeek	
+DayOfWeek
+
+Uno o varios de los siguientes valores:
+
+https://schema.org/Monday: el día conocido como lunes.
+https://schema.org/Tuesday: el día conocido como martes.
+https://schema.org/Wednesday: día conocido como miércoles.
+https://schema.org/Thursday: el día conocido como jueves.
+https://schema.org/Friday: el día conocido como viernes.
+https://schema.org/Saturday: el día conocido como sábado.
+https://schema.org/Sunday: el día conocido como domingo.
+También se admiten los nombres cortos sin prefijo de URL (por ejemplo, Monday).
+openingHoursSpecification.opens	
+Time
+
+Hora a la que se abre la ubicación de la empresa, en formato hh:mm:ss.
+
+openingHoursSpecification.validFrom	
+Date
+
+Indica la fecha de inicio del cierre comercial estacional, en formato AAAA-MM-DD.
+
+openingHoursSpecification.validThrough	
+Date
+
+Indica la fecha de finalización del cierre comercial estacional, en formato AAAA-MM-DD.
+
+priceRange	
+Text
+
+El intervalo de precios relativo de una empresa, normalmente especificado por un intervalo numérico (por ejemplo, "10-15 $") o un número normalizado de signos de moneda (por ejemplo, "$$$").
+
+Este campo debe tener menos de 100 caracteres. Si tiene 100 caracteres o más, Google no mostrará ningún intervalo de precios junto a la empresa.
+
+review	
+Reseña
+
+Esta propiedad solo se recomienda para sitios que capturan reseñas sobre otras empresas locales: una reseña de la empresa local. Sigue las directrices de fragmentos de reseñas y la lista de propiedades de reseñas obligatorias y recomendadas.
+
+servesCuisine	
+servesCuisine
+
+Indica el tipo de cocina que se sirve en el restaurante.
+
+telephone	
+Text
+
+Indica un número de teléfono comercial destinado a ser la forma de contacto principal de los clientes. No olvides incluir el código de país y el prefijo telefónico en el número de teléfono.
+
+url	
+URL
+
+Indica la URL completa de la ubicación de la empresa específica. La URL debe ser un enlace que funcione.
+
+Carrusel de restaurantes (acceso limitado) 
+En estos momentos, el carrusel de restaurantes está limitado a un pequeño conjunto de proveedores de restaurantes. Si quieres participar, manifiesta tu interés en nuestro formulario.
+Si tienes varios restaurantes en la ficha de tu sitio web y quieres que puedan aparecer en un carrusel anfitrión, añade el objeto Carrusel. Además de las propiedades Carrusel estándar, define las siguientes propiedades de tu objeto Carrusel. Si bien no son obligatorias, debes añadir las siguientes propiedades si quieres que tu lista de restaurantes pueda aparecer en un carrusel anfitrión.
+
+Las propiedades que admite Google son las siguientes:
+
+Propiedades obligatorias
+image	
+Valores URL o ImageObject repetidos
+
+Muestra una o más imágenes del restaurante.
+
+Directrices de imágenes adicionales:
+
+Las URLs de imagen deben poder rastrearse e indexarse. Comprueba que Google pueda acceder a tus URLs mediante la herramienta de inspección de URLs.
+Las imágenes deben ser representativas del contenido etiquetado.
+Las imágenes deben estar en un formato de archivo compatible con Google Imágenes.
+Para obtener los mejores resultados, recomendamos proporcionar varias imágenes de alta resolución (mínimo de 50.000 píxeles al multiplicar la anchura y la altura) con las siguientes relaciones de aspecto: 16x9, 4x3 y 1x1.
+Por ejemplo:
+
+
+"image": [
+  "https://example.com/photos/1x1/photo.jpg",
+  "https://example.com/photos/4x3/photo.jpg",
+  "https://example.com/photos/16x9/photo.jpg"
+]
+name	
+Text
+
+Es el nombre del restaurante.
+
+Propiedades recomendadas
+address	
+PostalAddress
+
+Indica la ubicación física de la empresa. Incluye tantas propiedades como sea posible. Cuantas más propiedades proporciones, mayor será la calidad del resultado que obtendrán los usuarios. Por ejemplo:
+
+
+"address": {
+  "@type": "PostalAddress",
+  "streetAddress": "148 W 51st St",
+  "addressLocality": "New York",
+  "addressRegion": "NY",
+  "postalCode": "10019",
+  "addressCountry": "US"
+}
+servesCuisine	
+servesCuisine
+
+Indica el tipo de cocina que se sirve en el restaurante.
+
+Solucionar problemas
+Si tienes problemas para implementar o depurar datos estructurados, a continuación se incluyen algunos recursos que pueden serte útiles.
+
+Si usas un sistema de gestión de contenido (CMS) o alguien se encarga de gestionar tu sitio, pídele ayuda. No olvides reenviarle cualquier mensaje de Search Console que incluya información sobre el problema en cuestión.
+Google no garantiza que las funciones que utilizan datos estructurados aparezcan en los resultados de búsqueda. Para ver una lista con motivos habituales por los que Google no muestra tu contenido en resultados enriquecidos, consulta las directrices generales de datos estructurados.
+Es posible que haya un error en tus datos estructurados. Consulta la lista de errores de datos estructurados y el informe de datos estructurados que no se pueden analizar.
+Si se ha aplicado una acción manual de datos estructurados a tu página, se ignorarán sus datos estructurados, aunque la página puede seguir apareciendo en los resultados de la Búsqueda de Google. Para solucionar problemas de datos estructurados, usa el informe "Acciones manuales".
+Revisa las directrices para comprobar si tu contenido no las cumple. El problema podría deberse a que la página incluye contenido engañoso o etiquetas con contenido fraudulento. No obstante, es posible que el problema no se deba a la sintaxis, por lo que la prueba de resultados enriquecidos no podrá ayudarte a identificarlo.
+Solucionar problemas si faltan resultados enriquecidos o si se ha reducido el número total de resultados enriquecidos.
+Da cierto margen a Google para que vuelva a rastrear e indexar tu página. Recuerda que Google puede tardar varios días en encontrar y rastrear una página después de publicarse. Consulta las preguntas frecuentes sobre el rastreo y la indexación de la Búsqueda de Google.
+Publica una pregunta en el foro del Centro de la Búsqueda de Google.
+Datos estructurados de organización (Organization)Panel de información sobre comerciantes en los resultados de la Búsqueda de Google
+Panel de información sobre comerciantes en los resultados de la Búsqueda de Google
+Si añades datos estructurados de organización a tu página principal, Google podrá entender mejor los detalles administrativos de tu organización y diferenciar tu organización en los resultados de búsqueda. Algunas propiedades se utilizan en segundo plano para diferenciar tu organización de otras (como iso6523 y naics), mientras que otras pueden influir en los elementos visuales de los resultados de la Búsqueda (como qué logo se muestra en los resultados de búsqueda y en tu panel de información). Si eres comerciante, puedes influir en más detalles en tu panel de información para comerciantes y el perfil de marca, como la política de devoluciones, la dirección y la información de contacto. No se requiere ninguna propiedad en concreto. Te recomendamos que añadas todas las propiedades que sean relevantes para tu organización.
+
+Cómo añadir datos estructurados 
+Los datos estructurados son un formato estandarizado con el que se puede proporcionar información sobre una página y clasificar su contenido. Consulta cómo funcionan los datos estructurados si aún no te has familiarizado con ellos.
+
+A continuación se explica a grandes rasgos cómo crear, probar y publicar datos estructurados.
+
+Añade el mayor número posible de propiedades recomendadas que se apliquen a tu página web. No hay propiedades obligatorias. Añade las propiedades que se apliquen a tu contenido. Consulta más información sobre dónde insertar datos estructurados en una página en función del formato que estés utilizando.
+¿Usas un CMS? Quizá sea más fácil que uses un complemento que esté integrado en tu CMS.
+¿Usas JavaScript? Consulta cómo generar datos estructurados con JavaScript.
+Sigue las directrices.
+Valida tu código con la prueba de resultados enriquecidos y corrige los errores críticos. Te recomendamos que también corrijas los problemas no críticos que puedan marcarse en la herramienta, ya que pueden ayudar a mejorar la calidad de los datos estructurados (sin embargo, esto no es necesario para que se muestren los resultados enriquecidos).
+Crea varias páginas que incluyan tus datos estructurados y comprueba cómo las ve Google con la herramienta de inspección de URLs. Asegúrate de que Google pueda acceder a tu página y de que no esté bloqueada por un archivo robots.txt, por la etiqueta noindex ni por requisitos de inicio de sesión. Si la página se ve bien, puedes solicitar que Google vuelva a rastrear tus URLs.
+Nota: Da cierto margen de tiempo a Google para que vuelva a rastrear e indexar tus páginas. Recuerda que Google puede tardar varios días en encontrar y rastrear una página después de publicarse.
+Para que Google siempre tenga la versión actualizada de tus páginas, te recomendamos que envíes un sitemap. Puedes automatizar este envío con la API Sitemap de Search Console.
+Ejemplos
+Organization
+A continuación, se muestra un ejemplo de información de organización en código JSON-LD.
+
+
+
+<html>
+  <head>
+    <title>About Us</title>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "url": "https://www.example.com",
+      "sameAs": ["https://example.net/profile/example1234", "https://example.org/example1234"],
+      "logo": "https://www.example.com/images/logo.png",
+      "name": "Example Corporation",
+      "description": "The example corporation is well-known for producing high-quality widgets",
+      "email": "contact@example.com",
+      "telephone": "+47-99-999-9999",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Rue Improbable 99",
+        "addressLocality": "Paris",
+        "addressCountry": "FR",
+        "addressRegion": "Ile-de-France",
+        "postalCode": "75001"
+      },
+      "vatID": "FR12345678901",
+      "iso6523Code": "0199:724500PMK2A2M1SQQ228"
+    }
+    </script>
+  </head>
+  <body>
+  </body>
+</html>
+OnlineStore (subtipo de Organization) con una política de envíos y una política de devoluciones
+A continuación se muestra un ejemplo de una tienda online con una política de envíos y una política de devoluciones en código JSON-LD.
+
+Consulta la documentación sobre el marcado de la política de devoluciones de comerciantes para ver más ejemplos e información detallada sobre las políticas de devoluciones estándar a nivel de comerciante.
+
+
+<html>
+  <head>
+    <title>About Us</title>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "OnlineStore",
+        "name": "Example Online Store",
+        "url": "https://www.example.com",
+        "sameAs": [
+          "https://example.net/profile/example12",
+          "https://example.org/@example34"
+        ],
+        "logo": "https://www.example.com/assets/images/logo.png",
+        "contactPoint": {
+          "contactType": "Customer Service",
+          "email": "support@example.com",
+          "telephone": "+47-99-999-9900"
+        },
+        "vatID": "FR12345678901",
+        "iso6523Code": "0199:724500PMK2A2M1SQQ228",
+        "hasShippingService": [
+          {
+            "@type": "ShippingService",
+            "name": "shipping to CH and FR",
+            "description": "Shipping to CH 5% of order value, shipping to FR always free",
+            "fulfillmentType": "FulfillmentTypeDelivery",
+            "shippingConditions": [
+              {
+                "@type": "ShippingConditions",
+                "shippingOrigin": {
+                  "@type": "DefinedRegion",
+                  "addressCountry": "FR"
+                },
+                "shippingDestination": {
+                  "@type": "DefinedRegion",
+                  "addressCountry": "CH"
+                },
+                "shippingRate": {
+                  "@type": "ShippingRateSettings",
+                  "orderPercentage": "0.05"
+                }
+              },
+              {
+                "@type": "ShippingConditions",
+                "shippingOrigin": {
+                  "@type": "DefinedRegion",
+                  "addressCountry": "FR"
+                },
+                "shippingDestination": {
+                  "@type": "DefinedRegion",
+                  "addressCountry": "FR"
+                },
+                "shippingRate": {
+                  "@type": "MonetaryAmount",
+                  "value": "0",
+                  "currency": "EUR"
+                }
+              }
+            ]
+          }
+        ],
+        "hasMerchantReturnPolicy": {
+          "@type": "MerchantReturnPolicy",
+          "applicableCountry": [
+            "FR",
+            "CH"
+          ],
+          "returnPolicyCountry": "FR",
+          "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+          "merchantReturnDays": 60,
+          "returnMethod": "https://schema.org/ReturnByMail",
+          "returnFees": "https://schema.org/FreeReturn",
+          "refundType": "https://schema.org/FullRefund"
+        }
+        // Other Organization-level properties
+        // ...
+      }
+    </script>
+  </head>
+  <body>
+  </body>
+</html>
+Directrices
+Debes seguir estas directrices para que los datos estructurados se puedan incluir en los resultados de la Búsqueda de Google.
+
+Advertencia: Si tu sitio infringe una o varias de estas directrices, es posible que apliquemos alguna acción manual contra el sitio. Una vez solucionado el problema, puedes enviar tu sitio para que se vuelva a revisar.
+Directrices técnicas
+Directrices básicas de la Búsqueda
+Directrices generales sobre datos estructurados
+Directrices técnicas 
+Te recomendamos que coloques esta información en tu página principal o en una página que describa tu organización, como la página Acerca de nosotros. No hace falta que la incluyas en todas las páginas de tu sitio.
+
+Te recomendamos que uses el subtipo de schema.org Organization más específico que coincida con tu organización. Por ejemplo, si tienes un sitio de comercio electrónico, te recomendamos que uses el subtipo OnlineStore en lugar de OnlineBusiness. Si tu sitio está relacionado con una empresa local, como un restaurante o una tienda física, te recomendamos que proporciones tus detalles administrativos mediante los subtipos más específicos de LocalBusiness y seguir los campos obligatorios y los recomendados para las empresas locales, además de los campos que se recomiendan en esta guía.
+
+Definiciones de tipos de datos estructurados
+Google reconoce las siguientes propiedades de un objeto Organization. Para ayudar a Google a comprender mejor tu página, incluye el mayor número posible de propiedades recomendadas que se apliquen a tu página web. No hay propiedades obligatorias. Añade las propiedades que se apliquen a tu organización.
+
+Te recomendamos que te centres en las propiedades que sean útiles para tus usuarios, como name o alternateName para el nombre de tu empresa, así como en un indicador de la presencia real (como address o telephone) y la presencia online (por ejemplo, url o logo).
+Propiedades recomendadas
+address	
+PostalAddress
+
+Esta propiedad es obligatoria si usas el tipo LocalBusiness o uno de sus subtipos.
+La dirección (física o postal) de tu organización, si corresponde. Incluye todas las propiedades que correspondan a tu país. Cuantas más propiedades proporciones, mayor será la calidad del resultado que obtendrán los usuarios. Puedes proporcionar varias direcciones si tienes una ubicación en varias ciudades, provincias o países. Por ejemplo:
+
+
+"address": [{
+  "@type": "PostalAddress",
+  "streetAddress": "999 W Example St Suite 99 Unit 9",
+  "addressLocality": "New York",
+  "addressRegion": "NY",
+  "postalCode": "10019",
+  "addressCountry": "US"
+},{
+  "streetAddress": "999 Rue due exemple",
+  "addressLocality": "Paris",
+  "postalCode": "75001",
+  "addressCountry": "FR"
+}]
+address.addressCountry	
+Text
+
+El país de la dirección postal, mediante el código de país ISO 3166-1 alfa-2 de dos letras.
+
+address.addressLocality	
+Text
+
+Ciudad de tu dirección postal.
+
+address.addressRegion	
+Text
+
+La región de tu dirección postal, si corresponde. Por ejemplo, una provincia.
+
+address.postalCode	
+Text
+
+Código postal de tu dirección.
+
+address.streetAddress	
+Text
+
+La dirección postal completa de tu dirección postal.
+
+alternateName	
+Text
+
+Otro nombre común que usa tu organización, si corresponde.
+
+contactPoint	
+ContactPoint
+
+La mejor forma de que los usuarios se pongan en contacto con tu empresa, si procede. Incluye todos los métodos de asistencia disponibles para tus usuarios siguiendo las prácticas recomendadas de Google. Por ejemplo:
+
+
+"contactPoint": {
+  "@type": "ContactPoint",
+  "telephone": "+9-999-999-9999",
+  "email": "contact@example.com"
+}
+contactPoint.email	
+Text
+
+La dirección de correo para ponerse en contacto con su empresa, si procede. Si utilizas un tipo LocalBusiness, especifica una dirección de correo electrónico principal a nivel de LocalBusiness antes de utilizar contactPoint para especificar varias formas de contactar con tu organización.
+
+contactPoint.telephone	
+Text
+
+El número de teléfono de contacto con tu empresa, si procede. No olvides incluir el código de país y el prefijo telefónico en el número de teléfono. Si utilizas un tipo LocalBusiness, especifica un número de teléfono principal a nivel de LocalBusiness antes de usar contactPoint para especificar varias formas de contactar con tu organización.
+
+description	
+Text
+
+Una descripción detallada de tu organización, si procede.
+
+duns	
+Text
+
+El número DUNS de Dun & Bradstreet para identificar tu Organization, si procede. Te recomendamos usar el campo iso6523Code con el prefijo 0060:.
+
+email	
+Text
+
+La dirección de correo para ponerse en contacto con su empresa, si procede.
+
+foundingDate	
+Date
+
+Indica la fecha en la que se fundó tu Organization, en el formato de fecha ISO 8601, si corresponde.
+
+globalLocationNumber	
+Text
+
+El número de ubicación global de GS1 que identifica la ubicación de tu Organization, si procede.
+
+hasMerchantReturnPolicy	
+MerchantReturnPolicy repetida
+
+La política de devoluciones de tu Organization, si procede. Consulta el marcado de la política de devoluciones de comerciantes para obtener información detallada sobre las propiedades obligatorias y opcionales de MerchantReturnPolicy.
+
+Si no proporcionas una política de devoluciones para tu Organization o si algunos de sus productos tienen políticas de devoluciones específicas para las que necesitas anular las políticas de devoluciones definidas para tu Organization, también debes usar esta propiedad en el marcado de fichas de tienda.
+hasMemberProgram	
+MemberProgram repetida
+
+Un programa de fidelización que ofrezcas, si procede. Consulta el artículo sobre el marcado de programas de suscripción para obtener información detallada sobre las propiedades obligatorias y opcionales de MemberProgram.
+
+hasShippingService	
+ShippingService repetida
+
+La política de devoluciones de tu Organization, si procede. Consulta el marcado de la política de envío de comerciantes para obtener información detallada sobre las propiedades obligatorias y opcionales de ShippingService.
+
+Si no proporcionas una política de envíos para su Organization o si algunos de tus productos tienen políticas de envíos específicas para las que necesita anular las políticas de envíos definidas para tu Organization, también debes usar esta propiedad en el marcado de fichas de tienda.
+iso6523Code	
+Text
+
+El identificador ISO 6523 de tu organización, si corresponde. La primera parte de un identificador ISO 6523 es el ICD (Designador de Código Internacional), que define el esquema de identificación que se utiliza. La segunda parte es el propio identificador. Recomendamos separar el ICD y el identificador con un carácter de dos puntos (U+003A). Entre los valores del ICD más habituales se incluyen los siguientes:
+
+0060: Sistema universal de numeración de datos de Dun & Bradstreet (DUNS)
+0088: número de ubicación global (GLN) de GS1
+0199: identificador de entidad legal (LEI)
+legalName	
+Text
+
+El nombre legal registrado de tu Organization, si procede y es diferente del de la propiedad name.
+
+leiCode	
+Text
+
+Identificador de tu Organization según la norma ISO 17442, si corresponde. Te recomendamos usar el campo iso6523Code con el prefijo 0199:.
+
+logo	
+URL o ImageObject
+
+Un logotipo que represente a tu organización, si corresponde. Si añades esta propiedad, Google podrá saber mejor qué logotipo quieres que se muestre (por ejemplo, en los resultados de la Búsqueda y en los paneles de información).
+
+Directrices para imágenes:
+
+Deben tener como mínimo 112 x 112 píxeles.
+Las URL deben poder rastrearse e indexarse.
+Se debe usar un formato de archivo de imagen compatible con Google Imágenes.
+Asegúrate de que la imagen tenga el aspecto que quieres conseguir sobre un fondo completamente blanco (por ejemplo, si el logotipo es blanco o gris, puede que no tenga el aspecto deseado cuando se muestre sobre un fondo blanco).
+Si usas el tipo ImageObject, asegúrate de que incluye una propiedad contentUrl o url válida que siga las mismas directrices que un tipo URL.
+
+naics	
+Text
+
+El código del Sistema de Clasificación Industrial de América del Norte (NAICS) de tu Organization, si corresponde.
+
+name	
+Text
+
+El nombre de tu organización. Utiliza los mismos name y alternateName que utilizas en tu nombre de sitio.
+
+numberOfEmployees	
+QuantitativeValue
+
+El número de empleados de tu Organization, si corresponde.
+
+Ejemplo con un número concreto de empleados:
+
+
+"numberOfEmployees": {
+  "@type": "QuantitativeValue",
+  "value": 2056
+}
+Ejemplo con el número de empleados en un intervalo:
+
+
+"numberOfEmployees": {
+  "@type": "QuantitativeValue",
+  "minValue": 100,
+  "maxValue": 999
+}
+sameAs	
+URL
+
+La URL de una página de otro sitio web con información adicional sobre tu organización, si procede. Por ejemplo, una URL que dirija a la página del perfil de tu organización en una red social o en un sitio de reseñas. Puedes proporcionar varias URLs de sameAs.
+
+taxID	
+Text
+
+El número de identificación fiscal asociado a tu Organization, si corresponde. Asegúrate de que taxID coincida con el país que has proporcionado en el campo address.
+
+telephone	
+Text
+
+El número de teléfono de la empresa como forma de contacto principal de los clientes, si procede. No olvides incluir el código de país y el prefijo telefónico en el número de teléfono.
+
+url	
+URL
+
+La URL del sitio web de tu organización, si corresponde. De esta forma, Google podrá identificar tu organización de forma inequívoca.
+
+vatID	
+Text
+
+El código del IVA (Impuesto sobre el Valor Añadido) asociado a tu Organization, si es aplicable a tu país y empresa. Se trata de un generador de confianza importante para los usuarios (por ejemplo, pueden buscar tu empresa en registros públicos de IVA).
+
+Solucionar problemas
+Si tienes problemas para implementar o depurar datos estructurados, a continuación se incluyen algunos recursos que pueden serte útiles.
+
+Si usas un sistema de gestión de contenido (CMS) o alguien se encarga de gestionar tu sitio, pídele ayuda. No olvides reenviarle cualquier mensaje de Search Console que incluya información sobre el problema en cuestión.
+Google no garantiza que las funciones que utilizan datos estructurados aparezcan en los resultados de búsqueda. Para ver una lista con motivos habituales por los que Google no muestra tu contenido en resultados enriquecidos, consulta las directrices generales de datos estructurados.
+Es posible que haya un error en tus datos estructurados. Consulta la lista de errores de datos estructurados y el informe de datos estructurados que no se pueden analizar.
+Si se ha aplicado una acción manual de datos estructurados a tu página, se ignorarán sus datos estructurados, aunque la página puede seguir apareciendo en los resultados de la Búsqueda de Google. Para solucionar problemas de datos estructurados, usa el informe "Acciones manuales".
+Revisa las directrices para comprobar si tu contenido no las cumple. El problema podría deberse a que la página incluye contenido engañoso o etiquetas con contenido fraudulento. No obstante, es posible que el problema no se deba a la sintaxis, por lo que la prueba de resultados enriquecidos no podrá ayudarte a identificarlo.
+Solucionar problemas si faltan resultados enriquecidos o si se ha reducido el número total de resultados enriquecidos.
+Da cierto margen a Google para que vuelva a rastrear e indexar tu página. Recuerda que Google puede tardar varios días en encontrar y rastrear una página después de publicarse. Consulta las preguntas frecuentes sobre el rastreo y la indexación de la Búsqueda de Google.
+Publica una pregunta en el foro del Centro de la Búsqueda de Google.

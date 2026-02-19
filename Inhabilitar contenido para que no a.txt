@@ -1,0 +1,253 @@
+Inhabilitar contenido para que no aparezca en los resultados de búsqueda local ni en otras propiedades de Google
+Puedes impedir que el contenido de tu sitio que Google haya rastreado se muestre en varias propiedades de Google:
+
+Google Shopping
+Google Vuelos
+Google Hoteles y alquileres vacacionales
+Resultados de búsqueda locales (páginas de resultados de búsqueda especializadas que se muestran como respuesta a consultas locales)
+Si decides hacerlo, el contenido de tu sitio que el robot de Google haya rastreado no se mostrará en ninguna de las propiedades que aparecen en la lista anterior. Una vez que hayas seleccionado esa opción, el contenido que se muestra actualmente en estas propiedades se retirará en un periodo máximo de 30 días.
+
+La opción para inhabilitar contenido se aplica a nombres de dominio. Por ejemplo, puedes indicar example.com para inhabilitar todo el contenido de ese dominio, incluidos sus subdominios (como example.com). Si tienes otros dominios (como example.org o example2.com), incluido alguno que sirva contenido en un dominio que has inhabilitado, tendrás que inhabilitarlos explícitamente para que su contenido no aparezca en las propiedades de Google. No puedes inhabilitar solo subdominios concretos (como sub.example.com) ni únicamente directorios específicos (por ejemplo, example.com/sub).
+
+Ten en cuenta que, en el caso de los resultados de búsqueda local, esta opción de inhabilitación se aplica en todo el mundo. Para el resto de propiedades cubiertas, solo se aplica a los servicios alojados en el dominio google.com.
+Qué es la experiencia en la página en los resultados de la Búsqueda de Google
+Los sistemas de posicionamiento principales de Google tratan de recompensar el contenido que proporciona una buena experiencia en la página. Los propietarios de sitios web que quieran obtener buenos resultados con nuestros sistemas no deben centrarse únicamente en uno o dos aspectos de la experiencia en la página, sino que deben comprobar si ofrecen una buena experiencia general en la página en muchos aspectos.
+
+Autoevaluar la experiencia en la página del contenido 
+Si respondes de forma afirmativa a las siguientes preguntas, es probable que estés en el camino correcto para ofrecer una buena experiencia de página:
+
+¿Tus páginas tienen buenas Core Web Vitals?
+¿Tus páginas se sirven de forma segura?
+¿Tu contenido se muestra correctamente en los dispositivos móviles?
+¿Tu contenido evita el uso de una cantidad excesiva de anuncios que distraigan o interfieren con el contenido principal?
+¿Tus páginas evitan el uso de intersticiales intrusivos?
+¿Tu página está diseñada para que los visitantes puedan distinguir fácilmente el contenido principal del resto del contenido de la página?
+Estas preguntas no abarcan todos los aspectos de la experiencia en la página que se deben tener en cuenta. Sin embargo, este tipo de preguntas y la consulta de los recursos que se indican a continuación pueden ayudarte a ofrecer una buena experiencia general en la página.
+
+Recursos sobre la experiencia en la página
+A continuación se ofrecen algunos recursos que pueden ayudarte a medir, monitorizar y optimizar la experiencia en tus páginas:
+
+Interpretar las Core Web Vitals y los resultados de la Búsqueda de Google: consulta más información sobre las Core Web Vitals y su funcionamiento en los resultados de la Búsqueda de Google.
+Informe "HTTPS" de Search Console: comprueba si estás publicando páginas HTTPS seguras y, en caso contrario, qué debes corregir.
+Comprobar si la conexión de un sitio web es segura: consulta cómo puedes saber si la conexión de tu sitio web es segura, según la información facilitada por Chrome. Si tus páginas no se sirven con HTTPS, consulta cómo proteger tu sitio con HTTPS.
+Evitar los intersticiales y los cuadros de diálogo invasivos: descubre cómo evitar los intersticiales que puedan hacer que el contenido sea menos accesible.
+Chrome Lighthouse: este conjunto de herramientas de Chrome puede ayudarte a identificar una serie de mejoras en relación con la experiencia en la página, incluida la usabilidad móvil.
+Preguntas frecuentes
+¿Existe alguna "señal de experiencia en la página" única que la Búsqueda de Google utilice para el posicionamiento? 
+No existe una señal única. Nuestros principales sistemas de posicionamiento tienen en cuenta diferentes señales que coinciden con la experiencia general en la página.
+
+¿Qué aspectos de la experiencia en la página se usan en el posicionamiento? 
+Nuestros sistemas de posicionamiento usan las Core Web Vitals. Recomendamos que los propietarios de sitios web tengan buenas métricas Core Web Vitals para lograr buenos resultados en la Búsqueda y, en general, conseguir que la experiencia de usuario sea óptima. Ten en cuenta que obtener buenos resultados en informes como el informe "Core Web Vitals" de Search Console o en herramientas de terceros no garantiza que tus páginas vayan a aparecer al principio de los resultados de la Búsqueda de Google. La experiencia en la página es mucho más compleja que la puntuación de Core Web Vitals en sí. El objetivo de estas puntuaciones es ayudarte a mejorar tu sitio para los usuarios en general, y es posible que intentar obtener una puntuación perfecta solo por razones de SEO no sea la mejor forma de invertir tu tiempo.
+
+Aparte de las Core Web Vitals, hay más aspectos de la experiencia en la página que no contribuyen directamente a que tu sitio web aparezca más arriba en los resultados de búsqueda. Sin embargo, pueden hacer que el uso de tu sitio web sea más satisfactorio, lo que generalmente coincide con lo que nuestros sistemas de posicionamiento tratan de recompensar. Por lo tanto, merece la pena esforzarse por mejorar la experiencia en la página en general.
+
+¿La experiencia en la página se evalúa en todo el sitio o en una página concreta? 
+Por lo general, nuestros sistemas de posicionamiento principales evalúan el contenido por páginas, incluso cuando se tienen en cuenta aspectos relacionados con la experiencia en la página. No obstante, realizamos algunas evaluaciones en todo el sitio.
+
+¿Qué importancia tiene la experiencia en la página para el posicionamiento? 
+La Búsqueda de Google siempre intenta mostrar el contenido más relevante, aunque la experiencia en la página sea deficiente. Sin embargo, para muchas consultas, hay gran cantidad de contenido útil. En estos casos, tener una buena experiencia en la página puede contribuir a tener éxito en la Búsqueda.
+
+
+YouTube
+How to improve Cumulative Layout Shift for a better page experience
+Updated 19 de octubre de 2021
+
+Learn how to reduce your website's Cumulative Layout Shift. This video covers what a Cumulative Layout Shift is, its common issues and solutions, how to measure it, and what's a good score. Chapters 0:00 Introduction 0:31 What is Cumulative Layout
+
+
+YouTube
+How to improve Largest Contentful Paint for a better page experience
+Updated 5 de octubre de 2021
+
+Largest Contentful Paint is a metric that measures how quickly a page’s main content loads and renders (or paints) most of its visual elements to the screen. Learn more about what a good Largest Contentful Paint score is, how to measure your website
+
+
+YouTube
+First steps to getting a great Page Experience
+Updated 10 de agosto de 2021
+
+Learn about how mobile friendliness, HTTPS usage, safe browsing, and a lack of intrusive interstitials contribute to a great page experience. 00:00 Introduction 1:21 HTTPS 2:35 Mobile friendliness 4:19 Intrusive interstitials 5:46 Search Console 6:25
+
+Másexpand_more
+Novedades recientes en nuestro blog 
+Aquí tienes todo lo que hemos anunciado sobre la experiencia en la página en el blog del Centro de la Búsqueda de Google:
+
+
+Introducción de INP a Core Web Vitals
+Miércoles, 10 de mayo del 2023 A principios del 2020, el equipo de Google Chrome introdujo Core Web Vitals para proporcionar un conjunto de señales de calidad para las páginas web. Hoy, el equipo de Google Chrome ha anunciado un próximo cambio en las
+
+10 de mayo de 2023
+
+
+El papel de la experiencia en la página en la creación de contenido útil
+Miércoles, 19 de abril del 2023 El contenido útil suele ofrecer una buena experiencia en la página. Por eso, hoy hemos añadido una sección sobre la experiencia en la página a nuestras directrices sobre cómo crear contenido útil y hemos revisado
+
+19 de abril de 2023
+
+
+Plazos del proceso para añadir la experiencia en la página como factor de posicionamiento a ordenadores
+Jueves, 4 de noviembre del 2021 En la edición I/O 2021, avanzamos nuestros planes para añadir la experiencia en la página como factor de posicionamiento a ordenadores. Hoy anunciamos más detalles, incluidos los plazos en los que se implementarán
+
+4 de noviembre de 2021
+Conceptos básicos sobre las Métricas web principales y los resultados de búsqueda de Google
+Las Métricas web principales son un conjunto de métricas que miden la experiencia real que tienen los usuarios con la velocidad de carga del contenido, la interactividad y la estabilidad visual de las páginas. Recomendamos a los propietarios de sitios web que tengan buenas Métricas web principales para lograr buenos resultados en la Búsqueda y, en general, conseguir que la experiencia de usuario sea óptima. Esto, junto con otros aspectos de la experiencia en la página, se corresponde con lo que nuestros sistemas de posicionamiento principales buscan recompensar. Consulta más información en el artículo Qué es la experiencia en la página en los resultados de la Búsqueda de Google.
+
+Métricas web principales 
+Renderizado del mayor elemento con contenido (LCP): mide la velocidad de carga del contenido. Para proporcionar una buena experiencia de usuario, intenta que el valor de LCP sea inferior a 2,5 segundos.
+Interaction to Next Paint (INP): mide la capacidad de respuesta. Para proporcionar una buena experiencia de usuario, procura que el valor de INP sea inferior a 200 milisegundos.
+Cambios de diseño acumulados (CLS): mide la estabilidad visual. Para ofrecer una buena experiencia de usuario, intenta que el valor de CLS sea inferior a 0,1.
+Optimizar las Métricas web principales 
+A continuación se ofrecen algunos recursos que pueden ayudarte a medir, monitorizar y optimizar tus Métricas web principales:
+
+Consulta el informe "Métricas web principales" en Search Console. Este informe muestra el rendimiento de tus páginas.
+Consulta la guía sobre las Métricas web principales, que incluye información sobre cómo medirlas, depurarlas y mejorarlas, además de prácticas recomendadas.
+Consulta información sobre las diferentes herramientas que pueden ayudarte a medir y generar informes de las métricas web principales. Estas herramientas incluyen datos de LCP, INP y CLS.
+
+YouTube
+How to improve Cumulative Layout Shift for a better page experience
+Updated 19 de octubre de 2021
+
+Learn how to reduce your website's Cumulative Layout Shift. This video covers what a Cumulative Layout Shift is, its common issues and solutions, how to measure it, and what's a good score. Chapters 0:00 Introduction 0:31 What is Cumulative Layout
+
+
+YouTube
+How to improve Largest Contentful Paint for a better page experience
+Updated 5 de octubre de 2021
+
+Largest Contentful Paint is a metric that measures how quickly a page’s main content loads and renders (or paints) most of its visual elements to the screen. Learn more about what a good Largest Contentful Paint score is, how to measure your website
+
+
+YouTube
+First steps to getting a great Page Experience
+Updated 10 de agosto de 2021
+
+Learn about how mobile friendliness, HTTPS usage, safe browsing, and a lack of intrusive interstitials contribute to a great page experience. 00:00 Introduction 1:21 HTTPS 2:35 Mobile friendliness 4:19 Intrusive interstitials 5:46 Search Console 6:25
+
+Másexpand_more
+Novedades recientes en nuestro blog 
+A continuación puedes ver todas las novedades sobre Core Web Vitals que hemos ido anunciando en el blog del Centro de la Búsqueda de Google:
+
+Introducción de INP a Core Web Vitals
+Miércoles, 10 de mayo del 2023 A principios del 2020, el equipo de Google Chrome introdujo Core Web Vitals para proporcionar un conjunto de señales de calidad para las páginas web. Hoy, el equipo de Google Chrome ha anunciado un próximo cambio en las
+
+10 de mayo de 2023
+
+
+El papel de la experiencia en la página en la creación de contenido útil
+Miércoles, 19 de abril del 2023 El contenido útil suele ofrecer una buena experiencia en la página. Por eso, hoy hemos añadido una sección sobre la experiencia en la página a nuestras directrices sobre cómo crear contenido útil y hemos revisado
+
+19 de abril de 2023
+
+
+Plazos del proceso para añadir la experiencia en la página como factor de posicionamiento a ordenadores
+Jueves, 4 de noviembre del 2021 En la edición I/O 2021, avanzamos nuestros planes para añadir la experiencia en la página como factor de posicionamiento a ordenadores. Hoy anunciamos más detalles, incluidos los plazos en los que se implementarán
+
+4 de noviembre de 2021
+Evitar los intersticiales y los cuadros de diálogo invasivosEjemplo de un intersticial invasivo
+Los intersticiales y los cuadros de diálogo invasivos son elementos de página que impiden a los usuarios visualizar el contenido y, por lo general, tienen fines publicitarios. Los anuncios intersticiales se superponen en toda la página, mientras que los cuadros de diálogo lo hacen solo en una parte de la página, lo que, a veces, también impide ver el contenido subyacente.
+
+A veces es necesario mostrar cuadros de diálogo en los sitios web por varios motivos. Sin embargo, interrumpir a los usuarios con intersticiales invasivos puede causarles frustración y hacer que tu sitio web no les parezca fiable.
+
+Los intersticiales y los cuadros de diálogo invasivos dificultan que Google y otros buscadores puedan entender tu contenido, lo que puede empeorar el rendimiento de búsqueda de tu sitio. Del mismo modo, si los usuarios consideran que es difícil navegar por tu sitio, es poco probable que quieran volver a visitarlo, ya sea directamente o a través de buscadores.
+
+Crear cuadros de diálogo no invasivos
+Al crear cuadros de diálogo no invasivos, permites que los usuarios accedan a tu contenido sin que se les interrumpa con cuadros de diálogo. Se puede hacer con cualquier tipo de cuadro de diálogo promocional, incluidas las solicitudes de descarga de aplicaciones. Sigue estas prácticas recomendadas para mejorar la experiencia de usuario en tu sitio, además de ayudar a la Búsqueda de Google a entender el contenido y la estructura de tu sitio.
+
+Usar banners en lugar de intersticiales
+Ejemplos de banners que ofrecen una mejor experiencia de usuario
+En vez de poner intersticiales de página completa, pon banners que solo ocupen una pequeña parte de la pantalla para captar la atención de los usuarios. Con los banners, te aseguras de que tanto usuarios como buscadores puedan visualizar tu contenido en cuanto acceden a la página.
+
+Se pueden implementar de varias formas. Por ejemplo, se pueden implementar banners de descarga de aplicaciones mediante formatos de banner compatibles con el navegador, como los banners de aplicaciones inteligentes para Safari o los banners de descarga de aplicaciones en Chrome. También puedes crear un banner HTML, parecido a un anuncio pequeño estándar, que enlace a la tienda de aplicaciones para descargar la aplicación. Puedes reutilizar estos pequeños contenedores para añadir otros tipos de notificaciones, como las solicitudes para suscribirse a la newsletter.
+
+Usar bibliotecas comunes
+Muchos CMS tienen complementos con los que se pueden crear cuadros de diálogo e intersticiales estándar para los casos prácticos más habituales, como las solicitudes para suscribirse a una newsletter. Por ejemplo, si usas WordPress, busca "suscripción a newsletter en wordpress". Usar estos complementos puede ser útil para Google, otros buscadores e Internet en general, ya que los desarrolladores de complementos pueden implementar mejoras a gran escala.
+
+Evitar errores habituales
+A menos que sea obligatorio por motivos legales, evita estos errores habituales al diseñar un cuadro de diálogo o intersticial para ayudar a la Búsqueda de Google a rastrear y entender tu contenido:
+
+No ocultes el contenido de toda la página con intersticiales.
+No redirijas al usuario a una página distinta para que dé su consentimiento o introduzca información.
+Intersticiales obligatorios
+En algunos sitios es obligatorio mostrar intersticiales debido al tipo de contenido que publican. Por ejemplo, es posible que en los sitios de casinos se tenga que mostrar una ventana de verificación de edad, que es un tipo de intersticial en el que los usuarios tienen que introducir su edad para poder acceder al contenido.
+
+Los intersticiales obligatorios están exentos de cumplir las directrices descritas en este documento. Sin embargo, si es posible, recomendamos que se sigan estas prácticas recomendadas en estos sitios:
+
+Asegúrate de que el contenido quede cubierto por el intersticial. De este modo, nos aseguramos de que Google pueda indexar al menos parte del contenido y mostrarlo en los resultados de búsqueda.
+No redirijas las solicitudes HTTP entrantes a otra página para dar el consentimiento o introducir datos. Si rediriges todas las URLs a una sola página, desaparecerán de los resultados de búsqueda todas las páginas menos esa, ya que es la única que puede obtener el robot de Google.
+En el caso del contenido en el que la comprobación de edad es obligatoria para usuarios adultos, recomendamos permitir que el robot de Google rastree el contenido sin activar la comprobación de edad. Para ello, puedes verificar las solicitudes del robot de Google y servir el contenido sin la comprobación de edad.
+Empezar a usar intercambios firmados en la Búsqueda de Google
+Los intercambios firmados (SXG) permiten que la Búsqueda de Google precargue tu contenido y, al mismo tiempo, respete la privacidad del usuario. En la práctica, significa que tanto los resultados AMP como los que no son AMP que se muestran en la Búsqueda de Google pueden precargar algunos recursos clave (como HTML, JavaScript, CSS, imágenes o fuentes) respetando la privacidad, si el sitio web asociado admite SXG.
+
+Cuando el usuario hace clic en el resultado, la página web empieza a renderizarse mucho antes porque los recursos clave ya están disponibles, lo que mejora la experiencia de usuario. Esto puede provocar que tu contenido obtenga una puntuación más baja en Largest Contentful Paint (LCP), lo que puede mejorar la experiencia en la página en general.
+
+Implementar SXG
+Para implementar SXG, sigue la guía detallada de web.dev. Después de implementarlo, sigue la guía de Chrome para optimizar el LCP con intercambios firmados.
+
+En el caso de las páginas AMP, sigue la guía detallada de amp.dev.
+
+Requisitos adicionales de la Búsqueda de Google
+Google utiliza una caché de SXG para precargar tu contenido y puede servir estos SXG almacenados en caché varias veces.
+
+Para asegurarte de que el contenido que se muestra en la Búsqueda de Google esté actualizado, configura los valores de caducidad de SXG de forma adecuada. Como regla general, comprueba que la fecha de vencimiento sea anterior a estas fechas:
+
+Sea anterior a la fecha de caducidad de la caché determinada por los encabezados HTTP
+No sea ni un solo día posterior si el contenido es JavaScript o tiene JavaScript insertado; en caso contrario, que no sea 7 o más días posterior
+Para asegurarte de que el contenido se muestre correctamente al servirse en distintos dispositivos, sigue estas recomendaciones:
+
+Traslada el contenido personalizado, como carritos de la compra, a elementos de carga en diferido que estén fuera de SXG. También puedes añadir el encabezado firmado Vary: Cookie. Los SXGs que tengan este encabezado solo se mostrarán a los visitantes que no tengan una cookie para tu sitio.
+Crea las páginas con un diseño web adaptable. También puedes servir páginas para ordenadores y para móviles en URLs independientes o añadir una anotación en las páginas para indicar que no son adaptables mediante la etiqueta meta supported-media. Por ejemplo, en el elemento <head> de la página, añade la siguiente etiqueta:
+
+<meta name=supported-media content="only screen and (max-width: 640px)">
+Monitorizar y depurar SXG
+Si quieres ver un listado de herramientas que puedes usar para depurar SXG, consulta la guía de web.dev sobre herramientas de SXG.
+
+Si el robot de Google no puede analizar un SXG, puedes volver a rastrear la URL sin application/signed-exchange;v=b3 en el encabezado Accept para obtener la variante text/html. En el caso de que se produzca algún error de indexación de SXG, la Búsqueda de Google enlazará a la URL original, sin SXG.
+
+En páginas AMP, supervisa los errores de SXG mediante el informe de estado de AMP de Search Console.
+
+Depurar la caché de SXG de Google
+Para determinar si SXG cumple los requisitos de caché, usa la extensión de Chrome SXG Validator.
+
+También puedes hacer la consulta directamente en la caché de SXG de Google. Por ejemplo, si la URL de SXG es https://signed-exchange-testing.dev/sxgs/valid.html, escribe la URL de caché correspondiente:
+
+https://signed--exchange--testing-dev.webpkgcache.com/doc/-/s/signed-exchange-testing.dev/sxgs/valid.html
+
+El algoritmo para calcular el subdominio y el sufijo de la ruta de la URL es el mismo que el de la caché de AMP, pero la cadena de infijo /doc/-/ es diferente.
+
+Si la respuesta es SXG, significa que la respuesta del servidor de origen cumple los requisitos de Google SXG Cache. Si no, incluirá un encabezado HTTP que indique el motivo.
+
+Si hay un encabezado Warning, indica un error que ha impedido que SXG cumpla los requisitos de caché.
+Si hay un encabezado Location, significa que la caché aún no lo ha obtenido. No es un error de tu SXG.
+Independientemente de la respuesta, la caché pone en cola una solicitud de copia actualizada a la URL original. Hay varios factores que determinan cuándo y si se envía esta solicitud, incluida la velocidad con la que el robot de Google puede rastrear tu sitio.
+
+Google no almacena en caché los SXGs más tiempo del indicado en el campo expires de la firma de SXG o del tiempo de vida de actualización de los encabezados sin firmar de la respuesta de SXG.
+
+En páginas AMP, puedes depurar errores de almacenamiento en caché con la herramienta de inspección de URLs.
+
+Mantente informado
+Suscríbete a la lista de distribución webpackaging-announce para estar al día de cambios como estos:
+
+Cambios en Google SXG Cache para habilitar nuevas funciones o para que otras dejen de estar disponibles.
+Cambios importantes en el empaquetador web de herramientas de SXG, el módulo NGINX SXG y libsxg.
+Si tienes alguna duda sobre SXG en la Búsqueda de Google, visita la comunidad de ayuda del Centro de la Búsqueda.
+Ayudar a los lectores a encontrar tu sitio a través de fuentes preferidas en la Búsqueda de Google
+Si eres propietario de un sitio web, puedes ayudar a tu audiencia a encontrar tu publicación como fuente preferida en la Búsqueda de Google. Cuando un usuario selecciona tu sitio como fuente preferida, es más probable que tu contenido aparezca en la sección Noticias destacadas cuando haga consultas de noticias relevantes.
+
+Fuentes preferidas en Noticias destacadas de la Búsqueda de GoogleUn sitio que aparece de forma más destacada en Noticias destacadas cuando el usuario lo ha seleccionado como fuente preferida
+Disponibilidad de la función
+La función de fuentes preferidas está disponible en todo el mundo en inglés para las consultas que activan la función "Noticias destacadas".
+
+Solo los sitios a nivel de dominio y de subdominio pueden aparecer en la herramienta de preferencias de fuentes. Por ejemplo, https://www.example.com/ y https://code.example.com/ cumplen los requisitos para ser fuentes preferidas, pero el subdirectorio https://www.example.com/blog no.
+
+Cómo ayudar a los usuarios a encontrar tu sitio como fuente preferida
+Si tu sitio aparece en la herramienta de preferencias de fuentes (para comprobarlo, introduce tu sitio en el cuadro de búsqueda de la herramienta), puedes usar los siguientes métodos para indicar a tus lectores que seleccionen tu sitio como fuente preferida:
+
+Añade el enlace profundo a tus publicaciones o promociones en redes sociales. Utiliza el siguiente formato de URL, que lleva a los usuarios directamente a tu sitio en la herramienta de preferencias de la fuente:
+
+https://google.com/preferences/source?q=Your_Website's_URL
+Por ejemplo, si tu sitio es https://example.com, usa la siguiente URL:
+
+
+https://google.com/preferences/source?q=example.com
+Incluye un botón en tu sitio junto con otras llamadas a la acción (CTAs) de redes sociales. Puedes descargar y usar estos recursos de botones proporcionados por Google o usar tus propios botones.
+Estos métodos son ejemplos de cómo puedes crear tu audiencia y ayudar a los usuarios a encontrar tu sitio como fuente preferida. No es necesario que los completes en orden para que aparezca como fuente preferida.

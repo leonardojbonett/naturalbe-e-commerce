@@ -4,6 +4,18 @@
  */
 
 (() => {
+  function upsertJsonLdScript(id, data) {
+    if (!id || !data) return;
+    let script = document.getElementById(id);
+    if (!script) {
+      script = document.createElement('script');
+      script.type = 'application/ld+json';
+      script.id = id;
+      document.head.appendChild(script);
+    }
+    script.textContent = JSON.stringify(data);
+  }
+
   // Convertir URLs relativas a absolutas
   function toAbsoluteUrl(value) {
     if (!value) return undefined;
@@ -31,7 +43,6 @@
    */
   window.injectProductDetailSchema = function(product) {
     if (!product || !product.nombre || !product.precio) return;
-    if (document.getElementById('product-detail-schema')) return;
 
     const priceValue = Number(product.precio_oferta || product.precio || 0);
     const imageRaw = product.imagen_principal_webp || product.imagen_principal || product.image || '';
@@ -110,12 +121,7 @@
       }
     };
 
-    // Inyectar script en head
-    const script = document.createElement('script');
-    script.type = 'application/ld+json';
-    script.id = 'product-detail-schema';
-    script.textContent = JSON.stringify(schema);
-    document.head.appendChild(script);
+    upsertJsonLdScript('product-detail-schema', schema);
   };
 
   /**
@@ -125,18 +131,20 @@
    */
   window.injectProductListSchema = function(products, options = {}) {
     if (!Array.isArray(products) || !products.length) return;
-    if (document.getElementById('product-list-schema')) return;
 
     const {
       title = 'Productos Natural Be',
-      description = 'Catálogo de suplementos naturales'
+      description = 'Catálogo de suplementos naturales',
+      listUrl = window.location.href
     } = options;
 
     const schema = {
       "@context": "https://schema.org",
       "@type": "ItemList",
       "name": title,
+      "url": toAbsoluteUrl(listUrl),
       "description": description,
+      "itemListOrder": "https://schema.org/ItemListOrderAscending",
       "itemListElement": products
         .filter(p => p.nombre && p.precio)
         .slice(0, 50)
@@ -145,40 +153,43 @@
           const imageRaw = product.imagen_principal_webp || product.imagen_principal || product.image || '';
           const url = toAbsoluteUrl(product.url || '');
 
-          const item = {
+          const listItem = {
             "@type": "ListItem",
             "position": index + 1,
-            "name": product.nombre || product.name || '',
-            "image": imageRaw ? toAbsoluteUrl(imageRaw) : undefined,
             "url": url,
-            "offers": {
-              "@type": "Offer",
-              "priceCurrency": "COP",
-              "price": priceValue,
-              "availability": product.disponible === false ? "OutOfStock" : "InStock"
+            "item": {
+              "@type": "Product",
+              "name": product.nombre || product.name || '',
+              "image": imageRaw ? toAbsoluteUrl(imageRaw) : undefined,
+              "url": url,
+              "offers": {
+                "@type": "Offer",
+                "priceCurrency": "COP",
+                "price": priceValue,
+                "availability": product.disponible === false
+                  ? "https://schema.org/OutOfStock"
+                  : "https://schema.org/InStock"
+              }
             }
           };
 
           // Agregar rating si existe
           if (product.rating_value) {
-            item.aggregateRating = {
+            listItem.item.aggregateRating = {
               "@type": "AggregateRating",
               "ratingValue": Number(product.rating_value),
               "reviewCount": Number(product.rating_count || 0)
             };
           }
 
-          return item;
+          return listItem;
         })
-        .filter(item => item.name && item.url)
+        .filter(item => item.item && item.item.name && item.url)
     };
 
     if (schema.itemListElement.length > 0) {
-      const script = document.createElement('script');
-      script.type = 'application/ld+json';
-      script.id = 'product-list-schema';
-      script.textContent = JSON.stringify(schema);
-      document.head.appendChild(script);
+      schema.numberOfItems = schema.itemListElement.length;
+      upsertJsonLdScript('product-list-schema', schema);
     }
   };
 
@@ -188,7 +199,6 @@
    */
   window.injectBreadcrumbSchema = function(breadcrumbs) {
     if (!Array.isArray(breadcrumbs) || !breadcrumbs.length) return;
-    if (document.getElementById('breadcrumb-schema')) return;
 
     const schema = {
       "@context": "https://schema.org",
@@ -201,11 +211,7 @@
       }))
     };
 
-    const script = document.createElement('script');
-    script.type = 'application/ld+json';
-    script.id = 'breadcrumb-schema';
-    script.textContent = JSON.stringify(schema);
-    document.head.appendChild(script);
+    upsertJsonLdScript('breadcrumb-schema', schema);
   };
 
   /**
@@ -214,7 +220,6 @@
    */
   window.injectFaqSchema = function(faqs) {
     if (!Array.isArray(faqs) || !faqs.length) return;
-    if (document.getElementById('faq-schema')) return;
 
     const schema = {
       "@context": "https://schema.org",
@@ -229,11 +234,7 @@
       }))
     };
 
-    const script = document.createElement('script');
-    script.type = 'application/ld+json';
-    script.id = 'faq-schema';
-    script.textContent = JSON.stringify(schema);
-    document.head.appendChild(script);
+    upsertJsonLdScript('faq-schema', schema);
   };
 
   /**
@@ -242,7 +243,6 @@
    */
   window.injectReviewSchema = function(review) {
     if (!review || !review.author || !review.rating) return;
-    if (document.getElementById('review-schema')) return;
 
     const schema = {
       "@context": "https://schema.org",
@@ -261,11 +261,7 @@
       "datePublished": review.datePublished || new Date().toISOString().slice(0, 10)
     };
 
-    const script = document.createElement('script');
-    script.type = 'application/ld+json';
-    script.id = 'review-schema';
-    script.textContent = JSON.stringify(schema);
-    document.head.appendChild(script);
+    upsertJsonLdScript('review-schema', schema);
   };
 
   // Exportar para uso en window

@@ -39,22 +39,31 @@
   }
   </script>
   <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"FAQPage",
-    "mainEntity":[
-      {
-        "@type":"Question",
-        "name":"{{FAQ_PREGUNTA_1}}",
-        "acceptedAnswer":{"@type":"Answer","text":"{{FAQ_RESPUESTA_1}}"}
-      },
-      {
-        "@type":"Question",
-        "name":"{{FAQ_PREGUNTA_2}}",
-        "acceptedAnswer":{"@type":"Answer","text":"{{FAQ_RESPUESTA_2}}"}
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "{{FAQ_PREGUNTA_1}}",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "{{FAQ_RESPUESTA_1}}"
       }
-    ]
-  }
+    },
+    {
+      "@type": "Question",
+      "name": "{{FAQ_PREGUNTA_2}}",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "{{FAQ_RESPUESTA_2}}"
+      }
+    }
+  ],
+  "@id": "/{{CANONICAL}}#faq",
+  "url": "/{{CANONICAL}}",
+  "inLanguage": "es-CO"
+}
   </script>
 </head>
 <body class="page">

@@ -73,6 +73,211 @@ const WOMPI_BEGIN_COOLDOWN_MS = 5000;
 let lastWompiBeginTs = 0;
 let wompiScriptPromise = null;
 const WOMPI_WIDGET_SCRIPT_URL = 'https://checkout.wompi.co/widget.js';
+const WOMPI_CHECKOUT_PAGE_PATH = '/checkout.html';
+const WOMPI_DEBUG = window.NB_DEBUG_WOMPI === true;
+const WOMPI_FRIENDLY_ERROR = 'No pudimos procesar el pago en este momento. Intenta de nuevo o finaliza por WhatsApp.';
+
+function wompiDebugLog(...args) {
+    if (WOMPI_DEBUG) {
+        console.log('[WOMPI]', ...args);
+    }
+}
+
+function showUserFriendlyError(message) {
+    const safeMessage = message || WOMPI_FRIENDLY_ERROR;
+    if (typeof window.showToast === 'function') {
+        window.showToast(safeMessage, 'error');
+        return;
+    }
+    const cartBody = document.getElementById('cartBody');
+    if (cartBody) {
+        renderWompiFallback(safeMessage);
+    }
+}
+
+function setWompiButtonLoading(isLoading, loadingText) {
+    const button = document.getElementById('wompiCheckoutBtn');
+    if (!button) return;
+    if (!button.dataset.originalText) {
+        button.dataset.originalText = button.innerHTML;
+    }
+    if (isLoading) {
+        button.disabled = true;
+        button.textContent = loadingText || 'Conectando pago...';
+    } else {
+        button.disabled = false;
+        button.innerHTML = button.dataset.originalText || '💳 Pagar con Tarjeta / PSE / Nequi';
+    }
+}
+
+function setFormSubmitLoading(form, isLoading, loadingText) {
+    if (!form) return;
+    const submitBtn = form.querySelector('button[type="submit"]');
+    if (!submitBtn) return;
+    if (!submitBtn.dataset.originalText) {
+        submitBtn.dataset.originalText = submitBtn.innerHTML;
+    }
+    if (isLoading) {
+        submitBtn.disabled = true;
+        submitBtn.textContent = loadingText || 'Procesando...';
+    } else {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = submitBtn.dataset.originalText || 'Continuar al pago';
+    }
+}
+
+function isWompiCheckoutPage() {
+    const path = (window.location && window.location.pathname) ? window.location.pathname.toLowerCase() : '';
+    return path === WOMPI_CHECKOUT_PAGE_PATH || path.endsWith('/checkout.html');
+}
+
+function redirectToWompiCheckoutPage() {
+    const target = `${window.location.origin}${WOMPI_CHECKOUT_PAGE_PATH}`;
+    window.location.href = target;
+}
+
+function normalizePhone(value) {
+    let digits = String(value || '').replace(/\D+/g, '');
+    if (digits.startsWith('57') && digits.length > 10) {
+        digits = digits.slice(2);
+    }
+    return digits;
+}
+
+function formatPhoneMask(value) {
+    const digits = normalizePhone(value).slice(0, 10);
+    const part1 = digits.slice(0, 3);
+    const part2 = digits.slice(3, 6);
+    const part3 = digits.slice(6, 10);
+    if (!part2) return part1;
+    if (!part3) return `${part1} ${part2}`;
+    return `${part1} ${part2} ${part3}`;
+}
+
+function clearFieldError(fieldId) {
+    const field = document.getElementById(fieldId);
+    const errorId = `${fieldId}Error`;
+    const errorEl = document.getElementById(errorId);
+    if (errorEl) {
+        errorEl.remove();
+    }
+    if (!field) return;
+    field.removeAttribute('aria-invalid');
+    if (field.getAttribute('aria-describedby') === errorId) {
+        field.removeAttribute('aria-describedby');
+    }
+}
+
+function setFieldError(fieldId, message) {
+    const field = document.getElementById(fieldId);
+    if (!field) return;
+    const errorId = `${fieldId}Error`;
+    clearFieldError(fieldId);
+    const error = document.createElement('p');
+    error.id = errorId;
+    error.className = 'wompi-error';
+    error.setAttribute('role', 'alert');
+    error.textContent = message;
+    field.setAttribute('aria-invalid', 'true');
+    field.setAttribute('aria-describedby', errorId);
+    field.insertAdjacentElement('afterend', error);
+}
+
+function clearCustomerFormErrors() {
+    [
+        'wompiCustomerName',
+        'wompiCustomerEmail',
+        'wompiCustomerPhone',
+        'wompiCustomerCity',
+        'wompiCustomerAddress'
+    ].forEach(clearFieldError);
+}
+
+function applyCustomerFormErrors(fieldErrors) {
+    Object.entries(fieldErrors || {}).forEach(([fieldId, message]) => {
+        setFieldError(fieldId, message);
+    });
+}
+
+function getCustomerFormData() {
+    return {
+        customerName: (document.getElementById('wompiCustomerName') || {}).value || '',
+        customerEmail: (document.getElementById('wompiCustomerEmail') || {}).value || '',
+        customerPhone: (document.getElementById('wompiCustomerPhone') || {}).value || '',
+        customerCity: (document.getElementById('wompiCustomerCity') || {}).value || '',
+        customerAddress: (document.getElementById('wompiCustomerAddress') || {}).value || ''
+    };
+}
+
+function validateCustomerForm(data) {
+    const name = String(data.customerName || '').trim();
+    const email = String(data.customerEmail || '').trim();
+    const phone = normalizePhone(data.customerPhone);
+    const city = String(data.customerCity || '').trim();
+    const address = String(data.customerAddress || '').trim();
+    const fieldErrors = {};
+
+    if (name.length < 3) fieldErrors.wompiCustomerName = 'Ingresa nombre y apellido.';
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) fieldErrors.wompiCustomerEmail = 'Ingresa un correo valido.';
+    if (phone.length < 10) fieldErrors.wompiCustomerPhone = 'Ingresa un telefono valido de 10 digitos.';
+    if (!city) fieldErrors.wompiCustomerCity = 'Selecciona una ciudad de entrega.';
+    if (address.length < 8) fieldErrors.wompiCustomerAddress = 'Ingresa una direccion mas completa.';
+
+    return {
+        isValid: Object.keys(fieldErrors).length === 0,
+        fieldErrors
+    };
+}
+
+function validateSingleCustomerField(fieldId) {
+    const validation = validateCustomerForm(getCustomerFormData());
+    const message = validation.fieldErrors[fieldId];
+    if (message) {
+        setFieldError(fieldId, message);
+        return false;
+    }
+    clearFieldError(fieldId);
+    return true;
+}
+
+function setupWompiFormRealtimeValidation() {
+    const fields = [
+        'wompiCustomerName',
+        'wompiCustomerEmail',
+        'wompiCustomerPhone',
+        'wompiCustomerCity',
+        'wompiCustomerAddress'
+    ];
+    fields.forEach((fieldId) => {
+        const field = document.getElementById(fieldId);
+        if (!field) return;
+        if (fieldId === 'wompiCustomerPhone') {
+            field.setAttribute('inputmode', 'numeric');
+            field.setAttribute('autocomplete', 'tel-national');
+            field.setAttribute('maxlength', '12');
+            field.addEventListener('input', () => {
+                field.value = formatPhoneMask(field.value);
+                if (field.getAttribute('aria-invalid') === 'true') {
+                    validateSingleCustomerField(fieldId);
+                }
+            });
+            field.addEventListener('blur', () => {
+                field.value = formatPhoneMask(field.value);
+                validateSingleCustomerField(fieldId);
+            });
+            return;
+        }
+        const evt = field.tagName === 'SELECT' ? 'change' : 'blur';
+        field.addEventListener(evt, () => {
+            validateSingleCustomerField(fieldId);
+        });
+        field.addEventListener('input', () => {
+            if (field.getAttribute('aria-invalid') === 'true') {
+                validateSingleCustomerField(fieldId);
+            }
+        });
+    });
+}
 
 function trackBeginCheckoutWompi() {
     const now = Date.now();
@@ -121,18 +326,16 @@ function loadWompiCheckoutScript() {
 
         script.onload = () => {
             cleanup();
-            console.log('✅ Wompi Widget cargado');
+            wompiDebugLog('Widget cargado');
             resolve();
         };
         script.onerror = () => {
             cleanup();
-            console.error('❌ Error cargando Wompi Widget');
             pushWompiTelemetry('wompi_widget_load_failed', { reason: 'script_error' });
             reject(new Error('No se pudo cargar Wompi'));
         };
 
         timeoutId = setTimeout(() => {
-            console.error('❌ Timeout cargando Wompi Widget');
             pushWompiTelemetry('wompi_widget_load_failed', { reason: 'timeout' });
             reject(new Error('Timeout cargando Wompi'));
         }, timeoutMs);
@@ -147,69 +350,85 @@ function loadWompiCheckoutScript() {
 // Inicializar Wompi al cargar la página
 document.addEventListener('DOMContentLoaded', function() {
     loadWompiCheckoutScript().catch(error => {
-        console.error('Error inicializando Wompi:', error);
+        pushWompiTelemetry('wompi_widget_load_failed', { reason: 'init_error', message: String(error && error.message || error) });
     });
 });
 
 // Función para checkout con Wompi
 async function checkoutWompi() {
     if (cart.length === 0) {
-        alert('Tu carrito está vacío');
+        showUserFriendlyError('Tu carrito esta vacio por ahora. Agrega productos para continuar.');
         return;
     }
-
-    trackBeginCheckoutWompi();
-    if (typeof nbGa4EcomEvent === 'function') {
-        // GA4: add_shipping_info cuando se abre formulario Wompi
-        nbGa4EcomEvent('add_shipping_info', cart, getCartTotal(), { method: 'wompi' });
+    if (!isWompiCheckoutPage()) {
+        redirectToWompiCheckoutPage();
+        return;
     }
-    
-    // Mostrar formulario de datos del cliente
-    showCustomerFormWompi();
+    setWompiButtonLoading(true, 'Conectando pago...');
+    try {
+        await loadWompiCheckoutScript();
+        if (typeof WidgetCheckout === 'undefined') {
+            throw new Error('WidgetCheckout no disponible');
+        }
+
+        trackBeginCheckoutWompi();
+        if (typeof nbGa4EcomEvent === 'function') {
+            // GA4: add_shipping_info cuando se abre formulario Wompi
+            nbGa4EcomEvent('add_shipping_info', cart, getCartTotal(), { method: 'wompi' });
+        }
+
+        // Mostrar formulario de datos del cliente
+        showCustomerFormWompi();
+    } catch (error) {
+        pushWompiTelemetry('wompi_checkout_init_failed', { message: String(error && error.message || error) });
+        renderWompiFallback(WOMPI_FRIENDLY_ERROR);
+    } finally {
+        setWompiButtonLoading(false);
+    }
 }
 
 // Mostrar formulario de datos del cliente
 function showCustomerFormWompi() {
-    const modal = document.getElementById('cartModal');
     const cartBody = document.getElementById('cartBody');
     
     const subtotal = getCartTotal();
     
     cartBody.innerHTML = `
-        <div style="padding: 2rem;">
-            <h2 style="color: #2d8659; margin-bottom: 1.5rem;">Datos para el Pago</h2>
+        <div class="wompi-form-wrap">
+            <h2 class="wompi-title">Datos para el pago</h2>
+            <p class="wompi-subtitle">Completa este formulario para abrir la pasarela segura de Wompi.</p>
             
             <form id="wompiCustomerForm" onsubmit="processWompiPayment(event)">
-                <div style="margin-bottom: 1rem;">
-                    <label style="display: block; margin-bottom: 0.5rem; font-weight: bold;">
+                <div class="wompi-field">
+                    <label class="wompi-label">
                         Nombre Completo *
                     </label>
                     <input type="text" id="wompiCustomerName" required
-                           style="width: 100%; padding: 0.8rem; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 1rem;">
+                           class="wompi-input" autocomplete="name">
                 </div>
                 
-                <div style="margin-bottom: 1rem;">
-                    <label style="display: block; margin-bottom: 0.5rem; font-weight: bold;">
+                <div class="wompi-field">
+                    <label class="wompi-label">
                         Email *
                     </label>
                     <input type="email" id="wompiCustomerEmail" required
-                           style="width: 100%; padding: 0.8rem; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 1rem;">
+                           class="wompi-input" autocomplete="email">
                 </div>
                 
-                <div style="margin-bottom: 1rem;">
-                    <label style="display: block; margin-bottom: 0.5rem; font-weight: bold;">
+                <div class="wompi-field">
+                    <label class="wompi-label">
                         Teléfono / WhatsApp *
                     </label>
                     <input type="tel" id="wompiCustomerPhone" required placeholder="3137212923"
-                           style="width: 100%; padding: 0.8rem; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 1rem;">
+                           class="wompi-input" autocomplete="tel">
                 </div>
                 
-                <div style="margin-bottom: 1rem;">
-                    <label style="display: block; margin-bottom: 0.5rem; font-weight: bold;">
+                <div class="wompi-field">
+                    <label class="wompi-label">
                         Ciudad *
                     </label>
                     <select id="wompiCustomerCity" required onchange="calculateShippingWompi()"
-                            style="width: 100%; padding: 0.8rem; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 1rem;">
+                            class="wompi-select">
                         <option value="">Selecciona tu ciudad</option>
                         <option value="Barranquilla">Barranquilla</option>
                         <option value="Bogotá">Bogotá</option>
@@ -222,45 +441,46 @@ function showCustomerFormWompi() {
                     </select>
                 </div>
                 
-                <div style="margin-bottom: 1rem;">
-                    <label style="display: block; margin-bottom: 0.5rem; font-weight: bold;">
+                <div class="wompi-field">
+                    <label class="wompi-label">
                         Dirección Completa *
                     </label>
                     <textarea id="wompiCustomerAddress" required rows="2"
                               placeholder="Calle, número, barrio, apartamento..."
-                              style="width: 100%; padding: 0.8rem; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 1rem; resize: vertical;"></textarea>
+                              class="wompi-textarea" autocomplete="street-address"></textarea>
                 </div>
                 
-                <div style="background: #f8f9fa; padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
-                    <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                <div class="wompi-summary-box">
+                    <div class="wompi-summary-row">
                         <span>Subtotal:</span>
                         <span id="wompiSubtotal" style="font-weight: bold;">$${subtotal.toLocaleString('es-CO')}</span>
                     </div>
-                    <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                    <div class="wompi-summary-row">
                         <span>Envío:</span>
-                        <span id="wompiShipping" style="font-weight: bold; color: #2d8659;">Selecciona ciudad (envío $15.000)</span>
+                        <span id="wompiShipping" style="font-weight: bold; color: #2d8659;">Selecciona ciudad (envío desde $15.000)</span>
                     </div>
-                    <div style="display: flex; justify-content: space-between; padding-top: 0.5rem; border-top: 2px solid #e0e0e0;">
-                        <span style="font-size: 1.2rem; font-weight: bold;">TOTAL:</span>
+                    <div class="wompi-summary-row total">
+                        <span>TOTAL:</span>
                         <span id="wompiTotal" style="font-size: 1.5rem; font-weight: bold; color: #2d8659;">$${subtotal.toLocaleString('es-CO')}</span>
                     </div>
-                    <p style="margin: 0.5rem 0 0; font-size: 0.9rem; color: #6b7280;">
-                        Envío gratis desde $100.000.
+                    <p class="wompi-muted">
+                        Envío gratis desde $100.000 y pago protegido por Wompi.
                     </p>
                 </div>
                 
-                <button type="submit" 
-                        style="width: 100%; padding: 1rem; background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%); color: white; border: none; border-radius: 10px; font-size: 1.1rem; font-weight: bold; cursor: pointer;">
-                    💳 Continuar al Pago
-                </button>
-                
-                <button type="button" onclick="updateCartUI()" 
-                        style="width: 100%; padding: 0.8rem; background: transparent; color: #666; border: 2px solid #e0e0e0; border-radius: 10px; font-size: 1rem; font-weight: bold; cursor: pointer; margin-top: 0.5rem;">
-                    ← Volver al Carrito
-                </button>
+                <div class="wompi-actions">
+                    <button type="submit" class="wompi-primary-btn">
+                        Continuar al pago
+                    </button>
+                    
+                    <button type="button" onclick="goBackFromWompiCheckout()" class="wompi-secondary-btn">
+                        Volver al catálogo
+                    </button>
+                </div>
             </form>
         </div>
     `;
+    setupWompiFormRealtimeValidation();
 }
 
 // Calcular costo de envío
@@ -280,7 +500,7 @@ function calculateShippingWompi() {
     
     if (shippingElement && totalElement) {
         if (shippingCost === 0) {
-            shippingElement.innerHTML = '<span style="color: #4caf50; font-weight: bold;">GRATIS 🎉</span>';
+            shippingElement.innerHTML = '<span style="color: #4caf50; font-weight: bold;">Gratis</span>';
         } else {
             shippingElement.textContent = `$${shippingCost.toLocaleString('es-CO')}`;
         }
@@ -292,11 +512,21 @@ function calculateShippingWompi() {
     return shippingCost;
 }
 
+function goBackFromWompiCheckout() {
+    if (isWompiCheckoutPage()) {
+        window.location.href = '/categoria/suplementos';
+        return;
+    }
+    if (typeof updateCartUI === 'function') {
+        updateCartUI();
+    }
+}
+
 function renderWompiFallback(message) {
     const text = message || 'No pudimos abrir el pago. Intenta de nuevo o contáctanos por WhatsApp.';
     const cartBody = document.getElementById('cartBody');
     if (!cartBody) {
-        alert(text);
+        showUserFriendlyError(text);
         return;
     }
     cartBody.innerHTML = `
@@ -329,7 +559,7 @@ function renderWompiFallback(message) {
             if (typeof checkoutWhatsApp === 'function') {
                 checkoutWhatsApp();
             } else {
-                alert('Escríbenos al WhatsApp: +57 313 721 2923');
+                window.open('https://wa.me/573137212923', '_blank', 'noopener');
             }
         });
     }
@@ -347,13 +577,36 @@ function buildRedirectUrl(baseUrl, reference) {
 // Procesar pago con Wompi
 async function processWompiPayment(event) {
     event.preventDefault();
+    const form = event.target;
+    setFormSubmitLoading(form, true, 'Abriendo pasarela...');
     
     // Obtener datos del formulario
-    const customerName = document.getElementById('wompiCustomerName').value;
-    const customerEmail = document.getElementById('wompiCustomerEmail').value;
-    const customerPhone = document.getElementById('wompiCustomerPhone').value;
-    const customerCity = document.getElementById('wompiCustomerCity').value;
-    const customerAddress = document.getElementById('wompiCustomerAddress').value;
+    const {
+        customerName,
+        customerEmail,
+        customerPhone,
+        customerCity,
+        customerAddress
+    } = getCustomerFormData();
+
+    clearCustomerFormErrors();
+    const validationResult = validateCustomerForm({
+        customerName,
+        customerEmail,
+        customerPhone,
+        customerCity,
+        customerAddress
+    });
+    if (!validationResult.isValid) {
+        applyCustomerFormErrors(validationResult.fieldErrors);
+        const firstFieldId = Object.keys(validationResult.fieldErrors)[0];
+        const firstField = firstFieldId ? document.getElementById(firstFieldId) : null;
+        if (firstField && typeof firstField.focus === 'function') {
+            firstField.focus();
+        }
+        setFormSubmitLoading(form, false);
+        return;
+    }
     
     // Calcular total
     const subtotal = getCartTotal();
@@ -362,21 +615,24 @@ async function processWompiPayment(event) {
     const amountInCents = Math.round(Number(total || 0) * 100);
 
     // Generar referencia única
-    const reference = 'NB-' + Date.now() + '-' + customerPhone.slice(-4);
+    const reference = 'NB-' + Date.now() + '-' + normalizePhone(customerPhone).slice(-4);
 
     if (!Number.isFinite(amountInCents) || amountInCents <= 0) {
-        console.error('Wompi Widget Error: amountInCents inválido', { amountInCents, total });
-        alert('Hubo un error al procesar el pago. Por favor intenta de nuevo.');
+        pushWompiTelemetry('wompi_invalid_amount', { amountInCents, total });
+        setFormSubmitLoading(form, false);
+        renderWompiFallback('No pudimos calcular el total de tu pedido. Intenta de nuevo.');
         return;
     }
     if (!reference) {
-        console.error('Wompi Widget Error: reference inválida');
-        alert('Hubo un error al procesar el pago. Por favor intenta de nuevo.');
+        pushWompiTelemetry('wompi_invalid_reference', {});
+        setFormSubmitLoading(form, false);
+        renderWompiFallback('No pudimos generar la referencia de pago. Intenta de nuevo.');
         return;
     }
     if (!SUCCESS_REDIRECT_URL || !CANCEL_REDIRECT_URL) {
-        console.error('Wompi Widget Error: redirectUrl inválida', { SUCCESS_REDIRECT_URL, CANCEL_REDIRECT_URL });
-        alert('Hubo un error al procesar el pago. Por favor intenta de nuevo.');
+        pushWompiTelemetry('wompi_invalid_redirect', { success: SUCCESS_REDIRECT_URL, cancel: CANCEL_REDIRECT_URL });
+        setFormSubmitLoading(form, false);
+        renderWompiFallback(WOMPI_FRIENDLY_ERROR);
         return;
     }
     
@@ -389,17 +645,6 @@ async function processWompiPayment(event) {
     };
     try {
         sessionStorage.setItem('nb_last_order', JSON.stringify(lastOrderPayload));
-    } catch (e) { /* ignore */ }
-    
-    // Guardar datos del cliente para Google Customer Reviews
-    const customerData = {
-        email: customerEmail,
-        name: customerName,
-        phone: customerPhone,
-        city: customerCity
-    };
-    try {
-        sessionStorage.setItem('wompi_customer_data', JSON.stringify(customerData));
     } catch (e) { /* ignore */ }
     
     try {
@@ -463,7 +708,6 @@ async function processWompiPayment(event) {
                     if (typeof logEvent === 'function') {
                         logEvent('checkout_wompi_declined', { total, reference, items: cart });
                     }
-                    alert('Tu pago fue rechazado. Por favor intenta con otro método de pago.');
                     const declineUrl = new URL(buildRedirectUrl(CANCEL_REDIRECT_URL, reference));
                     declineUrl.searchParams.set('retry', '1');
                     window.location.href = declineUrl.toString();
@@ -472,14 +716,13 @@ async function processWompiPayment(event) {
                     if (typeof logEvent === 'function') {
                         logEvent('checkout_wompi_pending', { total, reference, items: cart });
                     }
-                    alert('Tu pago está pendiente de confirmación. Te notificaremos cuando se complete.');
                     const pendingUrl = new URL(buildRedirectUrl(PENDING_REDIRECT_URL, reference));
                     pendingUrl.searchParams.set('retry', '1');
                     window.location.href = pendingUrl.toString();
                 }
             } else {
                 // Usuario cerró el widget
-                console.log('Widget cerrado por el usuario');
+                pushWompiTelemetry('wompi_widget_closed', { reference });
                 const cancelUrl = new URL(buildRedirectUrl(CANCEL_REDIRECT_URL, reference));
                 cancelUrl.searchParams.set('retry', '1');
                 window.location.href = cancelUrl.toString();
@@ -487,9 +730,10 @@ async function processWompiPayment(event) {
         });
         
     } catch (error) {
-        console.error('Wompi Widget Error:', error);
         pushWompiTelemetry('wompi_widget_open_failed', { message: String(error && error.message || error) });
         renderWompiFallback('No pudimos abrir el pago. Puedes reintentar o contactarnos por WhatsApp.');
+    } finally {
+        setFormSubmitLoading(form, false);
     }
 }
 
@@ -527,16 +771,18 @@ function addWompiButtonToCart() {
 // Agregar esta línea al final de tu función updateCartUI existente:
 // addWompiButtonToCart();
 
-console.log('✅ Wompi Integration cargada - Modo:', WOMPI_CONFIG.sandboxMode ? 'PRUEBA' : 'PRODUCCIÓN');
+wompiDebugLog('Integration cargada - Modo:', WOMPI_CONFIG.sandboxMode ? 'PRUEBA' : 'PRODUCCION');
 
 window.addWompiButtonToCart = addWompiButtonToCart;
 window.calculateShippingWompi = calculateShippingWompi;
 window.checkoutWompi = checkoutWompi;
 window.loadWompiScript = loadWompiCheckoutScript;
 window.processWompiPayment = processWompiPayment;
+window.renderWompiFallback = renderWompiFallback;
 window.showCustomerFormWompi = showCustomerFormWompi;
 window.trackBeginCheckoutWompi = trackBeginCheckoutWompi;
 window.sanitizeRedirectUrl = sanitizeRedirectUrl;
+window.goBackFromWompiCheckout = goBackFromWompiCheckout;
 
 function runWompiRedirectUrlSelfCheck() {
     const origin = window.location.origin;
@@ -558,7 +804,7 @@ function runWompiRedirectUrlSelfCheck() {
     if (failures.length) {
         console.warn('Wompi sanitizeRedirectUrl self-check falló:', failures);
     } else {
-        console.log('Wompi sanitizeRedirectUrl self-check OK');
+        wompiDebugLog('sanitizeRedirectUrl self-check OK');
     }
 }
 

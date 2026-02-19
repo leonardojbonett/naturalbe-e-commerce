@@ -1,0 +1,11 @@
+{
+  "name": "Natural Be App",
+  "short_name": "NaturalBe",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f5f7f4",
+  "theme_color": "#2f6f2e",
+  "lang": "es-CO",
+  "icons": []
+}
+

@@ -5,28 +5,19 @@ Disallow: /carrito/
 Disallow: /checkout/
 Disallow: /pago-exitoso.html
 Disallow: /pago-cancelado.html
-Disallow: /*.json$
 Disallow: /*?*add-to-cart=*
 
-# Sitemaps
 Sitemap: https://naturalbe.com.co/sitemap.xml
+Sitemap: https://naturalbe.com.co/sitemap-images.xml
 
-# Crawl-delay para bots agresivos
 User-agent: AhrefsBot
-Crawl-delay: 10
+Disallow: /
 
 User-agent: SemrushBot
-Crawl-delay: 10
+Disallow: /
 
 User-agent: MJ12bot
-Crawl-delay: 10
+Disallow: /
 
 User-agent: DotBot
-Crawl-delay: 10
-
-# Bloquear scrapers conocidos
-User-agent: SemrushBot
-User-agent: AhrefsBot
-User-agent: MJ12bot
-User-agent: DotBot
-Crawl-delay: 20
+Disallow: /

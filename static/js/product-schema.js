@@ -62,7 +62,7 @@
         // No convertir WebP a JPG: mantener el formato original
         
         // URL del producto
-        const productUrl = product.url || product.link || `${baseUrl}/product.html?slug=${product.slug}`;
+        const productUrl = product.url || product.link || `${baseUrl}/producto/${encodeURIComponent(product.slug || '')}`;
         
         // Marca
         const brand = product.marca || product.brand || 'Natural Be';

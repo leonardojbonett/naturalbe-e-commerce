@@ -1,0 +1,145 @@
+{
+  "generated_at": "2026-02-17T18:12:43-05:00",
+  "preset": "perf",
+  "runs": 3,
+  "pages": [
+    {
+      "url": "",
+      "slug": "categoria-suplementos",
+      "runs_requested": 3,
+      "runs_ok": 3,
+      "median": {
+        "score": 28.000000000000004,
+        "lcp": 8422.923,
+        "cls": 0.021876023571857858,
+        "tbt": 4249.391999999998,
+        "speed_index": 8524.0,
+        "inp": null
+      },
+      "runs": [
+        {
+          "run": 1,
+          "file": "reports/lh-categoria-suplementos-prod-now-r1.json",
+          "score": 28.000000000000004,
+          "lcp": 8422.923,
+          "cls": 0.019783131107916792,
+          "tbt": 4210.069999999998,
+          "speed_index": 8524.0,
+          "inp": null
+        },
+        {
+          "run": 2,
+          "file": "reports/lh-categoria-suplementos-prod-now-r2.json",
+          "score": 45.0,
+          "lcp": 4257.253,
+          "cls": 0.021876023571857858,
+          "tbt": 4849.6179999999995,
+          "speed_index": 4436.0,
+          "inp": null
+        },
+        {
+          "run": 3,
+          "file": "reports/lh-categoria-suplementos-prod-now-r3.json",
+          "score": 26.0,
+          "lcp": 10655.663,
+          "cls": 0.021876023571857858,
+          "tbt": 4249.391999999998,
+          "speed_index": 10796.0,
+          "inp": null
+        }
+      ]
+    },
+    {
+      "url": "",
+      "slug": "home",
+      "runs_requested": 3,
+      "runs_ok": 3,
+      "median": {
+        "score": 34.0,
+        "lcp": 5903.274,
+        "cls": 0.0016102584671283133,
+        "tbt": 5062.894999996193,
+        "speed_index": 8370.0,
+        "inp": null
+      },
+      "runs": [
+        {
+          "run": 1,
+          "file": "reports/lh-home-prod-now-r1.json",
+          "score": 31.0,
+          "lcp": 7606.156,
+          "cls": 0.09875527623946413,
+          "tbt": 4841.933000000001,
+          "speed_index": 8545.0,
+          "inp": null
+        },
+        {
+          "run": 2,
+          "file": "reports/lh-home-prod-now-r2.json",
+          "score": 42.0,
+          "lcp": 5202.252,
+          "cls": 0.0016102584671283133,
+          "tbt": 5906.314999996184,
+          "speed_index": 5583.0,
+          "inp": null
+        },
+        {
+          "run": 3,
+          "file": "reports/lh-home-prod-now-r3.json",
+          "score": 34.0,
+          "lcp": 5903.274,
+          "cls": 0.0016102584671283133,
+          "tbt": 5062.894999996193,
+          "speed_index": 8370.0,
+          "inp": null
+        }
+      ]
+    },
+    {
+      "url": "",
+      "slug": "producto-omega-3-6-9",
+      "runs_requested": 3,
+      "runs_ok": 3,
+      "median": {
+        "score": 19.0,
+        "lcp": 15454.276,
+        "cls": 0.3372309626187741,
+        "tbt": 3168.1310000000003,
+        "speed_index": 8161.0,
+        "inp": null
+      },
+      "runs": [
+        {
+          "run": 1,
+          "file": "reports/lh-producto-omega-3-6-9-prod-now-r1.json",
+          "score": 19.0,
+          "lcp": 15454.276,
+          "cls": 0.3372309626187741,
+          "tbt": 7156.967000000108,
+          "speed_index": 8161.0,
+          "inp": null
+        },
+        {
+          "run": 2,
+          "file": "reports/lh-producto-omega-3-6-9-prod-now-r2.json",
+          "score": 11.0,
+          "lcp": 15607.395,
+          "cls": 0.3372309626187741,
+          "tbt": 2073.5170000000016,
+          "speed_index": 12782.0,
+          "inp": null
+        },
+        {
+          "run": 3,
+          "file": "reports/lh-producto-omega-3-6-9-prod-now-r3.json",
+          "score": 46.0,
+          "lcp": 6433.75,
+          "cls": 0.05117324815562305,
+          "tbt": 3168.1310000000003,
+          "speed_index": 3981.0,
+          "inp": null
+        }
+      ]
+    }
+  ]
+}

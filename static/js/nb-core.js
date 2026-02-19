@@ -53,15 +53,11 @@
   };
 
   NB.buildProductURL = function buildProductURL(product) {
-    if (!product) return './product.html';
+    if (!product) return '/product.html';
     const slug = product.slug || product.product_slug || '';
-    const id = product.id || product.product_id || '';
     if (slug) {
-      return `./product.html?slug=${encodeURIComponent(slug)}`;
+      return `/producto/${encodeURIComponent(slug)}`;
     }
-    if (id) {
-      return `./product.html?id=${encodeURIComponent(id)}`;
-    }
-    return './product.html';
+    return '/product.html';
   };
 })();

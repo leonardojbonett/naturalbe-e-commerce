@@ -1,0 +1,718 @@
+Mantener el SEO de tu sitio web
+Si tu sitio está en Google y conoces los conceptos básicos de SEO, puedes hacer más cosas para mejorar cómo se muestra en Google. Cuando gestionas y mantienes tu sitio web, puede que encuentres más situaciones únicas que afectan a la Búsqueda de Google. Esta guía trata tareas de SEO más detalladas, como preparar el traslado de un sitio o gestionar un sitio multilingüe.
+
+Controlar el modo en que Google rastrea e indexa tu sitio
+Lee nuestra guía sobre cómo funciona la Búsqueda de Google. Si no tienes claro el proceso de rastreo, indexación o publicación, te resultará difícil depurar problemas o anticipar el comportamiento de la Búsqueda en tu sitio.
+
+Contenido duplicado 
+Debes comprender bien qué son las páginas canónicas y cómo afectan al rastreo y a la indexación de tu sitio.
+
+Recursos 
+Comprueba que Google pueda acceder a las páginas o recursos (imágenes, archivos CSS, etc.) que quieras que rastree. Es decir, asegúrate de que no estén bloqueados por ninguna regla de robots.txt y de que cualquier usuario anónimo pueda acceder a ellos. Las páginas inaccesibles no aparecen en el informe "Indexación de páginas", y en la herramienta de inspección de URLs figuran como no rastreadas. En la herramienta de inspección de URLs solo se muestran los recursos bloqueados de URLs concretas. Si se han bloqueado recursos importantes de una página, es posible que Google no la pueda rastrear correctamente. Renderiza la página publicada con la herramienta de inspección de URLs para verificar si Google la ve como debería.
+
+Robots.txt 
+Usa reglas de robots.txt para impedir que se rastreen páginas y sitemaps para indicar qué quieres que se rastree. Por ejemplo, debes bloquear el rastreo de contenido duplicado o de recursos que no son importantes de tu sitio, como iconos, logotipos u otros gráficos pequeños y de uso frecuente, ya que el servidor podría sobrecargarse de solicitudes. Sin embargo, si lo que quieres es impedir que se indexe tu sitio, te recomendamos que requieras que se inicie sesión en él o que uses etiquetas noindex en lugar de reglas de robots.txt. Más información sobre cómo impedir que se acceda a tu contenido
+
+Sitemaps
+Los sitemaps son una de las formas más importantes de indicar a Google qué páginas de tu sitio son interesantes o de proporcionar información adicional, como la frecuencia de actualización. Además, son fundamentales para rastrear contenido no textual, como imágenes o vídeos. Las páginas incluidas en sitemaps no son las únicas que Google rastrea, pero sí que tienen prioridad frente al resto, lo que resulta especialmente importante en el caso de sitios cuyo contenido cambia rápidamente o cuyas páginas podrían no detectarse a través de enlaces. Al usar sitemaps, ayudas a Google a descubrir y priorizar las páginas de tu sitio que debe rastrear. Más información sobre los sitemaps
+
+Sitios internacionalizados y multilingües
+A continuación se indican varios recursos que puedes consultar si tu sitio web incluye varios idiomas o está dirigido a usuarios de determinadas configuraciones regionales:
+
+Consulta más información sobre los sitios multirregionales y multilingües para obtener consejos generales sobre cómo gestionar sitios que tengan contenido localizado en función del idioma o la región.
+Informa a Google sobre las variaciones de idioma de las páginas de tu sitio con el elemento hreflang.
+Si tu sitio adapta el contenido de sus páginas en función de la configuración regional de las solicitudes, consulta cómo puede afectar esta característica al rastreo por parte de Google.
+Migrar una página o un sitio
+Si necesitas trasladar una URL o incluso un sitio completo, sigue estas instrucciones:
+
+Migrar una sola URL
+Si quieres trasladar una página a otra ubicación de forma permanente, no olvides implementar redirecciones 301. Si el traslado solo es temporal por algún motivo, devuelve 302 para que Google siga rastreando tu página.
+
+Si has retirado una página, puedes crear una página 404 personalizada para ofrecer una mejor experiencia cuando los usuarios la soliciten, pero asegúrate de devolver un error 404 real, no uno de tipo soft 404 cuando los usuarios soliciten una página eliminada.
+
+Migrar un sitio
+Si vas a migrar un sitio completo, implementa todas las redirecciones 301y los cambios de sitemaps que hagan falta y, a continuación, informa a Google para que pueda empezar a rastrear el nuevo sitio y reenviar las señales allí. Descubre cómo migrar tu sitio.
+
+Prácticas recomendadas para el rastreo y la indexación
+Permite el rastreo de enlaces.
+Utiliza rel=nofollow en enlaces de pago, en los que se requiera iniciar sesión y en contenido no fiable (por ejemplo, el que envíen los usuarios) para impedir que se transmitan señales de calidad a esos enlaces o que su mala calidad afecte a tus resultados.
+Gestiona las prioridades de rastreo: si tu sitio es especialmente grande porque incluye cientos de millones de páginas que cambian periódicamente o decenas de millones que cambian a menudo, es probable que Google no pueda rastrearlo por completo con la frecuencia que quieres, por lo que debes indicarle a Google cuáles son las páginas más importantes. El mejor mecanismo para hacerlo es incluir las páginas más recientes o más importantes en sitemaps y ocultar las menos importantes con reglas de robots.txt.
+Usa JavaScript: consulta las recomendaciones de Google sobre JavaScript en sitios web.
+Artículos que ocupan varias páginas: si tienes un artículo repartido en varias páginas, asegúrate de que incluyen enlaces "siguiente" y "anterior" bien visibles en los que los usuarios puedan hacer clic para pasar de página y de que esos enlaces se puedan rastrear. De esta forma, Google podrá rastrear el conjunto de páginas completo.
+Páginas con desplazamiento infinito: si quieres que Google rastree una página de este tipo, debes proporcionar una versión paginada de ella. Más información sobre cómo optimizar para la Búsqueda las páginas con desplazamiento infinito
+Bloquea el acceso a las URL que cambian de estado con robots.txt; por ejemplo, URLs en las que se pueden publicar comentarios, crear cuentas o añadir artículos al carrito, entre otras.
+Consulta la lista de tipos de archivos que Google puede indexar.
+Si te parece que Google está rastreando tu sitio demasiado a menudo, puedes reducir su frecuencia de rastreo, aunque es poco probable que se dé esta situación.
+Si tu sitio web aún utiliza el protocolo HTTP, te recomendamos que lo cambies por HTTPS por tu propia seguridad y por la de los usuarios.
+Ayudar a Google a entender el contenido de un sitio web
+Incluye la información más importante de tu sitio web en formato de texto y no en recursos gráficos. Aunque Google puede analizar e indexar muchos tipos de archivos, el texto sigue siendo la forma más segura que tienes de ayudarnos a interpretar el contenido de una página. Si utilizas contenido no textual o quieres dar más información sobre el contenido de tu sitio web, añade datos estructurados a tus páginas; de este modo, podremos comprender mejor tu contenido y, en algunos casos, incluirlo en funciones de búsqueda especiales, como los resultados enriquecidos.
+
+Si tienes experiencia en código HTML y en programación básica, puedes añadir datos estructurados manualmente siguiendo las directrices para desarrolladores. Si necesitas algo de ayuda, puedes generar datos estructurados básicos con la herramienta visual Asistente para el marcado de datos estructurados.
+
+Si no puedes añadir estos datos a tus páginas, tienes a tu disposición la herramienta Marcador de datos, que te permite destacar partes de una página e indicar a Google lo que representa cada sección: un evento, una fecha, un precio, etc. Es bastante sencillo de hacer, pero puede dejar de funcionar si cambias el diseño de la página.
+
+Más información sobre cómo ayudar a Google a entender el contenido de tu sitio web
+
+Seguir las directrices
+Importante: Sigue nuestras Directrices básicas de la Búsqueda. Algunas de ellas son consejos y prácticas recomendadas, mientras que otras deben seguirse porque, de lo contrario, puede que el sitio web se retire del índice de Google.
+Directrices de contenido
+Si tienes algún tipo de contenido específico en tu sitio web, te ofrecemos algunas recomendaciones para que se muestre en Google de la mejor forma posible:
+
+Vídeo: sigue nuestras prácticas recomendadas sobre vídeos para que Google pueda encontrar, rastrear y mostrar resultados de vídeos alojados en tu sitio.
+Imágenes: sigue nuestras prácticas recomendadas para que tus imágenes aparezcan en la Búsqueda. Puedes mostrar información adicional sobre una imagen en los resultados de imágenes proporcionando metadatos de imagen en la página en la que esté alojada. Si quieres evitar que se indexe una imagen, bloquéala con una regla de robots.txt Disallow.
+Contenido para niños: si tu contenido es para niños, etiqueta tus páginas o tu sitio web como dirigidos a niños para cumplir con la ley de protección de la privacidad infantil online de EE. UU. (Children’s Online Privacy Protection Act, COPPA).
+Sitios para adultos: si tu sitio o algunas de sus páginas incluyen contenido para adultos, puedes etiquetarlo como contenido para adultos para que se excluya de los resultados de Búsqueda Segura.
+Noticias: si tu sitio es de noticias, debes tener en cuenta las consideraciones que se indican a continuación.
+Si tienes contenido de noticias, consulta la documentación de ayuda del Centro de editores de Google.
+Además, crea un Sitemap de News para ayudar a Google a descubrir el contenido más rápido.
+Recuerda evitar que se haga un uso inadecuado de tu sitio.
+Si quieres ofrecer un número limitado de visitas a los visitantes sin una suscripción o datos de inicio de sesión, consulta información sobre las muestras flexibles para conocer algunas prácticas recomendadas sobre cómo proporcionar acceso limitado a tu contenido.
+Descubre cómo indicar a Google que hay contenido con muro de pago o disponible con suscripción en tu sitio web sin inhabilitar su rastreo.
+Descubre cómo usar etiquetas meta para limitar el uso de texto o imágenes al generar fragmentos de resultados de búsqueda.
+Utiliza AMP o historias web para cargar el contenido de forma rápida.
+Otros sitios (por ejemplo, sitios sobre empresas, libros, aplicaciones o trabajos académicos): consulta otros servicios de Google en los que puedes publicar tu contenido.
+Comprueba si Google admite la función de resultados de la Búsqueda para tu tipo de contenido, ya que hay varias funciones de búsqueda específicas que se pueden implementar en sitios web con recetas, eventos u ofertas de empleo, entre otros.
+Gestionar la experiencia de usuario
+El objetivo principal de tu sitio debería ser proporcionar una buena experiencia de usuario, lo que a su vez influye en su posicionamiento. Hay muchos aspectos que ayudan a ofrecer una buena experiencia de usuario; a continuación te indicamos algunos.
+
+Google recomienda que los sitios web utilicen HTTPS en vez de HTTP para mejorar la seguridad de los usuarios y del sitio web. Los sitios web que utilizan HTTP pueden aparecer etiquetados como "no seguros" en el navegador Chrome. Consulta cómo proteger tu sitio web con HTTPS.
+
+Por lo general, la satisfacción de los usuarios es mayor si las páginas son rápidas; consulta las cifras de rendimiento de todo tu sitio en el nuevo informe "Core Web Vitals" y prueba el rendimiento de páginas concretas con PageSpeed Insights. En web.dev encontrarás más información sobre cómo crear páginas rápidas. También puedes usar AMP para crearlas.
+
+Dispositivos móviles
+Más del 60 % de los usuarios de Internet de todo el mundo utiliza dispositivos móviles para conectarse a Internet, por lo que es importante que tu sitio esté optimizado para móviles. Además, el rastreador predeterminado para sitios web de Google ha pasado a ser un rastreador de contenido para móviles. Consulta cómo optimizar tu sitio para móviles.
+
+Controlar la aparición en búsquedas
+Google ofrece muchos tipos de funciones y experiencias de resultados de búsqueda en la Búsqueda de Google, que incluyen reseñas con estrellas y tipos de resultados especiales para determinados tipos de información, como eventos o recetas. Averigua cuáles son las más adecuadas para tu sitio y plantéate si vale la pena implementarlas. Por ejemplo, puedes proporcionar un icono de página o indicar la fecha de un artículo para que esta información aparezca en los resultados de búsqueda de tu sitio.
+
+Asegúrate de leer los artículos sobre cómo ayudar a Google a proporcionar enlaces de títulos y fragmentos eficaces. También puedes restringir la longitud de los fragmentos o impedir que se generen; consulta cómo limitar el uso de texto o imágenes al generar fragmentos de resultados de búsqueda mediante etiquetas meta.
+
+Utilizar Search Console
+Search Console ofrece una gran variedad de informes para ayudarte a monitorizar y optimizar el rendimiento de tu sitio en la Búsqueda de Google. Más información sobre qué informes usar
+Introducción a la Búsqueda de Google: guía para desarrolladores
+Optimizar tu contenido para las búsquedas es importante, ya que es lo que permite que lo vean más usuarios relevantes. Este proceso se denomina optimización en buscadores (SEO) y puede hacer que más usuarios interesados visiten tu sitio. Si la Búsqueda de Google tiene problemas para interpretar tu página, es posible que estés desaprovechando una fuente importante de tráfico.
+
+En esta guía se explica lo que pueden hacer los desarrolladores para asegurarse de que sus sitios aprovechan correctamente la Búsqueda de Google. Además de los diferentes elementos que se incluyen en la guía, comprueba que tu sitio sea seguro, rápido, accesible y compatible con todos los dispositivos.
+
+Para obtener ayuda menos técnica, consulta la Guía de SEO para principiantes, donde se tratan otros aspectos relacionados con el SEO, como la creación de contenido.
+Descubre cómo ve Google tu sitio
+Para empezar, examina tu sitio con la herramienta de inspección de URLs o con la prueba de resultados enriquecidos para comprobar cómo lo ve Google. El robot de Google es nuestro rastreador web, que descubre páginas nuevas y actualizadas para el índice de Google. Consulta más información sobre este proceso en el artículo Cómo funciona la Búsqueda de Google.
+
+Quizá te sorprenda saber que Google no siempre ve lo mismo que ves tú en el navegador. En el siguiente ejemplo, Google no sabe que hay imágenes en la página porque se muestran con una función de JavaScript que no es compatible.
+
+Vista de usuario
+Vista de Google
+Los usuarios ven la página de esta manera, con las imágenes y el texto en el navegador:
+
+Un sitio web que muestra seis imágenes diferentes de gatos. El título del sitio web es Crónicas de gatos adorables.
+
+Comprueba tus enlaces
+El robot de Google obtiene y analiza enlaces, sitemaps y redirecciones para ir de una URL a otra, y trata cada una como si fuera la única URL que ha visto de tu sitio. Para que el robot de Google pueda encontrar todas las URLs de tu sitio, sigue estos pasos:
+
+Utiliza los elementos <a> que Google puede rastrear. Comprueba que se pueda acceder a todas las páginas de tu sitio mediante un enlace desde otra página que también se pueda encontrar. Asegúrate de que el enlace de referencia incluya texto o, en el caso de las imágenes, un atributo "alt" que sea pertinente para la página de destino.
+Crea y envía un sitemap de tu sitio para que el robot de Google pueda rastrearlo de forma más eficaz. Los sitemaps son archivos en los que se proporciona información sobre las páginas, los vídeos y otros archivos de tu sitio, así como las relaciones entre ellos.
+En el caso de las aplicaciones de JavaScript que tengan solo una página HTML, comprueba que cada pantalla o que cada parte del contenido tenga una URL.
+Comprueba cómo utilizas JavaScript
+Aunque Google puede ejecutar JavaScript, debes tener en cuenta ciertas diferencias y limitaciones al diseñar tus páginas y aplicaciones para adaptarlas a la forma en que los rastreadores acceden a tu contenido y lo procesan. Consulta más información sobre los conceptos básicos del SEO en JavaScript o cómo solucionar problemas de JavaScript relacionados con la Búsqueda.
+
+Para obtener más información sobre cómo gestiona Google el código JavaScript al rastrear, renderizar e indexar, mira el siguiente vídeo.
+
+
+Informa a Google cada vez que el contenido cambie
+Para asegurarte de que Google encuentre rápidamente tus páginas nuevas o actualizadas, haz lo siguiente:
+
+Envía sitemaps.
+Solicita que Google vuelva a rastrear tus URLs.
+Si aún tienes problemas para indexar una página, revisa los registros del servidor para ver si hay errores.
+
+No te olvides de poner texto en las páginas
+El robot de Google solo puede encontrar contenido visible textualmente. Por ejemplo, no puede ver el texto que aparece en vídeos. Para asegurarte de que la Búsqueda de Google entiende de qué va tu página, sigue estos pasos:
+
+Expresa el contenido visual también en texto. Por ejemplo, no es ideal publicar una página de categoría de productos en la que se muestran imágenes de camisas sin ningún texto. Es recomendable redactar una explicación textual para cada una de ellas.
+Comprueba que cada página tenga un título descriptivo y una metadescripción. Con los títulos únicos y las metadescripciones, Google indica la relevancia de tus páginas para los usuarios, lo que puede hacer que tu tráfico de búsqueda aumente.
+Usa código HTML semántico. Google puede indexar páginas HTML, contenido en PDF, imágenes y vídeos, pero no indexa contenido que necesite complementos, como Java o Silverlight, ni contenido que se renderice en canvas. Te recomendamos que no utilices complementos en tu contenido y que uses etiquetas HTML semánticas siempre que puedas.
+Asegúrate de que tu contenido de texto sea accesible en el DOM. Por ejemplo, el contenido que se añade a través de la propiedad content de CSS no forma parte del DOM y la Búsqueda de Google lo ignora por el momento. Se puede usar la propiedad content para contenido decorativo; la Búsqueda de Google no puede indexar este contenido.
+Informa a Google sobre otras versiones de tu contenido
+Google no sabe automáticamente si hay más de una versión de tu sitio o de tu contenido. Por ejemplo, una versión para móviles y otra para ordenadores, o versiones internacionales de tu sitio. Para que Google muestre a los usuarios la versión correcta de tu sitio, puedes hacer lo siguiente:
+
+Unificar URLs duplicadas.
+Notificar a Google versiones localizadas de tu página.
+Hacer que una página sea reconocible (en AMP).
+Controla el contenido que ve Google
+Puedes bloquear el robot de Google de varias formas:
+
+Para impedir que Google encuentre tu página, restringe el acceso a tu contenido de modo que solo los usuarios registrados puedan verlo. Puedes hacerlo con una página de inicio de sesión o protegiendo la página con una contraseña.
+Para impedir que el robot de Google rastree tu página, crea un archivo robots.txt.
+Ten en cuenta que este mecanismo no sirve para mantener una página web fuera de Google. Si quieres que una página web no aparezca en Google, usa reglas robots noindex o protege tu página con una contraseña.
+Para impedir que Google indexe tu página, pero permitir el rastreo, añade una etiqueta noindex.
+Si utilizas varias reglas de rastreo e indexación a la vez, es posible que se produzca algún conflicto entre ellas. Consulta cómo configurar correctamente estas reglas en el apartado Combinar el rastreo con las reglas para indexar y servir contenido.
+Si tu contenido no se muestra en la Búsqueda de Google, pero sí quieres que aparezca, sigues estos pasos:
+
+Comprueba con la herramienta de inspección de URLs si el robot de Google puede acceder a la página.
+Prueba tu archivo robots.txt para ver si estás bloqueando sin querer el robot de Google para que no rastree tu sitio.
+Comprueba que no hay ninguna regla noindex en las etiquetas meta de las páginas HTML.
+Habilita los resultados enriquecidos de tu sitio
+Los resultados enriquecidos pueden incluir estilo, imágenes u otras funciones interactivas para hacer que tu sitio web destaque aún más en los resultados de búsqueda. Con los datos estructurados en tu página, puedes dar a Google información específica sobre lo que contiene. De este modo, podrá interpretar mejor tu página y mostrar resultados enriquecidos en la Búsqueda. Si no sabes por dónde empezar, explora nuestra galería de funciones disponibles.
+
+Carrusel de recetas en los resultados de búsqueda
+Conseguir que un sitio web aparezca en Google
+Google busca automáticamente sitios que puedan añadirse a nuestro índice. Normalmente basta con que publiques tu sitio en la Web. Sin embargo, a veces hay sitios que no descubre. Comprueba si tu sitio está en Google y consulta cómo hacer que tu contenido sea más visible en la Búsqueda de Google.
+
+Lista de comprobación básica para aparecer en los resultados de la Búsqueda de Google 
+A continuación te mostramos algunas preguntas básicas sobre tu sitio web que puedes hacerte al empezar: Puedes consultar información adicional sobre los primeros pasos que debes seguir en la Guía de SEO para principiantes.
+
+¿Aparece tu sitio web en Google? 
+Para saber si tus páginas ya están indexadas, introduce en la Búsqueda de Google una consulta similar a esta para buscar tu sitio: Sustituye "example.com" por tu sitio.
+
+
+site:example.com
+El operador site: no devuelve necesariamente todas las URLs que se han indexado con el prefijo especificado en la consulta. Más información sobre el operador site:
+Aunque Google rastrea infinidad de páginas, es inevitable que pase por alto algunos sitios. Cuando nuestros rastreadores ignoran un sitio, suele ser por alguna de estas razones:
+
+No hay sitios de la Web que incluyan enlaces al tuyo. Intenta conseguir que otros sitios añadan enlaces que lleven al tuyo. No les pagues para que lo hagan, ya que este tipo de acciones podrían considerarse una infracción de las políticas de spam de Google.
+El sitio se acaba de publicar y Google todavía no lo ha rastreado. Google puede tardar algunas semanas en detectar un sitio nuevo o cambios que hayas hecho en un sitio que ya tenías.
+El diseño del sitio dificulta un rastreo eficaz de su contenido por parte de Google. Si tu sitio no está basado en HTML, sino en alguna otra tecnología especializada, es posible que Google tenga problemas para rastrearlo correctamente. Recuerda utilizar texto en tu sitio, no solo imágenes o vídeos.
+Google ha recibido un error al intentar rastrear tu sitio. Las razones más frecuentes en este caso son que hace falta iniciar sesión para entrar en tu sitio o que tu sitio no permite que Google acceda a él por algún motivo. Abre una ventana de incógnito y comprueba que puedes acceder desde ella a tu sitio.
+Google lo ha pasado por alto. Aunque Google rastrea infinidad de páginas, es inevitable que pase por alto algunos sitios, sobre todo los más pequeños. Espera un tiempo e intenta que otros sitios incluyan enlaces al tuyo.
+Si tienes curiosidad, puedes añadir tu sitio a Search Console para comprobar si hay algún error que pueda impedir que Google lo entienda. También puedes enviarnos tus URLs más importantes para que sepamos que debemos rastrearlas y posiblemente indexarlas.
+
+Sigue las Directrices básicas de la Búsqueda de Google para asegurarte de que cumples las directrices para que los sitios aparezcan en Google.
+
+¿Ofreces a los usuarios contenido de alta calidad? 
+Tu prioridad número uno debe ser ofrecer a los usuarios la mejor experiencia posible en tu sitio. Piensa en lo que hace que sea único, valioso o atractivo. Para evaluar tu contenido, hazte las preguntas de autoevaluación que se indican en nuestra guía para crear contenido que sea útil, fiable y centrado en las personas. Consulta las Directrices básicas de la Búsqueda para asegurarte de que gestionas tu sitio web mediante prácticas que se adaptan a los requisitos de Google.
+
+¿Aparece tu empresa local en Google? 
+Perfil de Empresa te permite gestionar cómo aparece la información de tu empresa en productos de Google como la Búsqueda y Maps. Te recomendamos que reclames tu Perfil de Empresa.
+
+¿Tu contenido se carga rápidamente y se puede acceder a él fácilmente en cualquier dispositivo? 
+Actualmente, la mayoría de las búsquedas se hacen en dispositivos móviles. Asegúrate de que tu contenido esté optimizado de modo que se cargue y se muestre rápida y correctamente en pantallas de cualquier tamaño. Puedes usar herramientas como Lighthouse para comprobar si tu página está optimizada para móviles.
+
+¿Tu sitio web es seguro? 
+Los usuarios esperan disfrutar de una experiencia online segura. Mejora la seguridad de la conexión de tu sitio web con HTTPS.
+
+¿Necesitas más ayuda? 
+Los SEOs (expertos en optimización en buscadores) son profesionales que pueden ayudarte a mejorar tu sitio web y su posicionamiento en los buscadores. Consulta más información sobre por qué y cómo contratar a un SEO.
+
+¿Tu contenido está relacionado con un tema especializado? 
+Dependiendo del contenido del que se trate, hay más formas de publicarlo en Google. En la siguiente tabla se incluyen enlaces a las distintas vías que ofrece Google para mostrar tu contenido relacionado con una empresa o una persona en Google.
+
+Empresa o persona
+Google for Retail	Para promocionar tus productos en Google Shopping, Google Offers y otras propiedades, puedes enviar tus catálogos de productos en formato digital a la Búsqueda de Google.
+Google para pymes	Consulta los recursos que ofrece Google para que tu pequeña empresa prospere.
+Street View	Ofrece a los clientes un recorrido virtual por tu empresa.
+Panel de información	Si quieres gestionar tu identidad como persona, empresa u organización en Google, puedes sugerir que se hagan cambios en tu panel de información.
+Para obtener más información sobre cómo mostrar contenido digital en Google, consulta los siguientes recursos:
+
+Contenido digital
+Google Libros y libros electrónicos	Promociona tus libros online y véndelos en nuestra tienda de libros electrónicos.
+Académico	Incluye obras académicas en el índice académico de Google.
+Google News	Aparece en los resultados de búsqueda de Google News u ofrece ediciones digitales a las que suscribirse.
+Para mostrar información local en Google, los siguientes recursos pueden ser útiles:
+
+Información local
+Partners de Contenido de Google Maps	Si eres una fuente acreditada u oficial de datos regionales, puedes publicarlos mediante Google.
+Foto esférica	Haz fotos de 360° de cualquier lugar y compártelas con todo el mundo.
+Street View	Ofrece un recorrido virtual panorámico de tu propiedad.
+Programa para Partners de Google Transit	Promueve el uso del transporte público facilitando la localización de rutas, horarios y tarifas.
+Contenido multimedia
+Partners de Contenido de Google Maps	Si eres una fuente acreditada u oficial de datos regionales, puedes publicarlos mediante Google.
+Vídeo en la Búsqueda de Google	Permite que la Búsqueda de Google pueda encontrar y rastrear tus vídeos.
+YouTube	Sube, distribuye y monetiza tus vídeos.
+Directrices de la Búsqueda de Google sobre el uso de contenido generado por IA en tu sitio web
+La IA generativa puede ser especialmente útil para investigar un tema y añadir estructura al contenido original. Sin embargo, usar herramientas de IA generativa u otras herramientas similares con el objetivo de generar muchas páginas sin añadir valor para los usuarios puede infringir la política de spam de Google sobre abuso de contenido a gran escala. Si usas contenido de IA generativa en tu sitio web, asegúrate de que cumpla los estándares de las Directrices básicas de la Búsqueda y de nuestras políticas de spam.
+
+Te recomendamos que consultes las directrices para evaluadores de la calidad de la Búsqueda sobre cómo evaluar el abuso de contenido a gran escala (sección 4.6.5) y el contenido principal creado sin esfuerzo, que no sea original o tenga poco valor añadido (sección 4.6.6). Estas directrices no son una guía para aparecer en los primeros resultados de posicionamiento en Google. Las utilizan nuestros evaluadores de búsqueda para ayudar a evaluar el rendimiento de nuestros diferentes sistemas de posicionamiento en las búsquedas. Sus valoraciones no influyen directamente en el posicionamiento.
+
+Céntrate en la precisión, la calidad y la relevancia 
+Cuando crees contenido para la Web, céntrate en la precisión, la calidad y la relevancia, sobre todo si se trata de contenido generado automáticamente. Esto incluye metadatos, como los elementos <title>, los elementos de metadescripción, los datos estructurados y los textos alternativos de las imágenes, que pueden aparecer en los resultados de búsqueda.
+
+En el caso de los datos estructurados, también debes cumplir las directrices generales, las políticas específicas de las funciones de búsqueda individuales y validar las etiquetas para que se puedan usar las funciones de resultados de la Búsqueda.
+
+Proporciona contexto a los usuarios
+Compartir información sobre cómo se ha creado un contenido puede ayudar a ofrecer más contexto a los lectores. Si generas contenido automáticamente, te recomendamos que añadas información sobre cómo se ha creado el contenido de una forma que tenga sentido para tu audiencia. Por ejemplo, puedes proporcionar más información sobre cómo se ha utilizado la automatización y añadir metadatos de imagen.
+
+En el caso de los sitios de comercio electrónico, Google Merchant Center tiene políticas de contenido generado por IA. En concreto, las imágenes generadas por IA deben contener metadatos con los metadatos de DigitalSourceType TrainedAlgorithmicMedia. Los datos de producto generados por IA, como los atributos de título y descripción, deben especificarse por separado y etiquetarse como generados por IA.
+
+Para obtener más información, consulta las preguntas frecuentes de nuestra entrada de blog sobre el contenido generado por IA.
+Resumen de temas sobre rastreo e indexación
+En los temas de esta sección se describe cómo puedes controlar la forma en la que Google busca y analiza tu contenido para mostrarlo en la Búsqueda o en otras de sus propiedades, además de cómo evitar que Google rastree determinado contenido de tu sitio.
+
+A continuación, incluimos una breve descripción de cada página. Consulta información general sobre el rastreo y la indexación en la guía Cómo funciona la Búsqueda.
+
+Temas
+Tipos de archivo que Google puede indexar	Google puede indexar el contenido de la mayoría de los tipos de página y de archivo. Consulta una lista de los tipos de archivo más comunes que la Búsqueda de Google puede indexar.
+Estructura de URL	Te recomendamos que organices tu contenido de modo que las URLs sean lógicas y los usuarios puedan entenderlas.
+Sitemaps	Informa a Google sobre las páginas de tu sitio que sean nuevas o que se hayan actualizado.
+Gestión de rastreadores	
+Solicitar que Google vuelva a rastrear URLs
+Gestionar el rastreo de URLs de navegación por facetas
+Guía para propietarios de sitios web grandes sobre cómo gestionar el presupuesto de rastreo
+Cómo afectan a la Búsqueda de Google tanto los códigos de estado HTTP como los errores de red y de DNS
+Rastreadores de Google
+robots.txt	Un archivo robots.txt indica a los rastreadores de los buscadores qué páginas o archivos de tu sitio pueden solicitar y cuáles no.
+Canonicalización	Descubre qué es la canonicalización de URLs y cómo informar a Google sobre las páginas duplicadas de tu sitio para evitar un rastreo excesivo. Descubre cómo detecta Google el contenido duplicado de forma automática, cómo lo gestiona y cómo asigna una URL canónica a cualquier grupo de páginas duplicadas que encuentra.
+Sitios para móviles	Descubre cómo puedes optimizar tu sitio para dispositivos móviles y asegurarte de que se rastree e indexe correctamente.
+AMP	Si tienes páginas AMP, consulta cómo funciona AMP en la Búsqueda de Google.
+JavaScript	Debes tener en cuenta ciertas diferencias y limitaciones al diseñar tus páginas y aplicaciones para adaptarlas a la forma en que los rastreadores acceden a tu contenido y lo renderizan.
+Metadatos de página y contenido	
+Usar código HTML válido para especificar los metadatos de la página
+Etiquetas meta que Google entiende
+Especificaciones de la etiqueta meta Robots y los elementos data-nosnippet y X-Robots-Tag
+Bloquear la indexación con la etiqueta meta noindex
+Permitir el rastreo de enlaces
+Informar a Google del tipo de enlaces de salida con atributos rel
+Retiradas	
+Controlar lo que compartes con Google
+Retirar de Google una página alojada en tu sitio
+Retirar de los resultados de búsqueda imágenes alojadas en tu página
+Evitar que en la Búsqueda de Google se muestre información oculta
+Traslados y cambios de sitio	
+Las redirecciones y la Búsqueda de Google
+Traslados de sitio
+Minimizar el impacto de las pruebas A/B en la Búsqueda de Google
+Pausar o inhabilitar temporalmente un sitio web
+Tipos de archivo que Google puede indexar
+Google puede indexar el contenido de la mayoría de los archivos basados en texto y de determinados formatos de documento codificados. El tipo de archivo se determina mediante el encabezado HTTP Content-Type que se devuelve cuando Google rastrea el archivo, aunque, en algunos casos, Google puede usar la extensión del archivo o volver a analizarlo con otro analizador si falta el encabezado Content-Type o es incorrecto.
+
+Tipos de archivos de texto plano admitidos
+Se admiten los siguientes tipos de archivos de texto plano. Se trata de archivos cuyo contenido se almacena en texto sin formato ni codificación (aunque pueden usar etiquetas de marcado).
+
+Valores separados por comas (.csv)
+Google Earth (.kml, .kmz)
+Formato de intercambio GPS (.gpx)
+HTML (.htm, .html y otras extensiones de archivos)
+Gráficos vectoriales escalables (.svg)
+TeX/LaTeX (.tex)
+Formato de texto (.txt, .text y otras extensiones de archivos), incluido el código fuente de los lenguajes de programación habituales, como:
+Código fuente básico (.bas)
+Código fuente C/C++ (.c, .cc, .cpp, .cxx, .h, .hpp)
+Código fuente C# (.cs)
+Código fuente Java (.java)
+Código fuente Perl (.pl)
+Código fuente Python (.py)
+Lenguaje de marcas inalámbrico (.wml, .wap)
+XML (.xml)
+Tipos de archivos codificados admitidos
+Se admiten los siguientes tipos de archivos codificados. Se trata de archivos binarios o contenedores complejos que requieren un analizador específico para extraer el texto legible por humanos.
+
+Formato de documento portátil de Adobe (.pdf)
+PostScript de Adobe (.ps)
+Publicación electrónica (.epub)
+Hancom Hanword (.hwp)
+Microsoft Excel (.xls, .xlsx)
+Microsoft PowerPoint (.ppt, .pptx)
+Microsoft Word (.doc, .docx)
+Presentaciones de OpenOffice (.odp)
+Hojas de cálculo de OpenOffice (.ods)
+Texto de OpenOffice (.odt)
+Formato de texto enriquecido (.rtf)
+Formatos multimedia admitidos
+Google también puede indexar los siguientes formatos multimedia:
+
+Formatos de imagen: BMP, GIF, JPEG, PNG, WebP, SVG y AVIF
+Formatos de vídeo: 3GP, 3G2, ASF, AVI, DivX, M2V, M3U, M3U8, M4V, MKV, MOV, MP4, MPEG, OGV, QVT, RAM, RM, VOB, WebM, WMV y XAP
+Buscar por tipo de archivo
+Puedes usar el operador filetype: en la Búsqueda de Google para limitar los resultados a un tipo de archivo o una extensión de archivo concretos. Por ejemplo, filetype:rtf galway buscará archivos RTF y URLs que terminen en .rtf cuyo contenido incluya el término "galway".
+Prácticas recomendadas para la estructura de las URLs en la Búsqueda de Google
+Para que la Búsqueda de Google pueda rastrear tu sitio de forma eficaz, debes usar una estructura de URL rastreable que cumpla los siguientes requisitos. Si tus URLs no cumplen los criterios que se indican a continuación, es probable que la Búsqueda de Google rastree tu sitio de forma ineficiente, lo que puede incluir, entre otros, tasas de rastreo extremadamente altas o que no se produzca ningún rastreo.
+
+Requisitos de una estructura de URL rastreable
+Seguir la IETF STD 66
+La Búsqueda de Google admite las URLs definidas en IETF STD 66. Los caracteres definidos por el estándar como reservados deben estar codificados con porcentajes.
+
+No uses fragmentos de URL para cambiar el contenido
+No uses fragmentos para cambiar el contenido de una página, ya que la Búsqueda de Google no suele admitir fragmentos de URL. A continuación, se muestra un ejemplo de fragmento de URL:
+
+https://example.com/#/potatoes
+Si usas JavaScript para cambiar el contenido, usa la API History.
+
+Usar una codificación común para los parámetros de URL
+Cuando especifiques parámetros de URL, usa la siguiente codificación común: un signo igual (=) para separar pares clave-valor y un et (&) para añadir parámetros adicionales. Para indicar varios valores de la misma clave en un par clave-valor, puedes usar cualquier carácter que no entre en conflicto con la IETF STD 66, como una coma (,).
+
+Recomendado	No recomendado
+Usar un signo igual (=) para separar los pares clave-valor y un signo et (&) para añadir parámetros adicionales:
+https://example.com/category?category=dresses&sort=low-to-high&sid=789
+Usar dos puntos (:) para separar los pares clave-valor y corchetes ([ ]) para añadir parámetros adicionales:
+https://example.com/category?[category:dresses][sort:price-low-to-high][sid:789]
+Usar una coma (,) para indicar varios valores de la misma clave, un signo igual (=) para separar pares clave-valor y un signo et (&) para añadir parámetros adicionales:
+https://example.com/category?category=dresses&color=purple,pink,salmon&sort=low-to-high&sid=789
+Usar una coma (,) para separar los pares clave-valor y comas dobles (,,) para añadir parámetros adicionales:
+https://example.com/category?category,dresses,,sort,lowtohigh,,sid,789
+Facilitar la comprensión de la estructura de las URLs
+Para ayudar a la Búsqueda de Google (y a tus usuarios) a entender mejor tu sitio, te recomendamos que crees una estructura de URL sencilla y apliques las prácticas recomendadas que se indican a continuación siempre que sea posible.
+
+Te recomendamos que organices tu contenido de modo que las URLs sean lógicas y los usuarios puedan entenderlas. Para obtener información sobre cómo estructurar tu sitio en su conjunto, consulta esta sección de la Guía de SEO para principiantes.
+Prácticas recomendadas
+Utiliza URLs descriptivas
+Siempre que sea posible, utiliza palabras en vez de números de ID largos.
+
+Recomendado (palabras sencillas y descriptivas)	No recomendado (números de ID largos e ilegibles)
+https://example.com/wiki/Aviation
+https://example.com/index.php?topic=42&area=3a5ebc944f41daa6f849f730f1
+Usar el idioma de tu audiencia
+Usa palabras en el idioma de tu audiencia en la URL (y, si procede, transliteradas). Por ejemplo, si tu audiencia hace búsquedas en alemán, utiliza palabras en alemán en la URL:
+
+
+https://example.com/lebensmittel/pfefferminz
+Si tu audiencia hace búsquedas en japonés, utiliza palabras en japonés en la URL:
+
+
+https://example.com/ペパーミント
+Utiliza la codificación con porcentajes si es necesario
+Cuando enlaces a páginas de tu sitio, usa la codificación con porcentajes en los atributos href de los enlaces según sea necesario. Los caracteres ASCII no reservados pueden dejarse sin codificar. Además, los caracteres fuera del intervalo ASCII deben codificarse con porcentajes. Por ejemplo:
+
+Recomendado (codificación con porcentajes)	No recomendado (caracteres que no son ASCII)
+https://example.com/%D9%86%D8%B9%D9%86%D8%A7%D8%B9/%D8%A8%D9%82%D8%A7%D9%84%D8%A9
+https://example.com/نعناع
+https://example.com/%E6%9D%82%E8%B4%A7/%E8%96%84%E8%8D%B7
+https://example.com/杂货/薄荷
+https://example.com/gem%C3%BCse
+https://example.com/gemüse
+https://example.com/%F0%9F%A6%99%E2%9C%A8
+https://example.com/🦙✨
+Separar las palabras con guiones
+Te recomendamos que separes las palabras de tus URLs siempre que sea posible. En concreto, te recomendamos que uses guiones (-) en lugar de guiones bajos (_) para separar las palabras en las URLs, ya que ayudan a los usuarios y a los buscadores a identificar mejor los conceptos de la URL. Por motivos del pasado, no recomendamos utilizar guiones bajos, ya que este estilo ya se utiliza habitualmente para indicar conceptos que deben mantenerse juntos, por ejemplo, en varios lenguajes de programación para nombrar funciones (como format_date).
+
+Recomendado	No recomendado
+Usar guiones (-) para separar palabras:
+
+https://example.com/summer-clothing/filter?color-profile=dark-grey
+Usar guiones bajos (_) para separar palabras:
+
+https://example.com/summer_clothing/filter?color_profile=dark_grey
+Unir palabras en la URL:
+
+https://example.com/greendress
+Usar el menor número posible de parámetros
+Si es posible, quita parámetros innecesarios de las URLs para acortarlas (es decir, parámetros que no cambian el contenido).
+Tener en cuenta que las URLs distinguen entre mayúsculas y minúsculas
+Al igual que cualquier otro cliente HTTP que siga la IETF STD 66, la gestión de URLs de la Búsqueda de Google distingue entre mayúsculas y minúsculas (por ejemplo, Google trata tanto /APPLE como /apple como URLs distintas con su propio contenido). Si el servidor web trata de la misma forma el texto en mayúsculas y minúsculas de una URL, pon todo el texto en mayúsculas o en minúsculas para que Google pueda determinar más fácilmente si las URLs hacen referencia a la misma página.
+Para sitios multirregionales
+Si tu sitio es multirregional, te recomendamos que uses una estructura de URLs con la que resulte sencillo dirigir tu sitio a usuarios de diferentes zonas geográficas. Para ver más ejemplos de formas de estructurar tus URLs, consulta cómo usar URLs específicas de configuración regional.
+
+Recomendado (usando un dominio específico del país):
+
+https://example.de
+Recomendado (usando un subdirectorio específico del país con gTLD):
+
+https://example.com/de/
+Evitar problemas habituales relacionados con las URLs
+Las URLs demasiado complejas, sobre todo las que contienen varios parámetros, pueden suponer un problema porque los rastreadores pueden encontrarse con demasiadas URLs que dirigen a contenido similar o idéntico de tu sitio. En estas situaciones, el robot de Google puede consumir una cantidad de ancho de banda muy superior a la necesaria, o la Búsqueda de Google puede dejarse parte del contenido del sitio sin indexar.
+
+Hay varios motivos por los que puede haber un exceso de URLs. Aquí tienes algunos:
+
+Problemas habituales
+Combinaciones de filtros en un conjunto de elementos
+Muchos sitios ofrecen distintas vistas del mismo conjunto de elementos o resultados de búsqueda y permiten que los usuarios filtren ese conjunto según criterios definidos. Por ejemplo, un usuario podría buscar hoteles en la playa. Cuando se pueden combinar filtros (por ejemplo, si se pueden buscar hoteles en la playa que tengan gimnasio), la cantidad de URLs (vistas de datos) del sitio se dispara. Siguiendo con el ejemplo, es redundante crear muchas listas de hoteles ligeramente distintas porque al robot de Google le basta con ver solo unas cuantas que le permitan acceder a las páginas de todos los hoteles. Por ejemplo:
+
+Hoteles a "precios interesantes":
+https://example.com/hotel-search-results.jsp?Ne=292&N=461
+Hoteles a "precios interesantes" en la playa:
+https://example.com/hotel-search-results.jsp?Ne=292&N=461+4294967240
+Hoteles a "precios interesantes" en la playa y con gimnasio:
+https://example.com/hotel-search-results.jsp?Ne=292&N=461+4294967240+4294967270
+Parámetros irrelevantes
+Los parámetros irrelevantes en la URL pueden provocar un gran número de URLs, como las siguientes:
+
+Parámetros de referencia:
+https://example.com/search/noheaders?click=6EE2BF1AF6A3D705D5561B7C3564D9C2&clickPage=OPD+Product+Page&cat=79
+https://example.com/discuss/showthread.php?referrerid=249406&threadid=535913
+https://example.com/products/products.asp?N=200063&Ne=500955&ref=foo%2Cbar&Cn=Accessories
+Parámetros de ordenación de Shopping:
+https://example.com/results?search_type=search_videos&search_query=tpb&search_sort=relevance&search_category=25
+Identificadores de sesión:
+https://example.com/search/noheaders?sessionid=6EE2BF1AF6A3D705D5561B7C3564D9C2
+Si es posible, usa cookies en vez de IDs de sesión en las URLs.
+Puedes usar un archivo robots.txt para bloquear el acceso del robot de Google a estas URLs problemáticas.
+
+Problemas de calendario
+Los calendarios generados dinámicamente pueden crear enlaces a fechas pasadas y futuras sin ninguna restricción sobre las fechas de inicio ni de finalización. Por ejemplo:
+
+https://example.com/calendar.php?d=13&m=8&y=2011
+Si tu sitio tiene un calendario infinito, añade un atributo nofollow a los enlaces que lleven a páginas de calendario futuras creadas dinámicamente.
+
+Enlaces relativos rotos
+Si colocas un enlace relativo a la página principal en la página equivocada, es posible que se creen espacios infinitos si el servidor no responde con el código de estado HTTP correcto para las páginas que no existen. Por ejemplo, un enlace relativo a la página principal como <a href="../../category/stuff">...</a> en https://example.com/category/community/070413/html/FAQ.htm puede llevar a URLs falsas como https://example.com/category/community/category/stuff. Para solucionarlo, utiliza URLs relativas a la raíz en los enlaces (en lugar de relativas a la página principal).
+Solucionar problemas de la estructura de URL relacionados con el rastreo
+Si observas que la Búsqueda de Google está rastreando estas URLs problemáticas, te recomendamos que hagas lo siguiente:
+
+Puedes utilizar un archivo robots.txt para bloquear el acceso del robot de Google a direcciones URL problemáticas. Normalmente, deberías bloquear URLs dinámicas, como las que generan resultados de búsqueda, o de URLs que pueden crear espacios infinitos, como calendarios, y funciones de ordenación y filtrado.
+Si tu sitio tiene navegación por facetas, consulta cómo gestionar el rastreo de esas URLs de navegación por facetas.
+Prácticas recomendadas sobre enlaces de Google
+Google utiliza los enlaces como factor para determinar la relevancia de las páginas y para encontrar páginas nuevas que rastrear. Consulta cómo hacer que tus enlaces se puedan rastrear para que Google pueda encontrar otras páginas de tu sitio mediante los enlaces de tu página, y cómo mejorar el texto de los enlaces para que los usuarios y Google entiendan tu contenido.
+
+Permitir el rastreo de enlaces
+Por lo general, Google solo puede rastrear tu enlace si se trata de un elemento HTML <a> (también denominado elemento ancla) con un atributo href. Los rastreadores de Google no analizarán ni extraerán la mayoría de los enlaces en otros formatos. Google no puede extraer de forma fiable URLs de elementos <a> que no contengan un atributo href ni otras etiquetas que actúen como enlaces debido a secuencias de comandos. A continuación puedes consultar algunos ejemplos con enlaces que Google puede seguir y con otros que no:
+
+Recomendado (Google puede analizarlo):
+
+
+<a href="https://example.com">
+
+<a href="/products/category/shoes">
+
+<a href="./products/category/shoes">
+
+<a href="/products/category/shoes" onclick="javascript:goTo('shoes')">
+
+<a href="/products/category/shoes" class="pretty">
+Los enlaces también se pueden rastrear si se usa JavaScript para insertarlos en una página de forma dinámica, siempre que se utilicen las etiquetas HTML indicadas arriba.
+No recomendado (aunque es posible que Google siga intentando analizarlo):
+
+
+<a routerLink="products/category">
+
+<span href="https://example.com">
+
+<a onclick="goto('https://example.com')">
+Asegúrate de que la URL del elemento <a> se resuelva como una dirección web real (es decir, una URL similar a un URI) a la que los rastreadores de Google puedan enviar solicitudes. Por ejemplo:
+
+Recomendado (Google puede resolverlo):
+
+
+<a href="https://example.com/stuff">
+
+<a href="/products">
+
+<a href="/products.php?id=123">
+No recomendado (aunque es posible que Google siga intentando resolverlo):
+
+
+<a href="javascript:goTo('products')">
+
+<a href="javascript:window.location.href='/products'">
+Emplazamiento del texto del enlace
+El texto del enlace es el texto visible de un enlace. Este texto proporciona a los usuarios y a Google información sobre la página enlazada. Coloca el texto del enlace entre elementos <a> que Google pueda rastrear.
+
+Correcto:
+
+<a href="https://example.com/ghost-peppers">Chile Ghost Pepper</a>
+Incorrecto (texto del enlace vacío):
+
+<a href="https://example.com"></a>
+De forma alternativa, Google puede usar el atributo title como texto del enlace si el elemento <a> está vacío por algún motivo.
+
+<a href="https://example.com/ghost-pepper-recipe" title="Cómo encurtir el chile Ghost Pepper"></a>
+En el caso de las imágenes como enlaces, Google utiliza el atributo alt del elemento img como texto del enlace, por lo que debes añadir texto alternativo descriptivo a las imágenes:
+
+Correcto:
+
+<a href="/add-to-cart.html"><img src="enchiladas-in-shopping-cart.jpg" alt="Añadir enchiladas al carrito"/></a>
+Incorrecto (texto alternativo vacío y texto de enlace vacío):
+
+<a href="/add-to-cart.html"><img src="enchiladas-in-shopping-cart.jpg" alt=""/></a>
+Si utilizas JavaScript para insertar el texto del enlace, utiliza la herramienta de inspección de URLs para asegurarte de que aparezca en el código HTML renderizado.
+
+Utiliza texto del enlace adecuado
+Un buen texto del enlace es descriptivo, conciso y relevante con respecto a la página en la que se encuentra y la página a la que enlaza. Proporciona contexto al enlace y define las expectativas de los lectores. Cuanto mejor sea el texto del enlace, más fácilmente podrán navegar los usuarios por tu sitio y más fácil le resultará a Google saber de qué trata la página enlazada.
+
+Incorrecto (demasiado genérico):
+
+<a href="https://example.com">Haga clic aquí</a> para obtener más información.
+<a href="https://example.com">Más información</a>
+Más información sobre nuestro queso en nuestro <a href="https://example.com">sitio web</a>.
+Consulta nuestro <a href="https://example.com">artículo</a> para obtener más información sobre cómo se hace el queso.
+Nota: Prueba a leer solo el texto del enlace (fuera de contexto) y comprueba que sea lo suficientemente específico por sí mismo. Si no sabes de qué trata la página, necesitas un texto del enlace más descriptivo.
+Correcto (más descriptivo):
+
+Para ver una lista completa de los quesos disponibles, consulta la <a href="https://example.com">lista de tipos de quesos</a>.
+Incorrecto (demasiado largo):
+
+A partir del próximo martes, <a href="https://example.com">Knitter Cow invita a los residentes de Wisconsin a su gran reapertura y ofrece una colección de esculturas de hielo con forma de vaca de regalo</a> a los primeros 20 clientes.
+Correcto (más conciso):
+
+A partir del próximo martes, <a href="https://example.com">Knitter Cow invita a los residentes de Wisconsin</a> a su gran reapertura y ofrece una colección de esculturas de hielo con forma de vaca de regalo a los primeros 20 clientes.
+Escribe de la forma más natural posible y resiste la tentación de juntar todas las palabras clave que estén relacionadas con la página a la que estás enlazando (recuerda que el exceso de palabras clave constituye una infracción de nuestras políticas de spam). Pregúntate si el lector necesita esas palabras clave para entender la página. Si crees que estás añadiendo de forma forzada palabras clave en el texto del enlace, es probable que sean demasiadas.
+
+Recuerda dar contexto a tus enlaces: las palabras que van antes y después son importantes, por lo que debes prestar atención a la frase en su conjunto. No encadenes enlaces, pues a tus lectores les resultará más difícil distinguirlos y perderás el texto que rodea a cada enlace.
+
+Incorrecto (demasiados enlaces juntos):
+
+He escrito sobre el queso <a href="https://example.com/page1">muchísimas</a> <a href="https://example.com/page2">veces</a> <a href="https://example.com/page3">durante</a> <a href="https://example.com/page4">este</a> <a href="https://example.com/page5">año</a>.
+Correcto (los enlaces están separados y con contexto):
+
+He escrito sobre el queso muchísimas veces durante este año: ¿quién puede olvidar la <a href="https://example.com/blue-cheese-vs-gorgonzola">polémica en torno al queso azul y el gorgonzola</a>, el <a href="https://example.com/worlds-oldest-brie">queso brie más antiguo del mundo</a> que ganó el premio Cheesiest Research Medal, la épica reinterpretación de <a href="https://example.com/the-lost-cheese">The Lost Cheese</a> y, mi favorito, <a href="https://example.com/boy-and-his-cheese">Un chico y su queso: la historia de una curiosa amistad</a>.
+Enlaces internos: comparar datos de tu propio contenido
+
+Es posible que, al hablar de enlazar páginas, solo pienses en enlaces a sitios web externos; sin embargo, si prestas atención también a los enlaces internos, ayudas tanto a los usuarios como a Google a que entiendan mejor tu sitio y puedan encontrar otras páginas en él. Todas las páginas que consideres importantes deben tener un enlace de al menos una página de tu sitio. Piensa qué otros recursos de tu sitio pueden ayudar a tus lectores a entender una página concreta y a vincular esas páginas en contexto.
+
+No existe un número exacto de enlaces que deba contener una página. Sin embargo, si crees que contiene demasiados, probablemente estés en lo cierto.
+Enlaces externos: enlaces a otros sitios
+Enlazar a otros sitios no debe ser motivo de inseguridad. De hecho, usar enlaces externos puede ayudar a establecer una relación de confianza (por ejemplo, citando las fuentes). Incluye enlaces a sitios web externos cuando sea conveniente y proporciona contexto a tus lectores sobre lo que pueden esperar.
+
+Correcto (cita tus fuentes):
+
+Según un reciente estudio de investigadores suizos, las ruedas de queso emmental que estaban expuestas a ¡música tenían un sabor más suave en comparación con las ruedas de queso de prueba (que no experimentaron el tratamiento musical). Los resultados completos están disponibles en <a href="https://example.com">Cheese in Surround Sound—a culinary art experiment</a>.
+Utiliza nofollow solo cuando no confíes en la fuente, no en todos los enlaces externos de tu sitio. Por ejemplo, eres aficionado al queso y alguien ha publicado una historia que habla mal de tu queso favorito, así que quieres escribir un artículo en respuesta, pero no quieres que ese sitio obtenga visitas a raíz de tu enlace. En este caso, te recomendamos usar nofollow.
+
+Si has recibido algún pago por el enlace, indica sponsored o nofollow en los enlaces. Si los usuarios pueden insertar enlaces en tu sitio (por ejemplo, si tienes una sección de foro o un sitio de preguntas y respuestas), añade también ugc o nofollow a estos enlaces.
+Acerca de los sitemaps
+
+Los sitemaps son archivos en los que se proporciona información sobre las páginas, los vídeos y otros archivos de tu sitio, así como sobre las relaciones que hay entre ellos. Los buscadores, como Google, leen estos archivos para rastrear los sitios de forma más eficiente. Los sitemaps informan a los buscadores de qué archivos de su sitio considera que son importantes para ti y, además, incluyen datos importantes sobre ellos. Por ejemplo, en el caso de las páginas, pueden indicar cuándo se actualizaron por última vez y si tienen versiones en otros idiomas.
+
+Con los sitemaps, puedes proporcionar información sobre determinados tipos de contenido que se encuentran en tus páginas, incluidos vídeos, imágenes y noticias. Por ejemplo:
+
+En las entradas de vídeos de un sitemap, se pueden indicar la duración, la categoría y la calificación por edad recomendada de los vídeos.
+En las entradas de imágenes de un sitemap, se puede incluir la ubicación de las imágenes que se incluyen en una página.
+En las entradas de noticias de un sitemap, se pueden incluir el título del artículo y la fecha de publicación.
+Si usas un sistema de gestión de contenido, como WordPress, Wix o Blogger, es probable que ya se haya proporcionado un sitemap a los buscadores y no tengas que hacer nada.
+¿Necesito un sitemap?
+Por lo general, si las páginas de tu sitio están bien enlazadas, Google podrá detectar la mayoría de ellas. Con "bien enlazadas" nos referimos a que tus visitantes deberían poder acceder a todas las páginas que consideres importantes navegando por tu sitio, ya sea usando el menú del sitio o siguiendo enlaces que hayas colocado en tus páginas. No obstante, un sitemap puede mejorar el rastreo de los sitios grandes o muy complejos, así como el de los archivos muy especializados.
+
+Los sitemaps ayudan a los buscadores a descubrir las URLs de tu sitio, pero no aseguran que se rastreen e indexen todos los elementos que contenga el sitemap. Sin embargo, en la mayoría de los casos, tu sitio se beneficiará de tener un sitemap.
+Es posible que necesites un sitemap en estos casos:
+
+Tu sitio es grande. Por lo general, en sitios de gran tamaño es más difícil asegurarse de que cada página esté enlazada por al menos otra página del sitio. En este caso, es más probable que el Googlebot no descubra algunas de tus páginas nuevas.
+Tu sitio es nuevo y hay pocos enlaces externos que dirigen a él. El robot de Google y otros rastreadores web acceden a las URLs que se encuentran en las páginas rastreadas anteriormente para rastrear la Web. En consecuencia, es posible que no detecte tus páginas si no hay enlaces a ellas en otros sitios.
+Tu sitio incluye una gran cantidad de contenido rich media, como vídeo o imágenes, o aparece en Google News. Google puede tener en cuenta información adicional de los sitemaps en la Búsqueda.
+Es posible que no necesites un sitemap en estos casos:
+
+Tu sitio es pequeño. Con "pequeño", nos referimos a sitios web de 500 páginas o menos. Ten en cuenta solo las páginas que quieras que aparezcan en los resultados de búsqueda.
+Tu sitio está totalmente enlazado de forma interna. En este caso, el robot de Google puede encontrar todas las páginas importantes de tu sitio siguiendo enlaces desde la página principal.
+No tienes muchos archivos multimedia (vídeo, imagen) o páginas de noticias que quieras que aparezcan en los resultados de búsqueda. Con los sitemaps, puedes ayudarnos a encontrar e interpretar los vídeos, las imágenes y los artículos de noticias que hay en tu sitio. Si no ves necesario que aparezcan estos resultados en la Búsqueda, es posible que no necesites un sitemap.
+Crear un sitemap
+Si decides que necesitas usar un sitemap, consulta más información sobre cómo crear uno.
+Crear y enviar sitemaps
+En este artículo se explica cómo crear sitemaps y ponerlos a disposición de Google. Si es la primera vez que utilizas sitemaps, consulta primero esta introducción.
+
+Google admite los formatos de sitemaps definidos en el protocolo de sitemaps. Cada formato tiene sus ventajas e inconvenientes. Elige el más adecuado para tu sitio y configuración (Google no tiene ninguna preferencia). En la siguiente tabla se comparan los diferentes formatos de sitemap:
+
+Comparación de sitemaps
+Sitemap XML	
+Los sitemaps XML son el formato más versátil. Se puede extender y puede servir para proporcionar datos adicionales sobre contenido de imágenes, vídeo y noticias, así como sobre las versiones localizadas de tus páginas.
+
+Ventajas:
+Extensible y versátil.
+Puede proporcionar la mayor cantidad de información sobre tus URLs.
+La mayoría de los sistemas de gestión de contenidos (CMS) generan automáticamente sitemaps. Los usuarios de CMS también pueden encontrar multitud de plugins de sitemaps.
+Inconvenientes:
+Trabajar con este formato puede ser engorroso.
+Puede resultar complicado mantener el mapeo en sitios grandes o en los que las URLs cambian con frecuencia.
+RSS, MRSS y Atom 1.0	
+Los sitemaps RSS, MRSS y Atom 1.0 tienen una estructura similar a los sitemaps XML. Sin embargo, suelen ser los más fáciles de proporcionar porque los CMS los crean automáticamente.
+
+Ventajas:
+La mayoría de los CMS generan automáticamente feeds RSS y Atom.
+Se puede usar para proporcionarle a Google información sobre tus vídeos.
+Inconvenientes:
+Además de HTML y otro contenido textual indexable, solo puede proporcionar información sobre vídeos, no sobre imágenes ni noticias.
+Trabajar con este formato puede ser engorroso.
+Sitemap de texto	
+Es el formato de sitemap más sencillo, ya que solo puede incluir URLs que dirijan a HTML y a otras páginas indexables.
+
+Ventajas:
+
+Es fácil de hacer y de mantener, especialmente en sitios grandes.
+Inconvenientes:
+
+Se limita a HTML y otro contenido de texto indexable.
+Prácticas recomendadas de sitemaps
+Las prácticas recomendadas de sitemaps están definidas en el protocolo de sitemaps. Las prácticas recomendadas que más se pasan por alto están relacionadas con los límites de tamaño, la ubicación de los sitemaps y las URLs que se incluyen en ellos.
+
+Límites de tamaño de los sitemaps: sea cual sea el formato que se use, los sitemaps no pueden tener un tamaño superior a 50 MB sin comprimir ni incluir más de 50.000 URLs. Si tienes un archivo más grande o con más URLs, tienes que dividirlo en varios sitemaps. En ese caso, puedes crear un índice de sitemaps y enviar solo ese archivo a Google. Puedes enviar varios sitemaps o archivos de índice de sitemaps a Google. Esto puede serte útil si quieres monitorizar el rendimiento de búsqueda de cada sitemap en Search Console.
+
+Codificación y ubicación del archivo de sitemap: debe estar codificado en UTF-8. Puedes alojar tus sitemaps en cualquier lugar de tu sitio, pero a menos que los envíes a través de Search Console, solo se aplicarán a los descendientes del directorio principal. Por este motivo, recomendamos que los sitemaps se publiquen en la raíz de los sitios, porque de este modo pueden afectar a todos los archivos.
+
+Propiedades de las URLs de referencia: usa URLs absolutas y cualificadas en tus sitemaps. Google intentará rastrear las URLs exactamente como se indican. Por ejemplo, si tu sitio es https://www.example.com/, no especifiques una URL como /mypage.html (URL relativa). Usa la URL absoluta completa: https://www.example.com/mypage.html.
+
+Incluye en el sitemap las URLs que quieras ver en los resultados de búsqueda de Google. Por lo general, Google muestra las URLs canónicas en los resultados de búsqueda, algo en lo que puedes influir con los sitemaps. Si las versiones para móviles y para ordenadores de tus páginas tienen URLs distintas, te recomendamos que solo incluyas una versión en tu sitemap. No obstante, si quieres incluir ambas, anótalas de manera que se indique de qué versión son.
+
+Para ver una lista completa de las prácticas recomendadas, consulta el protocolo de sitemaps.
+
+Sitemap XML
+El sitemap XML es el más versátil de los formatos admitidos. Mediante las extensiones de sitemaps compatibles con Google, también puedes proporcionar información adicional sobre tu contenido de imágenes, vídeo y noticias, así como sobre las versiones localizadas de tus páginas.
+
+A continuación se muestra un sitemap XML muy básico que incluye la ubicación de una sola URL:
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://www.example.com/foo.html</loc>
+    <lastmod>2022-06-04</lastmod>
+  </url>
+</urlset>
+Puedes encontrar ejemplos más elaborados y documentación completa en sitemaps.org.
+
+Notas adicionales sobre los sitemaps XML
+Como en todos los archivos XML, en todos los valores de etiqueta se deben usar códigos de escape de entidad.
+Google ignora los valores <priority> y <changefreq>.
+Google usa el valor <lastmod> si es coherente y verificable (por ejemplo, si se compara con la última modificación de la página).
+El valor de <lastmod> debe reflejar la fecha y la hora de la última actualización importante de la página. Por ejemplo, una actualización del contenido principal, de los datos estructurados o de los enlaces de la página se considera significativa, pero una actualización de la fecha de derechos de autor no.
+RSS, MRSS y Atom 1.0
+Si tu CMS genera un feed RSS o Atom, puedes enviar la URL del feed como un sitemap. La mayoría de los CMS crean feeds automáticamente. No obstante, debes tener en cuenta que este feed solo proporciona información sobre URLs recientes.
+
+Notas adicionales sobre RSS, MRSS y Atom 1.0
+Google admite feeds RSS 2.0 y Atom 1.0.
+Para dar a Google detalles sobre el contenido de vídeo de tu sitio, puedes utilizar un feed MRSS (RSS multimedia).
+Como en todos los archivos XML, en todos los valores de etiqueta se deben usar códigos de escape de entidad.
+Sitemap de texto
+Si solo quieres proporcionar URLs de páginas web, puedes crear un archivo de texto común que incluya una URL por línea y enviarlo a Google. Por ejemplo, si tu sitio tiene dos páginas, puedes añadirlas a tu sitemap de texto situado en https://www.example.com/sitemap.txt de la siguiente manera:
+
+
+https://www.example.com/file1.html
+https://www.example.com/file2.html
+Notas adicionales sobre los sitemaps de archivos de texto
+No incluyas nada que no sea una URL en los archivos de sitemap.
+Puedes dar al archivo el nombre que quieras, siempre y cuando tenga una extensión .txt (por ejemplo, sitemap.txt).
+Cómo crear un sitemap
+
+Al crear un sitemap, indicas a los buscadores las URLs que prefieres que se muestren en los resultados de búsqueda. Estas son las URLs canónicas. Si tienes el mismo contenido accesible desde URLs diferentes, elige la URL que prefieras e incluye solo esa en el sitemap y no todas las URLs que llevan al mismo contenido.
+
+Una vez que hayas decidido qué URLs quieres incluir en el sitemap, elige uno de los siguientes métodos para crear un sitemap, en función de la arquitectura y el tamaño de tu sitio:
+
+Deja que tu CMS genere un sitemap automáticamente.
+Si en un sitemap solo se van a incluir unas pocas decenas de URLs, puedes crearlo manualmente.
+En el caso de que el sitemap vaya a tener más que unas pocas decenas de URLs, genéralo automáticamente.
+Dejar que tu CMS genere un sitemap por ti
+Si utilizas un sistema de gestión de contenido (CMS), como WordPress, Wix o Blogger, es probable que ya haya puesto un sitemap a disposición de los buscadores. Busca información sobre cómo genera tu CMS los sitemaps o cómo crear un sitemap si tu CMS no lo genera automáticamente. Por ejemplo, en el caso de Wix, busca "wix sitemap" o, en el caso de Blogger, busca "Blogger RSS".
+
+Crear un sitemap manualmente
+En el caso de los sitemaps con pocas decenas de URLs, es posible que puedas crear uno manualmente. Abre un editor de texto como Bloc de notas de Windows o Nano (Linux y MacOS) y sigue la sintaxis descrita en la sección Formatos de sitemaps. Puedes dar al archivo el nombre que quieras, siempre y cuando los caracteres estén permitidos en una URL.
+
+Puedes crear sitemaps más grandes manualmente, pero es un proceso tedioso y difícil de mantener a largo plazo.
+
+Generar automáticamente un sitemap con herramientas
+En el caso de los sitemaps que tengan más que unas pocas decenas de URLs, deberás generar el sitemap. Hay varias herramientas que pueden generar un sitemap. Sin embargo, la mejor forma de hacerlo es que el software de tu sitio web lo haga automáticamente. Por ejemplo, puedes extraer las URLs de la base de datos de tu sitio y exportarlas a un borrador o al archivo de tu servidor web. Habla con tus desarrolladores o con tu gestor de servidores sobre esta solución. Si necesitas inspiración para crear el código, consulta nuestra antigua colección (sin mantenimiento) de generadores de sitemaps de terceros.
+
+No te preocupes por el orden de las URLs en el sitemap, es indiferente para Google. Ten en cuenta los requisitos de tamaño de los sitemaps. Si el sitemap es demasiado grande, debes dividirlo en sitemaps más pequeños. Más información sobre cómo gestionar sitemaps grandes
+
+Enviar un sitemap a Google
+Recuerda que enviar un sitemap es tan solo una recomendación: no garantiza que Google lo descargue ni que lo utilice para rastrear URLs del sitio. Hay varias maneras de poner un sitemap a disposición de Google:
+
+En Search Console, envía un sitemap con el informe "Sitemaps". De esta forma, podrás ver cuándo accedió al sitemap el robot de Google y posibles errores de procesamiento.
+Usa la API de Search Console para enviar un sitemap de forma automatizada.
+Inserta en cualquier parte del archivo robots.txt la línea que hay a continuación, pero con la ruta de tu sitemap. De este modo, encontraremos el sitemap la próxima vez que rastreemos tu archivo robots.txt:
+
+Sitemap: https://example.com/my_sitemap.xml
+Si usas Atom o RSS, puedes usar WebSub para difundir tus cambios entre los buscadores, incluido Google.
+Cómo enviar sitemaps de varios sitios
+Si tienes varios sitios web, puedes simplificar el proceso de envío creando uno o varios sitemaps que incluyan URLs de todos tus sitios verificados, y guardándolos en una única ubicación. Puedes utilizar:
+
+Un único sitemap con URLs de varios sitios web, incluidas las de sitios de dominios distintos. Por ejemplo, el sitemap situado en https://host1.example.com/sitemap.xml puede incluir las siguientes URLs.
+https://host1.example.com
+https://host2.example.com
+https://host3.example.com
+https://host1.example1.com
+https://host1.example.ch
+Sitemaps concretos (uno por sitio) que se encuentren en una misma ubicación. Por ejemplo, https://host1.example.com puede alojar todos estos sitemaps:
+https://host1.example.com/host1-example-sitemap.xml
+https://host1.example.com/host2-example-sitemap.xml
+https://host1.example.com/host3-example-sitemap.xml
+https://host1.example.com/host1-example1-sitemap.xml
+https://host1.example.com/host1-example-ch-sitemap.xml
+Para enviar sitemaps de varios sitios alojados en una única ubicación, puedes usar Search Console o un archivo robots.txt.
+
+Crear y enviar sitemap con URLs de distintos sitios con Search Console
+Comprueba que hayas verificado la propiedad de todos los sitios que vas a añadir al sitemap.
+Crea un sitemap (o más, si lo prefieres) que incluya las URLs de todos los sitios que quieres abarcar. Si quieres, puedes incluir los sitemaps en un archivo de índice de sitemaps y trabajar con él.
+Envía tus sitemaps o el archivo de índice de sitemaps con Google Search Console.
+Crear y enviar sitemap con URLs de distintos sitios con robots.txt
+Crea uno o varios sitemaps para cada sitio. En cada archivo de sitemap, incluye solo las URLs de ese sitio en concreto.
+Sube todos los sitemaps a un mismo sitio que puedas controlar, como https://sitemaps.example.com.
+Asegúrate de que cada archivo robots.txt hace referencia al sitemap específico de cada sitio. Por ejemplo, si has creado un sitemap para https://example.com/ y lo alojas en https://sitemaps.example.com/sitemap-example-com.xml, referencia el sitemap en el archivo robots.txt en https://example.com/robots.txt.
+
+# robots.txt file of https://example.com/
+sitemap: https://sitemaps.example.com/sitemap-example-com.xml
+Solucionar problemas con sitemaps
+Si tienes problemas con tu sitemap, puedes investigar los errores con Google Search Console. Consulta la guía para solucionar problemas de sitemaps de Search Console para obtener ayuda.

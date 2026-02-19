@@ -340,7 +340,7 @@
         const name = product.nombre || product.name || '';
         const price = product.precio_oferta || product.precio || product.price || 0;
         const image = product.imagen_principal || product.image || '/static/img/placeholder.webp';
-        const url = product.url || `./producto/${product.slug}.html`;
+        const url = product.url || `/producto/${encodeURIComponent(product.slug)}`;
 
         return `
           <div class="recommended-item">

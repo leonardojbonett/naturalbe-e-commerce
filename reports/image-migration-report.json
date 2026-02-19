@@ -1,0 +1,2826 @@
+{
+  "generated_at": "2026-02-15T21:38:54.486Z",
+  "csv": "reports/external-images-migration.csv",
+  "catalog": "static/data/productos.json",
+  "apply": true,
+  "force": true,
+  "limit": null,
+  "sharp_available": false,
+  "ffmpeg_available": true,
+  "totals": {
+    "csv_rows": 268,
+    "processed_rows": 268,
+    "product_groups": 134,
+    "products_updated": 131,
+    "files_written": 268,
+    "files_skipped": 0,
+    "errors": 0
+  },
+  "items": [
+    {
+      "id": "790",
+      "slug": "be-pure-protein-1lb",
+      "found_product": true,
+      "main": {
+        "path": "/static/img/productos/be-pure-protein-1lb-main.jpg",
+        "skipped": false,
+        "reason": ""
+      },
+      "webp": {
+        "path": "/static/img/productos/be-pure-protein-1lb-webp.webp",
+        "skipped": false,
+        "reason": "",
+        "converted": false
+      },
+      "updated_fields": [],
+      "error": ""
+    },
+    {
+      "id": "791",
+      "slug": "whey-protein-hardcore-5lb-vainilla-funat",
+      "found_product": true,
+      "main": {
+        "path": "/static/img/productos/whey-protein-hardcore-5lb-vainilla-funat-main.jpg",
+        "skipped": false,
+        "reason": ""
+      },
+      "webp": {
+        "path": "/static/img/productos/whey-protein-hardcore-5lb-vainilla-funat-webp.webp",
+        "skipped": false,
+        "reason": "",
+        "converted": false
+      },
+      "updated_fields": [],
+      "error": ""
+    },
+    {
+      "id": "792",
+      "slug": "resveratrol-nicotinamida-x-120-gr",
+      "found_product": true,
+      "main": {
+        "path": "/static/img/productos/resveratrol-nicotinamida-x-120-gr-main.png",
+        "skipped": false,
+        "reason": ""
+      },
+      "webp": {
+        "path": "/static/img/productos/resveratrol-nicotinamida-x-120-gr-webp.webp",
+        "skipped": false,
+        "reason": "",
+        "converted": false
+      },
+      "updated_fields": [],
+      "error": ""
+    },
+    {
+      "id": "795",
+      "slug": "citrato-de-magnesio-en-polvo-240gr",
+      "found_product": true,
+      "main": {
+        "path": "/static/img/productos/citrato-de-magnesio-en-polvo-240gr-main.jpg",
+        "skipped": false,
+        "reason": ""
+      },
+      "webp": {
+        "path": "/static/img/productos/citrato-de-magnesio-en-polvo-240gr-webp.webp",
+        "skipped": false,
+        "reason": "",
+        "converted": false
+      },
+      "updated_fields": [
+        "imagen_principal",
+        "imagen_principal_webp"
+      ],
+      "error": ""
+    },
+    {
+      "id": "796",
+      "slug": "fusion-vegan-protein-sin-soya",
+      "found_product": true,
+      "main": {
+        "path": "/static/img/productos/fusion-vegan-protein-sin-soya-main.jpg",
+        "skipped": false,
+        "reason": ""
+      },
+      "webp": {
+        "path": "/static/img/productos/fusion-vegan-protein-sin-soya-webp.webp",
+        "skipped": false,
+        "reason": "",
+        "converted": false
+      },
+      "updated_fields": [
+        "imagen_principal",
+        "imagen_principal_webp"
+      ],
+      "error": ""
+    },
+    {
+      "id": "797",
+      "slug": "iso-hidrolizada-vainilla-908gr",
+      "found_product": true,
+      "main": {
+        "path": "/static/img/productos/iso-hidrolizada-vainilla-908gr-main.webp",
+        "skipped": false,
+        "reason": ""
+      },
+      "webp": {
+        "path": "/static/img/productos/iso-hidrolizada-vainilla-908gr-webp.webp",
+        "skipped": false,
+        "reason": "",
+        "converted": false
+      },
+      "updated_fields": [
+        "imagen_principal",
+        "imagen_principal_webp"
+      ],
+      "error": ""
+    },
+    {
+      "id": "798",
+      "slug": "creatina-pre-up-x300g-funat",
+      "found_product": true,
+      "main": {
+        "path": "/static/img/productos/creatina-pre-up-x300g-funat-main.jpg",
+        "skipped": false,
+        "reason": ""
+      },
+      "webp": {
+        "path": "/static/img/productos/creatina-pre-up-x300g-funat-webp.webp",
+        "skipped": false,
+        "reason": "",
+        "converted": false
+      },
+      "updated_fields": [
+        "imagen_principal",
+        "imagen_principal_webp"
+      ],
+      "error": ""
+    },
+    {
+      "id": "799",
+      "slug": "vegan-protein-blend-700-g",
+      "found_product": true,
+      "main": {
+        "path": "/static/img/productos/vegan-protein-blend-700-g-main.jpg",
+        "skipped": false,
+        "reason": ""
+      },
+      "webp": {
+        "path": "/static/img/productos/vegan-protein-blend-700-g-webp.webp",
+        "skipped": false,
+        "reason": "",
+        "converted": false
+      },
+      "updated_fields": [
+        "imagen_principal",
+        "imagen_principal_webp"
+      ],
+      "error": ""
+    },
+    {
+      "id": "800",
+      "slug": "whey-protein-hardcore-chocolate-2-lb",
+      "found_product": true,
+      "main": {
+        "path": "/static/img/productos/whey-protein-hardcore-chocolate-2-lb-main.jpg",
+        "skipped": false,
+        "reason": ""
+      },
+      "webp": {
+        "path": "/static/img/productos/whey-protein-hardcore-chocolate-2-lb-webp.webp",
+        "skipped": false,
+        "reason": "",
+        "converted": false
+      },
+      "updated_fields": [
+        "imagen_principal",
+        "imagen_principal_webp"
+      ],
+      "error": ""
+    },
+    {
+      "id": "801",
+      "slug": "bcaa-evolution",
+      "found_product": true,
+      "main": {
+        "path": "/static/img/productos/bcaa-evolution-main.png",
+        "skipped": false,
+        "reason": ""
+      },
+      "webp": {
+        "path": "/static/img/productos/bcaa-evolution-webp.webp",
+        "skipped": false,
+        "reason": "",
+        "converted": true
+      },
+      "updated_fields": [
+        "imagen_principal",
+        "imagen_principal_webp"
+      ],
+      "error": ""
+    },
+    {
+      "id": "803",
+      "slug": "max-hiper-2-lb-vainilla",
+      "found_product": true,
+      "main": {
+        "path": "/static/img/productos/max-hiper-2-lb-vainilla-main.png",
+        "skipped": false,
+        "reason": ""
+      },
+      "webp": {
+        "path": "/static/img/productos/max-hiper-2-lb-vainilla-webp.webp",
+        "skipped": false,
+        "reason": "",
+        "converted": false
+      },
+      "updated_fields": [
+        "imagen_principal",
+        "imagen_principal_webp"
+      ],
+      "error": ""
+    },
+    {
+      "id": "804",
+      "slug": "elite-max-whey-pro-545-gr",
+      "found_product": true,
+      "main": {
+        "path": "/static/img/productos/elite-max-whey-pro-545-gr-main.png",
+        "skipped": false,
+        "reason": ""
+      },
+      "webp": {
+        "path": "/static/img/productos/elite-max-whey-pro-545-gr-webp.webp",
+        "skipped": false,
+        "reason": "",
+        "converted": false
+      },
+      "updated_fields": [
+        "imagen_principal",
+        "imagen_principal_webp"
+      ],
+      "error": ""
+    },
+    {
+      "id": "805",
+      "slug": "up-gel-sabor-sandia-32-gr",
+      "found_product": true,
+      "main": {
+        "path": "/static/img/productos/up-gel-sabor-sandia-32-gr-main.png",
+        "skipped": false,
+        "reason": ""
+      },
+      "webp": {
+        "path": "/static/img/productos/up-gel-sabor-sandia-32-gr-webp.webp",
+        "skipped": false,
+        "reason": "",
+        "converted": false
+      },
+      "updated_fields": [
+        "imagen_principal",
+        "imagen_principal_webp"
+      ],
+      "error": ""
+    },
+    {
+      "id": "806",
+      "slug": "up-gel-sabor-banano-32-gr",
+      "found_product": true,
+      "main": {
+        "path": "/static/img/productos/up-gel-sabor-banano-32-gr-main.png",
+        "skipped": false,
+        "reason": ""
+      },
+      "webp": {
+        "path": "/static/img/productos/up-gel-sabor-banano-32-gr-webp.webp",
+        "skipped": false,
+        "reason": "",
+        "converted": false
+      },
+      "updated_fields": [
+        "imagen_principal",
+        "imagen_principal_webp"
+      ],
+      "error": ""
+    },
+    {
+      "id": "807",
+      "slug": "pure-hydrolyzed-5-2-lb",
+      "found_product": true,
+      "main": {
+        "path": "/static/img/productos/pure-hydrolyzed-5-2-lb-main.jpg",
+        "skipped": false,
+        "reason": ""
+      },
+      "webp": {
+        "path": "/static/img/productos/pure-hydrolyzed-5-2-lb-webp.webp",
+        "skipped": false,
+        "reason": "",
+        "converted": false
+      },
+      "updated_fields": [
+        "imagen_principal",
+        "imagen_principal_webp"
+      ],
+      "error": ""
+    },
+    {
+      "id": "808",
+      "slug": "max-hiper-5-lb-vainilla",
+      "found_product": true,
+      "main": {
+        "path": "/static/img/productos/max-hiper-5-lb-vainilla-main.png",
+        "skipped": false,
+        "reason": ""
+      },
+      "webp": {
+        "path": "/static/img/productos/max-hiper-5-lb-vainilla-webp.webp",
+        "skipped": false,
+        "reason": "",
+        "converted": false
+      },
+      "updated_fields": [
+        "imagen_principal",
+        "imagen_principal_webp"
+      ],
+      "error": ""
+    },
+    {
+      "id": "809",
+      "slug": "100-whey-1-lb-vainilla",
+      "found_product": true,
+      "main": {
+        "path": "/static/img/productos/100-whey-1-lb-vainilla-main.png",
+        "skipped": false,
+        "reason": ""
+      },
+      "webp": {
+        "path": "/static/img/productos/100-whey-1-lb-vainilla-webp.webp",
+        "skipped": false,
+        "reason": "",
+        "converted": false
+      },
+      "updated_fields": [
+        "imagen_principal",
+        "imagen_principal_webp"
+      ],
+      "error": ""
+    },
+    {
+      "id": "810",
+      "slug": "100-whey-2-lb-vainilla",
+      "found_product": true,
+      "main": {
+        "path": "/static/img/productos/100-whey-2-lb-vainilla-main.png",
+        "skipped": false,
+        "reason": ""
+      },
+      "webp": {
+        "path": "/static/img/productos/100-whey-2-lb-vainilla-webp.webp",
+        "skipped": false,
+        "reason": "",
+        "converted": false
+      },
+      "updated_fields": [
+        "imagen_principal",
+        "imagen_principal_webp"
+      ],
+      "error": ""
+    },
+    {
+      "id": "811",
+      "slug": "100-max-iso-2-lb-vainilla",
+      "found_product": true,
+      "main": {
+        "path": "/static/img/productos/100-max-iso-2-lb-vainilla-main.png",
+        "skipped": false,
+        "reason": ""
+      },
+      "webp": {
+        "path": "/static/img/productos/100-max-iso-2-lb-vainilla-webp.webp",
+        "skipped": false,
+        "reason": "",
+        "converted": false
+      },
+      "updated_fields": [
+        "imagen_principal",
+        "imagen_principal_webp"
+      ],
+      "error": ""
+    },
+    {
+      "id": "812",
+      "slug": "100-max-1-lb-vainilla",
+      "found_product": true,
+      "main": {
+        "path": "/static/img/productos/100-max-1-lb-vainilla-main.png",
+        "skipped": false,
+        "reason": ""
+      },
+      "webp": {
+        "path": "/static/img/productos/100-max-1-lb-vainilla-webp.webp",
+        "skipped": false,
+        "reason": "",
+        "converted": false
+      },
+      "updated_fields": [
+        "imagen_principal",
+        "imagen_principal_webp"
+      ],
+      "error": ""
+    },
+    {
+      "id": "813",
+      "slug": "max-crea-1-lb-frutos-rojos",
+      "found_product": true,
+      "main": {
+        "path": "/static/img/productos/max-crea-1-lb-frutos-rojos-main.png",
+        "skipped": false,
+        "reason": ""
+      },
+      "webp": {
+        "path": "/static/img/productos/max-crea-1-lb-frutos-rojos-webp.webp",
+        "skipped": false,
+        "reason": "",
+        "converted": false
+      },
+      "updated_fields": [
+        "imagen_principal",
+        "imagen_principal_webp"
+      ],
+      "error": ""
+    },
+    {
+      "id": "814",
+      "slug": "100-max-iso-3-lb-vainilla",
+      "found_product": true,
+      "main": {
+        "path": "/static/img/productos/100-max-iso-3-lb-vainilla-main.png",
+        "skipped": false,
+        "reason": ""
+      },
+      "webp": {
+        "path": "/static/img/productos/100-max-iso-3-lb-vainilla-webp.webp",
+        "skipped": false,
+        "reason": "",
+        "converted": false
+      },
+      "updated_fields": [
+        "imagen_principal",
+        "imagen_principal_webp"
+      ],
+      "error": ""
+    },
+    {
+      "id": "815",
+      "slug": "max-power-1000-g-mix-de-frutas",
+      "found_product": true,
+      "main": {
+        "path": "/static/img/productos/max-power-1000-g-mix-de-frutas-main.png",
+        "skipped": false,
+        "reason": ""
+      },
+      "webp": {
+        "path": "/static/img/productos/max-power-1000-g-mix-de-frutas-webp.webp",
+        "skipped": false,
+        "reason": "",
+        "converted": false
+      },
+      "updated_fields": [
+        "imagen_principal",
+        "imagen_principal_webp"
+      ],
+      "error": ""
+    },
+    {
+      "id": "816",
+      "slug": "gluta-max-350-g",
+      "found_product": true,
+      "main": {
+        "path": "/static/img/productos/gluta-max-350-g-main.png",
+        "skipped": false,
+        "reason": ""
+      },
+      "webp": {
+        "path": "/static/img/productos/gluta-max-350-g-webp.webp",
+        "skipped": false,
+        "reason": "",
+        "converted": false
+      },
+      "updated_fields": [
+        "imagen_principal",
+        "imagen_principal_webp"
+      ],
+      "error": ""
+    },
+    {
+      "id": "817",
+      "slug": "preforce-350-g",
+      "found_product": true,
+      "main": {
+        "path": "/static/img/productos/preforce-350-g-main.png",
+        "skipped": false,
+        "reason": ""
+      },
+      "webp": {
+        "path": "/static/img/productos/preforce-350-g-webp.webp",
+        "skipped": false,
+        "reason": "",
+        "converted": true
+      },
+      "updated_fields": [
+        "imagen_principal",
+        "imagen_principal_webp"
+      ],
+      "error": ""
+    },
+    {
+      "id": "818",
+      "slug": "argi-max-350-g",
+      "found_product": true,
+      "main": {
+        "path": "/static/img/productos/argi-max-350-g-main.png",
+        "skipped": false,
+        "reason": ""
+      },
+      "webp": {
+        "path": "/static/img/productos/argi-max-350-g-webp.webp",
+        "skipped": false,
+        "reason": "",
+        "converted": false
+      },
+      "updated_fields": [
+        "imagen_principal",
+        "imagen_principal_webp"
+      ],
+      "error": ""
+    },
+    {
+      "id": "819",
+      "slug": "sachet-argi-max-8-g",
+      "found_product": true,
+      "main": {
+        "path": "/static/img/productos/sachet-argi-max-8-g-main.png",
+        "skipped": false,
+        "reason": ""
+      },
+      "webp": {
+        "path": "/static/img/productos/sachet-argi-max-8-g-webp.webp",
+        "skipped": false,
+        "reason": "",
+        "converted": false
+      },
+      "updated_fields": [
+        "imagen_principal",
+        "imagen_principal_webp"
+      ],
+      "error": ""
+    },
+    {
+      "id": "820",
+      "slug": "purveg-capsulas-x-8",
+      "found_product": true,
+      "main": {
+        "path": "/static/img/productos/purveg-capsulas-x-8-main.jpg",
+        "skipped": false,
+        "reason": ""
+      },
+      "webp": {
+        "path": "/static/img/productos/purveg-capsulas-x-8-webp.webp",
+        "skipped": false,
+        "reason": "",
+        "converted": false
+      },
+      "updated_fields": [
+        "imagen_principal",
+        "imagen_principal_webp"
+      ],
+      "error": ""
+    },
+    {
+      "id": "821",
+      "slug": "antax-sachet-caja-x-10-uds",
+      "found_product": true,
+      "main": {
+        "path": "/static/img/productos/antax-sachet-caja-x-10-uds-main.jpg",
+        "skipped": false,
+        "reason": ""
+      },
+      "webp": {
+        "path": "/static/img/productos/antax-sachet-caja-x-10-uds-webp.webp",
+        "skipped": false,
+        "reason": "",
+        "converted": false
+      },
+      "updated_fields": [
+        "imagen_principal",
+        "imagen_principal_webp"
+      ],
+      "error": ""
+    },
+    {
+      "id": "822",
+      "slug": "passycalm-x-60-ml",
+      "found_product": true,
+      "main": {
+        "path": "/static/img/productos/passycalm-x-60-ml-main.jpg",
+        "skipped": false,
+        "reason": ""
+      },
+      "webp": {
+        "path": "/static/img/productos/passycalm-x-60-ml-webp.webp",
+        "skipped": false,
+        "reason": "",
+        "converted": false
+      },
+      "updated_fields": [
+        "imagen_principal",
+        "imagen_principal_webp"
+      ],
+      "error": ""
+    },
+    {
+      "id": "823",
+      "slug": "antax-sachet-x-15-ml",
+      "found_product": true,
+      "main": {
+        "path": "/static/img/productos/antax-sachet-x-15-ml-main.jpg",
+        "skipped": false,
+        "reason": ""
+      },
+      "webp": {
+        "path": "/static/img/productos/antax-sachet-x-15-ml-webp.webp",
+        "skipped": false,
+        "reason": "",
+        "converted": false
+      },
+      "updated_fields": [
+        "imagen_principal",
+        "imagen_principal_webp"
+      ],
+      "error": ""
+    },
+    {
+      "id": "824",
+      "slug": "revitalnat-panax-ginseng-100-tabletas",
+      "found_product": true,
+      "main": {
+        "path": "/static/img/productos/revitalnat-panax-ginseng-100-tabletas-main.webp",
+        "skipped": false,
+        "reason": ""
+      },
+      "webp": {
+        "path": "/static/img/productos/revitalnat-panax-ginseng-100-tabletas-webp.webp",
+        "skipped": false,
+        "reason": "",
+        "converted": false
+      },
+      "updated_fields": [
+        "imagen_principal",
+        "imagen_principal_webp"
+      ],
+      "error": ""
+    },
+    {
+      "id": "825",
+      "slug": "valeriana-extracto-60ml",
+      "found_product": true,
+      "main": {
+        "path": "/static/img/productos/valeriana-extracto-60ml-main.jpg",
+        "skipped": false,
+        "reason": ""
+      },
+      "webp": {
+        "path": "/static/img/productos/valeriana-extracto-60ml-webp.webp",
+        "skipped": false,
+        "reason": "",
+        "converted": false
+      },
+      "updated_fields": [
+        "imagen_principal",
+        "imagen_principal_webp"
+      ],
+      "error": ""
+    },
+    {
+      "id": "826",
+      "slug": "extracto-de-passiflora-60-ml",
+      "found_product": true,
+      "main": {
+        "path": "/static/img/productos/extracto-de-passiflora-60-ml-main.jpg",
+        "skipped": false,
+        "reason": ""
+      },
+      "webp": {
+        "path": "/static/img/productos/extracto-de-passiflora-60-ml-webp.webp",
+        "skipped": false,
+        "reason": "",
+        "converted": false
+      },
+      "updated_fields": [
+        "imagen_principal",
+        "imagen_principal_webp"
+      ],
+      "error": ""
+    },
+    {
+      "id": "827",
+      "slug": "purveg-sachet-13-g",
+      "found_product": true,
+      "main": {
+        "path": "/static/img/productos/purveg-sachet-13-g-main.jpg",
+        "skipped": false,
+        "reason": ""
+      },
+      "webp": {
+        "path": "/static/img/productos/purveg-sachet-13-g-webp.webp",
+        "skipped": false,
+        "reason": "",
+        "converted": false
+      },
+      "updated_fields": [
+        "imagen_principal",
+        "imagen_principal_webp"
+      ],
+      "error": ""
+    },
+    {
+      "id": "828",
+      "slug": "antax-calendula-masticable-10-tabletas",
+      "found_product": true,
+      "main": {
+        "path": "/static/img/productos/antax-calendula-masticable-10-tabletas-main.png",
+        "skipped": false,
+        "reason": ""
+      },
+      "webp": {
+        "path": "/static/img/productos/antax-calendula-masticable-10-tabletas-webp.webp",
+        "skipped": false,
+        "reason": "",
+        "converted": false
+      },
+      "updated_fields": [
+        "imagen_principal",
+        "imagen_principal_webp"
+      ],
+      "error": ""
+    },
+    {
+      "id": "829",
+      "slug": "artritend-harpagofito-30-capsulas-blandas",
+      "found_product": true,
+      "main": {
+        "path": "/static/img/productos/artritend-harpagofito-30-capsulas-blandas-main.jpg",
+        "skipped": false,
+        "reason": ""
+      },
+      "webp": {
+        "path": "/static/img/productos/artritend-harpagofito-30-capsulas-blandas-webp.webp",
+        "skipped": false,
+        "reason": "",
+        "converted": false
+      },
+      "updated_fields": [
+        "imagen_principal",
+        "imagen_principal_webp"
+      ],
+      "error": ""
+    },
+    {
+      "id": "830",
+      "slug": "alcachofa-extracto-60-ml",
+      "found_product": true,
+      "main": {
+        "path": "/static/img/productos/alcachofa-extracto-60-ml-main.jpg",
+        "skipped": false,
+        "reason": ""
+      },
+      "webp": {
+        "path": "/static/img/productos/alcachofa-extracto-60-ml-webp.webp",
+        "skipped": false,
+        "reason": "",
+        "converted": false
+      },
+      "updated_fields": [
+        "imagen_principal",
+        "imagen_principal_webp"
+      ],
+      "error": ""
+    },
+    {
+      "id": "831",
+      "slug": "alcachofa-100-tabletas",
+      "found_product": true,
+      "main": {
+        "path": "/static/img/productos/alcachofa-100-tabletas-main.jpg",
+        "skipped": false,
+        "reason": ""
+      },
+      "webp": {
+        "path": "/static/img/productos/alcachofa-100-tabletas-webp.webp",
+        "skipped": false,
+        "reason": "",
+        "converted": false
+      },
+      "updated_fields": [
+        "imagen_principal",
+        "imagen_principal_webp"
+      ],
+      "error": ""
+    },
+    {
+      "id": "832",
+      "slug": "urifin-vira-vira-extracto-60-ml",
+      "found_product": true,
+      "main": {
+        "path": "/static/img/productos/urifin-vira-vira-extracto-60-ml-main.jpg",
+        "skipped": false,
+        "reason": ""
+      },
+      "webp": {
+        "path": "/static/img/productos/urifin-vira-vira-extracto-60-ml-webp.webp",
+        "skipped": false,
+        "reason": "",
+        "converted": false
+      },
+      "updated_fields": [
+        "imagen_principal",
+        "imagen_principal_webp"
+      ],
+      "error": ""
+    },
+    {
+      "id": "833",
+      "slug": "bronquinat-totumo-sin-azucar-240-ml",
+      "found_product": true,
+      "main": {
+        "path": "/static/img/productos/bronquinat-totumo-sin-azucar-240-ml-main.jpg",
+        "skipped": false,
+        "reason": ""
+      },
+      "webp": {
+        "path": "/static/img/productos/bronquinat-totumo-sin-azucar-240-ml-webp.webp",
+        "skipped": false,
+        "reason": "",
+        "converted": false
+      },
+      "updated_fields": [
+        "imagen_principal",
+        "imagen_principal_webp"
+      ],
+      "error": ""
+    },
+    {
+      "id": "834",
+      "slug": "extracto-sangre-de-drago-60-ml",
+      "found_product": true,
+      "main": {
+        "path": "/static/img/productos/extracto-sangre-de-drago-60-ml-main.jpg",
+        "skipped": false,
+        "reason": ""
+      },
+      "webp": {
+        "path": "/static/img/productos/extracto-sangre-de-drago-60-ml-webp.webp",
+        "skipped": false,
+        "reason": "",
+        "converted": false
+      },
+      "updated_fields": [
+        "imagen_principal",
+        "imagen_principal_webp"
+      ],
+      "error": ""
+    },
+    {
+      "id": "835",
+      "slug": "extracto-de-calendula-60-ml",
+      "found_product": true,
+      "main": {
+        "path": "/static/img/productos/extracto-de-calendula-60-ml-main.jpg",
+        "skipped": false,
+        "reason": ""
+      },
+      "webp": {
+        "path": "/static/img/productos/extracto-de-calendula-60-ml-webp.webp",
+        "skipped": false,
+        "reason": "",
+        "converted": false
+      },
+      "updated_fields": [
+        "imagen_principal",
+        "imagen_principal_webp"
+      ],
+      "error": ""
+    },
+    {
+      "id": "836",
+      "slug": "antaxbid-240-ml",
+      "found_product": true,
+      "main": {
+        "path": "/static/img/productos/antaxbid-240-ml-main.jpg",
+        "skipped": false,
+        "reason": ""
+      },
+      "webp": {
+        "path": "/static/img/productos/antaxbid-240-ml-webp.webp",
+        "skipped": false,
+        "reason": "",
+        "converted": false
+      },
+      "updated_fields": [
+        "imagen_principal",
+        "imagen_principal_webp"
+      ],
+      "error": ""
+    },
+    {
+      "id": "837",
+      "slug": "antax-170-ml",
+      "found_product": true,
+      "main": {
+        "path": "/static/img/productos/antax-170-ml-main.jpg",
+        "skipped": false,
+        "reason": ""
+      },
+      "webp": {
+        "path": "/static/img/productos/antax-170-ml-webp.webp",
+        "skipped": false,
+        "reason": "",
+        "converted": false
+      },
+      "updated_fields": [
+        "imagen_principal",
+        "imagen_principal_webp"
+      ],
+      "error": ""
+    },
+    {
+      "id": "838",
+      "slug": "hepanat-silimarina-30-softgels",
+      "found_product": true,
+      "main": {
+        "path": "/static/img/productos/hepanat-silimarina-30-softgels-main.jpg",
+        "skipped": false,
+        "reason": ""
+      },
+      "webp": {
+        "path": "/static/img/productos/hepanat-silimarina-30-softgels-webp.webp",
+        "skipped": false,
+        "reason": "",
+        "converted": false
+      },
+      "updated_fields": [
+        "imagen_principal",
+        "imagen_principal_webp"
+      ],
+      "error": ""
+    },
+    {
+      "id": "839",
+      "slug": "castano-de-indias-80-capsulas",
+      "found_product": true,
+      "main": {
+        "path": "/static/img/productos/castano-de-indias-80-capsulas-main.jpg",
+        "skipped": false,
+        "reason": ""
+      },
+      "webp": {
+        "path": "/static/img/productos/castano-de-indias-80-capsulas-webp.webp",
+        "skipped": false,
+        "reason": "",
+        "converted": true
+      },
+      "updated_fields": [
+        "imagen_principal",
+        "imagen_principal_webp"
+      ],
+      "error": ""
+    },
+    {
+      "id": "840",
+      "slug": "alcachofa-compuesta-100-capsulas",
+      "found_product": true,
+      "main": {
+        "path": "/static/img/productos/alcachofa-compuesta-100-capsulas-main.jpg",
+        "skipped": false,
+        "reason": ""
+      },
+      "webp": {
+        "path": "/static/img/productos/alcachofa-compuesta-100-capsulas-webp.webp",
+        "skipped": false,
+        "reason": "",
+        "converted": false
+      },
+      "updated_fields": [
+        "imagen_principal",
+        "imagen_principal_webp"
+      ],
+      "error": ""
+    },
+    {
+      "id": "841",
+      "slug": "antax-360-ml",
+      "found_product": true,
+      "main": {
+        "path": "/static/img/productos/antax-360-ml-main.jpg",
+        "skipped": false,
+        "reason": ""
+      },
+      "webp": {
+        "path": "/static/img/productos/antax-360-ml-webp.webp",
+        "skipped": false,
+        "reason": "",
+        "converted": false
+      },
+      "updated_fields": [
+        "imagen_principal",
+        "imagen_principal_webp"
+      ],
+      "error": ""
+    },
+    {
+      "id": "842",
+      "slug": "fibrafrut-200-g",
+      "found_product": true,
+      "main": {
+        "path": "/static/img/productos/fibrafrut-200-g-main.jpg",
+        "skipped": false,
+        "reason": ""
+      },
+      "webp": {
+        "path": "/static/img/productos/fibrafrut-200-g-webp.webp",
+        "skipped": false,
+        "reason": "",
+        "converted": false
+      },
+      "updated_fields": [
+        "imagen_principal",
+        "imagen_principal_webp"
+      ],
+      "error": ""
+    },
+    {
+      "id": "843",
+      "slug": "imuprobiotics",
+      "found_product": true,
+      "main": {
+        "path": "/static/img/productos/imuprobiotics-main.jpg",
+        "skipped": false,
+        "reason": ""
+      },
+      "webp": {
+        "path": "/static/img/productos/imuprobiotics-webp.webp",
+        "skipped": false,
+        "reason": "",
+        "converted": false
+      },
+      "updated_fields": [
+        "imagen_principal",
+        "imagen_principal_webp"
+      ],
+      "error": ""
+    },
+    {
+      "id": "844",
+      "slug": "carnitrim-60-tabletas",
+      "found_product": true,
+      "main": {
+        "path": "/static/img/productos/carnitrim-60-tabletas-main.jpg",
+        "skipped": false,
+        "reason": ""
+      },
+      "webp": {
+        "path": "/static/img/productos/carnitrim-60-tabletas-webp.webp",
+        "skipped": false,
+        "reason": "",
+        "converted": false
+      },
+      "updated_fields": [
+        "imagen_principal",
+        "imagen_principal_webp"
+      ],
+      "error": ""
+    },
+    {
+      "id": "845",
+      "slug": "macasource",
+      "found_product": true,
+      "main": {
+        "path": "/static/img/productos/macasource-main.jpg",
+        "skipped": false,
+        "reason": ""
+      },
+      "webp": {
+        "path": "/static/img/productos/macasource-webp.webp",
+        "skipped": false,
+        "reason": "",
+        "converted": false
+      },
+      "updated_fields": [
+        "imagen_principal",
+        "imagen_principal_webp"
+      ],
+      "error": ""
+    },
+    {
+      "id": "846",
+      "slug": "vitasource-x-60caps",
+      "found_product": true,
+      "main": {
+        "path": "/static/img/productos/vitasource-x-60caps-main.jpg",
+        "skipped": false,
+        "reason": ""
+      },
+      "webp": {
+        "path": "/static/img/productos/vitasource-x-60caps-webp.webp",
+        "skipped": false,
+        "reason": "",
+        "converted": false
+      },
+      "updated_fields": [
+        "imagen_principal",
+        "imagen_principal_webp"
+      ],
+      "error": ""
+    },
+    {
+      "id": "847",
+      "slug": "vitamina-d-magnesio-x60-caps",
+      "found_product": true,
+      "main": {
+        "path": "/static/img/productos/vitamina-d-magnesio-x60-caps-main.jpg",
+        "skipped": false,
+        "reason": ""
+      },
+      "webp": {
+        "path": "/static/img/productos/vitamina-d-magnesio-x60-caps-webp.webp",
+        "skipped": false,
+        "reason": "",
+        "converted": true
+      },
+      "updated_fields": [
+        "imagen_principal",
+        "imagen_principal_webp"
+      ],
+      "error": ""
+    },
+    {
+      "id": "848",
+      "slug": "vitamina-e-1000-selenio-x-60-cap",
+      "found_product": true,
+      "main": {
+        "path": "/static/img/productos/vitamina-e-1000-selenio-x-60-cap-main.jpg",
+        "skipped": false,
+        "reason": ""
+      },
+      "webp": {
+        "path": "/static/img/productos/vitamina-e-1000-selenio-x-60-cap-webp.webp",
+        "skipped": false,
+        "reason": "",
+        "converted": false
+      },
+      "updated_fields": [
+        "imagen_principal",
+        "imagen_principal_webp"
+      ],
+      "error": ""
+    },
+    {
+      "id": "849",
+      "slug": "colaming-caja-x-12-blister",
+      "found_product": true,
+      "main": {
+        "path": "/static/img/productos/colaming-caja-x-12-blister-main.png",
+        "skipped": false,
+        "reason": ""
+      },
+      "webp": {
+        "path": "/static/img/productos/colaming-caja-x-12-blister-webp.webp",
+        "skipped": false,
+        "reason": "",
+        "converted": true
+      },
+      "updated_fields": [
+        "imagen_principal",
+        "imagen_principal_webp"
+      ],
+      "error": ""
+    },
+    {
+      "id": "850",
+      "slug": "colaming-blister-x-10-tabletas",
+      "found_product": true,
+      "main": {
+        "path": "/static/img/productos/colaming-blister-x-10-tabletas-main.jpg",
+        "skipped": false,
+        "reason": ""
+      },
+      "webp": {
+        "path": "/static/img/productos/colaming-blister-x-10-tabletas-webp.webp",
+        "skipped": false,
+        "reason": "",
+        "converted": false
+      },
+      "updated_fields": [
+        "imagen_principal",
+        "imagen_principal_webp"
+      ],
+      "error": ""
+    },
+    {
+      "id": "851",
+      "slug": "colagmin-60-tabletas",
+      "found_product": true,
+      "main": {
+        "path": "/static/img/productos/colagmin-60-tabletas-main.jpg",
+        "skipped": false,
+        "reason": ""
+      },
+      "webp": {
+        "path": "/static/img/productos/colagmin-60-tabletas-webp.webp",
+        "skipped": false,
+        "reason": "",
+        "converted": true
+      },
+      "updated_fields": [
+        "imagen_principal",
+        "imagen_principal_webp"
+      ],
+      "error": ""
+    },
+    {
+      "id": "852",
+      "slug": "biotina-900-mcg-d-pantenol-60-softgels",
+      "found_product": true,
+      "main": {
+        "path": "/static/img/productos/biotina-900-mcg-d-pantenol-60-softgels-main.jpg",
+        "skipped": false,
+        "reason": ""
+      },
+      "webp": {
+        "path": "/static/img/productos/biotina-900-mcg-d-pantenol-60-softgels-webp.webp",
+        "skipped": false,
+        "reason": "",
+        "converted": false
+      },
+      "updated_fields": [
+        "imagen_principal",
+        "imagen_principal_webp"
+      ],
+      "error": ""
+    },
+    {
+      "id": "853",
+      "slug": "lecitina-de-soya-100-softgels",
+      "found_product": true,
+      "main": {
+        "path": "/static/img/productos/lecitina-de-soya-100-softgels-main.jpg",
+        "skipped": false,
+        "reason": ""
+      },
+      "webp": {
+        "path": "/static/img/productos/lecitina-de-soya-100-softgels-webp.webp",
+        "skipped": false,
+        "reason": "",
+        "converted": false
+      },
+      "updated_fields": [
+        "imagen_principal",
+        "imagen_principal_webp"
+      ],
+      "error": ""
+    },
+    {
+      "id": "854",
+      "slug": "zinc-plus-30-tabletas",
+      "found_product": true,
+      "main": {
+        "path": "/static/img/productos/zinc-plus-30-tabletas-main.jpg",
+        "skipped": false,
+        "reason": ""
+      },
+      "webp": {
+        "path": "/static/img/productos/zinc-plus-30-tabletas-webp.webp",
+        "skipped": false,
+        "reason": "",
+        "converted": false
+      },
+      "updated_fields": [
+        "imagen_principal",
+        "imagen_principal_webp"
+      ],
+      "error": ""
+    },
+    {
+      "id": "855",
+      "slug": "glucomanat",
+      "found_product": true,
+      "main": {
+        "path": "/static/img/productos/glucomanat-main.jpg",
+        "skipped": false,
+        "reason": ""
+      },
+      "webp": {
+        "path": "/static/img/productos/glucomanat-webp.webp",
+        "skipped": false,
+        "reason": "",
+        "converted": false
+      },
+      "updated_fields": [
+        "imagen_principal",
+        "imagen_principal_webp"
+      ],
+      "error": ""
+    },
+    {
+      "id": "856",
+      "slug": "levadura-de-cerveza-100-tabletas",
+      "found_product": true,
+      "main": {
+        "path": "/static/img/productos/levadura-de-cerveza-100-tabletas-main.jpg",
+        "skipped": false,
+        "reason": ""
+      },
+      "webp": {
+        "path": "/static/img/productos/levadura-de-cerveza-100-tabletas-webp.webp",
+        "skipped": false,
+        "reason": "",
+        "converted": false
+      },
+      "updated_fields": [
+        "imagen_principal",
+        "imagen_principal_webp"
+      ],
+      "error": ""
+    },
+    {
+      "id": "857",
+      "slug": "cloruro-de-magnesio-60-tabletas",
+      "found_product": true,
+      "main": {
+        "path": "/static/img/productos/cloruro-de-magnesio-60-tabletas-main.jpg",
+        "skipped": false,
+        "reason": ""
+      },
+      "webp": {
+        "path": "/static/img/productos/cloruro-de-magnesio-60-tabletas-webp.webp",
+        "skipped": false,
+        "reason": "",
+        "converted": false
+      },
+      "updated_fields": [
+        "imagen_principal",
+        "imagen_principal_webp"
+      ],
+      "error": ""
+    },
+    {
+      "id": "858",
+      "slug": "bipro-complex",
+      "found_product": true,
+      "main": {
+        "path": "/static/img/productos/bipro-complex-main.webp",
+        "skipped": false,
+        "reason": ""
+      },
+      "webp": {
+        "path": "/static/img/productos/bipro-complex-webp.webp",
+        "skipped": false,
+        "reason": "",
+        "converted": false
+      },
+      "updated_fields": [
+        "imagen_principal",
+        "imagen_principal_webp"
+      ],
+      "error": ""
+    },
+    {
+      "id": "859",
+      "slug": "bipro-classic-capuccino-3lb",
+      "found_product": true,
+      "main": {
+        "path": "/static/img/productos/bipro-classic-capuccino-3lb-main.webp",
+        "skipped": false,
+        "reason": ""
+      },
+      "webp": {
+        "path": "/static/img/productos/bipro-classic-capuccino-3lb-webp.webp",
+        "skipped": false,
+        "reason": "",
+        "converted": false
+      },
+      "updated_fields": [
+        "imagen_principal",
+        "imagen_principal_webp"
+      ],
+      "error": ""
+    },
+    {
+      "id": "860",
+      "slug": "burner-stack",
+      "found_product": true,
+      "main": {
+        "path": "/static/img/productos/burner-stack-main.webp",
+        "skipped": false,
+        "reason": ""
+      },
+      "webp": {
+        "path": "/static/img/productos/burner-stack-webp.webp",
+        "skipped": false,
+        "reason": "",
+        "converted": false
+      },
+      "updated_fields": [
+        "imagen_principal",
+        "imagen_principal_webp"
+      ],
+      "error": ""
+    },
+    {
+      "id": "861",
+      "slug": "bipro-classic-vainilla-0-9lb",
+      "found_product": true,
+      "main": {
+        "path": "/static/img/productos/bipro-classic-vainilla-0-9lb-main.webp",
+        "skipped": false,
+        "reason": ""
+      },
+      "webp": {
+        "path": "/static/img/productos/bipro-classic-vainilla-0-9lb-webp.webp",
+        "skipped": false,
+        "reason": "",
+        "converted": false
+      },
+      "updated_fields": [
+        "imagen_principal",
+        "imagen_principal_webp"
+      ],
+      "error": ""
+    },
+    {
+      "id": "862",
+      "slug": "bipro-classic-natural-2lb",
+      "found_product": true,
+      "main": {
+        "path": "/static/img/productos/bipro-classic-natural-2lb-main.webp",
+        "skipped": false,
+        "reason": ""
+      },
+      "webp": {
+        "path": "/static/img/productos/bipro-classic-natural-2lb-webp.webp",
+        "skipped": false,
+        "reason": "",
+        "converted": false
+      },
+      "updated_fields": [
+        "imagen_principal",
+        "imagen_principal_webp"
+      ],
+      "error": ""
+    },
+    {
+      "id": "863",
+      "slug": "bipro-classic-vainilla-2lb",
+      "found_product": true,
+      "main": {
+        "path": "/static/img/productos/bipro-classic-vainilla-2lb-main.webp",
+        "skipped": false,
+        "reason": ""
+      },
+      "webp": {
+        "path": "/static/img/productos/bipro-classic-vainilla-2lb-webp.webp",
+        "skipped": false,
+        "reason": "",
+        "converted": false
+      },
+      "updated_fields": [
+        "imagen_principal",
+        "imagen_principal_webp"
+      ],
+      "error": ""
+    },
+    {
+      "id": "864",
+      "slug": "bipro-classic-chocolate-2lb",
+      "found_product": true,
+      "main": {
+        "path": "/static/img/productos/bipro-classic-chocolate-2lb-main.webp",
+        "skipped": false,
+        "reason": ""
+      },
+      "webp": {
+        "path": "/static/img/productos/bipro-classic-chocolate-2lb-webp.webp",
+        "skipped": false,
+        "reason": "",
+        "converted": false
+      },
+      "updated_fields": [
+        "imagen_principal",
+        "imagen_principal_webp"
+      ],
+      "error": ""
+    },
+    {
+      "id": "865",
+      "slug": "bipro-ripped",
+      "found_product": true,
+      "main": {
+        "path": "/static/img/productos/bipro-ripped-main.webp",
+        "skipped": false,
+        "reason": ""
+      },
+      "webp": {
+        "path": "/static/img/productos/bipro-ripped-webp.webp",
+        "skipped": false,
+        "reason": "",
+        "converted": false
+      },
+      "updated_fields": [
+        "imagen_principal",
+        "imagen_principal_webp"
+      ],
+      "error": ""
+    },
+    {
+      "id": "866",
+      "slug": "bipro-lite",
+      "found_product": true,
+      "main": {
+        "path": "/static/img/productos/bipro-lite-main.webp",
+        "skipped": false,
+        "reason": ""
+      },
+      "webp": {
+        "path": "/static/img/productos/bipro-lite-webp.webp",
+        "skipped": false,
+        "reason": "",
+        "converted": false
+      },
+      "updated_fields": [
+        "imagen_principal",
+        "imagen_principal_webp"
+      ],
+      "error": ""
+    },
+    {
+      "id": "867",
+      "slug": "bipro-mass",
+      "found_product": true,
+      "main": {
+        "path": "/static/img/productos/bipro-mass-main.webp",
+        "skipped": false,
+        "reason": ""
+      },
+      "webp": {
+        "path": "/static/img/productos/bipro-mass-webp.webp",
+        "skipped": false,
+        "reason": "",
+        "converted": false
+      },
+      "updated_fields": [
+        "imagen_principal",
+        "imagen_principal_webp"
+      ],
+      "error": ""
+    },
+    {
+      "id": "868",
+      "slug": "isoclean-2lb",
+      "found_product": true,
+      "main": {
+        "path": "/static/img/productos/isoclean-2lb-main.webp",
+        "skipped": false,
+        "reason": ""
+      },
+      "webp": {
+        "path": "/static/img/productos/isoclean-2lb-webp.webp",
+        "skipped": false,
+        "reason": "",
+        "converted": false
+      },
+      "updated_fields": [
+        "imagen_principal",
+        "imagen_principal_webp"
+      ],
+      "error": ""
+    },
+    {
+      "id": "869",
+      "slug": "crea-stack",
+      "found_product": true,
+      "main": {
+        "path": "/static/img/productos/crea-stack-main.webp",
+        "skipped": false,
+        "reason": ""
+      },
+      "webp": {
+        "path": "/static/img/productos/crea-stack-webp.webp",
+        "skipped": false,
+        "reason": "",
+        "converted": false
+      },
+      "updated_fields": [
+        "imagen_principal",
+        "imagen_principal_webp"
+      ],
+      "error": ""
+    },
+    {
+      "id": "870",
+      "slug": "bipro-classic-vainilla-3lb",
+      "found_product": true,
+      "main": {
+        "path": "/static/img/productos/bipro-classic-vainilla-3lb-main.webp",
+        "skipped": false,
+        "reason": ""
+      },
+      "webp": {
+        "path": "/static/img/productos/bipro-classic-vainilla-3lb-webp.webp",
+        "skipped": false,
+        "reason": "",
+        "converted": false
+      },
+      "updated_fields": [
+        "imagen_principal",
+        "imagen_principal_webp"
+      ],
+      "error": ""
+    },
+    {
+      "id": "871",
+      "slug": "bipro-classic-cookies-cream-3lb",
+      "found_product": true,
+      "main": {
+        "path": "/static/img/productos/bipro-classic-cookies-cream-3lb-main.webp",
+        "skipped": false,
+        "reason": ""
+      },
+      "webp": {
+        "path": "/static/img/productos/bipro-classic-cookies-cream-3lb-webp.webp",
+        "skipped": false,
+        "reason": "",
+        "converted": false
+      },
+      "updated_fields": [
+        "imagen_principal",
+        "imagen_principal_webp"
+      ],
+      "error": ""
+    },
+    {
+      "id": "872",
+      "slug": "nitro-shock-frutos-rojos",
+      "found_product": true,
+      "main": {
+        "path": "/static/img/productos/nitro-shock-frutos-rojos-main.webp",
+        "skipped": false,
+        "reason": ""
+      },
+      "webp": {
+        "path": "/static/img/productos/nitro-shock-frutos-rojos-webp.webp",
+        "skipped": false,
+        "reason": "",
+        "converted": false
+      },
+      "updated_fields": [
+        "imagen_principal",
+        "imagen_principal_webp"
+      ],
+      "error": ""
+    },
+    {
+      "id": "873",
+      "slug": "serious-mass-3-lb",
+      "found_product": true,
+      "main": {
+        "path": "/static/img/productos/serious-mass-3-lb-main.webp",
+        "skipped": false,
+        "reason": ""
+      },
+      "webp": {
+        "path": "/static/img/productos/serious-mass-3-lb-webp.webp",
+        "skipped": false,
+        "reason": "",
+        "converted": false
+      },
+      "updated_fields": [
+        "imagen_principal",
+        "imagen_principal_webp"
+      ],
+      "error": ""
+    },
+    {
+      "id": "874",
+      "slug": "gold-standard-100-whey-protein-4-lb",
+      "found_product": true,
+      "main": {
+        "path": "/static/img/productos/gold-standard-100-whey-protein-4-lb-main.webp",
+        "skipped": false,
+        "reason": ""
+      },
+      "webp": {
+        "path": "/static/img/productos/gold-standard-100-whey-protein-4-lb-webp.webp",
+        "skipped": false,
+        "reason": "",
+        "converted": false
+      },
+      "updated_fields": [
+        "imagen_principal",
+        "imagen_principal_webp"
+      ],
+      "error": ""
+    },
+    {
+      "id": "875",
+      "slug": "gold-standard-100-whey-protein-10-serv",
+      "found_product": true,
+      "main": {
+        "path": "/static/img/productos/gold-standard-100-whey-protein-10-serv-main.webp",
+        "skipped": false,
+        "reason": ""
+      },
+      "webp": {
+        "path": "/static/img/productos/gold-standard-100-whey-protein-10-serv-webp.webp",
+        "skipped": false,
+        "reason": "",
+        "converted": false
+      },
+      "updated_fields": [
+        "imagen_principal",
+        "imagen_principal_webp"
+      ],
+      "error": ""
+    },
+    {
+      "id": "876",
+      "slug": "whey-gourmet-series-2-lb",
+      "found_product": true,
+      "main": {
+        "path": "/static/img/productos/whey-gourmet-series-2-lb-main.webp",
+        "skipped": false,
+        "reason": ""
+      },
+      "webp": {
+        "path": "/static/img/productos/whey-gourmet-series-2-lb-webp.webp",
+        "skipped": false,
+        "reason": "",
+        "converted": false
+      },
+      "updated_fields": [
+        "imagen_principal",
+        "imagen_principal_webp"
+      ],
+      "error": ""
+    },
+    {
+      "id": "877",
+      "slug": "gold-standard-protein-shake-325-ml",
+      "found_product": true,
+      "main": {
+        "path": "/static/img/productos/gold-standard-protein-shake-325-ml-main.jpg",
+        "skipped": false,
+        "reason": ""
+      },
+      "webp": {
+        "path": "/static/img/productos/gold-standard-protein-shake-325-ml-webp.webp",
+        "skipped": false,
+        "reason": "",
+        "converted": true
+      },
+      "updated_fields": [
+        "imagen_principal",
+        "imagen_principal_webp"
+      ],
+      "error": ""
+    },
+    {
+      "id": "878",
+      "slug": "gold-standard-100-isolate-5-lb",
+      "found_product": true,
+      "main": {
+        "path": "/static/img/productos/gold-standard-100-isolate-5-lb-main.jpg",
+        "skipped": false,
+        "reason": ""
+      },
+      "webp": {
+        "path": "/static/img/productos/gold-standard-100-isolate-5-lb-webp.webp",
+        "skipped": false,
+        "reason": "",
+        "converted": true
+      },
+      "updated_fields": [
+        "imagen_principal",
+        "imagen_principal_webp"
+      ],
+      "error": ""
+    },
+    {
+      "id": "879",
+      "slug": "gold-standard-100-whey-naturally-flavored-4-lb",
+      "found_product": true,
+      "main": {
+        "path": "/static/img/productos/gold-standard-100-whey-naturally-flavored-4-lb-main.jpg",
+        "skipped": false,
+        "reason": ""
+      },
+      "webp": {
+        "path": "/static/img/productos/gold-standard-100-whey-naturally-flavored-4-lb-webp.webp",
+        "skipped": false,
+        "reason": "",
+        "converted": true
+      },
+      "updated_fields": [
+        "imagen_principal",
+        "imagen_principal_webp"
+      ],
+      "error": ""
+    },
+    {
+      "id": "880",
+      "slug": "gold-standard-100-whey-protein-10lb",
+      "found_product": true,
+      "main": {
+        "path": "/static/img/productos/gold-standard-100-whey-protein-10lb-main.jpg",
+        "skipped": false,
+        "reason": ""
+      },
+      "webp": {
+        "path": "/static/img/productos/gold-standard-100-whey-protein-10lb-webp.webp",
+        "skipped": false,
+        "reason": "",
+        "converted": true
+      },
+      "updated_fields": [
+        "imagen_principal",
+        "imagen_principal_webp"
+      ],
+      "error": ""
+    },
+    {
+      "id": "881",
+      "slug": "gold-standard-100-whey-protein-5lb",
+      "found_product": true,
+      "main": {
+        "path": "/static/img/productos/gold-standard-100-whey-protein-5lb-main.jpg",
+        "skipped": false,
+        "reason": ""
+      },
+      "webp": {
+        "path": "/static/img/productos/gold-standard-100-whey-protein-5lb-webp.webp",
+        "skipped": false,
+        "reason": "",
+        "converted": true
+      },
+      "updated_fields": [
+        "imagen_principal",
+        "imagen_principal_webp"
+      ],
+      "error": ""
+    },
+    {
+      "id": "882",
+      "slug": "gold-standard-100-isolate-3-lb",
+      "found_product": true,
+      "main": {
+        "path": "/static/img/productos/gold-standard-100-isolate-3-lb-main.jpg",
+        "skipped": false,
+        "reason": ""
+      },
+      "webp": {
+        "path": "/static/img/productos/gold-standard-100-isolate-3-lb-webp.webp",
+        "skipped": false,
+        "reason": "",
+        "converted": true
+      },
+      "updated_fields": [
+        "imagen_principal",
+        "imagen_principal_webp"
+      ],
+      "error": ""
+    },
+    {
+      "id": "883",
+      "slug": "serious-mass-6-lb",
+      "found_product": true,
+      "main": {
+        "path": "/static/img/productos/serious-mass-6-lb-main.jpg",
+        "skipped": false,
+        "reason": ""
+      },
+      "webp": {
+        "path": "/static/img/productos/serious-mass-6-lb-webp.webp",
+        "skipped": false,
+        "reason": "",
+        "converted": true
+      },
+      "updated_fields": [
+        "imagen_principal",
+        "imagen_principal_webp"
+      ],
+      "error": ""
+    },
+    {
+      "id": "884",
+      "slug": "serious-mass-12-lb",
+      "found_product": true,
+      "main": {
+        "path": "/static/img/productos/serious-mass-12-lb-main.jpg",
+        "skipped": false,
+        "reason": ""
+      },
+      "webp": {
+        "path": "/static/img/productos/serious-mass-12-lb-webp.webp",
+        "skipped": false,
+        "reason": "",
+        "converted": true
+      },
+      "updated_fields": [
+        "imagen_principal",
+        "imagen_principal_webp"
+      ],
+      "error": ""
+    },
+    {
+      "id": "885",
+      "slug": "gold-standard-100-whey-naturally-flavored-2-lb",
+      "found_product": true,
+      "main": {
+        "path": "/static/img/productos/gold-standard-100-whey-naturally-flavored-2-lb-main.jpg",
+        "skipped": false,
+        "reason": ""
+      },
+      "webp": {
+        "path": "/static/img/productos/gold-standard-100-whey-naturally-flavored-2-lb-webp.webp",
+        "skipped": false,
+        "reason": "",
+        "converted": true
+      },
+      "updated_fields": [
+        "imagen_principal",
+        "imagen_principal_webp"
+      ],
+      "error": ""
+    },
+    {
+      "id": "886",
+      "slug": "gold-standard-100-casein",
+      "found_product": true,
+      "main": {
+        "path": "/static/img/productos/gold-standard-100-casein-main.jpg",
+        "skipped": false,
+        "reason": ""
+      },
+      "webp": {
+        "path": "/static/img/productos/gold-standard-100-casein-webp.webp",
+        "skipped": false,
+        "reason": "",
+        "converted": true
+      },
+      "updated_fields": [
+        "imagen_principal",
+        "imagen_principal_webp"
+      ],
+      "error": ""
+    },
+    {
+      "id": "887",
+      "slug": "platinum-hydrowhey",
+      "found_product": true,
+      "main": {
+        "path": "/static/img/productos/platinum-hydrowhey-main.jpg",
+        "skipped": false,
+        "reason": ""
+      },
+      "webp": {
+        "path": "/static/img/productos/platinum-hydrowhey-webp.webp",
+        "skipped": false,
+        "reason": "",
+        "converted": true
+      },
+      "updated_fields": [
+        "imagen_principal",
+        "imagen_principal_webp"
+      ],
+      "error": ""
+    },
+    {
+      "id": "888",
+      "slug": "gold-standard-100-whey",
+      "found_product": true,
+      "main": {
+        "path": "/static/img/productos/gold-standard-100-whey-main.jpg",
+        "skipped": false,
+        "reason": ""
+      },
+      "webp": {
+        "path": "/static/img/productos/gold-standard-100-whey-webp.webp",
+        "skipped": false,
+        "reason": "",
+        "converted": true
+      },
+      "updated_fields": [
+        "imagen_principal",
+        "imagen_principal_webp"
+      ],
+      "error": ""
+    },
+    {
+      "id": "889",
+      "slug": "gold-standard-100-whey-protein-22-serv",
+      "found_product": true,
+      "main": {
+        "path": "/static/img/productos/gold-standard-100-whey-protein-22-serv-main.jpg",
+        "skipped": false,
+        "reason": ""
+      },
+      "webp": {
+        "path": "/static/img/productos/gold-standard-100-whey-protein-22-serv-webp.webp",
+        "skipped": false,
+        "reason": "",
+        "converted": true
+      },
+      "updated_fields": [
+        "imagen_principal",
+        "imagen_principal_webp"
+      ],
+      "error": ""
+    },
+    {
+      "id": "890",
+      "slug": "essential-amin-o-energy-hydration-30-serv",
+      "found_product": true,
+      "main": {
+        "path": "/static/img/productos/essential-amin-o-energy-hydration-30-serv-main.webp",
+        "skipped": false,
+        "reason": ""
+      },
+      "webp": {
+        "path": "/static/img/productos/essential-amin-o-energy-hydration-30-serv-webp.webp",
+        "skipped": false,
+        "reason": "",
+        "converted": false
+      },
+      "updated_fields": [
+        "imagen_principal",
+        "imagen_principal_webp"
+      ],
+      "error": ""
+    },
+    {
+      "id": "891",
+      "slug": "creatine-40-serv",
+      "found_product": true,
+      "main": {
+        "path": "/static/img/productos/creatine-40-serv-main.png",
+        "skipped": false,
+        "reason": ""
+      },
+      "webp": {
+        "path": "/static/img/productos/creatine-40-serv-webp.webp",
+        "skipped": false,
+        "reason": "",
+        "converted": true
+      },
+      "updated_fields": [
+        "imagen_principal",
+        "imagen_principal_webp"
+      ],
+      "error": ""
+    },
+    {
+      "id": "892",
+      "slug": "essential-amin-o-energy-30-serv",
+      "found_product": true,
+      "main": {
+        "path": "/static/img/productos/essential-amin-o-energy-30-serv-main.jpg",
+        "skipped": false,
+        "reason": ""
+      },
+      "webp": {
+        "path": "/static/img/productos/essential-amin-o-energy-30-serv-webp.webp",
+        "skipped": false,
+        "reason": "",
+        "converted": true
+      },
+      "updated_fields": [
+        "imagen_principal",
+        "imagen_principal_webp"
+      ],
+      "error": ""
+    },
+    {
+      "id": "893",
+      "slug": "creatine-powder-120-serv",
+      "found_product": true,
+      "main": {
+        "path": "/static/img/productos/creatine-powder-120-serv-main.png",
+        "skipped": false,
+        "reason": ""
+      },
+      "webp": {
+        "path": "/static/img/productos/creatine-powder-120-serv-webp.webp",
+        "skipped": false,
+        "reason": "",
+        "converted": true
+      },
+      "updated_fields": [
+        "imagen_principal",
+        "imagen_principal_webp"
+      ],
+      "error": ""
+    },
+    {
+      "id": "894",
+      "slug": "creatine-micronized-powder-60-serv",
+      "found_product": true,
+      "main": {
+        "path": "/static/img/productos/creatine-micronized-powder-60-serv-main.jpg",
+        "skipped": false,
+        "reason": ""
+      },
+      "webp": {
+        "path": "/static/img/productos/creatine-micronized-powder-60-serv-webp.webp",
+        "skipped": false,
+        "reason": "",
+        "converted": true
+      },
+      "updated_fields": [
+        "imagen_principal",
+        "imagen_principal_webp"
+      ],
+      "error": ""
+    },
+    {
+      "id": "895",
+      "slug": "essential-amin-o-energy-fruit-punch",
+      "found_product": true,
+      "main": {
+        "path": "/static/img/productos/essential-amin-o-energy-fruit-punch-main.jpg",
+        "skipped": false,
+        "reason": ""
+      },
+      "webp": {
+        "path": "/static/img/productos/essential-amin-o-energy-fruit-punch-webp.webp",
+        "skipped": false,
+        "reason": "",
+        "converted": true
+      },
+      "updated_fields": [
+        "imagen_principal",
+        "imagen_principal_webp"
+      ],
+      "error": ""
+    },
+    {
+      "id": "896",
+      "slug": "ensure-advance-vainilla-con-proteina-hmb-polvo-x-850-gr",
+      "found_product": true,
+      "main": {
+        "path": "/static/img/productos/ensure-advance-vainilla-con-proteina-hmb-polvo-x-850-gr-main.jpg",
+        "skipped": false,
+        "reason": ""
+      },
+      "webp": {
+        "path": "/static/img/productos/ensure-advance-vainilla-con-proteina-hmb-polvo-x-850-gr-webp.webp",
+        "skipped": false,
+        "reason": "",
+        "converted": true
+      },
+      "updated_fields": [
+        "imagen_principal",
+        "imagen_principal_webp"
+      ],
+      "error": ""
+    },
+    {
+      "id": "897",
+      "slug": "complemento-nutricional-pediasure-peptigro-vainilla-polvo-x-850-gr",
+      "found_product": true,
+      "main": {
+        "path": "/static/img/productos/complemento-nutricional-pediasure-peptigro-vainilla-polvo-x-850-gr-main.jpg",
+        "skipped": false,
+        "reason": ""
+      },
+      "webp": {
+        "path": "/static/img/productos/complemento-nutricional-pediasure-peptigro-vainilla-polvo-x-850-gr-webp.webp",
+        "skipped": false,
+        "reason": "",
+        "converted": true
+      },
+      "updated_fields": [
+        "imagen_principal",
+        "imagen_principal_webp"
+      ],
+      "error": ""
+    },
+    {
+      "id": "898",
+      "slug": "ensure-advance-vainilla-con-proteina-hmb-polvo-x-400-gr",
+      "found_product": true,
+      "main": {
+        "path": "/static/img/productos/ensure-advance-vainilla-con-proteina-hmb-polvo-x-400-gr-main.jpg",
+        "skipped": false,
+        "reason": ""
+      },
+      "webp": {
+        "path": "/static/img/productos/ensure-advance-vainilla-con-proteina-hmb-polvo-x-400-gr-webp.webp",
+        "skipped": false,
+        "reason": "",
+        "converted": true
+      },
+      "updated_fields": [
+        "imagen_principal",
+        "imagen_principal_webp"
+      ],
+      "error": ""
+    },
+    {
+      "id": "899",
+      "slug": "complemento-nutricional-pediasure-peptigro-vainilla-polvo-x-400-gr",
+      "found_product": true,
+      "main": {
+        "path": "/static/img/productos/complemento-nutricional-pediasure-peptigro-vainilla-polvo-x-400-gr-main.jpg",
+        "skipped": false,
+        "reason": ""
+      },
+      "webp": {
+        "path": "/static/img/productos/complemento-nutricional-pediasure-peptigro-vainilla-polvo-x-400-gr-webp.webp",
+        "skipped": false,
+        "reason": "",
+        "converted": true
+      },
+      "updated_fields": [
+        "imagen_principal",
+        "imagen_principal_webp"
+      ],
+      "error": ""
+    },
+    {
+      "id": "900",
+      "slug": "pediasure-10-sabor-vainilla-lata-x-850-gr",
+      "found_product": true,
+      "main": {
+        "path": "/static/img/productos/pediasure-10-sabor-vainilla-lata-x-850-gr-main.jpg",
+        "skipped": false,
+        "reason": ""
+      },
+      "webp": {
+        "path": "/static/img/productos/pediasure-10-sabor-vainilla-lata-x-850-gr-webp.webp",
+        "skipped": false,
+        "reason": "",
+        "converted": true
+      },
+      "updated_fields": [
+        "imagen_principal",
+        "imagen_principal_webp"
+      ],
+      "error": ""
+    },
+    {
+      "id": "901",
+      "slug": "ensure-vainilla-polvo-x-400-gr",
+      "found_product": true,
+      "main": {
+        "path": "/static/img/productos/ensure-vainilla-polvo-x-400-gr-main.jpg",
+        "skipped": false,
+        "reason": ""
+      },
+      "webp": {
+        "path": "/static/img/productos/ensure-vainilla-polvo-x-400-gr-webp.webp",
+        "skipped": false,
+        "reason": "",
+        "converted": true
+      },
+      "updated_fields": [
+        "imagen_principal",
+        "imagen_principal_webp"
+      ],
+      "error": ""
+    },
+    {
+      "id": "902",
+      "slug": "complemento-nutricional-pediasure-peptigro-vainilla-polvo-x-1600-gr",
+      "found_product": true,
+      "main": {
+        "path": "/static/img/productos/complemento-nutricional-pediasure-peptigro-vainilla-polvo-x-1600-gr-main.jpg",
+        "skipped": false,
+        "reason": ""
+      },
+      "webp": {
+        "path": "/static/img/productos/complemento-nutricional-pediasure-peptigro-vainilla-polvo-x-1600-gr-webp.webp",
+        "skipped": false,
+        "reason": "",
+        "converted": true
+      },
+      "updated_fields": [
+        "imagen_principal",
+        "imagen_principal_webp"
+      ],
+      "error": ""
+    },
+    {
+      "id": "903",
+      "slug": "pediasure-peptigro-fresa-lata-x-400-gr",
+      "found_product": true,
+      "main": {
+        "path": "/static/img/productos/pediasure-peptigro-fresa-lata-x-400-gr-main.jpg",
+        "skipped": false,
+        "reason": ""
+      },
+      "webp": {
+        "path": "/static/img/productos/pediasure-peptigro-fresa-lata-x-400-gr-webp.webp",
+        "skipped": false,
+        "reason": "",
+        "converted": true
+      },
+      "updated_fields": [
+        "imagen_principal",
+        "imagen_principal_webp"
+      ],
+      "error": ""
+    },
+    {
+      "id": "904",
+      "slug": "glucerna-vainilla-polvo-x-400-gr",
+      "found_product": true,
+      "main": {
+        "path": "/static/img/productos/glucerna-vainilla-polvo-x-400-gr-main.jpg",
+        "skipped": false,
+        "reason": ""
+      },
+      "webp": {
+        "path": "/static/img/productos/glucerna-vainilla-polvo-x-400-gr-webp.webp",
+        "skipped": false,
+        "reason": "",
+        "converted": true
+      },
+      "updated_fields": [
+        "imagen_principal",
+        "imagen_principal_webp"
+      ],
+      "error": ""
+    },
+    {
+      "id": "905",
+      "slug": "ensure-advance-chocolate-con-proteina-hmb-polvo-x-400-gr",
+      "found_product": true,
+      "main": {
+        "path": "/static/img/productos/ensure-advance-chocolate-con-proteina-hmb-polvo-x-400-gr-main.jpg",
+        "skipped": false,
+        "reason": ""
+      },
+      "webp": {
+        "path": "/static/img/productos/ensure-advance-chocolate-con-proteina-hmb-polvo-x-400-gr-webp.webp",
+        "skipped": false,
+        "reason": "",
+        "converted": true
+      },
+      "updated_fields": [
+        "imagen_principal",
+        "imagen_principal_webp"
+      ],
+      "error": ""
+    },
+    {
+      "id": "906",
+      "slug": "alimento-en-polvo-nutren-senior-nestle-sabor-a-vainilla-lata-x-370-gr",
+      "found_product": true,
+      "main": {
+        "path": "/static/img/productos/alimento-en-polvo-nutren-senior-nestle-sabor-a-vainilla-lata-x-370-gr-main.jpg",
+        "skipped": false,
+        "reason": ""
+      },
+      "webp": {
+        "path": "/static/img/productos/alimento-en-polvo-nutren-senior-nestle-sabor-a-vainilla-lata-x-370-gr-webp.webp",
+        "skipped": false,
+        "reason": "",
+        "converted": true
+      },
+      "updated_fields": [
+        "imagen_principal",
+        "imagen_principal_webp"
+      ],
+      "error": ""
+    },
+    {
+      "id": "907",
+      "slug": "complemento-nutricional-pediasure-peptigro-fresa-polvo-x-850-gr",
+      "found_product": true,
+      "main": {
+        "path": "/static/img/productos/complemento-nutricional-pediasure-peptigro-fresa-polvo-x-850-gr-main.jpg",
+        "skipped": false,
+        "reason": ""
+      },
+      "webp": {
+        "path": "/static/img/productos/complemento-nutricional-pediasure-peptigro-fresa-polvo-x-850-gr-webp.webp",
+        "skipped": false,
+        "reason": "",
+        "converted": true
+      },
+      "updated_fields": [
+        "imagen_principal",
+        "imagen_principal_webp"
+      ],
+      "error": ""
+    },
+    {
+      "id": "908",
+      "slug": "ensure-advance-cafe-lata-x-400-gr",
+      "found_product": true,
+      "main": {
+        "path": "/static/img/productos/ensure-advance-cafe-lata-x-400-gr-main.jpg",
+        "skipped": false,
+        "reason": ""
+      },
+      "webp": {
+        "path": "/static/img/productos/ensure-advance-cafe-lata-x-400-gr-webp.webp",
+        "skipped": false,
+        "reason": "",
+        "converted": true
+      },
+      "updated_fields": [
+        "imagen_principal",
+        "imagen_principal_webp"
+      ],
+      "error": ""
+    },
+    {
+      "id": "909",
+      "slug": "complemento-nutricional-klim-nutriadvance-lata-x-800-gr",
+      "found_product": true,
+      "main": {
+        "path": "/static/img/productos/complemento-nutricional-klim-nutriadvance-lata-x-800-gr-main.jpg",
+        "skipped": false,
+        "reason": ""
+      },
+      "webp": {
+        "path": "/static/img/productos/complemento-nutricional-klim-nutriadvance-lata-x-800-gr-webp.webp",
+        "skipped": false,
+        "reason": "",
+        "converted": true
+      },
+      "updated_fields": [
+        "imagen_principal",
+        "imagen_principal_webp"
+      ],
+      "error": ""
+    },
+    {
+      "id": "910",
+      "slug": "alimento-en-polvo-nutren-senior-nestle-sin-sabor-lata-x-740-gr",
+      "found_product": true,
+      "main": {
+        "path": "/static/img/productos/alimento-en-polvo-nutren-senior-nestle-sin-sabor-lata-x-740-gr-main.jpg",
+        "skipped": false,
+        "reason": ""
+      },
+      "webp": {
+        "path": "/static/img/productos/alimento-en-polvo-nutren-senior-nestle-sin-sabor-lata-x-740-gr-webp.webp",
+        "skipped": false,
+        "reason": "",
+        "converted": true
+      },
+      "updated_fields": [
+        "imagen_principal",
+        "imagen_principal_webp"
+      ],
+      "error": ""
+    },
+    {
+      "id": "911",
+      "slug": "alimento-en-polvo-nutren-senior-sabor-vainilla-lata-x-740-gr",
+      "found_product": true,
+      "main": {
+        "path": "/static/img/productos/alimento-en-polvo-nutren-senior-sabor-vainilla-lata-x-740-gr-main.jpg",
+        "skipped": false,
+        "reason": ""
+      },
+      "webp": {
+        "path": "/static/img/productos/alimento-en-polvo-nutren-senior-sabor-vainilla-lata-x-740-gr-webp.webp",
+        "skipped": false,
+        "reason": "",
+        "converted": true
+      },
+      "updated_fields": [
+        "imagen_principal",
+        "imagen_principal_webp"
+      ],
+      "error": ""
+    },
+    {
+      "id": "912",
+      "slug": "ensure-advance-fresa-con-proteina-hmb-polvo-x-400-gr",
+      "found_product": true,
+      "main": {
+        "path": "/static/img/productos/ensure-advance-fresa-con-proteina-hmb-polvo-x-400-gr-main.jpg",
+        "skipped": false,
+        "reason": ""
+      },
+      "webp": {
+        "path": "/static/img/productos/ensure-advance-fresa-con-proteina-hmb-polvo-x-400-gr-webp.webp",
+        "skipped": false,
+        "reason": "",
+        "converted": true
+      },
+      "updated_fields": [
+        "imagen_principal",
+        "imagen_principal_webp"
+      ],
+      "error": ""
+    },
+    {
+      "id": "913",
+      "slug": "alimento-en-polvo-nutren-senior-nestle-sin-sabor-lata-x-370-gr",
+      "found_product": true,
+      "main": {
+        "path": "/static/img/productos/alimento-en-polvo-nutren-senior-nestle-sin-sabor-lata-x-370-gr-main.jpg",
+        "skipped": false,
+        "reason": ""
+      },
+      "webp": {
+        "path": "/static/img/productos/alimento-en-polvo-nutren-senior-nestle-sin-sabor-lata-x-370-gr-webp.webp",
+        "skipped": false,
+        "reason": "",
+        "converted": true
+      },
+      "updated_fields": [
+        "imagen_principal",
+        "imagen_principal_webp"
+      ],
+      "error": ""
+    },
+    {
+      "id": "914",
+      "slug": "nutren-glytrol-polvo-vainilla-x-380-gr",
+      "found_product": true,
+      "main": {
+        "path": "/static/img/productos/nutren-glytrol-polvo-vainilla-x-380-gr-main.jpg",
+        "skipped": false,
+        "reason": ""
+      },
+      "webp": {
+        "path": "/static/img/productos/nutren-glytrol-polvo-vainilla-x-380-gr-webp.webp",
+        "skipped": false,
+        "reason": "",
+        "converted": true
+      },
+      "updated_fields": [
+        "imagen_principal",
+        "imagen_principal_webp"
+      ],
+      "error": ""
+    },
+    {
+      "id": "915",
+      "slug": "centrum-women-multivitaminico-mujeres-entre-18-y-49-anos-x-60-tabs",
+      "found_product": true,
+      "main": {
+        "path": "/static/img/productos/centrum-women-multivitaminico-mujeres-entre-18-y-49-anos-x-60-tabs-main.jpg",
+        "skipped": false,
+        "reason": ""
+      },
+      "webp": {
+        "path": "/static/img/productos/centrum-women-multivitaminico-mujeres-entre-18-y-49-anos-x-60-tabs-webp.webp",
+        "skipped": false,
+        "reason": "",
+        "converted": true
+      },
+      "updated_fields": [
+        "imagen_principal",
+        "imagen_principal_webp"
+      ],
+      "error": ""
+    },
+    {
+      "id": "916",
+      "slug": "centrum-men-multivitaminico-hombres-entre-18-y-49-anos-x-30-tabs",
+      "found_product": true,
+      "main": {
+        "path": "/static/img/productos/centrum-men-multivitaminico-hombres-entre-18-y-49-anos-x-30-tabs-main.jpg",
+        "skipped": false,
+        "reason": ""
+      },
+      "webp": {
+        "path": "/static/img/productos/centrum-men-multivitaminico-hombres-entre-18-y-49-anos-x-30-tabs-webp.webp",
+        "skipped": false,
+        "reason": "",
+        "converted": true
+      },
+      "updated_fields": [
+        "imagen_principal",
+        "imagen_principal_webp"
+      ],
+      "error": ""
+    },
+    {
+      "id": "917",
+      "slug": "centrum-silver-women-multivitaminico-mujeres-50-anos-x-30-tabs",
+      "found_product": true,
+      "main": {
+        "path": "/static/img/productos/centrum-silver-women-multivitaminico-mujeres-50-anos-x-30-tabs-main.jpg",
+        "skipped": false,
+        "reason": ""
+      },
+      "webp": {
+        "path": "/static/img/productos/centrum-silver-women-multivitaminico-mujeres-50-anos-x-30-tabs-webp.webp",
+        "skipped": false,
+        "reason": "",
+        "converted": true
+      },
+      "updated_fields": [
+        "imagen_principal",
+        "imagen_principal_webp"
+      ],
+      "error": ""
+    },
+    {
+      "id": "918",
+      "slug": "centrum-advance-multivitaminico-hombres-y-mujeres-de-18-a-49-anos-x-30-tabs",
+      "found_product": true,
+      "main": {
+        "path": "/static/img/productos/centrum-advance-multivitaminico-hombres-y-mujeres-de-18-a-49-anos-x-30-tabs-main.jpg",
+        "skipped": false,
+        "reason": ""
+      },
+      "webp": {
+        "path": "/static/img/productos/centrum-advance-multivitaminico-hombres-y-mujeres-de-18-a-49-anos-x-30-tabs-webp.webp",
+        "skipped": false,
+        "reason": "",
+        "converted": true
+      },
+      "updated_fields": [
+        "imagen_principal",
+        "imagen_principal_webp"
+      ],
+      "error": ""
+    },
+    {
+      "id": "919",
+      "slug": "centrum-men-multivitaminico-hombres-entre-18-y-49-anos-x-60-tabs",
+      "found_product": true,
+      "main": {
+        "path": "/static/img/productos/centrum-men-multivitaminico-hombres-entre-18-y-49-anos-x-60-tabs-main.jpg",
+        "skipped": false,
+        "reason": ""
+      },
+      "webp": {
+        "path": "/static/img/productos/centrum-men-multivitaminico-hombres-entre-18-y-49-anos-x-60-tabs-webp.webp",
+        "skipped": false,
+        "reason": "",
+        "converted": true
+      },
+      "updated_fields": [
+        "imagen_principal",
+        "imagen_principal_webp"
+      ],
+      "error": ""
+    },
+    {
+      "id": "920",
+      "slug": "centrum-advance-multivitaminico-hombres-y-mujeres-x-100-tabletas",
+      "found_product": true,
+      "main": {
+        "path": "/static/img/productos/centrum-advance-multivitaminico-hombres-y-mujeres-x-100-tabletas-main.jpg",
+        "skipped": false,
+        "reason": ""
+      },
+      "webp": {
+        "path": "/static/img/productos/centrum-advance-multivitaminico-hombres-y-mujeres-x-100-tabletas-webp.webp",
+        "skipped": false,
+        "reason": "",
+        "converted": true
+      },
+      "updated_fields": [
+        "imagen_principal",
+        "imagen_principal_webp"
+      ],
+      "error": ""
+    },
+    {
+      "id": "921",
+      "slug": "centrum-silver-multivitaminico-hombres-y-mujeres-50-x-100-tabs",
+      "found_product": true,
+      "main": {
+        "path": "/static/img/productos/centrum-silver-multivitaminico-hombres-y-mujeres-50-x-100-tabs-main.jpg",
+        "skipped": false,
+        "reason": ""
+      },
+      "webp": {
+        "path": "/static/img/productos/centrum-silver-multivitaminico-hombres-y-mujeres-50-x-100-tabs-webp.webp",
+        "skipped": false,
+        "reason": "",
+        "converted": true
+      },
+      "updated_fields": [
+        "imagen_principal",
+        "imagen_principal_webp"
+      ],
+      "error": ""
+    },
+    {
+      "id": "922",
+      "slug": "centrum-silver-men-multivitaminico-hombres-50-anos-x-60-tabs",
+      "found_product": true,
+      "main": {
+        "path": "/static/img/productos/centrum-silver-men-multivitaminico-hombres-50-anos-x-60-tabs-main.jpg",
+        "skipped": false,
+        "reason": ""
+      },
+      "webp": {
+        "path": "/static/img/productos/centrum-silver-men-multivitaminico-hombres-50-anos-x-60-tabs-webp.webp",
+        "skipped": false,
+        "reason": "",
+        "converted": true
+      },
+      "updated_fields": [
+        "imagen_principal",
+        "imagen_principal_webp"
+      ],
+      "error": ""
+    },
+    {
+      "id": "923",
+      "slug": "centrum-silver-multivitaminico-para-hombres-y-mujeres-50-x-30-tabs",
+      "found_product": true,
+      "main": {
+        "path": "/static/img/productos/centrum-silver-multivitaminico-para-hombres-y-mujeres-50-x-30-tabs-main.jpg",
+        "skipped": false,
+        "reason": ""
+      },
+      "webp": {
+        "path": "/static/img/productos/centrum-silver-multivitaminico-para-hombres-y-mujeres-50-x-30-tabs-webp.webp",
+        "skipped": false,
+        "reason": "",
+        "converted": true
+      },
+      "updated_fields": [
+        "imagen_principal",
+        "imagen_principal_webp"
+      ],
+      "error": ""
+    },
+    {
+      "id": "924",
+      "slug": "centrum-silver-women-multivitaminico-mujeres-mayores-de-50-anos-x-60-tabs",
+      "found_product": true,
+      "main": {
+        "path": "/static/img/productos/centrum-silver-women-multivitaminico-mujeres-mayores-de-50-anos-x-60-tabs-main.jpg",
+        "skipped": false,
+        "reason": ""
+      },
+      "webp": {
+        "path": "/static/img/productos/centrum-silver-women-multivitaminico-mujeres-mayores-de-50-anos-x-60-tabs-webp.webp",
+        "skipped": false,
+        "reason": "",
+        "converted": true
+      },
+      "updated_fields": [
+        "imagen_principal",
+        "imagen_principal_webp"
+      ],
+      "error": ""
+    },
+    {
+      "id": "925",
+      "slug": "centrum-silver-men-multivitaminico-hombres-50-anos-x-30-tabs",
+      "found_product": true,
+      "main": {
+        "path": "/static/img/productos/centrum-silver-men-multivitaminico-hombres-50-anos-x-30-tabs-main.jpg",
+        "skipped": false,
+        "reason": ""
+      },
+      "webp": {
+        "path": "/static/img/productos/centrum-silver-men-multivitaminico-hombres-50-anos-x-30-tabs-webp.webp",
+        "skipped": false,
+        "reason": "",
+        "converted": true
+      },
+      "updated_fields": [
+        "imagen_principal",
+        "imagen_principal_webp"
+      ],
+      "error": ""
+    },
+    {
+      "id": "926",
+      "slug": "shot-b-complejo-b-multivitaminico-genomma-caja-x-30-capsulas",
+      "found_product": true,
+      "main": {
+        "path": "/static/img/productos/shot-b-complejo-b-multivitaminico-genomma-caja-x-30-capsulas-main.jpg",
+        "skipped": false,
+        "reason": ""
+      },
+      "webp": {
+        "path": "/static/img/productos/shot-b-complejo-b-multivitaminico-genomma-caja-x-30-capsulas-webp.webp",
+        "skipped": false,
+        "reason": "",
+        "converted": true
+      },
+      "updated_fields": [
+        "imagen_principal",
+        "imagen_principal_webp"
+      ],
+      "error": ""
+    }
+  ]
+}

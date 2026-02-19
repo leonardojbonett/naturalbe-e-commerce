@@ -1,0 +1,1580 @@
+Datos estructurados de artículos (Article, NewsArticle y BlogPosting)
+Si añades datos estructurados Article a tus páginas de noticias, blogs y artículos deportivos, puedes ayudar a Google a comprender mejor la página y mostrar mejor el texto de título, las imágenes y la información temporal del artículo en los resultados de búsqueda de la Búsqueda de Google y otras propiedades (por ejemplo, Google News y el Asistente de Google). Aunque no es necesario añadir etiquetas para poder utilizar funciones de Google News, como Noticias destacadas, puedes añadir Article para indicar de forma más explícita de qué trata el contenido de tu sitio (por ejemplo, indicar que es un artículo de noticias, quién es el autor o cuál es el título del artículo).
+
+Resultado enriquecido del artículo
+Ejemplo
+A continuación se muestra un ejemplo de una página con datos estructurados Article.
+
+JSON-LD
+Microdatos
+
+
+<html>
+  <head>
+    <title>Title of a News Article</title>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "NewsArticle",
+      "headline": "Title of a News Article",
+      "image": [
+        "https://example.com/photos/1x1/photo.jpg",
+        "https://example.com/photos/4x3/photo.jpg",
+        "https://example.com/photos/16x9/photo.jpg"
+       ],
+      "datePublished": "2024-01-05T08:00:00+08:00",
+      "dateModified": "2024-02-05T09:20:00+08:00",
+      "author": [{
+          "@type": "Person",
+          "name": "Jane Doe",
+          "url": "https://example.com/profile/janedoe123"
+        },{
+          "@type": "Person",
+          "name": "John Doe",
+          "url": "https://example.com/profile/johndoe123"
+      }]
+    }
+    </script>
+  </head>
+  <body>
+  </body>
+</html>
+Cómo añadir datos estructurados 
+Los datos estructurados son un formato estandarizado con el que se puede proporcionar información sobre una página y clasificar su contenido. Consulta cómo funcionan los datos estructurados si aún no te has familiarizado con ellos.
+
+A continuación se explica a grandes rasgos cómo crear, probar y publicar datos estructurados.
+
+Añade el mayor número posible de propiedades recomendadas que se apliquen a tu página web. No hay propiedades obligatorias. Añade las propiedades que se apliquen a tu contenido. Consulta más información sobre dónde insertar datos estructurados en una página en función del formato que estés utilizando.
+¿Usas un CMS? Quizá sea más fácil que uses un complemento que esté integrado en tu CMS.
+¿Usas JavaScript? Consulta cómo generar datos estructurados con JavaScript.
+Sigue las directrices.
+Valida tu código con la prueba de resultados enriquecidos y corrige los errores críticos. Te recomendamos que también corrijas los problemas no críticos que puedan marcarse en la herramienta, ya que pueden ayudar a mejorar la calidad de los datos estructurados (sin embargo, esto no es necesario para que se muestren los resultados enriquecidos).
+Crea varias páginas que incluyan tus datos estructurados y comprueba cómo las ve Google con la herramienta de inspección de URLs. Asegúrate de que Google pueda acceder a tu página y de que no esté bloqueada por un archivo robots.txt, por la etiqueta noindex ni por requisitos de inicio de sesión. Si la página se ve bien, puedes solicitar que Google vuelva a rastrear tus URLs.
+Nota: Da cierto margen de tiempo a Google para que vuelva a rastrear e indexar tus páginas. Recuerda que Google puede tardar varios días en encontrar y rastrear una página después de publicarse.
+Para que Google siempre tenga la versión actualizada de tus páginas, te recomendamos que envíes un sitemap. Puedes automatizar este envío con la API Sitemap de Search Console.
+Directrices
+Debes seguir estas directrices para que los datos estructurados se puedan incluir en los resultados de la Búsqueda de Google.
+
+Advertencia: Si tu sitio infringe una o varias de estas directrices, es posible que apliquemos alguna acción manual contra el sitio. Una vez hayas solucionado el problema, puedes enviar tu sitio para que se vuelva a revisar.
+Directrices básicas de la Búsqueda
+Directrices generales sobre datos estructurados
+Directrices técnicas
+Directrices técnicas
+Si ofreces artículos divididos en varias partes, rel=canonical debe dirigir a cada página concreta o a una página en la que se visualice todo el contenido (no a la primera página de una serie de varias partes). Más información sobre la canonicalización
+Si los usuarios deben suscribirse o registrarse para acceder al contenido de tu sitio web, te recomendamos que añadas datos estructurados de suscripción y contenido con muro de pago.
+Definiciones de tipos de datos estructurados
+Para ayudar a Google a comprender mejor tu página, incluye el mayor número posible de propiedades recomendadas que se apliquen a tu página web. No hay propiedades obligatorias. Añade las propiedades que se apliquen a tu contenido.
+
+Article objetos
+Los objetos Article deben basarse en uno de los siguientes tipos de schema.org: Article, NewsArticle o BlogPosting.
+
+Las propiedades que admite Google son las siguientes:
+
+Propiedades recomendadas
+author	
+Person o Organization
+
+Indican el autor del artículo. Para ayudar a Google a identificar mejor a los autores en distintas funciones, te recomendamos que sigas las prácticas recomendadas para etiquetar autores.
+
+author.name	
+Text
+
+Indica el nombre del autor.
+
+author.url	
+URL
+
+Indica el enlace a una página web que solo identifica al autor del artículo. Por ejemplo, la página de redes sociales del autor, la página "Sobre mí" o la página de su biografía.
+
+Si la URL es una página de perfil interno, te recomendamos que marques con datos estructurados de página de perfil a ese autor.
+
+También puedes usar la propiedad sameAs como alternativa. Para diferenciar a los autores, Google entiende las propiedades sameAs y url.
+dateModified	
+DateTime
+
+Indica la fecha y hora en que se ha modificado el artículo más recientemente, en formato ISO 8601. Te recomendamos que proporciones información sobre la zona horaria. De lo contrario, se utilizará de forma predeterminada la zona horaria que utiliza el robot de Google.
+
+Añade la propiedad dateModified si quieres indicarnos información temporal más precisa. En la prueba de resultados enriquecidos no se muestra ninguna advertencia cuando se usa esta propiedad, ya que solo se recomienda si decides que es pertinente usarla en tu sitio.
+
+datePublished	
+DateTime
+
+Indica la fecha y hora en que se publicó el artículo por primera vez, en formato ISO 8601. Te recomendamos que proporciones información sobre la zona horaria. De lo contrario, se utilizará de forma predeterminada la zona horaria que utiliza el robot de Google.
+
+Añade la propiedad datePublished si quieres indicarnos información temporal más precisa. En la prueba de resultados enriquecidos no se muestra ninguna advertencia cuando se usa esta propiedad, ya que solo se recomienda si decides que es pertinente usarla en tu sitio.
+
+headline	
+Text
+
+El título del artículo. Te recomendamos que uses un título conciso, ya que los títulos largos pueden quedar truncados en algunos dispositivos.
+
+image	
+Valores ImageObject o URL repetidos
+
+Es la URL de una imagen que representa el artículo. Utiliza imágenes que sean relevantes para el artículo, en lugar de logotipos o subtítulos.
+
+Directrices de imágenes adicionales:
+
+Las URLs de imagen deben poder rastrearse e indexarse. Comprueba que Google pueda acceder a tus URLs mediante la herramienta de inspección de URLs.
+Las imágenes deben ser representativas del contenido etiquetado.
+Las imágenes deben estar en un formato de archivo compatible con Google Imágenes.
+Para obtener los mejores resultados, recomendamos proporcionar varias imágenes de alta resolución (mínimo de 50.000 píxeles al multiplicar la anchura y la altura) con las siguientes relaciones de aspecto: 16x9, 4x3 y 1x1.
+Por ejemplo:
+
+
+"image": [
+  "https://example.com/photos/1x1/photo.jpg",
+  "https://example.com/photos/4x3/photo.jpg",
+  "https://example.com/photos/16x9/photo.jpg"
+]
+Prácticas recomendadas para etiquetar autores
+Para ayudar a Google a identificar y representar mejor al autor del contenido, te recomendamos que sigas estas prácticas recomendadas cuando indiques autores en las etiquetas:
+
+Prácticas recomendadas para etiquetas de autor
+Incluye a todos los autores en las etiquetas
+Asegúrate de que todos los autores que aparecen como tales en la página web también estén incluidos en las etiquetas.
+
+Indicar varios autores
+Al indicar varios autores, incluye cada uno en su propio campo author:
+
+
+"author": [
+  {"name": "Willow Lane"},
+  {"name": "Regula Felix"}
+]
+No fusiones varios autores en el mismo campo author:
+
+
+"author": {
+  "name": "Willow Lane, Regula Felix"
+}
+Usa campos adicionales
+Para ayudar a Google a entender mejor quién es el autor, te recomendamos que utilices las propiedades type y url (o sameAs). Incluye URLs válidas en las propiedades url o sameAs.
+
+Por ejemplo, si el autor es una persona, puedes crear un enlace a una página que proporcione más información sobre ese autor:
+
+
+"author": [
+  {
+    "@type": "Person",
+    "name": "Willow Lane",
+    "url": "https://www.example.com/staff/willow_lane"
+  }
+]
+Si el autor es una organización, puedes añadir un enlace a su página principal.
+
+
+"author":
+  [
+    {
+      "@type":"Organization",
+      "name": "Some News Agency",
+      "url": "https://www.example.com/"
+  }
+]
+Indica solo el nombre del autor en la propiedad author.name
+En la propiedad author.name, indica solo el nombre del autor. No añadas ningún otro dato. En concreto, no añadas ninguno de estos datos:
+
+El nombre del editor. Para eso, usa la propiedad publisher.
+El cargo del autor. Si quieres incluir esa información, usa la propiedad jobTitle.
+Prefijo o sufijo honoríficos. Si quieres incluir esa información, usa la propiedad honorificPrefix o honorificSuffix.
+Palabras introductorias (por ejemplo, no incluyas "publicado por").
+
+"author":
+  [
+    {
+      "@type": "Person",
+      "name": "Echidna Jones",
+      "honorificPrefix": "Dr",
+      "jobTitle": "Editor in Chief"
+    }
+  ],
+"publisher":
+  [
+    {
+      "@type": "Organization",
+      "name": "Bugs Daily"
+    }
+  ]
+}
+Elige la propiedad Type adecuada
+Usa el tipo Person para personas y el tipo Organization para organizaciones. No uses el tipo Thing ni uno que no corresponda (por ejemplo, el tipo Organization para una persona).
+
+A continuación, se muestra un ejemplo que sigue las prácticas recomendadas de marcado de autores:
+
+
+"author":
+  [
+    {
+      "@type": "Person",
+      "name": "Willow Lane",
+      "jobTitle": "Journalist",
+      "url": "https://www.example.com/staff/willow-lane"
+    },
+    {
+      "@type": "Person",
+      "name": "Echidna Jones",
+      "jobTitle": "Editor in Chief",
+      "url": "https://www.example.com/staff/echidna-jones"
+    }
+  ],
+"publisher":
+  {
+    "@type": "Organization",
+    "name": "The Daily Bug",
+    "url": "https://www.example.com"
+  },
+  // + Other fields related to the article...
+}
+Solucionar problemas
+Si tienes problemas para implementar o depurar datos estructurados, a continuación se incluyen algunos recursos que pueden serte útiles.
+
+Si usas un sistema de gestión de contenido (CMS) o alguien se encarga de gestionar tu sitio, pídele ayuda. No olvides reenviarle cualquier mensaje de Search Console que incluya información sobre el problema en cuestión.
+Google no garantiza que las funciones que utilizan datos estructurados aparezcan en los resultados de búsqueda. Para ver una lista con motivos habituales por los que Google no muestra tu contenido en resultados enriquecidos, consulta las directrices generales de datos estructurados.
+Es posible que haya un error en tus datos estructurados. Consulta la lista de errores de datos estructurados y el informe de datos estructurados que no se pueden analizar.
+Si se ha aplicado una acción manual de datos estructurados a tu página, se ignorarán sus datos estructurados, aunque la página puede seguir apareciendo en los resultados de la Búsqueda de Google. Para solucionar problemas de datos estructurados, usa el informe "Acciones manuales".
+Revisa las directrices para comprobar si tu contenido no las cumple. El problema podría deberse a que la página incluye contenido engañoso o etiquetas con contenido fraudulento. No obstante, es posible que el problema no se deba a la sintaxis, por lo que la prueba de resultados enriquecidos no podrá ayudarte a identificarlo.
+Solucionar problemas si faltan resultados enriquecidos o si se ha reducido el número total de resultados enriquecidos.
+Da cierto margen a Google para que vuelva a rastrear e indexar tu página. Recuerda que Google puede tardar varios días en encontrar y rastrear una página después de publicarse. Consulta las preguntas frecuentes sobre el rastreo y la indexación de la Búsqueda de Google.
+Publica una pregunta en el foro del Centro de la Búsqueda de Google.
+Datos estructurados de acciones de libros (Book)
+Las acciones de libros hacen que la Búsqueda de Google se convierta en un lugar donde los usuarios pueden descubrir libros y autores, así como comprar o tomar prestados con rapidez esos libros directamente desde los resultados de búsqueda. Por ejemplo, un usuario busca La sombra del viento y se le muestran resultados que le permiten comprar o tomar prestado el libro. Si eres proveedor de libros, puedes proporcionar un feed de datos a Google con el esquema de datos estructurados que se indica en este artículo. En nuestra especificación, se incluyen ReadAction y BorrowAction para que los usuarios puedan comprar o tomar prestados libros, respectivamente.
+
+Una acción de libro en los resultados de búsqueda
+Nota: Es posible que no coincidan con el aspecto que tendrán en los resultados de búsqueda.
+Nota: Para asegurar una buena cobertura y ofrecer un mejor servicio a los usuarios de la Búsqueda, por ahora esta función solo está disponible para proveedores de libros que tienen muchos títulos. Si quieres participar, manifiesta tu interés en esta función, pero ten en cuenta que, aunque lo hagas, no podemos garantizarte que vayas a participar.
+Las acciones de lectura y de préstamo, que están integradas en los paneles, muestran opciones para comprar o tomar prestados libros. Con los enlaces que proporcionas, las acciones de lectura y de préstamo redirigen a los usuarios directamente del panel de información u otras funciones de Google a páginas de libros de tu sitio web o aplicación.
+
+El orden en el que aparecen los proveedores en el panel de información es dinámico y se adapta a cada usuario. Es decir, cada usuario ve los proveedores en un orden diferente, y es posible que un mismo usuario los vea ordenados de forma distinta en diferentes momentos. Hay varios factores que determinan este orden. Por ejemplo, si un usuario hace clic a menudo en el enlace de un proveedor concreto en el panel de información, es probable que ese proveedor aparezca en una posición más alta. No es posible controlar el orden de las posiciones.
+
+Primeros pasos
+Para implementar acciones de libros correctamente, crea tu feed siguiendo las definiciones de tipos de datos estructurados de este tipo de acciones. Sin embargo, antes de empezar, consulta las siguientes secciones:
+
+Directrices
+Crear un feed
+Probar el feed con la herramienta de validación de feeds de datos
+Alojar el archivo del feed
+Enviar a revisión el archivo del feed
+Actualizar el feed según sea necesario
+Directrices
+Para asegurarte de que tus libros aparezcan a menudo en la Búsqueda, es importante que conozcas algunos conceptos clave y detalles importantes. Además, tu feed debe cumplir algunas especificaciones de formato estándar.
+
+Para cumplir todos estos requisitos, te ayudará seguir las directrices que se indican a continuación, además de las directrices generales de datos estructurados y las Directrices básicas de la Búsqueda. Estas son las directrices:
+
+Obras y ediciones
+Sistemas de bibliotecas y sus miembros
+ISBN y otros identificadores admitidos
+Enlaces
+Obras y ediciones
+En esta documentación, nos referimos a los libros con dos términos distintos:
+
+Obra: es el concepto abstracto de un libro. En concreto, el título, el autor y el idioma original son atributos de una obra.
+Edición: se trata de una copia concreta de un libro. En particular, el año de publicación, el nombre de la edición y el número internacional normalizado del libro (ISBN) son atributos de una edición.
+Por ejemplo, La sombra del viento es una obra, pero cada variación concreta de ella es una edición. Así, esta novela puede tener una primera edición, una segunda edición, una edición abreviada y una edición traducida al francés, entre otras.
+
+Esta distinción es especialmente importante en el feed, donde puede que no resulte tan obvia. Hay dos entidades Book:
+
+Book (Work) es la entidad Book de nivel superior:
+workExample es una propiedad de Work e indica una única instancia de Book (Edition).
+Debe haber al menos una propiedad workExample en cada objeto Work.
+Book (Edition) es la entidad Book de nivel inferior.
+Es útil recordar que puede haber varias ediciones de una misma obra. Te recomendamos que agrupes estas ediciones en la medida de lo posible. De esta forma, ayudas a los sistemas de Google a reunir toda la información importante sobre un libro y a mostrarlo en la Búsqueda. Si es necesario, puedes separar las diferentes ediciones en varias entradas de una obra, pero ten en cuenta que cada una de ellas debe tener lo siguiente:
+
+Un valor @id distinto
+Al menos una edición con un ISBN u otro identificador admitido
+Sistemas de bibliotecas y sus miembros
+Nota: Esta sección va dirigida a los proveedores que prestan libros.
+Library entity es el tipo de entidad Library de nivel superior. Se trata de una abstracción que está formada por una entidad LibrarySystem, que representa un sistema de bibliotecas, y de entidades Library (member) de nivel inferior, que representan las diferentes bibliotecas de ese sistema.
+
+La entidad LibrarySystem también es una abstracción que representa una red de bibliotecas que colaboran; cada una es miembro del sistema. Por ejemplo, se puede representar a la red de bibliotecas de Austin como una entidad LibrarySystem. El sitio web de la biblioteca pública de Austin la describe como un sistema de bibliotecas públicas que presta servicio en Austin, Texas, y en el que se incluyen las 20 bibliotecas públicas del estado, que serían los miembros del sistema.
+
+Todas las entidades LibrarySystem necesitan al menos una entidad Library (member), aunque en realidad se trate de una biblioteca que no forme parte de ningún sistema de bibliotecas. En este caso, en lo que respecta a la implementación de acciones de libros, esa biblioteca sería el único miembro de su propio sistema de bibliotecas. A diferencia de los sistemas de bibliotecas, las diferentes bibliotecas no son abstracciones y tienen dirección física.
+
+Del mismo modo, toda entidad Library (member) debe pertenecer como mínimo a una entidad LibrarySystem.
+
+ISBN y otros identificadores admitidos
+El ISBN es el identificador principal en el que se basa la Búsqueda de Google para buscar correspondencias entre los datos de tu feed y los datos de Google. Debes indicar el ISBN u otro identificador admitido de todos los libros que quieras que aparezcan en los resultados de la Búsqueda. Si no proporcionas ninguno, es probable que no se encuentre ninguna correspondencia y, por tanto, tus libros no se muestren en los resultados.
+
+La Búsqueda de Google prefiere el ISBN-13, pero hay otras alternativas:
+
+Número del Online Computer Library Center (OCLC)
+Número de control de la Biblioteca del Congreso (LCCN)
+Código electrónico para libros en Japón
+Advertencia: La Búsqueda de Google no acepta el ISBN-10. Si algunos de tus libros solo tienen ISBN-10, conviértelo al formato ISBN-13 con una herramienta de conversión de ISBN antes de enviar tu feed a Google.
+Nota: En tu feed puedes incluir libros que no tengan ISBN, pero entonces es posible que no se muestren en la Búsqueda de Google. Para mejorar las probabilidades de que se encuentre una correspondencia, haz lo siguiente:
+
+Agrupa todas las entidades Edition bajo la misma obra y asegúrate de que al menos una de las ediciones tenga un ISBN, un número OCLC, un LCCN o un código electrónico para libros en Japón. De esta forma, la Búsqueda de Google quizá pueda aprovechar el ISBN o cualquier otro identificador admitido de otra edición.
+Añade identificadores de terceros. En la Búsqueda de Google pueden usarse dos números de control de bibliotecas bastante extendidos: el número OCLC y el LCCN. Si tienes alguno de estos datos, proporciónalo.
+Enlaces
+Para que los usuarios tengan la mejor experiencia posible cuando busquen tus libros, los enlaces que incluyas en tu feed deben cumplir las siguientes directrices:
+
+Si tienes páginas duplicadas de un mismo contenido, debes incluir la URL canónica que contiene el título y otros datos del libro.
+Cuando los usuarios hagan clic en un enlace de acción de lectura o de préstamo, se les debe redirigir a una página donde puedan comprar o tomar prestado el libro directamente. Es decir, no utilices enlaces que lleven a los usuarios a una página con enlaces en los que deban hacer clic para comprar o tomar prestado el contenido. Por ejemplo, no envíes a los usuarios a una página de resultados de búsqueda o a una página de resumen del producto.
+Crear un feed
+Nota: Esta función solo está disponible para los proveedores de libros que hayan rellenado el formulario de interés y se hayan dado de alta.
+Si en tu sitio se venden libros, debes subir un feed de tipo Book. El equipo de Asistencia de Google se pondrá en contacto contigo para darte información sobre cómo y dónde subir el feed.
+
+Si en tu sitio se prestan libros, debes subir dos feeds distintos: un feed de tipo Book y otro de tipo Library. El equipo de Asistencia de Google se pondrá en contacto contigo para darte información sobre cómo y dónde subir el feed.
+
+Cumplir los requisitos de tamaño, cantidad y formato de feeds
+Estos son los requisitos:
+
+Requisitos de tamaño de feeds:
+El archivo sin comprimir de un feed debe tener un tamaño inferior a 1 GB.
+El archivo de un feed también debe ser inferior a 1 GB si vas a comprimirlo. Si el archivo de tu feed supera ese tamaño antes de comprimirlo, tienes que dividirlo en varios archivos.
+Los archivos de un feed se pueden comprimir. En ese caso, deben tener el formato zip, gz, tar, tar.gz, JAR, ar, arj o cpio, o deben ser un archivo de volcado.
+Si tu feed tiene varios archivos, puedes subirlos tal cual o, si lo prefieres, incluirlos en un archivo de índice de sitemaps.
+Los archivos de feed únicos deben tener la extensión .json en el nombre de archivo.
+Cumplir los requisitos de contenido de feeds
+Presta especial atención a los siguientes requisitos de contenido de feeds:
+
+El feed no debe contener entidades obsoletas; es decir, entidades cuyo valor availabilityEnds sea una fecha que ya ha pasado o entidades que ya no están disponibles en tu sitio.
+Todos los enlaces profundos, como los incluidos con urlTemplate, y todas las URLs, como las indicadas con url, que añadas a tu feed deben ser URLs de producción. No incluyas URLs de control de calidad, de desarrollo ni de ningún otro tipo que no sea de producción.
+Todas las URLs, como las especificadas con url, deben ser canónicas.
+En cada entidad de tu feed deben indicarse las siguientes propiedades:
+Un ID único: @id
+Una URL única: url
+Un enlace profundo único: urlTemplate
+Probar el feed con la herramienta de validación de feeds de datos
+Para solucionar errores y advertencias que se indican habitualmente en la herramienta de validación de feeds de datos, te recomendamos que sigas estos pasos:
+
+Asegúrate de haber seleccionado la opción correcta en el campo Validar en. Para validar entidades Book, selecciona Acción de libros.
+
+Comprueba que el valor de @type esté bien escrito.
+Asegúrate de que el valor de @context sea correcto. Debes incluir "@context": "https://schema.org" tanto en ReadAction como en BorrowAction.
+Alojar el archivo del feed
+Cuando el archivo de tu feed esté listo, alójalo en un lugar seguro. Google consulta el feed con regularidad para asegurarse de que tu contenido esté actualizado.
+
+Métodos de alojamiento
+Se admiten los siguientes métodos de alojamiento de feeds:
+
+Alojamiento	Métodos de autenticación admitidos
+Google Cloud Storage	Permiso Lector de objetos de Storage
+HTTPS	Nombre de usuario y contraseña o certificados de cliente HTTP
+SFTP	Contraseña, clave y frase, o ambas
+AWS S3	ID de clave y clave de acceso
+Enviar a revisión el archivo del feed
+Para que tu contenido esté disponible en la Búsqueda de Google, un equipo de asistencia de Google revisa la calidad de los enlaces profundos que hay en tu feed. Te recomendamos que pruebes manualmente algunos enlaces profundos para comprobar que lleven a páginas en las que los usuarios puedan comprar o tomar prestados los libros.
+
+Nota: Solo los partners pueden utilizar esta función y rellenar el formulario de interés para enviar feeds.
+Para solicitar que se revise tu feed, facilita la siguiente información:
+
+Ubicación del host: la URL del archivo del feed.
+Autenticación del host (si procede): credenciales de autenticación que permitan que Google obtenga el archivo del feed de donde está alojado.
+Actualizar el feed según sea necesario
+Te recomendamos que actualices tu feed cada día, pero en realidad basta con que lo hagas siempre que cambie tu catálogo. Ten en cuenta las siguientes condiciones y consejos:
+
+La Búsqueda de Google no admite actualizaciones en tiempo real.
+La Búsqueda de Google obtiene tu feed una vez al día y suele indexar el contenido en dos días.
+Si prevés algún cambio en la disponibilidad de una edición, indica las fechas exactas con availabilityStarts y availabilityEnds. Si esa entidad ya no está disponible, quítala por completo.
+Definiciones de tipos de datos estructurados
+Para que tu contenido se pueda mostrar en los resultados de búsqueda estructurados, debes incluir las propiedades obligatorias que se indican en esta sección. Si quieres, puedes incluir también las propiedades recomendadas para proporcionar más información sobre tu contenido y, así, ofrecer una mejor experiencia a tus usuarios.
+
+Entidad DataFeed
+Todos los archivos de feeds de datos de schema.org que se envían a Google deben contener una única entidad DataFeed en el nivel raíz. Todas las entidades Book y Library deben estar incluidas en el campo dataFeedElement de la entidad DataFeed.
+
+Las propiedades que admite Google son las siguientes:
+
+Propiedades obligatorias
+@context	
+Text
+
+Su valor debe ser https://schema.org.
+
+@type	
+Text
+
+Su valor debe ser DataFeed.
+
+dataFeedElement	
+Book o LibrarySystem
+
+Su valor debe ser una única entidad Book o LibrarySystem, o bien una matriz que solo contenga entidades de tipo Book o de tipo LibrarySystem. Si usas una matriz, no mezcles entidades de tipo Book con entidades de tipo LibrarySystem.
+
+Ejemplo de uso en un feed Book:
+
+
+{
+  "@context": "https://schema.org",
+  "@type": "DataFeed",
+  "dataFeedElement": [
+    {
+      "@context": "https://schema.org",
+      "@type": "Book",
+      "@id": "https://example.com/work/the_catcher_in_the_rye",
+      "url": "https://example.com/work/the_catcher_in_the_rye",
+      "name": "The Catcher in the Rye",
+      "author": {
+        "@type": "Person",
+        "name": "J.D. Salinger"
+      },
+      "sameAs": "https://en.wikipedia.org/wiki/The_Catcher_in_the_Rye",
+      "workExample": [
+        {
+          "@type": "Book",
+          "@id": "https://example.com/edition/the_catcher_in_the_rye_paperback",
+          "isbn": "9787543321724",
+          "bookEdition": "Mass Market Paperback",
+          "bookFormat": "https://schema.org/Paperback",
+          "inLanguage": "en",
+          ...
+        },
+        ...
+      ]
+   }
+  ],
+  "dateModified": "2018-09-10T13:58:26.892Z"
+}
+Ejemplo de uso en un feed LibrarySystem:
+
+
+{
+  "@context": "https://schema.org",
+  "@type": "DataFeed",
+  "dataFeedElement": [
+    {
+      "@context": "https://schema.org",
+      "@type": "LibrarySystem",
+      "@id": "https://example.com/library-systems/100",
+      "name": "Santa Clara County Library District",
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "librarytype",
+          "value": "public"
+        }
+      ],
+      ...
+    },
+    ...
+  ],
+  "dateModified": "2018-09-10T13:58:26.892Z"
+}
+Advertencia: Tal como se describe en la sección Crear un feed, si tienes un feed de tipo Book y otro de tipo Library, debes incluirlos en dos archivos de feed independientes. En consecuencia, la propiedad dataFeedElement de cada entidad DataFeed debe cumplir solo una de estas condiciones:
+
+dataFeedElement debe tener como valores una única entidad Book o una matriz de entidades Book.
+dataFeedElement debe tener como valores una única entidad LibrarySystem o una matriz de entidades LibrarySystem.
+dateModified	
+DateTime
+
+Indica la fecha y la hora de la actualización más reciente del feed en formato ISO 8601.
+
+Entidad Book
+Puedes consultar la definición completa de Book en schema.org/Book, pero basta con que tengas en cuenta las propiedades que se indican a continuación. Debes definir las propiedades obligatorias de todos los libros que decidas incluir en tu feed. También puedes especificar propiedades recomendadas para proporcionar más información sobre tu contenido y, así, ofrecer una mejor experiencia a tus usuarios.
+
+Book (Work)
+La entidad Book es la de nivel superior y representa una obra.
+
+Importante: Lee las directrices de la sección Obras y ediciones para saber qué diferencias hay entre las dos entidades Book de tu implementación.
+Las propiedades que admite Google son las siguientes:
+
+Propiedades obligatorias
+@context	
+Text
+
+Su valor debe ser https://schema.org.
+
+@id	
+Text
+
+Indica un ID único a nivel mundial del libro en formato de URL. Debe ser exclusivo de tu organización. El ID debe ser permanente y no cambiar con el tiempo. Se sugiere emplear el formato de URL, aunque no es obligatorio. Tampoco tiene por qué ser un enlace que funcione. El dominio que utilices en el valor de @id debe ser propiedad de tu organización.
+
+@type	
+Text
+
+Su valor debe ser Book.
+
+author	
+Person o Organization
+
+Indica los autores del libro.
+
+Nota: Si el libro no tiene un autor como tal, sino uno o varios colaboradores, inclúyelos tal como se describe en schema.org/Book. Por ejemplo, es posible que un libro no tenga ningún autor conocido ni registrado, pero sí varios editores.
+
+Si el autor de un libro es una organización, indícalo siguiendo las directrices de schema.org/Organization. Por ejemplo, el autor de un libro titulado "Habilidades básicas para luchar contra incendios" podría ser la organización National Fire Protection Association.
+
+name	
+Text
+
+Indica el título del libro.
+
+url	
+URL
+
+Especifica la URL de tu sitio web en la que se presenta o se describe el libro. Este enlace ayuda a relacionar de forma precisa el contenido de tu feed con el contenido de las bases de datos de Google. Puede ser la misma URL que la que se indica en workExample.target.urlTemplate.
+
+Como página de destino real, la Búsqueda de Google utiliza la URL proporcionada en workExample.target.urlTemplate.
+
+workExample	
+Book (Edition)
+
+Indica las ediciones de la obra.
+
+Propiedades recomendadas
+sameAs	
+URL
+
+Indica la URL de una página de referencia en la que se identifica la obra. Por ejemplo, una página sobre el libro en Wikipedia, Wikidata, VIAF o en la Biblioteca Nacional.
+
+Book (Edition)
+En la propiedad workExample se utiliza esta entidad Book. Representa una edición de una obra.
+
+Importante: Lee las directrices de la sección Obras y ediciones para saber qué diferencias hay entre las dos entidades Book de tu implementación.
+Las propiedades que admite Google son las siguientes:
+
+Propiedades obligatorias
+@id	
+Text
+
+Indica un ID único a nivel mundial del libro en formato de URL. Debe ser exclusivo de tu organización. El ID debe ser permanente y no cambiar con el tiempo. Se sugiere emplear el formato de URL, aunque no es obligatorio. Tampoco tiene por qué ser un enlace que funcione. El dominio que utilices en el valor de @id debe ser propiedad de tu organización.
+
+@type	
+Text
+
+Su valor debe ser Book.
+
+bookFormat	
+Enum
+
+Indica el formato de la edición. Debe tener uno de los siguientes valores:
+
+https://schema.org/AudiobookFormat
+https://schema.org/EBook
+https://schema.org/Hardcover
+https://schema.org/Paperback
+inLanguage	
+Text
+
+Especifica el idioma principal del contenido de la edición. Utiliza uno de los códigos de dos letras de la lista de códigos ISO 639‑1 alfa‑2.
+
+isbn	
+Text
+
+Indica el ISBN-13 de la edición. Si solo tienes el ISBN-10, conviértelo a ISBN-13.
+
+potentialAction	
+ReadAction o BorrowAction
+
+La acción que se activará para que los usuarios compren o descarguen el libro. Puedes consultar más información en las secciones ReadAction o BorrowAction.
+
+Propiedades recomendadas
+author	
+Person o Organization
+
+Indica los autores de la edición.
+
+Nota: Incluye esta propiedad solo cuando el autor de la edición sea diferente del autor de la obra.
+
+Si la edición no tiene un autor como tal, sino uno o varios colaboradores, inclúyelos tal como se describe en schema.org/Book. Por ejemplo, es posible que una edición no tenga ningún autor conocido o registrado, pero sí varios editores.
+
+Si el autor de una edición es una organización, indícalo siguiendo las directrices de schema.org/Organization. Por ejemplo, el autor de Manual de publicaciones de la American Psychological Association, 6.ª edición puede ser la organización American Psychological Association.
+
+bookEdition	
+Text
+
+La información sobre la edición del libro. Por ejemplo, 2nd Edition.
+
+datePublished	
+Date
+
+Indica la fecha de publicación de la edición en formato YYYY-MM-DD o YYYY. Puede ser una fecha concreta, pero también puedes especificar solo el año.
+
+identifier	
+PropertyValue
+
+Indica el ID externo o de otro tipo que identifica de forma inequívoca esta edición. Se permiten varios identificadores. Puedes consultar más información en la sección PropertyValue (identifier).
+
+Esta propiedad se puede repetir.
+
+name	
+Text
+
+Indica el título de la edición. Incluye esta propiedad solo cuando el título de la edición sea diferente del título de la obra.
+
+sameAs	
+URL
+
+Indica la URL de una página web de referencia en la que se identifica de manera inequívoca la edición. Por ejemplo, puede ser una página de Wikipedia sobre esa edición concreta. No reutilices la propiedad sameAs de Work.
+
+url	
+URL
+
+Especifica la URL de tu sitio web en la que se presenta o se describe la edición. Puede ser la misma URL que la que se indica en workExample.target.urlTemplate.
+
+Ejemplo de Book (Edition):
+
+
+"workExample":
+        {
+          "@type": "Book",
+          "@id": "https://example.com/book/100",
+          "inLanguage": "en",
+          "isbn": "9787543321724",
+          "bookEdition": "20 Anniversary Edition",
+          "datePublished": "2000-02-26",
+          "bookFormat": "https://schema.org/Hardcover",
+          "potentialAction": {...}
+        }
+Ejemplo de Book (Edition) con varias propiedades workExample:
+
+
+"workExample": [
+        {
+          "@type": "Book",
+          "@id": "https://example.com/book/200",
+          "inLanguage": "zh",
+          "isbn": "9787543321721",
+          "bookEdition": "2nd Edition",
+          "bookFormat": "https://schema.org/Hardcover",
+          "potentialAction": {...}
+        },
+        {
+          "@type": "Book",
+          "@id": "https://example.com/book/300",
+          "inLanguage": "zh",
+          "isbn": "9787543321722",
+          "bookEdition": "1st Edition",
+          "bookFormat": "https://schema.org/EBook",
+          "potentialAction": {...}
+      }
+ ]
+Organization o Person (author)
+La propiedad author del libro utiliza la entidad Person o Organization.
+
+Propiedades obligatorias
+@type	
+Text
+
+Su valor debe ser Person o Organization.
+
+name	
+Text
+
+Indica el nombre de la persona o de la organización.
+
+Propiedades recomendadas
+sameAs	
+URL
+
+Especifica la URL de una página web de referencia donde se identifica de manera inequívoca a la persona o a la organización; por ejemplo, puede ser una página de Wikipedia.
+
+Ejemplo de author:
+
+
+"author": {
+  "@type": "Person",
+  "name": "William Shakespeare"
+}
+Ejemplo con varias propiedades author:
+
+
+"author": [
+  {
+    "@type": "Person",
+    "name": "William Shakespeare"
+  },
+  {
+    "@type": "Person",
+    "name": "Victor Hugo",
+    "sameAs": "https://en.wikipedia.org/wiki/Victor_Hugo"
+  }
+]
+PropertyValue (identifier)
+En la propiedad identifier de Edition se utiliza la entidad PropertyValue.
+
+Propiedades obligatorias
+@type	
+Text
+
+Su valor debe ser PropertyValue.
+
+propertyID	
+Text
+
+Indica el tipo de ID. Tal como se describe en la sección ISBN y otros identificadores admitidos, debe ser uno de los siguientes:
+
+OCLC_NUMBER
+LCCN
+JP_E-CODE
+value	
+Text
+
+El valor del ID. Indica el ID externo que identifica de forma inequívoca esta edición. Quita todos los prefijos no numéricos de este ID.
+
+Ejemplo de identifier:
+
+
+    "identifier": {
+      "@type": "PropertyValue",
+      "propertyID": "OCLC_NUMBER",
+      "value":  "110123456"
+    }
+Ejemplo con varias propiedades identifier:
+
+
+    "identifier": [
+    {
+      "@type": "PropertyValue",
+      "propertyID": "OCLC_NUMBER",
+      "value":  "110123456"
+    },
+    {
+      "@type": "PropertyValue",
+      "propertyID": "LCCN",
+      "value":  "220123456"
+    },{
+      "@type": "PropertyValue",
+      "propertyID": "JP_E-CODE",
+      "value":  "12345678901234567890"
+    }]
+Ejemplo de un feed ReadAction Book en formato de archivo JSON
+
+{
+  "@context": "https://schema.org",
+  "@type": "DataFeed",
+  "dataFeedElement": [
+    {
+      "@context": "https://schema.org",
+      "@type": "Book",
+      "@id": "https://example.com/work/the_catcher_in_the_rye",
+      "url": "https://example.com/work/the_catcher_in_the_rye",
+      "name": "The Catcher in the Rye",
+      "author": {
+        "@type": "Person",
+        "name": "J.D. Salinger"
+      },
+      "sameAs": "https://en.wikipedia.org/wiki/The_Catcher_in_the_Rye",
+      "workExample": [
+        {
+          "@type": "Book",
+          "@id": "https://example.com/edition/the_catcher_in_the_rye_paperback",
+          "isbn": "9787543321724",
+          "bookEdition": "Mass Market Paperback",
+          "bookFormat": "https://schema.org/Paperback",
+          "inLanguage": "en",
+          "url": "https://example.com/edition/the_catcher_in_the_rye_paperback",
+          "datePublished": "1991-05-01",
+          "identifier": {
+            "@type": "PropertyValue",
+            "propertyID": "OCLC_NUMBER",
+            "value": "1057320822"
+          },
+          "potentialAction": {
+            "@type": "ReadAction",
+            "target": {
+              "@type": "EntryPoint",
+              "urlTemplate": "https://example.com/store/9787543321724",
+              "actionPlatform": [
+                "https://schema.org/DesktopWebPlatform",
+                "https://schema.org/AndroidPlatform",
+                "https://schema.org/IOSPlatform"
+              ]
+            },
+            "expectsAcceptanceOf": {
+              "@type": "Offer",
+              "category": "purchase",
+              "price": 6.99,
+              "priceCurrency": "USD",
+              "availabilityStarts": "2020-01-01T11:0:00-04:00",
+              "availabilityEnds": "2050-06-30T23:59:00-04:00",
+              "eligibleRegion": {
+                "@type": "Country",
+                "name": "US"
+              }
+            }
+          }
+        },
+        {
+          "@type": "Book",
+          "@id": "https://example.com/edition/the_catcher_in_the_rye_hardcover",
+          "isbn": "9780316769532",
+          "bookEdition": "Hardcover",
+          "bookFormat": "https://schema.org/Hardcover",
+          "inLanguage": "en",
+          "url": "https://example.com/edition/the_catcher_in_the_rye_hardcover",
+          "datePublished": "1951-07-16",
+          "potentialAction": {
+            "@type": "ReadAction",
+            "target": {
+              "@type": "EntryPoint",
+              "urlTemplate": "https://example.com/store/9780316769532",
+              "actionPlatform": [
+                "https://schema.org/DesktopWebPlatform",
+                "https://schema.org/AndroidPlatform",
+                "https://schema.org/IOSPlatform"
+              ]
+            },
+            "expectsAcceptanceOf": [
+              {
+                "@type": "Offer",
+                "category": "nologinrequired",
+                "availabilityStarts": "2020-01-01T11:0:00-04:00",
+                "availabilityEnds": "2050-06-30T23:59:00-04:00",
+                "eligibleRegion": [
+                  {
+                    "@type": "Country",
+                    "name": "US"
+                  },
+                  {
+                    "@type": "Country",
+                    "name": "GB"
+                  }
+                ]
+              },
+              {
+                "@type": "Offer",
+                "category": "Subscription",
+                "availabilityStarts": "2020-01-01T11:0:00-04:00",
+                "availabilityEnds": "2050-06-30T23:59:00-04:00",
+                "eligibleRegion": {
+                  "@type": "Country",
+                  "name": "IN"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "dateModified": "2018-09-10T13:58:26.892Z"
+}
+Ejemplo de un feed BorrowAction Book en formato de archivo JSON
+
+{
+  "@context": "https://schema.org",
+  "@type": "DataFeed",
+  "dataFeedElement": [
+    {
+      "@context": "https://schema.org",
+      "@type": "Book",
+      "@id": "https://example.com/work/the_catcher_in_the_rye",
+      "url": "https://example.com/work/the_catcher_in_the_rye",
+      "name": "The Catcher in the Rye",
+      "author": {
+        "@type": "Person",
+        "name": "J.D. Salinger"
+      },
+      "sameAs": "https://en.wikipedia.org/wiki/The_Catcher_in_the_Rye",
+      "workExample": [
+        {
+          "@type": "Book",
+          "@id": "https://example.com/edition/the_catcher_in_the_rye_paperback",
+          "isbn": "9787543321724",
+          "bookEdition": "Mass Market Paperback",
+          "bookFormat": "https://schema.org/Paperback",
+          "inLanguage": "en",
+          "url": "https://example.com/edition/the_catcher_in_the_rye_paperback",
+          "datePublished": "1991-05-01",
+          "identifier": {
+            "@type": "PropertyValue",
+            "propertyID": "OCLC_NUMBER",
+            "value": "1057320822"
+          },
+          "potentialAction": {
+            "@type": "BorrowAction",
+            "lender": {
+              "@type": "LibrarySystem",
+              "@id": "https://example.com/librarySystem/100"
+            },
+            "target": {
+              "@type": "EntryPoint",
+              "urlTemplate": "https://example.com/borrowpurchase?bookId=170",
+              "actionPlatform": [
+                "https://schema.org/DesktopWebPlatform",
+                "https://schema.org/AndroidPlatform",
+                "https://schema.org/IOSPlatform"
+              ]
+            }
+          }
+        },
+        {
+          "@type": "Book",
+          "@id": "https://example.com/edition/the_catcher_in_the_rye_hardcover",
+          "isbn": "9780316769532",
+          "bookEdition": "Hardcover",
+          "bookFormat": "https://schema.org/Hardcover",
+          "inLanguage": "en",
+          "url": "https://example.com/edition/the_catcher_in_the_rye_hardcover",
+          "datePublished": "1951-07-16",
+          "potentialAction": {
+            "@type": "BorrowAction",
+            "lender": {
+              "@type": "LibrarySystem",
+              "@id": "https://example.com/librarySystem/100"
+            },
+            "target": [
+              {
+                "@type": "EntryPoint",
+                "urlTemplate": "https://example.com/borrowpurchase?bookId=170",
+                "actionPlatform": [
+                  "https://schema.org/DesktopWebPlatform"
+                ]
+              },
+              {
+                "@type": "EntryPoint",
+                "urlTemplate": "https://example.com/mobile/borrowpurchase?bookId=170",
+                "actionPlatform": [
+                  "https://schema.org/AndroidPlatform",
+                  "https://schema.org/IOSPlatform"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "dateModified": "2018-09-10T13:58:26.892Z"
+}
+ReadAction (potentialAction)
+En la propiedad potentialAction se utiliza la entidad ReadAction. En la entidad ReadAction se incluyen los enlaces profundos para acceder a los libros, las tiendas que los venden y los criterios que deben cumplir los usuarios para tener acceso a los libros. Entre los criterios se pueden incluir el estado de suscripción, de inicio de sesión, la ubicación o cualquier otro elemento necesario.
+
+Propiedades obligatorias
+@type	
+Text
+
+Su valor debe ser ReadAction.
+
+expectsAcceptanceOf	
+Offer
+
+Define los requisitos que deben cumplir los usuarios para acceder a esta entidad. Si hay varias propiedades Offer, es posible que baste con cumplir los criterios de una de las propiedades Offer para acceder al contenido.
+
+Esta propiedad se puede repetir.
+
+expectsAcceptanceOf.@type	
+Text
+
+Su valor debe ser Offer.
+
+expectsAcceptanceOf.category	
+Text
+
+Indica el tipo de Offer. Debe tener uno de los siguientes valores:
+
+nologinrequired: los usuarios pueden realizar la acción sin tener que comprar ni iniciar sesión para acceder al contenido.
+free: los usuarios pueden realizar la acción sin tener que comprar ni pagar por una suscripción, pero si deben iniciar sesión.
+subscription: el libro está incluido en la suscripción de pago a tu servicio.
+purchase: se puede acceder al libro comprándolo.
+rental: se puede acceder al libro durante un periodo fijo después de pagar.
+expectsAcceptanceOf.eligibleRegion	
+Country
+
+Especifica el país en el que es válida la oferta de la propiedad Offer. De este modo, se puede controlar el país y la región en los que el contenido está o no disponible.
+
+Esta propiedad se puede repetir.
+
+expectsAcceptanceOf.eligibleRegion.@type	
+Text
+
+Su valor debe ser Country.
+
+expectsAcceptanceOf.eligibleRegion.name	
+Text
+
+Indica el código de país según la norma ISO 3166-1 alfa-2.
+
+target	
+EntryPoint
+
+Indica las especificaciones del enlace profundo, en las que se incluye información sobre la plataforma admitida. Se pueden usar varias propiedades EntryPoint para definir distintos enlaces profundos de diferentes conjuntos de plataformas.
+
+Esta propiedad se puede repetir.
+
+target.@type	
+Text
+
+Su valor debe ser EntryPoint.
+
+target.actionPlatform	
+Text
+
+Especifica las plataformas en las que este enlace profundo es válido. Debe tener uno de los siguientes valores:
+
+https://schema.org/DesktopWebPlatform
+https://schema.org/AndroidPlatform
+https://schema.org/IOSPlatform
+Esta propiedad se puede repetir.
+
+target.urlTemplate	
+URL
+
+Indica el enlace con el que los usuarios acceden directamente al contenido de la página de destino que incluye tu libro.
+
+Propiedades recomendadas
+expectsAcceptanceOf.availabilityEnds	
+DateTime
+
+Indica la hora de finalización del periodo de disponibilidad. Con esta propiedad, puedes controlar el momento exacto en el que el libro se debe dejar de mostrar a los usuarios.
+
+expectsAcceptanceOf.availabilityStarts	
+DateTime
+
+Especifica la hora de inicio del periodo de disponibilidad. Te permite controlar el momento exacto en el que el libro se puede empezar a mostrar a los usuarios.
+
+expectsAcceptanceOf.price	
+Number
+
+Indica el precio de compra del libro. Es obligatorio cuando se asigna el valor purchase o rental al atributo category de la propiedad Offer.
+
+expectsAcceptanceOf.priceCurrency	
+Text
+
+Especifica la moneda del precio en el formato estándar ISO 4217 de tres letras.
+
+Ejemplo de ReadAction:
+
+
+"potentialAction": {
+  "@type": "ReadAction",
+  "target": {
+    "@type": "EntryPoint",
+    "urlTemplate": "https://example.com/purchase?bookId=170",
+    "actionPlatform": [
+      "https://schema.org/DesktopWebPlatform",
+      "https://schema.org/AndroidPlatform",
+      "https://schema.org/IOSPlatform"
+    ]
+  },
+  "expectsAcceptanceOf": {
+    "@type": "Offer",
+    "category": "purchase",
+    "price": 9.99,
+    "priceCurrency": "USD",
+    "availabilityStarts": "2018-04-01T11:01:00-04:00",
+    "availabilityEnds": "2018-06-30T23:59:00-04:00",
+    "eligibleRegion": {
+      "@type": "Country",
+      "name": "US"
+    }
+  }
+}
+Ejemplo de ReadAction con varias propiedades EntryPoint:
+
+
+"potentialAction": {
+  "@type": "ReadAction",
+  "target": [
+    {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://example.com/purchase?bookId=170",
+      "actionPlatform": [
+        "https://schema.org/DesktopWebPlatform"
+      ]
+    },
+    {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://example.com/mobile/purchase?bookId=170",
+      "actionPlatform": [
+        "https://schema.org/AndroidPlatform",
+        "https://schema.org/IOSPlatform"
+      ]
+    }
+  ],
+  "expectsAcceptanceOf": [
+    {
+      "@type": "Offer",
+      "category": "noLoginRequired",
+      "availabilityStarts": "2018-04-01T11:01:00-04:00",
+      "availabilityEnds": "2018-06-30T23:59:00-04:00",
+      "eligibleRegion": [
+        {
+          "@type": "Country",
+          "name": "US"
+        },
+        {
+          "@type": "Country",
+          "name": "GB"
+        }
+      ]
+    },
+    {
+      "@type": "Offer",
+      "category": "Subscription",
+      "availabilityStarts": "2018-04-01T11:01:00-04:00",
+      "availabilityEnds": "2018-06-30T23:59:00-04:00",
+      "eligibleRegion": {
+        "@type": "Country",
+        "name": "IN"
+      }
+    }
+  ]
+}
+BorrowAction (potentialAction)
+En la propiedad potentialAction se utiliza la entidad BorrowAction. En la entidad BorrowAction se incluyen enlaces profundos para acceder a los libros, las bibliotecas en las que están y los criterios que deben cumplir los usuarios para tener acceso a los libros. Entre los criterios se pueden incluir el estado de suscripción, de inicio de sesión, la ubicación o cualquier otro elemento necesario.
+
+Propiedades obligatorias
+@type	
+Text
+
+Su valor debe ser BorrowAction.
+
+lender	
+LibrarySystem
+
+Indica el sistema de bibliotecas que da acceso a esta edición.
+
+lender.@id	
+URL
+
+Especifica las referencias de ID de la entidad LibrarySystem, que se deben describir por separado en el feed de biblioteca.
+
+lender.@type	
+Text
+
+Su valor debe ser LibrarySystem.
+
+target	
+EntryPoint
+
+Indica las especificaciones del enlace profundo, en las que se incluye información sobre la plataforma admitida. Para definir enlaces profundos de diferentes conjuntos de plataformas, utiliza una matriz de EntryPoint.
+
+Esta propiedad se puede repetir.
+
+target.@type	
+Text
+
+Su valor debe ser EntryPoint.
+
+target.actionPlatform	
+Text
+
+Especifica las plataformas en las que este enlace profundo es válido. Debe tener uno de los siguientes valores:
+
+https://schema.org/DesktopWebPlatform
+https://schema.org/AndroidPlatform
+https://schema.org/IOSPlatform
+Esta propiedad se puede repetir.
+
+target.urlTemplate	
+URL
+
+Indica el enlace con el que los usuarios acceden directamente al contenido de la página de destino que incluye tu libro.
+
+Ejemplo de BorrowAction:
+
+
+"potentialAction": {
+  "@type": "BorrowAction",
+  "lender": {
+    "@type": "LibrarySystem",
+    "@id": "https://example.com/librarySystem/100"
+  },
+  "target": {
+    "@type": "EntryPoint",
+    "urlTemplate": "https://example.com/borrow?bookId=170",
+    "actionPlatform": [
+      "https://schema.org/DesktopWebPlatform",
+      "https://schema.org/AndroidPlatform",
+      "https://schema.org/IOSPlatform"
+    ]
+  }
+}
+Ejemplo de BorrowAction con varias propiedades EntryPoint:
+
+
+"potentialAction": {
+  "@type": "BorrowAction",
+  "lender": {
+    "@type": "LibrarySystem",
+    "@id": "https://example.com/librarySystem/100"
+  },
+  "target": [
+    {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://example.com/borrow?bookId=170",
+      "actionPlatform": [
+        "https://schema.org/DesktopWebPlatform"
+      ]
+    },
+    {
+      "@type": "EntryPoint",
+`      "urlTemplate": "https://example.com/mobile/borrow?bookId=170",
+      "actionPlatform": [
+        "https://schema.org/AndroidPlatform",
+        "https://schema.org/IOSPlatform"
+      ]
+    }
+  ]
+}
+Entidad Library
+Puedes consultar la definición completa de Library en schema.org/Library, pero basta con que tengas en cuenta las propiedades que se indican a continuación. Debes definir las propiedades obligatorias de todas las bibliotecas que incluyas en tu feed. También puedes especificar propiedades recomendadas para proporcionar más información sobre tu contenido y, así, ofrecer una mejor experiencia a tus usuarios.
+
+Esta entidad Library es el tipo de entidad Library de nivel superior. Se trata de una abstracción, que está formada por una entidad LibrarySystem y todas las entidades Library (member) de nivel inferior de esa entidad LibrarySystem.
+
+El feed Library es distinto del feed Book; por lo tanto, si implementas un feed Library, debe ser completamente independiente de tu feed Book. Consulta más información en la sección Crear un feed.
+
+Importante: Consulta las directrices de la sección Sistemas de bibliotecas y sus miembros para saber qué diferencias hay entre la entidad de nivel superior Library, la entidad LibrarySystem y la entidad de nivel inferior Library de tu implementación.
+LibrarySystem
+La entidad LibrarySystem representa una red de bibliotecas que colaboran, cada una es miembro del sistema.
+
+Importante: Consulta las directrices de la sección Sistemas de bibliotecas y sus miembros para saber qué diferencias hay entre la entidad de nivel superior Library, la entidad LibrarySystem y la entidad de nivel inferior Library de tu implementación.
+Propiedades obligatorias
+@context	Text
+Su valor debe ser https://schema.org.
+
+@id	URL
+Indica un ID único a nivel mundial del sistema de bibliotecas en formato de URL. El ID debe ser permanente y no cambiar con el tiempo. La URL se trata como una cadena opaca y no tiene por qué ser un enlace que funcione. El dominio que incluyas en el valor @id debe ser propiedad de tu organización.
+
+@type	Text
+Su valor debe ser LibrarySystem.
+
+additionalProperty	PropertyValue
+Es la propiedad adicional con la que se indica el tipo de biblioteca.
+
+additionalProperty.@type	Text
+Su valor debe ser PropertyValue.
+
+additionalProperty.name	Text
+Su valor debe ser librarytype.
+
+additionalProperty.value	Text
+Indica el tipo de biblioteca. Debe tener uno de los siguientes valores:
+
+public
+academic
+corporate
+government
+school
+special
+member	Library
+Especifica los miembros del sistema de bibliotecas.
+
+name	Text
+Indica el nombre del sistema de bibliotecas. Por ejemplo, The Southwestern League of Libraries.
+
+url	URL
+Especifica la URL donde se presenta o se describe el sistema de bibliotecas. Con este enlace, la Búsqueda de Google relaciona el contenido de tu feed con el contenido de las bases de datos de Google. Como página de destino real, la Búsqueda de Google utiliza la URL proporcionada en workExample.target.urlTemplate.
+
+Library (member)
+En la propiedad member de la entidad LibrarySystem se utiliza la entidad Library (member). Library (member) representa una única biblioteca que es miembro de un sistema de bibliotecas determinado.
+
+Importante: Consulta las directrices de la sección Sistemas de bibliotecas y sus miembros para saber qué diferencias hay entre la entidad de nivel superior Library, la entidad LibrarySystem y la entidad de nivel inferior Library de tu implementación.
+Propiedades obligatorias
+@id	URL
+Indica un ID único a nivel mundial de la biblioteca miembro en formato de URL. El ID debe ser permanente y no cambiar con el tiempo. La URL se trata como una cadena opaca y no tiene por qué ser un enlace que funcione. El dominio que incluyas en el valor @id debe ser propiedad de tu organización.
+
+@type	Text
+Su valor debe ser Library.
+
+location	PostalAddress
+Indica la dirección postal de la biblioteca miembro. No todas las propiedades son pertinentes en todos los países, pero debes incluir todas las que correspondan a las direcciones de tus bibliotecas.
+
+Ejemplo de location de Estados Unidos:
+
+
+{
+  "@type": "Library",
+  "@id": "https://example.com/library-branches/1001",
+  "name": "Campbell Library",
+  "location": {
+    "@type": "PostalAddress",
+    "streetAddress": "77 Harrison Ave",
+    "addressLocality": "Campbell",
+    "addressRegion": "CA",
+    "postalCode": "95008",
+    "addressCountry": "US"
+  }
+}
+Ejemplo de location de Japón:
+
+
+{
+  "@type": "Library",
+  "@id": "https://example.com/library-branches/1003",
+  "name": "Tokyo Metropolitan Central Library",
+  "location": {
+    "@type": "PostalAddress",
+    "streetAddress": "７-13-5 Minamiazabu, Minato City",
+    "addressLocality": "Tokyo",
+    "postalCode": "106-0047",
+    "addressCountry": "JP"
+  }
+}
+location.@type	Text
+Su valor debe ser PostalAddress.
+
+location.addressCountry	Text
+Indica el código de país con el formato ISO 3166-1. Por ejemplo, US.
+
+location.addressLocality	Text
+Indica el municipio. Por ejemplo, Mountain View.
+
+location.addressRegion	Text
+Especifica la región. Por ejemplo, CA.
+
+location.postalCode	Text
+Indica el código postal. Por ejemplo, 94043.
+
+location.streetAddress	Text
+Especifica la dirección postal. Por ejemplo, 1600 Amphitheatre Pkwy.
+
+name	Text
+Indica el nombre de la biblioteca miembro.
+
+Ejemplo de un feed LibrarySystem en formato de archivo JSON
+
+{
+   "@context": "https://schema.org",
+   "@type":"LibrarySystem",
+   "@id":"https://example.com/library-systems/100",
+   "name":"Santa Clara County Library District",
+   "additionalProperty":[
+      {
+         "@type":"PropertyValue",
+         "name":"librarytype",
+         "value":"public"
+      }
+   ],
+   "member":[
+      {
+         "@type":"Library",
+         "@id":"https://example.com/library-branches/1001",
+         "name":"Campbell Library",
+         "location":{
+            "@type":"PostalAddress",
+            "streetAddress":"77 Harrison Ave",
+            "addressLocality":"Campbell",
+            "addressRegion":"CA",
+            "postalCode":"95008",
+            "addressCountry":"US"
+         }
+      },
+      {
+         "@type":"Library",
+         "@id":"https://example.com/library-branches/1002",
+         "name":"Gilroy Library",
+         "location":{
+            "@type":"PostalAddress",
+            "streetAddress":"350 W 6th St",
+            "addressLocality":"Gilroy",
+            "addressRegion":"CA",
+            "postalCode":"95020",
+            "addressCountry":"US"
+         }
+      }
+   ]
+}
+Datos estructurados de ruta de exploración (BreadcrumbList)Ruta de exploración en los resultados de búsqueda
+Las rutas de exploración indican en qué posición dentro de la jerarquía de un sitio web se encuentra una página. También pueden ayudar a los usuarios a conocer la estructura de un sitio web y explorarlo de forma eficaz. Estas rutas pueden seguirse para ir pasando de un nivel a otro hasta llegar al nivel superior de un sitio.
+
+Disponibilidad de la función
+Esta función está disponible en ordenadores en todas las regiones y en todos los idiomas en los que se puede usar la Búsqueda de Google.
+
+Cómo añadir datos estructurados 
+Los datos estructurados son un formato estandarizado con el que se puede proporcionar información sobre una página y clasificar su contenido. Consulta cómo funcionan los datos estructurados si aún no te has familiarizado con ellos.
+
+A continuación se explica a grandes rasgos cómo crear, probar y publicar datos estructurados.
+
+Añade las propiedades obligatorias. Consulta más información sobre dónde insertar datos estructurados en una página en función del formato que estés utilizando.
+¿Usas un CMS? Quizá sea más fácil que uses un complemento que esté integrado en tu CMS.
+¿Usas JavaScript? Consulta cómo generar datos estructurados con JavaScript.
+Sigue las directrices.
+Valida tu código con la prueba de resultados enriquecidos y corrige los errores críticos. Te recomendamos que también corrijas los problemas no críticos que puedan marcarse en la herramienta, ya que pueden ayudar a mejorar la calidad de los datos estructurados (sin embargo, esto no es necesario para que se muestren los resultados enriquecidos).
+Crea varias páginas que incluyan tus datos estructurados y comprueba cómo las ve Google con la herramienta de inspección de URLs. Asegúrate de que Google pueda acceder a tu página y de que no esté bloqueada por un archivo robots.txt, por la etiqueta noindex ni por requisitos de inicio de sesión. Si la página se ve bien, puedes solicitar que Google vuelva a rastrear tus URLs.
+Nota: Da cierto margen de tiempo a Google para que vuelva a rastrear e indexar tus páginas. Recuerda que Google puede tardar varios días en encontrar y rastrear una página después de publicarse.
+Para que Google siempre tenga la versión actualizada de tus páginas, te recomendamos que envíes un sitemap. Puedes automatizar este envío con la API Sitemap de Search Console.
+Ejemplos
+La Búsqueda de Google utiliza etiquetas de rutas de exploración en el cuerpo de una página web para clasificar la información de una página en los resultados de búsqueda. A menudo, como se muestra en los siguientes casos de uso, las consultas de búsqueda mediante las cuales los usuarios pueden llegar a una página son muy diferentes. Aunque cada búsqueda puede devolver la misma página web, la ruta de exploración clasifica el contenido dentro del contexto de la consulta de la Búsqueda de Google. La página de los ganadores de un premio literario ficticio podría usar las siguientes rutas de exploración:
+
+Recorrido de ruta de exploración única
+Si solo hay una ruta de exploración que puede llevar a la página, la página podría especificar la siguiente ruta de exploración:
+
+Books › Science Fiction › Award Winners
+
+JSON-LD
+RDFa
+Microdatos
+HTML
+A continuación, se muestra un ejemplo en JSON-LD para admitir esa ruta de exploración:
+
+
+
+<html>
+  <head>
+    <title>Award Winners</title>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Books",
+        "item": "https://example.com/books"
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Science Fiction",
+        "item": "https://example.com/books/sciencefiction"
+      },{
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Award Winners"
+      }]
+    }
+    </script>
+  </head>
+  <body>
+  </body>
+</html>
+Recorridos de rutas de exploración múltiples
+Si hay varias formas de acceder a una página de tu sitio web, puedes proporcionar varias rutas de exploración que lleven a ella. A continuación se muestra una ruta de exploración que lleva a una página de libros galardonados:
+
+Books › Science Fiction › Award Winners
+
+A continuación se muestra otra ruta de exploración que lleva a la misma página:
+
+Literature › Award Winners
+
+JSON-LD
+RDFa
+Microdatos
+HTML
+A continuación se muestra un ejemplo de JSON-LD que admite varios recorridos de rutas de exploración:
+
+
+
+<html>
+  <head>
+    <title>Award Winners</title>
+    <script type="application/ld+json">
+    [{
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Books",
+        "item": "https://example.com/books"
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Science Fiction",
+        "item": "https://example.com/books/sciencefiction"
+      },{
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Award Winners"
+      }]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Literature",
+        "item": "https://example.com/literature"
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Award Winners"
+      }]
+    }]
+    </script>
+  </head>
+  <body>
+  </body>
+</html>
+Directrices
+Debes seguir estas directrices para poder aparecer con las rutas de exploración en la Búsqueda de Google.
+
+Advertencia: Si Google detecta que algunas etiquetas de tus páginas pueden estar utilizando técnicas que incumplen nuestras directrices sobre datos estructurados, puede que se lleve a cabo una acción manual en tu sitio.
+Directrices básicas de la Búsqueda
+Directrices de datos estructurados generales
+Recomendamos utilizar rutas de exploración que reflejen los caminos que suelen seguir los usuarios para llegar a una página web y no replicar la estructura de las URLs. No es necesario incluir una ruta de exploración ListItem para la ruta de nivel superior (el dominio o nombre de host de tu sitio) ni para la página en sí.
+
+Definiciones de tipos de datos estructurados
+Para especificar rutas de exploración, define un valor BreadcrumbList que contenga al menos dos ListItems. Debes incluir las propiedades obligatorias para que tu contenido se pueda mostrar con rutas de exploración.
+
+Las páginas que incluyen etiquetas de data-vocabulary.org ya no pueden aparecer en resultados enriquecidos de Google. Más información sobre la desactivación de data-vocabulary
+BreadcrumbList
+BreadcrumbList es el elemento que contiene todos los elementos de la lista. Puedes consultar la definición completa de BreadcrumbList en schema.org/BreadcrumbList. Las propiedades que admite Google son las siguientes:
+
+Propiedades obligatorias
+itemListElement	
+ListItem
+
+Matriz de rutas de exploración incluidas en un pedido específico. Especifica cada ruta de exploración con un valor ListItem. Por ejemplo:
+
+
+{
+"@context": "https://schema.org",
+"@type": "BreadcrumbList",
+  "itemListElement": [{
+    "@type": "ListItem",
+    "position": 1,
+    "name": "Books",
+    "item": "https://example.com/books"
+  },{
+    "@type": "ListItem",
+    "position": 2,
+    "name": "Authors",
+    "item": "https://example.com/books/authors"
+  },{
+    "@type": "ListItem",
+    "position": 3,
+    "name": "Ann Leckie",
+    "item": "https://example.com/books/authors/annleckie"
+  }]
+}
+ListItem
+ListItem contiene detalles sobre un elemento concreto de la lista. Puedes consultar la definición completa de ListItem en schema.org/ListItem. Las propiedades que admite Google son las siguientes:
+
+Propiedades obligatorias
+item	
+URL o un subtipo de Thing
+
+Indica la URL de la página web que representa la ruta de exploración. Hay dos formas de especificar item:
+
+URL: especifica la URL de la página. Por ejemplo:
+
+"item": "https://example.com/books"
+Thing: utiliza un ID para especificar la URL en función del formato de marcado que utilices:
+JSON-LD: utiliza @id para especificar la URL.
+Microdatos: puedes utilizar href o itemid para especificar la URL.
+RDFa puedes utilizar about, href o resource para especificar la URL.
+Si la ruta de exploración es el último elemento de la ruta de exploración, item no es obligatorio. Si no se incluye item para el último elemento, Google utiliza la URL de la página que lo contiene.
+
+name	
+Text
+
+Es el título de la ruta de exploración que ve el usuario. Si utilizas un Thing con un name en lugar de un URL para especificar item, entonces name no es obligatorio.
+
+position	
+Integer
+
+Indica la posición de la ruta de exploración en el recorrido de la ruta de exploración. La posición 1 significa el principio del recorrido.
+
+Monitorizar resultados enriquecidos con Search Console
+Search Console es una herramienta que te ayuda a monitorizar el rendimiento de tus páginas en la Búsqueda de Google. No hace falta que te registres en Search Console para que tu sitio web aparezca en los resultados de la Búsqueda de Google, pero, si lo haces, sabrás cómo lo ve Google y qué puedes hacer para mejorarlo. Te recomendamos que consultes Search Console en los siguientes casos:
+
+Después de implementar datos estructurados por primera vez
+Después de publicar plantillas nuevas o modificar el código
+Al hacer el análisis periódico del tráfico
+
+Después de implementar datos estructurados por primera vez 
+Una vez que Google haya indexado tus páginas, puedes comprobar si hay algún problema en el informe de estado de resultados enriquecidos correspondiente. Lo ideal es que haya un aumento en el número de elementos válidos y que no lo haya en el número de elementos no válidos. Si detectas problemas en tus datos estructurados, haz lo siguiente:
+
+Corrige los elementos no válidos.
+Inspecciona la URL en tiempo real para ver si el problema continúa.
+Solicita que se valide la corrección desde el informe de estado.
+Después de publicar plantillas nuevas o modificar el código 
+Cuando hagas cambios significativos en tu sitio web, observa si se incrementa la cantidad de elementos no válidos de datos estructurados.
+Si notas que hay más elementos no válidos, quizá sea porque has implementado una plantilla que no funciona, o puede que tu sitio esté interactuando con la plantilla que utilizas de un modo diferente que no es adecuado.
+Si notas que hay menos elementos válidos, pero no hay un incremento de elementos no válidos, es posible que hayas dejado de insertar datos estructurados en tus páginas. Para saber cuál es la causa del problema, utiliza la herramienta de inspección de URLs.
+Al hacer el análisis periódico del tráfico 
+Consulta el informe de rendimiento para analizar el tráfico de tus páginas en la Búsqueda de Google. En él, verás con qué frecuencia aparece tu página como resultado enriquecido en la Búsqueda, cada cuánto hacen clic en ella los usuarios y cuál es la posición media que ocupa tu sitio web en los resultados de búsqueda. También puedes obtener automáticamente estos resultados con la API de Search Console.
+Solucionar problemas
+Si tienes problemas para implementar o depurar datos estructurados, a continuación se incluyen algunos recursos que pueden serte útiles.
+
+Si usas un sistema de gestión de contenido (CMS) o alguien se encarga de gestionar tu sitio, pídele ayuda. No olvides reenviarle cualquier mensaje de Search Console que incluya información sobre el problema en cuestión.
+Google no garantiza que las funciones que utilizan datos estructurados aparezcan en los resultados de búsqueda. Para ver una lista con motivos habituales por los que Google no muestra tu contenido en resultados enriquecidos, consulta las directrices generales de datos estructurados.
+Es posible que haya un error en tus datos estructurados. Consulta la lista de errores de datos estructurados y el informe de datos estructurados que no se pueden analizar.
+Si se ha aplicado una acción manual de datos estructurados a tu página, se ignorarán sus datos estructurados, aunque la página puede seguir apareciendo en los resultados de la Búsqueda de Google. Para solucionar problemas de datos estructurados, usa el informe "Acciones manuales".
+Revisa las directrices para comprobar si tu contenido no las cumple. El problema podría deberse a que la página incluye contenido engañoso o etiquetas con contenido fraudulento. No obstante, es posible que el problema no se deba a la sintaxis, por lo que la prueba de resultados enriquecidos no podrá ayudarte a identificarlo.
+Solucionar problemas si faltan resultados enriquecidos o si se ha reducido el número total de resultados enriquecidos.
+Da cierto margen a Google para que vuelva a rastrear e indexar tu página. Recuerda que Google puede tardar varios días en encontrar y rastrear una página después de publicarse. Consulta las preguntas frecuentes sobre el rastreo y la indexación de la Búsqueda de Google.
+Publica una pregunta en el foro del Centro de la Búsqueda de Google.

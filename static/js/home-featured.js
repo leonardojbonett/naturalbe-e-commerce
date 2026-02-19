@@ -2,7 +2,7 @@
   const CATALOG_URLS = ['/static/data/productos.json', './static/data/productos.json'];
   const PLACEHOLDER_IMAGE = '/static/img/placeholder.webp';
   const FEATURED_LIMIT = 8;
-  const BEST_SELLERS_LIMIT = 6;
+  const BEST_SELLERS_LIMIT = 8;
   const BEST_SELLERS_MIN_SIGNALS = 4;
   const BEST_SELLERS_HOME_PRIORITY_MIN = 3;
   const HOME_PRIORITY_BONUS = 50;
@@ -76,7 +76,7 @@
       if (String(link).startsWith('/')) return link;
     }
     const slug = product && product.slug;
-    if (slug) return `/producto/${encodeURIComponent(slug)}.html`;
+    if (slug) return `/producto/${encodeURIComponent(slug)}`;
     return '/category.html';
   };
 
@@ -417,9 +417,24 @@
       });
   };
 
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', init);
-  } else {
+  let hasStarted = false;
+  const startInit = () => {
+    if (hasStarted) return;
+    hasStarted = true;
     init();
+  };
+
+  const scheduleInit = () => {
+    const runIdle = window.requestIdleCallback || ((cb) => setTimeout(cb, 1200));
+    runIdle(startInit, { timeout: 2000 });
+    ['scroll', 'pointerdown', 'touchstart', 'keydown'].forEach((evt) => {
+      window.addEventListener(evt, startInit, { once: true, passive: true });
+    });
+  };
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', scheduleInit);
+  } else {
+    scheduleInit();
   }
 })();

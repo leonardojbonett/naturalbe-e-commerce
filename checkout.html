@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="robots" content="noindex, follow">
+  <title>Checkout seguro | Natural Be</title>
+  <meta name="description" content="Completa tus datos de envío y continúa tu pago seguro con Wompi en Natural Be.">
+  <link rel="canonical" href="https://naturalbe.com.co/checkout.html">
+  <style>
+    :root { color-scheme: light; }
+    html, body { margin: 0; padding: 0; }
+    body {
+      background:
+        radial-gradient(1200px 380px at 8% -12%, rgba(37, 99, 235, 0.16), transparent 62%),
+        radial-gradient(1100px 360px at 92% -20%, rgba(16, 185, 129, 0.14), transparent 62%),
+        #f3f4f6;
+      color: #0f172a;
+      font-family: "Segoe UI", Tahoma, Arial, sans-serif;
+      line-height: 1.45;
+    }
+    /* Checkout aislado: evita overlays globales (promo/header sticky) en esta ruta */
+    .promo-bar, #promoBar, .promo-banner { display: none !important; }
+    .checkout-shell { max-width: 980px; margin: 0 auto; padding: 1.6rem 1rem 3rem; }
+    .checkout-topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+      padding: 0.7rem 0.9rem;
+      border: 1px solid #dbe4ef;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.86);
+      backdrop-filter: blur(4px);
+      font-size: 0.9rem;
+      color: #1e293b;
+    }
+    .checkout-topbar strong { color: #0f172a; }
+    .checkout-topbar a {
+      color: #334155;
+      text-decoration: none;
+      font-weight: 600;
+      border: 1px solid #d1d5db;
+      border-radius: 999px;
+      padding: 0.35rem 0.7rem;
+      background: #fff;
+    }
+    .checkout-head {
+      margin-bottom: 1rem;
+      background: transparent !important;
+      position: static !important;
+      inset: auto !important;
+      width: auto !important;
+      z-index: auto !important;
+      box-shadow: none !important;
+      border: 0 !important;
+      padding: 0 !important;
+    }
+    .checkout-head h1 {
+      margin: 0;
+      color: #0f172a;
+      font-size: clamp(1.6rem, 2vw, 2.15rem);
+      letter-spacing: -0.02em;
+    }
+    .checkout-head p {
+      margin: 0.45rem 0 0;
+      color: #475569;
+      max-width: 64ch;
+    }
+    .checkout-note {
+      margin: 0.75rem 0 0;
+      color: #64748b;
+      font-size: 0.92rem;
+    }
+    .checkout-trust {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.9rem;
+    }
+    .checkout-trust span {
+      display: inline-flex;
+      align-items: center;
+      border: 1px solid #dbe4ef;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.9);
+      color: #334155;
+      padding: 0.32rem 0.65rem;
+      font-size: 0.82rem;
+      font-weight: 600;
+    }
+    .checkout-layout { display: grid; gap: 1rem; grid-template-columns: 1fr; }
+    @media (min-width: 960px) { .checkout-layout { grid-template-columns: 1.2fr 0.8fr; } }
+    .checkout-card {
+      background: rgba(255, 255, 255, 0.92);
+      border: 1px solid #e5e7eb;
+      border-radius: 16px;
+      padding: 1rem;
+      box-shadow: 0 12px 34px rgba(15, 23, 42, 0.07);
+      backdrop-filter: blur(3px);
+    }
+    .checkout-card h2 { margin-top: 0; color: #111827; }
+    .checkout-items { display: grid; gap: 0.75rem; }
+    .checkout-item { display: flex; justify-content: space-between; gap: 0.75rem; border-bottom: 1px dashed #e5e7eb; padding-bottom: 0.65rem; }
+    .checkout-item:last-child { border-bottom: none; padding-bottom: 0; }
+    .checkout-empty { color: #6b7280; }
+    .checkout-summary-row { display: flex; justify-content: space-between; margin-top: 0.5rem; color: #374151; }
+    .checkout-summary-row strong { color: #111827; }
+    .checkout-summary-row.total {
+      margin-top: 0.75rem;
+      padding-top: 0.65rem;
+      border-top: 1px solid #e5e7eb;
+    }
+    .checkout-summary-row.total strong {
+      font-size: 1.25rem;
+      color: #0f3c24;
+    }
+    .checkout-helper {
+      margin-top: 0.5rem;
+      color: #64748b;
+      font-size: 0.86rem;
+    }
+    .checkout-cta { margin-top: 1rem; }
+    .checkout-cta button { width: 100%; }
+    .btn-primary, .btn-ghost {
+      width: 100%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 10px;
+      padding: 0.85rem 1rem;
+      font-size: 1rem;
+      font-weight: 700;
+      text-decoration: none;
+      cursor: pointer;
+      border: 1px solid transparent;
+      box-sizing: border-box;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+      color: #fff;
+    }
+    .btn-primary:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+    .btn-ghost {
+      background: #fff;
+      border-color: #d1d5db;
+      color: #334155;
+    }
+    .wompi-form-wrap { padding: 0.2rem; }
+    .wompi-title {
+      margin: 0 0 0.2rem;
+      color: #0f172a;
+      font-size: 1.4rem;
+      letter-spacing: -0.01em;
+    }
+    .wompi-subtitle {
+      margin: 0 0 1rem;
+      color: #64748b;
+      font-size: 0.92rem;
+    }
+    .wompi-field { margin-bottom: 0.85rem; }
+    .wompi-label {
+      display: block;
+      margin-bottom: 0.35rem;
+      font-weight: 700;
+      color: #1f2937;
+      font-size: 0.92rem;
+    }
+    .wompi-input, .wompi-select, .wompi-textarea {
+      width: 100%;
+      padding: 0.72rem 0.78rem;
+      border: 1px solid #d4dbe5;
+      border-radius: 10px;
+      font-size: 0.96rem;
+      color: #0f172a;
+      background: #fff;
+      box-sizing: border-box;
+    }
+    .wompi-input:focus, .wompi-select:focus, .wompi-textarea:focus {
+      outline: none;
+      border-color: #6366f1;
+      box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+    }
+    .wompi-input[aria-invalid="true"],
+    .wompi-select[aria-invalid="true"],
+    .wompi-textarea[aria-invalid="true"] {
+      border-color: #dc2626;
+      box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.12);
+    }
+    .wompi-error {
+      margin: 0.34rem 0 0;
+      color: #b91c1c;
+      font-size: 0.82rem;
+      font-weight: 600;
+      line-height: 1.35;
+    }
+    .wompi-textarea { resize: vertical; min-height: 78px; }
+    .wompi-summary-box {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 0.85rem;
+      margin: 0.85rem 0 1rem;
+    }
+    .wompi-summary-row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 0.45rem;
+      font-size: 0.95rem;
+    }
+    .wompi-summary-row:last-child { margin-bottom: 0; }
+    .wompi-summary-row.total {
+      border-top: 1px solid #e2e8f0;
+      padding-top: 0.5rem;
+      margin-top: 0.5rem;
+      font-weight: 800;
+    }
+    .wompi-muted {
+      margin: 0.55rem 0 0;
+      color: #64748b;
+      font-size: 0.84rem;
+    }
+    .wompi-actions { display: grid; gap: 0.55rem; }
+    .wompi-primary-btn, .wompi-secondary-btn {
+      width: 100%;
+      border-radius: 10px;
+      border: 1px solid transparent;
+      font-weight: 700;
+      cursor: pointer;
+      font-size: 1rem;
+      padding: 0.82rem 0.95rem;
+    }
+    .wompi-primary-btn {
+      background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+      color: #fff;
+    }
+    .wompi-secondary-btn {
+      background: #fff;
+      border-color: #d1d5db;
+      color: #334155;
+    }
+    @media (max-width: 640px) {
+      .checkout-topbar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+    @media (max-width: 390px) {
+      .checkout-shell { padding: 1rem 0.72rem 2.2rem; }
+      .checkout-topbar { padding: 0.58rem 0.66rem; font-size: 0.82rem; }
+      .checkout-topbar a { padding: 0.3rem 0.56rem; }
+      .checkout-head h1 { font-size: 1.4rem; }
+      .checkout-head p { font-size: 0.92rem; }
+      .checkout-trust { gap: 0.4rem; }
+      .checkout-trust span { font-size: 0.74rem; padding: 0.26rem 0.5rem; }
+      .checkout-card { padding: 0.75rem; border-radius: 13px; }
+      .checkout-card h2 { font-size: 1.05rem; margin-bottom: 0.6rem; }
+      .checkout-summary-row { font-size: 0.9rem; }
+      .checkout-summary-row.total strong { font-size: 1.1rem; }
+      .btn-primary, .btn-ghost { font-size: 0.95rem; padding: 0.72rem 0.8rem; }
+      .wompi-title { font-size: 1.22rem; }
+      .wompi-input, .wompi-select, .wompi-textarea { font-size: 0.92rem; padding: 0.66rem 0.68rem; }
+      .wompi-primary-btn, .wompi-secondary-btn { font-size: 0.95rem; padding: 0.74rem 0.8rem; }
+    }
+  </style>
+</head>
+<body>
+  <main class="checkout-shell">
+    <div class="checkout-topbar">
+      <strong>Natural Be Checkout</strong>
+      <a href="/categoria/suplementos">Volver al catálogo</a>
+    </div>
+    <header class="checkout-head">
+      <h1>Checkout seguro</h1>
+      <p>Estás a un paso de finalizar tu compra. Completa tus datos y paga de forma segura con Wompi.</p>
+      <div class="checkout-trust" aria-label="Beneficios del checkout">
+        <span>Pago seguro con Wompi</span>
+        <span>Entrega 24-48h</span>
+        <span>Soporte por WhatsApp</span>
+      </div>
+      <p class="checkout-note">No guardamos datos de tarjeta en este sitio. El pago se procesa en la pasarela oficial.</p>
+    </header>
+
+    <section class="checkout-layout">
+      <article class="checkout-card">
+        <h2>Datos de envío y pago</h2>
+        <div id="cartBody" aria-live="polite">
+          <p>Cargando formulario de pago...</p>
+        </div>
+      </article>
+
+      <aside class="checkout-card">
+        <h2>Resumen del pedido</h2>
+        <div id="checkoutItems" class="checkout-items"></div>
+        <div class="checkout-summary-row">
+          <span>Subtotal</span>
+          <strong id="checkoutSubtotal">$0</strong>
+        </div>
+        <div class="checkout-summary-row">
+          <span>Envío</span>
+          <strong>$15.000 o gratis desde $100.000</strong>
+        </div>
+        <div class="checkout-summary-row total">
+          <span>Total estimado</span>
+          <strong id="checkoutTotal">$0</strong>
+        </div>
+        <p class="checkout-helper">Al continuar aceptas los términos de pago y envío de Natural Be.</p>
+        <div class="checkout-cta">
+          <button id="wompiCheckoutBtn" class="btn-primary" type="button">Continuar a Wompi</button>
+        </div>
+        <div class="checkout-cta">
+          <a class="btn-ghost" href="/categoria/suplementos">Seguir comprando</a>
+        </div>
+      </aside>
+    </section>
+  </main>
+
+  <script>
+    // Runtime de carrito minimo para checkout dedicado (sin modal).
+    (function initCheckoutRuntime() {
+      const STORAGE_KEY = 'naturalbe_cart';
+
+      function safeParseCart() {
+        try {
+          const raw = localStorage.getItem(STORAGE_KEY) || '[]';
+          const parsed = JSON.parse(raw);
+          return Array.isArray(parsed) ? parsed : [];
+        } catch (_) {
+          return [];
+        }
+      }
+
+      function saveCart(nextCart) {
+        try {
+          localStorage.setItem(STORAGE_KEY, JSON.stringify(nextCart));
+        } catch (_) {
+          // noop
+        }
+      }
+
+      function formatCOP(value) {
+        return `$${Number(value || 0).toLocaleString('es-CO')}`;
+      }
+
+      var cart = safeParseCart();
+      window.cart = cart;
+      window.getCartTotal = function getCartTotal() {
+        return cart.reduce((sum, item) => sum + Number(item.price || 0) * Number(item.quantity || 0), 0);
+      };
+      window.clearCartForce = function clearCartForce() {
+        cart = [];
+        window.cart = cart;
+        saveCart(cart);
+      };
+      window.clearCart = window.clearCartForce;
+      window.buildCartEcomItems = function buildCartEcomItems(items) {
+        return (Array.isArray(items) ? items : []).map((item) => ({
+          item_id: item.id,
+          item_name: item.name,
+          price: Number(item.price || 0),
+          quantity: Number(item.quantity || 1),
+          item_category: item.category || null
+        }));
+      };
+
+      function renderSummary() {
+        const itemsEl = document.getElementById('checkoutItems');
+        const subtotalEl = document.getElementById('checkoutSubtotal');
+        const totalEl = document.getElementById('checkoutTotal');
+        if (!itemsEl || !subtotalEl || !totalEl) return;
+
+        if (!cart.length) {
+          itemsEl.innerHTML = '<p class="checkout-empty">Tu carrito está vacío. Agrega productos para continuar.</p>';
+          subtotalEl.textContent = '$0';
+          totalEl.textContent = '$0';
+          const checkoutBtn = document.getElementById('wompiCheckoutBtn');
+          if (checkoutBtn) checkoutBtn.disabled = true;
+          return;
+        }
+
+        itemsEl.innerHTML = cart.map((item) => {
+          const name = String(item.name || 'Producto');
+          const qty = Number(item.quantity || 1);
+          const subtotal = Number(item.price || 0) * qty;
+          return `
+            <div class="checkout-item">
+              <span>${name} x${qty}</span>
+              <strong>${formatCOP(subtotal)}</strong>
+            </div>
+          `;
+        }).join('');
+
+        const subtotal = window.getCartTotal();
+        subtotalEl.textContent = formatCOP(subtotal);
+        totalEl.textContent = subtotal >= 100000 ? formatCOP(subtotal) : formatCOP(subtotal + 15000);
+      }
+
+      window.addEventListener('DOMContentLoaded', renderSummary);
+    })();
+  </script>
+
+  <script src="/static/js/wompi-config.js"></script>
+  <script src="/static/js/tracking.js?v=2026-02-16"></script>
+  <script src="/static/js/wompi-estatico-completo.min.js"></script>
+  <script>
+    (function initCheckoutPageWompi() {
+      const btn = document.getElementById('wompiCheckoutBtn');
+      if (btn) {
+        btn.addEventListener('click', function () {
+          if (typeof window.checkoutWompi === 'function') {
+            window.checkoutWompi();
+          }
+        });
+      }
+
+      if (window.cart && window.cart.length && typeof window.checkoutWompi === 'function') {
+        window.checkoutWompi();
+      }
+    })();
+  </script>
+</body>
+</html>

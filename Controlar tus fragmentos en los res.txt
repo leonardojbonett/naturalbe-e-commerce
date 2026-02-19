@@ -1,0 +1,473 @@
+Controlar tus fragmentos en los resultados de búsqueda
+Un fragmento es la descripción o el resumen que se muestra en un resultado de búsqueda de la Búsqueda de Google y de otras propiedades (como Google News). Google utiliza principalmente el contenido de las páginas para determinar automáticamente cuál es el fragmento adecuado. También es posible que utilicemos la información descriptiva del elemento de metadescripción en el caso de que describa la página mejor que otras partes del contenido.
+
+Consigue todo lo que necesitas para coser tu próxima prenda. Abierto de lunes a viernes, de 8:00 a 17:00, en el Distrito de la moda.
+
+Aunque no podemos cambiar manualmente fragmentos de sitios concretos, buscamos que sean lo más pertinentes posible. Si quieres ayudarnos a mejorar la calidad de los fragmentos de tus páginas, sigue las prácticas recomendadas para crear metadescripciones de calidad.
+
+Cómo se crean fragmentos
+Los fragmentos se crean automáticamente a partir del contenido de las páginas. Están diseñados para destacar y mostrar una vista previa del contenido que está más relacionado con la búsqueda específica que ha hecho el usuario. Por tanto, es posible que la Búsqueda de Google muestre diferentes fragmentos de una misma página en búsquedas distintas.
+
+Los fragmentos se crean principalmente a partir del contenido de la página. Sin embargo, a veces utilizamos el elemento HTML de metadescripción para ofrecer a los usuarios una descripción más precisa de la página que el contenido extraído directamente de ella.
+
+Cómo evitar que se muestren fragmentos o ajustar su longitud
+Puedes evitar que se creen y se muestren fragmentos de tu sitio en los resultados de búsqueda. También puedes informarnos sobre la longitud máxima que quieres que tengan tus fragmentos. Para evitar que Google muestre un fragmento de tu página en los resultados de búsqueda, usa la etiqueta meta nosnippet. Si prefieres indicar la longitud máxima de los fragmentos, usa la etiqueta meta max-snippet:[number]. También puedes impedir que se muestren determinadas partes de la página en un fragmento mediante el atributo data-nosnippet.
+
+Prácticas recomendadas para crear metadescripciones de calidad
+En algunas ocasiones, Google genera fragmentos en los resultados de búsqueda a partir de la etiqueta <meta name="description"> si considera que ofrece a los usuarios una descripción más precisa que la que consigue si se basa únicamente en el contenido de la página. Por lo general, las etiquetas de metadescripción incluyen un breve resumen con información pertinente sobre el contenido de una página y sirven para informar a los usuarios y despertar su interés. Tratan de convencer a los usuarios de que esa página es exactamente lo que buscan. Las metadescripciones no tienen ningún límite de longitud, pero hay que tener en cuenta que los fragmentos de los resultados de la Búsqueda de Google suelen cortarse, normalmente para ajustarse a la anchura de los dispositivos.
+
+Si utilizas un CMS, como Wix, WordPress o Blogger, es posible que no puedas editar tu HTML directamente o que prefieras no hacerlo. Seguramente tu CMS tenga una página de configuración de buscador o algún otro mecanismo para informar a los buscadores sobre las etiquetas meta.
+
+Si quieres añadir una etiqueta meta a tu sitio web, busca instrucciones sobre cómo modificar el elemento <head> de la página en tu CMS (por ejemplo, busca "añadir etiquetas meta wix").
+
+Crea metadescripciones únicas de cada página de tu sitio
+Utilizar descripciones idénticas o similares en todas las páginas de un sitio no resulta útil cuando aparecen páginas concretas en los resultados de búsqueda. Si es posible, crea descripciones que se ajusten con precisión a cada página. Usa descripciones a nivel de sitio en la página principal o en otras páginas generales, y descripciones a nivel de página en todas las demás. Si no tienes tiempo para crear una descripción para cada página, prioriza el contenido: crea por lo menos una descripción de las URLs más importantes, como la página principal y las páginas más visitadas.
+
+Incluye información relevante sobre el contenido de la descripción
+No es necesario incluir únicamente frases en las metadescripciones, también puedes añadir información sobre la página. Por ejemplo, en noticias o entradas de blog, puedes indicar su autor, la fecha de publicación o información de la firma. Esto ofrece a los posibles lectores información muy pertinente que, de lo contrario, no aparecería en el fragmento. De igual modo, las páginas de un producto pueden incluir información clave, como el precio, la antigüedad o el fabricante, distribuida por una página. Una buena metadescripción puede reunir todos estos datos.
+
+Por ejemplo, la siguiente metadescripción ofrece información detallada sobre un libro y esta información está claramente etiquetada y separada:
+
+<meta name="description" content="Escrito por A.N. Autor, Ilustrado por V. Gogh, Precio: 17,99 USD, Longitud: 784 páginas">
+Genera descripciones automáticamente
+En algunos sitios, como los de noticias, es muy sencillo generar una descripción única y precisa de cada página. Dado que todos los artículos se redactan, incluir una frase para describirlos requiere un esfuerzo mínimo. En los sitios que tienen bases de datos de mayor envergadura, como los agregadores de productos, redactar descripciones para todo puede resultar imposible. En este caso, usar descripciones automáticas puede que sea un método adecuado e incluso recomendado. Para que sean de buen calidad, las descripciones deben ser variadas y legibles para el ser humano. La generación de descripciones automáticas puede ser útil para incluir datos a nivel de página.
+
+Ten en cuenta que las metadescripciones formadas por una larga cadena de palabras clave no dan a los usuarios una idea clara del contenido de la página y tienen menos posibilidades de aparecer como un fragmento.
+
+Utiliza descripciones de calidad
+Por último, asegúrate de que tus descripciones son realmente útiles. Como las metadescripciones no aparecen en las páginas que ve el usuario, es muy fácil que este contenido se pierda. No obstante, las descripciones de gran calidad pueden aparecer en los resultados de búsqueda de Google, lo que contribuye a mejorar la calidad y la cantidad del tráfico que procede de búsquedas.
+
+A continuación, tienes algunos ejemplos de cómo mejorar una metadescripción:
+
+Metadescripción inadecuada (lista de palabras clave):
+
+<meta name="description" content="Materiales de costura, hilo, lápices de colores, máquinas de coser, hilos, bobinas, agujas">
+Metadescripción adecuada (explica qué vende la tienda y ofrece información, como el horario de apertura y la ubicación):
+
+<meta name="description" content="Consigue todo lo que necesitas para coser tu próxima prenda. Abierto de lunes a viernes, de 8:00 a 17:00, en el Distrito de la moda.">
+Metadescripción inadecuada (usa la misma descripción en todos los artículos de noticias):
+
+<meta name="description" content="Noticias locales en Whoville, enviadas a domicilio. Descubre qué ha pasado hoy.">
+Metadescripción adecuada (usa un fragmento del artículo de noticias específico):
+
+<meta name="description" content="En la pequeña ciudad de Whoville, un anciano local ha alterado a los habitantes por haber robado todos sus regalos la noche antes de un evento importante. No te pierdas las novedades en directo sobre este acontecimiento.">
+Metadescripción inadecuada (no se resume la página):
+
+<meta name="description" content="A todos nos encantan los huevos. Cuando era joven, recuerdo recoger los huevos de las gallinas y llevarlos a la cocina. Qué tiempos aquellos.">
+Metadescripción adecuada (resume la página completa):
+
+<meta name="description" content="Con esta guía completa, aprende a cocinar huevos en 1 hora o menos. Explicamos todos los métodos: fritos, cocidos y poché.">
+Metadescripción inadecuada (demasiado corta):
+
+<meta name="description" content="Lápiz mecánico">
+Metadescripción adecuada (específica y detallada):
+
+<meta name="description" content="Lápiz mecánico que se afina solo y corrige automáticamente la escritura. Incluye minas 2B de recarga automática. Disponible en rosa y amarillo. Pide más de 50 lápices y disfruta de envío gratuito.">
+Introducción al marcado de datos estructurados en la Búsqueda de Google
+
+La Búsqueda de Google hace todo lo posible por entender el contenido de las páginas. Puedes ayudar en este proceso incluyendo pistas explícitas sobre el significado de tus páginas mediante datos estructurados, que son un formato estandarizado con el que proporcionar información sobre páginas y clasificar su contenido. Por ejemplo, en una página de recetas, podrías marcar con datos estructurados los ingredientes, el tiempo y la temperatura de cocción, o las calorías, entre otros detalles.
+
+Ventajas de añadir datos estructurados a una página
+Si añades datos estructurados, puedes conseguir que los resultados de búsqueda sean más atractivos para los usuarios (lo que se conoce como "resultados enriquecidos") y que estos interactúen más con tu sitio web. A continuación, puedes ver algunos casos de éxito de datos estructurados en sitios web:
+
+Rotten Tomatoes añadió datos estructurados a 100.000 páginas únicas y, en estas páginas mejoradas con datos estructurados, se consiguió un porcentaje de clics un 25 % mayor que el de las páginas sin datos estructurados.
+Food Network ha habilitado las funciones de búsqueda en el 80 % de sus páginas y sus visitas han aumentado un 35 %.
+Rakuten concluyó que el tiempo que los usuarios pasan en páginas con datos estructurados implementados supera en un 50 % el de las páginas sin datos estructurados, y que la tasa de interacción en páginas AMP con estas funciones es un 260 % mayor que en las páginas de este tipo que no cuentan con dichas funciones.
+En las mediciones de Nestlé, las páginas que se muestran en las búsquedas con resultados enriquecidos tienen un porcentaje de clics un 82 % mayor que el de las páginas sin resultados enriquecidos.
+Consulta más casos de éxito de sitios que han implementado datos estructurados.
+Cómo funcionan los datos estructurados en la Búsqueda de Google
+Google utiliza los datos estructurados que encuentra en la Web para interpretar el contenido de tus páginas, así como para obtener información sobre la propia Web y el mundo en general, como información sobre personas, libros o empresas, que se incluyen en las etiquetas. Por ejemplo, cuando una página de recetas incluye datos estructurados en JSON-LD (que describen el título de la receta, el autor y otros detalles), la Búsqueda de Google puede usar esa información para mostrar un resultado enriquecido de la receta:
+
+Cómo pueden influir los datos estructurados de una página web de recetas en un resultado enriquecido en la Búsqueda de Google
+Como los datos estructurados etiquetan cada uno de los elementos de tu receta, los usuarios pueden buscarla por ingrediente, cantidad de calorías o tiempo de preparación, entre otros datos.
+
+Si usas un sistema de gestión de contenido (CMS), como Wix, WordPress o Shopify, es probable que no puedas editar tu código HTML directamente. En vez de eso, el CMS puede tener una página de configuración de buscador, o puedes instalar un complemento que te permita especificar datos estructurados. Busca instrucciones sobre cómo añadir datos estructurados a tu CMS (por ejemplo, busca "datos estructurados de Wix" o "complemento de datos estructurados de WordPress").
+
+Para usar datos estructurados, debes incluir etiquetas en la página que contenga la información que quieras marcar. Los datos estructurados sirven para describir el contenido de las páginas. No crees páginas en blanco o vacías solo para incluir datos estructurados, ni marques con esos datos información que los usuarios no puedan ver, aunque la información sea correcta. Para ver más pautas técnicas y de calidad, consulta las directrices generales de datos estructurados.
+
+La prueba de resultados enriquecidos es una herramienta útil e intuitiva con la que podrás validar tus datos estructurados y, en algunos casos, previsualizar funciones en la Búsqueda de Google. Pruébala:
+
+Vocabulario y formato de datos estructurados
+En esta documentación se indican las propiedades de datos estructurados que son obligatorias, las que se recomiendan y las opcionales que tienen un significado especial en la Búsqueda de Google. Aunque la mayoría de los datos estructurados de la Búsqueda utilizan la sintaxis de schema.org, es mejor que consultes la documentación del Centro de la Búsqueda de Google para saber con certeza cómo se comportará la Búsqueda de Google, en vez de basarte en la documentación de schema.org. Hay más atributos y objetos en schema.org que la Búsqueda de Google no necesita, pero pueden ser útiles para otros buscadores, servicios, herramientas y plataformas.
+
+Las páginas que incluyen etiquetas de data-vocabulary.org ya no pueden aparecer en resultados enriquecidos de Google. Más información sobre la desactivación de data-vocabulary
+Asegúrate de probar tus datos estructurados con la prueba de resultados enriquecidos mientras los implementas. También deberías probarlos con los informes de estado de resultados enriquecidos una vez implementados para monitorizar la validez de tus páginas, puesto que quizá se produzcan problemas debido a errores con las plantillas o el servicio.
+
+Si quieres que un objeto concreto pueda aparecer en la Búsqueda de Google con una apariencia mejorada, recuerda incluir todas las propiedades obligatorias. Por lo general, cuantas más propiedades recomendadas incluyas, más probabilidades hay de que tu información aparezca en los resultados de la Búsqueda como resultado enriquecido. No obstante, es mejor añadir pocas propiedades recomendadas, pero que estén completas y sean precisas, que tratar de incluir todas las propiedades recomendadas posibles, pero con datos incompletos, inexactos o con formato incorrecto.
+
+Además de las propiedades y los objetos que se incluyen en esta documentación, Google puede hacer un uso general de la propiedad sameAs y otros datos estructurados de schema.org. Si se consideran útiles, es posible que algunos de estos elementos se utilicen más adelante para habilitar otras funciones de la Búsqueda.
+
+Formatos admitidos 
+A menos que se indique lo contrario, la Búsqueda de Google admite datos estructurados en los siguientes formatos: En general, te recomendamos que uses el formato que te resulte más sencillo de implementar y mantener (en la mayoría de los casos, es JSON-LD). Para Google, los 3 formatos son igual de válidos, siempre que las etiquetas sean válidas y se implementen correctamente según la documentación de la función.
+
+Formatos
+JSON-LD* (opción recomendada)	Notación de JavaScript insertada en una etiqueta <script> situada en los elementos <head> y <body> de una página HTML. Las etiquetas no se intercalan con el texto que pueden ver los usuarios, por lo que es más fácil expresar elementos de datos anidados, como Country de PostalAddress de MusicVenue de Event. Además, Google puede leer los datos de JSON-LD que se insertan dinámicamente en el contenido de las páginas, por ejemplo, mediante código JavaScript o widgets insertados de un sistema de gestión de contenido.
+Microdatos	Especificación HTML de comunidad abierta con la que se pueden anidar datos estructurados dentro de contenido HTML. Al igual que en el formato RDFa, las propiedades que se quieren exponer como datos estructurados deben marcarse con atributos de etiquetas HTML. Suele usarse en el elemento <body>, pero se puede usar también en <head>.
+RDFa	Extensión HTML5 que admite datos vinculados mediante atributos de etiquetas HTML que corresponden al contenido que los usuarios pueden ver y que quieres describir para los motores de búsqueda. Por lo general, este formato se usa tanto en la sección <head> como en <body> de las páginas HTML.
+En general, Google recomienda usar JSON-LD para los datos estructurados si la configuración del sitio lo permite, ya que es la solución más sencilla de implementar y mantener a escala para los propietarios de sitios web (es decir, menos propensa a tener errores de usuario).
+Directrices de datos estructurados
+Sigue las directrices generales de datos estructurados, así como las directrices específicas del tipo de datos estructurados que uses, porque, de no hacerlo, es posible que tu contenido no se muestre como resultado enriquecido de la Búsqueda de Google.
+
+Empezar a utilizar datos estructurados
+Si es la primera vez que usas datos estructurados, consulta la guía para principiantes sobre cómo funcionan los datos estructurados de schema.org. Aunque la guía se centra en los microdatos, las ideas básicas se pueden aplicar a JSON-LD y RDFa.
+
+Una vez que sepas cómo funcionan los datos estructurados, consulta la lista de funciones de datos estructurados de la Búsqueda de Google y elige la que quieras implementar. En esta guía se explica en detalle cómo implementar los datos estructurados para que tu sitio pueda aparecer como resultados enriquecidos en la Búsqueda de Google.
+
+Elegir una función
+
+Medir el efecto de los datos estructurados
+Para saber si vale la pena el tiempo que le estás dedicando, es buena idea comparar el rendimiento de tus páginas que tienen datos estructurados con el de aquellas que no los tienen. La mejor manera de hacerlo es probando algunas páginas de tu sitio antes y después de incluir estas funciones. Este proceso puede no ser siempre representativo, ya que las vistas de una misma página pueden variar por muchos motivos.
+
+Elige páginas de tu sitio en las que no se usen datos estructurados y consulta en Search Console sus datos de varios meses. Debes seleccionar páginas que no tengan picos de rendimiento en épocas concretas del año o por eventos concretos, es decir, que tengan un número de vistas constante, pero también deben tener las suficientes visitas como para que haya datos significativos.
+Añade datos estructurados u otras funciones a tus páginas y confirma que tus etiquetas son válidas y que Google ha detectado los datos estructurados de tu página con la herramienta de inspección de URLs.
+Registra los datos de rendimiento de varios meses en el informe de rendimiento y filtra por URL para compararlos.
+Directrices generales sobre datos estructurados
+Para poder aparecer como resultados enriquecidos en la Búsqueda de Google, los datos estructurados no deben infringir las políticas de contenido de la Búsqueda de Google, que incluyen nuestras políticas de spam. Además, en esta página se detallan las directrices generales que se aplican a todos los datos estructurados, y que se deben seguir para que un contenido pueda aparecer como resultado enriquecido en la Búsqueda de Google.
+
+Si en tu página hay un problema de datos estructurados, se te puede aplicar una acción manual. Cuando se aplican acciones manuales de datos estructurados, las páginas no pueden aparecer como resultados enriquecidos, pero eso no afecta a su posicionamiento en la Búsqueda web de Google. Puedes comprobar si se ha aplicado una acción manual a alguna de tus páginas en el informe "Acciones manuales" de Search Console.
+
+Importante: Google no garantiza que tus datos estructurados vayan a aparecer en los resultados de búsqueda, aunque los hayas marcado correctamente según la prueba de resultados enriquecidos. A continuación se indican algunos de los motivos más habituales:
+
+Usar datos estructurados permite que una función esté disponible, pero no garantiza que vaya a aparecer. El algoritmo de Google adapta los resultados de búsqueda para crear lo que cree que es la mejor experiencia de búsqueda para los usuarios, y para hacerlo tiene en cuenta muchas variables, incluidos el historial de búsqueda, la ubicación y el tipo de dispositivo. En algunos casos, puede determinar que una función es más adecuada que otra, o incluso que lo mejor es un resultado de texto.
+Los datos estructurados no representan el contenido principal de la página o pueden ser engañosos.
+Los datos estructurados tienen un problema que la prueba de resultados enriquecidos no ha podido detectar.
+El contenido al que hacen referencia los datos estructurados está oculto y los usuarios no lo pueden ver.
+La página no cumple las directrices de datos estructurados que se describen en esta página, las directrices de una función de datos estructurados concreta, las Directrices básicas de la Búsqueda o lasPolíticas de contenido de la Búsqueda de Google.
+Directrices técnicas
+Puedes comprobar si cumples las directrices técnicas con la prueba de resultados enriquecidos y la herramienta de inspección de URLs, que detectan la mayoría de los errores técnicos.
+
+Formato
+Para que tu contenido pueda aparecer en resultados enriquecidos, marca las páginas de tu sitio con uno de los tres formatos que se admiten:
+
+JSON-LD (opción recomendada)
+Microdatos
+RDFa
+Acceso
+No impidas que el robot de Google acceda a tus páginas con datos estructurados mediante robots.txt, la etiqueta noindex u otro método de control de acceso.
+
+Directrices de calidad
+No es fácil comprobar si cumples estas directrices de calidad con una herramienta automatizada. Si infringes alguna directriz de calidad, es posible que tus datos estructurados no aparezcan en resultados enriquecidos de la Búsqueda de Google o que se marquen como spam, aunque su formato sea correcto.
+
+Contenido
+Sigue las políticas de spam de la Búsqueda web de Google.
+Proporciona información actualizada. No mostraremos resultados enriquecidos de contenido que se ha quedado obsoleto y ya no es relevante.
+Ofrece contenido original que hayáis generado tus usuarios o tú.
+No marques contenido que no puedan ver los lectores de la página. Por ejemplo, si en el marcado JSON-LD se describe a un artista determinado, en el cuerpo del documento HTML hay que describir al mismo artista.
+No marques contenido irrelevante o engañoso, como reseñas falsas o contenido que no esté relacionado con el tema principal de una página.
+No utilices datos estructurados para engañar a los usuarios. No suplantes la identidad de otra persona u organización, ni tergiverses tu propiedad, afiliación o propósito principal.
+El contenido marcado con datos estructurados también debe seguir las directrices o políticas de contenido adicionales que se incluyen en las guías correspondientes. Por ejemplo, el contenido marcado con datos estructurados JobPosting debe cumplir las políticas de contenido de ofertas de empleo.
+Relevancia
+Los datos estructurados deben ser una representación fiel del contenido de las páginas en las que están. A continuación se muestran algunos ejemplos de datos que no son relevantes:
+
+Una plataforma de emisión de deportes en directo que etiqueta las retransmisiones como eventos locales.
+Un sitio web de carpintería que etiqueta instrucciones con marcado de recetas.
+Exhaustividad
+Indica todas las propiedades obligatorias que aparecen en la documentación correspondiente al tipo de resultado enriquecido en cuestión. Los elementos que no incluyen todas las propiedades obligatorias no pueden aparecer en resultados enriquecidos.
+Cuantas más propiedades recomendadas incluyas, mayor será la calidad del resultado para los usuarios. Por ejemplo, los usuarios prefieren que en las ofertas de empleo se indique claramente el salario, y valoran más las recetas que incluyen reseñas reales de usuarios y valoraciones por estrellas genuinas. Ten en cuenta que si hay reseñas o valoraciones que no proceden de usuarios reales, puede que se lleve a cabo una acción manual. Para posicionar los resultados enriquecidos, se tiene en cuenta la información adicional.
+Ubicación
+Coloca los datos estructurados en la página que describen, a menos que la documentación indique lo contrario.
+Si tienes páginas duplicadas con el mismo contenido, te recomendamos que añadas los mismos datos estructurados en todos esos duplicados, no solo en la página canónica.
+Especificidad
+Al marcar páginas, procura utilizar los nombres de propiedades y tipos más específicos posibles, de acuerdo con lo que se indica en schema.org.
+Sigue las directrices adicionales que se recogen en la documentación correspondiente al tipo de resultado enriquecido en cuestión.
+Imágenes
+Cuando incluyes una imagen como propiedad de datos estructurados, debes comprobar que la imagen esté estrechamente relacionada con la página en la que se encuentra. Por ejemplo, si defines la propiedad image de NewsArticle, la imagen debe ser pertinente a esa noticia.
+Todas las URLs de imágenes especificadas en los datos estructurados deben poderse rastrear e indexar. Si no, la Búsqueda de Google no podrá encontrarlas ni mostrarlas en la página de resultados de búsqueda. Comprueba que Google pueda acceder a tus URLs mediante la herramienta de inspección de URLs.
+Varios elementos en una página
+Cuando decimos que puede haber varios elementos en una misma página, nos referimos a elementos de diferentes tipos. Por ejemplo, en una página puede haber una receta, un vídeo que muestre cómo prepararla y una ruta de exploración que indique cómo llegar a esa receta. Toda esta información la pueden ver los usuarios y se puede marcar con datos estructurados, lo que hace que buscadores como la Búsqueda de Google entiendan mejor qué contenido ofrece esa página. Si incluyes más elementos pertinentes en una página, la Búsqueda de Google entenderá mejor de qué trata la página y podrá mostrarla en diferentes funciones de búsqueda.
+
+Resultado enriquecido de una receta en el que hay tanto un vídeo como reseñas
+La Búsqueda de Google es capaz de detectar varios elementos en una página, tanto si están anidados como si cada uno se indica por separado:
+
+Elementos anidados: hay un elemento principal que incluye varios elementos dentro de él. Es un método especialmente útil si van a agruparse elementos relacionados entre sí (por ejemplo, una receta con un vídeo y reseñas).
+Elementos independientes: cada elemento es un bloque distinto dentro de la misma página.
+Nota: Si hay elementos que son más útiles cuando están enlazados entre sí, utiliza @id en todos ellos para indicar que están relacionados. Por ejemplo, si tienes una receta y un vídeo en una página, incluye esa propiedad en ambos elementos para decirnos que el vídeo es sobre la receta. Si no los enlazas, es posible que la Búsqueda de Google no sepa que puede mostrar el vídeo como resultado enriquecido de recetas.
+En estos ejemplos faltan propiedades obligatorias y recomendadas de esas funciones porque se prioriza la brevedad. Para ver un ejemplo completo, consulta la documentación específica sobre esos tipos de datos estructurados concretos.
+
+Elementos anidados
+Elementos independientes
+A continuación, se muestra un ejemplo de datos estructurados anidados. El elemento principal es Recipe, mientras que aggregateRating y video están anidados dentro de Recipe.
+
+
+<html>
+  <head>
+    <title>How To Make Banana Bread</title>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org/",
+      "@type": "Recipe",
+      "name": "Banana Bread Recipe",
+      "description": "The best banana bread recipe you'll ever find! Learn how to use up all those extra bananas.",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": 4.7,
+        "ratingCount": 123
+      },
+      "video": {
+        "@type": "VideoObject",
+        "name": "How To Make Banana Bread",
+        "description": "This is how you make banana bread, in 5 easy steps.",
+        "contentUrl": "https://www.example.com/video123.mp4"
+       }
+    }
+    </script>
+  </head>
+  <body>
+  </body>
+</html>
+Consejos adicionales 
+Para asegurarte de que la Búsqueda de Google sepa cuál es el objetivo principal de una página, incluye en ella el tipo de datos estructurados del tema principal de la página. Por ejemplo, si el tema central de una página es una receta, incluye datos estructurados de recetas, además de los de vídeos y reseñas. De este modo, la página podrá aparecer en la Búsqueda de varias formas; por ejemplo, como resultado enriquecido de recetas, en la búsqueda de vídeos y como fragmento de reseña. Si la página solo tuviera datos estructurados de vídeo, la Búsqueda de Google no tendría suficiente información como para mostrarla como resultado enriquecido de recetas.
+Para que la página represente todo el contenido que pueden ver los usuarios, asegúrate de que todos los elementos de datos estructurados estén completos. Por ejemplo, si hay varias reseñas en una página, marca con datos estructurados todas las que puedan leer los usuarios en esa página. Si no lo haces, el resultado de búsqueda será engañoso, porque los usuarios esperan verlas todas en la Búsqueda.
+Resultados de búsqueda con enriquecimiento
+Además de los resultados enriquecidos estándar, la Búsqueda de Google admite ahora resultados enriquecidos más interactivos y mejorados, llamados resultados de búsqueda con enriquecimiento. Con frecuencia, estos resultados incluyen elementos emergentes e inmersivos u otras funciones interactivas avanzadas. En la imagen se muestra un ejemplo de un resultado enriquecido de ofertas de trabajo que podría aparecer al buscar "empleos en Estados Unidos":
+
+Resultado de búsqueda con enriquecimiento sobre ofertas de trabajo
+La búsqueda enriquecida permite que el usuario busque en las propiedades de un elemento de datos estructurados. Así, por ejemplo, un usuario puede buscar recetas de sopa de pollo con menos de 200 calorías o que requieran menos de una hora de preparación.
+
+Implementar la búsqueda enriquecida
+La búsqueda enriquecida es un subconjunto de resultados enriquecidos que se implementa con datos estructurados. Algunos tipos de resultados enriquecidos solo están disponibles en forma de resultados de búsqueda con enriquecimiento (como recetas, ofertas de trabajo y eventos); otros se pueden convertir en este tipo de resultados si se les añaden algunas propiedades. En la documentación de los diferentes tipos de resultado enriquecido se explica si pueden convertirse en un resultado con enriquecimiento y cómo hacerlo.
+
+Puedes obtener información técnica y consultar una galería de resultados aquí.
+
+La búsqueda enriquecida se basa en el algoritmo de posicionamiento de la Búsqueda de Google. En consecuencia, además de incluir los datos estructurados adecuados en tus páginas, debes seguir las directrices de calidad que se indican a continuación para que Google pueda indexar y posicionar tus páginas correctamente.
+
+Las directrices de calidad de los datos estructurados
+Las directrices básicas de la Búsqueda
+Las directrices de calidad de la búsqueda enriquecida
+Nota sobre el contenido duplicado de datos estructurados: es frecuente y comprensible que los datos estructurados se dupliquen en muchas páginas de un sitio. Por ejemplo, puedes publicar varias ofertas de un mismo empleo en diferentes ubicaciones. Esas ofertas cuentan con valores de descripción idénticos pero sus valores de ubicación son distintos. El algoritmo de búsqueda enriquecida tiene en cuenta estos factores, por lo que no se considera contenido duplicado.
+Tipos de búsqueda enriquecida
+Los tipos de búsqueda que admiten resultados de la búsqueda enriquecida son los siguientes:
+
+Empleos
+Receta
+Evento
+Directrices de calidad de la búsqueda enriquecida
+Debes cumplir estas políticas de spam para poder utilizar la búsqueda enriquecida. Si el algoritmo de posicionamiento de la búsqueda enriquecida decide que gran parte de un sitio no llega al listón de calidad requerido, puede excluirlo por completo de estos resultados.
+
+Propiedades obligatorias: cada tipo de búsqueda enriquecida tiene definido un conjunto de propiedades obligatorias. Si un elemento no cuenta con estas propiedades, no se incluirá en los resultados.
+Exhaustividad: cuantas más propiedades recomendadas indiques, mayor será la calidad del contenido que verán los usuarios. Por ejemplo, los usuarios prefieren que el salario se indique claramente en las ofertas de trabajo, un factor que el posicionamiento de la búsqueda enriquecida tiene en cuenta; también resulta valioso, tanto para los usuarios de tu sitio web como para la búsqueda enriquecida, que las recetas dispongan de comentarios de usuarios y valoraciones destacadas. Por este motivo, la exhaustividad de la información es uno de los factores de posicionamiento más importantes de la búsqueda enriquecida.
+Relevancia: los datos que marques tienen que ser adecuados para la búsqueda enriquecida de la que forman parte. A continuación, se muestran algunos ejemplos de datos que no son adecuados:
+Un sitio que transmite eventos deportivos en directo y etiqueta sus transmisiones como eventos locales.
+Un sitio de carpintería que etiqueta instrucciones como recetas.
+Contenido de productos: en la búsqueda enriquecida solo deben aparecer páginas de productos concretos, no páginas de categorías de productos. Las páginas de productos describen las propiedades de un elemento de manera detallada. En cambio, las páginas de categorías incluyen listas de enlaces a páginas de productos concretos. Estos son ejemplos de páginas de categorías:
+Una página que describe las "10 mejores recetas para cocinar pavo" con enlaces a todas las recetas.
+Una página que enumera todas las ofertas de trabajo de Mountain View, California, con enlaces a las ofertas concretas.
+Políticas de contenido: la búsqueda enriquecida tiene políticas adicionales en función del tipo de contenido, como se describe en su documentación. Es posible que los documentos o sitios que infrinjan estas políticas se vean perjudicados en su posicionamiento en los resultados de búsqueda o que se les excluya.
+Generar datos estructurados con JavaScript
+En los sitios web modernos se utiliza JavaScript para mostrar una gran cantidad de contenido dinámico. A la hora de generar datos estructurados con JavaScript en tus sitios web, debes tener en cuenta varias cuestiones. Lee esta guía para conocer las prácticas recomendadas y descubrir estrategias de implementación. Consulta cómo funcionan los datos estructurados si aún no te has familiarizado con ellos.
+
+Hay varias formas de generar datos estructurados con JavaScript, pero las más habituales son las siguientes:
+
+Google Tag Manager
+JavaScript personalizado
+¿Utilizas el marcado Product? Ten en cuenta que el marcado generado de forma dinámica puede hacer que los rastreos de Shopping sean menos frecuentes y menos fiables, lo que puede suponer un problema si el contenido cambia rápidamente (por ejemplo, si la disponibilidad o el precio de los productos varían con frecuencia). Si eres un comerciante que está optimizando todos los tipos de resultados de Shopping, asegúrate de que su servidor tenga suficientes recursos informáticos para gestionar el aumento del tráfico de Google.
+Generar archivos JSON-LD dinámicamente mediante Google Tag Manager
+Google Tag Manager es una plataforma que te permite gestionar etiquetas en tu sitio web sin tener que editar el código. Para generar datos estructurados con Google Tag Manager, sigue estos pasos:
+
+Configura e instala Google Tag Manager en tu sitio.
+Añade una nueva etiqueta del tipo HTML personalizado a un contenedor.
+Pega un bloque de datos estructurados admitidos en el contenido de la etiqueta.
+Instala el contenedor tal como se muestra en la sección Instalar Google Tag Manager del menú de administrador del contenedor.
+Para añadir la etiqueta a tu sitio web, publica el contenedor en la interfaz de Google Tag Manager.
+Prueba la implementación.
+Utilizar variables en Google Tag Manager
+Google Tag Manager admite variables para que en los datos estructurados se pueda usar información que haya en las páginas. Aprovecha las variables para extraer los datos estructurados de las páginas y evitar así duplicar información en Google Tag Manager. Si hay información duplicada en esta plataforma, aumenta el riesgo de que se produzcan discrepancias entre el contenido de las páginas y los datos estructurados que se hayan insertado mediante GTM.
+
+Por ejemplo, puedes generar dinámicamente un bloque JSON-LD de tipo receta que utilice el título de la página como nombre de la receta creando la siguiente variable personalizada, denominada recipe_name:
+
+
+function() { return document.title; }
+Tutor de código
+expand_more
+De este modo, puedes incluir la variable {{recipe_name}} en la etiqueta HTML personalizada.
+
+Te recomendamos que crees variables para recoger toda la información necesaria de las páginas.
+
+A continuación se muestra un ejemplo del contenido de una etiqueta HTML personalizada:
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "Recipe",
+    "name": "{{recipe_name}}",
+    "image": [ "{{recipe_image}}" ],
+    "author": {
+      "@type": "Person",
+      "name": "{{recipe_author}}"
+    }
+  }
+</script>
+Tutor de código
+expand_more
+Nota: En el ejemplo anterior se presupone que has definido las variables recipe_name, recipe_image y recipe_author en GTM.
+Generar datos estructurados con código JavaScript personalizado
+También puedes generar datos estructurados mediante JavaScript, ya sea utilizando este lenguaje para crearlos todos o para añadir más información a los datos estructurados que se renderizan del lado del servidor. En cualquier caso, la Búsqueda de Google puede entender y procesar los datos estructurados que están disponibles en el elemento DOM cuando renderiza las páginas. Consulta más información sobre cómo procesa la Búsqueda de Google el código JavaScript en la guía básica de JavaScript.
+
+A continuación se muestra un ejemplo de datos estructurados generados con JavaScript:
+
+Busca el tipo de datos estructurados que te interesa.
+Incluye en el código HTML de tu sitio web un fragmento de JavaScript como el del siguiente ejemplo. Para saber cómo hacerlo, consulta la documentación de tu sistema de gestión de contenido o de tu proveedor de alojamiento, o bien pregúntaselo a tus desarrolladores.
+
+fetch('https://api.example.com/recipes/123')
+.then(response => response.text())
+.then(structuredDataText => {
+  const script = document.createElement('script');
+  script.setAttribute('type', 'application/ld+json');
+  script.textContent = structuredDataText;
+  document.head.appendChild(script);
+});
+Tutor de código
+expand_more
+Prueba tu implementación con la prueba de resultados enriquecidos.
+Utilizar el renderizado del lado del servidor
+Si utilizas el renderizado del lado del servidor, también puedes incluir los datos estructurados en el contenido renderizado. Para saber cómo generar el archivo JSON-LD del tipo de datos estructurados que te interesa, consulta la documentación de tu framework.
+
+Probar la implementación
+Prueba la implementación para comprobar que la Búsqueda de Google pueda rastrear e indexar tus datos estructurados:
+
+Abre la Prueba de resultados enriquecidos.
+Introduce la URL que quieres probar.
+Te recomendamos que introduzcas la URL y no el código porque hay varias limitaciones de JavaScript al probar el código directamente, como restricciones CORS.
+Haz clic en Probar URL.
+Correcto: si has hecho todo correctamente y la herramienta admite el tipo de datos estructurados, aparecerá el mensaje "Esta página es apta para generar resultados enriquecidos".
+Si la prueba de resultados enriquecidos no admite el tipo de datos estructurados que pruebas, revisa el código HTML renderizado. Si este código incluye los datos estructurados, la Búsqueda de Google podrá procesarlo.
+
+Reintentar: si aparece algún error o alguna advertencia, lo más probable es que haya un error de sintaxis o falte una propiedad. Consulta la documentación del tipo de datos estructurados que utilices y comprueba que hayas añadido todas las propiedades. Si el problema continúa, consulta también la guía sobre cómo solucionar problemas de JavaScript relacionados con la Búsqueda.
+Marcado de datos estructurados compatible con la Búsqueda de Google
+Google utiliza datos estructurados para comprender el contenido de las páginas y mostrarlo de forma atractiva en los resultados de búsqueda, lo que se conoce como resultados enriquecidos. Si quieres que tu sitio aparezca como uno de estos resultados enriquecidos, consulta la guía para obtener información sobre cómo implementar datos estructurados en tu sitio. Si acabas de empezar, consulta el artículo Cómo funcionan los datos estructurados.
+
+Nota: Es posible que no coincidan con el aspecto que tendrán en los resultados de búsqueda. Puedes previsualizar la mayoría de las funciones con la prueba de resultados enriquecidos.
+Elige una categoría que describa tu sitio web
+Filtrar por...
+Funciones de datos estructurados
+Artículo
+
+Son artículos de noticias, deportes o blogs que aparecen en varias funciones de resultados enriquecidos, como el título del artículo e imágenes más grandes que las miniaturas.
+
+Empezar	ejemplo de artículo en los resultados de búsqueda
+Ruta de exploración
+
+Indica la posición de una página dentro de la jerarquía del sitio.
+
+Empezar	ejemplo de ruta de exploración en los resultados de búsqueda
+Carrusel
+
+Son resultados enriquecidos que se muestran en una lista secuencial o galería de un mismo sitio. Esta función debe usarse junto con una de estas otras funciones: recetas, listas de cursos, restaurantes o películas.
+
+Empezar	Ilustración de cómo puede aparecer un carrusel de host de recetas en la Búsqueda de Google. Muestra 3 recetas diferentes del mismo sitio web en formato de carrusel, de forma que los usuarios pueden consultar y seleccionar una receta específica.
+Lista de cursos
+
+Una lista de cursos educativos del mismo proveedor de cursos. Pueden incluir el título, el proveedor y una breve descripción.
+
+Empezar	resultado enriquecido de una lista de cursos en los resultados de búsqueda
+Conjunto de datos
+
+Son conjuntos grandes de datos que aparecen en Google Búsqueda de Datasets.
+
+Empezar	ejemplo de conjunto de datos en resultados de búsqueda
+Foro de debate
+
+Contenido generado por usuarios (suele ser de formato corto en comparación con Article), seguido de un debate sobre el tema en conversaciones o sin ellas.
+
+Empezar	Ilustración del resultado enriquecido de debates y foros
+Preguntas y respuestas educativas
+
+Preguntas y respuestas relacionadas con la educación que ayudan a los alumnos a descubrir tarjetas didácticas en la Búsqueda de Google.
+
+Empezar	Carrusel de preguntas y respuestas educativas en los resultados de búsqueda
+Puntuación total de la empresa
+
+Se trata de una evaluación generada a partir de la opinión de muchos usuarios sobre una organización de contratación que se muestra en la experiencia de búsqueda de empleos en Google.
+
+Empezar	ejemplo de calificación total del empleador en los resultados de búsqueda
+Evento
+
+Es un resultado enriquecido interactivo que muestra una lista de eventos organizados, como conciertos o festivales de arte, a los que se puede asistir a una hora y en un lugar determinados.
+
+Empezar	Cómo se ve la experiencia de eventos en la Búsqueda de Google
+Preguntas frecuentes
+
+Una página de preguntas frecuentes contiene una lista de preguntas y respuestas sobre un tema concreto.
+
+Empezar	ejemplo de preguntas frecuentes en los resultados de búsqueda
+Metadatos de imágenes
+
+Cuando especificas los metadatos de una imagen, Google Imágenes puede mostrar más detalles sobre ella, como quién la ha creado, cómo puede usarse e información de crédito.
+
+Empezar	Ejemplo de metadatos de imagen en Google Imágenes
+Oferta de empleo
+
+Se trata de un resultado enriquecido interactivo que permite que los usuarios encuentren empleo. La experiencia de búsqueda de empleos en Google puede contener tu logotipo, reseñas, valoraciones y detalles del empleo.
+
+Empezar	ejemplo de oferta de empleo en los resultados de búsqueda
+Empresa local
+
+Son detalles de una empresa que se muestran en el panel de información de Google, incluidos los horarios de apertura, las valoraciones, las indicaciones sobre cómo llegar y acciones para concertar citas o pedir artículos.
+
+Empezar	ejemplo de empresa local en los resultados de búsqueda
+Solucionador de problemas matemáticos
+
+Ayuda a alumnos, profesores y otros usuarios a resolver problemas matemáticos añadiendo datos estructurados que indiquen el tipo de problemas matemáticos que se solucionan y describan paso a paso cómo resolver problemas concretos.
+
+Empezar	solucionadores de problemas matemáticos en los resultados de búsqueda
+Película
+
+El carrusel de películas ayuda a los usuarios a buscar listas de películas en la Búsqueda de Google (por ejemplo, "mejores películas del 2023"). Puedes proporcionar información sobre las películas como el título, el director o imágenes de ellas.
+
+Empezar	Ilustración de cómo puede aparecer un resultado enriquecido de películas en la Búsqueda de Google. Muestra 3 películas diferentes del mismo sitio web en formato de carrusel, de forma que los usuarios pueden consultar y seleccionar una película específica.
+Organización
+
+Información sobre tu organización, como el logotipo, el nombre legal de la organización, la dirección, la información de contacto y los identificadores de empresa. Esta información puede mostrarse en paneles de información y en otros elementos visuales, como la atribución.
+
+Empezar	ejemplo de organización en los resultados de búsqueda
+Producto
+
+Es la información sobre un producto, como el precio, la disponibilidad y las calificaciones por reseñas.
+
+Empezar	ejemplo de producto en los resultados de búsqueda
+Página de perfil
+
+Página que se centra principalmente en la información sobre una sola persona u organización que, de alguna forma, está asociada al sitio web en general.
+
+Empezar	Ilustración del filtro Perspectivas en los resultados de búsqueda
+Preguntas y respuestas
+
+Son páginas web que contienen datos en formato de preguntas seguidas de sus respuestas.
+
+Empezar	ejemplo de página de preguntas y respuestas en los resultados de búsqueda
+Receta
+
+Son recetas que se muestran como un resultado enriquecido individual o como parte de un carrusel de host.
+
+Empezar	Ilustración de cómo puede aparecer un carrusel de host de recetas en la Búsqueda de Google. Muestra 3 recetas diferentes del mismo sitio web en formato de carrusel, de forma que los usuarios pueden consultar y seleccionar una receta específica.
+Fragmento de reseña
+
+Es un breve extracto de una reseña o valoración de un sitio web de reseñas; por lo general, es un promedio de las puntuaciones combinadas de varios autores de reseñas. Los fragmentos de reseñas pueden ser sobre libros, recetas, películas, productos, aplicaciones de software y empresas locales.
+
+Empezar	ejemplo de fragmento de reseña en los resultados de búsqueda
+Aplicación de software
+
+Es información sobre una aplicación de software, incluida su puntuación, una descripción y un enlace a la aplicación.
+
+Empezar	ejemplo de aplicación de software en los resultados de búsqueda
+Lectura en voz alta
+
+Permite que los buscadores y otras aplicaciones identifiquen contenido para leer en voz alta mediante conversión de texto a voz en dispositivos con el Asistente de Google integrado.
+
+Empezar	ejemplo de texto hablado que muestra una conversación con Google Home. Una persona pregunta a Google Home cuáles son las últimas noticias de la NASA. Google Home responde con una lista de tres artículos de noticias.
+Suscripción y contenido con muro de pago
+
+Indica el contenido con muro de pago que incluye tu sitio para ayudar a Google a diferenciar ese tipo de contenido de la práctica de encubrimiento, que infringe nuestras políticas de spam.
+
+Empezar	Un ejemplo de muro de pago del New York Times que muestra que un lector ha alcanzado el límite de artículos
+Alquiler vacacional
+
+Información sobre una propiedad vacacional, como el nombre, la descripción, las imágenes, la ubicación, la valoración y las reseñas.
+
+Empezar	Ilustración de un resultado enriquecido de alquiler vacacional
+Vídeo
+
+Es información de vídeo que aparece en los resultados de búsqueda, con opciones para reproducir el contenido, especificar segmentos de vídeo e indicar que se está emitiendo en directo.
+
+Empezar	ejemplo de vídeo en los resultados de búsqueda

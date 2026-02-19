@@ -71,7 +71,7 @@
     const description = product.descripcion_corta || product.description || "";
     
     // URLs optimizadas
-    const url = sanitizeUrl(product.url || (product.slug ? `/product.html?slug=${encodeURIComponent(product.slug)}` : `/product.html`));
+    const url = sanitizeUrl(product.url || (product.slug ? `/producto/${encodeURIComponent(product.slug)}` : `/product.html`));
     const safeName = escapeHtml(product.nombre || product.name || "");
     const safeDesc = escapeHtml(description || "");
     const safeUrl = escapeHtml(url);

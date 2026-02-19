@@ -1,0 +1,1290 @@
+Datos estructurados de preguntas y respuestas educativas (Quiz, Question y Answer)
+Si tienes páginas de tarjetas didácticas, puedes ayudar a los alumnos a encontrar mejor las respuestas a las preguntas educativas añadiendo datos estructurados de Quiz. Si añades datos estructurados, tu contenido puede aparecer en el carrusel de preguntas y respuestas de los resultados de la Búsqueda de Google, del Asistente de Google y de Google Lens.
+
+Ejemplo de resultado enriquecido de preguntas y respuestas educativas
+Los siguientes tipos de páginas son aptos para el carrusel de preguntas y respuestas educativas:
+
+Página de tarjeta didáctica: una página que contiene tarjetas didácticas que suelen tener la pregunta en un lado y la respuesta en el otro. Para marcar páginas de tarjetas didácticas, sigue leyendo esta guía para saber cómo añadir el esquema de preguntas y respuestas educativas.
+Página única de preguntas y respuestas: una página que solo contiene una pregunta y que está seguida de respuestas enviadas por los usuarios. Para marcar páginas únicas de preguntas y respuestas, añade etiquetas QAPage.
+Disponibilidad de la función 
+El carrusel de preguntas y respuestas educativas solo está disponible cuando se buscan temas relacionados con la educación en ordenadores y dispositivos móviles. Por ejemplo, prueba a buscar consultas como "the measure of three angles of a quadrilateral are 80 90 and 103 degrees" o "the ratio of surface energy to surface area is".
+
+El carrusel de preguntas y respuestas educativas está disponible en los siguientes idiomas y territorios:
+
+Idioma	Territorios disponibles
+Inglés	Todos los territorios en los que está disponible la Búsqueda de Google
+Portugués	Todos los territorios en los que está disponible la Búsqueda de Google
+Español	México
+Vietnamita	Todos los territorios en los que está disponible la Búsqueda de Google
+Cómo añadir datos estructurados 
+Los datos estructurados son un formato estandarizado con el que se puede proporcionar información sobre una página y clasificar su contenido. Consulta cómo funcionan los datos estructurados si aún no te has familiarizado con ellos.
+
+A continuación se explica a grandes rasgos cómo crear, probar y publicar datos estructurados.
+
+Añade las propiedades obligatorias. Consulta más información sobre dónde insertar datos estructurados en una página en función del formato que estés utilizando.
+¿Usas un CMS? Quizá sea más fácil que uses un complemento que esté integrado en tu CMS.
+¿Usas JavaScript? Consulta cómo generar datos estructurados con JavaScript.
+Sigue las directrices.
+Valida tu código con la prueba de resultados enriquecidos y corrige los errores críticos. Te recomendamos que también corrijas los problemas no críticos que puedan marcarse en la herramienta, ya que pueden ayudar a mejorar la calidad de los datos estructurados (sin embargo, esto no es necesario para que se muestren los resultados enriquecidos).
+Crea varias páginas que incluyan tus datos estructurados y comprueba cómo las ve Google con la herramienta de inspección de URLs. Asegúrate de que Google pueda acceder a tu página y de que no esté bloqueada por un archivo robots.txt, por la etiqueta noindex ni por requisitos de inicio de sesión. Si la página se ve bien, puedes solicitar que Google vuelva a rastrear tus URLs.
+Nota: Da cierto margen de tiempo a Google para que vuelva a rastrear e indexar tus páginas. Recuerda que Google puede tardar varios días en encontrar y rastrear una página después de publicarse.
+Para que Google siempre tenga la versión actualizada de tus páginas, te recomendamos que envíes un sitemap. Puedes automatizar este envío con la API Sitemap de Search Console.
+Ejemplos 
+A continuación se muestra un ejemplo de la página de una tarjeta didáctica con datos estructurados de preguntas y respuestas educativas.
+
+
+
+<html>
+  <head>
+    <title>Cell Transport</title>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org/",
+      "@type": "Quiz",
+      "about": {
+        "@type": "Thing",
+        "name": "Cell Transport"
+      },
+      "educationalAlignment": [
+        {
+          "@type": "AlignmentObject",
+          "alignmentType": "educationalSubject",
+          "targetName": "Biology"
+        }
+      ],
+      "hasPart": [
+        {
+          "@context": "https://schema.org/",
+          "@type": "Question",
+          "eduQuestionType": "Flashcard",
+          "text": "This is some fact about receptor molecules.",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "receptor molecules"
+          }
+        },
+        {
+          "@context": "https://schema.org/",
+          "@type": "Question",
+          "eduQuestionType": "Flashcard",
+          "text": "This is some fact about the cell membrane.",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "cell membrane"
+          }
+        }
+      ]
+    }
+    </script>
+  </head>
+</html>
+Directrices
+Para que tu página pueda aparecer en resultados enriquecidos de Preguntas y respuestas educativas, debes seguir estas directrices:
+
+Directrices generales sobre datos estructurados
+Directrices básicas de la Búsqueda
+Directrices técnicas
+Directrices de contenido
+Directrices técnicas
+Incluye datos estructurados en la página más específica que contenga la información más detallada. No añadas datos estructurados a páginas sin preguntas.
+Todas las preguntas deben usar el valor Flashcard en la propiedad eduQuestionType. Las páginas que contienen otros tipos de preguntas no pueden aparecer en el carrusel de preguntas y respuestas educativas.
+Asegúrate de que el robot de Google pueda rastrear tu sitio de forma eficiente.
+Los usuarios de la página deberían ver inmediatamente las preguntas de tu sitio, es decir, las preguntas no solo deben estar en un archivo de datos o PDF.
+Si tu página solo tiene una pregunta seguida de varias respuestas enviadas por los usuarios, usa las etiquetas QAPage.
+Directrices de contenido
+Hemos creado estas directrices de contenido sobre Preguntas y respuestas educativas para que nuestros usuarios tengan acceso a recursos educativos interesantes. Si detectamos contenido que infringe estas directrices, tomaremos las medidas pertinentes. Por ejemplo, podemos aplicar acciones manuales y hacer que no se muestre tu contenido en el resultado enriquecido Preguntas y respuestas educativas de Google.
+
+Las páginas de Preguntas y respuestas educativas deben seguir las mismas directrices de contenido que las páginas de preguntas.
+Tu página debe contener preguntas y respuestas relacionadas con la educación. En tu página debe haber al menos una pregunta asociada a una respuesta, y la respuesta debe estar relacionada con la pregunta del usuario y responderla.
+Eres responsable de que las páginas de Preguntas y respuestas educativas que muestras mediante esta función sean de calidad y ofrezcan información precisa. Si durante un proceso de revisión pedagógica y de calidad detectamos que parte de tu contenido no es correcto, puede que todas o algunas de tus páginas de preguntas no sean aptas para usar esta función hasta que soluciones los problemas.
+Marcar estándares educativos 
+Los estándares educativos representan los conocimientos y las habilidades que deberían tener los alumnos en cada curso. Tienen varios usos; por ejemplo, sirven para enlazar contenido o elaborar planes de estudio. Al marcar los estándares (que encontrarás en el campo educationalAlignment) relacionados con tu material educativo online, ayudas a Google a organizar y mostrar la información de la forma más útil posible a quienes buscan contenido educativo basado en esos estándares. Más abajo puedes consultar una descripción general del esquema.
+
+Estos son algunos estándares:
+
+Common Core State Standards
+Texas Essential Knowledge and Skills (TEKS)
+Virginia Standards of Learning (SOL)
+BC Performance Standards
+Alberta Programs of Studies
+The Australian Curriculum (ACARA)
+The Victorian Curriculum (F-10)
+UK National Curriculum
+Definiciones de tipos de datos estructurados 
+Debes incluir las propiedades obligatorias para que tu contenido pueda mostrarse como un resultado enriquecido. También puedes incluir las propiedades recomendadas para añadir más información sobre tu contenido, lo que puede ayudar a mejorar la experiencia de usuario.
+
+Quiz 
+El elemento Quiz es un conjunto de tarjetas didácticas (una o varias) que suelen tratar sobre el mismo concepto o tema.
+
+Encontrarás la definición completa de Quiz en schema.org. Las propiedades que admite Google son las siguientes:
+
+Propiedades obligatorias
+hasPart	
+Question
+
+Indica información anidada sobre una pregunta de la tarjeta didáctica del cuestionario. Usa una propiedad hasPart para representar una única tarjeta.
+
+Para incluir varias tarjetas didácticas, añade esta propiedad varias veces.
+
+
+{
+  "@type": "Quiz",
+  "hasPart": {
+    "@type": "Question"
+  }
+}
+Propiedades recomendadas
+about	
+Thing
+
+Indica información anidada sobre el concepto del que trata Quiz.
+
+
+{
+  "@type": "Quiz",
+  "about": {
+    "@type": "Thing"
+  }
+}
+about.name	
+Text
+
+Indica información anidada sobre el concepto del que trata Quiz. Se pueden añadir varias entradas de esta propiedad.
+
+
+{
+  "@type": "Quiz",
+  "about": {
+    "@type": "Thing",
+    "name": "Cell transport"
+  }
+}
+educationalAlignment	
+AlignmentObject
+
+Indica a qué marco educativo consolidado se adhiere el cuestionario. Esta propiedad se puede repetir para asociar el cuestionario a un campo de estudio o dominio determinados, y al curso o estándar educativo al que pertenece.
+
+
+{
+  "@type": "Quiz",
+  "educationalAlignment": []
+}
+educationalAlignment.alignmentType	
+Text
+
+Indica el tipo de asociación entre el recurso educativo y el nodo del marco educativo del cuestionario. La Búsqueda de Google utiliza el estándar LRMI.
+
+Si quieres indicar tanto el campo de estudio como el curso o el estándar educativo al que pertenece, añade la propiedad alignmentType varias veces.
+
+Para especificar el campo de estudio o el dominio del cuestionario, da a la propiedad alignmentType el valor educationalSubject.
+Para indicar el curso o el estándar educativo del cuestionario, da a la propiedad alignmentType el valor educationalLevel.
+A continuación puedes ver cómo especificar las propiedades educationalSubject y educationalLevel.
+
+
+{
+  "@type": "Quiz",
+  "educationalAlignment": [
+     {
+       "@type": "AlignmentObject",
+       "alignmentType": "educationalSubject",
+       "targetName": "Biology"
+     },
+     {
+       "@type": "AlignmentObject",
+       "alignmentType": "educationalLevel",
+       "targetName": "Fifth grade"
+     }
+
+  ]
+}
+educationalAlignment.targetName	
+Text
+
+Indica el nombre de un nodo de un marco educativo consolidado. Por ejemplo, "2.º de ESO: Estructura celular".
+
+
+{
+  "@type": "Quiz",
+  "educationalAlignment": [
+     {
+       "@type": "AlignmentObject",
+       "targetName": "Grade 7: Cell Structure"
+     }
+  ]
+}
+Question 
+Cada pregunta corresponde a una tarjeta didáctica, anidada en la propiedad hasPart de Quiz. Ten en cuenta que los requisitos de Question son diferentes de los requisitos de preguntas de QAPage.
+
+La definición completa de Question está en schema.org. Las propiedades que admite Google son las siguientes:
+
+Propiedades obligatorias
+acceptedAnswer	
+Answer
+
+Indica el texto completo de la respuesta a una tarjeta didáctica. Solo debe haber una propiedad acceptedAnswer por cada tipo Question.
+
+
+{
+  "@type": "Question",
+  "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "cell membranes"
+  }
+}
+eduQuestionType	
+Text
+
+Indica el tipo de pregunta. Debes usar este valor fijo: Flashcard.
+
+
+{
+  "@type": "Question",
+  "eduQuestionType": "Flashcard”
+}
+text	
+Text
+
+Indica el texto completo de la pregunta de la tarjeta didáctica.
+
+
+{
+  "@type": "Question",
+  "text": "A protein on the surface of HIV can attach to proteins on the surface of healthy human cells. What are the attachment sites on the surface of the cells known as?"
+}
+Monitorizar resultados enriquecidos con Search Console
+Search Console es una herramienta que te ayuda a monitorizar el rendimiento de tus páginas en la Búsqueda de Google. No hace falta que te registres en Search Console para que tu sitio web aparezca en los resultados de la Búsqueda de Google, pero, si lo haces, sabrás cómo lo ve Google y qué puedes hacer para mejorarlo. Te recomendamos que consultes Search Console en los siguientes casos:
+
+Después de implementar datos estructurados por primera vez
+Después de publicar plantillas nuevas o modificar el código
+Al hacer el análisis periódico del tráfico
+
+Después de implementar datos estructurados por primera vez 
+Una vez que Google haya indexado tus páginas, puedes comprobar si hay algún problema en el informe de estado de resultados enriquecidos correspondiente. Lo ideal es que haya un aumento en el número de elementos válidos y que no lo haya en el número de elementos no válidos. Si detectas problemas en tus datos estructurados, haz lo siguiente:
+
+Corrige los elementos no válidos.
+Inspecciona la URL en tiempo real para ver si el problema continúa.
+Solicita que se valide la corrección desde el informe de estado.
+Después de publicar plantillas nuevas o modificar el código 
+Cuando hagas cambios significativos en tu sitio web, observa si se incrementa la cantidad de elementos no válidos de datos estructurados.
+Si notas que hay más elementos no válidos, quizá sea porque has implementado una plantilla que no funciona, o puede que tu sitio esté interactuando con la plantilla que utilizas de un modo diferente que no es adecuado.
+Si notas que hay menos elementos válidos, pero no hay un incremento de elementos no válidos, es posible que hayas dejado de insertar datos estructurados en tus páginas. Para saber cuál es la causa del problema, utiliza la herramienta de inspección de URLs.
+Al hacer el análisis periódico del tráfico 
+Consulta el informe de rendimiento para analizar el tráfico de tus páginas en la Búsqueda de Google. En él, verás con qué frecuencia aparece tu página como resultado enriquecido en la Búsqueda, cada cuánto hacen clic en ella los usuarios y cuál es la posición media que ocupa tu sitio web en los resultados de búsqueda. También puedes obtener automáticamente estos resultados con la API de Search Console.
+Solucionar problemas
+Si tienes problemas para implementar o depurar datos estructurados, a continuación se incluyen algunos recursos que pueden serte útiles.
+
+Si usas un sistema de gestión de contenido (CMS) o alguien se encarga de gestionar tu sitio, pídele ayuda. No olvides reenviarle cualquier mensaje de Search Console que incluya información sobre el problema en cuestión.
+Google no garantiza que las funciones que utilizan datos estructurados aparezcan en los resultados de búsqueda. Para ver una lista con motivos habituales por los que Google no muestra tu contenido en resultados enriquecidos, consulta las directrices generales de datos estructurados.
+Es posible que haya un error en tus datos estructurados. Consulta la lista de errores de datos estructurados y el informe de datos estructurados que no se pueden analizar.
+Si se ha aplicado una acción manual de datos estructurados a tu página, se ignorarán sus datos estructurados, aunque la página puede seguir apareciendo en los resultados de la Búsqueda de Google. Para solucionar problemas de datos estructurados, usa el informe "Acciones manuales".
+Revisa las directrices para comprobar si tu contenido no las cumple. El problema podría deberse a que la página incluye contenido engañoso o etiquetas con contenido fraudulento. No obstante, es posible que el problema no se deba a la sintaxis, por lo que la prueba de resultados enriquecidos no podrá ayudarte a identificarlo.
+Solucionar problemas si faltan resultados enriquecidos o si se ha reducido el número total de resultados enriquecidos.
+Da cierto margen a Google para que vuelva a rastrear e indexar tu página. Recuerda que Google puede tardar varios días en encontrar y rastrear una página después de publicarse. Consulta las preguntas frecuentes sobre el rastreo y la indexación de la Búsqueda de Google.
+Publica una pregunta en el foro del Centro de la Búsqueda de Google.
+Datos estructurados de puntuación total de la empresa (EmployerAggregateRating)
+Si en tu sitio se publican puntuaciones de usuarios sobre organizaciones que contratan personal, añade datos estructurados de EmployerAggregateRating a tu sitio. EmployerAggregateRating es una evaluación de una empresa que ofrece puestos de trabajo compilada a partir de muchos usuarios. Si se añade EmployerAggregateRating, las personas que buscan trabajo pueden tener a mano puntuaciones sobre la empresa que está contratando para ayudarles a escoger un puesto de trabajo. También ofrece un emplazamiento destacado para la marca en la búsqueda enriquecida de empleo de Google.
+
+Durante la fase beta, para que tu página pueda aparecer en los resultados enriquecidos de búsqueda de empleo, te recomendamos que le añadas datos estructurados de fragmentos de reseñas. Si ya tienes datos estructurados de este tipo en tu sitio, te recomendamos que los cambies pronto a datos estructurados EmployerAggregateRating.
+¿En tu sitio se publican ofertas de trabajo? En ese caso, es mejor que añadas datos estructurados de JobPosting.
+Ejemplo de una puntuación de empresa u organización en los resultados de búsqueda
+Nota: Es posible que no coincidan con el aspecto que tendrán en los resultados de búsqueda. Puedes previsualizar la mayoría de las funciones con la prueba de resultados enriquecidos.
+Ejemplo
+A continuación se muestra un ejemplo de EmployerAggregateRating con código JSON-LD.
+
+
+
+<html>
+  <head>
+    <title>World's Best Coffee Shop</title>
+    <script type="application/ld+json">
+    {
+      "@context" : "https://schema.org/",
+      "@type": "EmployerAggregateRating",
+      "itemReviewed": {
+        "@type": "Organization",
+        "name" : "World's Best Coffee Shop",
+        "sameAs" : "https://example.com"
+      },
+      "ratingValue": 91,
+      "bestRating": 100,
+      "worstRating": 1,
+      "ratingCount" : "10561"
+    }
+    </script>
+  </head>
+  <body>
+  </body>
+</html>
+Cómo añadir datos estructurados 
+Los datos estructurados son un formato estandarizado con el que se puede proporcionar información sobre una página y clasificar su contenido. Consulta cómo funcionan los datos estructurados si aún no te has familiarizado con ellos.
+
+A continuación se explica a grandes rasgos cómo crear, probar y publicar datos estructurados.
+
+Añade las propiedades obligatorias. Consulta más información sobre dónde insertar datos estructurados en una página en función del formato que estés utilizando.
+¿Usas un CMS? Quizá sea más fácil que uses un complemento que esté integrado en tu CMS.
+¿Usas JavaScript? Consulta cómo generar datos estructurados con JavaScript.
+Sigue las directrices.
+Valida tu código con la prueba de resultados enriquecidos y corrige los errores críticos. Te recomendamos que también corrijas los problemas no críticos que puedan marcarse en la herramienta, ya que pueden ayudar a mejorar la calidad de los datos estructurados (sin embargo, esto no es necesario para que se muestren los resultados enriquecidos).
+Crea varias páginas que incluyan tus datos estructurados y comprueba cómo las ve Google con la herramienta de inspección de URLs. Asegúrate de que Google pueda acceder a tu página y de que no esté bloqueada por un archivo robots.txt, por la etiqueta noindex ni por requisitos de inicio de sesión. Si la página se ve bien, puedes solicitar que Google vuelva a rastrear tus URLs.
+Nota: Da cierto margen de tiempo a Google para que vuelva a rastrear e indexar tus páginas. Recuerda que Google puede tardar varios días en encontrar y rastrear una página después de publicarse.
+Para que Google siempre tenga la versión actualizada de tus páginas, te recomendamos que envíes un sitemap. Puedes automatizar este envío con la API Sitemap de Search Console.
+Directrices
+Debes seguir estas directrices para poder aparecer cuando se utilice la búsqueda de empleo de Google.
+
+Advertencia: Si tu sitio infringe una o varias de estas directrices, es posible que apliquemos alguna acción manual contra el sitio. Una vez hayas solucionado el problema, puedes enviar tu sitio para que se reconsidere la acción que tomamos.
+Directrices técnicas
+Directrices de contenido
+Directrices de calidad de la búsqueda enriquecida
+Directrices básicas de la Búsqueda
+Directrices generales sobre datos estructurados
+Directrices técnicas
+Asegúrate de que las puntuaciones estén disponibles para los usuarios en la página donde añades datos estructurados de EmployerAggregateRating. Estos usuarios deben ver de inmediato que la página tiene contenido de puntuación.
+Proporciona información de valoración sobre una organización específica que está contratando, no sobre categorías ni sobre listas de elementos. Por ejemplo, "los 10 mejores lugares para trabajar" y "empresas de tecnología" no son empresas concretas que ofrecen puestos de trabajo.
+De manera predeterminada, Google da por hecho que en tu sitio web se usa una escala de 5 puntos, donde 5 es la mejor puntuación posible y 1 es la peor, aunque puedes usar cualquier otra escala. Si utilizas otra, especifica la mejor y la peor puntuación posible, y Google lo convertirá al sistema de 5 estrellas.
+Directrices de contenido
+Los usuarios deben poder publicar sus propias puntuaciones en tu sitio, y este debe alojarlas.
+El número de puntuaciones debe reflejar las puntuaciones reales que proporcionan los usuarios.
+La puntuación total debe poder deducirse con precisión a partir de las puntuaciones proporcionadas.
+Definiciones de tipos de datos estructurados
+En esta sección se describen los tipos de datos estructurados relacionados con las puntuaciones totales de empresas u organizaciones. Debes incluir las propiedades obligatorias para que el contenido pueda mostrarse en los resultados de búsqueda mejorados.
+
+EmployerAggregateRating
+Puedes consultar la definición completa de EmployerAggregateRating en schema.org/EmployerAggregateRating.
+
+Las propiedades que admite Google son las siguientes:
+
+Propiedades obligatorias
+itemReviewed	
+Organization
+
+Indica la organización que se está puntuando. La propiedad itemReviewed debe apuntar a un elemento schema.org/Organization que represente a la empresa u organización que se está puntuando. Por ejemplo:
+
+
+{
+  "@context" : "https://schema.org/",
+  "@type": "EmployerAggregateRating",
+  "itemReviewed": {
+    "@type": "Organization",
+    "name" : "World's Best Coffee Shop",
+    "sameAs" : "https://www.worlds-best-coffee-shop.example.com"
+  }
+}
+ratingCount	
+Number
+
+Indica el número total de puntuaciones de la organización en tu sitio web. Es obligatorio usar por lo menos ratingCount o reviewCount.
+
+ratingValue	
+Number o Text
+
+Indica la puntuación de la calidad del artículo en formato numérico, ya sea un número, una fracción o un porcentaje (como "4", "60 %" o "6/10"). Google entiende la escala de fracciones y porcentajes, ya que la escala está implícita en la propia fracción o en el porcentaje. La escala predeterminada de los números es de cinco puntos, donde 1 es el valor más bajo y 5 el más alto. Si quieres emplear otra escala, utiliza bestRating y worstRating.
+
+reviewCount	
+Number
+
+Especifica el número de personas que proporcionaron una reseña con o sin una puntuación. Es obligatorio usar por lo menos ratingCount o reviewCount.
+
+Propiedades recomendadas
+bestRating	
+Number
+
+Indica el valor más alto permitido en este sistema de puntuación; si se omite bestRating, se supone que es 5.
+
+worstRating	
+Number
+
+Indica el valor más bajo permitido en este sistema de puntuación; si se omite worstRating, se supone que es 1.
+
+Solucionar problemas
+Si tienes problemas para implementar o depurar datos estructurados, a continuación se incluyen algunos recursos que pueden serte útiles.
+
+Si usas un sistema de gestión de contenido (CMS) o alguien se encarga de gestionar tu sitio, pídele ayuda. No olvides reenviarle cualquier mensaje de Search Console que incluya información sobre el problema en cuestión.
+Google no garantiza que las funciones que utilizan datos estructurados aparezcan en los resultados de búsqueda. Para ver una lista con motivos habituales por los que Google no muestra tu contenido en resultados enriquecidos, consulta las directrices generales de datos estructurados.
+Es posible que haya un error en tus datos estructurados. Consulta la lista de errores de datos estructurados y el informe de datos estructurados que no se pueden analizar.
+Si se ha aplicado una acción manual de datos estructurados a tu página, se ignorarán sus datos estructurados, aunque la página puede seguir apareciendo en los resultados de la Búsqueda de Google. Para solucionar problemas de datos estructurados, usa el informe "Acciones manuales".
+Revisa las directrices para comprobar si tu contenido no las cumple. El problema podría deberse a que la página incluye contenido engañoso o etiquetas con contenido fraudulento. No obstante, es posible que el problema no se deba a la sintaxis, por lo que la prueba de resultados enriquecidos no podrá ayudarte a identificarlo.
+Solucionar problemas si faltan resultados enriquecidos o si se ha reducido el número total de resultados enriquecidos.
+Da cierto margen a Google para que vuelva a rastrear e indexar tu página. Recuerda que Google puede tardar varios días en encontrar y rastrear una página después de publicarse. Consulta las preguntas frecuentes sobre el rastreo y la indexación de la Búsqueda de Google.
+Publica una pregunta en el foro del Centro de la Búsqueda de Google.
+Datos estructurados de verificación de datos (ClaimReview)
+Vamos a dejar de admitir las etiquetas ClaimReview en la Búsqueda de Google. Sin embargo, la herramienta de exploración de verificación de hechos sigue admitiendo este tipo de etiquetas.
+Si tienes una página web que revisa las afirmaciones de terceros, puedes añadir datos estructurados de ClaimReview en tu página web. Si usas datos estructurados ClaimReview, es posible que en los resultados de la Búsqueda de Google se muestre un resumen de tu verificación de datos cuando tu página web aparece en los resultados de búsqueda de esa afirmación.
+
+En esta guía se describe cómo implementar los datos estructurados de ClaimReview. Si no quieres añadirlos manualmente, consulta la herramienta de marcado de verificación de datos. Más información sobre esta herramienta
+
+Cómo añadir datos estructurados 
+Los datos estructurados son un formato estandarizado con el que se puede proporcionar información sobre una página y clasificar su contenido. Consulta cómo funcionan los datos estructurados si aún no te has familiarizado con ellos.
+
+A continuación se explica a grandes rasgos cómo crear, probar y publicar datos estructurados.
+
+Añade las propiedades obligatorias. Consulta más información sobre dónde insertar datos estructurados en una página en función del formato que estés utilizando.
+¿Usas un CMS? Quizá sea más fácil que uses un complemento que esté integrado en tu CMS.
+¿Usas JavaScript? Consulta cómo generar datos estructurados con JavaScript.
+Sigue las directrices.
+Valida tu código con la prueba de resultados enriquecidos y corrige los errores críticos. Te recomendamos que también corrijas los problemas no críticos que puedan marcarse en la herramienta, ya que pueden ayudar a mejorar la calidad de los datos estructurados (sin embargo, esto no es necesario para que se muestren los resultados enriquecidos).
+Crea varias páginas que incluyan tus datos estructurados y comprueba cómo las ve Google con la herramienta de inspección de URLs. Asegúrate de que Google pueda acceder a tu página y de que no esté bloqueada por un archivo robots.txt, por la etiqueta noindex ni por requisitos de inicio de sesión. Si la página se ve bien, puedes solicitar que Google vuelva a rastrear tus URLs.
+Nota: Da cierto margen de tiempo a Google para que vuelva a rastrear e indexar tus páginas. Recuerda que Google puede tardar varios días en encontrar y rastrear una página después de publicarse.
+Para que Google siempre tenga la versión actualizada de tus páginas, te recomendamos que envíes un sitemap. Puedes automatizar este envío con la API Sitemap de Search Console.
+Ejemplo
+Pongamos como ejemplo una página que evalúe la afirmación de que la Tierra es plana. Esta imagen muestra el aspecto de la página de resultados de la Búsqueda de Google si al buscar "la Tierra es plana" aparece un elemento ClaimReview (ten en cuenta que es posible que el diseño puede ser diferente):
+
+Revisión de una afirmación asociada con una página
+
+Nota: Es posible que no coincidan con el aspecto que tendrán en los resultados de búsqueda. Puedes previsualizar la mayoría de las funciones con la prueba de resultados enriquecidos.
+A continuación se muestra un ejemplo de datos estructurados en la página que aloja esta verificación de datos:
+
+
+
+<html>
+  <head>
+    <title>The world is flat</title>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ClaimReview",
+      "url": "https://example.com/news/science/worldisflat.html",
+      "claimReviewed": "The world is flat",
+      "itemReviewed": {
+        "@type": "Claim",
+        "author": {
+          "@type": "Organization",
+          "name": "Square World Society",
+          "sameAs": "https://example.flatworlders.com/we-know-that-the-world-is-flat"
+        },
+        "datePublished": "2024-06-20",
+        "appearance": {
+          "@type": "OpinionNewsArticle",
+          "url": "https://example.com/news/a122121",
+          "headline": "Square Earth - Flat earthers for the Internet age",
+          "datePublished": "2024-06-22",
+          "author": {
+            "@type": "Person",
+            "name": "T. Tellar"
+          },
+          "image": "https://example.com/photos/1x1/photo.jpg",
+          "publisher": {
+            "@type": "Organization",
+            "name": "Skeptical News",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://example.com/logo.jpg"
+            }
+          }
+        }
+      },
+      "author": {
+        "@type": "Organization",
+        "name": "Example.com science watch"
+      },
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": 1,
+        "bestRating": 5,
+        "worstRating": 1,
+        "alternateName": "False"
+      }
+    }
+    </script>
+  </head>
+  <body>
+  </body>
+</html>
+Directrices de participación
+Google no garantiza que las verificaciones de datos se muestren en los resultados de búsqueda, aunque los hayas marcado correctamente según la Prueba de resultados enriquecidos. Usar datos estructurados permite que una función esté disponible, pero no garantiza que vaya a aparecer. El algoritmo de Google determina de forma programática si se cumplen los requisitos para obtener resultados enriquecidos de verificación de datos en función de muchas variables, como las siguientes directrices.
+
+Para que tu contenido de verificación de datos se pueda mostrar como un resultado enriquecido de verificación de datos en la Búsqueda de Google, debes cumplir las siguientes directrices:
+
+Tu sitio debe tener varias páginas marcadas con datos estructurados ClaimReview.
+Debes seguir todas las directrices de datos estructurados y las Directrices básicas de la Búsqueda.
+No debe haber discrepancias entre los datos estructurados y el contenido de la página. Por lo tanto, si en los datos estructurados se ha indicado que la afirmación es veraz, el contenido de la página no puede indicar que la afirmación es falsa. En vez de eso, comprueba que el contenido y los datos estructurados coincidan y que, por ejemplo, ambos indican que la afirmación es veraz.
+Debes cumplir los estándares de responsabilidad proactiva, transparencia, lectura y veracidad de los sitios, tal como se estipula en nuestras directrices generales de Google Noticias.
+Debe haberse fijado una política de correcciones o incluido un mecanismo para que los usuarios notifiquen errores.
+Los sitios web de entidades políticas (como campañas, partidos o funcionarios electos) no pueden utilizar esta función.
+Los lectores pueden identificar fácilmente las reclamaciones y las comprobaciones del cuerpo del artículo. Los lectores pueden entender lo que se ha verificado y las conclusiones a las que se ha llegado.
+Tienes que indicar claramente de dónde procede la afirmación que estás analizando; el origen puede ser otro sitio web, una declaración pública, una publicación de una red social o cualquier otra fuente que se pueda rastrear, pero no tu propio sitio web.
+Los análisis de verificaciones de datos deben ser rastreables y transparentes sobre sus fuentes y sus métodos, e incluir citas y referencias a las fuentes principales.
+Directrices técnicas 
+Para que una página pueda aparecer como resultado enriquecido de verificación de datos, debe tener un único elemento ClaimReview. Si añades varios elementos ClaimReview a cada página, la página no podrá aparecer como resultado enriquecido de verificación de datos.
+La página en la que se aloja el elemento ClaimReview debe incluir la evaluación y la verificación de datos completa, o por lo menos un resumen breve.
+Cada elemento ClaimReview específico debe estar en una única página de tu sitio. No incluyas la misma verificación de datos en páginas diferentes, salvo que se trate de versiones distintas de una misma página. Por ejemplo, sí puedes publicar el mismo elemento ClaimReview en la versión para dispositivos móviles y en la versión para ordenadores de una misma página.
+Si tu sitio web agrega artículos de verificación de datos, comprueba que todos los artículos cumplen los criterios descritos más arriba y que estás proporcionando una lista abierta y disponible al público de todos los sitios web de verificación de datos que agregues.
+Definiciones de tipos de datos estructurados
+Para implementar la verificación de datos, se requieren los siguientes tipos de datos estructurados:
+
+ClaimReview
+Claim
+Rating
+Debes incluir las propiedades obligatorias para que tu contenido pueda mostrarse como un resultado enriquecido. Si quieres, puedes especificar también las propiedades recomendadas para proporcionar más información sobre tu contenido y, así, ofrecer una mejor experiencia de usuario.
+
+ClaimReview
+Puedes consultar la definición completa de ClaimReview en schema.org/ClaimReview. Las propiedades que admite Google son las siguientes:
+
+Propiedades obligatorias
+claimReviewed	
+Text
+
+Indica un resumen breve de la declaración que se evalúa. Procura que no pase de 75 caracteres para facilitar el ajuste del texto a dispositivos móviles.
+
+No incluyas la valoración en el campo claimReviewed. En vez de eso, especifica la valoración en el campo reviewRating.
+reviewRating	
+Rating
+
+Este objeto es la evaluación de la declaración, que puede ser tanto textual como numérica. En los resultados de búsqueda solo se muestra el valor textual.
+
+Los diferentes proyectos de verificación de datos tienen diversos esquemas de valoración que pueden tener diferencias sutiles, particularmente para valores intermedios. Es importante documentar estos esquemas de valoración para aclarar el significado de las valoraciones numéricas. Como mínimo, debe haber un sistema de clasificación de número a texto para todas tus verificaciones de datos que tengan una puntuación numérica.
+
+1 = "Falsa"
+2 = "Falsa en su mayor parte"
+3 = "Parcialmente veraz"
+4 = "Veraz en su mayor parte"
+5 = "Veraz"
+Para obtener más información, consulta la sección Valoración.
+
+url	
+URL
+
+Enlace a la página que aloja el texto completo de una verificación de datos.
+
+El dominio de este valor de URL debe ser el mismo dominio o un subdominio de la página que aloja este elemento ClaimReview. Las redirecciones o las URLs cortas (como g.co/searchconsole) no se completan, por lo que no funcionarán aquí.
+
+Propiedades recomendadas
+author	
+Organization o Person
+
+Indica el editor del artículo que verifica un dato, no el editor de la afirmación que se comprueba. Lo indicado en author debe ser una organización o una persona. En el elemento author se debe incluir al menos una de estas propiedades:
+
+name	Text
+Indica el nombre de la organización que publica una verificación de datos.
+
+url	
+URL
+
+Indica la URL del editor de una verificación de datos, que puede dirigir a cualquier tipo de página que considere adecuada, como una página principal o una de contacto.
+
+Para ayudar a Google a identificar mejor a los autores en distintas funciones, te recomendamos que sigas las prácticas recomendadas para etiquetar autores.
+
+itemReviewed	
+Claim
+
+Objeto que describe la afirmación que se ha hecho. Para obtener más información, consulta la sección Claim.
+
+Compatibilidad con versiones anteriores: tras el lanzamiento inicial de la verificación de datos, la Búsqueda de Google recomendó usar CreativeWork como itemReviewed. La Búsqueda de Google sigue admitiendo patrones de marcado anteriores. A continuación, se muestra un ejemplo del estilo original de las etiquetas:
+Claim
+Puedes consultar la definición completa de Claim en schema.org/Claim.
+
+Propiedades recomendadas
+appearance	
+URL o CreativeWork
+
+Indica un enlace o una descripción insertada de CreativeWork en los que aparece una afirmación.
+
+Te recomendamos que añadas appearance o firstAppearance. No es necesario que añadas ambas.
+
+author	
+Organization o Person
+
+El autor de una afirmación, no el autor de una verificación de datos. No incluyas la propiedad author si la afirmación no tiene autor. Si añades una propiedad author, define las siguientes propiedades:
+
+name	Text (obligatoria)
+Indica el editor de una afirmación. Puede ser una persona o una organización.
+
+sameAs	URL (recomendada)
+Indica la parte que realiza una afirmación, independientemente de si figura en un elemento Person o en un elemento Organization. Cuando varios editores informan sobre la misma afirmación, la propiedad appearance puede aparecer más de una vez. Cuando varios hacen esencialmente la misma afirmación, la propiedad author puede aparecer repetida.
+
+La URL puede ser:
+
+La página principal de la organización que hace una afirmación.
+Otra URL definitiva que proporciona información sobre la parte que hace la afirmación, como la entrada de Wikipedia o de Wikidata sobre una persona u organización.
+datePublished	
+DateTime o Date
+
+La fecha en que se produjo la afirmación o en que se hizo pública (por ejemplo, el día en que se popularizó en las redes sociales).
+
+firstAppearance	
+URL o CreativeWork
+
+Es un enlace o una descripción insertada de un CreativeWork donde aparece por primera vez esta afirmación específica.
+
+Te recomendamos que añadas appearance o firstAppearance. No es necesario que añadas ambas.
+
+Rating
+Puedes consultar la definición completa de Rating en schema.org/Rating.
+
+Propiedades obligatorias
+alternateName	
+Text
+
+Indica la palabra o frase corta legible que describe la valoración de la veracidad asignada a ClaimReview.reviewRating y se muestra junto a la verificación de datos en los resultados de búsqueda. Ejemplos: "Veraz" o "Veraz en su mayor parte".
+
+Si utilizas una frase más larga, asegúrate de que incluyes la parte más importante al principio, porque es posible que se corte al ajustarse a la pantalla. Por ejemplo: "Veraz en su mayor parte en los datos concretos, aunque la idea general puede resultar engañosa".
+
+Propiedades recomendadas
+bestRating	
+Number
+
+En escalas numéricas, indica qué valor es el más alto posible en una escala de peor a mejor. Debe ser superior a worstRating. Debe poder evaluarse con un número. Por ejemplo: 4
+
+name	
+Text
+
+Indica lo mismo que alternateName y se utiliza cuando no se proporciona alternateName, pero te recomendamos que especifiques alternateName en lugar de name.
+
+ratingValue	
+Number
+
+Indica la evaluación numérica de la veracidad de una afirmación, que puede estar entre los valores worstRating a bestRating, ambos incluidos. Se recomienda usar números enteros. Cuanto más cerca esté la valoración numérica de bestRating, más veraz será el contenido de la afirmación, mientras que cuanto más cerca esté de worstRating, más parte de su contenido será falso. La valoración numérica debe poder evaluarse como un número. Por ejemplo: 4
+
+worstRating	
+Number
+
+En escalas numéricas, indica qué valor es el más bajo posible en una escala de peor a mejor. Debe ser inferior a bestRating. Debe poder evaluarse con un número. Debe tener un valor mínimo de 1. Por ejemplo: 1
+
+Monitorizar resultados enriquecidos con Search Console
+Search Console es una herramienta que te ayuda a monitorizar el rendimiento de tus páginas en la Búsqueda de Google. No hace falta que te registres en Search Console para que tu sitio web aparezca en los resultados de la Búsqueda de Google, pero, si lo haces, sabrás cómo lo ve Google y qué puedes hacer para mejorarlo. Te recomendamos que consultes Search Console en los siguientes casos:
+
+Después de implementar datos estructurados por primera vez
+Después de publicar plantillas nuevas o modificar el código
+Al hacer el análisis periódico del tráfico
+
+Después de implementar datos estructurados por primera vez 
+Una vez que Google haya indexado tus páginas, puedes comprobar si hay algún problema en el informe de estado de resultados enriquecidos correspondiente. Lo ideal es que haya un aumento en el número de elementos válidos y que no lo haya en el número de elementos no válidos. Si detectas problemas en tus datos estructurados, haz lo siguiente:
+
+Corrige los elementos no válidos.
+Inspecciona la URL en tiempo real para ver si el problema continúa.
+Solicita que se valide la corrección desde el informe de estado.
+Después de publicar plantillas nuevas o modificar el código 
+Cuando hagas cambios significativos en tu sitio web, observa si se incrementa la cantidad de elementos no válidos de datos estructurados.
+Si notas que hay más elementos no válidos, quizá sea porque has implementado una plantilla que no funciona, o puede que tu sitio esté interactuando con la plantilla que utilizas de un modo diferente que no es adecuado.
+Si notas que hay menos elementos válidos, pero no hay un incremento de elementos no válidos, es posible que hayas dejado de insertar datos estructurados en tus páginas. Para saber cuál es la causa del problema, utiliza la herramienta de inspección de URLs.
+Al hacer el análisis periódico del tráfico 
+Consulta el informe de rendimiento para analizar el tráfico de tus páginas en la Búsqueda de Google. En él, verás con qué frecuencia aparece tu página como resultado enriquecido en la Búsqueda, cada cuánto hacen clic en ella los usuarios y cuál es la posición media que ocupa tu sitio web en los resultados de búsqueda. También puedes obtener automáticamente estos resultados con la API de Search Console.
+Solucionar problemas
+Si tienes problemas para implementar o depurar datos estructurados, a continuación se incluyen algunos recursos que pueden serte útiles.
+
+Si usas un sistema de gestión de contenido (CMS) o alguien se encarga de gestionar tu sitio, pídele ayuda. No olvides reenviarle cualquier mensaje de Search Console que incluya información sobre el problema en cuestión.
+Google no garantiza que las funciones que utilizan datos estructurados aparezcan en los resultados de búsqueda. Para ver una lista con motivos habituales por los que Google no muestra tu contenido en resultados enriquecidos, consulta las directrices generales de datos estructurados.
+Es posible que haya un error en tus datos estructurados. Consulta la lista de errores de datos estructurados y el informe de datos estructurados que no se pueden analizar.
+Si se ha aplicado una acción manual de datos estructurados a tu página, se ignorarán sus datos estructurados, aunque la página puede seguir apareciendo en los resultados de la Búsqueda de Google. Para solucionar problemas de datos estructurados, usa el informe "Acciones manuales".
+Revisa las directrices para comprobar si tu contenido no las cumple. El problema podría deberse a que la página incluye contenido engañoso o etiquetas con contenido fraudulento. No obstante, es posible que el problema no se deba a la sintaxis, por lo que la prueba de resultados enriquecidos no podrá ayudarte a identificarlo.
+Solucionar problemas si faltan resultados enriquecidos o si se ha reducido el número total de resultados enriquecidos.
+Da cierto margen a Google para que vuelva a rastrear e indexar tu página. Recuerda que Google puede tardar varios días en encontrar y rastrear una página después de publicarse. Consulta las preguntas frecuentes sobre el rastreo y la indexación de la Búsqueda de Google.
+Publica una pregunta en el foro del Centro de la Búsqueda de Google.
+Datos estructurados de evento (Event)
+La experiencia de eventos de Google facilita que los usuarios descubran y asistan a eventos a través de los resultados de la Búsqueda y de otros productos de Google, como Maps. Esta función ofrece muchas ventajas:
+
+Resultados más interactivos: tus eventos pueden mostrarse en la experiencia de eventos de Google con tu logotipo, la descripción del evento y más información.
+Mayores posibilidades de descubrimiento y conversión: los usuarios tienen una nueva vía para interactuar con la publicación del evento y acceder a tu sitio. Descubre cómo Eventbrite duplicó el crecimiento anual del tráfico proveniente de la Búsqueda de Google.
+Cómo se ve la experiencia de eventos en la Búsqueda de GoogleDetalles de un evento en la Búsqueda de Google, después de hacer clic en un evento específico
+Hay tres formas de hacer que tus eventos puedan aparecer en Google:
+
+Si utilizas un sitio web externo para publicar eventos (por ejemplo, porque los publicas en sitios web de venta de entradas o en plataformas sociales), comprueba si el editor de esos eventos ya aprovecha la búsqueda de eventos de Google. Si ese editor está integrado con Google, sigue publicando tus eventos en el sitio web de terceros. No hace falta que sigas leyendo.
+Si utilizas un CMS (por ejemplo, WordPress) y no tienes acceso al HTML, comprueba si hay algún complemento para el CMS que pueda añadir datos estructurados a tu sitio. También puedes utilizar Marcador de datos para que Google conozca tus eventos sin que tengas que editar el código HTML de tu sitio.
+Si se te da bien editar código HTML, utiliza datos estructurados para integrar el evento directamente con Google. Tendrás que editar los archivos HTML de las páginas de eventos.
+Cómo añadir datos estructurados 
+Los datos estructurados son un formato estandarizado con el que se puede proporcionar información sobre una página y clasificar su contenido. Consulta cómo funcionan los datos estructurados si aún no te has familiarizado con ellos.
+
+A continuación se explica a grandes rasgos cómo crear, probar y publicar datos estructurados.
+
+Añade las propiedades obligatorias. Consulta más información sobre dónde insertar datos estructurados en una página en función del formato que estés utilizando.
+¿Usas un CMS? Quizá sea más fácil que uses un complemento que esté integrado en tu CMS.
+¿Usas JavaScript? Consulta cómo generar datos estructurados con JavaScript.
+Sigue las directrices.
+Valida tu código con la prueba de resultados enriquecidos y corrige los errores críticos. Te recomendamos que también corrijas los problemas no críticos que puedan marcarse en la herramienta, ya que pueden ayudar a mejorar la calidad de los datos estructurados (sin embargo, esto no es necesario para que se muestren los resultados enriquecidos).
+Crea varias páginas que incluyan tus datos estructurados y comprueba cómo las ve Google con la herramienta de inspección de URLs. Asegúrate de que Google pueda acceder a tu página y de que no esté bloqueada por un archivo robots.txt, por la etiqueta noindex ni por requisitos de inicio de sesión. Si la página se ve bien, puedes solicitar que Google vuelva a rastrear tus URLs.
+Nota: Da cierto margen de tiempo a Google para que vuelva a rastrear e indexar tus páginas. Recuerda que Google puede tardar varios días en encontrar y rastrear una página después de publicarse.
+Para que Google siempre tenga la versión actualizada de tus páginas, te recomendamos que envíes un sitemap. Puedes automatizar este envío con la API Sitemap de Search Console.
+Ejemplos
+Evento estándar 
+A continuación se muestra un ejemplo de Event estándar en JSON-LD. Consideramos que un evento es estándar cuando solo se celebra en una ubicación física y según lo programado. También puedes utilizar la sintaxis de microdatos o RDFa.
+
+
+<html>
+  <head>
+    <title>The Adventures of Kira and Morrison</title>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Event",
+      "name": "The Adventures of Kira and Morrison",
+      "startDate": "2025-07-21T19:00-05:00",
+      "endDate": "2025-07-21T23:00-05:00",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "location": {
+        "@type": "Place",
+        "name": "Snickerpark Stadium",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "100 West Snickerpark Dr",
+          "addressLocality": "Snickertown",
+          "postalCode": "19019",
+          "addressRegion": "PA",
+          "addressCountry": "US"
+        }
+      },
+      "image": [
+        "https://example.com/photos/1x1/photo.jpg",
+        "https://example.com/photos/4x3/photo.jpg",
+        "https://example.com/photos/16x9/photo.jpg"
+       ],
+      "description": "The Adventures of Kira and Morrison is coming to Snickertown in a can't miss performance.",
+      "offers": {
+        "@type": "Offer",
+        "url": "https://www.example.com/event_offer/12345_202403180430",
+        "price": 30,
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "validFrom": "2024-05-21T12:00"
+      },
+      "performer": {
+        "@type": "PerformingGroup",
+        "name": "Kira and Morrison"
+      },
+      "organizer": {
+        "@type": "Organization",
+        "name": "Kira and Morrison Music",
+        "url": "https://kiraandmorrisonmusic.com"
+      }
+    }
+    </script>
+  </head>
+  <body>
+  </body>
+</html>
+Evento cuyo estado se ha actualizado 
+Hay varias formas de definir el estado de un evento. A continuación se muestran algunos ejemplos habituales de eventos cuyo estado se ha actualizado. Para obtener más información, consulta la propiedad eventStatus.
+
+Cancelado
+Reprogramado
+A continuación se muestra un ejemplo de un evento que se ha cancelado.
+
+
+
+<html>
+  <head>
+    <title>The Adventures of Kira and Morrison</title>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Event",
+      "name": "The Adventures of Kira and Morrison",
+      "startDate": "2025-07-21T19:00-05:00",
+      "endDate": "2025-07-21T23:00-05:00",
+      "eventStatus": "https://schema.org/EventCancelled",
+      "location": {
+        "@type": "Place",
+        "name": "Snickerpark Stadium",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "100 West Snickerpark Dr",
+          "addressLocality": "Snickertown",
+          "postalCode": "19019",
+          "addressRegion": "PA",
+          "addressCountry": "US"
+        }
+      },
+      "image": [
+        "https://example.com/photos/1x1/photo.jpg",
+        "https://example.com/photos/4x3/photo.jpg",
+        "https://example.com/photos/16x9/photo.jpg"
+       ],
+      "description": "The Adventures of Kira and Morrison is coming to Snickertown in a can't miss performance.",
+      "offers": {
+        "@type": "Offer",
+        "url": "https://www.example.com/event_offer/12345_202403180430",
+        "price": 30,
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "validFrom": "2024-05-21T12:00"
+      },
+      "performer": {
+        "@type": "PerformingGroup",
+        "name": "Kira and Morrison"
+      },
+      "organizer": {
+        "@type": "Organization",
+        "name": "Kira and Morrison Music",
+        "url": "https://kiraandmorrisonmusic.com"
+      }
+    }
+    </script>
+  </head>
+  <body>
+  </body>
+</html>
+Disponibilidad de regiones e idiomas
+Por fin podemos llevar la experiencia de búsqueda de eventos en Google a más regiones de todo el mundo. La experiencia está disponible en las siguientes regiones y en los siguientes idiomas.
+
+Región	Idiomas disponibles
+Australia	Inglés
+Brasil	Portugués
+Canadá	Inglés
+Alemania	Alemán
+India	Inglés
+Latinoamérica	Español
+España	Español
+Reino Unido	Inglés
+Estados Unidos	Inglés
+Directrices
+Debes seguir estas directrices para poder aparecer cuando se utilice la búsqueda de eventos de Google.
+
+Advertencia: Si tu sitio infringe una o varias de estas directrices, es posible que apliquemos alguna acción manual contra el sitio. Una vez hayas solucionado el problema, puedes enviar tu sitio para que se vuelva a revisar.
+Directrices técnicas
+Directrices de contenido
+Directrices de fecha y hora
+Directrices básicas de la Búsqueda
+Directrices generales sobre datos estructurados
+Directrices técnicas
+La página de destino debe contener elementos de datos estructurados de los tipos de evento de schema.org.
+Cada evento debe tener una URL única (página dedicada al evento) y etiquetas en esa URL.
+En la experiencia de eventos de Google solo se admiten páginas que se centran en un solo evento. Te recomendamos que añadas el marcado a las páginas de publicación de eventos en lugar de a páginas que incluyan programaciones o varios eventos.
+Etiqueta correctamente los eventos que duran varios días:
+Si la información de tu evento o entrada corresponde a un evento que dura varios días, especifica las fechas de inicio y finalización del evento.
+Si hay varias actuaciones en días diferentes, cada una con entradas independientes, añade un elemento Event para cada actuación.
+Directrices de contenido
+En cada evento se deben describir con precisión el nombre del evento, la fecha de inicio y la ubicación.
+Procura no etiquetar como evento algo que no lo sea:
+No promociones productos o servicios como eventos si no lo son, como "Paquete de viaje: San Diego/Los Ángeles, 7 noches".
+No añadas descuentos a corto plazo ni oportunidades de compra, como: "Concierto: compra tus entradas ahora" o "Concierto: 50 % de descuento hasta el sábado".
+No marques como eventos el horario de apertura, como: "Parque de aventuras abierto desde las 8:00 h hasta las 17:00 h".
+No marques cupones o vales descuento como eventos; por ejemplo, "5 % de descuento en tu primer pedido".
+Los eventos deben poder reservarse por el público general. Los eventos que requieren una suscripción o una invitación para poder comprar la entrada o asistir no son aptos para la experiencia del evento.
+Los eventos en los que los participantes principales y el público sean menores de edad y se celebren en un centro educativo no pueden disfrutar de la experiencia del evento. Por ejemplo, eventos de alumnos que se celebran en las instalaciones del centro educativo.
+No se admiten experiencias virtuales que no tengan un componente real. Los eventos deben tener lugar en una ubicación física.
+Directrices de fecha y hora 
+Sigue las directrices de fecha y hora cuando implementes las propiedades startDate, endDate y previousStartDate.
+
+Cómo especificar zonas horarias
+Para indicar la zona horaria, debes incluir la diferencia horaria respecto a UTC o GMT. Si el evento empieza el 5 de septiembre a las 19:00 en Nueva York, el valor startDate será GMT/UTC -5 durante el horario estándar y GMT/UTC -4 durante el horario de verano. Durante el horario estándar, el valor de startDate sería "2019-09-05T19:00:00-05:00", mientras que en el de verano sería "2019-09-05T19:00:00-04:00". Si no se indica ninguna zona horaria, Google utiliza la zona horaria de la ubicación del evento especificada en location.
+
+Prácticas recomendadas
+El evento tiene lugar en un intervalo de fechas: si el evento tiene lugar a lo largo de varios días, indica tanto la fecha de inicio como de finalización. Si no sabes la hora, no indiques ninguna.
+Recomendado
+
+
+"startDate": "2019-07-01T10:00:00-05:00",
+"endDate": "2019-07-26T17:00:00-05:00"
+Recomendado
+
+
+"startDate": "2019-07-01",
+"endDate": "2019-07-26"
+No recomendado
+
+
+"startDate": "2019-07-01T00:00:00+00:00",
+"endDate": "2019-07-26T23:59:59+00:00"
+El evento empieza a una hora específica: si el evento comienza a una hora específica, por ejemplo, a las 17:00 hora local, utiliza 2019-07-20T17:00:00. Indica la diferencia horaria respecto a UTC adecuada. Por ejemplo, usa 2019-07-20T17:00:00-07:00 si el evento tiene lugar en California.
+El evento dura todo el día: si el evento dura todo el día, no especifiques una hora concreta para la fecha de inicio. Por ejemplo, puedes usar 2019-08-15 en startDate y en endDate en eventos que duren todo el día.
+Se desconoce la hora de inicio del evento: si no sabes la hora de inicio, no especifiques una hora concreta. Por ejemplo, puedes utilizar 2019-08-15 en startDate y en endDate.
+Recomendado: "startDate": "2025-07-21"
+
+No recomendado: "startDate": "2019-08-15T00:00:00+00:00"
+
+No recomendado: "startDate": "2019-07-20T00:00:00"
+
+Ejemplos de cómo interpreta Google las fechas
+A continuación se muestran algunos ejemplos de cómo interpreta Google la fecha y la hora de inicio:
+
+Interpretaciones de la fecha y la hora de inicio
+2019-08-15T00:00:00+00:00	Google interpreta que startTime es 2019-08-14T17:00:00-07:00 (si location es California) o 2019-08-15T09:00:00 (si location es Corea del Sur).
+2019-08-15T23:59:59+00:00	Este código de tiempo no indica el final del día 2019-08-15, salvo que el evento se produzca en la zona horaria GMT. Google interpreta que startTime es 2019-08-15T16:59:59-07:00 (si location es California) o 2019-08-16T08:59:59 (si location es Corea del Sur).
+2019-07-10	Indica la fecha, independientemente de la zona horaria. Cuando se utiliza en startDate, significa que el evento empieza cuando en location es algún momento de ese día. Cuando se utiliza en endDate, significa que el evento termina en la location desde algún momento de ese día.
+2019-07-20T00:00:00	Significa la medianoche del 2019-07-20 en la zona horaria en la que tiene lugar el evento. Es probable que sea incorrecto, a menos que el evento se haya iniciado a medianoche.
+Definiciones de tipos de datos estructurados
+Puedes consultar la definición completa de Event en schema.org/Event.
+
+Debes incluir las propiedades obligatorias para que el contenido pueda mostrarse en los resultados de búsqueda mejorados. También puedes incluir las propiedades recomendadas para añadir más información sobre tu contenido, lo que puede ayudar a mejorar la experiencia de usuario.
+
+Propiedades obligatorias
+location	
+Place
+
+Indica la ubicación del evento. Define @type en Place. Añade las propiedades location.address y location.name.
+
+location.address	
+PostalAddress
+
+Es la dirección postal detallada del recinto.
+
+No recomendado: Sídney
+
+Recomendado: Bennelong Point, Sídney NSW 2000 (Australia)
+
+Ejemplo de Estados Unidos
+
+
+"location": {
+  "@type": "Place",
+  "name": "Snickerpark Stadium",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "100 West Snickerpark Dr",
+    "addressLocality": "Snickertown",
+    "postalCode": "19019",
+    "addressRegion": "PA",
+    "addressCountry": "US"
+  }
+}
+Ejemplos de Japón
+
+Google entiende direcciones de Japón escritas de diferentes formas. A continuación, se muestra un ejemplo con la dirección postal, el municipio y el país en diferentes campos.
+
+
+"location": {
+  "@type": "Place",
+  "name": "ダイバーシティ東京",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "江東区青海1-10",
+    "addressLocality": "東京",
+    "addressCountry": "日本"
+  }
+}
+A continuación, se muestra un ejemplo de la dirección postal y el país en diferentes campos.
+
+
+"location": {
+  "@type": "Place",
+  "name": "ダイバーシティ東京",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "東京都江東区青海1-10",
+    "addressCountry": "日本"
+  }
+}
+A continuación, se muestra un ejemplo de la dirección completa en una línea.
+
+
+"location": {
+  "@type": "Place",
+  "name": "ダイバーシティ東京",
+  "address": {
+    "@type": "PostalAddress",
+    "name": "東京都江東区青海 1-1-10 ダイバーシティ東京プラザ"
+   }
+}
+Prácticas recomendadas para incluir direcciones:
+
+Si el evento pasa por varias calles, indica en qué ubicación empieza y menciona el resto de las ubicaciones en la descripción.
+Si el evento ocurre sin una ubicación bien definida, usa el nombre de la ciudad o la ubicación más representativa.
+Si el evento ocurre en varias ubicaciones al mismo tiempo, crea diferentes eventos para cada ubicación.
+name	
+Text
+
+Es el título completo del evento.
+
+No incluyas el nombre de la ubicación donde se celebra el evento; esta información debe indicarse en location.name.
+No recomendado: Auditorio Cívico Bill Graham
+
+No recomendado: **VENTA POR TIEMPO LIMITADO - Concierto de Kesha y Macklemore - 25 USD**
+
+Recomendado: Las aventuras de Kesha y Macklemore
+
+Recomendado: Pase especial con Kesha y Macklemore
+
+Prácticas recomendadas:
+
+No uses el tipo de evento como nombre del evento; por ejemplo, "Concierto" no es un nombre de evento descriptivo.
+No incluyas información superflua como URLs, precios o intérpretes; usa mejor las propiedades apropiadas para esos valores.
+Destaca una característica única del evento en el título para ayudar a que los usuarios tomen decisiones con más rapidez (por ejemplo, "con sesión de preguntas y respuestas con el artista").
+No incluyas promociones a corto plazo (por ejemplo, "compra entradas ya").
+startDate	
+DateTime
+
+Fecha y hora de inicio del evento en formato ISO 8601. Añade la fecha y la hora para que los usuarios puedan encontrar más fácilmente los eventos que se ajustan a su agenda.
+
+Debes seguir las directrices de fecha y hora.
+
+"startDate": "2025-07-21T19:00"
+Propiedades recomendadas
+description	
+Text
+
+Descripción del evento. Describe todos los detalles del evento para que a los usuarios les resulte más fácil descubrirlo y asistir.
+
+Prácticas recomendadas:
+
+Añade una descripción clara y concisa del evento específico.
+Céntrate en los detalles del evento y no en las características de tu sitio.
+No repitas otros datos, como la fecha y la ubicación. Añade esa información a las propiedades respectivas.
+
+"description": "The Adventures of Kira and Morrison is coming to Snickertown in a can't miss performance."
+Solo mostramos un fragmento de la descripción completa.
+endDate	
+DateTime
+
+Fecha y hora de finalización del evento en formato ISO 8601. Utiliza el mismo formato que startDate. Añade la fecha y la hora para que los usuarios puedan encontrar más fácilmente los eventos que se ajustan a su agenda.
+
+Debes seguir las directrices de fecha y hora.
+
+"endDate": "2025-07-21T23:00"
+eventStatus	EventStatusType
+Advertencia: Cuando cambie el estado del evento, no quites la propiedad startDate, ya que startDate es necesaria para identificar el evento único.
+Indica el estado del evento. Si no utilizas este campo, Google interpreta que el valor de eventStatus es EventScheduled. Puedes utilizar varios estados si procede. A continuación se muestran los valores admitidos.
+
+EventCancelled	
+El evento se ha cancelado.
+
+No quites ni cambies otras propiedades (por ejemplo, no quites startDate ni location); al contrario, deja los valores que había antes de cancelar el evento y cambia la propiedad eventStatus por EventCancelled.
+
+¿Por qué? Algunas propiedades, como startDate y location, sirven para identificar eventos y ayudan a los usuarios a entender que el evento ha cambiado de estado.
+
+{
+  "@context": "https://schema.org",
+  "@type": "Event",
+  "eventStatus": "https://schema.org/EventCancelled",
+  "startDate": "2020-07-21T19:00"
+}
+EventPostponed	
+El evento se ha aplazado, pero todavía no se conoce la fecha. Conserva la fecha original en la propiedad startDate del evento hasta que sepas cuándo tendrá lugar. Cuando conozcas la nueva fecha, cambia eventStatus por EventRescheduled y actualiza startDate y endDate con la nueva información.
+
+No quites ni cambies otras propiedades (por ejemplo, no quites startDate ni location); al contrario, deja los valores que había antes de aplazar el evento y cambia la propiedad eventStatus a EventPostponed.
+
+¿Por qué? Algunas propiedades, como startDate y location, sirven para identificar eventos y ayudan a los usuarios a entender que el evento ha cambiado de estado.
+
+{
+  "@context": "https://schema.org",
+  "@type": "Event",
+  "eventStatus": "https://schema.org/EventPostponed",
+  "startDate": "2020-07-21T19:00"
+}
+EventRescheduled	
+El evento se ha aplazado hasta una fecha posterior. Actualiza startDate y endDate con las nuevas fechas. De manera opcional, también puedes cambiar eventStatus para indicar que el evento se ha aplazado y añadir la propiedad previousStartDate.
+
+
+{
+  "@context": "https://schema.org",
+  "@type": "Event",
+  "eventStatus": "https://schema.org/EventRescheduled",
+  "startDate": "2020-07-21T19:00",
+  "endDate": "2025-07-21T23:00",
+  "previousStartDate": "2025-03-21T19:00"
+}
+EventScheduled	
+El evento se celebrará según lo previsto. Este valor es el estado predeterminado de los eventos. Si no defines eventStatus, Google interpreta que el evento se celebrará según lo previsto.
+
+
+{
+  "@context": "https://schema.org",
+  "@type": "Event",
+  "eventStatus": "https://schema.org/EventScheduled",
+  "startDate": "2020-07-21T19:00"
+}
+image	
+Valores ImageObject o URL repetidos
+
+URL de una imagen o logotipo para el evento o tour. Al incluir una imagen, los usuarios interpretarán mejor de qué trata el evento y querrán participar. Recomendamos que las imágenes tengan 1920 píxeles de ancho (el ancho mínimo es de 720 píxeles).
+
+Directrices de imágenes adicionales:
+
+Las URLs de imagen deben poder rastrearse e indexarse. Comprueba que Google pueda acceder a tus URLs mediante la herramienta de inspección de URLs.
+Las imágenes deben ser representativas del contenido etiquetado.
+Las imágenes deben estar en un formato de archivo compatible con Google Imágenes.
+Para obtener los mejores resultados, recomendamos proporcionar varias imágenes de alta resolución (mínimo de 50.000 píxeles al multiplicar la anchura y la altura) con las siguientes relaciones de aspecto: 16x9, 4x3 y 1x1.
+Por ejemplo:
+
+
+"image": [
+  "https://example.com/photos/1x1/photo.jpg",
+  "https://example.com/photos/4x3/photo.jpg",
+  "https://example.com/photos/16x9/photo.jpg"
+]
+location.name	
+Text
+
+Indica el nombre detallado del lugar o espacio donde se celebra el evento. Solo se recomienda usar esta propiedad en los eventos que se celebran en una ubicación física.
+
+No incluyas el título del evento en este campo; esta información debe indicarse en name.
+No recomendado: San Francisco, California
+
+Recomendado: Auditorio Cívico Bill Graham
+
+Prácticas recomendadas:
+
+No incluyas el nombre de una ciudad, a menos que sea un evento de toda la ciudad.
+La propiedad location.name debe ser el nombre del recinto o la ubicación, no una repetición del título del evento. Si no sabes el nombre de la ubicación, no uses esta propiedad.
+offers	
+Offer
+
+Un elemento Offer anidado, uno para cada tipo de entrada.
+offers.availability	
+Text
+
+A continuación se muestran los posibles valores.
+
+InStock: las entradas para el evento están en stock.
+SoldOut: las entradas para el evento se han agotado.
+PreOrder: las entradas para el evento se pueden reservar.
+
+"offers": {
+  "@type": "Offer",
+  "availability": "https://schema.org/InStock"
+}
+Nota: Si la venta de entradas al público general aún no ha empezado, puedes omitir la disponibilidad y especificar validFrom.
+offers.price	
+Number
+
+Es el precio más bajo disponible de las entradas, incluidos los cargos y tarifas de gestión. No te olvides de irlo actualizando a medida que los precios cambien o que las entradas se agoten.
+
+Si el evento está disponible sin pagos, tarifas ni cargos por servicios, asigna el valor 0 a price.
+
+
+"offers": {
+  "@type": "Offer",
+  "price": 30
+}
+offers.priceCurrency	
+Text
+
+Código de moneda de 3 letras ISO 4217.
+
+
+"offers": {
+  "@type": "Offer",
+  "priceCurrency": "USD"
+}
+offers.validFrom	
+DateTime
+
+Indica la fecha y hora en que las entradas salen a la venta (solo es obligatorio incluirlas en ofertas con fecha restringida) en formato ISO-8601.
+
+
+"offers": {
+  "@type": "Offer",
+  "validFrom": "2024-05-21T12:00"
+}
+offers.url	
+URL
+
+Indica la URL de una página que ofrece la posibilidad de comprar entradas.
+
+
+"offers": {
+  "@type": "Offer",
+  "url": "https://www.example.com/event_offer/12345_201803180430"
+}
+Esta URL debe cumplir los siguientes requisitos:
+
+Dirigir a un usuario del público general a una página de destino que proporcione de manera clara la oportunidad de comprar una entrada para asistir a un evento concreto.
+Ser un enlace en el que un usuario pueda hacer clic en la página web que contiene el evento.
+Ser rastreable para el robot de Google (no estar bloqueada por robots.txt).
+organizer	
+Organization o Person
+
+Indica la persona o la organización que se encarga del evento. Si incluyes organizer, te recomendamos que añadas las siguientes propiedades:
+
+organizer.name
+organizer.url
+organizer.name	
+Text
+
+Es el nombre de la persona o de la organización que se encarga del evento.
+
+organizer.url	
+URL
+
+Es la URL del dominio de quien organiza el evento.
+
+performer	
+Person
+
+Indica los participantes que actúan en el evento, como artistas y humoristas. Utiliza un elemento PerformingGroup o Person anidado por cada artista.
+
+performer.name	
+Text
+
+Indica el nombre de la persona que actúa en el evento, como el nombre del cantante o humorista.
+
+
+"performer": {
+  "@type": "PerformingGroup",
+  "name": "Kira and Morrison"
+}
+previousStartDate	
+DateTime
+
+Si un evento se ha aplazado a otra fecha, indica la fecha de inicio original del evento. Si añades previousStartDate, también debes incluir la propiedad eventStatus y asignar a eventStatus el valor EventRescheduled. No utilices otros estados de evento.
+
+Debes seguir las directrices de fecha y hora.
+En el caso de los eventos aplazados a otra fecha, la propiedad startDate solo se debe usar para indicar la nueva fecha de inicio. Este campo puede aparecer repetido excepcionalmente si se da el caso de que un evento se aplace varias veces.
+
+
+{
+  "@context": "https://schema.org",
+  "@type": "Event",
+  "previousStartDate": ["2020-03-21T19:00-05:00", "2020-03-20T19:00-05:00", "2020-03-21T19:00-05:00"],
+  "eventStatus": "https://schema.org/EventRescheduled",
+  "startDate": "2020-07-21T19:00-05:00"
+}
+Monitorizar resultados enriquecidos con Search Console
+Search Console es una herramienta que te ayuda a monitorizar el rendimiento de tus páginas en la Búsqueda de Google. No hace falta que te registres en Search Console para que tu sitio web aparezca en los resultados de la Búsqueda de Google, pero, si lo haces, sabrás cómo lo ve Google y qué puedes hacer para mejorarlo. Te recomendamos que consultes Search Console en los siguientes casos:
+
+Después de implementar datos estructurados por primera vez
+Después de publicar plantillas nuevas o modificar el código
+Al hacer el análisis periódico del tráfico
+
+Después de implementar datos estructurados por primera vez 
+Una vez que Google haya indexado tus páginas, puedes comprobar si hay algún problema en el informe de estado de resultados enriquecidos correspondiente. Lo ideal es que haya un aumento en el número de elementos válidos y que no lo haya en el número de elementos no válidos. Si detectas problemas en tus datos estructurados, haz lo siguiente:
+
+Corrige los elementos no válidos.
+Inspecciona la URL en tiempo real para ver si el problema continúa.
+Solicita que se valide la corrección desde el informe de estado.
+Después de publicar plantillas nuevas o modificar el código 
+Cuando hagas cambios significativos en tu sitio web, observa si se incrementa la cantidad de elementos no válidos de datos estructurados.
+Si notas que hay más elementos no válidos, quizá sea porque has implementado una plantilla que no funciona, o puede que tu sitio esté interactuando con la plantilla que utilizas de un modo diferente que no es adecuado.
+Si notas que hay menos elementos válidos, pero no hay un incremento de elementos no válidos, es posible que hayas dejado de insertar datos estructurados en tus páginas. Para saber cuál es la causa del problema, utiliza la herramienta de inspección de URLs.
+Al hacer el análisis periódico del tráfico 
+Consulta el informe de rendimiento para analizar el tráfico de tus páginas en la Búsqueda de Google. En él, verás con qué frecuencia aparece tu página como resultado enriquecido en la Búsqueda, cada cuánto hacen clic en ella los usuarios y cuál es la posición media que ocupa tu sitio web en los resultados de búsqueda. También puedes obtener automáticamente estos resultados con la API de Search Console.
+Solucionar problemas
+Si tienes problemas para implementar o depurar datos estructurados, a continuación se incluyen algunos recursos que pueden serte útiles.
+
+Si usas un sistema de gestión de contenido (CMS) o alguien se encarga de gestionar tu sitio, pídele ayuda. No olvides reenviarle cualquier mensaje de Search Console que incluya información sobre el problema en cuestión.
+Google no garantiza que las funciones que utilizan datos estructurados aparezcan en los resultados de búsqueda. Para ver una lista con motivos habituales por los que Google no muestra tu contenido en resultados enriquecidos, consulta las directrices generales de datos estructurados.
+Es posible que haya un error en tus datos estructurados. Consulta la lista de errores de datos estructurados y el informe de datos estructurados que no se pueden analizar.
+Si se ha aplicado una acción manual de datos estructurados a tu página, se ignorarán sus datos estructurados, aunque la página puede seguir apareciendo en los resultados de la Búsqueda de Google. Para solucionar problemas de datos estructurados, usa el informe "Acciones manuales".
+Revisa las directrices para comprobar si tu contenido no las cumple. El problema podría deberse a que la página incluye contenido engañoso o etiquetas con contenido fraudulento. No obstante, es posible que el problema no se deba a la sintaxis, por lo que la prueba de resultados enriquecidos no podrá ayudarte a identificarlo.
+Solucionar problemas si faltan resultados enriquecidos o si se ha reducido el número total de resultados enriquecidos.
+Da cierto margen a Google para que vuelva a rastrear e indexar tu página. Recuerda que Google puede tardar varios días en encontrar y rastrear una página después de publicarse. Consulta las preguntas frecuentes sobre el rastreo y la indexación de la Búsqueda de Google.
+Publica una pregunta en el foro del Centro de la Búsqueda de Google.
+Si tu evento no aparece en la experiencia de eventos de Google o si has recibido una acción manual por etiquetas estructuradas con contenido fraudulento en Search Console, resuelve los problemas más habituales que se indican a continuación y revisa nuestras directrices. Si sigues teniendo problemas, consulta las preguntas frecuentes sobre eventos o plantea una en nuestro foro del Centro de la Búsqueda de Google.
+
+Google no garantiza que tus datos estructurados aparezcan en los resultados de búsqueda, aunque los hayas marcado correctamente según la prueba de resultados enriquecidos. Para ver una lista con motivos habituales por los que es posible que Google no muestre tus datos estructurados en los resultados de búsqueda, consulta las Directrices generales de datos estructurados.
+Falta la ubicación del evento o es incorrecta
+error Causa del problema: Google no comprende los valores proporcionados en las propiedades eventLocation, addressLocality o addressRegion. Google intenta vincular la información de ubicación con una ubicación física, pero no se ha incluido ese tipo de información o no se ha dado la correcta.
+
+done Corrige el problema
+
+Debes incluir en los datos estructurados valores de eventLocation, addressLocality o addressRegion (en función de la ubicación, ya que no todas las propiedades de ubicación son aplicables).
+Comprueba que el campo location.name utiliza el nombre de la ubicación o déjalo en blanco si no tiene nombre. Un problema común es colocar accidentalmente el nombre del evento en el campo location.name.
+Valida la corrección:
+Abre la prueba de resultados enriquecidos.
+Introduce la URL de publicación del evento en el cuadro Obtener URL.
+Haz clic en Validar.
+Haz clic en Previsualizar.
+Correcto: la prueba de resultados enriquecidos muestra el valor eventLocation correcto en la herramienta de vista previa de la Búsqueda de Google.
+
+Inténtalo de nuevo: la prueba de resultados enriquecidos muestra el valor "falso" en la ubicación del evento en la herramienta de vista previa de la Búsqueda de Google. Comprueba que se trata de una ubicación real.
+
+Mi sitio no aparece como opción para comprar entradas
+error Causa del problema: no se ha especificado la propiedad offers.url o no cumple los requisitos de las URL.
+
+done Corrige el problema
+
+Se debe incluir la propiedad offers.url en los datos estructurados.
+Asegúrate de que tu URL cumple los requisitos de URLs para offers.url.
+Pídenos que volvamos a rastrear tu sitio.
+Envía una solicitud de reevaluación.
+La hora o la fecha son incorrectas
+error Causa del problema: la hora o la fecha no son correctas. Entre los errores habituales se incluyen no tener en cuenta la diferencia horaria o especificar una hora de inicio incorrecta (por ejemplo, medianoche como hora de inicio).
+
+done Corrige el problema
+
+Especifica la hora aplicando la diferencia horaria correcta. Por ejemplo, si el evento empieza a las 19:00 en Nueva York (UTC -5) y termina a las 9:00, el valor de startDate es 2019-08-15T19:00:00-05:00 y el valor de endDate es 2019-08-15T21:00:00-05:00. Si no puedes especificar la diferencia horaria de tus eventos, no la indiques; por ejemplo, incluye solo 2019-08-15T19:00:00.
+Asegúrate de que la hora de inicio o de finalización sea la correcta. Un error habitual es configurar un evento para que comience a medianoche cuando en realidad no es así. Si el evento dura todo el día o no se ha anunciado la hora de inicio, especifica solo el día. Por ejemplo:
+Recomendado: 2019-07-20
+
+No recomendado: 2019-07-20T00:00:00
+
+No recomendado: 2019-08-15T00:00:01+00:00
+
+No recomendado: 2019-08-15T00:00:00+00:00

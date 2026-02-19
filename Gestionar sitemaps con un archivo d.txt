@@ -1,0 +1,856 @@
+Gestionar sitemaps con un archivo de índice de sitemaps
+Si tienes un sitemap que supera los límites de tamaño, debes dividirlo en varios para que cada uno de ellos esté por debajo del límite de tamaño. Una vez que hayas dividido tu sitemap, puedes enviar varios sitemaps a la vez con un archivo de índice de sitemaps.
+
+Prácticas recomendadas del índice de sitemaps
+El formato XML de un archivo de índice de sitemaps es muy parecido al formato XML de un archivo de sitemap y se define en el protocolo de sitemaps. Esto significa que todos los requisitos de sitemaps se aplican también a los archivos de índice de sitemaps.
+
+Los sitemaps a los que se haga referencia deben estar alojados en el mismo sitio que el archivo de índice de sitemaps. Este requisito no se aplica si configuras el envío entre sitios.
+
+Los sitemaps a los que se haga referencia en el archivo de índice de sitemaps deben estar en el mismo directorio que este archivo, o bien en un nivel inferior de la jerarquía del sitio. Por ejemplo, si el archivo de índice de sitemaps está en https://example.com/public/sitemap_index.xml, solo puede contener sitemaps que se encuentren en el mismo directorio o en uno de sus subdirectorios, como https://example.com/public/shared/....
+
+Puedes enviar un máximo de 500 archivos de índice de sitemaps por cada uno de los sitios de tu cuenta de Search Console.
+
+Ejemplo de índice de sitemaps
+En el siguiente ejemplo se muestra un índice de sitemaps en formato XML que incluye dos sitemaps:
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <sitemap>
+    <loc>https://www.example.com/sitemap1.xml.gz</loc>
+    <lastmod>2024-08-15</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://www.example.com/sitemap2.xml.gz</loc>
+    <lastmod>2022-06-05</lastmod>
+  </sitemap>
+</sitemapindex>
+Referencia del índice de sitemaps
+Las etiquetas de índice de sitemaps se definen en el mismo espacio de nombres que los sitemaps genéricos: http://www.sitemaps.org/schemas/sitemap/0.9
+
+Para que Google pueda usar tu índice de sitemaps, debes usar las siguientes etiquetas obligatorias:
+
+Etiquetas obligatorias
+sitemapindex	Etiqueta raíz del árbol XML. Contiene el resto de las etiquetas.
+sitemap	Etiqueta superior de cada sitemap que figura en el archivo. Es el único elemento secundario directo de la etiqueta sitemapindex.
+loc	Ubicación (URL) del sitemap. Es una etiqueta secundaria de la etiqueta sitemap. Un archivo de índice de sitemaps puede tener hasta 50.000 etiquetas loc.
+Además, las siguientes etiquetas opcionales pueden ayudar a Google a programar el rastreo de tus sitemaps:
+
+Etiquetas opcionales
+lastmod	Identifica la hora a la que se ha modificado el archivo de sitemap correspondiente. Puede ser un elemento secundario de una etiqueta sitemap. El valor de la etiqueta lastmod debe estar en el formato W3C de fecha y hora.
+Solucionar problemas con sitemaps
+Si tienes problemas con tu sitemap, puedes investigar los errores con Google Search Console. Consulta la guía para solucionar problemas de sitemaps de Search Console para obtener ayuda.
+
+Recomendado para ti
+
+Crear y enviar un sitemap | Centro de la Búsqueda de Google
+Google admite diferentes formatos de sitemaps. En esta guía encontrarás información sobre los formatos, cómo crear sitemaps y cómo enviarlos a Google.
+
+Última actualización: 18 dic 2025
+Cómo combinar extensiones de sitemaps | Centro de la Búsqueda de Google
+Consulta cómo combinar diferentes tipos de extensiones de sitemaps en un único sitemap XML.
+
+Última actualización: 18 dic 2025
+Sitemaps de imágenes
+Los sitemaps de imágenes son una forma de informar a Google sobre otras imágenes de tu sitio, especialmente de aquellas que no podríamos detectar de otro modo (como las imágenes a las que tu sitio accede mediante código JavaScript). Puedes crear un sitemap de imágenes independiente o añadir etiquetas de sitemap de imágenes a un sitemap que ya hayas creado. Ambos métodos son válidos para Google.
+
+Los sitemaps de imágenes se basan en sitemaps genéricos, por lo que también se aplican las prácticas recomendadas generales para sitemaps. También te recomendamos que sigas las prácticas recomendadas generales para publicar imágenes.
+
+Ejemplo de sitemap de imágenes
+En el siguiente ejemplo se muestra un sitemap normal con una extensión de sitemap de imágenes que incluye dos elementos <url>:
+
+https://example.com/sample1.html, que contiene dos imágenes
+https://example.com/sample2.html, que contiene una imagen
+
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+    xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://example.com/sample1.html</loc>
+    <image:image>
+      <image:loc>https://example.com/image.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://example.com/photo.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://example.com/sample2.html</loc>
+    <image:image>
+      <image:loc>https://example.com/picture.jpg</image:loc>
+    </image:image>
+  </url>
+</urlset>
+Referencia del sitemap de imágenes
+Las etiquetas image se definen en el espacio de nombres de sitemaps de imágenes: http://www.google.com/schemas/sitemap-image/1.1
+
+Para que Google pueda usar tu sitemap de imágenes, debes usar las siguientes etiquetas obligatorias:
+
+Etiquetas obligatorias
+<image:image>	Incluye toda la información sobre una única imagen. Cada etiqueta <url> puede contener hasta 1000 etiquetas <image:image>.
+<image:loc>	
+Es la URL de la imagen.
+
+En algunos casos, la URL de la imagen puede encontrarse en un dominio diferente al de tu sitio principal. No habrá ningún problema siempre que verifiques ambos dominios en Search Console. Si, por ejemplo, utilizas una red de distribución de contenido como Google Sites para alojar tus imágenes, comprueba que el sitio donde se aloja esté verificado en Search Console. Asegúrate también de que el archivo robots.txt no impida el rastreo de ningún contenido que quieras que se indexe.
+
+Etiquetas y atributos obsoletos
+Solucionar problemas con sitemaps
+Si tienes problemas con tu sitemap, puedes investigar los errores con Google Search Console. Consulta la guía para solucionar problemas de sitemaps de Search Console para obtener ayuda.
+
+Recomendado para ti
+
+Crear y enviar un sitemap | Centro de la Búsqueda de Google
+Google admite diferentes formatos de sitemaps. En esta guía encontrarás información sobre los formatos, cómo crear sitemaps y cómo enviarlos a Google.
+
+Última actualización: 18 dic 2025
+Cómo combinar extensiones de sitemaps | Centro de la Búsqueda de Google
+Consulta cómo combinar diferentes tipos de extensiones de sitemaps en un único sitemap XML.
+
+Última actualización: 18 dic 2025
+Sitemaps de News
+Si eres editor de prensa, puedes usar sitemaps de News para informar a Google sobre tus artículos e información adicional sobre ellos. Puedes ampliar un sitemap que ya tengas con etiquetas específicas de noticias, o bien crear un sitemap de News independiente que esté reservado solo para los artículos de noticias. Cualquiera de las opciones son válidas para Google, aunque crear un sitemap específico para tus artículos de noticias puede mejorar el seguimiento de tu contenido en la Búsqueda a través de Search Console.
+
+Prácticas recomendadas de sitemaps de News
+Los sitemaps de News se basan en sitemaps genéricos, por lo que también se aplican las prácticas recomendadas generales para sitemaps.
+
+Actualiza el sitemap de News con artículos nuevos a medida que se vayan publicando. No crees un sitemap con cada actualización. Google News rastrea sitemaps de News con la misma frecuencia con la que rastrea el resto de tu sitio.
+
+Incluye únicamente las URLs recientes de los artículos creados en los últimos dos días. Cuando los artículos tengan más de dos días de antigüedad, retira esas URLs del sitemap de News o quita los metadatos <news:news> de tu sitemap de las URLs más antiguas.
+
+Si eliges el método que permite retirar las URLs antiguas de tu sitemap de News, puede que esté vacío durante un tiempo (por ejemplo, si no has publicado artículos en los últimos días). Puede que veas una advertencia de sitemap vacío en Search Console, pero solo aparecerá para asegurar que ha sido de forma intencional. Si el archivo está vacío, no ocasionará ningún problema relacionado con la Búsqueda de Google.
+
+Ejemplo de sitemap de News
+En el siguiente ejemplo se muestra un sitemap normal con una extensión de noticias. Debe contener una etiqueta <url> y una etiqueta <news:news> única con sus etiquetas secundarias obligatorias:
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+    xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
+  <url>
+  <loc>http://www.example.org/business/article55.html</loc>
+  <news:news>
+    <news:publication>
+      <news:name>The Example Times</news:name>
+      <news:language>en</news:language>
+    </news:publication>
+    <news:publication_date>2008-12-23</news:publication_date>
+    <news:title>Companies A, B in Merger Talks</news:title>
+  </news:news>
+  </url>
+</urlset>
+Referencia del sitemap de News
+Las etiquetas news se definen en el espacio de nombres de sitemaps de News: http://www.google.com/schemas/sitemap-news/0.9.
+
+Para que Google pueda usar tu sitemap de News, debes usar las siguientes etiquetas obligatorias:
+
+Etiquetas obligatorias
+<news:news>	La etiqueta superior de las demás etiquetas del espacio de nombres news:. Cada etiqueta de sitemap url solo puede tener una etiqueta news:news (además de la etiqueta de cierre correspondiente), y los sitemaps pueden tener hasta 1000 etiquetas news:news. Si hay más de 1000 etiquetas <news:news> en un sitemap de News, divídelo en varios más pequeños.
+<news:publication>	
+La etiqueta superior de las etiquetas <news:name> y <news:language>. Cada etiqueta superior de <news:news> solo puede tener una etiqueta <news:publication>.
+
+<news:name>	
+La etiqueta <news:name> indica el nombre de la publicación, que debe coincidir exactamente con el nombre que figura en los artículos de news.google.com, a excepción del texto que haya entre paréntesis.
+
+<news:language>	
+Con la etiqueta <news:language> se especifica el idioma de la publicación. Para representarlo, utiliza un código de idioma ISO 639 de dos o tres letras.
+
+Excepción: El chino simplificado se indica con zh-cn y el chino tradicional se representa con zh-tw.
+
+<news:publication_date>	
+Es la fecha de publicación del artículo, expresada en formato W3C. Utiliza el formato de fecha completa (YYYY-MM-DD) o el formato de fecha completa con horas, minutos y segundos, y el código de la zona horaria (YYYY-MM-DDThh:mm:ssTZD). Indica la fecha y hora en que se publicó por primera vez el artículo en tu sitio, no la fecha y hora en que se añadió el artículo al sitemap.
+
+Google acepta cualquiera de los siguientes formatos:
+
+Fecha completa: YYYY-MM-DD (1997-07-16)
+Fecha completa con hora y minuto: YYYY-MM-DDThh:mmTZD (1997-07-16T19:20+01:00)
+Fecha completa con hora, minuto y segundo: YYYY-MM-DDThh:mm:ssTZD (1997-07-16T19:20:30+01:00)
+Fecha completa con hora, minuto, segundo y décima de segundo: YYYY-MM-DDThh:mm:ss.sTZD (1997-07-16T19:20:30.45+01:00)
+<news:title>	
+Es el título del artículo de noticias.
+
+Nota: Es posible que Google acorte el título del artículo periodístico por razones de espacio al mostrarlo en varios dispositivos. Introduce el título del artículo tal como aparece en tu sitio. No incluyas el nombre del autor, el nombre de la publicación ni la fecha de publicación en la etiqueta <news:title>. Consulta más información sobre cómo crear mejores títulos.
+Solucionar problemas con sitemaps
+Si tienes problemas con tu sitemap, puedes investigar los errores con Google Search Console. Consulta la guía para solucionar problemas de sitemaps de Search Console para obtener ayuda.
+
+Recomendado para ti
+
+Crear y enviar un sitemap | Centro de la Búsqueda de Google
+Google admite diferentes formatos de sitemaps. En esta guía encontrarás información sobre los formatos, cómo crear sitemaps y cómo enviarlos a Google.
+
+Última actualización: 18 dic 2025
+Cómo combinar extensiones de sitemaps | Centro de la Búsqueda de Google
+Consulta cómo combinar diferentes tipos de extensiones de sitemaps en un único sitemap XML.
+
+Última actualización: 18 dic 2025
+Sitemaps de vídeo y alternativas
+En los sitemaps de vídeo se incluyen, además de la información habitual, datos sobre los vídeos alojados en tus páginas. Estos sitemaps son una buena forma de ayudarnos a encontrar e interpretar el contenido de vídeo de tu sitio, especialmente los vídeos que hayas añadido recientemente o que no detectaríamos con nuestros mecanismos de rastreo habituales.
+
+Google recomienda usar sitemaps de vídeo, pero también admite feeds MRSS.
+
+Prácticas recomendadas de sitemaps de vídeo
+Los sitemaps de vídeo se basan en sitemaps genéricos, por lo que también se aplican las prácticas recomendadas generales para sitemaps. Puedes crear un sitemap independiente o un feed MRSS solo para vídeos, o bien añadir etiquetas de sitemap de vídeo en un sitemap ya creado, lo que te resulte más práctico.
+
+Además, los sitemaps de vídeo deben cumplir los siguientes requisitos específicos:
+
+No incluyas vídeos que no tengan relación con el contenido de la página en la que se alojan. Por ejemplo, un vídeo que sea un pequeño anexo a la página o que no esté relacionado con el contenido de texto principal.
+El robot de Google debe poder acceder a todos los archivos a los que se haga referencia en el sitemap de vídeo. Esto significa que todas las URLs incluidas en el sitemap de vídeo:
+No deben tener el rastreo bloqueado mediante reglas de robots.txt.
+Deben ser accesibles sin archivos meta y sin tener que iniciar sesión.
+No deben estar bloqueadas por cortafuegos ni por mecanismos similares.
+Deben ser accesibles mediante un protocolo compatible: HTTP y FTP (los protocolos de streaming no se admiten).
+Si quieres impedir que los spammers accedan a tu contenido de vídeo alojado en las URLs de <player_loc> o de <content_loc>, verifica que es el robot de Google el que accede a tu servidor.
+
+Si quieres obtener más consejos sobre los vídeos en la Búsqueda de Google, consulta las prácticas recomendadas para vídeos.
+
+Ejemplo de sitemap de vídeo
+En el siguiente ejemplo se muestra un sitemap normal con una extensión de vídeo. Incluye dos entradas de vídeo anidadas en la misma etiqueta <url>. La primera entrada <video> incluye todas las etiquetas que Google puede usar, mientras que la segunda solo incluye las etiquetas obligatorias.
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+    xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+  <url>
+    <loc>https://www.example.com/videos/some_video_landing_page.html</loc>
+    <video:video>
+      <video:thumbnail_loc>https://www.example.com/thumbs/123.jpg</video:thumbnail_loc>
+      <video:title>Grilling steaks for summer</video:title>
+      <video:description>
+        Alkis shows you how to get perfectly done steaks every time
+      </video:description>
+      <video:content_loc>
+        http://streamserver.example.com/video123.mp4
+      </video:content_loc>
+      <video:player_loc>
+        https://www.example.com/videoplayer.php?video=123
+      </video:player_loc>
+      <video:duration>600</video:duration>
+      <video:expiration_date>2021-11-05T19:20:30+08:00</video:expiration_date>
+      <video:rating>4.2</video:rating>
+      <video:view_count>12345</video:view_count>
+      <video:publication_date>2007-11-05T19:20:30+08:00</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:restriction relationship="allow">IE GB US CA</video:restriction>
+      <video:price currency="EUR">1.99</video:price>
+      <video:requires_subscription>yes</video:requires_subscription>
+      <video:uploader
+        info="https://www.example.com/users/grillymcgrillerson">GrillyMcGrillerson
+      </video:uploader>
+      <video:live>no</video:live>
+    </video:video>
+    <video:video>
+      <video:thumbnail_loc>https://www.example.com/thumbs/345.jpg</video:thumbnail_loc>
+      <video:title>Grilling steaks for winter</video:title>
+      <video:description>
+        In the freezing cold, Roman shows you how to get perfectly done steaks every time.
+      </video:description>
+      <video:content_loc>
+        http://streamserver.example.com/video345.mp4
+      </video:content_loc>
+      <video:player_loc>
+        https://www.example.com/videoplayer.php?video=345
+      </video:player_loc>
+    </video:video>
+  </url>
+</urlset>
+Más ejemplos
+Referencia del sitemap de vídeo
+Las etiquetas video se definen en el espacio de nombres de sitemaps de vídeo: http://www.google.com/schemas/sitemap-video/1.1. Cada etiqueta solo se puede añadir una vez por vídeo, a menos que se indique lo contrario.
+
+Para que Google pueda usar tu sitemap de vídeo, debes usar las siguientes etiquetas obligatorias:
+
+Etiquetas obligatorias
+<video:video>	
+Se trata del elemento superior en el que se incluye toda la información sobre un vídeo de la página especificada en la etiqueta <loc>. Puedes incluir varias etiquetas <video:video> anidadas en la etiqueta <loc>, una por cada vídeo de la página de alojamiento.
+
+<video:thumbnail_loc>	
+Indica una URL que dirige al archivo de la imagen en miniatura del vídeo. Sigue los requisitos de las miniaturas de vídeos.
+
+<video:title>	
+Indica el título del vídeo. Todas las entidades HTML deben usar códigos de escape o incluirse en un bloque CDATA. Recomendamos que coincida con el título del vídeo que se muestra en la página web en la que está insertado.
+
+<video:description>	
+Indica una descripción del vídeo. Puede tener 2048 caracteres como máximo. Todas las entidades HTML deben usar códigos de escape o incluirse en un bloque CDATA. Debe coincidir con la descripción que se muestra en la página web en la que el vídeo está insertado, aunque no necesariamente palabra por palabra.
+
+<video:content_loc>	
+Indica una URL que dirige al propio archivo multimedia del vídeo. El archivo debe tener uno de los formatos admitidos.
+
+Se requiere una etiqueta <video:content_loc> o <video:player_loc>. Te recomendamos que, si es posible, proporciones la etiqueta <video:content_loc>, ya que es la forma más eficaz que tiene Google de obtener tus archivos de contenido de vídeo. Si <video:content_loc> no está disponible, proporciona <video:player_loc> como alternativa.
+Directrices adicionales
+
+No se admiten los formatos HTML ni Flash.
+No debe ser la misma URL que figura en la etiqueta superior <loc>.
+Es el equivalente de VideoObject.contentUrl, presente en los datos estructurados.
+Práctica recomendada: si quieres restringir el acceso a tu contenido, pero permitir que se rastree, asegúrate de que el robot de Google pueda acceder al contenido mediante la verificación del robot de Google.
+<video:player_loc>	
+Indica una URL que dirige a un reproductor de un vídeo específico. Suele ser la información incluida en el atributo src de las etiquetas <embed>.
+
+Se requiere una etiqueta <video:content_loc> o <video:player_loc>. Te recomendamos que, si es posible, proporciones la etiqueta <video:content_loc>, ya que es la forma más eficaz que tiene Google de obtener tus archivos de contenido de vídeo. Si <video:content_loc> no está disponible, proporciona <video:player_loc> como alternativa.
+Directrices adicionales
+
+No debe ser la misma URL que figura en <loc>.
+En el caso de Vimeo, YouTube y otras plataformas de alojamiento de vídeos que permiten insertarlos a través de vídeos iframe, se utiliza este valor en lugar de video:content_loc. Es el equivalente de VideoObject.embedUrl, presente en los datos estructurados.
+Práctica recomendada: si quieres restringir el acceso a tu contenido, pero permitir que se rastree, asegúrate de que el robot de Google pueda acceder al contenido mediante la verificación del robot de Google.
+Además, las siguientes etiquetas opcionales pueden ayudar a Google a entender mejor tus vídeos y sus propiedades:
+
+Etiquetas opcionales
+<video:duration>	
+Indica la duración del vídeo, expresada en segundos. Su valor debe estar entre 1 y 28800 (8 horas).
+
+<video:expiration_date>	
+Indica la fecha a partir de la cual el vídeo ya no estará disponible, en formato W3C. No incluyas esta etiqueta si el vídeo no caduca. Si la añades, la Búsqueda de Google no mostrará el vídeo después de la fecha especificada. Para los vídeos periódicos en la misma URL, actualiza la fecha de vencimiento a la nueva.
+
+Se pueden emplear fechas completas sin la hora (YYYY-MM-DD) o fechas completas que incluyan horas, minutos, segundos y la zona horaria (YYYY-MM-DDThh:mm:ss+TZD).
+
+Ejemplo: 2012-07-16T19:20:30+08:00.
+
+<video:rating>	
+Indica la valoración del vídeo. Se admiten valores numéricos comprendidos entre 0.0 (baja) y 5.0 (alta).
+
+<video:view_count>	
+Indica el número de veces que se ha visto el vídeo.
+
+<video:publication_date>	
+Indica la fecha en la que el vídeo se publicó por primera vez, expresada en formato W3C. Se admiten fechas completas sin la hora (YYYY-MM-DD) o fechas completas con horas, minutos, segundos y zona horaria (YYYY-MM-DDThh:mm:ss+TZD).
+
+Ejemplo: 2007-07-16T19:20:30+08:00
+
+<video:family_friendly>	
+Indica si el vídeo puede aparecer cuando SafeSearch está activada. Si no incluyes esta etiqueta, podrá mostrarse cuando Búsqueda Segura esté activada.
+
+Valores admitidos
+
+yes: el vídeo puede aparecer cuando Búsqueda Segura está activada.
+no: el vídeo solo puede mostrarse cuando Búsqueda Segura está desactivada.
+<video:restriction>	
+Indica si el vídeo se mostrará o se ocultará en los resultados de búsqueda de países concretos.
+
+Incluye una lista con códigos de país en formato ISO 3166 delimitados por espacios. Si no hay ninguna etiqueta <video:restriction>, Google supone que el vídeo se puede mostrar en cualquier ubicación. Ten en cuenta que esta etiqueta solo impide que el vídeo aparezca en los resultados de búsqueda; los usuarios pueden encontrar o reproducir el vídeo en una ubicación restringida por otros medios. Más información sobre cómo aplicar restricciones por país
+
+Atributos:
+
+Si se utiliza la etiqueta superior <video:restriction>, es obligatorio incluir los siguientes atributos:
+
+relationship: indica si el vídeo está permitido o bloqueado en los resultados de búsqueda de los países especificados. Los valores posibles son:
+allow: se permiten los países incluidos y se rechazan los países que no se indican en la lista.
+deny: se rechazan los países incluidos y se permiten los países que no se indican en la lista.
+Ejemplo: Para que un vídeo solo aparezca en resultados de búsquedas hechas desde Canadá y México, incluye la siguiente etiqueta:
+
+<video:restriction relationship="allow">CA MX</video:restriction>
+
+<video:platform>	
+Indica si el vídeo se mostrará o se ocultará en los resultados de búsqueda en tipos de plataforma concretos. Se trata de una lista con tipos de plataforma delimitados por espacios. Ten en cuenta que esta etiqueta solo impide que el vídeo aparezca en los resultados de búsqueda de los dispositivos indicados; no impide que los usuarios lo reproduzcan en plataformas restringidas.
+
+Si no hay ninguna etiqueta <video:platform>, Google presupone que el vídeo se puede reproducir en todas las plataformas. Más información sobre cómo aplicar restricciones de plataformas
+
+Valores admitidos
+
+web: navegadores web en ordenadores y portátiles.
+mobile: navegadores móviles, como los de teléfonos móviles o tablets.
+tv: navegadores de televisión, como los que están disponibles en dispositivos de Google TV y videoconsolas.
+Atributos:
+
+Si se utiliza la etiqueta superior <video:platform>, es obligatorio incluir los siguientes atributos:
+
+relationship: indica si el vídeo está restringido o permitido en las plataformas especificadas. Los valores posibles son:
+allow: se denegarán las plataformas que se hayan omitido.
+deny: se permitirán las plataformas que se hayan omitido.
+Ejemplo: Para que un vídeo se muestre a los usuarios de ordenadores o de televisiones, pero no a los de dispositivos móviles, incluye la etiqueta que se indica a continuación.
+<video:platform relationship="allow">web tv</video:platform>
+
+<video:requires_subscription>	
+Indica si es necesario tener una suscripción (de pago o gratuita) para visualizar el vídeo. Los valores posibles son:
+
+yes: es obligatorio tener una suscripción.
+no: no es necesario tener una suscripción.
+<video:uploader>	
+Indica el usuario que ha subido el vídeo. El valor de la cadena puede tener un máximo de 255 caracteres.
+
+Atributos:
+
+info (opcional): indica la URL de una página web con información adicional sobre el usuario que ha subido el vídeo. Esta URL debe pertenecer al mismo dominio que la etiqueta <loc>.
+<video:live>	
+Indica si se trata de una emisión de vídeo en directo. Los valores posibles son:
+
+yes: el vídeo es una emisión en directo.
+no: el vídeo no es una emisión en directo.
+<video:tag>	
+Indica una etiqueta de cadena arbitraria que describe el vídeo. Por lo general, las etiquetas son descripciones muy breves de conceptos clave asociados a un vídeo o contenido determinados. Un vídeo puede tener varias etiquetas aunque pertenezca a una sola categoría. Por ejemplo, un vídeo sobre hacer comida a la parrilla puede pertenecer a la categoría "A la parrilla", pero tener asociadas las etiquetas "filete", "carne", "verano" y "aire libre". Crea un elemento <video:tag> por cada etiqueta asociada a un vídeo. Se permite un máximo de 32 etiquetas por vídeo.
+
+Etiquetas y atributos obsoletos
+Alternativa a los sitemaps: MRSS
+Recomendamos usar sitemaps de vídeo, pero también admitimos feeds MRSS.
+
+Se puede usar mRSS, un módulo de RSS que complementa las capacidades de elementos de RSS 2.0. Los feeds MRSS son muy similares a los sitemaps de vídeo y, al igual que estos, se pueden probar, enviar y modificar.
+
+Para obtener más información sobre los feeds multimedia, consulta la documentación oficial de RSS multimedia.
+
+Diferencias entre RSS y MRSS: MRSS es una extensión de RSS que sirve para distribuir archivos multimedia. Permite describir contenido de una manera mucho más detallada que el estándar RSS.
+Ejemplo de MRSS
+A continuación, se muestra un ejemplo de una entrada MRSS con todas las etiquetas que usa Google.
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:dcterms="http://purl.org/dc/terms/">
+  <channel>
+    <title>Example MRSS</title>
+    <link>https://www.example.com/examples/mrss/</link>
+    <description>MRSS Example</description>
+    <item xmlns:media="http://search.yahoo.com/mrss/" xmlns:dcterms="http://purl.org/dc/terms/">
+      <link>https://www.example.com/examples/mrss/example.html</link>
+      <media:content url="https://www.example.com/examples/mrss/example.flv" fileSize="405321"
+                        type="video/x-flv" height="240" width="320" duration="120" medium="video" isDefault="true">
+        <media:player url="https://www.example.com/shows/example/video.swf?flash_params" />
+        <media:title>Grilling Steaks for Summer</media:title>
+        <media:description>Get perfectly done steaks every time</media:description>
+        <media:thumbnail url="https://www.example.com/examples/mrss/example.png" height="120" width="160"/>
+        <media:price price="19.99" currency="EUR" />
+        <media:price type="subscription" />
+      </media:content>
+      <media:restriction relationship="allow" type="country">us ca</media:restriction>
+      <dcterms:valid xmlns:dcterms="http://purl.org/dc/terms/">end=2020-10-15T00:00+01:00; scheme=W3C-DTF</dcterms:valid>
+      <dcterms:type>live-video</dcterms:type>
+    </item>
+  </channel>
+</rss>
+Referencia de MRSS
+En la especificación completa de MRSS, se incluyen más etiquetas opcionales, así como prácticas recomendadas y ejemplos.
+
+Para que Google pueda usar tu feed MRSS, debes utilizar las siguientes etiquetas obligatorias:
+
+Etiquetas obligatorias
+<media:content>	
+Incluye información sobre el vídeo.
+
+Atributos:
+
+medium: tipo de contenido. Su valor debe ser video.
+url: indica la URL que lleva directamente al contenido de vídeo sin procesar. Si no se especifica, debes especificar la etiqueta <media:player>.
+duration (opcional, pero recomendado): indica la duración del vídeo en segundos.
+Puedes consultar el resto de los atributos opcionales y campos secundarios de la etiqueta <media:content> en la especificación de MRSS.
+
+<media:player>	
+Debes especificar al menos uno de los atributos <media:player> o url en <media:content>.
+
+Indica una URL que dirige a un reproductor de un vídeo específico. Por lo general, es la información que se incluye en el atributo src de una etiqueta <embed>, que no debe coincidir con el contenido de la etiqueta <loc>. No puede ser la misma URL que la que figura en la etiqueta <link>. La etiqueta <link> dirige a la URL de la página donde se aloja el vídeo, mientras que esta etiqueta dirige a un reproductor.
+
+<media:title>	
+Indica el título del vídeo. Puede tener 100 caracteres como máximo. Todas las entidades HTML deben usar códigos de escape o incluirse en un bloque CDATA.
+
+<media:description>	
+La descripción del vídeo. Puede tener 2048 caracteres como máximo. Todas las entidades HTML deben usar códigos de escape o incluirse en un bloque CDATA.
+
+<media:thumbnail>	Indica una URL que dirige a una vista previa en miniatura. Sigue los requisitos de las miniaturas de vídeos.
+Además, las siguientes etiquetas opcionales pueden ayudar a Google a entender mejor tus vídeos y sus propiedades:
+
+Etiquetas opcionales
+<dcterms:valid>	
+Indica la fecha de publicación y la fecha de vencimiento del vídeo. Consulta la especificación completa de la etiqueta dcterms:valid.
+
+Ejemplo:
+
+
+<dcterms:valid>
+start=2002-10-13T09:00+01:00;
+end=2002-10-17T17:00+01:00;
+scheme=W3C-DTF
+<dcterms:valid>
+<media:restriction>	
+Indica una lista delimitada por espacios de países en los que se puede o no se puede reproducir el vídeo, en formato ISO 3166. Si no hay ninguna etiqueta <media:restriction>, Google supone que el vídeo se puede reproducir en todos los países.
+
+Atributos:
+
+Si se utiliza la etiqueta superior <media:restriction>, es obligatorio incluir los siguientes atributos:
+
+type: asigna el valor country al atributo type. Solo se admiten restricciones por país.
+relationship: indica si el vídeo se puede reproducir o no en los países indicados. Valores admitidos:
+allow: se permiten los países incluidos y se rechazan los países que no se indican en la lista.
+deny: se rechazan los países incluidos y se permiten los países que no se indican en la lista.
+Más información sobre cómo usar las restricciones por país
+
+Ejemplo:
+
+
+<media:restriction relationship="allow" type="country">us ca</media:restriction>
+<media:price>	
+Indica el precio de descarga o de visualización del vídeo. No uses esta etiqueta en vídeos que estén disponibles sin coste económico. Se puede incluir más de un elemento <media:price>; por ejemplo, para especificar varias monedas u opciones de compra.
+
+Atributos:
+
+Si se utiliza la etiqueta superior <media:price>, es obligatorio incluir los siguientes atributos:
+
+currency: indica la moneda, expresada en formato ISO 4217.
+type: indica la opción de compra. Los valores posibles son:
+rent: el vídeo se puede alquilar.
+purchase: el vídeo se puede comprar.
+package: el vídeo forma parte de una oferta de paquete.
+subscription: el vídeo está disponible con una suscripción.
+Solucionar problemas con sitemaps
+Si tienes problemas con tu sitemap, puedes investigar los errores con Google Search Console. Consulta la guía para solucionar problemas de sitemaps de Search Console para obtener ayuda.
+
+Recomendado para ti
+
+Crear y enviar un sitemap | Centro de la Búsqueda de Google
+Google admite diferentes formatos de sitemaps. En esta guía encontrarás información sobre los formatos, cómo crear sitemaps y cómo enviarlos a Google.
+
+Última actualización: 18 dic 2025
+Cómo combinar extensiones de sitemaps | Centro de la Búsqueda de Google
+Consulta cómo combinar diferentes tipos de extensiones de sitemaps en un único sitemap XML.
+
+Última actualización: 18 dic 2025
+Cómo combinar extensiones de sitemaps
+Las extensiones de sitemaps son una forma muy útil de informar a Google sobre los diferentes tipos de contenido y los metadatos que utilizas en tu sitio. A menudo, el contenido de tus páginas puede encajar en varios tipos de extensiones. Por ejemplo, puedes publicar artículos periodísticos que tengan imágenes y vídeos insertados. Además, también puedes tener alguna página localizada, lo que significa que podrías añadirle anotaciones hreflang.
+
+Espacios de nombres
+Por cada extensión de sitemap que quieras utilizar en un sitemap, debes especificar el espacio de nombres correspondiente que declare las etiquetas que admite la extensión. Para ello, se usa el atributo xmlns de la etiqueta urlset. Los espacios de nombres para las extensiones de sitemap que admite Google son los siguientes:
+
+Etiquetas de extensiones y sus definiciones de espacios de nombres
+image:	http://www.google.com/schemas/sitemap-image/1.1
+news:	http://www.google.com/schemas/sitemap-news/0.9
+video:	http://www.google.com/schemas/sitemap-video/1.1
+xhtml: (para hreflang)	http://www.w3.org/1999/xhtml
+Declarar varios espacios de nombres
+Para declarar varios espacios de nombres, añade las referencias de los respectivos espacios de nombres a tu sitemap, tal como se describe en la documentación de las extensiones correspondientes. A continuación, incluimos un ejemplo de cómo añadir extensiones de noticias, de vídeo y de xhtml para hreflang) a un sitemap:
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+           xmlns:news="http://www.google.com/schemas/sitemap-news/0.9"
+           xmlns:video="http://www.google.com/schemas/sitemap-video/1.1"
+           xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+<!-- rest of the sitemap -->
+Combinar extensiones de sitemaps
+Una vez que hayas declarado los espacios de nombres, sigue los detalles de implementación de la documentación de la extensión de sitemaps correspondiente que vayas a utilizar.
+
+Sitemap de imagen
+Sitemap de News
+Sitemap de vídeo
+hreflang
+Para combinar extensiones, añade las etiquetas de las extensiones de sitemap que estés usando de una en una a la etiqueta <url> que corresponda, tal como se describe en la documentación de cada extensión de sitemap.
+
+Por ejemplo, para añadir extensiones de noticias, de vídeo y de xhtml (hreflang) a un sitemap, haz lo siguiente:
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+    xmlns:news="http://www.google.com/schemas/sitemap-news/0.9"
+    xmlns:video="http://www.google.com/schemas/sitemap-video/1.1"
+    xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://www.example.com/english/page.html</loc>
+    <!-- Starting with the news extension tags -->
+    <news:news>
+      <news:publication>
+        <news:name>The Example Times</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2008-12-23</news:publication_date>
+      <news:title>Companies A, B in Merger Talks</news:title>
+    </news:news>
+    <!-- Next we add video extension tags -->
+    <video:video>
+      <video:thumbnail_loc>https://www.example.com/thumbs/123.jpg</video:thumbnail_loc>
+      <video:title>Lizzi is painting the wall</video:title>
+      <video:description>
+        Gary is watching the paint dry on the wall Lizzi painted.
+      </video:description>
+      <video:player_loc>
+        https://player.example.com/video/987654321
+      </video:player_loc>
+    </video:video>
+    <!-- And finally the xhtml tags for hreflang -->
+    <xhtml:link
+                rel="alternate"
+                hreflang="de"
+                href="https://www.example.de/deutsch/page.html"/>
+    <xhtml:link
+                rel="alternate"
+                hreflang="de-ch"
+                href="https://www.example.de/schweiz-deutsch/page.html"/>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://www.example.com/english/page.html"/>
+  </url>
+<!-- Add more <url> tags -->
+El orden de la extensión en el sitemap es irrelevante después de la etiqueta <loc>. Ten en cuenta las prácticas recomendadas generales sobre sitemaps, sobre todo los límites de tamaño del archivo, ya que combinar extensiones de sitemaps aumenta el tamaño de archivo del sitemap de forma significativa.
+
+Solucionar problemas con sitemaps
+Si tienes problemas con tu sitemap, puedes investigar los errores con Google Search Console. Consulta la guía para solucionar problemas de sitemaps de Search Console para obtener ayuda.
+Solicitar que Google vuelva a rastrear URLs
+¿Usas una plataforma de gestión de contenido alojada, como Blogger o WordPress? En la mayoría de los casos, la plataforma envía tu nuevo contenido a los buscadores de forma automática. Consulta más información en los artículos de ayuda de la plataforma que usas.
+Si has hecho cambios en alguna página de tu sitio, puedes solicitar a Google que vuelva a indexarla con cualquiera de los métodos que se mencionan en este artículo. No puedes solicitar la indexación de URLs que no gestiones.
+
+Los rastreos pueden tardar desde unos pocos días hasta unas semanas. Ten paciencia y ve haciendo un seguimiento del progreso con el informe "Estado de indexación" o con la herramienta de inspección de URLs.
+
+Solicitar un rastreo no garantiza que la página se incluya en los resultados de búsqueda ni que, en el caso de incluirse, se haga de inmediato. Nuestros sistemas priorizan incluir rápidamente el contenido útil y de alta calidad.
+Utilizar la herramienta de inspección de URLs (pocas URLs)
+Para solicitar que se rastreen URLs concretas, utiliza la herramienta de inspección de URLs. Para solicitar que se indexe una página con la herramienta de inspección de URLs, tienes que ser un propietario o un usuario con permisos completos de la propiedad de Search Console.
+
+Recuerda que hay una cuota para enviar URLs concretas y que solicitar que se vuelva a rastrear varias veces una misma URL o sitemap no hará que se rastree más rápido.
+
+Enviar un sitemap (muchas URL a la vez)
+Si tienes una gran cantidad de URLs, envía un sitemap. Los sitemaps resultan muy útiles a Google para descubrir URLs de tu sitio. Puede ser muy útil si acabas de lanzar tu sitio o si has hecho un traslado de sitio recientemente. Además, puedes incluir en ellos metadatos adicionales para indicar versiones en otros idiomas y páginas específicas de vídeos, imágenes o noticias. Consulta cómo crear y enviar sitemaps.
+Solucionar errores de rastreo de la Búsqueda de Google
+Estos son los pasos clave para solucionar problemas de rastreo de la Búsqueda de Google en tu sitio:
+
+Averiguar si el robot de Google detecta problemas de disponibilidad en tu sitio.
+Determinar si hay páginas que deberían rastrearse, pero que el robot de Google no examina.
+Identificar si hay partes de tu sitio que deberían rastrearse más rápido de lo que se está haciendo.
+Mejorar la eficiencia de rastreo de tu sitio.
+Gestionar el rastreo excesivo de tu sitio.
+Averiguar si el robot de Google detecta problemas de disponibilidad en tu sitio
+Aunque la disponibilidad de tu sitio mejore, es posible que el presupuesto de rastreo de tu sitio no aumente. Tal como se ha comentado más arriba, Google se basa en la demanda de rastreo para determinar la frecuencia de rastreo óptima. No obstante, los problemas de disponibilidad impiden que Google rastree tu sitio tanto como querría.
+
+Diagnosticar el problema:
+
+Consulta el informe "Estadísticas de rastreo" para ver el historial de rastreo del robot de Google en tu sitio. En el informe se muestra cuándo ha detectado Google problemas de disponibilidad en tu sitio. Si aparecen advertencias o errores de disponibilidad en tu sitio, busca en los gráficos de disponibilidad de host si en alguna ocasión las solicitudes del robot de Google han superado el límite (que está indicado con una línea roja), haz clic en el gráfico para ver cuáles son las URLs en las que se han detectado problemas e intenta relacionarlas con errores que haya en tu sitio.
+
+También puedes usar la herramienta de inspección de URLs para probar algunas URLs de tu sitio. Si la herramienta devuelve advertencias de tipo Carga de host superada, significa que el robot de Google no puede rastrear tantas URLs de tu sitio como ha descubierto.
+
+Resolver el problema:
+
+Consulta cómo detectar y gestionar varios problemas de disponibilidad en la documentación del informe "Estadísticas de rastreo".
+Impide que se rastreen las páginas que no quieres que se rastreen. Consulta la sección sobre cómo gestionar el inventario.
+Haz que las páginas se carguen y se rendericen más rápido. Consulta la sección Mejorar la eficiencia de rastreo del sitio.
+Aumenta la capacidad de tu servidor. Si Google suele alcanzar el límite de capacidad de tu servidor cuando rastrea tu sitio, pero aun así hay URLs importantes que no se rastrean ni se actualizan tanto como sería necesario, aumenta la capacidad del servidor; de este modo, es posible que Google pueda solicitar más páginas de tu sitio. Consulta el historial de disponibilidad de tu host en el informe Estadísticas de rastreo para saber si la frecuencia de rastreo de Google sobrepasa el límite a menudo. Si es así, aumenta los recursos de publicación de tu servidor durante un mes y comprueba si se han hecho más solicitudes de rastreo durante ese mismo periodo.
+Determinar si hay páginas que deberían rastrearse, pero que el robot de Google no examina
+Google se pasa en tu sitio el tiempo necesario para indexar todo el contenido de alta calidad y valioso que encuentra. Si crees que el robot de Google se deja contenido importante, puede deberse a que no sabe que existe, a que ese contenido está bloqueado, a que la disponibilidad de tu sitio está limitando el acceso de Google o a que Google está intentando no sobrecargar tu servidor.
+
+Recuerda las diferencias entre el rastreo y la indexación. En esta página se explica cómo ayudar a Google a rastrear tu sitio de manera eficiente, no qué hacer para que incluyamos en el índice las páginas encontradas.
+Diagnosticar el problema:
+
+En Search Console no hay ningún historial de rastreos de tu sitio que puedas filtrar por URL o ruta, pero puedes saber si el Googlebot ha rastreado URLs específicas examinando los registros de tu sitio. Si las URLs rastreadas se han indexado o no, eso es otra historia.
+
+Recuerda que, en la mayoría de los sitios, las páginas nuevas tardan varios días en detectarse. Por tanto, salvo que tengas un sitio que ofrezca contenido urgente o que se queda obsoleto rápidamente (como un sitio de noticias), no esperes que se rastreen tus URLs el mismo día que se publiquen.
+
+Resolver el problema:
+
+Si añades páginas a tu sitio y estas tardan más de lo razonable en rastrearse, la causa puede ser que Google no sabe que existen, que ese contenido está bloqueado, que tu sitio ha alcanzado su límite de publicación o que te has quedado sin presupuesto de rastreo.
+
+Avisa a Google de que tienes páginas nuevas: actualiza tus sitemaps para que incluyan las nuevas URLs.
+Examina las reglas del archivo robots.txt para comprobar que no estés bloqueando alguna página por error.
+Revisa las prioridades de rastreo; es decir, utiliza el presupuesto de rastreo con cabeza. Gestiona tu inventario y mejora la eficiencia de rastreo de tu sitio.
+Comprueba que tus servidores no se estén quedando sin capacidad. El robot de Google reducirá el rastreo si detecta que tus servidores tienen problemas para responder a sus solicitudes.
+Aunque una página se haya rastreado, es posible que no se muestre en los resultados de búsqueda si su contenido no tiene suficiente valor o los usuarios no lo solicitan.
+
+Identificar si las actualizaciones de tu sitio deberían rastrearse más rápido de lo que se está haciendo
+Si no se detecta alguna página nueva o actualizada de tu sitio, quizá sea porque no se ha detectado que está o que se ha actualizado. En esta sección se indica cómo puedes ayudarnos a saber que se ha actualizado una página.
+
+Google intenta buscar e indexar páginas en un tiempo razonable, que suelen ser al menos tres días en la mayoría de los casos. Por tanto, salvo que tengas un sitio de noticias o que ofrezca contenido de gran valor que se quede obsoleto rápidamente, no esperes que se indexen tus páginas el mismo día que las publiques.
+
+Diagnosticar el problema:
+
+Examina los registros de tu sitio para ver cuándo ha rastreado el Googlebot determinadas URLs.
+
+Para saber la fecha de indexación, utiliza la herramienta de inspección de URLs o busca en las URLs que has actualizado.
+
+Resolver el problema:
+
+Qué puedes hacer:
+
+Enviar un Sitemap de News si el sitio incluye contenido de noticias.
+Incluir la etiqueta <lastmod> en los sitemaps para indicar cuándo se ha actualizado una URL indexada.
+Aplicar una estructura de URLs rastreable para que Google pueda encontrar tus páginas más fácilmente.
+Proporcionar enlaces <a> rastreables estándar para ayudar a Google a encontrar las páginas.
+Si tu sitio usa HTML independiente para las versiones para móviles y para ordenadores, proporciona el mismo conjunto de enlaces en la versión para móviles que en la versión para ordenadores. Si no es posible proporcionar el mismo conjunto de enlaces en la versión para móviles, asegúrate de que estén incluidos en un archivo sitemap. Google solo indexa la versión móvil de las páginas, y limitar los enlaces que se muestran en ella puede ralentizar el descubrimiento de nuevas páginas.
+Qué debes evitar:
+
+Enviar el mismo sitemap varias veces el mismo día si no se ha modificado.
+Esperar que el robot de Google rastree todo el contenido de un sitemap o que lo haga inmediatamente. El robot de Google se toma los sitemaps como sugerencias útiles, no como requisitos absolutos.
+Incluir en los sitemaps URLs que no quieras que aparezcan en la Búsqueda. Si lo haces, gastarás parte de tu presupuesto de rastreo en páginas que no quieres que se indexen.
+Mejorar la eficiencia de rastreo de tu sitio
+Mejora la velocidad de carga de tus páginas
+La capacidad de rastreo de Google está limitada por el ancho de banda, el tiempo y la disponibilidad de las instancias del robot de Google. Si tu servidor responde rápido a las solicitudes, es posible que se puedan rastrear más páginas de tu sitio. Dicho esto, Google solo quiere rastrear contenido de alta calidad, por lo que el robot de Google no va a rastrear más páginas de tu sitio si te limitas a mejorar la velocidad de páginas de baja calidad. En cambio, si en Google creemos que nos estamos perdiendo contenido de alta calidad de tu sitio, probablemente aumentaremos el presupuesto para rastrearlo.
+
+A continuación se indica qué puedes hacer para optimizar tus páginas y tus recursos de cara al rastreo:
+
+Evita que el robot de Google cargue recursos grandes, pero poco importantes, mediante el archivo robots.txt. Bloquea solo recursos que no sean importantes; es decir, aquellos que no sean importantes para entender el significado de la página (como las imágenes decorativas).
+Asegúrate de que tus páginas se carguen rápidamente.
+Ten cuidado con las cadenas de redirección largas, ya que afectan al rastreo.
+Son importantes tanto el tiempo que tarda el servidor en responder a las solicitudes como el tiempo necesario para renderizar las páginas. También debe tenerse en cuenta el tiempo de carga y de ejecución de los recursos insertados, como las imágenes y las secuencias de comandos. Ten en cuenta los recursos de gran tamaño o que tardan en cargarse necesarios para indexar el contenido.
+Especificar cambios de contenido con códigos de estado HTTP
+Por lo general, Google admite los encabezados de solicitud HTTP If-Modified-Since y If-None-Match para el rastreo. Los rastreadores de Google no envían los encabezados en todos los intentos de rastreo. Esto depende del caso práctico de la solicitud (por ejemplo, AdsBot tiene más probabilidades de establecer los encabezados de solicitud HTTP If-Modified-Since y If-None-Match). Si nuestros rastreadores envían el encabezado If-Modified-Since, su valor corresponde a la fecha y la hora en la que se rastreó el contenido por última vez. En función de ese valor, el servidor puede devolver un código de estado HTTP 304 (Not Modified) sin cuerpo de respuesta. En ese caso, Google reutilizará la versión de contenido que rastreó por última vez. Si el contenido es más reciente que la fecha especificada por el rastreador en el encabezado de If-Modified-Since, el servidor puede devolver un código de estado HTTP 200 (OK) con el cuerpo de la respuesta.
+
+Independientemente de los encabezados de solicitud, puedes enviar un código de estado HTTP 304 (Not Modified) sin cuerpo de respuesta para cualquier solicitud del robot de Google si el contenido no ha cambiado desde la última vez que visitó la URL. De este modo, se ahorrará tiempo y recursos de procesamiento de tu servidor, lo que podría mejorar indirectamente la eficiencia de rastreo.
+
+Oculta las URLs que no quieras que aparezcan en los resultados de búsqueda
+Si malgastas recursos de tu servidor en páginas que no hace falta que se rastreen, puede que se dedique menos tiempo a rastrear páginas que sí son importantes. En ese caso, quizá se tarde mucho en descubrir contenido nuevo o actualizado de calidad.
+
+Aunque bloquees u ocultes páginas que ya estén rastreadas para que no se vuelvan a rastrear, esa parte del presupuesto de rastreo no se consumirá con otras páginas de tu sitio, salvo que Google haya alcanzado el límite de publicación de tu sitio.
+Si el robot de Google puede acceder a muchas URLs de tu sitio que no quieres que se rastreen, el rastreo y la indexación del sitio pueden verse afectados. Por lo general, estas URLs se clasifican en las siguientes categorías:
+
+Navegación por facetas e identificadores de sesión: la navegación por facetas suele ser contenido duplicado del sitio. Los identificadores de sesión y otros parámetros de URL que simplemente ordenan o filtran el contenido de las páginas no proporcionan contenido nuevo. Consulta cómo gestionar el rastreo de páginas de navegación por facetas.
+Contenido duplicado: ayuda a Google a identificar el contenido duplicado para evitar que se rastree.
+Páginas con errores soft 404: devuelve un código 404 cuando una página ya no exista.
+Páginas pirateadas: consulta el informe "Problemas de seguridad" y corrige o retira las páginas pirateadas que encuentres.
+Espacios infinitos y proxies: impide que se rastreen mediante el archivo robots.txt.
+Contenido de baja calidad y spam: está claro que hay que evitarlo.
+Páginas de carrito de la compra, páginas de desplazamiento infinito y páginas en las que se puede completar una tarea (como registrarse o comprar).
+Qué puedes hacer:
+
+Bloquear con el archivo robots.txt los recursos o las páginas que no quieres que Google rastree.
+Hacer referencia a los recursos comunes que se utilicen en varias páginas (como una imagen compartida o un archivo JavaScript) con la misma URL; de este modo, Google podrá almacenarlos en caché y reutilizarlos sin tener que solicitarlos varias veces.
+Qué debes evitar:
+
+Añadir o retirar páginas o directorios del archivo robots.txt con regularidad para reasignar el presupuesto de rastreo a otras páginas de tu sitio. En el archivo robots.txt, debes bloquear únicamente páginas o recursos que no quieres que aparezcan en Google a largo plazo.
+Rotar sitemaps o recurrir a otros mecanismos de ocultación temporal para reasignar el presupuesto a otras páginas.
+soft 404 errores
+Un error soft 404 se produce cuando una URL devuelve una página que indica al usuario que no existe y, además, un código de estado 200 (success). En algunos casos, puede ser una página sin un contenido principal o vacía.
+
+Este tipo de páginas pueden generarse por diversos motivos por el servidor web o el sistema de gestión de contenido de tu sitio web, o por el navegador del usuario. Por ejemplo:
+
+Falta un archivo de inclusión del servidor.
+Hay una conexión dañada en la base de datos.
+Hay una página de resultados de búsqueda interna vacía.
+Hay un archivo JavaScript que no se ha descargado o que falta.
+Devolver un código de estado 200 (success) empeora la experiencia de usuario, al igual que mostrar o sugerir un mensaje de error o algún tipo de error en la página. Los usuarios pueden pensar que la página funciona correctamente, pero luego se encuentran con algún tipo de error. Esas páginas se excluyen de la Búsqueda.
+
+Cuando los algoritmos de Google detectan que es una página de error basándose en su contenido, Search Console lo registra en el informe "Indexación de páginas" del sitio mostrando un error soft 404.
+
+Corregir errores soft 404
+En función del estado de la página y del resultado que quieras conseguir, puedes corregir errores soft 404 de varias formas:
+
+La página y el contenido ya no están disponibles.
+La página o el contenido han cambiado de lugar.
+La página y el contenido siguen ahí.
+Intenta determinar cuál es la mejor solución para tus usuarios.
+
+La página y el contenido ya no están disponibles
+Si has retirado la página y no hay otra con contenido similar en tu sitio que la vaya a sustituir, devuelve un código de respuesta (de estado) 404 (not found) o 410 (gone) de esa página. Estos códigos de estado indican a los buscadores que la página no existe y que no quieres que la indexen.
+
+Si tienes acceso a los archivos de configuración de tu servidor, puedes personalizar estas páginas de error para que resulten útiles a los usuarios. Una página 404 personalizada correctamente ayuda a los usuarios a encontrar la información que buscan y, además, les proporciona otro contenido útil que anima a seguir navegando por tu sitio. A continuación, te damos algunas sugerencias sobre cómo diseñar una página 404 personalizada y útil:
+
+Explica claramente a los visitantes que no se puede acceder a la página que buscan. Incluye mensajes amables y acogedores.
+Tu página 404 debe tener el mismo aspecto y el mismo sistema de navegación que el resto del sitio.
+Puede que sea interesante añadir enlaces a tus artículos o a tus publicaciones más populares, además de un enlace a la página principal de tu sitio.
+Procura incluir algún mecanismo que permita a los usuarios avisarte si hay algún enlace roto.
+Como las páginas personalizadas 404 solo se crean para los usuarios y no son útiles desde el punto de vista del buscador, comprueba que el servidor devuelva un código de estado HTTP 404 para evitar que se indexen.
+
+La página o el contenido han cambiado de lugar
+Si tu página se ha movido o tiene una sustituta clara en tu sitio, devuelve un código 301 (permanent redirect) para redirigir al usuario a la nueva. Hacer esto no interrumpirá su experiencia de navegación y es una forma muy buena de informar a los buscadores sobre la nueva ubicación de la página. Con la herramienta de inspección de URLs puedes comprobar si tu URL devuelve el código correcto.
+
+La página y el contenido siguen ahí
+Si una página que debería haberse clasificado como buena se ha marcado con un error soft 404, es probable que el robot de Google no la haya cargado correctamente, que le faltaran recursos clave o que haya mostrado un mensaje de error destacado durante el renderizado. Con la herramienta de inspección de URLs, puedes examinar el contenido renderizado y el código HTTP que se devuelve. Si la página renderizada está en blanco o prácticamente en blanco, o el contenido muestra un mensaje de error, es posible que haga referencia a muchos recursos que no pueden cargarse (imágenes, secuencias de comandos y otros elementos no textuales), lo que se podría considerar un error soft 404. Hay varias razones por las que es posible que los recursos no se carguen. Por ejemplo, puede que un archivo robots.txt los haya bloqueado, que haya varios errores del servidor, que la página tenga demasiados recursos o que estos sean demasiado grandes o de carga lenta.
+
+Gestionar el rastreo excesivo de tu sitio (en caso de emergencia)
+El robot de Google tiene algoritmos para no sobrecargar tu sitio con solicitudes de rastreo. Sin embargo, si detectas que el robot de Google está enviando demasiadas solicitudes a tu sitio, tienes varias opciones.
+
+Diagnosticar el problema:
+
+Consulta el servidor de tu sitio para ver si recibe demasiadas solicitudes del robot de Google.
+
+Resolver el problema:
+
+En caso de emergencia, lo recomendable es seguir estos pasos para que el robot de Google deje de sobrecargar tus servidores:
+
+Cuando tu servidor esté sobrecargado, devuelve los códigos de estado de respuesta HTTP 503 o 429 temporalmente para solicitudes del robot de Google. El robot de Google volverá a probar esas URLs durante aproximadamente 2 días. Si durante varios días devuelves códigos que indican que no hay disponibilidad, Google reducirá la frecuencia de rastreo o dejará de rastrear URLs de tu sitio permanentemente, por lo que debes completar los siguientes pasos adicionales.
+Una vez que haya disminuido la frecuencia de rastreo, deja de devolver los códigos de estado de respuesta HTTP 503 o 429 cuando recibas solicitudes de rastreo. Si Google recibe el código 503 o 429 durante más de 2 días al rastrear una URL, quitará las URLs del índice.
+Monitoriza el rastreo y la capacidad de tu host a lo largo del tiempo.
+Si el rastreador que da problemas es uno de los rastreadores AdsBot, probablemente sea porque has creado objetivos de anuncios dinámicos de búsqueda que dirigen a tu sitio y Google los está intentando rastrear. Google trata de rastrear esos objetivos cada 3 semanas; si tu servidor no puede gestionar estos rastreos, puedes limitar los objetivos de anuncios que utilizas o aumentar la capacidad de tu servidor.
+Descripción general de los rastreadores y sistemas de obtención de Google (user-agents)
+
+Google utiliza rastreadores y sistemas de obtención para realizar las acciones relacionadas con sus productos, ya sea de forma automática o mediante solicitud de los usuarios. El término "rastreador" (a veces llamado "robot" o "araña") es el término genérico con el que se denomina a cualquier programa que se utilice para detectar y analizar automáticamente sitios web. Los sistemas de obtención o fetchers actúan como un programa, como wget, que suele hacer una única solicitud en nombre de un usuario. Los clientes de Google se dividen en tres categorías:
+
+¿Quieres ver las últimas novedades de esta página? Consulta las actualizaciones de nuestra documentación.
+Rastreadores habituales	Los rastreadores habituales que se usan en los productos de Google (como el Googlebot). Siempre respetan las reglas de robots.txt en el caso de los rastreos automáticos.
+Rastreadores para casos especiales	Los rastreadores para casos especiales son similares a los rastreadores habituales, pero los utilizan productos específicos en los que existe un acuerdo entre el sitio rastreado y el producto de Google sobre el proceso de rastreo. Por ejemplo, AdsBot ignora el user-agent del archivo robots.txt global (*) con el permiso del editor del anuncio.
+Sistemas de obtención activados por el usuario	Los fetchers activados por el usuario forman parte de las herramientas y funciones de producto en las que el usuario final activa una obtención. Por ejemplo, Google Site Verifier actúa cuando lo solicitan los usuarios.
+Propiedades técnicas de los rastreadores y fetchers de Google
+Los rastreadores y los fetchers de Google están diseñados para ejecutarse simultáneamente en miles de ordenadores con el fin de mejorar el rendimiento y ajustar la escala a medida que la Web crece. Para optimizar el uso del ancho de banda, estos clientes se distribuyen en muchos centros de datos de todo el mundo, de modo que se encuentran cerca de los sitios a los que pueden acceder. Por tanto, es posible que tus registros muestren visitas de varias direcciones IP. Google sale principalmente de direcciones IP de Estados Unidos. Si Google detecta que un sitio bloquea las solicitudes de Estados Unidos, puede intentar hacer el rastreo desde direcciones IP ubicadas en otros países.
+
+Protocolos de transferencia compatibles
+Los rastreadores y los fetchers de Google son compatibles con HTTP/1.1 y HTTP/2. Los rastreadores usarán la versión del protocolo que ofrezca el mejor rendimiento de rastreo y pueden cambiar de protocolo entre sesiones de rastreo en función de estadísticas de rastreo anteriores. La versión predeterminada del protocolo que utilizan los rastreadores de Google es HTTP/1.1. El rastreo mediante HTTP/2 puede ahorrar recursos informáticos (como la CPU o la RAM) en tu sitio y en el robot de Google, pero no supone ninguna ventaja específica para el sitio (por ejemplo, no se mejora el posicionamiento en la Búsqueda de Google). Si no quieres que tu sitio se rastree con HTTP/2, indica al servidor donde se aloja que, cuando Google intente acceder al sitio con HTTP/2, responda con un código de estado HTTP 421. Si no puedes hacerlo, envía un mensaje al equipo de Rastreo (aunque esta solución es temporal).
+
+La infraestructura de rastreo de Google también admite el rastreo a través de FTP (como se define en RFC959 y sus actualizaciones) y FTPS (como se define en RFC4217 y sus actualizaciones), aunque es poco habitual rastrear a través de estos protocolos.
+
+Codificaciones de contenido admitidas
+Los rastreadores y los fetchers de Google admiten las siguientes codificaciones de contenido (compresiones): gzip, deflate y Brotli (br). Las codificaciones de contenido admitidas por cada agente de usuario de Google se anuncian en el encabezado Accept-Encoding de cada solicitud que hacen. Por ejemplo, Accept-Encoding: gzip, deflate, br.
+
+Límites de tamaño de los archivos
+De forma predeterminada, los rastreadores y los fetchers de Google solo rastrean los primeros 15 MB de un archivo, y se ignora el contenido que supere este límite. No obstante, cada proyecto puede establecer límites distintos para sus rastreadores y fetchers, así como para los diferentes tipos de archivos. Por ejemplo, un rastreador de Google, como el robot de Google, puede tener un límite de tamaño menor (por ejemplo, 2 MB) o especificar un límite de tamaño de archivo mayor para un PDF que para un HTML.
+
+Tasa de rastreo y carga del host
+En cada visita, se intentan rastrear tantas páginas de tu sitio como permita el servidor. Si tu sitio tiene problemas para soportar todas las solicitudes de rastreo de Google, puedes reducir la frecuencia de rastreo. Ten en cuenta que enviar el código de respuesta HTTP inadecuado a los rastreadores de Google puede afectar a la forma en que aparece tu sitio en los productos de Google.
+
+Almacenamiento en caché HTTP
+La infraestructura de rastreo de Google admite el almacenamiento en caché heurístico de HTTP, tal como se define en el estándar de almacenamiento en caché de HTTP, concretamente a través del encabezado de respuesta ETag y el encabezado de solicitud If-None-Match, y del encabezado de respuesta Last-Modified y el encabezado de solicitud If-Modified-Since.
+
+Nota: Te recomendamos que definas los valores Etag y Last-Modified independientemente de la preferencia de los rastreadores de Google. Estos encabezados también se utilizan en otras aplicaciones, como los CMS.
+Si en la respuesta HTTP están presentes los campos de encabezado de respuesta ETag y Last-Modified, los rastreadores de Google usarán el valor de ETag como requisito del estándar HTTP. En el caso de los rastreadores de Google, recomendamos usar ETag en lugar del encabezado Last-Modified para indicar la preferencia de almacenamiento en caché, ya que ETag no tiene problemas de formato de fecha.
+
+No se admiten otras directivas de almacenamiento en caché de HTTP.
+
+Los rastreadores y fetchers de Google pueden usar el almacenamiento en caché o no, según las necesidades del producto al que están asociados. Por ejemplo, Googlebot admite el almacenamiento en caché cuando vuelve a rastrear URLs para la Búsqueda de Google, y Storebot-Google solo admite el almacenamiento en caché en determinadas condiciones.
+
+Para implementar el almacenamiento en caché HTTP en tu sitio, ponte en contacto con tu proveedor de alojamiento o de sistemas de gestión de contenido.
+
+ETag y If-None-Match
+La infraestructura de rastreo de Google admite ETag y If-None-Match tal como se definen en el estándar de almacenamiento en caché HTTP. Consulta más información sobre el encabezado de respuesta ETag y su homólogo, el encabezado de solicitud If-None-Match.
+
+Last-Modified e If-Modified-Since
+La infraestructura de rastreo de Google admite Last-Modified y If-Modified-Since tal como se define en el estándar de almacenamiento en caché HTTP, con las siguientes salvedades:
+
+La fecha del encabezado Last-Modified debe tener el formato que se indica en el estándar HTTP. Para evitar problemas de análisis, te recomendamos que uses el siguiente formato de fecha: "Día de la semana, DD Mon YYYY HH:MM:SS Zona horaria". Por ejemplo, "Fri, 4 Sep 1998 19:15:56 GMT".
+Aunque no es obligatorio, te recomendamos que también definas el campo max-age del encabezado de respuesta Cache-Control para ayudar a los rastreadores a determinar cuándo volver a rastrear la URL específica. Asigna al campo max-age el número de segundos que se espera que el contenido permanezca sin cambios. Por ejemplo, Cache-Control: max-age=94043.
+Consulta más información sobre el encabezado de respuesta Last-Modified y su homólogo, el encabezado de solicitud If-Modified-Since.
+
+Verificar los rastreadores y los fetchers de Google
+Los rastreadores de Google se identifican de tres formas:
+
+El encabezado de solicitud HTTP user-agent.
+Dirección IP de origen de la solicitud.
+El nombre de host de DNS inverso de la IP de origen.
+Consulta cómo usar estos detalles para verificar los rastreadores y los fetchers de Google.
+Verificar las solicitudes de los rastreadores y los fetchers de Google
+
+Puedes comprobar si un rastreador web que accede a tu servidor es realmente un rastreador de Google (por ejemplo, el robot de Google). Esto resulta útil si te preocupa que los spammers u otras personas malintencionadas puedan acceder a tu sitio haciéndose pasar por el robot de Google.
+
+Los rastreadores de Google se dividen en tres categorías:
+
+Tipo	Descripción	Máscara de DNS invertida	Intervalos de IPs
+Rastreadores habituales	Los rastreadores habituales que se usan en los productos de Google (como el robot de Google). Siempre respetan las reglas de robots.txt en el caso de los rastreos automáticos.	crawl-***-***-***-***.googlebot.com o geo-crawl-***-***-***-***.geo.googlebot.com	common-crawlers.json
+Rastreadores para casos especiales	Rastreadores que realizan funciones específicas para productos de Google (como AdsBot) cuando hay un acuerdo entre el sitio rastreado y el producto sobre el proceso de rastreo. Estos rastreadores pueden o no respetar las reglas del archivo robots.txt.	rate-limited-proxy-***-***-***-***.google.com	special-crawlers.json
+Sistemas de obtención activados por el usuario	Herramientas y funciones de producto en las que el usuario final activa una obtención. Por ejemplo, Google Site Verifier actúa cuando lo solicitan los usuarios. Dado que los usuarios solicitan la obtención, estos sistemas ignoran las reglas de robots.txt.
+Los fetchers controlados por Google proceden de IPs del objeto user-triggered-fetchers-google.json y se resuelven en un nombre de host google.com. Las IPs del objeto user-triggered-fetchers.json se resuelven en nombres de host gae.googleusercontent.com Estas IP se usan, por ejemplo, si un sitio que se ejecuta en Google Cloud (GCP) tiene una función que requiere obtener RSS externos a petición del usuario de ese sitio.	***-***-***-***.gae.googleusercontent.com o google-proxy-***-***-***-***.google.com	user-triggered-fetchers.json y user-triggered-fetchers-google.json
+Hay dos métodos para verificar los rastreadores de Google:
+
+Manualmente: para hacer búsquedas únicas, utiliza herramientas de línea de comandos. Este método es suficiente para la mayoría de los casos prácticos.
+Automáticamente: para hacer búsquedas a gran escala, utiliza una solución automática para que la dirección IP de un rastreador coincida con la lista de direcciones IP del robot de Google publicadas.
+Usar herramientas de línea de comandos
+Busca en tus registros la dirección IP que está accediendo a tu servidor y haz una petición de DNS invertida con ella mediante el comando host.
+Verifica que el nombre de dominio es googlebot.com, google.com o googleusercontent.com.
+Ejecuta una petición de DNS normal con el nombre de dominio que hayas obtenido en el paso 1; para hacerlo, usa el comando host en el nombre de dominio.
+Verifica que es la misma dirección IP de acceso original que figura en tus registros.
+Ejemplo 1:
+
+
+host 66.249.66.1
+1.66.249.66.in-addr.arpa domain name pointer crawl-66-249-66-1.googlebot.com.
+
+host crawl-66-249-66-1.googlebot.com
+crawl-66-249-66-1.googlebot.com has address 66.249.66.1
+Ejemplo 2:
+
+
+host 35.247.243.240
+240.243.247.35.in-addr.arpa domain name pointer geo-crawl-35-247-243-240.geo.googlebot.com.
+
+host geo-crawl-35-247-243-240.geo.googlebot.com
+geo-crawl-35-247-243-240.geo.googlebot.com has address 35.247.243.240
+Ejemplo 3:
+
+
+host 66.249.90.77
+77.90.249.66.in-addr.arpa domain name pointer rate-limited-proxy-66-249-90-77.google.com.
+
+host rate-limited-proxy-66-249-90-77.google.com
+rate-limited-proxy-66-249-90-77.google.com has address 66.249.90.77
+Usar soluciones automáticas
+También puedes identificar el robot de Google según la dirección IP haciendo coincidir la dirección IP del rastreador con las listas de intervalos de IPs de los rastreadores y sistemas de obtención de Google:
+
+Rastreadores habituales como el robot de Google
+Rastreadores especiales como AdsBot
+Fetchers activados por el usuario (usuarios)
+Fetchers activados por el usuario (Google)
+Para otras direcciones IP de Google desde las que se pueda acceder a tu sitio (por ejemplo, Apps Script), haz coincidir la dirección IP de acceso con la de la lista de direcciones IP de Google. Ten en cuenta que las direcciones IP de los archivos JSON se representan en formato CIDR.

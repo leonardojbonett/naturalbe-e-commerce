@@ -1,0 +1,78 @@
+[
+  {
+    "sku": "SKU-001",
+    "name": "Vitamina C 1000 mg",
+    "brand": "Marca X",
+    "category": "Vitamina C",
+    "price_cop": 45900,
+    "sale_price_cop": 39900,
+    "availability": "in_stock",
+    "short_benefits": ["Apoya defensas", "Antioxidante"],
+    "presentation": "100 capsulas",
+    "image_url": "",
+    "product_url": "https://naturalbe.com.co/vitamina-c-colombia"
+  },
+  {
+    "sku": "SKU-002",
+    "name": "Magnesio Citrato",
+    "brand": "Natural Be",
+    "category": "Minerales",
+    "price_cop": 64900,
+    "sale_price_cop": 58900,
+    "availability": "in_stock",
+    "short_benefits": ["Apoya funcion muscular", "Contribuye al descanso"],
+    "presentation": "120 capsulas",
+    "image_url": "",
+    "product_url": "https://naturalbe.com.co/magnesio-colombia"
+  },
+  {
+    "sku": "SKU-003",
+    "name": "Omega 3 Premium",
+    "brand": "Natural Be",
+    "category": "Omega",
+    "price_cop": 79900,
+    "availability": "limited",
+    "short_benefits": ["Apoyo cardiovascular", "Salud cerebral"],
+    "presentation": "90 capsulas blandas",
+    "image_url": "",
+    "product_url": "https://naturalbe.com.co/omega-3-colombia"
+  },
+  {
+    "sku": "SKU-004",
+    "name": "Complejo B",
+    "brand": "Marca X",
+    "category": "Vitaminas",
+    "price_cop": 38900,
+    "sale_price_cop": 34900,
+    "availability": "out_of_stock",
+    "short_benefits": ["Apoyo energetico", "Sistema nervioso"],
+    "presentation": "60 capsulas",
+    "image_url": "",
+    "product_url": "https://naturalbe.com.co/producto/complejo-b"
+  },
+  {
+    "sku": "SKU-005",
+    "name": "Colageno Hidrolizado",
+    "brand": "Natural Be",
+    "category": "Colageno",
+    "price_cop": 69900,
+    "sale_price_cop": 62900,
+    "availability": "in_stock",
+    "short_benefits": ["Apoya piel y articulaciones", "Con vitamina C"],
+    "presentation": "300 g polvo",
+    "image_url": "https://images.unsplash.com/photo-1615485737651-6f0bc1f33f1f?auto=format&fit=crop&w=900&q=80",
+    "product_url": "https://naturalbe.com.co/producto/colageno-hidrolizado"
+  },
+  {
+    "sku": "SKU-006",
+    "name": "Vitamina D3 + K2",
+    "brand": "Natural Be",
+    "category": "Vitaminas",
+    "price_cop": 55900,
+    "availability": "in_stock",
+    "short_benefits": ["Salud osea", "Apoya sistema inmune"],
+    "presentation": "60 softgels",
+    "image_url": "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=900&q=80",
+    "product_url": "https://naturalbe.com.co/producto/vitamina-d3-k2"
+  }
+]
