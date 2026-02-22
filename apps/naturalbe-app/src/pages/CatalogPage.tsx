@@ -4,6 +4,7 @@ import { ProductCard } from "../features/catalog/components/ProductCard";
 import { fetchCatalogProducts } from "../features/catalog/catalogApi";
 import { useCatalogFiltersStore } from "../features/catalog/useCatalogFiltersStore";
 import type { CatalogProduct } from "../features/catalog/types";
+import { InstagramFeed } from "../features/social/components/InstagramFeed";
 
 export function CatalogPage() {
   const [products, setProducts] = useState<CatalogProduct[]>([]);
@@ -115,6 +116,8 @@ export function CatalogPage() {
           <ProductCard key={product.id} product={product} />
         ))}
       </div>
+
+      <InstagramFeed />
     </section>
   );
 }
