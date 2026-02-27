@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+if [[ "${SKIP_SEO_HOOKS:-}" == "1" ]]; then
+  echo "[pre-push] SKIP_SEO_HOOKS=1, omitiendo validaciones."
+  exit 0
+fi
+
+echo "[pre-push] Ejecutando predeploy y validaciones SEO/schema..."
+
+if command -v powershell.exe >/dev/null 2>&1; then
+  powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/predeploy.ps1
+else
+  echo "[pre-push] ERROR: powershell.exe no esta disponible."
+  exit 1
+fi
+
+if command -v node >/dev/null 2>&1; then
+  if [[ -f "scripts/validate-product-schema.js" ]]; then
+    node scripts/validate-product-schema.js
+  fi
+  if [[ -f "scripts/validate-pdp-jsonld-template.js" ]]; then
+    node scripts/validate-pdp-jsonld-template.js
+  fi
+  if [[ -f "scripts/validate-seo-schema.js" ]]; then
+    node scripts/validate-seo-schema.js
+  fi
+else
+  echo "[pre-push] ERROR: node no esta disponible."
+  exit 1
+fi
+
+echo "[pre-push] OK. Push permitido."

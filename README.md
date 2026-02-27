@@ -40,9 +40,19 @@ Proyecto HTML/CSS/JS sin backend. Home, PLP y PDP se renderizan con data local e
 - Elimina archivos JS obsoletos en `/public_html/static/js/` antes de subir (ej: `product.bundle.min.js`, `bundle.min.js`, `inline/product.bundle.min.js`).
 - Borra el cache del Service Worker: en Chrome DevTools > Application > Service Workers > Unregister, y limpia `Cache Storage`.
 - Vuelve a subir todo el contenido del repo para evitar residuos de despliegues previos.
-  - Script: `powershell -File scripts/clean-hostinger.ps1 -RootPath C:\path\to\public_html`
-  - Dry run: `powershell -File scripts/clean-hostinger.ps1 -RootPath C:\path\to\public_html -DryRun`
+ - Script: `powershell -File scripts/clean-hostinger.ps1 -RootPath C:\path\to\public_html`
+ - Dry run: `powershell -File scripts/clean-hostinger.ps1 -RootPath C:\path\to\public_html -DryRun`
  - Predeploy checks: `powershell -File scripts/predeploy.ps1`
+
+## Hook pre-push (automatico)
+- Instalar en este repo: `powershell -ExecutionPolicy Bypass -File scripts/install-git-hooks.ps1`
+- El hook `pre-push` ejecuta automaticamente:
+  - `scripts/predeploy.ps1`
+  - `scripts/validate-product-schema.js`
+  - `scripts/validate-pdp-jsonld-template.js`
+  - `scripts/validate-seo-schema.js`
+- Si una validacion falla, el push se bloquea.
+- Bypass temporal (solo emergencia): `$env:SKIP_SEO_HOOKS='1'`
 
 ## Smoke test rapido
 - Validar que no haya `https://` sueltos (sin comillas) que rompan el bundle:
