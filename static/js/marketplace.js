@@ -124,7 +124,7 @@
     const safeImgAttr = escapeHtml(sanitizeUrl(product.imagen_principal || product.image || ""));
     const trust = getCardTrustStats(product);
     return `
-      <article class="product-card" itemscope itemtype="https://schema.org/Product" data-select-item="1" data-product-id="${safeProductId}" data-product-name="${safeName}" data-product-brand="${safeProductBrand}" data-product-category="${safeProductCategory}" data-product-price="${price}">
+      <article class="product-card" data-select-item="1" data-product-id="${safeProductId}" data-product-name="${safeName}" data-product-brand="${safeProductBrand}" data-product-category="${safeProductCategory}" data-product-price="${price}">
         <a class="product-card__media" href="${safeUrl}">
           ${buildPicture(product, 320, 240, eager)}
         </a>
@@ -132,19 +132,16 @@
           <div class="product-card__badges">
             ${safeBadgeHtml}
           </div>
-          <h3 class="product-card__title" itemprop="name">
+          <h3 class="product-card__title">
             <a href="${safeUrl}">${safeName}</a>
           </h3>
-          ${description ? `<p class="product-card__desc" itemprop="description">${safeDesc}</p>` : ""}
+          ${description ? `<p class="product-card__desc">${safeDesc}</p>` : ""}
           <div class="product-card__rating">${ratingText}</div>
           <div class="product-card__proof" aria-label="Señales de confianza del producto">
             <span class="proof-chip"><span aria-hidden="true">⭐</span>${trust.ratingText}</span>
             ${trust.isLowStock ? '<span class="proof-chip is-urgency"><span aria-hidden="true">⚡</span>Stock limitado</span>' : ""}
           </div>
-          <div class="product-card__price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
-            <meta itemprop="priceCurrency" content="COP">
-            <meta itemprop="price" content="${price}">
-            <meta itemprop="availability" content="https://schema.org/InStock">
+          <div class="product-card__price">
             <span>${formatCOP(price)}</span>
             ${originalPrice ? `<span class="price-old">${formatCOP(originalPrice)}</span>` : ""}
             ${discount ? `<span class="price-save">Ahorra ${discount}%</span>` : ""}
