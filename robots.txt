@@ -2,18 +2,25 @@ User-agent: *
 Allow: /
 Disallow: /admin/
 Disallow: /carrito/
-Disallow: /checkout/
-Disallow: /pago-exitoso.html
-Disallow: /pago-cancelado.html
+Disallow: /cache_images/
+Disallow: /cache_images_v3/
+Disallow: /cache_images_v5/
+Disallow: /cache_images_v7/
+Disallow: /cache_images_v8/
+Disallow: /cache_images_final/
+Disallow: /*.report.html$
 Disallow: /*?*add-to-cart=*
+Disallow: /*?*page=*
+Disallow: /*?*limit=*
+Disallow: /*?*category=*
+Disallow: /*?*cat=*
+Disallow: /*?categoria=*
+Disallow: /*?*objective=*
 
 Sitemap: https://naturalbe.com.co/sitemap.xml
 Sitemap: https://naturalbe.com.co/sitemap-images.xml
 
 User-agent: AhrefsBot
-Disallow: /
-
-User-agent: SemrushBot
 Disallow: /
 
 User-agent: MJ12bot

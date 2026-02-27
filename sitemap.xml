@@ -7,10 +7,40 @@
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://naturalbe.com.co/blog</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://naturalbe.com.co/catalogo/</loc>
     <lastmod>2026-02-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://naturalbe.com.co/envios</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://naturalbe.com.co/devoluciones</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://naturalbe.com.co/terminos</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://naturalbe.com.co/privacidad</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
   </url>
   <url>
     <loc>https://naturalbe.com.co/perfil/equipo-natural-be.html</loc>

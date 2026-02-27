@@ -24,17 +24,17 @@
   <link rel="apple-touch-icon" sizes="180x180" href="https://naturalbe.com.co/static/img/apple-touch-icon.png">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
-  <title>Suplementos Naturales en Colombia | Natural Be</title>
-  <meta name="description" content="Descubre suplementos Natural Be con pagos seguros, envíos 24-48h y asesoría por WhatsApp en Colombia.">
-  <link rel="canonical" href="">
+  <title>Producto Natural Be en Colombia | Suplementos y vitaminas</title>
+  <meta name="description" content="Compra productos Natural Be en Colombia con envío 24-48h, pago seguro y asesoría por WhatsApp.">
+  <link rel="canonical" href="https://naturalbe.com.co/categoria/suplementos">
 
   <meta property="og:type" content="product">
-  <meta property="og:title" content="Natural Be | Producto">
+  <meta property="og:title" content="Producto Natural Be en Colombia | Suplementos y vitaminas">
   <meta property="og:description" content="Compra suplementos naturales con envíos rápidos en Colombia.">
   <meta property="og:image" content="https://naturalbe.com.co/static/img/og-naturalbe.jpg">
   <meta property="og:site_name" content="Natural Be">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Natural Be | Producto">
+  <meta name="twitter:title" content="Producto Natural Be en Colombia | Suplementos y vitaminas">
   <meta name="twitter:description" content="Compra suplementos naturales con envíos rápidos en Colombia.">
   <meta name="twitter:image" content="https://naturalbe.com.co/static/img/og-naturalbe.jpg">
   <script type="application/ld+json" id="pdp-schema-base">
@@ -270,7 +270,7 @@
 
       <div class="market-actions">
         <a class="market-action-link" href="/categoria/suplementos">Catálogo</a>
-        <a class="market-action-link" href="/">Confianza</a>
+        <a class="market-action-link" href="/#testimonios">Confianza</a>
         <a class="market-action-pill" href="https://wa.me/573137212923?utm_source=naturalbe&utm_medium=website&utm_campaign=retail&utm_content=nav_whatsapp" id="navWhatsappLink" data-wa-content="nav_whatsapp" target="_blank" rel="noopener">WhatsApp</a>
         <button class="market-action-pill" type="button" data-cart-trigger>
           Carrito
@@ -1246,6 +1246,9 @@
       const reviews=renderProductReviews(p);
       renderProductTrust(p,reviews);
       updateProductSchema(p,reviews);
+      if (typeof window.injectProductDetailSchema === 'function') {
+        window.injectProductDetailSchema(p);
+      }
       if (typeof nbGa4EcomEvent === 'function' && typeof nbMapProductToGa4Item === 'function') {
         const item = nbMapProductToGa4Item({ id: p.id, name: p.nombre, price: productPrice, category: p.categoria, brand: p.marca }, 1);
         nbGa4EcomEvent('view_item', [item], productPrice);
