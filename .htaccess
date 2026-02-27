@@ -8,6 +8,32 @@ AddDefaultCharset UTF-8
 AddCharset UTF-8 .html .css .js .xml .txt .json .svg
 
 # ============================================
+# CONTROL DE FETCHERS ACTIVADOS POR USUARIO
+# ============================================
+# Nota: estas coincidencias usan User-Agent, que puede falsificarse.
+# Para validación real de Google, revisar IP + DNS inverso en logs.
+<IfModule mod_setenvif.c>
+  # Fetchers activados por usuario (no Googlebot de Search)
+  SetEnvIfNoCase User-Agent "(FeedFetcher-Google|Google-Site-Verification/1\.0|Google-Read-Aloud|GoogleMessages|Google-NotebookLM|Google-Pinpoint|GoogleProducer|APIs-Google|Google-CWS)" NB_GOOGLE_USER_FETCHER=1
+
+  # Google crawlers de Search (separados para evitar impactos accidentales)
+  SetEnvIfNoCase User-Agent "(Googlebot|Googlebot-Image|Googlebot-Video|Googlebot-News|Google-InspectionTool|Storebot-Google|GoogleOther|Google-CloudVertexBot)" NB_GOOGLE_CRAWLER=1
+
+  # Switch operativo: 0 = no bloquear, 1 = bloquear rutas definidas abajo
+  SetEnv NB_BLOCK_USER_FETCHERS 1
+</IfModule>
+
+# ============================================
+# MODO PAUSA DE TIENDA (ON/OFF)
+# ============================================
+<IfModule mod_setenvif.c>
+  # Switch unico: 1 = pausa activa, 0 = operacion normal
+  SetEnv NB_PAUSE_MODE 0
+  SetEnvIfExpr "%{ENV:NB_PAUSE_MODE} == '1'" NB_PAUSE_ON
+  SetEnvIfExpr "%{ENV:NB_PAUSE_MODE} != '1'" NB_PAUSE_OFF
+</IfModule>
+
+# ============================================
 # COMPRESIÓN GZIP/DEFLATE
 # ============================================
 <IfModule mod_deflate.c>
@@ -51,27 +77,105 @@ AddCharset UTF-8 .html .css .js .xml .txt .json .svg
   # RewriteRule ^(.*)$ https://www.%{HTTP_HOST}/$1 [R=301,L]
   
   # Opción 2: Forzar no-www (recomendado)
-  # RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
-  # RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
+  RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+  RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
   
   # ============================================
   # REDIRECCIONES SEO
   # ============================================
 
-  # Legacy URLs sin archivo actual -> destinos equivalentes
+  # Normalizar paginacion: eliminar ?page=1 para evitar duplicados
+  RewriteCond %{QUERY_STRING} ^page=1$ [NC]
+  RewriteRule ^ %{REQUEST_URI}? [R=301,L]
+  RewriteCond %{QUERY_STRING} ^(.+)&page=1$ [NC]
+  RewriteRule ^ %{REQUEST_URI}?%1 [R=301,L]
+  RewriteCond %{QUERY_STRING} ^page=1&(.+)$ [NC]
+  RewriteRule ^ %{REQUEST_URI}?%1 [R=301,L]
+  RewriteCond %{QUERY_STRING} ^(.+)&page=1&(.+)$ [NC]
+  RewriteRule ^ %{REQUEST_URI}?%1&%2 [R=301,L]
+
+  # Normalizar paginacion: eliminar ?limit= para evitar URLs tecnicas
+  RewriteCond %{QUERY_STRING} ^limit=[^&]+$ [NC]
+  RewriteRule ^ %{REQUEST_URI}? [R=301,L]
+  RewriteCond %{QUERY_STRING} ^(.+)&limit=[^&]+$ [NC]
+  RewriteRule ^ %{REQUEST_URI}?%1 [R=301,L]
+  RewriteCond %{QUERY_STRING} ^limit=[^&]+&(.+)$ [NC]
+  RewriteRule ^ %{REQUEST_URI}?%1 [R=301,L]
+  RewriteCond %{QUERY_STRING} ^(.+)&limit=[^&]+&(.+)$ [NC]
+  RewriteRule ^ %{REQUEST_URI}?%1&%2 [R=301,L]
+
+  # Contencion opcional de fetchers activados por usuario (sin tocar Googlebot)
+  # Activa cambiando: SetEnv NB_BLOCK_USER_FETCHERS 1
+  RewriteCond %{ENV:NB_BLOCK_USER_FETCHERS} =1
+  RewriteCond %{ENV:NB_GOOGLE_USER_FETCHER} =1
+  RewriteCond %{REQUEST_URI} ^/(feed|feeds|rss|atom)(/|$) [NC]
+  RewriteRule ^ - [F,L]
+
+  # Modo pausa: bloquear flujo de compra y paginas de confirmacion de pago
+  RewriteCond %{ENV:NB_PAUSE_ON} =1
+  RewriteRule ^(checkout(?:\.html)?|pago-exitoso\.html|pago-cancelado\.html)$ /pausa-temporal.html [R=302,L]
+
+  # Modo pausa: bloquear intentos directos de add-to-cart por query string
+  RewriteCond %{ENV:NB_PAUSE_ON} =1
+  RewriteCond %{QUERY_STRING} (^|&)add-to-cart= [NC]
+  RewriteRule ^ /pausa-temporal.html [R=302,L]
+
+  # Legacy URLs y paginas puente -> redirecciones 301 canonicas
   RewriteRule ^vitaminas\.html$ /catalogo-vitaminas.html [R=301,L]
   RewriteRule ^omega\.html$ /catalogo-omega.html [R=301,L]
   RewriteRule ^minerales\.html$ /catalogo-minerales.html [R=301,L]
   RewriteRule ^mujer\.html$ /objetivo-piel.html [R=301,L]
   RewriteRule ^packs\.html$ /categoria/suplementos [R=301,L]
-  RewriteRule ^catalogo-suplementos\.html$ /categoria/suplementos [R=301,L]
   RewriteRule ^energia\.html$ /catalogo-energia.html [R=301,L]
   RewriteRule ^inmunidad\.html$ /catalogo-inmunidad.html [R=301,L]
-  RewriteRule ^hombre\.html$ /category.html [R=301,L]
-  RewriteRule ^objetivo-(energia|inmunidad|piel|estres)\.html$ /category.html?objetivo=$1 [R=301,L]
-  RewriteRule ^catalogo-cuidado-adulto\.html$ /categoria/cuidado-personal [R=301,L]
-  RewriteRule ^catalogo-antisepticos\.html$ /categoria/cuidado-personal [R=301,L]
-  RewriteRule ^catalogo-medicamentos\.html$ /categoria/cuidado-personal [R=301,L]
+  RewriteRule ^objetivo-(energia|inmunidad|piel|estres)\.html$ /categoria/suplementos?objetivo=$1 [R=301,L]
+  RewriteRule ^catalogo-cuidado-adulto\.html$ /categoria/suplementos [R=301,L]
+  RewriteRule ^catalogo-antisepticos\.html$ /categoria/suplementos [R=301,L]
+  RewriteRule ^catalogo-medicamentos\.html$ /categoria/suplementos [R=301,L]
+  RewriteRule ^categoria/cuidado-personal/?$ /categoria/suplementos [R=301,L]
+  RewriteRule ^index\.html$ / [R=301,L]
+  RewriteRule ^catalogo-suplementos\.html$ /categoria/suplementos [R=301,L]
+  RewriteRule ^catalogo-antioxidantes\.html$ /categoria/suplementos?q=antioxidantes [R=301,L]
+  RewriteRule ^catalogo-botanitas\.html$ /categoria/suplementos?q=botanitas [R=301,L]
+  RewriteRule ^catalogo-colageno\.html$ /categoria/colageno [R=301,L]
+  RewriteRule ^catalogo-cuidado-intimo\.html$ /categoria/suplementos?q=intimo [R=301,L]
+  RewriteRule ^catalogo-cuidado-piel\.html$ /categoria/suplementos?q=piel [R=301,L]
+  RewriteRule ^catalogo-energia\.html$ /categoria/suplementos?q=energia [R=301,L]
+  RewriteRule ^catalogo-huesos\.html$ /categoria/suplementos?q=huesos [R=301,L]
+  RewriteRule ^catalogo-inmunidad\.html$ /categoria/suplementos?q=inmunidad [R=301,L]
+  RewriteRule ^catalogo-minerales\.html$ /categoria/minerales [R=301,L]
+  RewriteRule ^catalogo-nutricion\.html$ /categoria/nutricion [R=301,L]
+  RewriteRule ^catalogo-omega\.html$ /categoria/omega [R=301,L]
+  RewriteRule ^catalogo-satibo\.html$ /categoria/suplementos?q=satibo [R=301,L]
+  RewriteRule ^catalogo-suplementos-dietarios\.html$ /categoria/suplementos?q=suplementos%20dietarios [R=301,L]
+  RewriteRule ^biotina-colageno-colombia\.html$ /categoria/suplementos?q=biotina [R=301,L]
+  RewriteRule ^calcio-con-vitamina-d3-colombia\.html$ /categoria/suplementos?q=calcio%20vitamina%20d3 [R=301,L]
+  RewriteRule ^citrato-de-magnesio-colombia\.html$ /categoria/suplementos?q=citrato%20de%20magnesio [R=301,L]
+  RewriteRule ^colageno-hidrolizado-bogota\.html$ /categoria/suplementos?q=colageno%20bogota [R=301,L]
+  RewriteRule ^colageno-hidrolizado-cali\.html$ /categoria/suplementos?q=colageno%20cali [R=301,L]
+  RewriteRule ^colageno-hidrolizado-medellin\.html$ /categoria/suplementos?q=colageno%20medellin [R=301,L]
+  RewriteRule ^colageno-para-piel-colombia\.html$ /categoria/suplementos?q=colageno%20piel [R=301,L]
+  RewriteRule ^complejo-b-colombia\.html$ /categoria/suplementos?q=complejo%20b [R=301,L]
+  RewriteRule ^comprar-suplementos-colombia\.html$ /categoria/suplementos?q=comprar%20suplementos%20colombia [R=301,L]
+  RewriteRule ^ginseng-colombia\.html$ /categoria/suplementos?q=ginseng [R=301,L]
+  RewriteRule ^hombre\.html$ /categoria/suplementos?q=hombre [R=301,L]
+  RewriteRule ^multivitaminicos\.html$ /categoria/suplementos?q=multivitaminico [R=301,L]
+  RewriteRule ^omega-3-bogota\.html$ /categoria/suplementos?q=omega%20bogota [R=301,L]
+  RewriteRule ^tienda-de-vitaminas-colombia\.html$ /categoria/suplementos?q=tienda%20de%20vitaminas%20colombia [R=301,L]
+  RewriteRule ^tienda-naturista-online-colombia\.html$ /categoria/suplementos?q=tienda%20naturista%20online%20colombia [R=301,L]
+  RewriteRule ^vitamina-c-colombia\.html$ /categoria/suplementos?q=vitamina%20c [R=301,L]
+  RewriteRule ^vitamina-d3-colombia\.html$ /categoria/suplementos?q=vitamina%20d3 [R=301,L]
+  RewriteRule ^vitamina-e-1000-ui-colombia\.html$ /categoria/suplementos?q=vitamina%20e%201000%20ui [R=301,L]
+  RewriteRule ^vitaminas-medellin\.html$ /categoria/suplementos?q=vitaminas [R=301,L]
+  RewriteRule ^guia-entrenamiento-con-estrategia\.html$ / [R=301,L]
+  RewriteRule ^privacidad\.html$ /privacidad [R=301,L]
+  RewriteRule ^sobre-natural-be\.html$ /perfil/equipo-natural-be.html [R=301,L]
+  RewriteRule ^terminos\.html$ /terminos [R=301,L]
+
+  # Fallback para perfil editorial: si el archivo no esta desplegado, evitar 404
+  RewriteCond %{REQUEST_URI} ^/perfil/equipo-natural-be\.html$ [NC]
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteRule ^perfil/equipo-natural-be\.html$ /blog [R=301,L]
   
   # Redirect old Healthy America slugs to new canonical slugs
   RewriteRule ^producto/duovit-vitamina-d3-k2-100-softgels-healthy-america\.html$ /producto/duovit-vitamina-d3-k2-100-softgels [R=301,L]
@@ -80,16 +184,37 @@ AddCharset UTF-8 .html .css .js .xml .txt .json .svg
   RewriteRule ^producto/cartilago-de-tiburon-750mg-100-capsulas-healthy-america\.html$ /producto/cartilago-de-tiburon-750mg-100-capsulas [R=301,L]
   RewriteRule ^producto/juvenal-colageno-hidrolizado-vitamina-c-100-capsulas-healthy-america\.html$ /producto/colageno-hidrolizado-1500mg-vitamina-c-100-capsulas-juvenal [R=301,L]
   
-  # Canonical de producto sin extension
+  # Canonical de producto sin extension (solo si no existe HTML estatico real)
+  RewriteCond %{REQUEST_FILENAME} !-f
   RewriteRule ^producto/([A-Za-z0-9-]+)\.html$ /producto/$1 [R=301,L]
+
+  # SEO fallback: servir PDP estatico a bots de busqueda cuando exista
+  RewriteCond %{REQUEST_URI} ^/producto/([A-Za-z0-9-]+)/?$ [NC]
+  RewriteCond %{DOCUMENT_ROOT}/producto/%1.html -f
+  RewriteCond %{ENV:NB_GOOGLE_CRAWLER} =1 [OR]
+  RewriteCond %{HTTP_USER_AGENT} (bingbot|DuckDuckBot|YandexBot|Baiduspider|Slurp) [NC]
+  RewriteRule ^producto/([A-Za-z0-9-]+)/?$ /producto/%1.html [L]
 
   # Servir product.html para /producto/{slug}
   RewriteRule ^producto/([A-Za-z0-9-]+)/?$ /product.html?slug=$1 [L,QSA]
 
+  # Paginas legales/politicas con URL limpia
+  RewriteRule ^envios/?$ /envios.html [L]
+  RewriteRule ^devoluciones/?$ /devoluciones.html [L]
+  RewriteRule ^terminos/?$ /terminos.html [L]
+  RewriteRule ^privacidad/?$ /privacidad.html [L]
+
   # Servir category.html para /categoria/{slug}
   RewriteRule ^categoria/([A-Za-z0-9-]+)/?$ /category.html?category=$1 [L,QSA]
+  # Servir blog.html para /blog y /blog/
+  RewriteRule ^blog/?$ /blog.html [L]
   
   # Redireccionar URLs antiguas con query strings
+  # Evitar indexacion de product.html sin contexto de producto
+  RewriteCond %{THE_REQUEST} \s/+product\.html(?:\?|\s) [NC]
+  RewriteCond %{QUERY_STRING} !(^|&)(slug|producto|id)= [NC]
+  RewriteRule ^product\.html$ /categoria/suplementos [R=301,L]
+
   # No redirigir product.html cuando venga id= (evita /producto/{id} soft-404)
   RewriteCond %{QUERY_STRING} (^|&)id= [NC]
   RewriteRule ^product\.html$ - [L]
@@ -126,6 +251,10 @@ AddCharset UTF-8 .html .css .js .xml .txt .json .svg
 # HEADERS DE SEGURIDAD
 # ============================================
 <IfModule mod_headers.c>
+  # Exponer estado de pausa al frontend mediante cookie corta
+  Header always add Set-Cookie "nb_pause=1; Path=/; Max-Age=600; SameSite=Lax" env=NB_PAUSE_ON
+  Header always add Set-Cookie "nb_pause=0; Path=/; Max-Age=600; SameSite=Lax" env=NB_PAUSE_OFF
+
   # HSTS - Forzar HTTPS por 1 año
   Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
   
@@ -142,7 +271,19 @@ AddCharset UTF-8 .html .css .js .xml .txt .json .svg
   Header always set Permissions-Policy "geolocation=(), microphone=(), camera=(), payment=()"
   
   # Content Security Policy
-  Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://checkout.wompi.co https://production.wompi.co https://connect.facebook.net https://cdn.userway.org https://embed.tawk.to https://va.tawk.to https://wa.me; connect-src 'self' https://www.googletagmanager.com https://www.google-analytics.com https://checkout.wompi.co https://production.wompi.co https://sandbox.wompi.co https://www.facebook.com https://graph.facebook.com https://connect.facebook.net https://cdn.userway.org https://api.userway.org https://embed.tawk.to https://va.tawk.to wss://va.tawk.to https://wa.me https://fonts.googleapis.com https://fonts.gstatic.com; img-src 'self' data: blob: https://naturalbe.com.co https://www.googletagmanager.com https://www.google-analytics.com https://www.facebook.com https://connect.facebook.net https://cdn.userway.org https://embed.tawk.to https://va.tawk.to https://funat.co https://www.funat.co https://nutramerican.com https://www.nutramerican.com https://optimumnutrition.com.co https://www.optimumnutrition.com.co https://product-images.farmatodo.com https://www.farmatodo.com.co; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.userway.org https://embed.tawk.to; font-src 'self' data: https://fonts.gstatic.com https://cdn.userway.org https://embed.tawk.to; frame-src https://www.googletagmanager.com https://checkout.wompi.co https://sandbox.wompi.co https://www.facebook.com https://embed.tawk.to; base-uri 'self'; form-action 'self' https://checkout.wompi.co https://wa.me; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests; worker-src 'self' blob:"
+  Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://www.clarity.ms https://scripts.clarity.ms https://cdn.jsdelivr.net https://unpkg.com https://checkout.wompi.co https://production.wompi.co https://connect.facebook.net https://cdn.userway.org https://embed.tawk.to https://va.tawk.to https://wa.me; connect-src 'self' https://www.googletagmanager.com https://www.google-analytics.com https://analytics.google.com https://stats.g.doubleclick.net https://cdn.jsdelivr.net https://*.clarity.ms https://*.algolia.net https://*.algolianet.com https://insights.algolia.io https://checkout.wompi.co https://production.wompi.co https://sandbox.wompi.co https://www.facebook.com https://graph.facebook.com https://connect.facebook.net https://cdn.userway.org https://api.userway.org https://embed.tawk.to https://va.tawk.to wss://va.tawk.to https://wa.me https://fonts.googleapis.com https://fonts.gstatic.com; img-src 'self' data: blob: https://naturalbe.com.co https://www.googletagmanager.com https://www.google-analytics.com https://www.google.com https://www.google.com.co https://*.clarity.ms https://c.bing.com https://www.facebook.com https://connect.facebook.net https://cdn.userway.org https://embed.tawk.to https://va.tawk.to https://funat.co https://www.funat.co https://nutramerican.com https://www.nutramerican.com https://optimumnutrition.com.co https://www.optimumnutrition.com.co https://ogmantra.co https://www.ogmantra.co https://productosprosacolombia.com https://www.productosprosacolombia.com https://product-images.farmatodo.com https://www.farmatodo.com.co; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net https://unpkg.com https://cdn.userway.org https://embed.tawk.to; font-src 'self' data: https://fonts.gstatic.com https://cdn.userway.org https://embed.tawk.to; frame-src https://www.googletagmanager.com https://checkout.wompi.co https://sandbox.wompi.co https://www.facebook.com https://embed.tawk.to https://cdn.userway.org; base-uri 'self'; form-action 'self' https://checkout.wompi.co https://wa.me; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests; worker-src 'self' blob:"
+  # Fase 3: CSP estricta en enforce para rutas con hashes completos
+  <FilesMatch "^checkout\.html$">
+    Header always unset Content-Security-Policy
+    Header always unset Content-Security-Policy-Report-Only
+    Header always set Content-Security-Policy "default-src 'self'; script-src 'self' https://www.googletagmanager.com https://www.google-analytics.com https://www.clarity.ms https://scripts.clarity.ms https://checkout.wompi.co https://production.wompi.co https://connect.facebook.net https://cdn.jsdelivr.net https://cdn.userway.org https://wa.me; connect-src 'self' https://www.googletagmanager.com https://www.google-analytics.com https://analytics.google.com https://stats.g.doubleclick.net https://cdn.jsdelivr.net https://*.clarity.ms https://checkout.wompi.co https://production.wompi.co https://sandbox.wompi.co https://www.facebook.com https://graph.facebook.com https://connect.facebook.net https://cdn.userway.org https://api.userway.org https://wa.me; img-src 'self' data: blob: https://naturalbe.com.co https://www.googletagmanager.com https://www.google-analytics.com https://www.google.com https://www.google.com.co https://*.clarity.ms https://c.bing.com https://www.facebook.com https://connect.facebook.net https://cdn.userway.org; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net https://cdn.userway.org; font-src 'self' data: https://fonts.gstatic.com https://cdn.userway.org; frame-src https://www.googletagmanager.com https://checkout.wompi.co https://sandbox.wompi.co https://www.facebook.com https://cdn.userway.org; base-uri 'self'; form-action 'self' https://checkout.wompi.co https://wa.me; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests; worker-src 'self' blob:"
+  </FilesMatch>
+
+  <FilesMatch "^blog\.html$">
+    Header always unset Content-Security-Policy
+    Header always unset Content-Security-Policy-Report-Only
+    Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'sha256-LLPBRSisqrwj1IG7ZxAkMsfUvafqt7X6ATD2t3EAQsw=' https://www.clarity.ms https://scripts.clarity.ms; connect-src 'self' https://*.clarity.ms; img-src 'self' data: blob: https://naturalbe.com.co https://*.clarity.ms; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' data: https://fonts.gstatic.com; frame-src 'none'; base-uri 'self'; form-action 'self' https://wa.me; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests; worker-src 'self' blob:"
+  </FilesMatch>
   
   # ============================================
   # CACHE CONTROL
@@ -159,10 +300,12 @@ AddCharset UTF-8 .html .css .js .xml .txt .json .svg
     Header set X-Robots-Tag "noindex, follow"
   </FilesMatch>
 
-  # Checkout y página puente de blog: no indexables, pero con follow
-  <FilesMatch "^(checkout\.html|blog\.html)$">
+  # Checkout no indexable
+  <FilesMatch "^checkout\.html$">
     Header set X-Robots-Tag "noindex, follow"
   </FilesMatch>
+
+  # Canonical server-side deprecado: se mantiene canonical via HTML/JSON-LD para evitar headers mal formados.
 
   # PDFs operativos/comerciales: evitar indexación masiva accidental
   <FilesMatch "\.pdf$">
@@ -266,3 +409,7 @@ ServerSignature Off
 # 3. Crear páginas 404.html y 500.html personalizadas si se desea
 # 4. Ajustar CSP según servicios externos que uses
 # 5. Probar en staging antes de aplicar en producción
+
+
+
+

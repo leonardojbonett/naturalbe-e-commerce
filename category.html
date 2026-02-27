@@ -1,32 +1,87 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es-CO">
 <head>
+  <meta http-equiv="Content-Security-Policy" content="
+    default-src 'self';
+    script-src 'self' 'unsafe-inline' 'unsafe-eval'
+      https://www.googletagmanager.com
+      https://www.google-analytics.com
+      https://www.clarity.ms
+      https://scripts.clarity.ms
+      https://unpkg.com
+      https://checkout.wompi.co
+      https://production.wompi.co
+      https://connect.facebook.net
+      https://cdn.jsdelivr.net
+      https://cdn.userway.org
+      https://wa.me;
+    style-src 'self' 'unsafe-inline'
+      https://fonts.googleapis.com
+      https://cdn.jsdelivr.net
+      https://unpkg.com
+      https://cdn.userway.org;
+    img-src 'self' data: blob:
+      https://www.google-analytics.com
+      https://www.googletagmanager.com
+      https://www.google.com
+      https://www.google.com.co
+      https://*.clarity.ms
+      https://c.bing.com
+      https://connect.facebook.net
+      https://www.facebook.com
+      https://cdn.userway.org
+      https://funat.co
+      https://www.funat.co
+      https://nutramerican.com
+      https://www.nutramerican.com
+      https://product-images.farmatodo.com
+      https://www.farmatodo.com.co
+      https://optimumnutrition.com.co
+      https://www.optimumnutrition.com.co
+      https://ogmantra.co
+      https://www.ogmantra.co
+      https://productosprosacolombia.com
+      https://www.productosprosacolombia.com;
+    font-src 'self' data:
+      https://fonts.gstatic.com
+      https://cdn.userway.org;
+    connect-src 'self'
+      https://www.google-analytics.com
+      https://analytics.google.com
+      https://www.googletagmanager.com
+      https://stats.g.doubleclick.net
+      https://cdn.jsdelivr.net
+      https://*.clarity.ms
+      https://*.algolia.net
+      https://*.algolianet.com
+      https://insights.algolia.io
+      https://fonts.googleapis.com
+      https://fonts.gstatic.com
+      https://checkout.wompi.co
+      https://production.wompi.co
+      https://connect.facebook.net
+      https://www.facebook.com
+      https://graph.facebook.com
+      https://cdn.userway.org
+      https://api.userway.org;
+    frame-src 'self'
+      https://checkout.wompi.co
+      https://www.facebook.com
+      https://www.youtube.com
+      https://cdn.userway.org;
+    object-src 'none';
+    base-uri 'self';
+    form-action 'self' https://checkout.wompi.co https://wa.me;
+    upgrade-insecure-requests;
+  ">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
   <!-- Google Tag Manager -->
   <script>
-  (function () {
-    var GTM_ID = 'GTM-M7MF395K';
-    window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
-    var loaded = false;
-    function loadGtm() {
-      if (loaded) return;
-      loaded = true;
-      var j = document.createElement('script');
-      j.async = true;
-      j.src = 'https://www.googletagmanager.com/gtm.js?id=' + GTM_ID;
-      document.head.appendChild(j);
-    }
-    if (window.NB_ANALYTICS_EAGER === true) {
-      loadGtm();
-      return;
-    }
-    var idle = window.requestIdleCallback || function (cb) { setTimeout(cb, 3000); };
-    idle(loadGtm);
-    ['scroll', 'pointerdown', 'keydown', 'touchstart'].forEach(function (evt) {
-      window.addEventListener(evt, loadGtm, { once: true, passive: true });
-    });
-    window.addEventListener('load', function () { setTimeout(loadGtm, 1500); }, { once: true });
-  })();
+  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-M7MF395K');
   </script>
   <!-- End Google Tag Manager -->
   <meta charset="UTF-8">
@@ -60,10 +115,30 @@
   <meta name="twitter:title" content="Natural Be | Catálogo de suplementos">
   <meta name="twitter:description" content="Explora el catálogo de suplementos Natural Be por objetivo, categoría o beneficio.">
   <meta name="twitter:image" content="https://naturalbe.com.co/static/img/og-naturalbe.jpg">
+  <script type="text/javascript">
+    (function (c, l, a, r, i) {
+      c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments); };
+      var loaded = false;
+      function loadClarity() {
+        if (loaded) return;
+        loaded = true;
+        var t = l.createElement(r);
+        t.async = 1;
+        t.src = 'https://www.clarity.ms/tag/' + i + '?ref=bwt';
+        var y = l.getElementsByTagName(r)[0];
+        y.parentNode.insertBefore(t, y);
+      }
+      ['scroll', 'pointerdown', 'keydown', 'touchstart'].forEach(function (evt) {
+        c.addEventListener(evt, loadClarity, { once: true, passive: true });
+      });
+    })(window, document, 'clarity', 'script', 'vl54hiwglb');
+  </script>
 
-  <title>Natural Be | Catálogo de suplementos</title>
-  <meta name="description" content="Explora el catálogo de suplementos Natural Be por objetivo, categoría o marca. Compara opciones, precios y beneficios con envío rápido en Colombia y pago seguro.">
+  <title>Catálogo de Suplementos Naturales en Colombia | Natural Be</title>
+  <meta name="description" content="Compra suplementos naturales en Colombia: colágeno, omega 3, vitaminas y minerales. Filtra por objetivo y marca. Envío 24-48h, pago seguro con Wompi.">
   <link rel="canonical" href="https://naturalbe.com.co/categoria/suplementos">
+  <link rel="alternate" hreflang="es-CO" href="https://naturalbe.com.co/categoria/suplementos">
+  <link rel="alternate" hreflang="x-default" href="https://naturalbe.com.co/categoria/suplementos">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -95,24 +170,46 @@
     "dateModified": "2026-02-18T08:00:00-05:00"
   }
   </script>
+  <script type="application/ld+json" id="category-itemlist-static">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Productos destacados Natural Be",
+    "itemListElement": [
+      {"@type":"ListItem","position":1,"url":"https://naturalbe.com.co/producto/omega-3-6-9","name":"Omega 3, 6, 9"},
+      {"@type":"ListItem","position":2,"url":"https://naturalbe.com.co/producto/xero-ft","name":"Xero FT"},
+      {"@type":"ListItem","position":3,"url":"https://naturalbe.com.co/producto/cloruro-de-magnesio","name":"Cloruro de Magnesio"},
+      {"@type":"ListItem","position":4,"url":"https://naturalbe.com.co/producto/citrato-de-magnesio","name":"Citrato de Magnesio"},
+      {"@type":"ListItem","position":5,"url":"https://naturalbe.com.co/producto/omega-3-1000mg","name":"Omega-3 1000 mg"},
+      {"@type":"ListItem","position":6,"url":"https://naturalbe.com.co/producto/colageno-biotina-gomas","name":"Colágeno y Biotina Gomas"},
+      {"@type":"ListItem","position":7,"url":"https://naturalbe.com.co/producto/colageno-hidrolizado-liquido","name":"Colágeno Hidrolizado Líquido"},
+      {"@type":"ListItem","position":8,"url":"https://naturalbe.com.co/producto/vitamina-e-procaps","name":"Vitamina E Procaps"},
+      {"@type":"ListItem","position":9,"url":"https://naturalbe.com.co/producto/dolcal-magnesio","name":"Dolcal con Magnesio"},
+      {"@type":"ListItem","position":10,"url":"https://naturalbe.com.co/producto/aceite-higado-bacalao","name":"Aceite de Hígado de Bacalao"}
+    ]
+  }
+  </script>
 
   <link rel="preconnect" href="https://wa.me">
+  <link rel="preload" href="/static/img/logo.webp" as="image">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Noto+Sans:wght@400;600;700&display=optional" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Noto+Sans:wght@400;600;700&display=optional" rel="stylesheet"></noscript>
+  <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=optional" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=optional" rel="stylesheet"></noscript>
   <style>
     /* Critical CSS para evitar FOUC */
     body{font-family:'Plus Jakarta Sans',sans-serif;line-height:1.5;margin:0}
     .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+    .skip-link{position:absolute;top:-100%;left:0;padding:0.5rem 1rem;background:#14532d;color:#fff;font-weight:700;z-index:9999}
+    .skip-link:focus{top:0}
   </style>
   <script>
-    window.NB_VERSION = "2026-01-11";
+    window.NB_VERSION = "2026-02-25-prosa-makeup";
     window.NB_DATA_VERSION = window.NB_VERSION;
   </script>
-  <link rel="preload" href="/static/data/productos.json?v=2026-01-11" as="fetch" crossorigin="anonymous">
-  <link rel="preload" href="/static/css/main.min.css?v=2026-01-11" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="/static/css/main.min.css?v=2026-01-11"></noscript>
+  <link rel="preload" href="/static/css/main.min.css?v=2026-02-23-4" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="/static/css/main.min.css?v=2026-02-23-4"></noscript>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -154,18 +251,19 @@
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M7MF395K"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
+  <a href="#mainContent" class="skip-link">Saltar al contenido principal</a>
 
   <div class="promo-bar" id="promoBar" aria-live="polite">
     <span class="promo-icon">●</span>
     <span class="promo-message" id="promoMessage">Envíos 24-48h en Colombia · Envío gratis desde $100.000 · Pagos seguros con Wompi · Asesoría por WhatsApp</span>
-    <button class="promo-close" type="button" onclick="closePromoBar()" aria-label="Cerrar promoción">×</button>
+    <button class="promo-close" type="button" onclick="if(window.closePromoBar){closePromoBar()}else{var bar=this.closest('.promo-bar');if(bar){bar.style.display='none';}}" aria-label="Cerrar promoción">×</button>
   </div>
 
   <header class="market-header" role="banner">
     <div class="market-header__top">
       <div class="market-brand">
-        <a class="brand-logo" href="/index.html" aria-label="Natural Be - Inicio">
-          <img src="/static/img/logo.webp" alt="Natural Be" width="48" height="48" loading="lazy" decoding="async">
+        <a class="brand-logo" href="/" aria-label="Natural Be - Inicio">
+          <img src="/static/img/logo.webp" alt="Natural Be" width="48" height="48" loading="eager" decoding="async">
           <span>Natural Be</span>
         </a>
         <button id="menuToggle" class="hamburger-btn" type="button" aria-label="Abrir menú" aria-haspopup="dialog" aria-expanded="false" aria-controls="mobileMenu">Menú</button>
@@ -183,8 +281,8 @@
       </form>
 
       <div class="market-actions">
-        <a class="market-action-link" href="/index.html">Inicio</a>
-        <a class="market-action-link" href="/sobre-natural-be.html">Confianza</a>
+        <a class="market-action-link" href="/">Inicio</a>
+        <a class="market-action-link" href="/">Confianza</a>
         <a class="market-action-pill" href="https://wa.me/573137212923?utm_source=naturalbe&utm_medium=website&utm_campaign=retail&utm_content=nav_whatsapp" id="navWhatsappLink" data-wa-content="nav_whatsapp" target="_blank" rel="noopener">WhatsApp</a>
         <button class="market-action-pill" type="button" data-cart-trigger>
           Carrito
@@ -199,47 +297,47 @@
         <div class="mega-menu" id="megaMenu" data-mega-menu aria-hidden="true" hidden>
           <div class="mega-column">
             <h4>Comprar por objetivo</h4>
-            <a href="/objetivo-energia.html">Energía & rendimiento</a>
-            <a href="/objetivo-inmunidad.html">Inmunidad</a>
-            <a href="/objetivo-piel.html">Piel & colágeno</a>
-            <a href="/objetivo-estres.html">Estrés & sueño</a>
+            <a href="/categoria/suplementos?objetivo=energia">Energía & rendimiento</a>
+            <a href="/categoria/suplementos?objetivo=inmunidad">Inmunidad</a>
+            <a href="/categoria/suplementos?objetivo=piel">Piel & colágeno</a>
+            <a href="/categoria/suplementos?objetivo=estres">Estrés & sueño</a>
           </div>
           <div class="mega-column">
             <h4>Suplementos</h4>
             <a href="/catalogo-vitaminas.html">Vitaminas</a>
-            <a href="/catalogo-minerales.html">Minerales</a>
-            <a href="/catalogo-nutricion.html">Nutrición</a>
-            <a href="/catalogo-suplementos-dietarios.html">Suplementos dietarios</a>
-            <a href="/catalogo-omega.html">Omega & aceites</a>
-            <a href="/catalogo-colageno.html">Colágeno</a>
+            <a href="/categoria/minerales">Minerales</a>
+            <a href="/categoria/nutricion">Nutrición</a>
+            <a href="/categoria/suplementos?q=suplementos%20dietarios">Suplementos dietarios</a>
+            <a href="/categoria/omega">Omega & aceites</a>
+            <a href="/categoria/colageno">Colágeno</a>
           </div>
 <div class="mega-column">
   <h4>Explorar</h4>
-  <a href="/catalogo-energia.html">Energía diaria</a>
-  <a href="/catalogo-inmunidad.html">Defensas</a>
+  <a href="/categoria/suplementos?q=energia">Energía diaria</a>
+  <a href="/categoria/suplementos?q=inmunidad">Defensas</a>
   <a href="/categoria/suplementos">Todos los suplementos</a>
-  <a href="/catalogo-botanitas.html">Marca Botanitas</a>
-<a href="/catalogo-satibo.html">Marca Satibo</a>
+  <a href="/categoria/suplementos?q=botanitas">Marca Botanitas</a>
+<a href="/categoria/suplementos?q=satibo">Marca Satibo</a>
   <a href="/categoria/suplementos?brand=nutramerican">Marca Nutramerican</a>
-  <a href="/blog.html">Blog</a>
+  <a href="/blog">Blog</a>
 </div>
 <div class="mega-column">
   <h4>Más categorías</h4>
-  <a href="/catalogo-antioxidantes.html">Antioxidantes</a>
-  <a href="/catalogo-huesos.html">Huesos y articulaciones</a>
+  <a href="/categoria/suplementos?q=antioxidantes">Antioxidantes</a>
+  <a href="/categoria/suplementos?q=huesos">Huesos y articulaciones</a>
   <a href="/catalogo-cabello.html">Cabello</a>
   <a href="/catalogo-digestivos.html">Digestivos</a>
-  <a href="/catalogo-cuidado-piel.html">Cuidado piel</a>
-  <a href="/catalogo-cuidado-intimo.html">Cuidado íntimo</a>
+  <a href="/categoria/suplementos?q=piel">Cuidado piel</a>
+  <a href="/categoria/suplementos?q=intimo">Cuidado íntimo</a>
 </div>
         </div>
       </div>
       <nav class="market-links" aria-label="Navegación rápida">
-        <a href="/index.html#destacados-marcas">Destacados</a>
-        <a href="/index.html#ofertas">Ofertas</a>
-        <a href="/index.html#nuevos">Nuevos</a>
-        <a href="/index.html#categorias">Categorías</a>
-        <a href="/index.html#proceso">Cómo comprar</a>
+        <a href="/#destacados-marcas">Destacados</a>
+        <a href="/#ofertas">Ofertas</a>
+        <a href="/#nuevos">Nuevos</a>
+        <a href="/#categorias">Categorías</a>
+        <a href="/#proceso">Cómo comprar</a>
       </nav>
       <div class="market-socials" aria-label="Redes sociales Natural Be">
         <a href="https://www.facebook.com/NaturalBeColombia" target="_blank" rel="noopener" aria-label="Facebook Natural Be">
@@ -268,17 +366,17 @@
       <button class="mobile-menu-close" type="button" onclick="toggleMobileMenu(true)" aria-label="Cerrar menú">×</button>
     </div>
     <nav class="nav-mobile" aria-label="Navegación principal">
-      <a href="/index.html#inicio">Inicio</a>
+      <a href="/#inicio">Inicio</a>
       <a href="/categoria/suplementos">Catálogo</a>
-      <a href="/index.html#destacados-marcas">Destacados</a>
-      <a href="/index.html#ofertas">Ofertas</a>
-      <a href="/index.html#nuevos">Nuevos</a>
-      <a href="/index.html#categorias">Categorías</a>
-      <a href="/index.html#proceso">Cómo comprar</a>
-      <a href="/envios.html">Envíos</a>
-      <a href="/devoluciones.html">Devoluciones</a>
-      <a href="/catalogo-botanitas.html">Marca Botanitas</a>
-  <a href="/blog.html">Blog</a>
+      <a href="/#destacados-marcas">Destacados</a>
+      <a href="/#ofertas">Ofertas</a>
+      <a href="/#nuevos">Nuevos</a>
+      <a href="/#categorias">Categorías</a>
+      <a href="/#proceso">Cómo comprar</a>
+      <a href="/envios">Envíos</a>
+      <a href="/devoluciones">Devoluciones</a>
+      <a href="/categoria/suplementos?q=botanitas">Marca Botanitas</a>
+  <a href="/blog">Blog</a>
       <a href="https://wa.me/573137212923?utm_source=naturalbe&utm_medium=website&utm_campaign=retail&utm_content=menu_whatsapp" id="menuWhatsappLink" data-wa-content="menu_whatsapp" target="_blank" rel="noopener">WhatsApp</a>
           <div class="market-socials market-socials--mobile" aria-label="Redes sociales Natural Be">
         <a href="https://www.facebook.com/NaturalBeColombia" target="_blank" rel="noopener" aria-label="Facebook Natural Be">
@@ -300,44 +398,66 @@
 </nav>
   </div>
 
-  <main class="page-shell" style="padding-top:0.75rem;">
+  <main id="mainContent" class="page-shell" style="padding-top:0.75rem;">
     <noscript>
       <div class="catalog-alert">
         <span>Activa JavaScript para ver el catalogo completo.</span>
-        <a class="btn-ghost" href="/index.html">Volver al inicio</a>
+        <a class="btn-ghost" href="/">Volver al inicio</a>
       </div>
     </noscript>
     <nav class="breadcrumb" aria-label="Ruta de navegación">
-      <a href="/index.html">Inicio</a>
+      <a href="/">Inicio</a>
       <span aria-hidden="true">/</span>
       <span aria-current="page">Catálogo</span>
     </nav>
+    <section class="page-shell" style="margin-top:0.75rem;">
+      <p class="section-title" style="margin-bottom:0.35rem;">Productos destacados</p>
+      <p class="section-subtitle">Rutas directas a productos populares del catálogo.</p>
+      <ul class="footer-links">
+        <li><a href="/producto/omega-3-6-9">Omega 3, 6, 9</a></li>
+        <li><a href="/producto/xero-ft">Xero FT</a></li>
+        <li><a href="/producto/cloruro-de-magnesio">Cloruro de Magnesio</a></li>
+        <li><a href="/producto/citrato-de-magnesio">Citrato de Magnesio</a></li>
+        <li><a href="/producto/omega-3-1000mg">Omega-3 1000 mg</a></li>
+        <li><a href="/producto/colageno-biotina-gomas">Colágeno y Biotina Gomas</a></li>
+        <li><a href="/producto/colageno-hidrolizado-liquido">Colágeno Hidrolizado Líquido</a></li>
+        <li><a href="/producto/vitamina-e-procaps">Vitamina E Procaps</a></li>
+        <li><a href="/producto/dolcal-magnesio">Dolcal con Magnesio</a></li>
+        <li><a href="/producto/aceite-higado-bacalao">Aceite de Hígado de Bacalao</a></li>
+      </ul>
+    </section>
+    <section class="page-shell" style="margin-top:0.75rem;">
+      <p class="section-title" style="margin-bottom:0.35rem;">Busqueda inteligente</p>
+      <p class="section-subtitle">Encuentra productos mas rapido por nombre, marca o necesidad.</p>
+      <div id="search"></div>
+      <small id="searchStatus" style="display:block;margin-top:0.35rem;color:#64748b;">La busqueda avanzada se activa al interactuar.</small>
+    </section>
 
     <section class="page-shell" style="margin-top:0.75rem;">
-      <h2 class="section-title" style="margin-bottom:0.35rem;">Explora por categorías populares</h2>
+      <p class="section-title" style="margin-bottom:0.35rem;">Explora por categorías populares</p>
       <p class="section-subtitle">Atajos rápidos a las líneas más buscadas en Colombia.</p>
       <div class="category-grid">
         <a class="category-tile" href="/catalogo-vitaminas.html">
           <strong>Vitaminas</strong>
           <span>Energía diaria y defensas.</span>
         </a>
-        <a class="category-tile" href="/catalogo-omega.html">
+        <a class="category-tile" href="/categoria/omega">
           <strong>Omega & aceites</strong>
           <span>Corazón, mente y articulaciones.</span>
         </a>
-        <a class="category-tile" href="/catalogo-colageno.html">
+        <a class="category-tile" href="/categoria/colageno">
           <strong>Colágeno</strong>
           <span>Piel, cabello y elasticidad.</span>
         </a>
-        <a class="category-tile" href="/catalogo-minerales.html">
+        <a class="category-tile" href="/categoria/minerales">
           <strong>Minerales</strong>
           <span>Magnesio, zinc y balances clave.</span>
         </a>
-        <a class="category-tile" href="/catalogo-nutricion.html">
+        <a class="category-tile" href="/categoria/nutricion">
           <strong>Nutrición</strong>
           <span>Soporte diario con fórmulas completas.</span>
         </a>
-        <a class="category-tile" href="/catalogo-suplementos-dietarios.html">
+        <a class="category-tile" href="/categoria/suplementos?q=suplementos%20dietarios">
           <strong>Suplementos dietarios</strong>
           <span>Multivitamínicos para la rutina.</span>
         </a>
@@ -415,6 +535,7 @@
             <option value="inmunidad">Inmunidad</option>
             <option value="nutricion">Nutrición</option>
             <option value="suplementos dietarios">Suplementos dietarios</option>
+            <option value="maquillaje">Maquillaje</option>
           </select>
         </div>
         <div class="filter-group">
@@ -460,14 +581,14 @@
       <h2 class="section-title" id="rutas-categoria-title">Explora también</h2>
       <p class="section-subtitle">Enlaces estratégicos para acelerar tu búsqueda por necesidad.</p>
       <div class="category-grid">
-        <a class="category-tile" href="/catalogo-suplementos-dietarios.html"><strong>Suplementos dietarios</strong><span>Categoría completa para rutina diaria.</span></a>
+        <a class="category-tile" href="/categoria/suplementos?q=suplementos%20dietarios"><strong>Suplementos dietarios</strong><span>Categoría completa para rutina diaria.</span></a>
         <a class="category-tile" href="/catalogo-vitaminas.html"><strong>Vitaminas</strong><span>Apoyo inmune, energía y bienestar.</span></a>
-        <a class="category-tile" href="/catalogo-minerales.html"><strong>Minerales</strong><span>Magnesio, zinc y más opciones.</span></a>
-        <a class="category-tile" href="/catalogo-colageno.html"><strong>Colágeno</strong><span>Piel, cabello y articulaciones.</span></a>
+        <a class="category-tile" href="/categoria/minerales"><strong>Minerales</strong><span>Magnesio, zinc y más opciones.</span></a>
+        <a class="category-tile" href="/categoria/colageno"><strong>Colágeno</strong><span>Piel, cabello y articulaciones.</span></a>
         <a class="category-tile" href="/como-tomar-probioticos-colombia.html"><strong>Cómo tomar probióticos</strong><span>Guía de uso y frecuencia recomendada.</span></a>
         <a class="category-tile" href="/que-es-un-suplemento-dietario-colombia.html"><strong>Qué es un suplemento dietario</strong><span>Conceptos clave antes de comprar.</span></a>
-        <a class="category-tile" href="/tienda-naturista-online-colombia.html"><strong>Tienda naturista online</strong><span>Compra segura con envío nacional.</span></a>
-        <a class="category-tile" href="/comprar-suplementos-colombia.html"><strong>Comprar suplementos en Colombia</strong><span>Comparador rápido por objetivo.</span></a>
+        <a class="category-tile" href="/categoria/suplementos?q=tienda%20naturista%20online%20colombia"><strong>Tienda naturista online</strong><span>Compra segura con envío nacional.</span></a>
+        <a class="category-tile" href="/categoria/suplementos?q=comprar%20suplementos%20colombia"><strong>Comprar suplementos en Colombia</strong><span>Comparador rápido por objetivo.</span></a>
       </div>
     </section>
       <section class="page-shell" style="margin-top:0.75rem;">
@@ -531,33 +652,33 @@
         <h4>Categorías</h4>
         <ul class="footer-links">
   <li><a href="/catalogo-vitaminas.html">Vitaminas</a></li>
-  <li><a href="/catalogo-minerales.html">Minerales</a></li>
-  <li><a href="/catalogo-omega.html">Omega & aceites</a></li>
-  <li><a href="/catalogo-colageno.html">Colageno</a></li>
-          <li><a href="/catalogo-energia.html">Energía</a></li>
-  <li><a href="/catalogo-inmunidad.html">Inmunidad</a></li>
-  <li><a href="/catalogo-antioxidantes.html">Antioxidantes</a></li>
-  <li><a href="/catalogo-huesos.html">Huesos</a></li>
+  <li><a href="/categoria/minerales">Minerales</a></li>
+  <li><a href="/categoria/omega">Omega & aceites</a></li>
+  <li><a href="/categoria/colageno">Colageno</a></li>
+          <li><a href="/categoria/suplementos?q=energia">Energía</a></li>
+  <li><a href="/categoria/suplementos?q=inmunidad">Inmunidad</a></li>
+  <li><a href="/categoria/suplementos?q=antioxidantes">Antioxidantes</a></li>
+  <li><a href="/categoria/suplementos?q=huesos">Huesos</a></li>
   <li><a href="/catalogo-cabello.html">Cabello</a></li>
   <li><a href="/catalogo-digestivos.html">Digestivos</a></li>
-  <li><a href="/catalogo-cuidado-piel.html">Cuidado piel</a></li>
-          <li><a href="/catalogo-cuidado-intimo.html">Cuidado íntimo</a></li>
-  <li><a href="/categoria/cuidado-personal">Cuidado adulto</a></li>
-  <li><a href="/categoria/cuidado-personal">Antisepticos</a></li>
-  <li><a href="/categoria/cuidado-personal">Medicamentos</a></li>
-  <li><a href="/catalogo-botanitas.html">Marca Botanitas</a></li>
-  <li><a href="/catalogo-satibo.html">Marca Satibo</a></li>
+  <li><a href="/categoria/suplementos?q=piel">Cuidado piel</a></li>
+          <li><a href="/categoria/suplementos?q=intimo">Cuidado íntimo</a></li>
+  <li><a href="/categoria/suplementos">Cuidado adulto</a></li>
+  <li><a href="/categoria/suplementos">Antisepticos</a></li>
+  <li><a href="/categoria/suplementos">Medicamentos</a></li>
+  <li><a href="/categoria/suplementos?q=botanitas">Marca Botanitas</a></li>
+  <li><a href="/categoria/suplementos?q=satibo">Marca Satibo</a></li>
   <li><a href="/categoria/suplementos">Todos los suplementos</a></li>
 </ul>
       </div>
       <div>
         <h4>Soporte</h4>
         <ul class="footer-links">
-          <li><a href="/envios.html">Envíos</a></li>
-          <li><a href="/devoluciones.html">Devoluciones</a></li>
-          <li><a href="/terminos.html">Términos y condiciones</a></li>
-          <li><a href="/privacidad.html">Política de privacidad</a></li>
-          <li><a href="/sobre-natural-be.html">Sobre Natural Be</a></li>
+          <li><a href="/envios">Envíos</a></li>
+          <li><a href="/devoluciones">Devoluciones</a></li>
+          <li><a href="/terminos">Términos y condiciones</a></li>
+          <li><a href="/privacidad">Política de privacidad</a></li>
+          <li><a href="/">Sobre Natural Be</a></li>
         </ul>
       </div>
       <div>
@@ -572,6 +693,7 @@
   <!-- Scripts Esenciales -->
   <script src="/static/js/nb-core.js?v=2026-02-14" defer></script>
   <script src="/static/js/promo.js" defer></script>
+  <script src="/static/js/schema-builder.js?v=2026-02-20" defer></script>
   <script src="/static/js/marketplace.js?v=2026-02-14" defer></script>
   <script src="/static/js/products-data.min.js?v=2026-02-14" defer></script>
   <script src="/static/js/search-engine.js?v=2026-02-07" defer></script>
@@ -629,7 +751,7 @@
     window.addEventListener('load', function() {
       // Cargar scripts secundarios después del load principal
       const scripts = [
-        './static/js/wompi-config.js'
+        '/static/js/wompi-config.js'
       ];
       scripts.forEach(src => {
         const script = document.createElement('script');
@@ -684,7 +806,8 @@
       omega: 'Omega y aceites',
       colageno: 'Colágeno',
       energia: 'Energía',
-      inmunidad: 'Inmunidad'
+      inmunidad: 'Inmunidad',
+      maquillaje: 'Maquillaje'
     };
     const objectiveLabels = {
       energia: 'Energía y rendimiento',
@@ -941,6 +1064,7 @@
       'vitaminas', 'minerales', 'omega', 'colageno', 'energia', 'inmunidad',
       'antioxidantes', 'huesos', 'cabello', 'digestivos', 'cuidado-piel',
       'cuidado-intimo', 'cuidado-adulto', 'antisepticos', 'medicamentos',
+      'maquillaje',
       'nutricion', 'suplementos', 'suplementos-dietarios', 'botanitas', 'satibo'
     ]);
 
@@ -1148,11 +1272,11 @@
       return stored || getLimitByViewport();
     }
     function applyResponsiveLimitOverride() {
+      if (!limitSelect) return;
       const params = new URLSearchParams(window.location.search);
       if (params.has('limit')) return;
       const responsiveLimit = getLimitByViewport();
-      updateUrlParams({ limit: responsiveLimit }, { replace: true });
-      if (limitSelect) limitSelect.value = String(responsiveLimit);
+      limitSelect.value = String(responsiveLimit);
     }
     function getPageFromUrl(totalPages) {
       const params = new URLSearchParams(window.location.search);
@@ -1227,11 +1351,17 @@
     }
     function ensurePaginationParams(page, limit) {
       const params = new URLSearchParams(window.location.search);
-      const hasPage = params.has('page');
-      const hasLimit = params.has('limit');
-      if (hasPage && hasLimit) return params;
-      if (!hasPage) params.set('page', String(page));
-      if (!hasLimit) params.set('limit', String(limit));
+      let changed = false;
+      if (params.get('page') === '1') {
+        params.delete('page');
+        changed = true;
+      }
+      const rawLimit = Number(params.get('limit'));
+      if (params.has('limit') && ![12, 18, 24, 48].includes(rawLimit)) {
+        params.delete('limit');
+        changed = true;
+      }
+      if (!changed) return params;
       const query = params.toString();
       const nextUrl = query ? `${window.location.pathname}?${query}` : window.location.pathname;
       history.replaceState({}, '', nextUrl);
@@ -1314,19 +1444,6 @@
         ? `/categoria/${encodeURIComponent(toSeoSlug(currentCategory))}`
         : '/categoria/suplementos';
       const base = `${origin}${basePath}`;
-      let canonical = document.querySelector('link[rel="canonical"]');
-      if (!canonical) {
-        canonical = document.createElement('link');
-        canonical.setAttribute('rel', 'canonical');
-        document.head.appendChild(canonical);
-      }
-      if (canonical) {
-        const canonicalParams = new URLSearchParams(params.toString());
-        if (page > 1) canonicalParams.set('page', String(page)); else canonicalParams.delete('page');
-        canonicalParams.set('limit', String(limit));
-        const query = canonicalParams.toString();
-        canonical.setAttribute('href', query ? `${base}?${query}` : base);
-      }
       const setRel = (rel, targetPage) => {
         let link = document.querySelector(`link[rel="${rel}"]`);
         if (targetPage < 1 || targetPage > totalPages) {
@@ -1339,9 +1456,11 @@
           document.head.appendChild(link);
         }
         const paramsRel = new URLSearchParams(params.toString());
-        paramsRel.set('limit', String(limit));
-        paramsRel.set('page', String(targetPage));
-        link.setAttribute('href', `${base}?${paramsRel.toString()}`);
+        paramsRel.delete('limit');
+        if (targetPage > 1) paramsRel.set('page', String(targetPage));
+        else paramsRel.delete('page');
+        const relQuery = paramsRel.toString();
+        link.setAttribute('href', relQuery ? `${base}?${relQuery}` : base);
       };
       setRel('prev', page - 1);
       setRel('next', page + 1);
@@ -1448,7 +1567,9 @@
       }
       ogUrl.setAttribute('content', canonicalHref);
 
-      updateItemListSchema(list);
+      if (typeof window.injectProductListSchema !== 'function') {
+        updateItemListSchema(list);
+      }
     }
 
     function buildItemUrl(product) {
@@ -1456,7 +1577,7 @@
       const slug = product.slug || '';
         const rawUrl = (window.NaturalBe && typeof window.NaturalBe.buildProductURL === 'function')
           ? window.NaturalBe.buildProductURL(product)
-          : (slug ? `/producto/${encodeURIComponent(slug)}` : '/product.html');
+          : (slug ? `/producto/${encodeURIComponent(slug)}` : '/categoria/suplementos');
       try {
         return new URL(rawUrl, origin).href;
       } catch (e) {
@@ -1496,7 +1617,7 @@
           <h3>No encontramos resultados${safeQuery ? ` para "${safeQuery}"` : ''}.</h3>
           <p>Prueba con otra palabra o explora estas opciones:</p>
           <div class="empty-state-actions">
-            <a class="btn-primary" href="/index.html#destacados-marcas">Ver destacados</a>
+            <a class="btn-primary" href="/#destacados-marcas">Ver destacados</a>
             <a class="btn-ghost" href="/categoria/suplementos">Ver catalogo completo</a>
             <a class="btn-outline" href="https://wa.me/573137212923?utm_source=naturalbe&utm_medium=website&utm_campaign=retail&utm_content=empty_whatsapp" target="_blank" rel="noopener">WhatsApp</a>
           </div>
@@ -1668,7 +1789,8 @@
             'colageno': 'Colágeno',
             'energia': 'Suplementos de Energía',
             'inmunidad': 'Suplementos para la Inmunidad',
-            'antioxidantes': 'Antioxidantes'
+            'antioxidantes': 'Antioxidantes',
+            'maquillaje': 'Maquillaje'
           };
           const displayName = categoryNames[category] || category;
           title = `${displayName} - Natural Be`;
@@ -1736,20 +1858,6 @@
         renderEmptyState(getSearchTerm());
         return;
       }
-      const hashString = (value) => {
-        const input = String(value || '');
-        let hash = 0;
-        for (let i = 0; i < input.length; i += 1) {
-          hash = (hash << 5) - hash + input.charCodeAt(i);
-          hash |= 0;
-        }
-        return Math.abs(hash);
-      };
-      const seededRange = (seed, min, max) => {
-        if (max <= min) return min;
-        const span = (max - min) + 1;
-        return min + (Math.abs(seed) % span);
-      };
       const html = list.map((product) => {
         const name = product.nombre || product.name || '';
         const price = Number(product.precio_oferta || product.precio || product.price || 0);
@@ -1758,18 +1866,10 @@
         const ratingCount = Number(product.rating_count || 0);
         const url = (window.NaturalBe && typeof window.NaturalBe.buildProductURL === 'function')
           ? window.NaturalBe.buildProductURL(product)
-          : (product.slug ? `/producto/${encodeURIComponent(product.slug)}` : '/product.html');
-        const dayKey = (() => {
-          const now = new Date();
-          return `${now.getUTCFullYear()}-${now.getUTCMonth() + 1}-${now.getUTCDate()}`;
-        })();
-        const seed = hashString(`${product.id || product.slug || name}-${dayKey}`);
-        const viewers = seededRange(seed + 3, 8, 34);
-        const boughtToday = seededRange(seed + 7, 3, 22);
-        const stockLeft = product.stock_bajo ? seededRange(seed + 11, 3, 9) : seededRange(seed + 11, 10, 24);
+          : (product.slug ? `/producto/${encodeURIComponent(product.slug)}` : '/categoria/suplementos');
         const ratingText = ratingValue > 0
           ? `${ratingValue.toFixed(1)} (${ratingCount || 0})`
-          : `${(seededRange(seed + 13, 46, 49) / 10).toFixed(1)} (${seededRange(seed + 17, 41, 182)})`;
+          : 'Valorado por clientes';
         const safeName = escapeHtml(name);
         const safeDesc = escapeHtml(product.descripcion_corta || product.description || '');
         const safeImg = escapeHtml(sanitizeUrl(img));
@@ -1785,10 +1885,8 @@
               </h3>
               <p class="product-card__desc">${safeDesc}</p>
               <div class="product-card__proof">
-                <span class="proof-chip"><span aria-hidden="true">👁</span>${viewers} viendo</span>
                 <span class="proof-chip"><span aria-hidden="true">⭐</span>${ratingText}</span>
-                <span class="proof-chip"><span aria-hidden="true">🛍️</span>${boughtToday} hoy</span>
-                <span class="proof-chip ${product.stock_bajo ? 'is-urgency' : ''}"><span aria-hidden="true">⚡</span>${product.stock_bajo ? `Solo ${stockLeft} unidades` : `${stockLeft} unidades`}</span>
+                ${product.stock_bajo ? '<span class="proof-chip is-urgency"><span aria-hidden="true">⚡</span>Stock limitado</span>' : ''}
               </div>
               <div class="product-card__price">
                 <span>$${price.toLocaleString('es-CO')}</span>
@@ -1813,7 +1911,7 @@
         tags: p.tags || [],
         url: (window.NaturalBe && typeof window.NaturalBe.buildProductURL === 'function')
           ? window.NaturalBe.buildProductURL(p)
-          : (slug ? `/producto/${encodeURIComponent(slug)}` : '/product.html')
+          : (slug ? `/producto/${encodeURIComponent(slug)}` : '/categoria/suplementos')
       };
     }
 
@@ -2117,11 +2215,104 @@
   })();
   </script>
 
+    <script>
+      (function initAlgoliaSiteSearch() {
+        var statusEl = document.getElementById('searchStatus');
+        var loaded = false;
+        var loading = false;
+        var initialized = false;
+
+        function appendCssOnce() {
+          if (document.querySelector('link[data-algolia-css="1"]')) return;
+          var css = document.createElement('link');
+          css.rel = 'stylesheet';
+          css.href = 'https://cdn.jsdelivr.net/npm/@algolia/sitesearch@1/dist/search.min.css';
+          css.setAttribute('data-algolia-css', '1');
+          document.head.appendChild(css);
+        }
+
+        function initWidget() {
+          if (initialized) return;
+          initialized = true;
+          var searchContainer = document.querySelector('#search');
+          if (!searchContainer) return;
+          if (!window.SiteSearch || typeof window.SiteSearch.init !== 'function') {
+            if (statusEl) statusEl.textContent = 'No se pudo cargar la busqueda de Algolia.';
+            return;
+          }
+          window.SiteSearch.init({
+            container: '#search',
+            applicationId: 'D1QMI6KRFW',
+            apiKey: '565ee67bc8af52c7121379ce2fb2ffaa',
+            indexName: 'productos.algolia',
+            attributes: {
+              primaryText: 'nombre',
+              secondaryText: 'marca',
+              tertiaryText: 'precio_final',
+              url: 'url',
+              image: 'imagen'
+            },
+            darkMode: false
+          });
+          loaded = true;
+          if (statusEl) statusEl.textContent = 'Busqueda activa. Prueba con: omega, magnesio, colageno.';
+        }
+
+        function loadAssetsAndInit() {
+          if (loaded || loading) return;
+          loading = true;
+          appendCssOnce();
+          var script = document.createElement('script');
+          script.src = 'https://cdn.jsdelivr.net/npm/@algolia/sitesearch@1/dist/search.min.js';
+          script.async = true;
+          script.onload = function () {
+            loading = false;
+            try {
+              initWidget();
+            } catch (_) {
+              if (statusEl) statusEl.textContent = 'Error al inicializar Algolia SiteSearch.';
+            }
+          };
+          script.onerror = function () {
+            loading = false;
+            if (statusEl) statusEl.textContent = 'No se pudo cargar el script de Algolia.';
+          };
+          document.head.appendChild(script);
+        }
+
+        var triggerInput = document.getElementById('siteSearch');
+        if (triggerInput) {
+          triggerInput.addEventListener('focus', loadAssetsAndInit, { once: true });
+          triggerInput.addEventListener('pointerdown', loadAssetsAndInit, { once: true, passive: true });
+        }
+        var searchBox = document.getElementById('search');
+        if (searchBox) {
+          searchBox.addEventListener('mouseenter', loadAssetsAndInit, { once: true, passive: true });
+        }
+        window.addEventListener('keydown', function (evt) {
+          if ((evt.ctrlKey || evt.metaKey) && String(evt.key || '').toLowerCase() === 'k') {
+            loadAssetsAndInit();
+          }
+        }, { passive: true });
+      })();
+    </script>
+
     <!-- FIX DE BÚSQUEDA OPTIMIZADA -->
     <script src="/static/js/category-search-fix.js?v=2026-02-01" defer></script>
     
+  <script src="/static/js/site-pause.js" defer></script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
 
 
 

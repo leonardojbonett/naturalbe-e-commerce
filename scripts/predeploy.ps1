@@ -14,6 +14,10 @@ if (Test-Path 'scripts\validate-product-seo-copy.js') {
   node scripts\validate-product-seo-copy.js
 }
 
+if (Test-Path 'scripts\generate-pdp-prerender.js') {
+  node scripts\generate-pdp-prerender.js 400
+}
+
 if (Test-Path 'scripts\generate-sitemap.js') {
   node scripts\generate-sitemap.js
 }
@@ -22,8 +26,20 @@ if (Test-Path 'scripts\generate-image-sitemap.js') {
   node scripts\generate-image-sitemap.js
 }
 
+if (Test-Path 'scripts\validate-sitemap-lastmod.js') {
+  node scripts\validate-sitemap-lastmod.js
+}
+
+if (Test-Path 'scripts\validate-sitemap-product-canonical.js') {
+  node scripts\validate-sitemap-product-canonical.js
+}
+
 if (Test-Path 'scripts\audit-search-basics.js') {
   node scripts\audit-search-basics.js
+}
+
+if (Test-Path 'scripts\audit-crawl-index-hygiene.js') {
+  node scripts\audit-crawl-index-hygiene.js --main-site
 }
 
 if (Test-Path 'scripts\export-search-inventory.js') {

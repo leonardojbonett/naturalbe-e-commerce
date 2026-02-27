@@ -1,5 +1,5 @@
 (() => {
-  const DATA_VERSION = "2026-02-05";
+  const DATA_VERSION = "2026-02-25-prosa-makeup";
   window.NB_DATA_VERSION = window.NB_DATA_VERSION || DATA_VERSION;
   const PLACEHOLDER_IMAGE = "/static/img/placeholder.webp";
   const SITE_ORIGIN = String(
@@ -48,35 +48,12 @@
       maximumFractionDigits: 0
     }).format(Number(value || 0));
 
-  const hashString = (value) => {
-    const input = String(value || "");
-    let hash = 0;
-    for (let i = 0; i < input.length; i += 1) {
-      hash = (hash << 5) - hash + input.charCodeAt(i);
-      hash |= 0;
-    }
-    return Math.abs(hash);
-  };
-
-  const seededRange = (seed, min, max) => {
-    if (max <= min) return min;
-    const span = (max - min) + 1;
-    return min + (Math.abs(seed) % span);
-  };
-
   const getCardTrustStats = (product) => {
-    const now = new Date();
-    const dayKey = `${now.getUTCFullYear()}-${now.getUTCMonth() + 1}-${now.getUTCDate()}`;
-    const baseKey = product.id || product.slug || product.nombre || product.name || "naturalbe";
-    const seed = hashString(`${baseKey}-${dayKey}`);
     const ratingValue = Number(product.rating_value || 0);
     const ratingCount = Number(product.rating_count || 0);
 
     return {
-      viewers: seededRange(seed + 3, 8, 34),
-      boughtToday: seededRange(seed + 7, 3, 22),
-      stockLeft: product.stock_bajo ? seededRange(seed + 11, 3, 9) : seededRange(seed + 11, 10, 24),
-      ratingText: ratingValue > 0 ? `${ratingValue.toFixed(1)} (${ratingCount || 0})` : `${(seededRange(seed + 13, 46, 49) / 10).toFixed(1)} (${seededRange(seed + 17, 41, 182)})`,
+      ratingText: ratingValue > 0 ? `${ratingValue.toFixed(1)} (${ratingCount || 0})` : "Valorado por clientes",
       isLowStock: Boolean(product.stock_bajo)
     };
   };
@@ -135,19 +112,19 @@
     const url = sanitizeUrl(
       (window.NaturalBe && typeof window.NaturalBe.buildProductURL === 'function')
         ? window.NaturalBe.buildProductURL(product)
-        : (product.slug ? `/producto/${encodeURIComponent(product.slug)}` : '/product.html')
+        : (product.slug ? `/producto/${encodeURIComponent(product.slug)}` : '/categoria/suplementos')
     );
     const safeName = escapeHtml(product.nombre || product.name || "");
     const safeDesc = escapeHtml(description || "");
     const safeUrl = escapeHtml(url);
+    const safeProductId = escapeHtml(String(product.id || product.slug || ""));
+    const safeProductBrand = escapeHtml(String(product.marca || product.brand || "Natural Be"));
+    const safeProductCategory = escapeHtml(String(product.categoria || product.category || ""));
     const safeBadgeHtml = badges.map((b) => `<span class="product-badge">${escapeHtml(b)}</span>`).join("");
     const safeImgAttr = escapeHtml(sanitizeUrl(product.imagen_principal || product.image || ""));
     const trust = getCardTrustStats(product);
-    const stockText = trust.isLowStock
-      ? `Solo ${trust.stockLeft} unidades`
-      : `${trust.stockLeft} unidades en stock`;
     return `
-      <article class="product-card" itemscope itemtype="https://schema.org/Product">
+      <article class="product-card" itemscope itemtype="https://schema.org/Product" data-select-item="1" data-product-id="${safeProductId}" data-product-name="${safeName}" data-product-brand="${safeProductBrand}" data-product-category="${safeProductCategory}" data-product-price="${price}">
         <a class="product-card__media" href="${safeUrl}">
           ${buildPicture(product, 320, 240, eager)}
         </a>
@@ -161,10 +138,8 @@
           ${description ? `<p class="product-card__desc" itemprop="description">${safeDesc}</p>` : ""}
           <div class="product-card__rating">${ratingText}</div>
           <div class="product-card__proof" aria-label="Señales de confianza del producto">
-            <span class="proof-chip"><span aria-hidden="true">👁</span>${trust.viewers} viendo</span>
             <span class="proof-chip"><span aria-hidden="true">⭐</span>${trust.ratingText}</span>
-            <span class="proof-chip"><span aria-hidden="true">🛍️</span>${trust.boughtToday} hoy</span>
-            <span class="proof-chip ${trust.isLowStock ? "is-urgency" : ""}"><span aria-hidden="true">⚡</span>${stockText}</span>
+            ${trust.isLowStock ? '<span class="proof-chip is-urgency"><span aria-hidden="true">⚡</span>Stock limitado</span>' : ""}
           </div>
           <div class="product-card__price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
             <meta itemprop="priceCurrency" content="COP">
@@ -194,6 +169,7 @@
     const eagerCount = Number(options.eagerCount || 2);
     container.innerHTML = "";
     attachAddToCartHandler(container);
+    attachSelectItemHandler(container);
     attachImageErrorReporter(container);
 
     const schedule = window.requestAnimationFrame
@@ -261,6 +237,30 @@
     };
     container.addEventListener("error", onError, true);
     container.dataset.imageErrorBound = "1";
+  };
+
+  const attachSelectItemHandler = (container) => {
+    if (!container || container.dataset.selectItemBound === "1") return;
+    container.addEventListener("click", (event) => {
+      const link = event.target.closest("a[href]");
+      if (!link) return;
+      const card = link.closest(".product-card[data-select-item='1']");
+      if (!card) return;
+      if (typeof nbGa4EcomEvent !== "function") return;
+      const item = {
+        item_id: String(card.dataset.productId || ""),
+        item_name: String(card.dataset.productName || ""),
+        item_brand: String(card.dataset.productBrand || "Natural Be"),
+        item_category: String(card.dataset.productCategory || ""),
+        price: Number(card.dataset.productPrice || 0),
+        quantity: 1
+      };
+      nbGa4EcomEvent("select_item", [item], Number(item.price || 0), {
+        item_list_name: "catalogo",
+        item_list_id: "catalogo"
+      });
+    });
+    container.dataset.selectItemBound = "1";
   };
 
   const initSearchForms = () => {
@@ -419,7 +419,7 @@
       }
       
       try {
-        const version = window.NB_DATA_VERSION || "2026-02-05";
+        const version = window.NB_DATA_VERSION || "2026-02-25-prosa-makeup";
         // Try multiple paths for compatibility
       const paths = [
         `/static/data/productos.json?v=${encodeURIComponent(version)}`,
@@ -486,3 +486,5 @@
     window.loadProductsData = loadProductsData;
   }
 })();
+
+

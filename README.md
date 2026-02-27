@@ -71,10 +71,38 @@ Proyecto HTML/CSS/JS sin backend. Home, PLP y PDP se renderizan con data local e
   - Variante local (levanta server y audita `index/category/product`): `powershell -ExecutionPolicy Bypass -File scripts/lighthouse-local-median.ps1 -Runs 3 -Label local`
   - Comparar resumen contra baseline histórico del repo: `node scripts/lighthouse-compare.js reports/lh-summary-prod.json`
 
+## MVP Common Crawl (competencia SEO)
+- Objetivo: extraer una muestra de páginas de competidores desde Common Crawl para detectar `keywords`, `headings` y dominios externos enlazados.
+- Script: `scripts/commoncrawl_competitor_mvp.py`
+- Requisitos Python: `pip install requests beautifulsoup4`
+
+Ejemplo rápido:
+
+```bash
+python scripts/commoncrawl_competitor_mvp.py --domains "healthyamerica.co,millenniumns.com,funat.com.co" --fetch-pages-per-domain 8 --out-dir reports/commoncrawl-mvp
+```
+
+Usando archivo de dominios:
+
+```bash
+python scripts/commoncrawl_competitor_mvp.py --domains-file competitors.txt --fetch-pages-per-domain 8 --out-dir reports/commoncrawl-mvp
+```
+
+Plantilla base en el repo: `competitors.example.txt`.
+- Si un dominio no aparece en el índice más nuevo, el script prueba automáticamente varios índices recientes (`--fallback-indexes 4` por defecto).
+
+Salida por corrida (carpeta con timestamp):
+- `summary.csv`: índice usado + cuántos registros se encontraron y cuántas páginas se analizaron por dominio.
+- `pages.csv`: detalle por URL con `title`, `h1`, `h2`, términos frecuentes y enlaces externos.
+- `keywords.csv`: top keywords agregadas por dominio competidor.
+- `backlinks.csv`: dominios externos más enlazados por cada competidor.
+- `run_metadata.json`: metadatos de la corrida (índices candidatos/usados y parámetros).
+
 ## Sitemap y paginas de producto
-- Genera paginas estaticas: `npm run products:pages` (salida en `producto/`).
+- Genera paginas estaticas (cobertura catalogo): `node scripts/generate-pdp-prerender.js 400` (salida en `producto/`).
 - Regenera sitemap con productos: `node scripts/generate-sitemap.js`.
 - Regenera sitemap de imagenes para Google Images/Discover: `node scripts/generate-image-sitemap.js`.
+- El flujo `scripts/predeploy.ps1` ya ejecuta automaticamente: prerender PDP (400) + sitemaps + validaciones.
 
 ## Notas
 - Si el fetch falla, se usa un catalogo fallback desde `products-data.js` y se muestra aviso con reintento.

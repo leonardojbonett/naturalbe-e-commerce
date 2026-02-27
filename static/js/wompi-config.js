@@ -5,3 +5,5 @@ window.NB_WOMPI_CONFIG = {
     successUrl: `${window.location.origin}/pago-exitoso.html`,
     cancelUrl: `${window.location.origin}/pago-cancelado.html`
 };
+
+window.dispatchEvent(new Event('wompi_ready'));
