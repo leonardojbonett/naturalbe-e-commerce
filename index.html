@@ -1378,33 +1378,14 @@
           .filter(p => p.nombre && p.precio)
           .slice(0, 20)
           .map((product, index) => {
-            const priceValue = Number(product.precio_oferta || product.precio || 0);
-            const imageRaw = product.imagen_principal_webp || product.imagen_principal || product.image || '';
             const url = getProductUrl(product);
-            
             return {
               "@type": "ListItem",
               "position": index + 1,
-              "url": url,
-              "item": {
-                "@type": "Product",
-                "name": product.nombre || product.name || '',
-                "image": imageRaw ? toAbsoluteUrl(imageRaw) : undefined,
-                "url": url,
-                "offers": {
-                  "@type": "Offer",
-                  "priceCurrency": "COP",
-                  "price": priceValue,
-                  "itemCondition": "https://schema.org/NewCondition",
-                  "url": url,
-                  "availability": product.disponible === false
-                    ? "https://schema.org/OutOfStock"
-                    : "https://schema.org/InStock"
-                }
-              }
+              "url": url
             };
           })
-          .filter(item => item.item && item.item.name && item.url)
+          .filter(item => item.url)
       };
       
       if (itemListSchema.itemListElement.length > 0) {
