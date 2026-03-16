@@ -4,6 +4,45 @@
   NB.tracking = NB.tracking || {};
   const META_PIXEL_ID = (document.querySelector('meta[name="meta-pixel-id"]') || {}).content || '';
   const DEFAULT_CURRENCY = 'COP';
+  const SILENCE_CLARITY_NOISE = window.NB_SILENCE_CLARITY_NOISE !== false;
+
+  function setupClarityNoiseFilter() {
+    if (!SILENCE_CLARITY_NOISE || NB.tracking.clarityNoiseFilterBound) return;
+    NB.tracking.clarityNoiseFilterBound = true;
+
+    function isClarityText(value) {
+      if (!value) return false;
+      const text = String(value).toLowerCase();
+      return text.includes('clarity.ms') || text.includes('e.clarity.ms') || text.includes('scripts.clarity.ms');
+    }
+
+    function isNetworkChangedText(value) {
+      if (!value) return false;
+      return String(value).toLowerCase().includes('err_network_changed');
+    }
+
+    window.addEventListener('error', function (event) {
+      const target = event && event.target;
+      const src = target && (target.src || target.href);
+      const message = event && event.message;
+      if (isClarityText(src) || (isClarityText(message) && isNetworkChangedText(message))) {
+        event.preventDefault();
+        event.stopImmediatePropagation();
+      }
+    }, true);
+
+    if (window.console && typeof window.console.error === 'function') {
+      const originalConsoleError = window.console.error.bind(window.console);
+      window.console.error = function () {
+        const args = Array.prototype.slice.call(arguments);
+        const text = args.map(function (arg) {
+          return typeof arg === 'string' ? arg : (arg && arg.message) ? String(arg.message) : '';
+        }).join(' ');
+        if (isClarityText(text) && isNetworkChangedText(text)) return;
+        originalConsoleError.apply(window.console, args);
+      };
+    }
+  }
 
   function ensureDataLayer() {
     if (!Array.isArray(window.dataLayer)) {
@@ -11,6 +50,8 @@
     }
     return window.dataLayer;
   }
+
+  setupClarityNoiseFilter();
 
   function isDebugMode() {
     try {
@@ -266,11 +307,21 @@
     }
   }
 
-  ensureMetaPixel();
+  // ensureMetaPixel(); // Defer to performance-optimizer.js
   setupCLSAttribution();
 
   // Compat globals (legacy)
   if (typeof window.logEvent !== 'function') window.logEvent = NB.logEvent;
   if (typeof window.nbMapProductToGa4Item !== 'function') window.nbMapProductToGa4Item = NB.nbMapProductToGa4Item;
   if (typeof window.nbGa4EcomEvent !== 'function') window.nbGa4EcomEvent = NB.nbGa4EcomEvent;
+  if (Array.isArray(window.__NB_GA4_QUEUE) && typeof window.nbGa4EcomEvent === 'function') {
+    window.__NB_GA4_QUEUE.forEach(function (queued) {
+      try {
+        window.nbGa4EcomEvent(queued.event, queued.items, queued.value, queued.extra || {});
+      } catch (_) {
+        // noop
+      }
+    });
+    window.__NB_GA4_QUEUE = [];
+  }
 })();

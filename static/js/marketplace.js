@@ -109,10 +109,16 @@
     const description = product.descripcion_corta || product.description || "";
 
     // Build product detail URL using shared helper
+    const normalizeSlug = (value) => String(value || "")
+      .trim()
+      .replace(/^\/+|\/+$/g, "")
+      .replace(/^producto\//i, "")
+      .replace(/\.html?$/i, "");
+    const cleanSlug = normalizeSlug(product.slug || product.product_slug || "");
     const url = sanitizeUrl(
       (window.NaturalBe && typeof window.NaturalBe.buildProductURL === 'function')
         ? window.NaturalBe.buildProductURL(product)
-        : (product.slug ? `/producto/${encodeURIComponent(product.slug)}` : '/categoria/suplementos')
+        : (cleanSlug ? `/producto/${encodeURIComponent(cleanSlug)}` : '/categoria/suplementos')
     );
     const safeName = escapeHtml(product.nombre || product.name || "");
     const safeDesc = escapeHtml(description || "");
@@ -125,9 +131,14 @@
     const trust = getCardTrustStats(product);
     return `
       <article class="product-card" data-select-item="1" data-product-id="${safeProductId}" data-product-name="${safeName}" data-product-brand="${safeProductBrand}" data-product-category="${safeProductCategory}" data-product-price="${price}">
-        <a class="product-card__media" href="${safeUrl}">
-          ${buildPicture(product, 320, 240, eager)}
-        </a>
+        <div class="product-card__media-wrap">
+          <a class="product-card__media" href="${safeUrl}">
+            ${buildPicture(product, 320, 240, eager)}
+          </a>
+          <div class="product-card__quick-add">
+            <button class="btn-primary" type="button" data-add-to-cart="1" data-product-id="${product.id}" data-product-name="${safeName}" data-product-price="${price}" data-product-image="${safeImgAttr}">Agregar al carrito</button>
+          </div>
+        </div>
         <div class="product-card__body">
           <div class="product-card__badges">
             ${safeBadgeHtml}
@@ -146,8 +157,7 @@
             ${originalPrice ? `<span class="price-old">${formatCOP(originalPrice)}</span>` : ""}
             ${discount ? `<span class="price-save">Ahorra ${discount}%</span>` : ""}
           </div>
-          <div class="product-card__actions">
-            <button class="btn-primary" type="button" data-add-to-cart="1" data-product-id="${product.id}" data-product-name="${safeName}" data-product-price="${price}" data-product-image="${safeImgAttr}">Agregar al carrito</button>
+          <div class="product-card__actions product-card__actions--detail">
             <a class="btn-ghost" href="${safeUrl}">Ver detalle</a>
           </div>
         </div>
@@ -262,21 +272,24 @@
 
   const initSearchForms = () => {
     document.querySelectorAll("[data-search-form]").forEach((form) => {
+      // Fallback estable: si JS no alcanza a interceptar, el formulario sigue funcionando.
+      if (!form.getAttribute("action")) form.setAttribute("action", "/categoria/suplementos");
+      if (!form.getAttribute("method")) form.setAttribute("method", "get");
       form.addEventListener("submit", (event) => {
         event.preventDefault();
         const input = form.querySelector("input[type='search']");
         if (!input) return;
+        if (!input.getAttribute("name")) input.setAttribute("name", "q");
         const query = input.value.trim();
         if (!query) return;
-        const clean = query
-          .toLowerCase()
-          .normalize('NFD')
-          .replace(/[\u0300-\u036f]/g, '')
-          .replace(/[^a-z0-9]+/g, '-')
-          .replace(/^-+|-+$/g, '');
-        window.location.href = clean
-          ? `/categoria/${encodeURIComponent(clean)}`
-          : `/category.html?q=${encodeURIComponent(query)}`;
+        if (window.NaturalBe && typeof window.NaturalBe.logEvent === 'function') {
+          window.NaturalBe.logEvent('search', { search_term: query });
+        } else if (Array.isArray(window.dataLayer)) {
+          window.dataLayer.push({ event: 'search', search_term: query });
+        }
+        const params = new URLSearchParams();
+        params.set("q", query);
+        window.location.href = `/categoria/suplementos?${params.toString()}`;
       });
     });
   };
@@ -285,6 +298,7 @@
     const toggle = document.querySelector("[data-mega-toggle]");
     const menu = document.querySelector("[data-mega-menu]");
     if (!toggle || !menu) return;
+    if (menu.dataset.megaBound === "1") return;
 
     let lastFocused = null;
 
@@ -358,6 +372,7 @@
         closeMenu();
       }
     }, { passive: true });
+    menu.dataset.megaBound = "1";
   };
 
   const initCarousels = () => {
@@ -406,6 +421,24 @@
     });
   };
 
+  const normalizeProductImages = (product) => {
+    if (!product || typeof product !== "object") return product;
+    const preferredImage = String(
+      product.imagen_principal_webp
+      || product.imagen_principal
+      || product.image
+      || ""
+    ).trim();
+    if (preferredImage) {
+      product.image = preferredImage;
+      if (!product.imagen_principal) product.imagen_principal = preferredImage;
+      if (!product.imagen_principal_webp && /\.webp(\?.*)?$/i.test(preferredImage)) {
+        product.imagen_principal_webp = preferredImage;
+      }
+    }
+    return product;
+  };
+
   // Load products data from JSON (use central loader if available)
   let productsCache = null;
   let loadProductsData = window.loadProductsData;
@@ -444,7 +477,8 @@
         }
         
         const data = await response.json();
-        window.ALL_PRODUCTS = Array.isArray(data) ? data : data.productos || [];
+        window.ALL_PRODUCTS = (Array.isArray(data) ? data : data.productos || [])
+          .map(normalizeProductImages);
         
         // Create index by slug for quick lookup
         window.PRODUCTS_BY_SLUG = {};

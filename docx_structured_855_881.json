@@ -1,0 +1,909 @@
+{
+  "paragraphs": [
+    "Natural Be · Funat / Nutramerican / Optimum Nutrition",
+    "Mejoras SEO nivel top · 27 productos (IDs 855–881)",
+    "Funat (855–857)  ·  Nutramerican deportiva (858–872)  ·  Optimum Nutrition (873–881)"
+  ],
+  "table_count": 28,
+  "table_data": [
+    [
+      [
+        "Hallazgos críticos de este lote\nIDs 855–857 (Funat): mismo patrón de plantilla genérica que los 31 productos anteriores — descripcion_corta y bullets idénticos, tags genéricos.\nIDs 861, 875, 879 (Nutramerican/ON): bug de parsing — el número decimal queda truncado en el nombre: \"Bipro Classic Vainilla 0.\" y \"Gold Standard Whey Naturally Flavored 4.\" sin el número completo.\nIDs 875, 880: título_google con nombre de variante duplicado: \"Gold Standard 100% Whey Protein 10 10 serv\".\nIDs 858, 860, 865–867, 869, 872: presentacion = \"Presentación estándar\" — datos incompletos en los productos deportivos de mayor precio del catálogo.\nIDs 861, 862, 863, 864, 870, 871: item_group_id faltante o inconsistente — la familia Bipro Classic tiene 6 variantes que Google Shopping no puede agrupar correctamente.\nID 878 (Isolate $490k) y ID 877 (RTD $25k): diferenciadores clave (aislada/sin lactosa, listo-para-tomar) completamente ausentes de todos los campos visibles."
+      ]
+    ],
+    [
+      [
+        "ID 855  ·  Glucomanat   Funat  ·  $62.000 COP",
+        "ID 855  ·  Glucomanat   Funat  ·  $62.000 COP"
+      ],
+      [
+        "ANTES",
+        "DESPUÉS"
+      ],
+      [
+        "seo_title\nFunat Glucomanat – Suplemento | Natural Be",
+        "seo_title\nGlucomanat Funat – Control de Peso y Glucosa | Natural Be"
+      ],
+      [
+        "seo_description_mejorado\nSuplemento para tu rutina diaria. Compra online y recibe en Colombia.",
+        "seo_description_mejorado\nGlucomanat Funat. Glucomanano para apoyar el control del apetito, la glucosa y el peso corporal. En oferta $46.000. Envío Colombia."
+      ],
+      [
+        "descripcion_corta\nGlucomanat es un producto de la marca Funat pensado para complementar tu rutina diaria.",
+        "descripcion_corta\nGlucomanat Funat con glucomanano — fibra soluble para reducir el apetito, apoyar el control de glucosa y el manejo del peso dentro de una rutina saludable."
+      ],
+      [
+        "tags\n\"funat\", \"marca funat\", \"vitaminas\", \"suplementos\"",
+        "tags\n\"glucomanat funat\", \"glucomanano\", \"control apetito\", \"glucosa sangre\", \"control peso natural\", \"fibra soluble\", \"funat vitaminas\", \"glucomanano colombia\""
+      ],
+      [
+        "beneficios_bullet\n— Plantilla genérica",
+        "beneficios_bullet\nGlucomanano (Konjac) — fibra soluble de alta densidad.\nApoya la sensación de saciedad y reduce el apetito.\nContribuye al control de la glucosa postprandial.\nComplemento para el manejo del peso dentro de hábitos saludables."
+      ],
+      [
+        "⚠ precio_oferta: $46.000 (descuento 26%). Mencionar el precio de oferta en la descripción para aprovechar el badge \"oferta\". presentacion = \"Presentación estándar\" — registrar el número real de cápsulas/tabletas.",
+        "⚠ precio_oferta: $46.000 (descuento 26%). Mencionar el precio de oferta en la descripción para aprovechar el badge \"oferta\". presentacion = \"Presentación estándar\" — registrar el número real de cápsulas/tabletas."
+      ]
+    ],
+    [
+      [
+        "ID 856  ·  Levadura de Cerveza 100 Tabletas   Funat  ·  $34.000 COP",
+        "ID 856  ·  Levadura de Cerveza 100 Tabletas   Funat  ·  $34.000 COP"
+      ],
+      [
+        "ANTES",
+        "DESPUÉS"
+      ],
+      [
+        "seo_title\nFunat Levadura de cerveza 100 tabletas 100 tabletas – Suplemen | Natural Be",
+        "seo_title\nLevadura de Cerveza Funat 100 Tabletas – Vitaminas B | Natural Be"
+      ],
+      [
+        "seo_description_mejorado\nSuplemento para tu rutina diaria. Compra online y recibe en Colombia.",
+        "seo_description_mejorado\nLevadura de Cerveza Funat en 100 tabletas. Rica en vitaminas del complejo B, proteínas y minerales para energía, piel y sistema nervioso. $34.000."
+      ],
+      [
+        "descripcion_corta\nLevadura de cerveza 100 tabletas es un producto de la marca Funat pensado para complementar tu rutina diaria.",
+        "descripcion_corta\nLevadura de Cerveza Funat en 100 tabletas. Fuente natural de vitaminas del complejo B, proteínas vegetales y cromo para apoyar la energía, la salud de la piel y el sistema nervioso."
+      ],
+      [
+        "tags\n\"funat\", \"marca funat\", \"vitaminas\", \"suplementos\"",
+        "tags\n\"levadura de cerveza funat\", \"vitaminas complejo b\", \"vitamina b12 natural\", \"cromo\", \"proteina vegetal\", \"energia natural\", \"piel saludable nervios\", \"levadura cerveza colombia\""
+      ],
+      [
+        "beneficios_bullet\n— Plantilla genérica",
+        "beneficios_bullet\nLevadura de Cerveza Funat en 100 tabletas de largo rendimiento.\nFuente natural de vitaminas del complejo B (B1, B2, B6, B12).\nRica en cromo para apoyar el metabolismo de carbohidratos.\nContribuye a la piel sana, el sistema nervioso y la energía."
+      ],
+      [
+        "⚠ seo_title tenía \"100 tabletas\" duplicado. presentacion dice \"100 cápsulas\" pero el nombre y slug indican tabletas.",
+        "⚠ seo_title tenía \"100 tabletas\" duplicado. presentacion dice \"100 cápsulas\" pero el nombre y slug indican tabletas."
+      ]
+    ],
+    [
+      [
+        "ID 857  ·  Cloruro de Magnesio 60 Tabletas   Funat  ·  $43.000 COP",
+        "ID 857  ·  Cloruro de Magnesio 60 Tabletas   Funat  ·  $43.000 COP"
+      ],
+      [
+        "ANTES",
+        "DESPUÉS"
+      ],
+      [
+        "seo_title\nFunat Cloruro de magnesio 60 tabletas 60 tabletas – Suplemento | Natural Be",
+        "seo_title\nCloruro de Magnesio Funat 60 Tabletas – Músculos y Huesos | Natural Be"
+      ],
+      [
+        "seo_description_mejorado\nSuplemento para tu rutina diaria. Compra online y recibe en Colombia.",
+        "seo_description_mejorado\nCloruro de Magnesio Funat en 60 tabletas. Apoya músculos, huesos y digestión. Reduce calambres y fatiga muscular. Envío Colombia, $43.000."
+      ],
+      [
+        "descripcion_corta\nCloruro de magnesio 60 tabletas es un producto de la marca Funat pensado para complementar tu rutina diaria.",
+        "descripcion_corta\nCloruro de Magnesio Funat en 60 tabletas. Magnesio en forma de cloruro para apoyar la función muscular, la salud ósea, reducir calambres y favorecer la digestión."
+      ],
+      [
+        "tags\n\"funat\", \"marca funat\", \"vitaminas\", \"suplementos\"",
+        "tags\n\"cloruro magnesio funat\", \"magnesio tabletas\", \"calambres musculares\", \"fatiga muscular\", \"huesos fuertes\", \"digestion magnesio\", \"funat minerales\", \"magnesio colombia\""
+      ],
+      [
+        "beneficios_bullet\n— Plantilla genérica",
+        "beneficios_bullet\nCloruro de Magnesio Funat en 60 tabletas de fácil absorción.\nApoya la función muscular y reduce la frecuencia de calambres.\nContribuye a la salud ósea y la densidad mineral.\nFavorece la digestión y el bienestar intestinal."
+      ],
+      [
+        "⚠ seo_title tenía \"60 tabletas\" duplicado. presentacion dice \"60 cápsulas\" pero el nombre indica tabletas — inconsistencia a corregir.",
+        "⚠ seo_title tenía \"60 tabletas\" duplicado. presentacion dice \"60 cápsulas\" pero el nombre indica tabletas — inconsistencia a corregir."
+      ]
+    ],
+    [
+      [
+        "ID 858  ·  Bipro Complex   Nutramerican  ·  $174.990 COP",
+        "ID 858  ·  Bipro Complex   Nutramerican  ·  $174.990 COP"
+      ],
+      [
+        "ANTES",
+        "DESPUÉS"
+      ],
+      [
+        "seo_title\nNutramerican Bipro Complex – Proteína Whey | Natural Be",
+        "seo_title\nBipro Complex Nutramerican – Caseína + Whey Proteína | Natural Be"
+      ],
+      [
+        "seo_description_mejorado\nProteína Whey para tu rutina diaria. Compra online y recibe en Colombia.",
+        "seo_description_mejorado\nBipro Complex Nutramerican: mezcla de Whey + Caseína para liberación sostenida de aminoácidos. Ideal post-entrenamiento y antes de dormir. $174.990."
+      ],
+      [
+        "descripcion_corta\nCaseína + whey para aporte prolongado de proteína, ideal para complementar tu plan nutricional.",
+        "descripcion_corta\nBipro Complex Nutramerican: mezcla de proteína Whey de rápida absorción y Caseína de liberación lenta para un aporte sostenido de aminoácidos durante horas."
+      ],
+      [
+        "tags\n\"nutramerican\", \"nutricion deportiva\", \"proteina\", \"whey\", \"batido\"",
+        "tags\n\"bipro complex nutramerican\", \"caseina whey mezcla\", \"proteina liberacion lenta\", \"aminoacidos sostenidos\", \"recuperacion muscular\", \"proteina colombia nutramerican\", \"bipro complex\", \"whey caseina\""
+      ],
+      [
+        "beneficios_bullet\n— Plantilla genérica",
+        "beneficios_bullet\nMezcla de Whey (rápida absorción) + Caseína (liberación lenta).\nAporte sostenido de aminoácidos por más horas que el whey solo.\nIdeal post-entrenamiento y antes de dormir para recuperación nocturna.\nAlta pureza con perfil completo de aminoácidos esenciales."
+      ],
+      [
+        "⚠ presentacion = \"Presentación estándar\". Registrar peso real (lb/kg) y sabores disponibles para activar variant_attributes correctamente.",
+        "⚠ presentacion = \"Presentación estándar\". Registrar peso real (lb/kg) y sabores disponibles para activar variant_attributes correctamente."
+      ]
+    ],
+    [
+      [
+        "ID 859  ·  Bipro Classic 3lb Capuccino & Crema de Whisky   Nutramerican  ·  $234.990 COP",
+        "ID 859  ·  Bipro Classic 3lb Capuccino & Crema de Whisky   Nutramerican  ·  $234.990 COP"
+      ],
+      [
+        "ANTES",
+        "DESPUÉS"
+      ],
+      [
+        "seo_title\nNutramerican Bipro Classic 3lb Capuccino & Crema de Whisky 3 l | Natural Be",
+        "seo_title\nBipro Classic Capuccino & Whisky Nutramerican 3 lb | Natural Be"
+      ],
+      [
+        "seo_description_mejorado\nProteína Whey para tu rutina diaria. Compra online y recibe en Colombia.",
+        "seo_description_mejorado\nBipro Classic Nutramerican 3 lb sabor Capuccino & Crema de Whisky. Proteína Whey de alta pureza, sabor diferencial. $234.990. Envío Colombia."
+      ],
+      [
+        "descripcion_corta\nProteína de suero sabor capuccino & crema de whisky; alta pureza para tu nutrición diaria.",
+        "descripcion_corta\nBipro Classic Nutramerican 3 lb en el innovador sabor Capuccino & Crema de Whisky. Proteína Whey de alta pureza para apoyo muscular con un sabor diferencial único."
+      ],
+      [
+        "tags\n\"nutramerican\", \"nutricion deportiva\", \"proteina\", \"whey\", \"batido\"",
+        "tags\n\"bipro classic capuccino whisky\", \"nutramerican 3lb\", \"proteina whey sabor\", \"capuccino proteina\", \"recuperacion muscular\", \"bipro classic nutramerican\", \"proteina 3lb colombia\", \"whey colombia\""
+      ],
+      [
+        "beneficios_bullet\n— Plantilla genérica",
+        "beneficios_bullet\nBipro Classic Nutramerican en presentación de 3 lb.\nSabor Capuccino & Crema de Whisky — el más diferencial de la línea.\nProteína Whey de alta pureza para recuperación y masa muscular.\nPerfil completo de aminoácidos esenciales y BCAAs."
+      ],
+      [
+        "⚠ seo_title original truncado con \"3 l\". item_group_id: null — activar \"nutramerican-bipro-classic-proteina-whey\" para agrupar con IDs 861–864, 870–871.",
+        "⚠ seo_title original truncado con \"3 l\". item_group_id: null — activar \"nutramerican-bipro-classic-proteina-whey\" para agrupar con IDs 861–864, 870–871."
+      ]
+    ],
+    [
+      [
+        "ID 860  ·  Burner Stack   Nutramerican  ·  $149.990 COP",
+        "ID 860  ·  Burner Stack   Nutramerican  ·  $149.990 COP"
+      ],
+      [
+        "ANTES",
+        "DESPUÉS"
+      ],
+      [
+        "seo_title\nNutramerican Burner Stack – Suplemento | Natural Be",
+        "seo_title\nBurner Stack Nutramerican – Quemador Polvo Uva | Natural Be"
+      ],
+      [
+        "seo_description_mejorado\nSuplemento para tu rutina diaria. Compra online y recibe en Colombia.",
+        "seo_description_mejorado\nBurner Stack Nutramerican en polvo sabor uva. Fórmula termogénica para apoyar la quema de grasa y el control de peso durante el entrenamiento. $149.990."
+      ],
+      [
+        "descripcion_corta\nFórmula en polvo sabor uva para apoyar rutinas activas y objetivos de control de peso.",
+        "descripcion_corta\nBurner Stack Nutramerican en polvo sabor uva. Fórmula termogénica para apoyar la quema de grasa, acelerar el metabolismo y potenciar el rendimiento en entrenamientos enfocados en definición."
+      ],
+      [
+        "tags\n\"nutramerican\", \"nutricion deportiva\", \"control de peso\", \"rutinas activas\"",
+        "tags\n\"burner stack nutramerican\", \"quemador grasa polvo\", \"termogenico sabor uva\", \"control de peso deportivo\", \"definicion muscular\", \"metabolismo activo\", \"nutramerican quemador\", \"fat burner colombia\""
+      ],
+      [
+        "beneficios_bullet\n— Plantilla genérica",
+        "beneficios_bullet\nBurner Stack Nutramerican: fórmula termogénica en polvo.\nSabor uva para consumo fácil antes del entrenamiento.\nApoya la quema de grasa y el metabolismo activo.\nIdeal para objetivos de definición y control de peso."
+      ],
+      [
+        "⚠ presentacion = \"Presentación estándar\" — registrar peso real. seo_title_mejorado anterior decía genéricamente \"Suplemento\" cuando este producto es claramente un quemador/termogénico.",
+        "⚠ presentacion = \"Presentación estándar\" — registrar peso real. seo_title_mejorado anterior decía genéricamente \"Suplemento\" cuando este producto es claramente un quemador/termogénico."
+      ]
+    ],
+    [
+      [
+        "ID 861  ·  Bipro Classic Vainilla 0.9 lb   Nutramerican  ·  $89.990 COP",
+        "ID 861  ·  Bipro Classic Vainilla 0.9 lb   Nutramerican  ·  $89.990 COP"
+      ],
+      [
+        "ANTES",
+        "DESPUÉS"
+      ],
+      [
+        "seo_title\nNutramerican Bipro Classic Vainilla 0. 0.9 lb – Proteína Whey | Natural Be",
+        "seo_title\nBipro Classic Vainilla Nutramerican 0.9 lb – Para Probar | Natural Be"
+      ],
+      [
+        "seo_description_mejorado\nProteína Whey para tu rutina diaria. Compra online y recibe en Colombia.",
+        "seo_description_mejorado\nBipro Classic Vainilla Nutramerican 0.9 lb. Presentación de entrada: ideal para probar la proteína antes de comprar el formato mayor. $89.990."
+      ],
+      [
+        "descripcion_corta\nProteína de suero sabor vainilla en presentación práctica; ideal para complementar tu ingesta de proteína.",
+        "descripcion_corta\nBipro Classic Vainilla Nutramerican en 0.9 lb — el formato más accesible de la línea. Ideal para quienes quieren probar la proteína antes de invertir en el tarro de 2 o 3 lb."
+      ],
+      [
+        "tags\n\"nutramerican\", \"nutricion deportiva\", \"proteina\", \"whey\", \"batido\"",
+        "tags\n\"bipro classic vainilla 0.9lb\", \"nutramerican proteina pequeña\", \"whey vainilla entrada\", \"presentacion prueba proteina\", \"proteina economica colombia\", \"bipro 0.9lb\", \"nutramerican vainilla\", \"whey colombia\""
+      ],
+      [
+        "beneficios_bullet\n— Plantilla genérica",
+        "beneficios_bullet\nBipro Classic Vainilla Nutramerican en presentación de 0.9 lb.\nEl formato más accesible de la línea Bipro Classic.\nProteína Whey sabor vainilla de alta pureza.\nPerfecto para probar antes del formato grande (2 o 3 lb)."
+      ],
+      [
+        "⚠ BUG: seo_title y titulo_google tenían \"Bipro Classic Vainilla 0.\" (número truncado). Corregido. item_group_id: null — activar el grupo \"nutramerican-bipro-classic-proteina-whey\".",
+        "⚠ BUG: seo_title y titulo_google tenían \"Bipro Classic Vainilla 0.\" (número truncado). Corregido. item_group_id: null — activar el grupo \"nutramerican-bipro-classic-proteina-whey\"."
+      ]
+    ],
+    [
+      [
+        "ID 862  ·  Bipro Classic Natural 2 lb   Nutramerican  ·  $174.990 COP",
+        "ID 862  ·  Bipro Classic Natural 2 lb   Nutramerican  ·  $174.990 COP"
+      ],
+      [
+        "ANTES",
+        "DESPUÉS"
+      ],
+      [
+        "seo_title\nNutramerican Bipro Classic Natural 2 lb – Proteína Whey | Natural Be",
+        "seo_title\nBipro Classic Natural Nutramerican 2 lb – Sin Sabor Whey | Natural Be"
+      ],
+      [
+        "seo_description_mejorado\nProteína Whey para tu rutina diaria. Compra online y recibe en Colombia.",
+        "seo_description_mejorado\nBipro Classic Natural Nutramerican 2 lb. Proteína Whey sin sabor artificial — versátil para batidos, recetas y cocina fitness. $174.990. Envío Colombia."
+      ],
+      [
+        "descripcion_corta\nProteína de suero sabor natural con alta pureza; opción versátil para batidos y recetas.",
+        "descripcion_corta\nBipro Classic Natural Nutramerican 2 lb. Proteína Whey de alta pureza en sabor natural neutro — la opción más versátil para mezclar con cualquier líquido, batido o receta de cocina fitness."
+      ],
+      [
+        "tags\n\"nutramerican\", \"nutricion deportiva\", \"proteina\", \"whey\", \"batido\"",
+        "tags\n\"bipro classic natural 2lb\", \"nutramerican sin sabor\", \"whey neutro\", \"proteina cocina fitness\", \"batido proteina versatil\", \"bipro natural nutramerican\", \"whey 2lb colombia\", \"proteina sin saborizantes\""
+      ],
+      [
+        "beneficios_bullet\n— Plantilla genérica",
+        "beneficios_bullet\nBipro Classic Natural: proteína Whey sin saborizantes artificiales.\nSabor neutro — ideal para mezclar con frutas, avena o recetas.\nAlta pureza con perfil completo de aminoácidos esenciales.\n2 lb: el equilibrio ideal entre precio y rendimiento."
+      ]
+    ],
+    [
+      [
+        "ID 863  ·  Bipro Classic Vainilla 2 lb   Nutramerican  ·  $174.990 COP",
+        "ID 863  ·  Bipro Classic Vainilla 2 lb   Nutramerican  ·  $174.990 COP"
+      ],
+      [
+        "ANTES",
+        "DESPUÉS"
+      ],
+      [
+        "seo_title\nNutramerican Bipro Classic Vainilla 2 lb – Proteína Whey | Natural Be",
+        "seo_title\nBipro Classic Vainilla Nutramerican 2 lb Whey Protein | Natural Be"
+      ],
+      [
+        "seo_description_mejorado\nProteína Whey para tu rutina diaria. Compra online y recibe en Colombia.",
+        "seo_description_mejorado\nBipro Classic Vainilla Nutramerican 2 lb. Proteína Whey de digestión rápida, ideal para post-entrenamiento con el sabor más popular de la línea. $174.990."
+      ],
+      [
+        "descripcion_corta\nProteína de suero sabor vainilla; rápida digestión para después de entrenar.",
+        "descripcion_corta\nBipro Classic Vainilla Nutramerican 2 lb. Proteína Whey de rápida digestión con el sabor vainilla clásico — el favorito de la línea para la ventana de recuperación post-entrenamiento."
+      ],
+      [
+        "tags\n\"nutramerican\", \"nutricion deportiva\", \"proteina\", \"whey\", \"batido\"",
+        "tags\n\"bipro classic vainilla 2lb\", \"nutramerican vainilla\", \"whey vainilla colombia\", \"proteina post entrenamiento\", \"recuperacion muscular whey\", \"bipro nutramerican 2lb\", \"whey digestion rapida\", \"proteina whey colombia\""
+      ],
+      [
+        "beneficios_bullet\n— Plantilla genérica",
+        "beneficios_bullet\nBipro Classic Vainilla: proteína Whey de alta pureza 2 lb.\nDigestión rápida: ideal para la ventana anabólica post-entrenamiento.\nSabor vainilla clásico — el más popular de la línea Bipro.\nGTIN 07707394716458 — producto auténtico Nutramerican."
+      ],
+      [
+        "⚠ Es el único Bipro Classic 2 lb con GTIN real (07707394716458). Activar item_group_id \"nutramerican-bipro-classic-proteina-whey\" para agrupar con 862, 864, 870, 871.",
+        "⚠ Es el único Bipro Classic 2 lb con GTIN real (07707394716458). Activar item_group_id \"nutramerican-bipro-classic-proteina-whey\" para agrupar con 862, 864, 870, 871."
+      ]
+    ],
+    [
+      [
+        "ID 864  ·  Bipro Classic Chocolate 2 lb   Nutramerican  ·  $174.990 COP",
+        "ID 864  ·  Bipro Classic Chocolate 2 lb   Nutramerican  ·  $174.990 COP"
+      ],
+      [
+        "ANTES",
+        "DESPUÉS"
+      ],
+      [
+        "seo_title\nNutramerican Bipro Classic Chocolate 2 lb – Proteína Whey | Natural Be",
+        "seo_title\nBipro Classic Chocolate Nutramerican 2 lb Whey | Natural Be"
+      ],
+      [
+        "seo_description_mejorado\nProteína Whey para tu rutina diaria. Compra online y recibe en Colombia.",
+        "seo_description_mejorado\nBipro Classic Chocolate Nutramerican 2 lb. Proteína Whey sabor chocolate para recuperación muscular y masa. Rápida digestión. $174.990. Envío Colombia."
+      ],
+      [
+        "descripcion_corta\nProteína de suero sabor chocolate; apoyo para objetivos de rendimiento y masa muscular.",
+        "descripcion_corta\nBipro Classic Chocolate Nutramerican 2 lb. Proteína Whey sabor chocolate intenso de alta pureza para apoyar la recuperación muscular, el rendimiento y los objetivos de masa."
+      ],
+      [
+        "tags\n\"nutramerican\", \"nutricion deportiva\", \"proteina\", \"whey\", \"batido\"",
+        "tags\n\"bipro classic chocolate 2lb\", \"nutramerican chocolate\", \"whey chocolate colombia\", \"masa muscular proteina\", \"recuperacion post entrenamiento\", \"bipro 2lb chocolate\", \"nutramerican proteina\", \"proteina chocolate colombia\""
+      ],
+      [
+        "beneficios_bullet\n— Plantilla genérica",
+        "beneficios_bullet\nBipro Classic Chocolate: proteína Whey sabor chocolate 2 lb.\nAlta pureza para apoyar la recuperación y el crecimiento muscular.\nRápida digestión para la ventana anabólica post-entrenamiento.\nCombina con leche o agua según tus objetivos calóricos."
+      ]
+    ],
+    [
+      [
+        "ID 865  ·  Bipro Ripped   Nutramerican  ·  $174.990 COP",
+        "ID 865  ·  Bipro Ripped   Nutramerican  ·  $174.990 COP"
+      ],
+      [
+        "ANTES",
+        "DESPUÉS"
+      ],
+      [
+        "seo_title\nNutramerican Bipro Ripped – Proteína Whey | Natural Be",
+        "seo_title\nBipro Ripped Nutramerican – Proteína + Carnitina Definición | Natural Be"
+      ],
+      [
+        "seo_description_mejorado\nProteína Whey para tu rutina diaria. Compra online y recibe en Colombia.",
+        "seo_description_mejorado\nBipro Ripped Nutramerican: mezcla de proteínas + L-Carnitina para definición muscular. Menos grasa, más músculo visible. $174.990. Envío Colombia."
+      ],
+      [
+        "descripcion_corta\nFórmula con mezcla de proteínas y carnitina; pensada para rutinas enfocadas en definición.",
+        "descripcion_corta\nBipro Ripped Nutramerican: fórmula avanzada de proteínas con L-Carnitina para apoyar la definición muscular, maximizar la quema de grasa y mantener la masa magra."
+      ],
+      [
+        "tags\n\"nutramerican\", \"nutricion deportiva\", \"proteina\", \"whey\", \"batido\"",
+        "tags\n\"bipro ripped nutramerican\", \"proteina carnitina definicion\", \"definicion muscular proteina\", \"quema grasa musculo\", \"whey l-carnitina\", \"masa magra proteina\", \"nutramerican ripped\", \"proteina definicion colombia\""
+      ],
+      [
+        "beneficios_bullet\n— Plantilla genérica",
+        "beneficios_bullet\nBipro Ripped: mezcla de proteínas con L-Carnitina integrada.\nDiseñado para rutinas de definición y reducción de grasa corporal.\nApoya el mantenimiento de masa muscular en déficit calórico.\nLa Carnitina contribuye al transporte de ácidos grasos a la mitocondria."
+      ],
+      [
+        "⚠ presentacion = \"Presentación estándar\" — registrar peso y sabores disponibles.",
+        "⚠ presentacion = \"Presentación estándar\" — registrar peso y sabores disponibles."
+      ]
+    ],
+    [
+      [
+        "ID 866  ·  Bipro Lite   Nutramerican  ·  $174.990 COP",
+        "ID 866  ·  Bipro Lite   Nutramerican  ·  $174.990 COP"
+      ],
+      [
+        "ANTES",
+        "DESPUÉS"
+      ],
+      [
+        "seo_title\nNutramerican Bipro Lite – Proteína Whey | Natural Be",
+        "seo_title\nBipro Lite Nutramerican – Whey + Colágeno + Carnitina | Natural Be"
+      ],
+      [
+        "seo_description_mejorado\nProteína Whey para tu rutina diaria. Compra online y recibe en Colombia.",
+        "seo_description_mejorado\nBipro Lite Nutramerican: 26g proteína + 5g colágeno + 1g L-Carnitina + cromo por porción. INVIMA RSA-0030639-2024. $174.990. Envío Colombia."
+      ],
+      [
+        "descripcion_corta\nProteína de suero y caseína + 1000mg L-Carnitina, 400mcg Picolinato de cromo y 5g Colágeno. INVIMA RSA-0030639-2024.",
+        "descripcion_corta\nBipro Lite Nutramerican: 26g de proteína (Whey + Caseína) por porción, enriquecida con 5g de colágeno hidrolizado, 1000mg de L-Carnitina y 400mcg de picolinato de cromo. Reg. INVIMA RSA-0030639-2024."
+      ],
+      [
+        "tags\n\"nutramerican\", \"nutricion deportiva\", \"proteina\", \"whey\", \"batido\"",
+        "tags\n\"bipro lite nutramerican\", \"proteina colageno carnitina\", \"whey colageno hidrolizado\", \"l-carnitina picolinato cromo\", \"26g proteina porcion\", \"control peso proteina\", \"nutramerican lite\", \"bipro lite colombia\""
+      ],
+      [
+        "beneficios_bullet\n— Plantilla genérica",
+        "beneficios_bullet\n26g de proteína Whey + Caseína por porción para aporte completo.\n5g de Colágeno Hidrolizado por servicio para articulaciones y piel.\n1000mg L-Carnitina + 400mcg Picolinato de Cromo integrados.\nRegistro Sanitario INVIMA RSA-0030639-2024. GTIN 7707394715178."
+      ],
+      [
+        "⚠ Este es el producto Nutramerican con más información de calidad (GTIN real, descripcion completa, INVIMA). La descripcion_corta actual ya era buena — la mejora aquí es maximizar esa información en SEO.",
+        "⚠ Este es el producto Nutramerican con más información de calidad (GTIN real, descripcion completa, INVIMA). La descripcion_corta actual ya era buena — la mejora aquí es maximizar esa información en SEO."
+      ]
+    ],
+    [
+      [
+        "ID 867  ·  Bipro Mass   Nutramerican  ·  $174.990 COP",
+        "ID 867  ·  Bipro Mass   Nutramerican  ·  $174.990 COP"
+      ],
+      [
+        "ANTES",
+        "DESPUÉS"
+      ],
+      [
+        "seo_title\nNutramerican Bipro Mass – Suplemento | Natural Be",
+        "seo_title\nBipro Mass Nutramerican – Hipercalórico Vainilla Masa | Natural Be"
+      ],
+      [
+        "seo_description_mejorado\nSuplemento para tu rutina diaria. Compra online y recibe en Colombia.",
+        "seo_description_mejorado\nBipro Mass Nutramerican: hipercalórico sabor vainilla para aumento de peso y masa muscular. Alta densidad calórica por porción. $174.990. Envío Colombia."
+      ],
+      [
+        "descripcion_corta\nMezcla hipercalórica sabor vainilla para apoyar objetivos de aumento de masa y calorías.",
+        "descripcion_corta\nBipro Mass Nutramerican: hipercalórico de alta densidad sabor vainilla. Fórmula con proteína + carbohidratos complejos para apoyar el superávit calórico y el aumento de masa muscular."
+      ],
+      [
+        "tags\n\"nutramerican\", \"nutricion deportiva\", \"hipercalorico\", \"aumento de masa\"",
+        "tags\n\"bipro mass nutramerican\", \"hipercalorico vainilla\", \"aumento masa muscular\", \"ganador de peso\", \"carbohidratos proteina masa\", \"gainer colombia\", \"nutramerican mass\", \"hipercalorico colombia\""
+      ],
+      [
+        "beneficios_bullet\n— Plantilla genérica",
+        "beneficios_bullet\nBipro Mass Nutramerican: hipercalórico sabor vainilla.\nAlta densidad calórica de proteínas + carbohidratos complejos por porción.\nApoya el superávit calórico necesario para el aumento de masa.\nGTIN 7707394713945 — producto auténtico Nutramerican."
+      ],
+      [
+        "⚠ GTIN real (7707394713945). seo_title_mejorado anterior decía genéricamente \"Suplemento\" — corregido a hipercalórico.",
+        "⚠ GTIN real (7707394713945). seo_title_mejorado anterior decía genéricamente \"Suplemento\" — corregido a hipercalórico."
+      ]
+    ],
+    [
+      [
+        "ID 868  ·  Isoclean 2 lb   Nutramerican  ·  $189.990 COP",
+        "ID 868  ·  Isoclean 2 lb   Nutramerican  ·  $189.990 COP"
+      ],
+      [
+        "ANTES",
+        "DESPUÉS"
+      ],
+      [
+        "seo_title\nNutramerican Isoclean 2 lb – Proteína Whey | Natural Be",
+        "seo_title\nIsoclean Nutramerican 2 lb – Whey + HMB + CLA | Natural Be"
+      ],
+      [
+        "seo_description_mejorado\nProteína Whey para tu rutina diaria. Compra online y recibe en Colombia.",
+        "seo_description_mejorado\nIsoclean Nutramerican 2 lb: Proteína Whey con HMB y CLA para altos requerimientos. Apoya músculo y composición corporal. $189.990. Envío Colombia."
+      ],
+      [
+        "descripcion_corta\nProteína de suero con HMB y CLA; diseñada para altos requerimientos de proteína.",
+        "descripcion_corta\nIsoclean Nutramerican 2 lb: Proteína Whey enriquecida con HMB (anti-catabolismo) y CLA (metabolismo de grasa) para atletas con altos requerimientos proteicos y objetivos de composición corporal."
+      ],
+      [
+        "tags\n\"nutramerican\", \"nutricion deportiva\", \"proteina\", \"whey\", \"batido\"",
+        "tags\n\"isoclean nutramerican\", \"whey hmb cla\", \"proteina anticatabólica\", \"composicion corporal\", \"hmb muscular\", \"cla quema grasa\", \"proteina avanzada colombia\", \"nutramerican isoclean\""
+      ],
+      [
+        "beneficios_bullet\n— Plantilla genérica",
+        "beneficios_bullet\nIsoclean Nutramerican: Proteína Whey con HMB y CLA integrados.\nEl HMB reduce el catabolismo muscular en entrenamientos intensos.\nEl CLA apoya la composición corporal y el metabolismo de grasa.\nPara atletas con altos requerimientos proteicos y objetivos avanzados."
+      ]
+    ],
+    [
+      [
+        "ID 869  ·  Crea Stack   Nutramerican  ·  $159.990 COP",
+        "ID 869  ·  Crea Stack   Nutramerican  ·  $159.990 COP"
+      ],
+      [
+        "ANTES",
+        "DESPUÉS"
+      ],
+      [
+        "seo_title\nNutramerican Crea Stack – Suplemento | Natural Be",
+        "seo_title\nCrea Stack Nutramerican – Creatina + HMB Fuerza | Natural Be"
+      ],
+      [
+        "seo_description_mejorado\nSuplemento para tu rutina diaria. Compra online y recibe en Colombia.",
+        "seo_description_mejorado\nCrea Stack Nutramerican: Creatina Monohidrato + HMB + cofactores para fuerza, potencia y recuperación muscular. $159.990. Envío Colombia."
+      ],
+      [
+        "descripcion_corta\nCreatina monohidratada con HMB y cofactores; apoyo para fuerza y recuperación.",
+        "descripcion_corta\nCrea Stack Nutramerican: Creatina Monohidrato de alta pureza con HMB y cofactores sinérgicos para maximizar la fuerza, la potencia anaeróbica y la recuperación muscular."
+      ],
+      [
+        "tags\n\"nutramerican\", \"nutricion deportiva\", \"energia\", \"recuperacion\", \"entrenamiento\"",
+        "tags\n\"crea stack nutramerican\", \"creatina monohidrato hmb\", \"creatina fuerza potencia\", \"recuperacion muscular creatina\", \"suplemento creatina colombia\", \"crea stack\", \"nutramerican creatina\", \"creatina colombia\""
+      ],
+      [
+        "beneficios_bullet\n— Plantilla genérica",
+        "beneficios_bullet\nCrea Stack: Creatina Monohidrato + HMB en fórmula sinérgica.\nLa creatina aumenta la fuerza, la potencia y la explosividad.\nEl HMB reduce el daño muscular y acelera la recuperación.\nCofactores que optimizan la absorción y eficacia de la creatina."
+      ],
+      [
+        "⚠ presentacion = \"Presentación estándar\" — registrar el gramaje real.",
+        "⚠ presentacion = \"Presentación estándar\" — registrar el gramaje real."
+      ]
+    ],
+    [
+      [
+        "ID 870  ·  Bipro Classic Vainilla 3 lb   Nutramerican  ·  $234.990 COP",
+        "ID 870  ·  Bipro Classic Vainilla 3 lb   Nutramerican  ·  $234.990 COP"
+      ],
+      [
+        "ANTES",
+        "DESPUÉS"
+      ],
+      [
+        "seo_title\nNutramerican Bipro Classic Vainilla 3 lb – Proteína Whey | Natural Be",
+        "seo_title\nBipro Classic Vainilla Nutramerican 3 lb – Mejor Precio/Kg | Natural Be"
+      ],
+      [
+        "seo_description_mejorado\nProteína Whey para tu rutina diaria. Compra online y recibe en Colombia.",
+        "seo_description_mejorado\nBipro Classic Vainilla Nutramerican 3 lb. Mejor precio por kg de la línea Bipro Vainilla. Proteína Whey alta pureza para uso frecuente. $234.990."
+      ],
+      [
+        "descripcion_corta\nProteína de suero sabor vainilla en tamaño grande; ideal para uso frecuente.",
+        "descripcion_corta\nBipro Classic Vainilla Nutramerican 3 lb — el formato familiar de la línea. El mejor precio por kg para quienes entrenan con frecuencia y necesitan proteína constante."
+      ],
+      [
+        "tags\n\"nutramerican\", \"nutricion deportiva\", \"proteina\", \"whey\", \"batido\"",
+        "tags\n\"bipro classic vainilla 3lb\", \"nutramerican 3lb vainilla\", \"mejor precio proteina kg\", \"proteina familiar 3lb\", \"whey vainilla grande\", \"bipro 3lb nutramerican\", \"proteina frecuente colombia\", \"whey 3lb colombia\""
+      ],
+      [
+        "beneficios_bullet\n— Plantilla genérica",
+        "beneficios_bullet\nBipro Classic Vainilla Nutramerican 3 lb — el mayor formato de la línea.\nMejor relación precio por kg vs presentaciones de 0.9 y 2 lb.\nProteína Whey de alta pureza sabor vainilla clásico.\nPara deportistas que consumen proteína diariamente."
+      ]
+    ],
+    [
+      [
+        "ID 871  ·  Bipro Classic Cookies & Cream 3 lb   Nutramerican  ·  $234.990 COP",
+        "ID 871  ·  Bipro Classic Cookies & Cream 3 lb   Nutramerican  ·  $234.990 COP"
+      ],
+      [
+        "ANTES",
+        "DESPUÉS"
+      ],
+      [
+        "seo_title\nNutramerican Bipro Classic Cookies & Cream 3 lb – Proteína Whe | Natural Be",
+        "seo_title\nBipro Classic Cookies & Cream Nutramerican 3 lb Whey | Natural Be"
+      ],
+      [
+        "seo_description_mejorado\nProteína Whey para tu rutina diaria. Compra online y recibe en Colombia.",
+        "seo_description_mejorado\nBipro Classic Cookies & Cream Nutramerican 3 lb. Proteína Whey sabor galleta con crema — el sabor más indulgente de la línea. $234.990. Envío Colombia."
+      ],
+      [
+        "descripcion_corta\nProteína de suero sabor cookies & cream; combina sabor y aporte proteico.",
+        "descripcion_corta\nBipro Classic Cookies & Cream Nutramerican 3 lb. Proteína Whey de alta pureza con el sabor más popular y delicioso de la línea para quienes no quieren sacrificar el gusto."
+      ],
+      [
+        "tags\n\"nutramerican\", \"nutricion deportiva\", \"proteina\", \"whey\", \"batido\"",
+        "tags\n\"bipro classic cookies cream 3lb\", \"nutramerican sabor galleta\", \"whey cookies cream colombia\", \"proteina sabor indulgente\", \"bipro 3lb cookies\", \"nutramerican 3lb\", \"whey sabor colombia\", \"proteina whey colombia\""
+      ],
+      [
+        "beneficios_bullet\n— Plantilla genérica",
+        "beneficios_bullet\nBipro Classic Cookies & Cream: el sabor más popular de la línea.\nProteína Whey de alta pureza en presentación de 3 lb.\nCombina sabor indulgente con alto aporte proteico de calidad.\nEl más vendido de la gama de sabores especiales Bipro."
+      ],
+      [
+        "⚠ seo_title truncado con \"Proteína Whe\". Corregido.",
+        "⚠ seo_title truncado con \"Proteína Whe\". Corregido."
+      ]
+    ],
+    [
+      [
+        "ID 872  ·  Nitro Shock Frutos Rojos   Nutramerican  ·  $104.990 COP",
+        "ID 872  ·  Nitro Shock Frutos Rojos   Nutramerican  ·  $104.990 COP"
+      ],
+      [
+        "ANTES",
+        "DESPUÉS"
+      ],
+      [
+        "seo_title\nNutramerican Nitro Shock Frutos Rojos – Suplemento | Natural Be",
+        "seo_title\nNitro Shock Frutos Rojos Nutramerican – BCAA + Glutamina | Natural Be"
+      ],
+      [
+        "seo_description_mejorado\nSuplemento para tu rutina diaria. Compra online y recibe en Colombia.",
+        "seo_description_mejorado\nNitro Shock Frutos Rojos Nutramerican: BCAA + Glutamina sabor frutos rojos para recuperación intra y post-entrenamiento. $104.990. Envío Colombia."
+      ],
+      [
+        "descripcion_corta\nBCAA + glutamina sabor frutos rojos para acompañar tus entrenamientos.",
+        "descripcion_corta\nNitro Shock Frutos Rojos Nutramerican: BCAA (aminoácidos ramificados) + Glutamina en un polvo sabor frutos rojos para hidratación activa, recuperación muscular y resistencia durante el entrenamiento."
+      ],
+      [
+        "tags\n\"nutramerican\", \"nutricion deportiva\", \"energia\", \"recuperacion\", \"entrenamiento\"",
+        "tags\n\"nitro shock frutos rojos\", \"nutramerican bcaa glutamina\", \"bcaa frutos rojos\", \"aminoacidos ramificados\", \"recuperacion intraentrenamiento\", \"glutamina muscular\", \"nutramerican bcaa colombia\", \"bcaa colombia\""
+      ],
+      [
+        "beneficios_bullet\n— Plantilla genérica",
+        "beneficios_bullet\nBCAA (leucina, isoleucina, valina) + Glutamina en polvo.\nSabor frutos rojos para consumo agradable intra y post-entrenamiento.\nApoya la recuperación muscular y reduce el catabolismo.\nLa glutamina favorece el sistema inmune y la recuperación intestinal."
+      ],
+      [
+        "⚠ presentacion = \"Presentación estándar\" y seo_description_mejorado genérico — ninguno mencionaba que es un producto de BCAAs, que es el diferenciador clave.",
+        "⚠ presentacion = \"Presentación estándar\" y seo_description_mejorado genérico — ninguno mencionaba que es un producto de BCAAs, que es el diferenciador clave."
+      ]
+    ],
+    [
+      [
+        "ID 873  ·  Serious Mass 3 lb   Optimum Nutrition  ·  $154.000 COP",
+        "ID 873  ·  Serious Mass 3 lb   Optimum Nutrition  ·  $154.000 COP"
+      ],
+      [
+        "ANTES",
+        "DESPUÉS"
+      ],
+      [
+        "seo_title\nOptimum Nutrition Serious Mass 3 lb – Suplemento | Natural Be",
+        "seo_title\nSerious Mass Optimum Nutrition 3 lb – Hipercalórico | Natural Be"
+      ],
+      [
+        "seo_description_mejorado\nSuplemento para tu rutina diaria. Compra online y recibe en Colombia.",
+        "seo_description_mejorado\nSerious Mass Optimum Nutrition 3 lb. Hipercalórico con alta densidad de calorías y proteína para ganar peso y masa muscular. $154.000. Envío Colombia."
+      ],
+      [
+        "descripcion_corta\nSerious Mass 3 lb para complementar tu nutrición deportiva.",
+        "descripcion_corta\nSerious Mass Optimum Nutrition 3 lb. Hipercalórico de referencia mundial para ganar peso y masa muscular, con alta densidad de calorías, proteína y carbohidratos complejos por porción."
+      ],
+      [
+        "tags\n\"optimum nutrition\", \"optimumnutrition\", \"nutricion deportiva\", \"hipercalorico\", \"aumento de masa\"",
+        "tags\n\"serious mass optimum nutrition\", \"hipercalorico on 3lb\", \"ganar peso muscular\", \"gainer proteina\", \"optimum nutrition mass\", \"aumento masa colombia\", \"serious mass 3lb\", \"hipercalorico colombia\""
+      ],
+      [
+        "beneficios_bullet\n— Plantilla genérica",
+        "beneficios_bullet\nSerious Mass Optimum Nutrition — el hipercalórico más reconocido mundialmente.\nAlta densidad de calorías, proteína y carbohidratos complejos por porción.\nApoya el superávit calórico para ganar peso y masa muscular.\nPresentación de 3 lb: ideal para empezar un ciclo de volumen."
+      ]
+    ],
+    [
+      [
+        "ID 874  ·  Gold Standard 100% Whey Protein 4 lb   Optimum Nutrition  ·  $329.000 COP",
+        "ID 874  ·  Gold Standard 100% Whey Protein 4 lb   Optimum Nutrition  ·  $329.000 COP"
+      ],
+      [
+        "ANTES",
+        "DESPUÉS"
+      ],
+      [
+        "seo_title\nOptimum Nutrition Gold Standard 100% Whey Protein 4 lb – Prote | Natural Be",
+        "seo_title\nGold Standard 100% Whey Optimum Nutrition 4 lb | Natural Be"
+      ],
+      [
+        "seo_description_mejorado\nProteína Whey para tu rutina diaria. Compra online y recibe en Colombia.",
+        "seo_description_mejorado\nGold Standard 100% Whey Protein Optimum Nutrition 4 lb. La proteína whey más vendida del mundo. Alta pureza, rápida absorción. $329.000. Envío Colombia."
+      ],
+      [
+        "descripcion_corta\nGold Standard 100% Whey Protein 4 lb para complementar tu nutrición deportiva.",
+        "descripcion_corta\nGold Standard 100% Whey Protein Optimum Nutrition 4 lb. La proteína whey más reconocida y vendida del mundo: alta pureza, perfil completo de aminoácidos y digestión rápida para máxima recuperación."
+      ],
+      [
+        "tags\n\"optimum nutrition\", \"optimumnutrition\", \"nutricion deportiva\", \"proteina\", \"whey\"",
+        "tags\n\"gold standard whey 4lb\", \"optimum nutrition 4lb\", \"proteina whey 4lb\", \"gold standard on\", \"proteina mundial on\", \"whey alta pureza 4lb\", \"optimum nutrition colombia\", \"gold standard colombia\""
+      ],
+      [
+        "beneficios_bullet\n— Plantilla genérica",
+        "beneficios_bullet\nGold Standard 100% Whey Protein ON — la #1 a nivel mundial.\nAlta pureza con Whey Isolate como primer ingrediente.\nPerfil completo de aminoácidos esenciales y BCAAs naturales.\n4 lb: el formato estándar para deportistas de nivel intermedio-avanzado."
+      ],
+      [
+        "⚠ seo_title truncado con \"Prote\". Corregido.",
+        "⚠ seo_title truncado con \"Prote\". Corregido."
+      ]
+    ],
+    [
+      [
+        "ID 875  ·  Gold Standard 100% Whey Protein 10 Serv   Optimum Nutrition  ·  $130.000 COP",
+        "ID 875  ·  Gold Standard 100% Whey Protein 10 Serv   Optimum Nutrition  ·  $130.000 COP"
+      ],
+      [
+        "ANTES",
+        "DESPUÉS"
+      ],
+      [
+        "seo_title\nOptimum Nutrition Gold Standard 100% Whey Protein 10 Serv | Natural Be",
+        "seo_title\nGold Standard Whey ON 10 Servicios – Para Probar | Natural Be"
+      ],
+      [
+        "seo_description_mejorado\nProteína Whey para tu rutina diaria. Compra online y recibe en Colombia.",
+        "seo_description_mejorado\nGold Standard 100% Whey Protein Optimum Nutrition, 10 servicios. Ideal para probar la mejor proteína del mundo antes del tarro grande. $130.000. Envío Colombia."
+      ],
+      [
+        "descripcion_corta\nGold Standard 100% Whey Protein 10 Serv para complementar tu nutrición deportiva.",
+        "descripcion_corta\nGold Standard 100% Whey Protein Optimum Nutrition en 10 servicios. El formato ideal para probar la proteína whey más reconocida del mundo antes de invertir en el tarro de 4 o 5 lb."
+      ],
+      [
+        "tags\n\"optimum nutrition\", \"optimumnutrition\", \"nutricion deportiva\", \"proteina\", \"whey\"",
+        "tags\n\"gold standard whey 10 servicios\", \"optimum nutrition muestra\", \"on gold standard prueba\", \"proteina muestra colombia\", \"gold standard 10 serv\", \"whey on colombia\", \"gold standard on prueba\", \"proteina entry level\""
+      ],
+      [
+        "beneficios_bullet\n— Plantilla genérica",
+        "beneficios_bullet\nGold Standard 100% Whey Protein ON en 10 servicios individuales.\nEl mejor formato para probar antes del tarro completo.\nMisma fórmula del tarro grande: alta pureza con Whey Isolate.\nA $13.000 por servicio — acceso a la proteína #1 del mundo."
+      ],
+      [
+        "⚠ BUG: titulo_google tenía \"Gold Standard 100% Whey Protein 10 10 serv\" (duplicado). Corregido. item_group_id: null — considerar activar el grupo Gold Standard Whey para agrupar con 874, 880, 881.",
+        "⚠ BUG: titulo_google tenía \"Gold Standard 100% Whey Protein 10 10 serv\" (duplicado). Corregido. item_group_id: null — considerar activar el grupo Gold Standard Whey para agrupar con 874, 880, 881."
+      ]
+    ],
+    [
+      [
+        "ID 876  ·  Whey Gourmet Series 2 lb   Optimum Nutrition  ·  $246.000 COP",
+        "ID 876  ·  Whey Gourmet Series 2 lb   Optimum Nutrition  ·  $246.000 COP"
+      ],
+      [
+        "ANTES",
+        "DESPUÉS"
+      ],
+      [
+        "seo_title\nOptimum Nutrition Whey Gourmet Series 2 lb – Proteína Whey | Natural Be",
+        "seo_title\nWhey Gourmet Series Optimum Nutrition 2 lb | Natural Be"
+      ],
+      [
+        "seo_description_mejorado\nProteína Whey para tu rutina diaria. Compra online y recibe en Colombia.",
+        "seo_description_mejorado\nWhey Gourmet Series Optimum Nutrition 2 lb. Proteína Whey premium con sabores gourmet exclusivos para quienes no negocian el gusto. $246.000. Envío Colombia."
+      ],
+      [
+        "descripcion_corta\nWhey Gourmet Series 2 LB para complementar tu nutrición deportiva.",
+        "descripcion_corta\nWhey Gourmet Series Optimum Nutrition 2 lb. La línea premium de ON con proteína Whey de alta pureza y sabores gourmet exclusivos — para atletas que quieren calidad y experiencia de sabor excepcional."
+      ],
+      [
+        "tags\n\"optimum nutrition\", \"optimumnutrition\", \"nutricion deportiva\", \"proteina\", \"whey\"",
+        "tags\n\"whey gourmet series on\", \"optimum nutrition gourmet\", \"proteina premium sabores\", \"whey sabores exclusivos\", \"on gourmet 2lb\", \"proteina gourmet colombia\", \"optimum nutrition 2lb\", \"whey premium colombia\""
+      ],
+      [
+        "beneficios_bullet\n— Plantilla genérica",
+        "beneficios_bullet\nWhey Gourmet Series ON: la línea premium de Optimum Nutrition.\nSabores gourmet exclusivos no disponibles en Gold Standard.\nProteína Whey de alta pureza con el estándar de calidad ON.\n2 lb: el formato ideal para rotar sabores regularmente."
+      ]
+    ],
+    [
+      [
+        "ID 877  ·  Gold Standard Protein Shake 325 ml   Optimum Nutrition  ·  $25.000 COP",
+        "ID 877  ·  Gold Standard Protein Shake 325 ml   Optimum Nutrition  ·  $25.000 COP"
+      ],
+      [
+        "ANTES",
+        "DESPUÉS"
+      ],
+      [
+        "seo_title\nOptimum Nutrition Gold Standard Protein Shake 325 ml – Proteín | Natural Be",
+        "seo_title\nGold Standard Protein Shake ON 325 ml – Listo para Tomar | Natural Be"
+      ],
+      [
+        "seo_description_mejorado\nProteína Whey para tu rutina diaria. Compra online y recibe en Colombia.",
+        "seo_description_mejorado\nGold Standard Protein Shake ON listo para tomar, 325 ml. La proteína #1 del mundo en formato RTD — sin polvo, sin shaker, sin excusas. $25.000."
+      ],
+      [
+        "descripcion_corta\nGold Standard Protein Shake 325 ml para complementar tu nutrición deportiva.",
+        "descripcion_corta\nGold Standard Protein Shake Optimum Nutrition en 325 ml listo para tomar (RTD). Cómodo para viaje, oficina o post-entrenamiento inmediato — la calidad Gold Standard en formato práctico."
+      ],
+      [
+        "tags\n\"optimum nutrition\", \"optimumnutrition\", \"nutricion deportiva\", \"proteina\", \"whey\"",
+        "tags\n\"gold standard protein shake rtd\", \"on listo para tomar\", \"proteina rtd colombia\", \"gold standard 325ml\", \"shake proteina viaje\", \"on protein drink\", \"proteina sin polvo\", \"rtd proteina colombia\""
+      ],
+      [
+        "beneficios_bullet\n— Plantilla genérica",
+        "beneficios_bullet\nGold Standard Protein Shake ON listo para tomar (RTD) 325 ml.\nSin necesidad de shaker, polvo ni preparación previa.\nLa calidad Gold Standard en formato de bolsillo para cualquier momento.\nIdeal para viajes, oficina o post-entrenamiento inmediato."
+      ],
+      [
+        "⚠ seo_title truncado con \"Proteín\". Este es el único RTD (ready to drink) del catálogo de ON — diferenciador clarísimo que no aparecía en ningún campo.",
+        "⚠ seo_title truncado con \"Proteín\". Este es el único RTD (ready to drink) del catálogo de ON — diferenciador clarísimo que no aparecía en ningún campo."
+      ]
+    ],
+    [
+      [
+        "ID 878  ·  Gold Standard 100% Isolate 5 lb   Optimum Nutrition  ·  $490.000 COP",
+        "ID 878  ·  Gold Standard 100% Isolate 5 lb   Optimum Nutrition  ·  $490.000 COP"
+      ],
+      [
+        "ANTES",
+        "DESPUÉS"
+      ],
+      [
+        "seo_title\nOptimum Nutrition Gold Standard 100% Isolate 5 lb – Suplemento | Natural Be",
+        "seo_title\nGold Standard 100% Isolate ON 5 lb – Proteína Aislada | Natural Be"
+      ],
+      [
+        "seo_description_mejorado\nSuplemento para tu rutina diaria. Compra online y recibe en Colombia.",
+        "seo_description_mejorado\nGold Standard 100% Isolate ON 5 lb. Proteína Aislada pura — sin grasa, sin carbohidratos, máxima proteína por porción. Para deportistas exigentes. $490.000."
+      ],
+      [
+        "descripcion_corta\nGold Standard 100% Isolate 5 lb para complementar tu nutrición deportiva.",
+        "descripcion_corta\nGold Standard 100% Isolate Optimum Nutrition 5 lb. Proteína Aislada (Isolate) en su forma más pura: sin grasa, sin carbohidratos, sin lactosa — máxima concentración de proteína por porción para atletas de alto rendimiento."
+      ],
+      [
+        "tags\n\"optimum nutrition\", \"optimumnutrition\", \"nutricion deportiva\"",
+        "tags\n\"gold standard isolate 5lb\", \"proteina aislada on\", \"whey isolate puro\", \"sin lactosa proteina\", \"sin grasa proteina\", \"optimum nutrition isolate\", \"proteina exigente colombia\", \"isolate 5lb colombia\""
+      ],
+      [
+        "beneficios_bullet\n— Plantilla genérica",
+        "beneficios_bullet\nGold Standard 100% Isolate ON 5 lb — proteína aislada más pura de ON.\nSin grasa, sin carbohidratos, sin lactosa por porción.\nMáxima concentración de proteína para atletas exigentes.\n5 lb: el mejor precio por kg del catálogo Isolate."
+      ],
+      [
+        "⚠ tags solo tenían 3 términos, faltaba \"proteina\" y \"whey\". seo_title_mejorado anterior decía genéricamente \"Suplemento\" cuando es claramente Proteína Aislada — el producto más premium del catálogo ($490k).",
+        "⚠ tags solo tenían 3 términos, faltaba \"proteina\" y \"whey\". seo_title_mejorado anterior decía genéricamente \"Suplemento\" cuando es claramente Proteína Aislada — el producto más premium del catálogo ($490k)."
+      ]
+    ],
+    [
+      [
+        "ID 879  ·  Gold Standard 100% Whey Naturally Flavored 4.8 lb   Optimum Nutrition  ·  $367.000 COP",
+        "ID 879  ·  Gold Standard 100% Whey Naturally Flavored 4.8 lb   Optimum Nutrition  ·  $367.000 COP"
+      ],
+      [
+        "ANTES",
+        "DESPUÉS"
+      ],
+      [
+        "seo_title\nOptimum Nutrition Gold Standard 100% Whey Naturally Flavored 4 | Natural Be",
+        "seo_title\nGold Standard Whey Natural Flavors ON 4.8 lb | Natural Be"
+      ],
+      [
+        "seo_description_mejorado\nProteína Whey para tu rutina diaria. Compra online y recibe en Colombia.",
+        "seo_description_mejorado\nGold Standard 100% Whey Naturally Flavored ON 4.8 lb. Sin colorantes ni saborizantes artificiales — para atletas conscientes de lo que consumen. $367.000."
+      ],
+      [
+        "descripcion_corta\nGold Standard 100% Whey Naturally Flavored 4.8 lb para complementar tu nutrición deportiva.",
+        "descripcion_corta\nGold Standard 100% Whey Naturally Flavored ON 4.8 lb. La versión \"clean\" del Gold Standard: misma calidad de siempre pero sin colorantes artificiales, saborizantes artificiales ni endulzantes sintéticos."
+      ],
+      [
+        "tags\n\"optimum nutrition\", \"optimumnutrition\", \"nutricion deportiva\", \"proteina\", \"whey\"",
+        "tags\n\"gold standard naturally flavored\", \"on sin colorantes artificiales\", \"whey natural clean\", \"proteina sin artificiales\", \"gold standard 4.8lb\", \"optimum nutrition natural\", \"proteina limpia colombia\", \"whey naturally flavored\""
+      ],
+      [
+        "beneficios_bullet\n— Plantilla genérica",
+        "beneficios_bullet\nGold Standard Naturally Flavored ON 4.8 lb — versión \"clean label\".\nSin colorantes artificiales, saborizantes artificiales ni endulzantes sintéticos.\nMisma calidad Gold Standard con ingredientes más naturales.\nPara atletas que prefieren etiquetas limpias sin comprometer el rendimiento."
+      ],
+      [
+        "⚠ BUG: seo_title y titulo_google tenían \"Naturally Flavored 4.\" (número truncado). Corregido. El diferenciador de este producto (sin artificiales) no aparecía en ningún campo visible.",
+        "⚠ BUG: seo_title y titulo_google tenían \"Naturally Flavored 4.\" (número truncado). Corregido. El diferenciador de este producto (sin artificiales) no aparecía en ningún campo visible."
+      ]
+    ],
+    [
+      [
+        "ID 880  ·  Gold Standard 100% Whey Protein 10 lb   Optimum Nutrition  ·  $724.000 COP",
+        "ID 880  ·  Gold Standard 100% Whey Protein 10 lb   Optimum Nutrition  ·  $724.000 COP"
+      ],
+      [
+        "ANTES",
+        "DESPUÉS"
+      ],
+      [
+        "seo_title\nOptimum Nutrition Gold Standard 100% Whey Protein 10 lb – Prot | Natural Be",
+        "seo_title\nGold Standard 100% Whey Optimum Nutrition 10 lb – Tarro Grande | Natural Be"
+      ],
+      [
+        "seo_description_mejorado\nProteína Whey para tu rutina diaria. Compra online y recibe en Colombia.",
+        "seo_description_mejorado\nGold Standard 100% Whey Protein ON 10 lb. El tarro más grande y con el mejor precio por kg del catálogo. Para atletas con alta frecuencia de consumo. $724.000."
+      ],
+      [
+        "descripcion_corta\nGold Standard 100% Whey Protein 10 lb para complementar tu nutrición deportiva.",
+        "descripcion_corta\nGold Standard 100% Whey Protein Optimum Nutrition 10 lb — el formato maximalista. El mejor precio por kg de la línea Gold Standard para atletas que consumen proteína diariamente y no quieren quedarse sin stock."
+      ],
+      [
+        "tags\n\"optimum nutrition\", \"optimumnutrition\", \"nutricion deportiva\", \"proteina\", \"whey\"",
+        "tags\n\"gold standard whey 10lb\", \"optimum nutrition 10lb\", \"mejor precio kg proteina\", \"tarro grande proteina\", \"gold standard on 10lb\", \"proteina mayor formato\", \"on whey 10lb colombia\", \"proteina mensual colombia\""
+      ],
+      [
+        "beneficios_bullet\n— Plantilla genérica",
+        "beneficios_bullet\nGold Standard 100% Whey ON 10 lb — el formato más grande del catálogo.\nEl mejor precio por kg de toda la línea Gold Standard.\nProteína Whey #1 del mundo en su presentación para atletas avanzados.\nPara quienes consumen proteína diariamente y prefieren comprar menos veces."
+      ],
+      [
+        "⚠ seo_title truncado con \"Prot\". Con $724.000 es el producto más caro del catálogo — el diferenciador del precio por kg debe ser el argumento central.",
+        "⚠ seo_title truncado con \"Prot\". Con $724.000 es el producto más caro del catálogo — el diferenciador del precio por kg debe ser el argumento central."
+      ]
+    ],
+    [
+      [
+        "ID 881  ·  Gold Standard 100% Whey Protein 5 lb   Optimum Nutrition  ·  $397.000 COP",
+        "ID 881  ·  Gold Standard 100% Whey Protein 5 lb   Optimum Nutrition  ·  $397.000 COP"
+      ],
+      [
+        "ANTES",
+        "DESPUÉS"
+      ],
+      [
+        "seo_title\nOptimum Nutrition Gold Standard 100% Whey Protein 5 lb – Prote | Natural Be",
+        "seo_title\nGold Standard 100% Whey Optimum Nutrition 5 lb | Natural Be"
+      ],
+      [
+        "seo_description_mejorado\nProteína Whey para tu rutina diaria. Compra online y recibe en Colombia.",
+        "seo_description_mejorado\nGold Standard 100% Whey Protein ON 5 lb. El punto de equilibrio ideal entre precio, rendimiento y tamaño para atletas con alto consumo. $397.000. Envío Colombia."
+      ],
+      [
+        "descripcion_corta\nGold Standard 100% Whey Protein 5 lb para complementar tu nutrición deportiva.",
+        "descripcion_corta\nGold Standard 100% Whey Protein Optimum Nutrition 5 lb. El tamaño ideal para atletas de nivel avanzado que consumen proteína varias veces por semana — mejor precio por kg que el de 4 lb sin llegar al compromiso del 10 lb."
+      ],
+      [
+        "tags\n\"optimum nutrition\", \"optimumnutrition\", \"nutricion deportiva\", \"proteina\", \"whey\"",
+        "tags\n\"gold standard whey 5lb\", \"optimum nutrition 5lb\", \"gold standard on 5lb\", \"proteina whey avanzada\", \"on 5lb colombia\", \"proteina intermedio avanzado\", \"gold standard colombia\", \"whey 5lb colombia\""
+      ],
+      [
+        "beneficios_bullet\n— Plantilla genérica",
+        "beneficios_bullet\nGold Standard 100% Whey ON 5 lb — el tamaño para usuarios avanzados.\nMejor precio por kg que el tarro de 4 lb.\nProteína Whey #1 del mundo con Whey Isolate como primer ingrediente.\nPara atletas que consumen proteína 4-6 veces por semana."
+      ],
+      [
+        "⚠ seo_title truncado con \"Prote\". El grupo Gold Standard Whey (874, 875, 880, 881) debe tener el mismo item_group_id para que Google Shopping los muestre como variantes de presentación.",
+        "⚠ seo_title truncado con \"Prote\". El grupo Gold Standard Whey (874, 875, 880, 881) debe tener el mismo item_group_id para que Google Shopping los muestre como variantes de presentación."
+      ]
+    ]
+  ]
+}

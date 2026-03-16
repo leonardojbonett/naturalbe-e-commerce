@@ -6,9 +6,19 @@
 
 // Configuración de Wompi
 const NB_WOMPI = (typeof window !== 'undefined' && window.NB_WOMPI_CONFIG) ? window.NB_WOMPI_CONFIG : {};
+const WOMPI_FALLBACK_PUBLIC_KEY = 'pub_prod_rnYo9cubWyL1tG3mp2T3QCRtDYGKul9b';
 const DEFAULT_SUCCESS_REDIRECT = `${window.location.origin}/pago-exitoso.html`;
 const DEFAULT_CANCEL_REDIRECT = `${window.location.origin}/pago-cancelado.html`;
 const DEFAULT_PENDING_REDIRECT = `${window.location.origin}/pago-pendiente.html`;
+
+function resolveWompiPublicKey() {
+    const runtimeConfig = (typeof window !== 'undefined' && window.NB_WOMPI_CONFIG) ? window.NB_WOMPI_CONFIG : {};
+    const key = String(runtimeConfig.publicKey || NB_WOMPI.publicKey || WOMPI_FALLBACK_PUBLIC_KEY || '').trim();
+    if (!/^pub_(test|prod)_[A-Za-z0-9]+$/.test(key)) {
+        return WOMPI_FALLBACK_PUBLIC_KEY;
+    }
+    return key;
+}
 
 function pushWompiTelemetry(event, detail) {
     if (Array.isArray(window.dataLayer)) {
@@ -55,7 +65,7 @@ const PENDING_REDIRECT_URL = sanitizeRedirectUrl(NB_WOMPI.pendingUrl, DEFAULT_PE
 
 const WOMPI_CONFIG = {
     // MODO PRODUCCIÓN
-    publicKey: NB_WOMPI.publicKey || 'pub_prod_rnYo9cubWyL1tG3mp2T3QCRtDYGKul9b',
+    publicKey: resolveWompiPublicKey(),
     currency: NB_WOMPI.currency || 'COP',
     sandboxMode: false,
 
@@ -657,11 +667,23 @@ async function processWompiPayment(event) {
         }
         
         // Configurar Wompi Widget
+        const publicKey = resolveWompiPublicKey();
+        if (!publicKey) {
+            pushWompiTelemetry('wompi_invalid_public_key', {});
+            setFormSubmitLoading(form, false);
+            renderWompiFallback('No pudimos validar la llave de pago. Escríbenos por WhatsApp para finalizar tu pedido.');
+            return;
+        }
+        if (!window.NB_WOMPI_CONFIG) {
+            window.NB_WOMPI_CONFIG = {};
+        }
+        window.NB_WOMPI_CONFIG.publicKey = publicKey;
+
         const checkout = new WidgetCheckout({
             currency: WOMPI_CONFIG.currency,
             amountInCents: amountInCents, // Wompi usa centavos
             reference: reference,
-            publicKey: WOMPI_CONFIG.publicKey,
+            publicKey: publicKey,
             redirectUrl: buildRedirectUrl(SUCCESS_REDIRECT_URL, reference),
             customerData: {
                 email: customerEmail,

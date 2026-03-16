@@ -39,7 +39,12 @@ export function InstagramFeed() {
     <section className="instagram-section card" aria-label="Feed de Instagram">
       <div className="instagram-head">
         <h2 className="instagram-title">Ultimas publicaciones en Instagram</h2>
-        <a href={feed.profileUrl} className="instagram-link" target="_blank" rel="noreferrer">
+        <a
+          href={feed.profileUrl}
+          className="instagram-link"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           @{feed.username}
         </a>
       </div>
@@ -50,7 +55,7 @@ export function InstagramFeed() {
             href={item.permalink}
             className="instagram-card"
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
           >
             <img
               className="instagram-media"

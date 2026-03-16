@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="es-CO">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Blog Bienestar | Natural Be</title>
+  <meta name="description" content="Explora ideas de bienestar, fitness, belleza y nutrición en un formato editorial moderno de Natural Be.">
+  <link rel="preload" href="/static/css/main.min.css?v=2026-03-02-ih5" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="/static/css/main.min.css?v=2026-03-02-ih5"></noscript>
+  <style>
+    :root{
+      --promo-offset:48px;
+      --ed-bg:#f5f7fb;
+      --ed-card:#ffffff;
+      --ed-ink:#122133;
+      --ed-muted:#5d6b7b;
+      --ed-accent:#4a8f11;
+      --ed-line:#dbe3ee;
+      --ed-shadow:0 14px 30px rgba(19,32,51,0.08);
+      --ed-radius:16px;
+    }
+    .market-header{top:var(--promo-offset,48px);will-change:transform}
+    #menuToggle.hamburger-btn{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.55)}
+    .market-action-pill{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.45)}
+    #navWhatsappLink.market-action-link{color:#fff !important;font-weight:600}
+    body{background:var(--ed-bg);color:var(--ed-ink)}
+    .ed-shell{max-width:1240px;margin:0 auto;padding:1rem 1rem 3rem}
+    .ed-top{
+      background:linear-gradient(135deg,#1d5f2a 0%,#4a8f11 100%);
+      color:#fff;border-radius:18px;padding:1.15rem 1rem;margin-bottom:1rem;
+      box-shadow:var(--ed-shadow);
+    }
+    .ed-top h1{margin:0;font-size:1.65rem;line-height:1.15}
+    .ed-top p{margin:.35rem 0 0;color:rgba(255,255,255,0.9)}
+    .ed-tabs{
+      display:flex;flex-wrap:wrap;gap:.45rem;margin-top:.85rem
+    }
+    .ed-tab{
+      display:inline-flex;align-items:center;gap:.35rem;
+      border:1px solid rgba(255,255,255,0.4);color:#fff;text-decoration:none;
+      border-radius:999px;padding:.35rem .72rem;font-size:.84rem
+    }
+    .ed-section{margin-top:1.2rem}
+    .ed-section-head{
+      display:flex;align-items:center;justify-content:space-between;gap:.65rem;margin-bottom:.7rem
+    }
+    .ed-section-head h2{margin:0;font-size:1.7rem;letter-spacing:.01em}
+    .ed-section-head a{text-decoration:none;color:var(--ed-accent);font-weight:700}
+    .ed-grid{
+      display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.8rem
+    }
+    .ed-card{
+      background:var(--ed-card);border:1px solid var(--ed-line);border-radius:var(--ed-radius);
+      overflow:hidden;text-decoration:none;color:inherit;box-shadow:0 6px 16px rgba(0,0,0,0.03);
+      transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease
+    }
+    .ed-card:hover{transform:translateY(-4px);box-shadow:var(--ed-shadow);border-color:#c9d6e8}
+    .ed-media{position:relative;aspect-ratio:16/10;overflow:hidden}
+    .ed-media img{width:100%;height:100%;object-fit:cover;display:block}
+    .ed-badge{
+      position:absolute;left:.55rem;top:.55rem;background:rgba(255,255,255,.92);
+      color:#1b4332;font-size:.7rem;font-weight:800;padding:.22rem .42rem;border-radius:999px
+    }
+    .ed-content{padding:.7rem .75rem .85rem}
+    .ed-content h3{
+      margin:0 0 .38rem;font-size:1.05rem;line-height:1.28;
+      display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden
+    }
+    .ed-meta{display:flex;align-items:center;gap:.45rem;color:var(--ed-muted);font-size:.78rem}
+    .ed-avatar{
+      width:20px;height:20px;border-radius:50%;display:inline-block;background:#d7dfeb;border:1px solid #c2cfdf
+    }
+    .ed-products{
+      margin-top:1.5rem;background:#eceff4;border:1px solid #d6dee9;border-radius:18px;padding:1rem
+    }
+    .ed-products h2{margin:0 0 .8rem;text-align:center;font-size:2rem}
+    .ed-products h2 span{color:var(--ed-accent)}
+    .ed-mosaic{
+      display:grid;grid-template-columns:1fr 1.65fr 1fr;gap:.7rem
+    }
+    .ed-mosaic-col{display:grid;gap:.7rem}
+    .ed-tile{
+      position:relative;min-height:145px;border-radius:14px;overflow:hidden;text-decoration:none;color:#fff
+    }
+    .ed-tile img{width:100%;height:100%;object-fit:cover}
+    .ed-tile span{
+      position:absolute;left:0;right:0;bottom:0;background:linear-gradient(180deg,transparent 0%,rgba(0,0,0,.65) 100%);
+      padding:.75rem .6rem .45rem;font-weight:700;text-align:center
+    }
+    @media (max-width:1000px){
+      .ed-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .ed-mosaic{grid-template-columns:1fr}
+    }
+    @media (max-width:640px){
+      .ed-shell{padding:.7rem .7rem 2rem}
+      .ed-top h1{font-size:1.35rem}
+      .ed-section-head h2{font-size:1.35rem}
+      .ed-grid{grid-template-columns:1fr;gap:.65rem}
+      .ed-products h2{font-size:1.5rem}
+    }
+    @media (max-width: 991px){
+      .market-header__nav { display:none !important; }
+      .market-actions .cart-button { display:none !important; }
+      .market-actions .market-action-link { display:none !important; }
+      #navWhatsappLink { display:none !important; }
+      .market-header__top { padding:.5rem .9rem; gap:.55rem; }
+      .market-actions { gap:.35rem; }
+      .market-search { min-height:42px; }
+      #menuToggle.hamburger-btn { padding:.38rem .65rem; font-size:.88rem; }
+      .brand-logo span { font-size:.9rem; }
+    }
+  </style>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '869358656017955');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=869358656017955&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+</head>
+<body class="marketplace">
+  <a href="#mainContent" class="skip-link">Saltar al contenido principal</a>
+  <div class="promo-bar" id="promoBar" aria-live="polite">
+    <span class="promo-icon">●</span>
+    <span class="promo-message" id="promoMessage">Envíos 24-48h en Colombia · Pago seguro con Wompi · Asesoría por WhatsApp</span>
+    <button class="promo-close" type="button" onclick="if(window.closePromoBar){closePromoBar()}else{var bar=this.closest('.promo-bar');if(bar){bar.style.display='none';}}" aria-label="Cerrar promoción">×</button>
+  </div>
+
+  <header class="market-header" role="banner">
+    <div class="market-header__top">
+      <div class="market-brand">
+        <a class="brand-logo" href="/" aria-label="Natural Be - Inicio">
+          <img src="/static/img/logo.webp" alt="Natural Be" width="48" height="48" loading="eager" decoding="async">
+          <span>Natural Be</span>
+        </a>
+        <button id="menuToggle" class="hamburger-btn" type="button" aria-label="Abrir menú" aria-haspopup="dialog" aria-expanded="false" aria-controls="mobileMenu">Menú</button>
+      </div>
+
+      <form class="market-search" data-search-form>
+        <label class="sr-only" for="siteSearch">Buscar</label>
+        <input id="siteSearch" type="search" placeholder="Buscar suplementos, marcas o objetivos">
+        <button type="submit" class="search-btn" aria-label="Buscar">
+          <span class="sr-only">Buscar</span>
+          <svg class="search-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M11 4a7 7 0 1 1 0 14 7 7 0 0 1 0-14Zm0-2a9 9 0 1 0 5.6 16.1l4.6 4.6a1 1 0 0 0 1.4-1.4l-4.6-4.6A9 9 0 0 0 11 2Z"></path>
+          </svg>
+        </button>
+      </form>
+
+      <div class="market-actions">
+        <a class="market-action-link" href="/categoria/suplementos">Catálogo</a>
+        <a class="market-action-link" href="/#testimonios">Confianza</a>
+        <a class="market-action-link" href="https://wa.me/573137212923?utm_source=naturalbe&utm_medium=website&utm_campaign=retail&utm_content=nav_whatsapp" id="navWhatsappLink" data-wa-content="nav_whatsapp" target="_blank" rel="noopener">Asesoría</a>
+        <a class="market-action-link" href="#iniciar-sesion" title="Iniciar sesión">Iniciar sesión</a>
+        <button class="market-action-pill cart-button" type="button" data-cart-trigger aria-label="Ver carrito de compras">
+          🛒
+          <span class="cart-badge">0</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="market-header__nav">
+      <div class="mega-wrapper">
+        <button class="mega-toggle" type="button" data-mega-toggle aria-expanded="false" aria-controls="megaMenu">Categorías</button>
+        <div class="mega-menu" id="megaMenu" data-mega-menu aria-hidden="true" hidden>
+          <div class="mega-column">
+            <h4>Comprar por objetivo</h4>
+                <a href="/categoria/suplementos">Energía & rendimiento</a>
+                <a href="/categoria/suplementos">Inmunidad</a>
+                <a href="/categoria/suplementos">Piel & colágeno</a>
+                <a href="/categoria/suplementos">Estrés & sueño</a>
+          </div>
+          <div class="mega-column">
+            <h4>Suplementos</h4>
+            <a href="/catalogo-vitaminas.html">Vitaminas</a>
+            <a href="/categoria/minerales">Minerales</a>
+            <a href="/categoria/omega">Omega & aceites</a>
+            <a href="/categoria/colageno">Colágeno</a>
+          </div>
+          <div class="mega-column">
+            <h4>Explorar</h4>
+            <a href="/blog">Blog principal</a>
+            <a href="/blog-bienestar.html">Página editorial</a>
+            <a href="/categoria/suplementos">Todos los suplementos</a>
+            <a href="/catalogo-botanitas.html">Marca Botanitas</a>
+          </div>
+        </div>
+      </div>
+      <nav class="market-links" aria-label="Navegación rápida">
+        <a href="/#inicio">Inicio</a>
+        <a href="/categoria/suplementos">Catálogo</a>
+        <a href="#belleza">Belleza</a>
+        <a href="#fitness">Fitness</a>
+        <a href="#bebidas">Bebidas</a>
+      </nav>
+      <div class="market-socials" aria-label="Redes sociales Natural Be">
+        <a href="https://www.facebook.com/NaturalBeColombia" target="_blank" rel="noopener" aria-label="Facebook Natural Be">
+          <svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M13.5 9.5V8.1c0-.7.4-1.1 1.3-1.1h1.6V4.2h-2.2C11.7 4.2 10.5 5.6 10.5 8v1.5H8.8v2.7h1.7V20h3V12.2h2.1l.4-2.7h-2.5Z"></path>
+          </svg>
+        </a>
+        <a href="https://www.instagram.com/naturalbe__/" target="_blank" rel="noopener" aria-label="Instagram Natural Be">
+          <svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M7.5 4.5h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-9a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3Zm9 1.8h-9A1.2 1.2 0 0 0 6.3 7.5v9c0 .7.5 1.2 1.2 1.2h9c.7 0 1.2-.5 1.2-1.2v-9c0-.7-.5-1.2-1.2-1.2ZM12 8.1a3.9 3.9 0 1 1 0 7.8 3.9 3.9 0 0 1 0-7.8Zm0 1.8a2.1 2.1 0 1 0 0 4.2 2.1 2.1 0 0 0 0-4.2Zm4.2-.9a.9.9 0 1 1 0 1.8.9.9 0 0 1 0-1.8Z"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <div id="menuOverlay" class="menu-overlay" tabindex="-1" aria-hidden="true"></div>
+  <div id="mobileMenu" class="mobile-menu" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="mobileMenuTitle">
+    <div class="mobile-menu-header">
+      <h2 id="mobileMenuTitle" class="sr-only">Menú principal</h2>
+      <button class="mobile-menu-close" type="button" onclick="toggleMobileMenu(true)" aria-label="Cerrar menú">×</button>
+    </div>
+    <nav class="nav-mobile" aria-label="Navegación principal">
+      <a href="/categoria/suplementos">Catálogo</a>
+      <a href="/#ofertas">Ofertas</a>
+      <a href="/#categorias">Por objetivo</a>
+      <a href="/#destacados-marcas">Marcas</a>
+      <a href="/#proceso">Cómo comprar</a>
+      <a href="/blog">Blog</a>
+      <a href="/blog-bienestar.html">Página editorial</a>
+      <a href="https://wa.me/573137212923?utm_source=naturalbe&utm_medium=website&utm_campaign=retail&utm_content=menu_whatsapp" id="menuWhatsappLink" data-wa-content="menu_whatsapp" target="_blank" rel="noopener">Asesoría por WhatsApp</a>
+    </nav>
+  </div>
+
+  <main id="mainContent" class="ed-shell page-shell" style="padding-top:.75rem;">
+    <section class="ed-top">
+      <h1>Centro Editorial Natural Be</h1>
+      <p>Ideas, rutinas y tendencias para bienestar, belleza y nutrición diaria.</p>
+      <div class="ed-tabs">
+        <a class="ed-tab" href="#belleza">Belleza</a>
+        <a class="ed-tab" href="#fitness">Vida Fitness</a>
+        <a class="ed-tab" href="#bebidas">Bebidas saludables</a>
+        <a class="ed-tab" href="#salud">Salud</a>
+      </div>
+    </section>
+
+    <section class="ed-section" id="belleza">
+      <div class="ed-section-head">
+        <h2>Belleza</h2>
+        <a href="/blog.html">Ver todos</a>
+      </div>
+      <div class="ed-grid" id="edGridBelleza"></div>
+    </section>
+
+    <section class="ed-section" id="fitness">
+      <div class="ed-section-head">
+        <h2>Vida Fitness</h2>
+        <a href="/blog.html">Ver todos</a>
+      </div>
+      <div class="ed-grid" id="edGridFitness"></div>
+    </section>
+
+    <section class="ed-section" id="bebidas">
+      <div class="ed-section-head">
+        <h2>Bebidas Saludables</h2>
+        <a href="/blog.html">Ver todos</a>
+      </div>
+      <div class="ed-grid" id="edGridBebidas"></div>
+    </section>
+
+    <section class="ed-products" id="salud">
+      <h2>Conoce <span>Nuestros Productos</span></h2>
+      <div class="ed-mosaic">
+        <div class="ed-mosaic-col">
+          <a class="ed-tile" href="/categoria/suplementos"><img src="/static/img/editorial/mosaico-te.svg" alt="Té e infusiones"><span>Té e infusiones</span></a>
+          <a class="ed-tile" href="/categoria/suplementos"><img src="/static/img/editorial/mosaico-salud.svg" alt="Salud"><span>Salud</span></a>
+        </div>
+        <a class="ed-tile" href="/categoria/suplementos"><img src="/static/img/editorial/mosaico-despensa.svg" alt="Despensa"><span>Despensa</span></a>
+        <div class="ed-mosaic-col">
+          <a class="ed-tile" href="/categoria/suplementos"><img src="/static/img/editorial/mosaico-belleza.svg" alt="Belleza"><span>Belleza</span></a>
+          <a class="ed-tile" href="/categoria/suplementos"><img src="/static/img/editorial/mosaico-salud.svg" alt="Marcas del mundo"><span>Las mejores marcas para tu salud</span></a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <script src="/static/js/nav.js" defer></script>
+  <script>
+    (function () {
+      if (window.__NB_CART_TRIGGER_FALLBACK__) return;
+      window.__NB_CART_TRIGGER_FALLBACK__ = true;
+      document.addEventListener('click', function (event) {
+        var trigger = event.target && event.target.closest ? event.target.closest('[data-cart-trigger]') : null;
+        if (!trigger) return;
+        event.preventDefault();
+        if (typeof window.toggleCart === 'function') {
+          window.toggleCart();
+          return;
+        }
+        window.location.href = '/checkout.html';
+      }, true);
+    })();
+    (function () {
+      var forms = document.querySelectorAll('form[data-search-form]');
+      forms.forEach(function (form) {
+        form.addEventListener('submit', function (event) {
+          event.preventDefault();
+          var input = form.querySelector('input[type="search"]');
+          var term = input ? String(input.value || '').trim() : '';
+          if (!term) return;
+          window.location.href = '/categoria/suplementos?q=' + encodeURIComponent(term);
+        });
+      });
+    })();
+  </script>
+  <script>
+    (function() {
+      const IMAGE_POOL = {
+        belleza: [
+          '/static/img/editorial/belleza-lumina.svg',
+          '/static/img/editorial/cabello-ritual.svg',
+          '/static/img/editorial/velo-facial.svg',
+          '/static/img/editorial/acido-hialuronico.svg'
+        ],
+        fitness: [
+          '/static/img/editorial/vinagre-balsamico.svg',
+          '/static/img/editorial/vinagre-manzana.svg',
+          '/static/img/editorial/plantas-carminativas.svg',
+          '/static/img/editorial/vino-tinto.svg'
+        ],
+        bebidas: [
+          '/static/img/editorial/te-frio.svg',
+          '/static/img/editorial/clementina.svg',
+          '/static/img/editorial/vitamina-e.svg',
+          '/static/img/editorial/biotina-salud.svg'
+        ]
+      };
+
+      const KEYWORDS = {
+        belleza: ['belleza', 'piel', 'cabello', 'biotina', 'colageno', 'colágeno', 'unas'],
+        fitness: ['creatina', 'pre entreno', 'energia', 'energía', 'gym', 'gimnasio', 'rendimiento', 'omega'],
+        bebidas: ['te', 'té', 'bebida', 'vinagre', 'clementina', 'digest', 'probio', 'vitamina']
+      };
+
+      function normalize(value) {
+        return String(value || '')
+          .toLowerCase()
+          .normalize('NFD')
+          .replace(/[\u0300-\u036f]/g, '');
+      }
+
+      function classify(title) {
+        const text = normalize(title);
+        for (const key of Object.keys(KEYWORDS)) {
+          if (KEYWORDS[key].some((word) => text.includes(normalize(word)))) return key;
+        }
+        return 'fitness';
+      }
+
+      function cardHtml(item, index, sectionKey) {
+        const image = IMAGE_POOL[sectionKey][index % IMAGE_POOL[sectionKey].length];
+        return `
+          <a class="ed-card" href="${item.url}">
+            <div class="ed-media"><img src="${image}" alt="${item.title}"><span class="ed-badge">${item.badge}</span></div>
+            <div class="ed-content">
+              <h3>${item.title}</h3>
+              <div class="ed-meta"><span class="ed-avatar"></span>${item.meta}</div>
+            </div>
+          </a>
+        `;
+      }
+
+      function renderSection(targetId, items, sectionKey, fallback) {
+        const el = document.getElementById(targetId);
+        if (!el) return;
+        const source = items.length ? items : fallback;
+        el.innerHTML = source.map((item, index) => cardHtml(item, index, sectionKey)).join('');
+      }
+
+      async function loadRealBlogContent() {
+        const response = await fetch('/blog.html', { cache: 'no-store' });
+        if (!response.ok) throw new Error('No se pudo cargar blog.html');
+        const html = await response.text();
+        const doc = new DOMParser().parseFromString(html, 'text/html');
+        const links = Array.from(doc.querySelectorAll('section[aria-labelledby=\"blog-articulos-title\"] .category-tile'));
+        const items = links.map((a) => ({
+          title: (a.querySelector('strong')?.textContent || '').trim(),
+          meta: (a.querySelector('span')?.textContent || 'Lectura recomendada').trim(),
+          url: a.getAttribute('href') || '/blog.html'
+        })).filter((x) => x.title);
+
+        const grouped = { belleza: [], fitness: [], bebidas: [] };
+        items.forEach((item) => {
+          const key = classify(item.title);
+          if (grouped[key].length < 8) {
+            grouped[key].push({ ...item, badge: key === 'bebidas' ? 'Bebidas' : (key === 'belleza' ? 'Belleza' : 'Fitness') });
+          }
+        });
+        const pinnedArticles = [
+          {
+            url: '/l-carnitina-beneficios-guia-completa-colombia.html',
+            title: 'L-Carnitina: beneficios, usos y guía completa',
+            meta: 'Nueva guía recomendada'
+          },
+          {
+            url: '/vitamina-c-beneficios-guia-completa-colombia.html',
+            title: 'Vitamina C: beneficios, usos y guía completa',
+            meta: 'Nueva guía recomendada'
+          },
+          {
+            url: '/ajo-suplemento-natural-colombia.html',
+            title: 'Ajo: beneficios para corazón, defensas y bienestar',
+            meta: 'Nueva guía recomendada'
+          }
+        ];
+        pinnedArticles.forEach((article) => {
+          const exists = Object.values(grouped).some((section) => section.some((item) => item.url === article.url));
+          if (!exists) {
+            grouped.fitness.unshift({ ...article, badge: 'Fitness' });
+          }
+        });
+        return grouped;
+      }
+
+      const fallback = {
+        belleza: [
+          { title: 'Secretos para reducir los signos de la edad sin cirugía', meta: 'Lectura destacada', url: '/blog.html', badge: 'Belleza' },
+          { title: 'Mascarilla capilar de aceite de oliva para nutrir cabello', meta: 'Lectura destacada', url: '/blog.html', badge: 'Cabello' },
+          { title: '¿Conoces qué es un velo facial y cómo usarlo?', meta: 'Lectura destacada', url: '/blog.html', badge: 'Piel' },
+          { title: 'Ácido hialurónico: usos y beneficios', meta: 'Lectura destacada', url: '/blog.html', badge: 'Hidratación' }
+        ],
+        fitness: [
+          { title: 'Propiedades del vinagre balsámico para la salud', meta: 'Lectura destacada', url: '/blog.html', badge: 'Fitness' },
+          { title: '5 beneficios del vinagre de manzana', meta: 'Lectura destacada', url: '/blog.html', badge: 'Metabolismo' },
+          { title: 'Cómo elegir suplementos para energía', meta: 'Lectura destacada', url: '/blog.html', badge: 'Energía' },
+          { title: 'Pre entreno: guía práctica para rendimiento', meta: 'Lectura destacada', url: '/blog.html', badge: 'Rendimiento' }
+        ],
+        bebidas: [
+          { title: 'Conoce los principales tipos de té y sus propiedades', meta: 'Lectura destacada', url: '/blog.html', badge: 'Bebidas' },
+          { title: '¿Qué es la clementina y para qué sirve?', meta: 'Lectura destacada', url: '/blog.html', badge: 'Vitamina C' },
+          { title: 'Plantas digestivas para tu día a día', meta: 'Lectura destacada', url: '/blog.html', badge: 'Digestión' },
+          { title: 'Recetas funcionales para bienestar diario', meta: 'Lectura destacada', url: '/blog.html', badge: 'Recetas' }
+        ]
+      };
+
+      loadRealBlogContent()
+        .then((grouped) => {
+          renderSection('edGridBelleza', grouped.belleza.slice(0, 4), 'belleza', fallback.belleza);
+          renderSection('edGridFitness', grouped.fitness.slice(0, 4), 'fitness', fallback.fitness);
+          renderSection('edGridBebidas', grouped.bebidas.slice(0, 4), 'bebidas', fallback.bebidas);
+        })
+        .catch(() => {
+          renderSection('edGridBelleza', fallback.belleza, 'belleza', fallback.belleza);
+          renderSection('edGridFitness', fallback.fitness, 'fitness', fallback.fitness);
+          renderSection('edGridBebidas', fallback.bebidas, 'bebidas', fallback.bebidas);
+        });
+    })();
+  </script>
+</body>
+</html>

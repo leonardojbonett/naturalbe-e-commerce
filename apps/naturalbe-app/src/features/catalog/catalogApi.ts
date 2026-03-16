@@ -47,6 +47,7 @@ const remoteProductSchema = z.object({
 });
 
 let catalogCache: CatalogProduct[] | null = null;
+const prefetchedSlugs = new Set<string>();
 
 function parseNumeric(value: unknown): number | null {
   if (typeof value === "number" && Number.isFinite(value)) {
@@ -233,6 +234,10 @@ export async function fetchCatalogProducts(): Promise<CatalogProduct[]> {
     }
   }
 
+  if (!appEnv.allowMockCatalogFallback) {
+    throw new Error("No se pudo cargar el catalogo desde origenes reales.");
+  }
+
   catalogCache = mockCatalogProducts;
   return catalogCache;
 }
@@ -242,4 +247,20 @@ export async function fetchCatalogProductBySlug(
 ): Promise<CatalogProduct | null> {
   const products = await fetchCatalogProducts();
   return products.find((product) => product.slug === slug) ?? null;
+}
+
+export function prefetchCatalogProductBySlug(slug: string) {
+  if (prefetchedSlugs.has(slug)) {
+    return;
+  }
+
+  prefetchedSlugs.add(slug);
+  void fetchCatalogProductBySlug(slug).catch(() => {
+    prefetchedSlugs.delete(slug);
+  });
+}
+
+export function __resetCatalogCacheForTests() {
+  catalogCache = null;
+  prefetchedSlugs.clear();
 }

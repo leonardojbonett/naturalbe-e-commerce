@@ -204,7 +204,9 @@
     const engine = getSearchEngine();
     if (engine && typeof engine.getResultSet === 'function') {
       const resultSet = engine.getResultSet(normalizedQuery);
-      if (resultSet) {
+      // Si el índice aún no está hidratado puede devolver Set vacío; en ese caso
+      // hacemos fallback al índice local para no bloquear resultados válidos.
+      if (resultSet && resultSet.size > 0) {
         return resultSet.has(getProductId(product));
       }
     }

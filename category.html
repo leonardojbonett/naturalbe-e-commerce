@@ -1,90 +1,39 @@
 <!DOCTYPE html>
 <html lang="es-CO">
 <head>
-  <meta http-equiv="Content-Security-Policy" content="
-    default-src 'self';
-    script-src 'self' 'unsafe-inline' 'unsafe-eval'
-      https://www.googletagmanager.com
-      https://www.google-analytics.com
-      https://www.clarity.ms
-      https://scripts.clarity.ms
-      https://unpkg.com
-      https://checkout.wompi.co
-      https://production.wompi.co
-      https://connect.facebook.net
-      https://cdn.jsdelivr.net
-      https://cdn.userway.org
-      https://wa.me;
-    style-src 'self' 'unsafe-inline'
-      https://fonts.googleapis.com
-      https://cdn.jsdelivr.net
-      https://unpkg.com
-      https://cdn.userway.org;
-    img-src 'self' data: blob:
-      https://www.google-analytics.com
-      https://www.googletagmanager.com
-      https://www.google.com
-      https://www.google.com.co
-      https://*.clarity.ms
-      https://c.bing.com
-      https://connect.facebook.net
-      https://www.facebook.com
-      https://cdn.userway.org
-      https://funat.co
-      https://www.funat.co
-      https://nutramerican.com
-      https://www.nutramerican.com
-      https://product-images.farmatodo.com
-      https://www.farmatodo.com.co
-      https://optimumnutrition.com.co
-      https://www.optimumnutrition.com.co
-      https://ogmantra.co
-      https://www.ogmantra.co
-      https://productosprosacolombia.com
-      https://www.productosprosacolombia.com;
-    font-src 'self' data:
-      https://fonts.gstatic.com
-      https://cdn.userway.org;
-    connect-src 'self'
-      https://www.google-analytics.com
-      https://analytics.google.com
-      https://www.googletagmanager.com
-      https://stats.g.doubleclick.net
-      https://cdn.jsdelivr.net
-      https://*.clarity.ms
-      https://*.algolia.net
-      https://*.algolianet.com
-      https://insights.algolia.io
-      https://fonts.googleapis.com
-      https://fonts.gstatic.com
-      https://checkout.wompi.co
-      https://production.wompi.co
-      https://connect.facebook.net
-      https://www.facebook.com
-      https://graph.facebook.com
-      https://cdn.userway.org
-      https://api.userway.org;
-    frame-src 'self'
-      https://checkout.wompi.co
-      https://www.facebook.com
-      https://www.youtube.com
-      https://cdn.userway.org;
-    object-src 'none';
-    base-uri 'self';
-    form-action 'self' https://checkout.wompi.co https://wa.me;
-    upgrade-insecure-requests;
-  ">
   <meta name="referrer" content="strict-origin-when-cross-origin">
-  <!-- Google Tag Manager -->
-  <script>
-  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-M7MF395K');
-  </script>
-  <!-- End Google Tag Manager -->
+  <!-- Performance Optimizer (Interaction Trigger for GTM, Meta Pixel, etc.) -->
+  <script src="/static/js/performance-optimizer.js" defer></script>
+
+
   <meta charset="UTF-8">
+  <script>
+    (function () {
+      try {
+        var path = (window.location && window.location.pathname) || '';
+        var match = path.match(/^\/categoria\/([A-Za-z0-9-]+)\/?$/);
+        var slug = match && match[1] ? decodeURIComponent(match[1]).toLowerCase() : 'suplementos';
+        var canonicalHref = 'https://naturalbe.com.co/categoria/' + encodeURIComponent(slug);
+
+        var canonical = document.querySelector('link[rel="canonical"]');
+        if (!canonical) {
+          canonical = document.createElement('link');
+          canonical.setAttribute('rel', 'canonical');
+          canonical.setAttribute('id', 'plp-canonical-link');
+          document.head.appendChild(canonical);
+        }
+        canonical.setAttribute('href', canonicalHref);
+
+        var ogUrl = document.querySelector('meta[property="og:url"]');
+        if (!ogUrl) {
+          ogUrl = document.createElement('meta');
+          ogUrl.setAttribute('property', 'og:url');
+          document.head.appendChild(ogUrl);
+        }
+        ogUrl.setAttribute('content', canonicalHref);
+      } catch (_) {}
+    })();
+  </script>
   <meta name="ga4-id" content="G-DM18HLQ3R8">
   <meta name="meta-pixel-id" content="869358656017955">
   <meta name="p:domain_verify" content="1a26b1491f6ba22b614db7e51c555064">
@@ -104,7 +53,7 @@
   <meta property="og:type" content="website">
   <meta property="og:title" content="Natural Be | Catálogo de suplementos">
   <meta property="og:description" content="Explora el catálogo de suplementos Natural Be por objetivo, categoría o beneficio.">
-  <meta property="og:url" content="https://naturalbe.com.co/categoria/suplementos">
+  <meta property="og:url" content="">
   <meta property="og:image" content="https://naturalbe.com.co/static/img/og-naturalbe.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -115,28 +64,9 @@
   <meta name="twitter:title" content="Natural Be | Catálogo de suplementos">
   <meta name="twitter:description" content="Explora el catálogo de suplementos Natural Be por objetivo, categoría o beneficio.">
   <meta name="twitter:image" content="https://naturalbe.com.co/static/img/og-naturalbe.jpg">
-  <script type="text/javascript">
-    (function (c, l, a, r, i) {
-      c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments); };
-      var loaded = false;
-      function loadClarity() {
-        if (loaded) return;
-        loaded = true;
-        var t = l.createElement(r);
-        t.async = 1;
-        t.src = 'https://www.clarity.ms/tag/' + i + '?ref=bwt';
-        var y = l.getElementsByTagName(r)[0];
-        y.parentNode.insertBefore(t, y);
-      }
-      ['scroll', 'pointerdown', 'keydown', 'touchstart'].forEach(function (evt) {
-        c.addEventListener(evt, loadClarity, { once: true, passive: true });
-      });
-    })(window, document, 'clarity', 'script', 'vl54hiwglb');
-  </script>
-
   <title>Catálogo de Suplementos Naturales en Colombia | Natural Be</title>
   <meta name="description" content="Compra suplementos naturales en Colombia: colágeno, omega 3, vitaminas y minerales. Filtra por objetivo y marca. Envío 24-48h, pago seguro con Wompi.">
-  <link rel="canonical" href="https://naturalbe.com.co/categoria/suplementos">
+  <link rel="canonical" id="plp-canonical-link" href="">
   <link rel="alternate" hreflang="es-CO" href="https://naturalbe.com.co/categoria/suplementos">
   <link rel="alternate" hreflang="x-default" href="https://naturalbe.com.co/categoria/suplementos">
   <script type="application/ld+json">
@@ -208,8 +138,57 @@
     window.NB_VERSION = "2026-02-25-prosa-makeup";
     window.NB_DATA_VERSION = window.NB_VERSION;
   </script>
-  <link rel="preload" href="/static/css/main.min.css?v=2026-02-23-4" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="/static/css/main.min.css?v=2026-02-23-4"></noscript>
+  <link rel="preload" href="/static/css/main.min.css?v=2026-03-02-ih5" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="/static/css/main.min.css?v=2026-03-02-ih5"></noscript>
+  <style>
+    @media (max-width: 991px) {
+      .market-header__nav { display: none !important; }
+      .market-actions .market-action-link { display: none !important; }
+    }
+    .featured-links--catalog a {
+      color: #14532d;
+      font-weight: 500;
+    }
+    .featured-links--catalog a:hover,
+    .featured-links--catalog a:focus-visible {
+      color: #0f3f23;
+      text-decoration: underline;
+    }
+    @media (max-width: 640px) {
+      body.marketplace .product-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 8px !important;
+      }
+      body.marketplace .product-card { border-radius: 12px !important; }
+      body.marketplace .product-card__media {
+        min-height: 114px !important;
+      }
+      body.marketplace .product-card__body {
+        padding: 0.55rem !important;
+        gap: 0.4rem !important;
+      }
+      body.marketplace .product-card__title {
+        font-size: 0.82rem !important;
+        -webkit-line-clamp: 2 !important;
+      }
+      body.marketplace .product-card__desc { font-size: 0.78rem !important; -webkit-line-clamp: 2 !important; }
+      body.marketplace .product-card__price {
+        font-size: 0.84rem !important;
+      }
+      body.marketplace .product-card__actions .btn-primary,
+      body.marketplace .product-card__actions .btn-ghost,
+      body.marketplace .product-card__actions .btn-outline {
+        min-height: 38px !important;
+        font-size: 0.82rem !important;
+        padding: 0.55rem 0.5rem !important;
+      }
+    }
+    @media (max-width: 360px) {
+      body.marketplace .product-grid {
+        grid-template-columns: 1fr !important;
+      }
+    }
+  </style>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -245,6 +224,23 @@
     ]
   }
   </script>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '869358656017955');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=869358656017955&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
 </head>
 <body class="marketplace">
   <!-- Google Tag Manager (noscript) -->
@@ -255,7 +251,7 @@
 
   <div class="promo-bar" id="promoBar" aria-live="polite">
     <span class="promo-icon">●</span>
-    <span class="promo-message" id="promoMessage">Envíos 24-48h en Colombia · Envío gratis desde $100.000 · Pagos seguros con Wompi · Asesoría por WhatsApp</span>
+    <span class="promo-message" id="promoMessage">Envíos 24-48h en Colombia · Pago contraentrega en casi toda Colombia · Envío gratis desde $100.000 · Pagos seguros con Wompi · Asesoría por WhatsApp</span>
     <button class="promo-close" type="button" onclick="if(window.closePromoBar){closePromoBar()}else{var bar=this.closest('.promo-bar');if(bar){bar.style.display='none';}}" aria-label="Cerrar promoción">×</button>
   </div>
 
@@ -269,9 +265,9 @@
         <button id="menuToggle" class="hamburger-btn" type="button" aria-label="Abrir menú" aria-haspopup="dialog" aria-expanded="false" aria-controls="mobileMenu">Menú</button>
       </div>
 
-      <form class="market-search" data-search-form>
+      <form class="market-search" data-search-form action="/categoria/suplementos" method="get">
         <label class="sr-only" for="siteSearch">Buscar</label>
-        <input id="siteSearch" type="search" placeholder="Buscar suplementos, marcas o objetivos">
+        <input id="siteSearch" name="q" type="search" placeholder="Buscar suplementos, marcas o objetivos">
         <button type="submit" class="search-btn" aria-label="Buscar">
           <span class="sr-only">Buscar</span>
           <svg class="search-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
@@ -413,7 +409,7 @@
     <section class="page-shell" style="margin-top:0.75rem;">
       <p class="section-title" style="margin-bottom:0.35rem;">Productos destacados</p>
       <p class="section-subtitle">Rutas directas a productos populares del catálogo.</p>
-      <ul class="footer-links">
+      <ul class="footer-links featured-links--catalog">
         <li><a href="/producto/omega-3-6-9">Omega 3, 6, 9</a></li>
         <li><a href="/producto/xero-ft">Xero FT</a></li>
         <li><a href="/producto/cloruro-de-magnesio">Cloruro de Magnesio</a></li>
@@ -586,6 +582,9 @@
         <a class="category-tile" href="/categoria/minerales"><strong>Minerales</strong><span>Magnesio, zinc y más opciones.</span></a>
         <a class="category-tile" href="/categoria/colageno"><strong>Colágeno</strong><span>Piel, cabello y articulaciones.</span></a>
         <a class="category-tile" href="/como-tomar-probioticos-colombia.html"><strong>Cómo tomar probióticos</strong><span>Guía de uso y frecuencia recomendada.</span></a>
+        <a class="category-tile" href="/omega-3-6-9-beneficios-usos-guia-completa-colombia.html"><strong>Omega 3, 6 y 9: guía completa</strong><span>Beneficios, dosis y equilibrio de Omegas.</span></a>
+        <a class="category-tile" href="/green-tea-extract-beneficios-usos-guia-completa-colombia.html"><strong>Green Tea Extract: guía completa</strong><span>EGCG, dosis y seguridad del extracto.</span></a>
+        <a class="category-tile" href="/colostrum-beneficios-usos-guia-completa-colombia.html"><strong>Colostrum: guía completa</strong><span>Inmunidad, salud intestinal y uso diario.</span></a>
         <a class="category-tile" href="/que-es-un-suplemento-dietario-colombia.html"><strong>Qué es un suplemento dietario</strong><span>Conceptos clave antes de comprar.</span></a>
         <a class="category-tile" href="/categoria/suplementos?q=tienda%20naturista%20online%20colombia"><strong>Tienda naturista online</strong><span>Compra segura con envío nacional.</span></a>
         <a class="category-tile" href="/categoria/suplementos?q=comprar%20suplementos%20colombia"><strong>Comprar suplementos en Colombia</strong><span>Comparador rápido por objetivo.</span></a>
@@ -693,12 +692,12 @@
   <!-- Scripts Esenciales -->
   <script src="/static/js/nb-core.js?v=2026-02-14" defer></script>
   <script src="/static/js/promo.js" defer></script>
-  <script src="/static/js/schema-builder.js?v=2026-02-20" defer></script>
-  <script src="/static/js/marketplace.js?v=2026-02-14" defer></script>
-  <script src="/static/js/products-data.min.js?v=2026-02-14" defer></script>
-  <script src="/static/js/search-engine.js?v=2026-02-07" defer></script>
-  <script src="/static/js/cart.js?v=2026-02-07" defer></script>
-  <script src="/static/js/webp-support.js?v=2026-02-14" defer></script>
+  <script src="/static/js/schema-builder.js?v=2026-03-01-1" defer></script>
+  <script src="/static/js/marketplace.js?v=2026-03-02-ih1" defer></script>
+  <script src="/static/js/products-data.js?v=2026-03-02-4" defer></script>
+  <script src="/static/js/search-engine.js?v=2026-03-02-v4" defer></script>
+  <script src="/static/js/cart.js?v=2026-03-02-ih1" defer></script>
+  <script src="/static/js/webp-support.js?v=2026-03-02-ih1" defer></script>
   <script>
     (function () {
       var loaded = false;
@@ -706,7 +705,7 @@
         if (loaded) return;
         loaded = true;
         var s = document.createElement('script');
-        s.src = '/static/js/tracking.js?v=2026-02-16';
+        s.src = '/static/js/tracking.js?v=2026-03-04-clarity-silent';
         s.defer = true;
         document.head.appendChild(s);
       }
@@ -723,7 +722,7 @@
   <script>
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', function() {
-        navigator.serviceWorker.register('./sw.js')
+        navigator.serviceWorker.register('/sw.js')
           .then(function(registration) {
             registration.update();
           })
@@ -1067,6 +1066,81 @@
       'maquillaje',
       'nutricion', 'suplementos', 'suplementos-dietarios', 'botanitas', 'satibo'
     ]);
+    const priorityBrandKeys = ['healthy-america', 'millenium-natural-systems', 'botanitas', 'nutramerican'];
+    const dailyRandomTimezone = 'America/Bogota';
+
+    function getDailyBrandSeed() {
+      try {
+        return new Intl.DateTimeFormat('en-CA', { timeZone: dailyRandomTimezone }).format(new Date());
+      } catch (_) {
+        return new Date().toISOString().slice(0, 10);
+      }
+    }
+
+    function getStableRandomScore(product, seed) {
+      const source = `${seed}|${product.slug || ''}|${product.id || ''}|${product.nombre || ''}|${product.marca || ''}`;
+      let hash = 2166136261;
+      for (let index = 0; index < source.length; index += 1) {
+        hash ^= source.charCodeAt(index);
+        hash = Math.imul(hash, 16777619);
+      }
+      return hash >>> 0;
+    }
+
+    function getStableTextScore(value, seed) {
+      let hash = 2166136261;
+      const source = `${seed}|${value || ''}`;
+      for (let index = 0; index < source.length; index += 1) {
+        hash ^= source.charCodeAt(index);
+        hash = Math.imul(hash, 16777619);
+      }
+      return hash >>> 0;
+    }
+
+    function getPriorityBrandKey(brand) {
+      const normalized = normalizeText(brand || '');
+      if (normalized.includes('healthy america')) return 'healthy-america';
+      if (normalized.includes('millenium natural systems') || normalized.includes('millennium natural systems')) return 'millenium-natural-systems';
+      if (normalized.includes('botanitas')) return 'botanitas';
+      if (normalized.includes('nutramerican')) return 'nutramerican';
+      return null;
+    }
+
+    function sortFeaturedWithPriorityBrands(list) {
+      const prioritizedBuckets = new Map();
+      priorityBrandKeys.forEach((key) => prioritizedBuckets.set(key, []));
+      const others = [];
+      const dailySeed = getDailyBrandSeed();
+      for (const product of list) {
+        const priorityKey = getPriorityBrandKey(product.marca || '');
+        if (priorityKey) {
+          prioritizedBuckets.get(priorityKey).push(product);
+        } else {
+          others.push(product);
+        }
+      }
+
+      prioritizedBuckets.forEach((brandProducts) => {
+        brandProducts.sort((a, b) => getStableRandomScore(a, dailySeed) - getStableRandomScore(b, dailySeed));
+      });
+
+      const priorityOrder = [...priorityBrandKeys].sort(
+        (a, b) => getStableTextScore(a, dailySeed) - getStableTextScore(b, dailySeed)
+      );
+      const prioritized = [];
+      let hasPendingPriority = true;
+      while (hasPendingPriority) {
+        hasPendingPriority = false;
+        priorityOrder.forEach((key) => {
+          const bucket = prioritizedBuckets.get(key);
+          if (!bucket || bucket.length === 0) return;
+          hasPendingPriority = true;
+          prioritized.push(bucket.shift());
+        });
+      }
+
+      return [...prioritized, ...others];
+    }
 
     function toSeoSlug(value) {
       return normalizeText(value)
@@ -1224,7 +1298,9 @@
         case 'name':
           filtered.sort((a, b) => (a.nombre || '').localeCompare(b.nombre || ''));
           break;
+        case 'featured':
         default:
+          filtered = sortFeaturedWithPriorityBrands(filtered);
           break;
       }
 
@@ -1405,7 +1481,15 @@
         if (end < totalPages - 1) pages.push('ellipsis-end');
         if (end < totalPages) pages.push(totalPages);
       } else {
-        pages.push(page);
+        if (totalPages <= 6) {
+          for (let p = 1; p <= totalPages; p += 1) pages.push(p);
+        } else if (page <= 4) {
+          pages.push(1, 2, 3, 4, 'ellipsis-end', totalPages);
+        } else if (page >= totalPages - 3) {
+          pages.push(1, 'ellipsis-start', totalPages - 3, totalPages - 2, totalPages - 1, totalPages);
+        } else {
+          pages.push(1, 'ellipsis-start', page - 1, page, page + 1, 'ellipsis-end', totalPages);
+        }
       }
 
       const prevDisabled = page <= 1 ? 'disabled' : '';
@@ -1424,13 +1508,37 @@
         }
         const isActive = item === page ? 'is-active' : '';
         const ariaCurrent = item === page ? 'aria-current="page"' : '';
-        const label = isCompact ? `Página ${item}` : String(item);
+        const label = String(item);
         buttons.push(`<button class="pagination-btn ${isActive}" data-page="${item}" aria-label="Ir a la página ${item}" ${ariaCurrent}>${label}</button>`);
       });
 
       buttons.push(
         `<button class="pagination-btn" data-page="${page + 1}" ${nextDisabled} aria-label="Página siguiente" aria-disabled="${nextAria}">Siguiente</button>`
       );
+
+      if (isCompact && totalPages > 9) {
+        const jumpTargetsSet = new Set([1, totalPages]);
+        for (let p = 10; p <= Math.min(totalPages, 50); p += 10) jumpTargetsSet.add(p);
+        const currentDecade = Math.floor(page / 10) * 10;
+        [currentDecade - 10, currentDecade, currentDecade + 10].forEach((p) => {
+          if (p >= 1 && p <= totalPages) jumpTargetsSet.add(p);
+        });
+        const jumpTargets = Array.from(jumpTargetsSet).sort((a, b) => a - b);
+        const jumpButtons = jumpTargets
+          .map((target) => {
+            const active = target === page ? 'is-active' : '';
+            return `<button class="pagination-jump-btn ${active}" data-page="${target}" aria-label="Saltar a página ${target}">${target}</button>`;
+          })
+          .join('');
+        buttons.push(`<div class="pagination-jump" aria-label="Saltos rápidos">${jumpButtons}</div>`);
+        buttons.push(`
+          <div class="pagination-go" aria-label="Ir a una página específica">
+            <label class="pagination-go-label" for="paginationGoInput">Ir a</label>
+            <input id="paginationGoInput" class="pagination-go-input" type="number" inputmode="numeric" min="1" max="${totalPages}" value="${page}" aria-label="Número de página">
+            <button type="button" class="pagination-go-btn" data-go-page-btn="1">Ir</button>
+          </div>
+        `);
+      }
 
       paginationNav.innerHTML = buttons.join('');
       paginationNav.dataset.limit = String(limit);
@@ -1544,20 +1652,25 @@
         canonical.setAttribute('rel', 'canonical');
         document.head.appendChild(canonical);
       }
-      const canonicalParams = new URLSearchParams();
-      if (query) canonicalParams.set('q', query);
-      if (objective !== 'all') canonicalParams.set('objetivo', objective);
-      if (brand !== 'all') canonicalParams.set('brand', brand);
-      const canonicalQuery = canonicalParams.toString();
-      const canonicalPath = query
-        ? '/categoria/suplementos'
-        : (category !== 'all'
-          ? `/categoria/${encodeURIComponent(toSeoSlug(category))}`
-          : '/categoria/suplementos');
-      const canonicalHref = canonicalQuery
-        ? `${origin}${canonicalPath}?${canonicalQuery}`
-        : `${origin}${canonicalPath}`;
+      const hasFacet = Boolean(query) || objective !== 'all' || brand !== 'all';
+      const canonicalPath = (category !== 'all')
+        ? `/categoria/${encodeURIComponent(toSeoSlug(category))}`
+        : '/categoria/suplementos';
+      const canonicalHref = `${origin}${canonicalPath}`;
       canonical.setAttribute('href', canonicalHref);
+
+      let robots = document.querySelector('meta[name="robots"]');
+      if (!robots) {
+        robots = document.createElement('meta');
+        robots.setAttribute('name', 'robots');
+        document.head.appendChild(robots);
+      }
+      robots.setAttribute(
+        'content',
+        hasFacet
+          ? 'noindex,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1'
+          : 'index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1'
+      );
 
       let ogUrl = document.querySelector('meta[property="og:url"]');
       if (!ogUrl) {
@@ -1585,19 +1698,80 @@
       }
     }
 
+    function buildSchemaImage(product) {
+      const raw = String(product.imagen_principal_webp || product.imagen_principal || product.image || '').trim();
+      if (!raw) return 'https://naturalbe.com.co/static/img/og-naturalbe.jpg';
+      if (/^https?:\/\//i.test(raw)) return raw;
+      if (raw.startsWith('/')) return `https://naturalbe.com.co${raw}`;
+      return `https://naturalbe.com.co/${raw.replace(/^\.?\//, '')}`;
+    }
+
+    function getSchemaPriceValidUntil() {
+      const now = new Date();
+      const end = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth() + 1, 0));
+      return end.toISOString().slice(0, 10);
+    }
+
     function updateItemListSchema(list) {
       const existing = document.getElementById('categoryItemList');
       if (existing) existing.remove();
       if (!Array.isArray(list) || !list.length) return;
-      const items = list.slice(0, 20).map((product, index) => ({
-        "@type": "ListItem",
-        "position": index + 1,
-        "item": {
-          "@type": "Product",
-          "name": String(product.nombre || product.name || 'Producto'),
-          "url": buildItemUrl(product)
-        }
-      }));
+      const priceValidUntil = getSchemaPriceValidUntil();
+      const items = list
+        .filter((product) => Number(product.precio_oferta || product.precio || product.price || 0) > 0)
+        .slice(0, 20)
+        .map((product, index) => {
+          const priceValue = Number(product.precio_oferta || product.precio || product.price || 0);
+          const url = buildItemUrl(product);
+          return {
+            "@type": "ListItem",
+            "position": index + 1,
+            "item": {
+              "@type": "Product",
+              "name": String(product.nombre || product.name || 'Producto'),
+              "image": buildSchemaImage(product),
+              "description": String(product.descripcion_corta || product.description || product.nombre || product.name || 'Producto Natural Be'),
+              "sku": String(product.id || product.slug || ''),
+              "url": url,
+              "offers": {
+                "@type": "Offer",
+                "priceCurrency": "COP",
+                "price": priceValue,
+                "itemCondition": "https://schema.org/NewCondition",
+                "availability": product.disponible === false
+                  ? "https://schema.org/OutOfStock"
+                  : "https://schema.org/InStock",
+                "priceValidUntil": priceValidUntil,
+                "url": url,
+                "seller": {
+                  "@type": "Organization",
+                  "name": "Natural Be"
+                },
+                "shippingDetails": {
+                  "@type": "OfferShippingDetails",
+                  "shippingRate": {
+                    "@type": "MonetaryAmount",
+                    "currency": "COP",
+                    "value": 15000
+                  },
+                  "shippingDestination": {
+                    "@type": "DefinedRegion",
+                    "addressCountry": "CO"
+                  }
+                },
+                "hasMerchantReturnPolicy": {
+                  "@type": "MerchantReturnPolicy",
+                  "applicableCountry": "CO",
+                  "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+                  "returnFees": "https://schema.org/ReturnFeesCustomerResponsibility",
+                  "returnMethod": "https://schema.org/ReturnByMail",
+                  "merchantReturnDays": 5,
+                  "merchantReturnLink": "https://naturalbe.com.co/devoluciones"
+                }
+              }
+            }
+          };
+        });
       const schema = {
         "@context": "https://schema.org",
         "@type": "ItemList",
@@ -1874,11 +2048,19 @@
         const safeDesc = escapeHtml(product.descripcion_corta || product.description || '');
         const safeImg = escapeHtml(sanitizeUrl(img));
         const safeUrl = escapeHtml(sanitizeUrl(url));
+        const safeIdJs = JSON.stringify(String(product.id || product.slug || ''));
+        const safeNameJs = JSON.stringify(String(name || ''));
+        const safeImgJs = JSON.stringify(String(sanitizeUrl(img) || './static/img/placeholder.webp'));
         return `
           <article class="product-card">
-            <a class="product-card__media" href="${safeUrl}">
-              <img src="${safeImg}" alt="${safeName}" loading="lazy" width="320" height="220" onerror="this.onerror=null;this.src='./static/img/placeholder.webp';">
-            </a>
+            <div class="product-card__media-wrap">
+              <a class="product-card__media" href="${safeUrl}">
+                <img src="${safeImg}" alt="${safeName}" loading="lazy" width="320" height="220" onerror="this.onerror=null;this.src='./static/img/placeholder.webp';">
+              </a>
+              <div class="product-card__quick-add">
+                <button class="btn-primary" type="button" onclick="if(window.addToCart){addToCart(${safeIdJs}, ${safeNameJs}, ${price}, ${safeImgJs});}">Agregar al carrito</button>
+              </div>
+            </div>
             <div class="product-card__body">
               <h3 class="product-card__title">
                 <a href="${safeUrl}">${safeName}</a>
@@ -1890,6 +2072,9 @@
               </div>
               <div class="product-card__price">
                 <span>$${price.toLocaleString('es-CO')}</span>
+              </div>
+              <div class="product-card__actions product-card__actions--detail">
+                <a class="btn-ghost" href="${safeUrl}">Ver detalle</a>
               </div>
             </div>
           </article>
@@ -2102,9 +2287,35 @@
       if (paginationNav && !paginationNav.dataset.bound) {
         paginationNav.addEventListener('click', (event) => {
           const btn = event.target.closest('[data-page]');
-          if (!btn || btn.disabled) return;
-          const targetPage = Number(btn.getAttribute('data-page'));
-          if (!Number.isFinite(targetPage)) return;
+          if (btn && !btn.disabled) {
+            const targetPage = Number(btn.getAttribute('data-page'));
+            if (Number.isFinite(targetPage)) {
+              updateUrlParams({ page: targetPage }, { replace: false });
+              renderCategoryProducts(window.applyFilters(window.ALL_PRODUCTS || []));
+              scrollToGrid();
+            }
+            return;
+          }
+          const goBtn = event.target.closest('[data-go-page-btn]');
+          if (!goBtn) return;
+          const input = document.getElementById('paginationGoInput');
+          const totalPages = Number(paginationNav.dataset.totalPages || 1);
+          const rawValue = Number(input ? input.value : NaN);
+          if (!Number.isFinite(rawValue)) return;
+          const targetPage = Math.max(1, Math.min(totalPages, Math.floor(rawValue)));
+          updateUrlParams({ page: targetPage }, { replace: false });
+          renderCategoryProducts(window.applyFilters(window.ALL_PRODUCTS || []));
+          scrollToGrid();
+        });
+        paginationNav.addEventListener('keydown', (event) => {
+          if (event.key !== 'Enter') return;
+          const input = event.target.closest('.pagination-go-input');
+          if (!input) return;
+          event.preventDefault();
+          const totalPages = Number(paginationNav.dataset.totalPages || 1);
+          const rawValue = Number(input.value);
+          if (!Number.isFinite(rawValue)) return;
+          const targetPage = Math.max(1, Math.min(totalPages, Math.floor(rawValue)));
           updateUrlParams({ page: targetPage }, { replace: false });
           renderCategoryProducts(window.applyFilters(window.ALL_PRODUCTS || []));
           scrollToGrid();
@@ -2300,9 +2511,33 @@
     <!-- FIX DE BÚSQUEDA OPTIMIZADA -->
     <script src="/static/js/category-search-fix.js?v=2026-02-01" defer></script>
     
-  <script src="/static/js/site-pause.js" defer></script>
+  <script src="/static/js/site-pause.js?v=2026-03-02-1" defer></script>
+  <script>
+    (function () {
+      if (window.__NB_CART_TRIGGER_FALLBACK__) return;
+      window.__NB_CART_TRIGGER_FALLBACK__ = true;
+      document.addEventListener('click', function (event) {
+        var trigger = event.target && event.target.closest ? event.target.closest('[data-cart-trigger]') : null;
+        if (!trigger) return;
+        if (typeof window.toggleCart === 'function') {
+          event.preventDefault();
+          window.toggleCart();
+        }
+      }, true);
+    })();
+  </script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
 
 
 

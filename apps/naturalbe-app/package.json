@@ -11,14 +11,21 @@
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
     "test:watch": "vitest",
-    "instagram:sync": "node ./scripts/sync-instagram-feed.mjs"
+    "instagram:sync": "node ./scripts/sync-instagram-feed.mjs",
+    "order-api:dev": "node ./server/order-api.mjs",
+    "metrics:summary": "node ./scripts/metrics-summary.mjs",
+    "metrics:check": "node ./scripts/metrics-check.mjs",
+    "metrics:baseline": "node ./scripts/metrics-baseline.mjs",
+    "sitemap:app": "node ./scripts/generate-app-sitemap.mjs"
   },
   "dependencies": {
+    "@tanstack/react-virtual": "^3.13.19",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router-dom": "^6.30.1",
-    "zustand": "^5.0.8",
-    "zod": "^3.24.1"
+    "web-vitals": "^4.2.4",
+    "zod": "^3.24.1",
+    "zustand": "^5.0.8"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^6.6.3",

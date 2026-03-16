@@ -4,6 +4,18 @@
 (function() {
   'use strict';
 
+  function readNaturalBeCart() {
+    try {
+      const primary = localStorage.getItem('naturalbe_cart');
+      const legacy = localStorage.getItem('nb-cart');
+      const raw = primary || legacy || '[]';
+      const parsed = JSON.parse(raw);
+      return Array.isArray(parsed) ? parsed : [];
+    } catch (_) {
+      return [];
+    }
+  }
+
   // Configuración de servicios colombianos
   const colombianServices = {
     // Transportadoras colombianas
@@ -136,7 +148,8 @@
 
     // Información fiscal colombiana
     tax: {
-      iva: 0.19, // 19% IVA en Colombia
+      // P0: Desactivar tasa fija hasta validar por SKU/categoría con asesor tributario.
+      iva: 0,
       ivaExempt: ['medicamentos', 'alimentos básicos'],
       retencion: 0.025, // 2.5% retención en la fuente para proveedores
       ica: {
@@ -420,7 +433,7 @@
 
     // Obtener total del carrito
     getCartTotal() {
-      const cart = JSON.parse(localStorage.getItem('nb-cart') || '[]');
+      const cart = readNaturalBeCart();
       return cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
     }
 
@@ -654,7 +667,7 @@
 
     // Obtener total del carrito
     getCartTotal() {
-      const cart = JSON.parse(localStorage.getItem('nb-cart') || '[]');
+      const cart = readNaturalBeCart();
       return cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
     }
 
@@ -795,7 +808,7 @@
               <span id="tax-subtotal">$0</span>
             </div>
             <div class="tax-item">
-              <span>IVA (19%):</span>
+              <span>IVA:</span>
               <span id="tax-iva">$0</span>
             </div>
             <div class="tax-item">
@@ -815,7 +828,7 @@
 
     // Actualizar cálculo de impuestos
     updateTaxCalculation() {
-      const cart = JSON.parse(localStorage.getItem('nb-cart') || '[]');
+      const cart = readNaturalBeCart();
       const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
       const iva = Math.round(subtotal * colombianServices.tax.iva);
       const shipping = this.getShippingCost();
@@ -832,7 +845,7 @@
       const carrier = localStorage.getItem('nb-selected-carrier');
       if (carrier && window.colombianShipping) {
         const carrierData = colombianServices.shipping[carrier];
-        const cartTotal = JSON.parse(localStorage.getItem('nb-cart') || '[]').reduce((sum, item) => sum + (item.price * item.quantity), 0);
+        const cartTotal = readNaturalBeCart().reduce((sum, item) => sum + (item.price * item.quantity), 0);
         return window.colombianShipping.calculateShippingPrice(carrierData, cartTotal);
       }
       return 0;
@@ -848,7 +861,7 @@
           <div class="legal-notice">
             <h4>Información Legal</h4>
             <p>Todos nuestros productos cuentan con registro sanitario INVIMA.</p>
-            <p>Los precios incluyen IVA (19%) según normativa colombiana.</p>
+            <p>El IVA se calcula según la categoría tributaria aplicable al producto.</p>
             <p>Tiempos de entrega estimados para ciudades principales.</p>
             <p>Para más información, contáctanos en +57 313 721 2923.</p>
           </div>

@@ -1,0 +1,11 @@
+{
+  "generated_at": "2026-02-20T21:22:13.082100",
+  "index_id": "CC-MAIN-2026-04",
+  "domains": [
+    "iherb.com"
+  ],
+  "index_pages_per_domain": 1,
+  "fetch_pages_per_domain": 2,
+  "pages_analyzed_total": 0,
+  "output_dir": "reports\\commoncrawl-mvp-test\\20260220-212211"
+}

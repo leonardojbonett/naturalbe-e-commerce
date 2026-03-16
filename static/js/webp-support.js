@@ -71,7 +71,7 @@
     const description = product.descripcion_corta || product.description || "";
     
     // URLs optimizadas
-    const url = sanitizeUrl(product.url || (product.slug ? `/producto/${encodeURIComponent(product.slug)}` : `/product.html`));
+    const url = sanitizeUrl(product.url || (product.slug ? `/producto/${encodeURIComponent(product.slug)}` : `/categoria/suplementos`));
     const safeName = escapeHtml(product.nombre || product.name || "");
     const safeDesc = escapeHtml(description || "");
     const safeUrl = escapeHtml(url);
@@ -98,9 +98,14 @@
     
     return `
       <article class="product-card" itemscope itemtype="https://schema.org/Product">
-        <a class="product-card__media" href="${safeUrl}">
-          ${pictureHtml}
-        </a>
+        <div class="product-card__media-wrap">
+          <a class="product-card__media" href="${safeUrl}">
+            ${pictureHtml}
+          </a>
+          <div class="product-card__quick-add">
+            <button class="btn-primary" type="button" data-add-to-cart="1" data-product-id="${product.id}" data-product-name="${safeName}" data-product-price="${price}" data-product-image="${sanitizeUrl(imgSrc)}">Agregar al carrito</button>
+          </div>
+        </div>
         <div class="product-card__body">
           <div class="product-card__badges">
             ${badge ? `<span class="product-badge">${escapeHtml(badge)}</span>` : ''}
@@ -119,8 +124,7 @@
             ${originalPrice ? `<span class="price-old">${formatCOP(originalPrice)}</span>` : ""}
             ${discount ? `<span class="price-save">Ahorra ${discount}%</span>` : ""}
           </div>
-          <div class="product-card__actions">
-            <button class="btn-primary" type="button" data-add-to-cart="1" data-product-id="${product.id}" data-product-name="${safeName}" data-product-price="${price}" data-product-image="${sanitizeUrl(imgSrc)}">Agregar al carrito</button>
+          <div class="product-card__actions product-card__actions--detail">
             <a class="btn-ghost" href="${safeUrl}">Ver detalle</a>
           </div>
         </div>
@@ -191,3 +195,4 @@
   }
   
 })();
+

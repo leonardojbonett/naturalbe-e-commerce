@@ -10,15 +10,16 @@ const path = require('path');
 const ROOT = process.cwd();
 const SITE_URL = 'https://naturalbe.com.co';
 const OUTPUT_PATH = path.join(ROOT, 'sitemap.xml');
+const OUTPUT_PRODUCTS_PATH = path.join(ROOT, 'sitemap-products.xml');
 const PRODUCT_SOURCES = [
-  path.join(ROOT, 'static', 'data', 'productos.json'),
-  path.join(ROOT, 'apps', 'naturalbe-app', 'public', 'productos.json')
+  // Fuente única para el sitio estático (public_html)
+  path.join(ROOT, 'static', 'data', 'productos.json')
 ];
 
 const STATIC_URLS = [
   { loc: '/', changefreq: 'weekly', priority: '1.0' },
   { loc: '/blog', changefreq: 'weekly', priority: '0.7' },
-  { loc: '/catalogo/', changefreq: 'weekly', priority: '0.7' },
+  { loc: '/categoria/colageno', changefreq: 'weekly', priority: '0.8' },
   { loc: '/envios', changefreq: 'monthly', priority: '0.5' },
   { loc: '/devoluciones', changefreq: 'monthly', priority: '0.5' },
   { loc: '/terminos', changefreq: 'monthly', priority: '0.4' },
@@ -28,9 +29,13 @@ const STATIC_URLS = [
   { loc: '/categoria/vitaminas', changefreq: 'weekly', priority: '0.8' },
   { loc: '/categoria/minerales', changefreq: 'weekly', priority: '0.8' },
   { loc: '/categoria/omega', changefreq: 'weekly', priority: '0.8' },
+  { loc: '/categoria/nutricion', changefreq: 'weekly', priority: '0.8' },
   { loc: '/licencia-imagenes.html', changefreq: 'monthly', priority: '0.4' },
   { loc: '/omega-3-bogota.html', changefreq: 'monthly', priority: '0.8' },
   { loc: '/omega-3-colombia.html', changefreq: 'monthly', priority: '0.8' },
+  { loc: '/omega-3-6-9-beneficios-usos-guia-completa-colombia.html', changefreq: 'monthly', priority: '0.8' },
+  { loc: '/green-tea-extract-beneficios-usos-guia-completa-colombia.html', changefreq: 'monthly', priority: '0.8' },
+  { loc: '/colostrum-beneficios-usos-guia-completa-colombia.html', changefreq: 'monthly', priority: '0.8' },
   { loc: '/multivitaminicos.html', changefreq: 'weekly', priority: '0.8' },
   { loc: '/multivitaminico-para-hombre.html', changefreq: 'weekly', priority: '0.8' },
   { loc: '/vitamina-c-colombia.html', changefreq: 'weekly', priority: '0.8' },
@@ -169,8 +174,20 @@ function main() {
     ''
   ];
 
+  const productsXmlParts = [
+    '<?xml version="1.0" encoding="UTF-8"?>',
+    '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
+    ...productEntries.map((entry) =>
+      buildUrlEntry(entry.loc, entry.lastmod, entry.changefreq, entry.priority)
+    ),
+    '</urlset>',
+    ''
+  ];
+
   fs.writeFileSync(OUTPUT_PATH, xmlParts.join('\n'), 'utf8');
+  fs.writeFileSync(OUTPUT_PRODUCTS_PATH, productsXmlParts.join('\n'), 'utf8');
   console.log(`sitemap.xml generado: ${OUTPUT_PATH}`);
+  console.log(`sitemap-products.xml generado: ${OUTPUT_PRODUCTS_PATH}`);
   console.log(`Fuente catalogo: ${sourcePath}`);
   console.log(`Paginas estaticas: ${staticEntries.length}`);
   console.log(`Productos incluidos: ${productEntries.length}`);

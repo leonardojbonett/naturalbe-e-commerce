@@ -1,0 +1,877 @@
+{
+  "paragraphs": [
+    "Natural Be · Optimum Nutrition + Nutrición Clínica",
+    "Mejoras SEO nivel top · 25 productos (IDs 882–906)",
+    "ON deportivo (882–895)  ·  Ensure / Pediasure / Glucerna / Nestlé (896–906)"
+  ],
+  "table_count": 26,
+  "table_data": [
+    [
+      [
+        "Bugs críticos en este lote\nIDs 891–895: titulo_google con número de servicios duplicado en 5 productos: \"40 40 serv\", \"30 30 serv\", \"120 120 serv\", \"60 60 serv\", \"65 . 65 serv\". Bug del generador al parsear nombres con punto (65 serv.) o número.\nIDs 892, 893, 894: seo_title truncado a mitad de palabra: \"Aminoáci\", \"Cr\", \"Crea\".\nIDs 896, 898, 901, 903, 904, 906: seo_title con \"Polvo x\" o \"Lata x\" sin el gramaje — el generador cortó el número de gramos.\nIDs 896, 898, 905: tipo_producto_normalizado = \"Proteína Whey\" para productos Ensure (nutrición clínica médica). Categoría equivocada en google_product_category.\nIDs 897, 899, 900, 902, 903: descripcion_google decía \"Apoya tu nutrición deportiva y hábitos diarios\" — Pediasure es nutrición infantil, no deportiva.\nIDs con precio_oferta no mencionado en ningún campo: 886 (Casein −20%), 896 (Ensure Advance −20%), 897 (Pediasure −20%), 906 (Nutren −25%)."
+      ]
+    ],
+    [
+      [
+        "ID 882  ·  Gold Standard 100% Isolate 3 lb   Optimum Nutrition  ·  $385.000 COP",
+        "ID 882  ·  Gold Standard 100% Isolate 3 lb   Optimum Nutrition  ·  $385.000 COP"
+      ],
+      [
+        "ANTES",
+        "DESPUÉS"
+      ],
+      [
+        "seo_title\nOptimum Nutrition Gold Standard 100% Isolate 3 lb – Suplemento | Natural Be",
+        "seo_title\nGold Standard 100% Isolate ON 3 lb – Proteína Aislada | Natural Be"
+      ],
+      [
+        "seo_description_mejorado\nSuplemento para tu rutina diaria. Compra online y recibe en Colombia.",
+        "seo_description_mejorado\nGold Standard 100% Isolate ON 3 lb. Proteína Aislada pura sin grasa, sin carbs, sin lactosa. Formato intermedio de la línea. $385.000. Envío Colombia."
+      ],
+      [
+        "descripcion_corta\nGold Standard 100% Isolate 3 lb para complementar tu nutrición deportiva.",
+        "descripcion_corta\nGold Standard 100% Isolate ON 3 lb. Proteína Aislada en su forma más pura: sin grasa, sin carbohidratos, sin lactosa — para atletas exigentes que buscan el formato intermedio entre el de 3 y 5 lb."
+      ],
+      [
+        "tags\n\"optimum nutrition\", \"optimumnutrition\", \"nutricion deportiva\"",
+        "tags\n\"gold standard isolate 3lb\", \"proteina aislada on\", \"whey isolate 3lb\", \"sin lactosa proteina\", \"sin grasa proteina\", \"isolate on colombia\", \"optimum nutrition isolate\", \"proteina isolate colombia\""
+      ],
+      [
+        "beneficios_bullet\n— Plantilla genérica",
+        "beneficios_bullet\nGold Standard 100% Isolate ON en presentación de 3 lb.\nProteína Aislada sin grasa, sin carbohidratos, sin lactosa.\nMáxima concentración proteica por porción de la línea ON.\nEl formato ideal entre el acceso (prueba) y el maximalista (5 lb)."
+      ],
+      [
+        "⚠ item_group_id: \"optimum-nutrition-gold-standard-100-isolate-suplemento\" — agrupa con ID 878 (5 lb). Activar ambos para que Google Shopping los muestre como variantes de tamaño.",
+        "⚠ item_group_id: \"optimum-nutrition-gold-standard-100-isolate-suplemento\" — agrupa con ID 878 (5 lb). Activar ambos para que Google Shopping los muestre como variantes de tamaño."
+      ]
+    ],
+    [
+      [
+        "ID 883  ·  Serious Mass 6 lb   Optimum Nutrition  ·  $245.000 COP",
+        "ID 883  ·  Serious Mass 6 lb   Optimum Nutrition  ·  $245.000 COP"
+      ],
+      [
+        "ANTES",
+        "DESPUÉS"
+      ],
+      [
+        "seo_title\nOptimum Nutrition Serious Mass 6 lb – Suplemento | Natural Be",
+        "seo_title\nSerious Mass Optimum Nutrition 6 lb – Hipercalórico | Natural Be"
+      ],
+      [
+        "seo_description_mejorado\nSuplemento para tu rutina diaria. Compra online y recibe en Colombia.",
+        "seo_description_mejorado\nSerious Mass Optimum Nutrition 6 lb. El hipercalórico #1 del mundo en el formato familiar. Mejor precio por kg que el de 3 lb. $245.000. Envío Colombia."
+      ],
+      [
+        "descripcion_corta\nSerious Mass 6 lb para complementar tu nutrición deportiva.",
+        "descripcion_corta\nSerious Mass Optimum Nutrition 6 lb. El hipercalórico más reconocido mundialmente en su presentación familiar: mejor precio por kg, más servicios y la misma fórmula de alta densidad calórica."
+      ],
+      [
+        "tags\n\"optimum nutrition\", \"optimumnutrition\", \"nutricion deportiva\", \"hipercalorico\", \"aumento de masa\"",
+        "tags\n\"serious mass 6lb\", \"optimum nutrition 6lb\", \"hipercalorico on 6lb\", \"ganar peso muscular\", \"gainer 6lb colombia\", \"serious mass on\", \"aumento masa volume\", \"hipercalorico familiar\""
+      ],
+      [
+        "beneficios_bullet\n— Plantilla genérica",
+        "beneficios_bullet\nSerious Mass ON 6 lb — el formato familiar del hipercalórico #1.\nAlta densidad calórica con proteína + carbohidratos complejos.\nMejor precio por kg que la presentación de 3 lb.\nApoya el superávit calórico para ganar peso y masa muscular."
+      ],
+      [
+        "⚠ item_group_id: \"optimum-nutrition-serious-mass-suplemento\" — agrupa con ID 873 (3 lb) y 884 (12 lb). Los tres deben tener el mismo group ID para que Google Shopping los muestre como variantes.",
+        "⚠ item_group_id: \"optimum-nutrition-serious-mass-suplemento\" — agrupa con ID 873 (3 lb) y 884 (12 lb). Los tres deben tener el mismo group ID para que Google Shopping los muestre como variantes."
+      ]
+    ],
+    [
+      [
+        "ID 884  ·  Serious Mass 12 lb   Optimum Nutrition  ·  $410.000 COP",
+        "ID 884  ·  Serious Mass 12 lb   Optimum Nutrition  ·  $410.000 COP"
+      ],
+      [
+        "ANTES",
+        "DESPUÉS"
+      ],
+      [
+        "seo_title\nOptimum Nutrition Serious Mass 12 lb – Suplemento | Natural Be",
+        "seo_title\nSerious Mass Optimum Nutrition 12 lb – Tarro Grande Volume | Natural Be"
+      ],
+      [
+        "seo_description_mejorado\nSuplemento para tu rutina diaria. Compra online y recibe en Colombia.",
+        "seo_description_mejorado\nSerious Mass ON 12 lb. El mayor formato del hipercalórico #1. Mejor precio por kg de toda la línea Serious Mass. Para volumen serio. $410.000."
+      ],
+      [
+        "descripcion_corta\nSerious Mass 12 lb para complementar tu nutrición deportiva.",
+        "descripcion_corta\nSerious Mass Optimum Nutrition 12 lb — el formato máximo del hipercalórico más reconocido del mundo. El mejor precio por kg de la línea para atletas en ciclo de volumen intensivo."
+      ],
+      [
+        "tags\n\"optimum nutrition\", \"optimumnutrition\", \"nutricion deportiva\", \"hipercalorico\", \"aumento de masa\"",
+        "tags\n\"serious mass 12lb\", \"optimum nutrition 12lb\", \"hipercalorico max\", \"mejor precio kg gainer\", \"volumen intensivo\", \"serious mass tarro grande\", \"on 12lb colombia\", \"gainer 12lb\""
+      ],
+      [
+        "beneficios_bullet\n— Plantilla genérica",
+        "beneficios_bullet\nSerious Mass ON 12 lb — el formato máximo de la línea.\nEl mejor precio por kg de toda la familia Serious Mass.\nPara atletas en ciclo de volumen intensivo con alto consumo diario.\nAlta densidad calórica por porción: proteína + carbohidratos complejos."
+      ],
+      [
+        "⚠ Con $410.000 por 12 lb vs $245.000 por 6 lb, el precio por lb del de 12 lb es mejor — ese argumento debe estar visible en la descripción.",
+        "⚠ Con $410.000 por 12 lb vs $245.000 por 6 lb, el precio por lb del de 12 lb es mejor — ese argumento debe estar visible en la descripción."
+      ]
+    ],
+    [
+      [
+        "ID 885  ·  Gold Standard Whey Naturally Flavored 2 lb   Optimum Nutrition  ·  $225.600 COP",
+        "ID 885  ·  Gold Standard Whey Naturally Flavored 2 lb   Optimum Nutrition  ·  $225.600 COP"
+      ],
+      [
+        "ANTES",
+        "DESPUÉS"
+      ],
+      [
+        "seo_title\nOptimum Nutrition Gold Standard 100% Whey Naturally Flavored 2 | Natural Be",
+        "seo_title\nGold Standard Whey Natural Flavors ON 2 lb | Natural Be"
+      ],
+      [
+        "seo_description_mejorado\nProteína Whey para tu rutina diaria. Compra online y recibe en Colombia.",
+        "seo_description_mejorado\nGold Standard 100% Whey Naturally Flavored ON 2 lb. Sin colorantes ni saborizantes artificiales. La versión clean en formato de entrada. $225.600."
+      ],
+      [
+        "descripcion_corta\nGold Standard 100% Whey Naturally Flavored 2 lb para complementar tu nutrición deportiva.",
+        "descripcion_corta\nGold Standard 100% Whey Naturally Flavored ON 2 lb. La versión \"clean label\" del Gold Standard en formato de 2 lb — sin colorantes artificiales, saborizantes artificiales ni endulzantes sintéticos."
+      ],
+      [
+        "tags\n\"optimum nutrition\", \"optimumnutrition\", \"nutricion deportiva\", \"proteina\", \"whey\"",
+        "tags\n\"gold standard naturally 2lb\", \"on sin colorantes 2lb\", \"whey natural clean 2lb\", \"proteina sin artificiales\", \"gold standard natural flavors\", \"on naturally flavored\", \"proteina clean label\", \"whey natural colombia\""
+      ],
+      [
+        "beneficios_bullet\n— Plantilla genérica",
+        "beneficios_bullet\nGold Standard Naturally Flavored ON 2 lb — versión clean de la #1 del mundo.\nSin colorantes artificiales, saborizantes artificiales ni edulcorantes sintéticos.\nMisma calidad Gold Standard, etiqueta más limpia.\n2 lb: ideal para probar la versión natural antes del tarro grande."
+      ],
+      [
+        "⚠ seo_title truncado con \"Naturally Flavored 2\" a mitad. item_group_id: null — considerar agrupar con ID 879 (4.8 lb) bajo el mismo grupo Naturally Flavored.",
+        "⚠ seo_title truncado con \"Naturally Flavored 2\" a mitad. item_group_id: null — considerar agrupar con ID 879 (4.8 lb) bajo el mismo grupo Naturally Flavored."
+      ]
+    ],
+    [
+      [
+        "ID 886  ·  Gold Standard 100% Casein   Optimum Nutrition  ·  $377.000 COP",
+        "ID 886  ·  Gold Standard 100% Casein   Optimum Nutrition  ·  $377.000 COP"
+      ],
+      [
+        "ANTES",
+        "DESPUÉS"
+      ],
+      [
+        "seo_title\nOptimum Nutrition Gold Standard 100% Casein – Suplemento | Natural Be",
+        "seo_title\nGold Standard 100% Casein ON – Proteína Nocturna Oferta | Natural Be"
+      ],
+      [
+        "seo_description_mejorado\nSuplemento para tu rutina diaria. Compra online y recibe en Colombia.",
+        "seo_description_mejorado\nGold Standard 100% Casein Optimum Nutrition. Liberación lenta de proteína ideal para tomar antes de dormir. En oferta $300.000. Envío Colombia."
+      ],
+      [
+        "descripcion_corta\nGold Standard 100% Casein para complementar tu nutrición deportiva.",
+        "descripcion_corta\nGold Standard 100% Casein Optimum Nutrition. Proteína de caseína de liberación lenta: el estándar para tomar antes de dormir y alimentar los músculos durante 6–8 horas de recuperación nocturna."
+      ],
+      [
+        "tags\n\"optimum nutrition\", \"optimumnutrition\", \"nutricion deportiva\", \"caseina\"",
+        "tags\n\"gold standard casein on\", \"proteina caseina nocturna\", \"casein on oferta\", \"liberacion lenta proteina\", \"antes de dormir proteina\", \"recuperacion nocturna\", \"on caseina colombia\", \"caseina colombia\""
+      ],
+      [
+        "beneficios_bullet\n— Plantilla genérica",
+        "beneficios_bullet\nGold Standard 100% Casein ON — la caseína micelar de referencia mundial.\nLiberación lenta de aminoácidos durante 6–8 horas.\nIdeal para tomar antes de dormir y apoyar la recuperación nocturna.\nEn oferta especial: $300.000 (vs $377.000 precio regular)."
+      ],
+      [
+        "⚠ precio_oferta: $300.000 (descuento del 20%). Ninguno de los campos actuales mencionaba el precio de oferta ni el diferenciador principal (proteína nocturna). presentacion = null — registrar el gramaje real.",
+        "⚠ precio_oferta: $300.000 (descuento del 20%). Ninguno de los campos actuales mencionaba el precio de oferta ni el diferenciador principal (proteína nocturna). presentacion = null — registrar el gramaje real."
+      ]
+    ],
+    [
+      [
+        "ID 887  ·  Platinum Hydrowhey   Optimum Nutrition  ·  $450.000 COP",
+        "ID 887  ·  Platinum Hydrowhey   Optimum Nutrition  ·  $450.000 COP"
+      ],
+      [
+        "ANTES",
+        "DESPUÉS"
+      ],
+      [
+        "seo_title\nOptimum Nutrition Platinum Hydrowhey – Proteína Whey | Natural Be",
+        "seo_title\nPlatinum Hydrowhey ON – Whey Hidrolizado Premium | Natural Be"
+      ],
+      [
+        "seo_description_mejorado\nProteína Whey para tu rutina diaria. Compra online y recibe en Colombia.",
+        "seo_description_mejorado\nPlatinum Hydrowhey Optimum Nutrition. Proteína Whey Hidrolizada de ultra-rápida absorción — la más avanzada de ON para máxima recuperación. $450.000."
+      ],
+      [
+        "descripcion_corta\nPlatinum Hydrowhey para complementar tu nutrición deportiva.",
+        "descripcion_corta\nPlatinum Hydrowhey Optimum Nutrition. Proteína Whey Hidrolizada (pre-digerida): la de absorción más rápida de toda la línea ON, diseñada para atletas que exigen la mejor recuperación post-entrenamiento."
+      ],
+      [
+        "tags\n\"optimum nutrition\", \"optimumnutrition\", \"nutricion deportiva\", \"proteina\", \"whey\"",
+        "tags\n\"platinum hydrowhey on\", \"whey hidrolizado on\", \"proteina hidrolizada\", \"absorcion rapida maxima\", \"on platinum 450k\", \"whey pre-digerido\", \"proteina premium on\", \"hydrowhey colombia\""
+      ],
+      [
+        "beneficios_bullet\n— Plantilla genérica",
+        "beneficios_bullet\nPlatinum Hydrowhey ON: Whey Hidrolizado (pre-digerido).\nLa absorción más rápida de toda la línea Optimum Nutrition.\nDiseñado para atletas que exigen máxima recuperación y rendimiento.\nEl producto más premium de la gama proteica ON. $450.000."
+      ],
+      [
+        "⚠ Con $450.000 es el producto proteico más caro del catálogo ON. El diferenciador (hidrolizado = pre-digerido = ultra-rápida absorción) no aparecía en ningún campo. presentacion = null — registrar el gramaje.",
+        "⚠ Con $450.000 es el producto proteico más caro del catálogo ON. El diferenciador (hidrolizado = pre-digerido = ultra-rápida absorción) no aparecía en ningún campo. presentacion = null — registrar el gramaje."
+      ]
+    ],
+    [
+      [
+        "ID 888  ·  Gold Standard 100% Whey Protein 2 lb   Optimum Nutrition  ·  $231.000 COP",
+        "ID 888  ·  Gold Standard 100% Whey Protein 2 lb   Optimum Nutrition  ·  $231.000 COP"
+      ],
+      [
+        "ANTES",
+        "DESPUÉS"
+      ],
+      [
+        "seo_title\nOptimum Nutrition Gold Standard 100% Whey Protein 2 lb – Prote | Natural Be",
+        "seo_title\nGold Standard 100% Whey ON 2 lb – Proteína #1 Mundo | Natural Be"
+      ],
+      [
+        "seo_description_mejorado\nProteína Whey para tu rutina diaria. Compra online y recibe en Colombia.",
+        "seo_description_mejorado\nGold Standard 100% Whey Protein ON 2 lb. La proteína más vendida del mundo en el formato de entrada. Ideal para empezar. $231.000. Envío Colombia."
+      ],
+      [
+        "descripcion_corta\nGold Standard 100% Whey Protein 2 lb para complementar tu nutrición deportiva.",
+        "descripcion_corta\nGold Standard 100% Whey Protein Optimum Nutrition 2 lb. El formato de entrada a la proteína #1 del mundo — ideal para quienes empiezan a suplementarse o quieren rotar sabores frecuentemente."
+      ],
+      [
+        "tags\n\"optimum nutrition\", \"optimumnutrition\", \"nutricion deportiva\", \"proteina\", \"whey\"",
+        "tags\n\"gold standard whey 2lb\", \"on gold standard 2lb\", \"proteina whey 2lb entrada\", \"gold standard colombia\", \"on whey 2lb\", \"proteina principiante\", \"whey calidad on\", \"gold standard on colombia\""
+      ],
+      [
+        "beneficios_bullet\n— Plantilla genérica",
+        "beneficios_bullet\nGold Standard 100% Whey Protein ON 2 lb — la proteína #1 del mundo.\nEl formato de entrada ideal para empezar o probar nuevos sabores.\nWhey Isolate como primer ingrediente: alta pureza garantizada.\nMisma calidad que el de 4, 5 y 10 lb, en tamaño accesible."
+      ],
+      [
+        "⚠ seo_title truncado con \"Prote\". item_group_id: \"optimum-nutrition-gold-standard-100-whey-protein-proteina-whey\" — comparte grupo con IDs 874, 875, 880, 881 y 889. Verificar que todos lo tengan activo.",
+        "⚠ seo_title truncado con \"Prote\". item_group_id: \"optimum-nutrition-gold-standard-100-whey-protein-proteina-whey\" — comparte grupo con IDs 874, 875, 880, 881 y 889. Verificar que todos lo tengan activo."
+      ]
+    ],
+    [
+      [
+        "ID 889  ·  Gold Standard 100% Whey Protein 22 serv   Optimum Nutrition  ·  $187.000 COP",
+        "ID 889  ·  Gold Standard 100% Whey Protein 22 serv   Optimum Nutrition  ·  $187.000 COP"
+      ],
+      [
+        "ANTES",
+        "DESPUÉS"
+      ],
+      [
+        "seo_title\nOptimum Nutrition Gold Standard 100% Whey Protein 22 serv | Natural Be",
+        "seo_title\nGold Standard Whey ON 22 Servicios – Probar antes de 2 lb | Natural Be"
+      ],
+      [
+        "seo_description_mejorado\nProteína Whey para tu rutina diaria. Compra online y recibe en Colombia.",
+        "seo_description_mejorado\nGold Standard 100% Whey ON 22 servicios. Entre el tarro de 10 y el de 2 lb — ideal para 3 semanas de uso. $187.000. Envío Colombia."
+      ],
+      [
+        "descripcion_corta\nGold Standard 100% Whey Protein 22 serv para complementar tu nutrición deportiva.",
+        "descripcion_corta\nGold Standard 100% Whey Protein ON en 22 servicios. Formato intermedio entre los 10 servicios (prueba) y el tarro de 2 lb — perfecto para cambiar de sabor cada mes sin sobrestockeo."
+      ],
+      [
+        "tags\n\"optimum nutrition\", \"optimumnutrition\", \"nutricion deportiva\", \"proteina\", \"whey\"",
+        "tags\n\"gold standard whey 22 serv\", \"on 22 servicios\", \"proteina on mensual\", \"gold standard intermedio\", \"whey cambio sabor\", \"on colombia 22 serv\", \"proteina flexibilidad\", \"gold standard on colombia\""
+      ],
+      [
+        "beneficios_bullet\n— Plantilla genérica",
+        "beneficios_bullet\nGold Standard 100% Whey ON en 22 servicios — formato mensual flexible.\nIdeal para cambiar de sabor cada ciclo sin acumular stock.\nMisma calidad Gold Standard, con Whey Isolate como primer ingrediente.\nUbica entre el formato prueba (10 serv) y el tarro estándar (2 lb)."
+      ],
+      [
+        "⚠ BUG: titulo_google tenía \"Gold Standard 100% Whey Protein 22 22 serv\" (duplicado). item_group_id: null — activar el grupo Gold Standard Whey para agrupar con 874, 875, 880, 881, 888.",
+        "⚠ BUG: titulo_google tenía \"Gold Standard 100% Whey Protein 22 22 serv\" (duplicado). item_group_id: null — activar el grupo Gold Standard Whey para agrupar con 874, 875, 880, 881, 888."
+      ]
+    ],
+    [
+      [
+        "ID 890  ·  Essential Amino Energy Hydration 30 Serv   Optimum Nutrition  ·  $143.000 COP",
+        "ID 890  ·  Essential Amino Energy Hydration 30 Serv   Optimum Nutrition  ·  $143.000 COP"
+      ],
+      [
+        "ANTES",
+        "DESPUÉS"
+      ],
+      [
+        "seo_title\nOptimum Nutrition Essential Amino Energy Hydration 30 Serv | Natural Be",
+        "seo_title\nEssential Amino Energy + Hydration ON 30 Serv – Electrolitos | Natural Be"
+      ],
+      [
+        "seo_description_mejorado\nAminoácidos para tu rutina diaria. Compra online y recibe en Colombia.",
+        "seo_description_mejorado\nEssential Amino Energy + Hydration ON, 30 servicios. BCAA + Energía + Electrolitos en una sola fórmula para hidratación activa durante el entrenamiento. $143.000."
+      ],
+      [
+        "descripcion_corta\nEssential Amino Energy Hydration 30 Serv para complementar tu nutrición deportiva.",
+        "descripcion_corta\nEssential Amino Energy + Hydration ON en 30 servicios. La versión con electrolitos del AmiN.O. Energy: aminoácidos esenciales + cafeína natural + hidratación para entrenamientos exigentes."
+      ],
+      [
+        "tags\n\"optimum nutrition\", \"optimumnutrition\", \"nutricion deportiva\", \"aminoacidos\"",
+        "tags\n\"amino energy hydration on\", \"bcaa electrolitos on\", \"aminoacidos hidratacion\", \"amino energy 30 serv\", \"on hydration colombia\", \"electrolitos entrenamiento\", \"bcaa energia hidratacion\", \"amino energy on colombia\""
+      ],
+      [
+        "beneficios_bullet\n— Plantilla genérica",
+        "beneficios_bullet\nAmino Energy + Hydration ON: aminoácidos esenciales + electrolitos.\nLa versión con hidratación activa del clásico Amino Energy.\nCafeína natural para energía + electrolitos para reponer lo perdido.\n30 servicios: ideal para un mes de entrenamiento diario."
+      ],
+      [
+        "⚠ BUG: titulo_google tenía \"Essential Amino Energy Hydration 30 30 serv\" (duplicado). Diferenciador clave vs ID 892 (sin electrolitos): este tiene hidratación — no aparecía en ningún campo.",
+        "⚠ BUG: titulo_google tenía \"Essential Amino Energy Hydration 30 30 serv\" (duplicado). Diferenciador clave vs ID 892 (sin electrolitos): este tiene hidratación — no aparecía en ningún campo."
+      ]
+    ],
+    [
+      [
+        "ID 891  ·  Creatine+ 40 Serv   Optimum Nutrition  ·  $123.000 COP",
+        "ID 891  ·  Creatine+ 40 Serv   Optimum Nutrition  ·  $123.000 COP"
+      ],
+      [
+        "ANTES",
+        "DESPUÉS"
+      ],
+      [
+        "seo_title\nOptimum Nutrition Creatine+ 40 40 serv – Creatina | Natural Be",
+        "seo_title\nCreatine+ Optimum Nutrition 40 Serv – Creatina + Extras | Natural Be"
+      ],
+      [
+        "seo_description_mejorado\nCreatina para tu rutina diaria. Compra online y recibe en Colombia.",
+        "seo_description_mejorado\nCreatine+ ON, 40 servicios. Creatina Monohidrato + cofactores para mayor fuerza, potencia y recuperación. $123.000. Envío Colombia."
+      ],
+      [
+        "descripcion_corta\nCreatine+ 40 Serv para complementar tu nutrición deportiva.",
+        "descripcion_corta\nCreatine+ Optimum Nutrition en 40 servicios. Creatina Monohidrato enriquecida con cofactores que potencian la absorción y el rendimiento — diferente a la creatina micronizada pura (IDs 893/894)."
+      ],
+      [
+        "tags\n\"optimum nutrition\", \"optimumnutrition\", \"nutricion deportiva\", \"creatina\"",
+        "tags\n\"creatine plus on\", \"creatina mas cofactores\", \"on creatine+ 40 serv\", \"creatina fuerza potencia\", \"creatina con extras on\", \"rendimiento muscular\", \"on creatina colombia\", \"creatina on colombia\""
+      ],
+      [
+        "beneficios_bullet\n— Plantilla genérica",
+        "beneficios_bullet\nCreatine+ ON: Creatina Monohidrato + cofactores sinérgicos.\nLos cofactores mejoran la absorción y el rendimiento muscular.\n40 servicios: 40 días de ciclo de creatina completo.\nDiferente a la creatina micronizada pura — fórmula más completa."
+      ],
+      [
+        "⚠ BUG: seo_title y titulo_google tenían \"Creatine+ 40 40 serv\" (duplicado). Es importante diferenciar este producto de los IDs 893/894 (Micronized Powder pura): este tiene cofactores adicionales.",
+        "⚠ BUG: seo_title y titulo_google tenían \"Creatine+ 40 40 serv\" (duplicado). Es importante diferenciar este producto de los IDs 893/894 (Micronized Powder pura): este tiene cofactores adicionales."
+      ]
+    ],
+    [
+      [
+        "ID 892  ·  Essential Amino Energy 30 serv   Optimum Nutrition  ·  $138.000 COP",
+        "ID 892  ·  Essential Amino Energy 30 serv   Optimum Nutrition  ·  $138.000 COP"
+      ],
+      [
+        "ANTES",
+        "DESPUÉS"
+      ],
+      [
+        "seo_title\nOptimum Nutrition Essential Amino Energy 30 30 serv – Aminoáci | Natural Be",
+        "seo_title\nEssential Amino Energy ON 30 Serv – BCAA + Energía | Natural Be"
+      ],
+      [
+        "seo_description_mejorado\nAminoácidos para tu rutina diaria. Compra online y recibe en Colombia.",
+        "seo_description_mejorado\nEssential Amino Energy ON clásico, 30 servicios. BCAA + cafeína natural para energía intra y post-entrenamiento. El más popular de la gama. $138.000."
+      ],
+      [
+        "descripcion_corta\nEssential Amino Energy 30 serv para complementar tu nutrición deportiva.",
+        "descripcion_corta\nEssential Amino Energy ON clásico en 30 servicios. Aminoácidos esenciales + cafeína natural de fuentes como el té verde para energía activa antes y durante el entrenamiento."
+      ],
+      [
+        "tags\n\"optimum nutrition\", \"optimumnutrition\", \"nutricion deportiva\", \"aminoacidos\"",
+        "tags\n\"amino energy on clasico\", \"on amino energy 30 serv\", \"bcaa cafeina natural\", \"energia pre entrenamiento\", \"aminoacidos esenciales on\", \"amino energy colombia\", \"on aminoacidos\", \"essential amino on colombia\""
+      ],
+      [
+        "beneficios_bullet\n— Plantilla genérica",
+        "beneficios_bullet\nEssential Amino Energy ON clásico: aminoácidos + cafeína natural.\nEl producto de aminoácidos más popular de Optimum Nutrition.\nCafeína de fuentes naturales (té verde) para energía sin jitters.\nDiferente al + Hydration (ID 890): sin electrolitos, precio menor."
+      ],
+      [
+        "⚠ BUG: seo_title truncado con \"Aminoáci\" y titulo_google con \"30 30 serv\" (duplicado). La diferencia con ID 890 (Hydration) y ID 895 (65 serv) debe quedar clara en la descripción.",
+        "⚠ BUG: seo_title truncado con \"Aminoáci\" y titulo_google con \"30 30 serv\" (duplicado). La diferencia con ID 890 (Hydration) y ID 895 (65 serv) debe quedar clara en la descripción."
+      ]
+    ],
+    [
+      [
+        "ID 893  ·  Creatine Micronized Powder 120 Serv   Optimum Nutrition  ·  $185.000 COP",
+        "ID 893  ·  Creatine Micronized Powder 120 Serv   Optimum Nutrition  ·  $185.000 COP"
+      ],
+      [
+        "ANTES",
+        "DESPUÉS"
+      ],
+      [
+        "seo_title\nOptimum Nutrition Creatine Micronized Powder 120 120 serv – Cr | Natural Be",
+        "seo_title\nCreatine Micronized Powder ON 120 Serv – Mejor Precio/Serv | Natural Be"
+      ],
+      [
+        "seo_description_mejorado\nCreatina para tu rutina diaria. Compra online y recibe en Colombia.",
+        "seo_description_mejorado\nCreatine Micronized Powder ON 120 servicios. Creatina Monohidrato pura sin aditivos, el mayor frasco. Mejor precio por servicio. $185.000."
+      ],
+      [
+        "descripcion_corta\nCreatine Micronized Powder 120 Serv para complementar tu nutrición deportiva.",
+        "descripcion_corta\nCreatine Micronized Powder Optimum Nutrition en 120 servicios. Creatina Monohidrato micronizada al 100% sin aditivos — el mayor formato disponible y el mejor precio por servicio de la línea."
+      ],
+      [
+        "tags\n\"optimum nutrition\", \"optimumnutrition\", \"nutricion deportiva\", \"creatina\"",
+        "tags\n\"creatina micronizada on 120\", \"creatine powder on 120 serv\", \"mejor precio creatina\", \"creatina pura sin aditivos\", \"on creatine 120 serv\", \"creatina monohidrato pura\", \"creatina grande colombia\", \"on creatina colombia\""
+      ],
+      [
+        "beneficios_bullet\n— Plantilla genérica",
+        "beneficios_bullet\nCreatine Micronized Powder ON: creatina pura 100% sin aditivos.\n120 servicios — el mayor formato y el mejor precio por servicio.\nMicronizada para mayor solubilidad y mejor absorción.\nLa opción para atletas que usan creatina diariamente todo el año."
+      ],
+      [
+        "⚠ BUG: seo_title truncado con \"Cr\" y titulo_google con \"120 120 serv\" (duplicado). Diferenciar de ID 891 (Creatine+ con cofactores): este es creatina pura, sin aditivos, mejor precio.",
+        "⚠ BUG: seo_title truncado con \"Cr\" y titulo_google con \"120 120 serv\" (duplicado). Diferenciar de ID 891 (Creatine+ con cofactores): este es creatina pura, sin aditivos, mejor precio."
+      ]
+    ],
+    [
+      [
+        "ID 894  ·  Creatine Micronized Powder 60 Serv   Optimum Nutrition  ·  $128.000 COP",
+        "ID 894  ·  Creatine Micronized Powder 60 Serv   Optimum Nutrition  ·  $128.000 COP"
+      ],
+      [
+        "ANTES",
+        "DESPUÉS"
+      ],
+      [
+        "seo_title\nOptimum Nutrition Creatine Micronized Powder 60 60 serv – Crea | Natural Be",
+        "seo_title\nCreatine Micronized Powder ON 60 Serv – Para Empezar | Natural Be"
+      ],
+      [
+        "seo_description_mejorado\nCreatina para tu rutina diaria. Compra online y recibe en Colombia.",
+        "seo_description_mejorado\nCreatine Micronized Powder ON 60 servicios. Creatina Monohidrato pura para empezar un ciclo de 2 meses. $128.000. Envío Colombia."
+      ],
+      [
+        "descripcion_corta\nCreatine Micronized Powder 60 Serv para complementar tu nutrición deportiva.",
+        "descripcion_corta\nCreatine Micronized Powder Optimum Nutrition en 60 servicios. Creatina Monohidrato micronizada pura para un ciclo completo de 2 meses — el formato de entrada a la creatina ON."
+      ],
+      [
+        "tags\n\"optimum nutrition\", \"optimumnutrition\", \"nutricion deportiva\", \"creatina\"",
+        "tags\n\"creatina micronizada on 60\", \"creatine powder on 60 serv\", \"ciclo creatina 2 meses\", \"creatina entrada\", \"on creatine 60 serv\", \"creatina monohidrato\", \"creatina on colombia\", \"creatina principiante on\""
+      ],
+      [
+        "beneficios_bullet\n— Plantilla genérica",
+        "beneficios_bullet\nCreatine Micronized Powder ON 60 serv — el formato de entrada.\nCreatina Monohidrato pura micronizada: sin sabor, sin aditivos.\n60 servicios para un ciclo completo de 2 meses.\nPara quienes empiezan con creatina o prefieren el tarro más accesible."
+      ],
+      [
+        "⚠ BUG: seo_title truncado con \"Crea\" y titulo_google con \"60 60 serv\" (duplicado). Considera activar item_group_id junto con ID 893 (120 serv) para agruparlos como variantes de tamaño.",
+        "⚠ BUG: seo_title truncado con \"Crea\" y titulo_google con \"60 60 serv\" (duplicado). Considera activar item_group_id junto con ID 893 (120 serv) para agruparlos como variantes de tamaño."
+      ]
+    ],
+    [
+      [
+        "ID 895  ·  Essential Amino Energy 65 serv (Fruit Punch)   Optimum Nutrition  ·  $226.000 COP",
+        "ID 895  ·  Essential Amino Energy 65 serv (Fruit Punch)   Optimum Nutrition  ·  $226.000 COP"
+      ],
+      [
+        "ANTES",
+        "DESPUÉS"
+      ],
+      [
+        "seo_title\nOptimum Nutrition Essential Amino Energy 65 . 65 serv – Aminoá | Natural Be",
+        "seo_title\nEssential Amino Energy ON 65 Serv – Fruit Punch Tarro Grande | Natural Be"
+      ],
+      [
+        "seo_description_mejorado\nAminoácidos para tu rutina diaria. Compra online y recibe en Colombia.",
+        "seo_description_mejorado\nEssential Amino Energy ON Fruit Punch, 65 servicios. El tarro grande del clásico Amino Energy. Mejor precio por servicio. $226.000."
+      ],
+      [
+        "descripcion_corta\nEssential Amino Energy 65 serv. para complementar tu nutrición deportiva.",
+        "descripcion_corta\nEssential Amino Energy Optimum Nutrition en 65 servicios, sabor Fruit Punch. El tarro grande del clásico AmiN.O. Energy: mejor precio por servicio para quienes lo usan a diario."
+      ],
+      [
+        "tags\n\"optimum nutrition\", \"optimumnutrition\", \"nutricion deportiva\", \"aminoacidos\"",
+        "tags\n\"amino energy 65 serv on\", \"amino energy fruit punch\", \"on amino energy grande\", \"bcaa cafeina 65 serv\", \"mejor precio amino energy\", \"on amino energy colombia\", \"fruit punch aminoacidos\", \"amino energy tarro grande\""
+      ],
+      [
+        "beneficios_bullet\n— Plantilla genérica",
+        "beneficios_bullet\nEssential Amino Energy ON Fruit Punch — el tarro grande de la línea.\n65 servicios: el mejor precio por servicio vs el de 30 serv.\nMismo clásico AmiN.O. Energy con aminoácidos + cafeína natural.\nPara quienes usan Amino Energy diariamente y quieren reabastecerse menos."
+      ],
+      [
+        "⚠ BUG CRÍTICO: nombre tenía \"65 serv.\" con punto, generando \"65 . 65 serv\" en el seo_title. El slug indica \"fruit-punch\" pero el nombre no menciona el sabor — inconsistencia a corregir en el nombre del producto.",
+        "⚠ BUG CRÍTICO: nombre tenía \"65 serv.\" con punto, generando \"65 . 65 serv\" en el seo_title. El slug indica \"fruit-punch\" pero el nombre no menciona el sabor — inconsistencia a corregir en el nombre del producto."
+      ]
+    ],
+    [
+      [
+        "ID 896  ·  Ensure Advance Vainilla + HMB 850 gr   Ensure  ·  $156.950 COP",
+        "ID 896  ·  Ensure Advance Vainilla + HMB 850 gr   Ensure  ·  $156.950 COP"
+      ],
+      [
+        "ANTES",
+        "DESPUÉS"
+      ],
+      [
+        "seo_title\nEnsure Advance Vainilla Con Proteína + HMB Polvo x – Proteína | Natural Be",
+        "seo_title\nEnsure Advance Vainilla + HMB 850 gr – Nutrición Adulto | Natural Be"
+      ],
+      [
+        "seo_description_mejorado\nProteína Whey para tu rutina diaria. Compra online y recibe en Colombia.",
+        "seo_description_mejorado\nEnsure Advance Vainilla + HMB 850 gr. 28 vitaminas, HMB y proteína para recuperar masa muscular en adultos. Respaldo Abbott. En oferta $125.500."
+      ],
+      [
+        "descripcion_corta\nUn vaso de Ensure proporciona: 28 vitaminas y minerales esenciales, calcio y antioxidantes, vitamina D, omega-3 y es fuente de fibra FOS.",
+        "descripcion_corta\nEnsure Advance Vainilla + HMB Polvo 850 gr. Fórmula clínica Abbott con HMB, proteína y 28 vitaminas para recuperar masa muscular, fuerza y movilidad en adultos. Beneficios visibles desde la semana 4."
+      ],
+      [
+        "tags\n\"ensure\", \"nutricion\", \"suplemento nutricional\", \"vainilla\", \"nutricion adulta\"",
+        "tags\n\"ensure advance vainilla 850gr\", \"ensure hmb adultos\", \"recuperacion masa muscular\", \"ensure advance oferta\", \"nutricion medica adultos\", \"hmb proteina adulto\", \"ensure abbott colombia\", \"nutricion especializada adulto\""
+      ],
+      [
+        "beneficios_bullet\n— Plantilla genérica",
+        "beneficios_bullet\nEnsure Advance: HMB + proteína + 28 vitaminas y minerales por porción.\nClínicamente comprobado para recuperar masa muscular desde la semana 4.\nContiene calcio, vitamina D, omega-3 y fibra FOS en un solo vaso.\n850 gr de larga duración. En oferta: $125.500 (vs $156.950 regular)."
+      ],
+      [
+        "⚠ BUG CRÍTICO: tipo_producto_normalizado = \"Proteína Whey\" y google_product_category incluye \"Sports Nutrition Supplements\". Ensure es nutrición clínica médica para adultos, NO proteína deportiva. Corregir categorización.",
+        "⚠ BUG CRÍTICO: tipo_producto_normalizado = \"Proteína Whey\" y google_product_category incluye \"Sports Nutrition Supplements\". Ensure es nutrición clínica médica para adultos, NO proteína deportiva. Corregir categorización."
+      ],
+      [
+        "⚠ seo_title original truncado con \"x – Proteína\". El \"x\" sobrante en el nombre proviene de \"Polvo x 850 gr\" — el generador no procesó el número.",
+        "⚠ seo_title original truncado con \"x – Proteína\". El \"x\" sobrante en el nombre proviene de \"Polvo x 850 gr\" — el generador no procesó el número."
+      ]
+    ],
+    [
+      [
+        "ID 897  ·  Pediasure Peptigro Vainilla Polvo 850 gr   Pediasure  ·  $114.350 COP",
+        "ID 897  ·  Pediasure Peptigro Vainilla Polvo 850 gr   Pediasure  ·  $114.350 COP"
+      ],
+      [
+        "ANTES",
+        "DESPUÉS"
+      ],
+      [
+        "seo_title\nComplemento Nutricional Pediasure Peptigro Vainilla Polvo x 85 | Natural Be",
+        "seo_title\nPediasure Peptigro Vainilla 850 gr – Nutrición Infantil | Natural Be"
+      ],
+      [
+        "seo_description_mejorado\nSuplemento para tu rutina diaria. Compra online y recibe en Colombia.",
+        "seo_description_mejorado\nPediasure Peptigro Vainilla 850 gr. Marca #1 recomendada por pediatras. 5 grupos de nutrientes para crecer fuerte. En oferta $91.480. Envío Colombia."
+      ],
+      [
+        "descripcion_corta\nPara que tu hijo crezca es importante una adecuada alimentación, apóyalo con Pediasure y su fórmula especializada, ¡ayúdalo a alcanzar su máximo potencial!",
+        "descripcion_corta\nPediasure Peptigro Vainilla 850 gr. La marca #1 recomendada por pediatras en Colombia con más de 30 años de respaldo. Fórmula mejorada con arginina, vitamina K2 y fosfopéptidos de caseína."
+      ],
+      [
+        "tags\n\"pediasure\", \"nutricion\", \"suplemento nutricional\", \"vainilla\", \"ninos\", \"nutricion infantil\"",
+        "tags\n\"pediasure peptigro vainilla 850gr\", \"pediasure nutricion infantil\", \"pediasure marca 1 pediatras\", \"complemento nutricional ninos\", \"crecimiento infantil suplemento\", \"pediasure oferta 850gr\", \"nutricion niños colombia\", \"pediasure peptigro colombia\""
+      ],
+      [
+        "beneficios_bullet\n— Plantilla genérica",
+        "beneficios_bullet\nPediasure Peptigro: la marca #1 recomendada por pediatras en Colombia.\n5 grupos de nutrientes: proteínas, carbohidratos, vitaminas, minerales y lípidos.\nMejorado con arginina, vitamina K2 y fosfopéptidos de caseína.\n850 gr. En oferta: $91.480 (vs $114.350 regular). Resultados visibles en 8 semanas."
+      ],
+      [
+        "⚠ BUG: seo_title truncado con \"85\". titulo_google tenía \"Pediasure Complemento Nutricional Pediasure...\" con marca + nombre completo redundante.",
+        "⚠ BUG: seo_title truncado con \"85\". titulo_google tenía \"Pediasure Complemento Nutricional Pediasure...\" con marca + nombre completo redundante."
+      ],
+      [
+        "⚠ precio_oferta: $91.480. descripcion_google decía \"Apoya tu nutrición deportiva\" — Pediasure es para niños, NO nutrición deportiva.",
+        "⚠ precio_oferta: $91.480. descripcion_google decía \"Apoya tu nutrición deportiva\" — Pediasure es para niños, NO nutrición deportiva."
+      ]
+    ],
+    [
+      [
+        "ID 898  ·  Ensure Advance Vainilla + HMB 400 gr   Ensure  ·  $79.400 COP",
+        "ID 898  ·  Ensure Advance Vainilla + HMB 400 gr   Ensure  ·  $79.400 COP"
+      ],
+      [
+        "ANTES",
+        "DESPUÉS"
+      ],
+      [
+        "seo_title\nEnsure Advance Vainilla Con Proteína + HMB Polvo x – Proteína | Natural Be",
+        "seo_title\nEnsure Advance Vainilla + HMB 400 gr – Formato Prueba | Natural Be"
+      ],
+      [
+        "seo_description_mejorado\nProteína Whey para tu rutina diaria. Compra online y recibe en Colombia.",
+        "seo_description_mejorado\nEnsure Advance Vainilla + HMB 400 gr. Formato de prueba de la fórmula clínica Abbott para adultos. HMB + proteína + 28 vitaminas. $79.400. Envío Colombia."
+      ],
+      [
+        "descripcion_corta\nEnsure Advance contiene HMB, proteína y 28 vitaminas y minerales incluyendo calcio y vitamina D. Ayuda a recuperar la masa muscular perdida por una condición de salud.",
+        "descripcion_corta\nEnsure Advance Vainilla + HMB 400 gr. El formato de entrada a la fórmula clínica Abbott: HMB + proteína + 28 vitaminas para recuperar masa muscular, fuerza y movilidad en adultos."
+      ],
+      [
+        "tags\n\"ensure\", \"nutricion\", \"suplemento nutricional\", \"vainilla\", \"nutricion adulta\"",
+        "tags\n\"ensure advance vainilla 400gr\", \"ensure hmb 400gr entrada\", \"nutricion adultos recuperacion\", \"ensure advance prueba\", \"hmb proteina vitaminas\", \"ensure advance colombia\", \"nutricion medica adulto\", \"ensure advance 400gr\""
+      ],
+      [
+        "beneficios_bullet\n— Plantilla genérica",
+        "beneficios_bullet\nEnsure Advance Vainilla + HMB 400 gr — formato de entrada.\nHMB + proteína + 28 vitaminas para recuperar masa muscular y fuerza.\nMisma fórmula clínica Abbott que el tarro de 850 gr, menor costo inicial.\nRespaldo científico: beneficios visibles desde la semana 4."
+      ],
+      [
+        "⚠ BUG: tipo_producto_normalizado = \"Proteína Whey\" — Ensure es nutrición clínica médica, no proteína deportiva.",
+        "⚠ BUG: tipo_producto_normalizado = \"Proteína Whey\" — Ensure es nutrición clínica médica, no proteína deportiva."
+      ],
+      [
+        "⚠ item_group_id: \"ensure-advance-con-proteina-hmb-polvo-x-proteina-whey\" — el nombre del group ID tiene el bug del generador (\"polvo-x\" sin el gramaje). Considerar renombrar el group ID.",
+        "⚠ item_group_id: \"ensure-advance-con-proteina-hmb-polvo-x-proteina-whey\" — el nombre del group ID tiene el bug del generador (\"polvo-x\" sin el gramaje). Considerar renombrar el group ID."
+      ]
+    ],
+    [
+      [
+        "ID 899  ·  Pediasure Peptigro Vainilla Polvo 400 gr   Pediasure  ·  $59.550 COP",
+        "ID 899  ·  Pediasure Peptigro Vainilla Polvo 400 gr   Pediasure  ·  $59.550 COP"
+      ],
+      [
+        "ANTES",
+        "DESPUÉS"
+      ],
+      [
+        "seo_title\nComplemento Nutricional Pediasure Peptigro Vainilla Polvo x 40 | Natural Be",
+        "seo_title\nPediasure Peptigro Vainilla 400 gr – Complemento Infantil | Natural Be"
+      ],
+      [
+        "seo_description_mejorado\nSuplemento para tu rutina diaria. Compra online y recibe en Colombia.",
+        "seo_description_mejorado\nPediasure Peptigro Vainilla 400 gr. Marca #1 de pediatras. Formato accesible para conocer Pediasure. 5 grupos de nutrientes. $59.550. Envío Colombia."
+      ],
+      [
+        "descripcion_corta\nPara que tu hijo crezca es importante una adecuada alimentación, apóyalo con Pediasure y su fórmula especializada, ¡ayúdalo a alcanzar su máximo potencial!",
+        "descripcion_corta\nPediasure Peptigro Vainilla 400 gr. El formato accesible del complemento nutricional #1 recomendado por pediatras. Ideal para conocer Pediasure antes del tarro grande de 850 o 1600 gr."
+      ],
+      [
+        "tags\n\"pediasure\", \"nutricion\", \"suplemento nutricional\", \"vainilla\", \"ninos\", \"nutricion infantil\"",
+        "tags\n\"pediasure peptigro vainilla 400gr\", \"pediasure marca 1 pediatras\", \"nutricion infantil complemento\", \"pediasure entrada 400gr\", \"crecimiento niños suplemento\", \"pediasure vainilla colombia\", \"complemento nutricional ninos\", \"pediasure 400gr colombia\""
+      ],
+      [
+        "beneficios_bullet\n— Plantilla genérica",
+        "beneficios_bullet\nPediasure Peptigro Vainilla 400 gr — el formato accesible de la línea.\nMarca #1 recomendada por pediatras en Colombia.\n5 grupos de nutrientes para el crecimiento saludable de 2 a 13 años.\nIdeal para empezar con Pediasure antes del formato grande."
+      ],
+      [
+        "⚠ BUG: seo_title truncado con \"40\" y el numero 40 solo. Hay tres tamaños Pediasure Peptigro (399, 897, 902) — los tres deben tener item_group_id compartido para agruparse en Google Shopping.",
+        "⚠ BUG: seo_title truncado con \"40\" y el numero 40 solo. Hay tres tamaños Pediasure Peptigro (399, 897, 902) — los tres deben tener item_group_id compartido para agruparse en Google Shopping."
+      ]
+    ],
+    [
+      [
+        "ID 900  ·  Pediasure 10+ Vainilla Lata 850 gr   Pediasure  ·  $119.450 COP",
+        "ID 900  ·  Pediasure 10+ Vainilla Lata 850 gr   Pediasure  ·  $119.450 COP"
+      ],
+      [
+        "ANTES",
+        "DESPUÉS"
+      ],
+      [
+        "seo_title\nPediasure 10+ Sabor Vainilla Lata x – Suplemento | Natural Be",
+        "seo_title\nPediasure 10+ Vainilla 850 gr – Para Preadolescentes | Natural Be"
+      ],
+      [
+        "seo_description_mejorado\nSuplemento para tu rutina diaria. Compra online y recibe en Colombia.",
+        "seo_description_mejorado\nPediasure 10+ Vainilla 850 gr. Nutrición especializada para preadolescentes de 10 a 17 años en etapa de máximo desarrollo. $119.450. Envío Colombia."
+      ],
+      [
+        "descripcion_corta\nComplemento alimenticio para preadolescentes activos. Gran formato que asegura las vitaminas para su etapa de máximo desarrollo.",
+        "descripcion_corta\nPediasure 10+ Vainilla lata 850 gr. Nutrición especializada para preadolescentes de 10 a 17 años: proteína, vitaminas y minerales para la etapa de crecimiento intensivo y máximo desarrollo."
+      ],
+      [
+        "tags\n\"pediasure\", \"nutricion\", \"suplemento nutricional\", \"vainilla\", \"ninos\", \"nutricion infantil\"",
+        "tags\n\"pediasure 10 plus vainilla\", \"pediasure adolescentes\", \"nutricion preadolescentes\", \"pediasure 10 17 anos\", \"complemento nutricional teens\", \"pediasure 850gr adolescentes\", \"crecimiento adolescente colombia\", \"pediasure lata colombia\""
+      ],
+      [
+        "beneficios_bullet\n— Plantilla genérica",
+        "beneficios_bullet\nPediasure 10+: nutrición especializada para preadolescentes de 10-17 años.\nDiseñado para la etapa de crecimiento y máximo desarrollo.\nFórmula con proteína, vitaminas y minerales para el desarrollo físico.\n850 gr en lata — formato familiar para uso continuo."
+      ],
+      [
+        "⚠ BUG: seo_title tenía \"Lata x\" (gramaje cortado). Este es el único Pediasure para adolescentes (10-17 años) — se diferencia del Peptigro (2-13 años). Esa diferencia de edad debe aparecer en el título.",
+        "⚠ BUG: seo_title tenía \"Lata x\" (gramaje cortado). Este es el único Pediasure para adolescentes (10-17 años) — se diferencia del Peptigro (2-13 años). Esa diferencia de edad debe aparecer en el título."
+      ]
+    ],
+    [
+      [
+        "ID 901  ·  Ensure Vainilla Polvo 400 gr   Ensure  ·  $78.300 COP",
+        "ID 901  ·  Ensure Vainilla Polvo 400 gr   Ensure  ·  $78.300 COP"
+      ],
+      [
+        "ANTES",
+        "DESPUÉS"
+      ],
+      [
+        "seo_title\nEnsure Vainilla Polvo x – Suplemento | Natural Be",
+        "seo_title\nEnsure Vainilla Polvo 400 gr – Nutrición Adulto 28 Vitaminas | Natural Be"
+      ],
+      [
+        "seo_description_mejorado\nSuplemento para tu rutina diaria. Compra online y recibe en Colombia.",
+        "seo_description_mejorado\nEnsure Vainilla Polvo 400 gr. 28 vitaminas y minerales, proteína, omega-3 y fibra FOS para adultos que necesitan reforzar su nutrición. Abbott. $78.300."
+      ],
+      [
+        "descripcion_corta\nUn vaso de Ensure proporciona: 28 vitaminas y minerales esenciales, calcio y antioxidantes, vitamina D, omega-3 y es fuente de fibra FOS.",
+        "descripcion_corta\nEnsure Vainilla Polvo 400 gr. Fórmula clínica Abbott con 28 vitaminas y minerales, proteína, omega-3 y fibra FOS para adultos que requieren complemento nutricional. Sin grasas trans."
+      ],
+      [
+        "tags\n\"ensure\", \"nutricion\", \"suplemento nutricional\", \"vainilla\", \"nutricion adulta\"",
+        "tags\n\"ensure vainilla polvo 400gr\", \"ensure 28 vitaminas\", \"nutricion adultos ensure\", \"ensure abbott colombia\", \"complemento nutricional adulto\", \"ensure omega3 fibra\", \"ensure polvo 400gr\", \"ensure colombia\""
+      ],
+      [
+        "beneficios_bullet\n— Plantilla genérica",
+        "beneficios_bullet\nEnsure Vainilla Polvo 400 gr — la fórmula nutricional clásica Abbott.\n28 vitaminas y minerales, proteína, omega-3 y fibra FOS por vaso.\nFormulado para adultos que necesitan reforzar su estado nutricional.\nSin grasas trans. Respaldo científico Abbott."
+      ],
+      [
+        "⚠ BUG: seo_title y titulo_google tenían \"Ensure Vainilla Polvo x\" (el \"x 400 gr\" estaba incompleto/truncado). La diferencia entre Ensure básico (901) y Ensure Advance (896/898) es que Advance tiene HMB y es para recuperación de masa muscular.",
+        "⚠ BUG: seo_title y titulo_google tenían \"Ensure Vainilla Polvo x\" (el \"x 400 gr\" estaba incompleto/truncado). La diferencia entre Ensure básico (901) y Ensure Advance (896/898) es que Advance tiene HMB y es para recuperación de masa muscular."
+      ]
+    ],
+    [
+      [
+        "ID 902  ·  Pediasure Peptigro Vainilla Polvo 1600 gr   Pediasure  ·  $196.450 COP",
+        "ID 902  ·  Pediasure Peptigro Vainilla Polvo 1600 gr   Pediasure  ·  $196.450 COP"
+      ],
+      [
+        "ANTES",
+        "DESPUÉS"
+      ],
+      [
+        "seo_title\nComplemento Nutricional Pediasure Peptigro Vainilla Polvo x 16 | Natural Be",
+        "seo_title\nPediasure Peptigro Vainilla 1600 gr – Tarro Grande Familiar | Natural Be"
+      ],
+      [
+        "seo_description_mejorado\nSuplemento para tu rutina diaria. Compra online y recibe en Colombia.",
+        "seo_description_mejorado\nPediasure Peptigro Vainilla 1600 gr. El mayor formato de la línea: mejor precio por kg para niños que usan Pediasure con regularidad. $196.450. Envío Colombia."
+      ],
+      [
+        "descripcion_corta\nPara que tu hijo crezca es importante una adecuada alimentación, apóyalo con Pediasure y su fórmula especializada, ¡ayúdalo a alcanzar su máximo potencial!",
+        "descripcion_corta\nPediasure Peptigro Vainilla 1600 gr. El tarro familiar más grande de la línea: el mejor precio por kg de los formatos Peptigro para niños de 2 a 13 años que toman Pediasure a diario."
+      ],
+      [
+        "tags\n\"pediasure\", \"nutricion\", \"suplemento nutricional\", \"vainilla\", \"ninos\", \"nutricion infantil\"",
+        "tags\n\"pediasure peptigro 1600gr\", \"pediasure tarro grande familiar\", \"mejor precio pediasure kg\", \"pediasure 1.6kg colombia\", \"complemento infantil familiar\", \"pediasure uso diario niños\", \"pediasure 1600gr vainilla\", \"nutricion infantil familiar\""
+      ],
+      [
+        "beneficios_bullet\n— Plantilla genérica",
+        "beneficios_bullet\nPediasure Peptigro Vainilla 1600 gr — el mayor formato de la línea.\nEl mejor precio por kg de la familia Peptigro (vs 400g y 850g).\nMisma fórmula clínica para niños de 2 a 13 años.\nPara familias que usan Pediasure a diario y prefieren menos reposiciones."
+      ],
+      [
+        "⚠ BUG: seo_title truncado con \"16\". item_group_id activo — el grupo incluye los tres formatos Peptigro (897, 899, 902). Verificar que los tres lo tengan para activar el carrusel de variantes en Google Shopping.",
+        "⚠ BUG: seo_title truncado con \"16\". item_group_id activo — el grupo incluye los tres formatos Peptigro (897, 899, 902). Verificar que los tres lo tengan para activar el carrusel de variantes en Google Shopping."
+      ]
+    ],
+    [
+      [
+        "ID 903  ·  Pediasure Peptigro Fresa Lata 400 gr   Pediasure  ·  $59.550 COP",
+        "ID 903  ·  Pediasure Peptigro Fresa Lata 400 gr   Pediasure  ·  $59.550 COP"
+      ],
+      [
+        "ANTES",
+        "DESPUÉS"
+      ],
+      [
+        "seo_title\nPediasure Peptigro Fresa Lata x – Suplemento | Natural Be",
+        "seo_title\nPediasure Peptigro Fresa 400 gr – Sabor Favorito Niños | Natural Be"
+      ],
+      [
+        "seo_description_mejorado\nSuplemento para tu rutina diaria. Compra online y recibe en Colombia.",
+        "seo_description_mejorado\nPediasure Peptigro Fresa Lata 400 gr. El sabor fresa: favorito de los niños que rechazan el vainilla. Misma fórmula clínica. $59.550. Envío Colombia."
+      ],
+      [
+        "descripcion_corta\nNutrición avanzada que apoya el crecimiento de los niños. Vitaminas y proteínas en un batido con un rico sabor a fresa.",
+        "descripcion_corta\nPediasure Peptigro Fresa Lata 400 gr. El sabor fresa del complemento nutricional #1 de pediatras — para niños que prefieren alternativas al vainilla. Misma fórmula Peptigro con arginina y vitamina K2."
+      ],
+      [
+        "tags\n\"pediasure\", \"nutricion\", \"suplemento nutricional\", \"fresa\", \"ninos\", \"nutricion infantil\"",
+        "tags\n\"pediasure peptigro fresa\", \"pediasure sabor fresa\", \"pediasure fresa 400gr\", \"nutricion infantil fresa\", \"pediasure alternativa sabor\", \"pediasure fresa colombia\", \"complemento ninos fresa\", \"peptigro fresa colombia\""
+      ],
+      [
+        "beneficios_bullet\n— Plantilla genérica",
+        "beneficios_bullet\nPediasure Peptigro Fresa 400 gr — el sabor fresa de la línea Peptigro.\nIdeal para niños que prefieren fresa sobre vainilla.\nMisma fórmula clínica con arginina, vitamina K2 y fosfopéptidos.\nMarca #1 recomendada por pediatras en Colombia."
+      ],
+      [
+        "⚠ BUG: seo_title tenía \"Lata x\" (gramaje cortado). El sabor fresa es el diferenciador vs los otros Peptigro (todos vainilla) — ese argumento no aparecía en ningún campo.",
+        "⚠ BUG: seo_title tenía \"Lata x\" (gramaje cortado). El sabor fresa es el diferenciador vs los otros Peptigro (todos vainilla) — ese argumento no aparecía en ningún campo."
+      ]
+    ],
+    [
+      [
+        "ID 904  ·  Glucerna Vainilla Polvo 400 gr   Glucerna  ·  $88.400 COP",
+        "ID 904  ·  Glucerna Vainilla Polvo 400 gr   Glucerna  ·  $88.400 COP"
+      ],
+      [
+        "ANTES",
+        "DESPUÉS"
+      ],
+      [
+        "seo_title\nGlucerna Vainilla Polvo x – Suplemento | Natural Be",
+        "seo_title\nGlucerna Vainilla Polvo 400 gr – Nutrición para Diabetes | Natural Be"
+      ],
+      [
+        "seo_description_mejorado\nSuplemento para tu rutina diaria. Compra online y recibe en Colombia.",
+        "seo_description_mejorado\nGlucerna Vainilla 400 gr. Fórmula clínica Abbott para personas con diabetes o hiperglucemia. Estabiliza el azúcar en 4 semanas. $88.400. Envío Colombia."
+      ],
+      [
+        "descripcion_corta\n¡Controla tus niveles de azúcar! Glucerna ayuda a estabilizar los niveles de azúcar desde el primer día gracias a su doble método de acción.",
+        "descripcion_corta\nGlucerna Vainilla Polvo 400 gr. Nutrición especializada Abbott para personas con diabetes tipo 2 o hiperglucemia: bajo índice glucémico, carbohidratos de digestión lenta y m-inositol para estabilizar el azúcar en 4 semanas."
+      ],
+      [
+        "tags\n\"glucerna\", \"nutricion\", \"suplemento nutricional\", \"vainilla\", \"control glucosa\", \"nutricion especializada\"",
+        "tags\n\"glucerna vainilla 400gr\", \"glucerna diabetes abbott\", \"control glucosa nutricion\", \"hiperglicemia dieta\", \"bajo indice glucemico polvo\", \"glucerna abbott colombia\", \"nutricion especializada diabetes\", \"glucerna colombia\""
+      ],
+      [
+        "beneficios_bullet\n— Plantilla genérica",
+        "beneficios_bullet\nGlucerna Abbott: nutrición especializada para diabetes tipo 2 e hiperglucemia.\nBajo índice glucémico + carbohidratos de digestión lenta que evitan picos de azúcar.\n28 vitaminas y minerales + m-inositol para el control glucémico.\nClínicamente comprobado: estabiliza el azúcar en 4 semanas. $88.400."
+      ],
+      [
+        "⚠ BUG: seo_title tenía \"Polvo x\" (gramaje truncado). El diferenciador de Glucerna (diabetes/control glucémico) es el más importante de todos los productos médicos del catálogo y no aparecía en ningún campo visible.",
+        "⚠ BUG: seo_title tenía \"Polvo x\" (gramaje truncado). El diferenciador de Glucerna (diabetes/control glucémico) es el más importante de todos los productos médicos del catálogo y no aparecía en ningún campo visible."
+      ]
+    ],
+    [
+      [
+        "ID 905  ·  Ensure Advance Chocolate + HMB 400 gr   Ensure  ·  $79.400 COP",
+        "ID 905  ·  Ensure Advance Chocolate + HMB 400 gr   Ensure  ·  $79.400 COP"
+      ],
+      [
+        "ANTES",
+        "DESPUÉS"
+      ],
+      [
+        "seo_title\nEnsure Advance Chocolate Con Proteína + HMB Polvo x – Proteína | Natural Be",
+        "seo_title\nEnsure Advance Chocolate + HMB 400 gr – Nutrición Adulto | Natural Be"
+      ],
+      [
+        "seo_description_mejorado\nProteína Whey para tu rutina diaria. Compra online y recibe en Colombia.",
+        "seo_description_mejorado\nEnsure Advance Chocolate + HMB 400 gr. El sabor chocolate de la fórmula clínica Abbott para recuperación muscular en adultos. HMB + proteína + 28 vitaminas. $79.400."
+      ],
+      [
+        "descripcion_corta\nEnsure Advance contiene HMB, proteína y 28 vitaminas y minerales incluyendo calcio y vitamina D. Ayuda a recuperar la masa muscular perdida por una condición de salud.",
+        "descripcion_corta\nEnsure Advance Chocolate + HMB 400 gr. El sabor chocolate de Ensure Advance: fórmula clínica Abbott para adultos que prefieren chocolate sobre vainilla, con la misma potencia de HMB para recuperar masa muscular."
+      ],
+      [
+        "tags\n\"ensure\", \"nutricion\", \"suplemento nutricional\", \"chocolate\", \"nutricion adulta\"",
+        "tags\n\"ensure advance chocolate 400gr\", \"ensure hmb chocolate\", \"nutricion adultos chocolate\", \"ensure advance sabor chocolate\", \"hmb proteina chocolate\", \"ensure advance colombia chocolate\", \"recuperacion muscular adulto\", \"ensure chocolate colombia\""
+      ],
+      [
+        "beneficios_bullet\n— Plantilla genérica",
+        "beneficios_bullet\nEnsure Advance Chocolate + HMB 400 gr — el sabor chocolate de la línea.\nPara adultos que prefieren chocolate sobre vainilla (misma fórmula).\nHMB + proteína + 28 vitaminas para recuperar masa muscular.\nRespaldo científico Abbott. Beneficios visibles desde la semana 4."
+      ],
+      [
+        "⚠ BUG: tipo_producto_normalizado = \"Proteína Whey\" — Ensure es nutrición clínica médica. item_group_id agrupa con 896 (Vainilla 850g) y 898 (Vainilla 400g). El sabor es el único diferenciador — debe estar visible.",
+        "⚠ BUG: tipo_producto_normalizado = \"Proteína Whey\" — Ensure es nutrición clínica médica. item_group_id agrupa con 896 (Vainilla 850g) y 898 (Vainilla 400g). El sabor es el único diferenciador — debe estar visible."
+      ]
+    ],
+    [
+      [
+        "ID 906  ·  Nutren Senior Nestlé Vainilla 370 gr   Nestlé  ·  $74.550 COP",
+        "ID 906  ·  Nutren Senior Nestlé Vainilla 370 gr   Nestlé  ·  $74.550 COP"
+      ],
+      [
+        "ANTES",
+        "DESPUÉS"
+      ],
+      [
+        "seo_title\nNestlé Alimento En Polvo Nutren Senior Nestle Sabor A Vainilla | Natural Be",
+        "seo_title\nNutren Senior Nestlé Vainilla 370 gr – Adulto Mayor | Natural Be"
+      ],
+      [
+        "seo_description_mejorado\nSuplemento para tu rutina diaria. Compra online y recibe en Colombia.",
+        "seo_description_mejorado\nNutren Senior Nestlé Vainilla 370 gr. Nutrición equilibrada para adultos mayores: músculos, huesos, energía e inmunidad. En oferta $55.912. Envío Colombia."
+      ],
+      [
+        "descripcion_corta\nNutrición equilibrada para la vitalidad del adulto mayor. Aporta proteínas y minerales que ayudan a mantener un estilo de vida activo y sano.",
+        "descripcion_corta\nNutren Senior Nestlé Vainilla 370 gr. Fórmula equilibrada para adultos mayores: proteína para mantener músculos, calcio para huesos, vitaminas para energía e inmunidad, y fibra para la digestión."
+      ],
+      [
+        "tags\n\"nestlé\", \"nutricion\", \"suplemento nutricional\", \"vainilla\", \"adulto mayor\", \"nestle\", \"nutricion adulta\"",
+        "tags\n\"nutren senior nestle\", \"nutricion adulto mayor\", \"nestle adulto mayor polvo\", \"proteina huesos adulto mayor\", \"vitaminas energia adulto\", \"nutren senior colombia\", \"complemento nutricional seniors\", \"nestle nutricion adulto\""
+      ],
+      [
+        "beneficios_bullet\n— Plantilla genérica",
+        "beneficios_bullet\nNutren Senior Nestlé Vainilla 370 gr — nutrición para adultos mayores.\nProteína para mantener la masa muscular y la independencia funcional.\nCalcio + vitaminas para huesos fuertes y energía diaria.\nEn oferta especial: $55.912 (vs $74.550 precio regular). 10 porciones."
+      ],
+      [
+        "⚠ precio_oferta: $55.912 (descuento 25%). BUG: titulo_google tenía \"Alimento En Polvo Nutren Senior Nestle...\" con nombre completo redundante después de la marca. La diferencia vs Ensure y Pediasure es que Nutren Senior es específicamente para adultos mayores (≥60 años).",
+        "⚠ precio_oferta: $55.912 (descuento 25%). BUG: titulo_google tenía \"Alimento En Polvo Nutren Senior Nestle...\" con nombre completo redundante después de la marca. La diferencia vs Ensure y Pediasure es que Nutren Senior es específicamente para adultos mayores (≥60 años)."
+      ]
+    ]
+  ]
+}

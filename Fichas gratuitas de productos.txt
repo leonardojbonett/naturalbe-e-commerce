@@ -1,0 +1,1067 @@
+Fichas gratuitas de productos
+Sus productos pueden mostrarse de forma gratuita en muchas áreas de Google, como la Búsqueda y Maps, entre otras. Una forma específica de mostrar sus productos sin coste es mediante una ficha gratuita, que incluye información detallada sobre sus productos para que los compradores puedan consultarla. Si sus productos cumplen los requisitos para aparecer en fichas gratuitas, pueden mostrarse en distintas partes de Google, como la Búsqueda, Imágenes, Lens, YouTube, Gemini, la pestaña Shopping y el módulo de productos del Perfil de Empresa.
+
+Las fichas gratuitas son una forma ideal de atraer tráfico a su tienda online y de promocionar su empresa sin pagar por la publicidad.
+
+Secciones de esta página:
+Cómo funciona
+Requisitos
+Recomendaciones
+Añadir los detalles de los productos
+Proporcionar los atributos de producto obligatorios
+Hacer un seguimiento de los resultados
+Métodos de marketing en los que aparecen fichas gratuitas
+Cómo funciona
+Con las fichas gratuitas, los productos que vende pueden aparecer sin coste en la Búsqueda de Google, Google Maps, Gemini, YouTube, la pestaña Shopping, Google Imágenes y Google Lens. Estas fichas facilitan que sus páginas de producto se muestren en los resultados de búsqueda, no en otras páginas como páginas principales, de políticas de envío y devoluciones, o de categorías de producto.
+
+En la mayoría de los casos, la función de fichas gratuitas está activada de forma predeterminada. Puede consultar y cambiar su estado en la página Fichas gratuitas de Merchant Center. Las fichas gratuitas muestran tanto productos online como en tienda. Puede modificar este ajuste en la pestaña Fichas gratuitas, pero debe tener acceso de administrador.
+
+Si es una MCA de mercado, puede activar las fichas gratuitas de todas sus subcuentas desde la pestaña Fichas gratuitas. Los cambios que haga se aplicarán en todas las subcuentas. Sin embargo, si el ajuste se modifica en una subcuenta concreta, este tendrá prioridad sobre el que se haya definido en la MCA de mercado.
+
+Nota: El estado que se muestra en la página Fichas gratuitas controla el permiso para mostrar productos de forma gratuita en Google, pero no podemos garantizar que se vayan a mostrar a los clientes. Nos basamos en los datos que nos facilita para relacionar sus productos con las búsquedas que hacen los clientes.
+Requisitos
+Requisitos
+Cumpla las políticas para mostrar productos de forma gratuita en Google.
+Añada la información sobre la política de devoluciones en su sitio web para que se muestren datos sobre las devoluciones junto a sus productos. La política de devoluciones puede influir en que un cliente decida comprar uno de sus productos o no.
+Le recomendamos que añada su política de devoluciones en Merchant Center.
+Configure las opciones de envío o añada los gastos de envío a los datos de producto mediante el atributo de envío [shipping]. De este modo, los clientes podrán acceder a información importante sobre el envío de los productos que les interese comprar.
+Nota: Debe configurar las opciones de envío o añadir los gastos de envío mediante el atributo de envío [shipping] en los siguientes países: Alemania, Australia, Austria, Bélgica, Brasil, Canadá, Chequia, Corea del Sur, Dinamarca, Eslovaquia, España, Estados Unidos, Finlandia, Francia, Grecia, Hungría, India, Irlanda, Israel, Italia, Japón, Noruega, Nueva Zelanda, Países Bajos, Polonia, Portugal, Reino Unido, Rumanía, Suecia y Suiza.
+Recomendaciones
+Es importante que mantenga su cuenta de Merchant Center actualizada y que proporcione información de alta calidad para que los clientes tengan una experiencia positiva, ya que estos factores pueden influir en que sus productos se muestren de forma gratuita en Google o no.
+
+El factor más importante de una ficha gratuita es que muestre contenido de alta calidad que resulte valioso para su audiencia. Por lo tanto, cree contenido que sea informativo, atractivo y relevante para su audiencia.
+Utilice palabras clave y frases relevantes en todo su contenido para aumentar las probabilidades de aparecer en los resultados de búsqueda. Siga nuestras directrices de SEO para mejorar la visibilidad de su sitio web en Google y ofrecer una experiencia óptima a los clientes.
+Si trabaja con una plataforma de terceros para mostrar, promocionar o vender sus productos en Google, vincule su cuenta de Merchant Center con dicha plataforma de terceros.
+Vincule su cuenta de Merchant Center con su Perfil de Empresa, si procede.
+Utilice los mismos datos de producto en Merchant Center y en su tienda online para que los clientes vean la misma información (por ejemplo, los precios) en ambos sitios.
+Nota: No podemos garantizar que sus productos se vayan a mostrar en Google, ya que nos basamos en los datos que nos facilita para relacionar los productos con las búsquedas que hacen los clientes.
+Añadir los detalles de los productos
+Cuentas nuevas
+Al crear una cuenta de Merchant Center, las fichas gratuitas estarán habilitadas de forma predeterminada. Consulte más abajo la sección sobre cómo proporcionar los atributos de producto obligatorios.
+
+Cuentas ya creadas
+Si ya tiene una cuenta de Merchant Center con datos de producto subidos, es posible que ya esté mostrando productos de forma gratuita en Google. Para comprobarlo, vaya a la página Fichas gratuitas de Merchant Center siguiendo estos pasos:
+
+En su cuenta de Merchant Center, vaya a la sección "Método de marketing" y haga clic en Fichas gratuitas en el menú de navegación de la izquierda.
+Consulte cuál es su estado.
+Partners
+Si creó su cuenta a través de un partner, sus datos de producto se añadieron a Merchant Center mediante la API Content. Para hacer cualquier modificación en los datos de producto, debe ponerse en contacto con su partner o hacerlo a través del portal de este.
+
+Otras formas en las que se usan los detalles de los productos al mostrar productos de forma gratuita en Google
+Aunque desactive una ficha gratuita, puede que sigamos mostrando la siguiente información en Google:
+
+Contenido de su tienda online: los productos y sus detalles correspondientes que se hayan rastreado en su tienda online pueden aparecer en Google. Esto puede ocurrir aunque la información no se haya marcado con schema.org ni se haya añadido a Merchant Center. El objetivo es que los clientes puedan ver una gran variedad de productos de un amplio grupo de comercios cuando busquen información en Google. Puede controlar cómo se muestran sus productos y dejar de mostrarlos en cualquier momento implementando controles de rastreo e indexación.
+Contenido de Merchant Center: tal como se indica en los términos del servicio de Merchant Center, es posible que sigamos utilizando y mostrando determinados productos y los detalles correspondientes que añada (como los títulos y las imágenes).
+Proporcionar los atributos de producto obligatorios
+Nos basamos en los detalles de los productos que añade mediante los siguientes atributos para mostrar sus productos de forma gratuita en Google. Puede consultar la pestaña "Requiere atención" de la página "Productos" de Merchant Center para comprobar si hay algún problema con los detalles de los productos que añada. Consulte más información sobre la especificación de datos de producto.
+
+Nota: Si utiliza el marcado de datos estructurados en su tienda online, haga clic en cada atributo de la tabla de abajo para ver el nombre del atributo de schema.org correspondiente. Si tiene algún problema, consulte los errores que aparecen en Search Console para comprobar si ha añadido las etiquetas correctamente.
+Es obligatorio incluir la mayoría de los atributos que se indican a continuación para poder mostrar sus productos de forma gratuita en Google:
+
+Atributo	Otros datos
+ID [id]	
+Obligatorio
+
+Para todos los productos.
+Título [title]	
+Obligatorio
+
+Para todos los productos.
+Enlace [link]	
+Obligatorio
+
+Para todos los productos.
+Enlace de imagen [image_link]	
+Obligatorio
+
+Para todos los productos.
+
+Compruebe que la imagen sea lo suficientemente grande y que no incluya contenido promocional para evitar que se rechace.
+
+Precio [price]	
+Obligatorio
+
+Para todos los productos.
+
+Si incluye precios específicos en el atributo de precio, cualquier bajada de precio basada en la media del historial de precios de su producto podría aparecer en sus fichas. Consulte más información sobre el atributo de precio [price].
+
+Descripción [description]	
+Obligatorio
+
+Para todos los productos.
+Disponibilidad [availability]	
+Obligatorio
+
+Para todos los productos.
+Estado [condition]	
+Obligatorio
+
+Para todos los productos usados o reacondicionados
+Marca [brand]	
+Obligatorio
+
+Para cada producto asociado claramente a una marca o un fabricante
+GTIN [gtin]	
+Obligatorio
+
+Para todos los productos que tengan un GTIN asignado por el fabricante.
+
+Haga coincidir la información de sus productos con las consultas más relevantes. Consulte más información sobre los identificadores únicos de producto.
+
+MPN [mpn]	
+Obligatorio
+
+Para todos los productos sin GTIN.
+
+Haga coincidir la información de sus productos con las consultas más relevantes. Consulte más información sobre los identificadores únicos de producto.
+Multipack [multipack]	
+Obligatorio
+
+Si el producto es un multipack.
+
+Indique si el producto se compone de varios productos idénticos agrupados en uno solo (por ejemplo, "10 pares de calcetines de algodón blancos").
+
+Lote [is_bundle]	
+Obligatorio
+
+Si el producto es un lote.
+Color [color]	
+Obligatorio
+
+Para la categoría Ropa y accesorios
+
+Envíe el color principal de su producto. Si el producto está disponible en varios colores, utilice el atributo de ID de grupo de artículos [item_group_id] para indicar cada una de esas variantes.
+Talla [size]	
+Obligatorio
+
+Para la categoría Ropa y accesorios
+
+Especifique la talla estándar de su producto. Si el producto está disponible en varias tallas, utilice el atributo de ID de grupo de artículos [item_group_id] para indicar cada una de esas variantes.
+Edad [age_group]	
+Obligatorio
+
+Para la categoría Ropa y accesorios
+
+Indique para qué grupo demográfico está diseñado su producto. Este atributo se utiliza junto con el de sexo [gender] para que los clientes puedan ver la información correcta sobre la talla.
+Sexo [gender]	
+Obligatorio
+
+Para la categoría Ropa y accesorios
+
+Especifique el sexo para el que está diseñado su producto. En caso de que no esté especificado, envíe el valor "unisex". Utilizamos este atributo junto con los de talla [size] y edad [age_group] para estandarizar el tallaje y los departamentos que se muestran a los clientes (por ejemplo, una camiseta con los valores "male" y "kids" para indicar el sexo y la edad, respectivamente, podría mostrarse como "camiseta para niño").
+ID de grupo de artículos [item_group_id]	
+Obligatorio
+
+Para las variantes de productos.
+
+Utilice este atributo para agrupar variantes de productos en sus datos.
+
+Envío [shipping]	
+Obligatorio
+
+Para anular las opciones de envío de su cuenta en Merchant Center.
+
+Consulte cómo gestionar las opciones de envío.
+Diseño [pattern]	
+Recomendado solo para la categoría Ropa y accesorios
+
+Utilice este atributo para especificar el diseño o la impresión gráfica de su producto. Si está disponible en varios diseños, utilice el atributo de ID de grupo de artículos para indicar cada una de esas variantes.
+
+Material [material]	
+Recomendado solo para la categoría Ropa y accesorios
+
+Indique los materiales principales del producto, ya que los clientes suelen incluir ese parámetro en sus búsquedas (por ejemplo, "chaquetas de cuero").
+
+Enlace de imagen adicional [additional_image_link]	
+Recomendado
+
+Proporcione hasta 10 imágenes adicionales por producto para que los clientes puedan verlo de formas diferentes, además del atributo de enlace de imagen obligatorio [image_link].
+Tipo de talla [size_type]
+
+Sistema de tallas [size_system]	
+Recomendado solo para la categoría Ropa y accesorios
+
+Especifique la talla estandarizada del producto además del atributo de talla [size].
+Enlace en el índice de la Búsqueda de Google [canonical_link]	Recomendado para todos los productos
+Para que podamos relacionar más fácilmente sus datos de producto con las consultas de los usuarios, asocie sus productos con la URL correcta en el índice de la Búsqueda de Google. Si este atributo no se usa, puede que se indexe la URL proporcionada en el feed para el atributo de enlace [link] o de enlace web móvil [mobile_link].
+Hacer un seguimiento de los resultados
+Es importante que haga un seguimiento de los resultados de sus fichas gratuitas para saber lo que funciona y lo que no. El proceso es muy sencillo. Vaya a la página Rendimiento de Merchant Center y filtre por los resultados de las fichas gratuitas. Consulte cómo hacer un seguimiento del rendimiento en Merchant Center.
+
+Métodos de marketing en los que aparecen fichas gratuitas
+Los métodos de marketing (antes conocidos como "destinos") hacen referencia a cómo y dónde se muestran sus productos a los clientes potenciales en Google.
+
+Si sus productos cumplen los requisitos para mostrarse en fichas gratuitas, pueden aparecer en las siguientes partes de Google.
+
+Pestaña Shopping (shopping.google.com)
+Sus fichas gratuitas pueden aparecer en la pestaña Shopping, lo que le permite ofrecer experiencias visuales a los clientes que buscan productos como los suyos. Se les redirige a su sitio web para que completen el flujo de compra.
+
+Nota: La pestaña Shopping se encuentra en google.com/shopping. Los anuncios de shopping seguirán apareciendo en los espacios publicitarios de la pestaña Shopping.
+La pestaña Shopping está disponible para dispositivos móviles y ordenadores en todos los países donde se publican fichas gratuitas en dicha pestaña.
+Es posible que sus productos en tienda aparezcan en fichas locales gratuitas de la pestaña Shopping si ha habilitado esta opción. Las fichas locales gratuitas indican a los clientes que el producto que buscan está disponible en su tienda más cercana. Además, pueden incluir el horario de la tienda, las indicaciones para llegar, el número de teléfono, el precio y la disponibilidad del producto, así como la distancia aproximada del cliente. La pestaña Shopping está disponible en la mayoría de los países en los que se ha lanzado.
+
+Búsqueda de Google (google.com)
+Resultados enriquecidos
+Los resultados enriquecidos pueden aparecer junto a los resultados de búsqueda cuando los clientes recurren a la Búsqueda de Google para encontrar información sobre productos, comercios y marcas. Incluyen unas pocas líneas de texto con información sobre los productos (precio, disponibilidad y reseñas) para proporcionar a los clientes más datos útiles.
+
+Estos resultados están disponibles para dispositivos móviles y ordenadores en todo el mundo.
+Ejemplo de fragmentos enriquecidos en los resultados web de móviles y ordenadores.
+
+Productos populares (ropa y accesorios)
+Cuando los clientes utilizan la Búsqueda de Google para ver ropa y accesorios, suelen preferir resultados más visuales. Sus productos populares de la categoría Ropa y accesorios pueden mostrarse en fichas más visuales, como un carrusel de fichas de producto que coincida con la categoría y que sea pertinente para la consulta del usuario. Los clientes pueden descubrir los diferentes productos que ofrecen muchas marcas y comercios, además de usar los enlaces a sus sitios web para obtener más información.
+
+Esta función está disponible solo para dispositivos móviles en Estados Unidos.
+Ejemplo de gorras de béisbol en fichas gratuitas de la sección Productos populares.
+
+Panel de información de Shopping
+El panel de información de Shopping es un cuadro de búsqueda que organiza la información de un producto específico. Incluye los detalles del producto, sus reseñas y las ofertas de los comercios que lo venden. Si el producto que se está buscando está incluido en su feed de datos de producto, es posible que aparezca en la experiencia del panel de información de Shopping.
+
+Esta función está disponible para dispositivos móviles y ordenadores en Argentina, Australia, Brasil, Canadá, Chile, Colombia, Estados Unidos, India, Japón, México y Sudáfrica.
+Nota: Proporcione identificadores de producto eficaces (GTIN, MPN y marca) para que sus productos se añadan correctamente al panel de información.
+
+Google Imágenes (images.google.com)
+Cuando los clientes buscan productos y marcas en Google Imágenes, es posible que vean algunas imágenes con la etiqueta "Producto", que indica que el producto de la imagen se puede comprar. Los clientes verán fragmentos enriquecidos de los productos (como el precio, la disponibilidad, las puntuaciones y la marca) debajo de las imágenes después de interactuar con ellas.
+
+Estos resultados están disponibles para dispositivos móviles y ordenadores en todo el mundo.
+Ejemplo de ficha gratuita con termostatos Nest en Google Imágenes.
+
+Función Google Lens: los clientes también pueden tocar el icono de Lens de una imagen para ver una lista con productos similares. Los resultados también pueden incluir fragmentos enriquecidos de los productos (como la disponibilidad) y la etiqueta "Producto" para indicar que se pueden comprar. Google Lens está disponible en todo el mundo para dispositivos móviles y ordenadores.
+
+YouTube (youtube.com)
+Cuando los clientes ven un vídeo en YouTube, es posible que aparezca al lado una lista de productos que pueden comprar directamente. Además, si buscan un producto concreto en YouTube, es posible que vean productos coincidentes en sus resultados de búsqueda de YouTube. Si sus datos de producto incluyen el producto que se está viendo o buscando, es posible que aparezca en estos formatos. Más información sobre shopping en YouTube
+
+Esta función está disponible como ficha gratuita con generadores de confianza sólidos para dispositivos móviles y ordenadores en algunos países.
+
+Políticas de fichas gratuitas
+Le damos la bienvenida al Centro de Políticas de las fichas gratuitas
+Descripción general de nuestras políticas de fichas gratuitas y cómo aplicarlas
+Nos esforzamos por ofrecer un ecosistema de compras digitales fiable, transparente y que resulte útil a clientes, comercios y editores. La información de este Centro de Ayuda le ayudará a crear ofertas de productos que se adhieran a las políticas de fichas gratuitas que se indican más adelante.
+
+El objetivo de estas políticas es ofrecer una experiencia segura y positiva a nuestros clientes, así como cumplir las leyes pertinentes. Por eso, en ellas se prohíbe el contenido dañino para los clientes y para el ecosistema en general.
+
+Nuestras políticas de fichas gratuitas abarcan cuatro amplios campos:
+
+Google Ads policies | prohibited content Contenido prohibido: contenido que no puede mostrar en la red de Google
+Google Ads policies | prohibited practice Prácticas prohibidas: cosas que no puede hacer si quiere incluir fichas de producto en nuestra red
+Google Ads policies | restricted content Contenido restringido: contenido que puede incluir, pero con limitaciones
+ Requisitos del sitio: estándares para su sitio web
+Para asegurarnos de que las fichas gratuitas cumplen estas políticas, utilizamos una combinación de evaluaciones automáticas y manuales. Nuestras tecnologías se basan en algoritmos y aprendizaje automático que toman como referencia las decisiones de revisores humanos para proteger a nuestros clientes y que nuestras plataformas sean seguras. Los casos más complejos, graves o específicos suelen revisarlos y evaluarlos nuestros expertos con formación especializada.
+
+Tomamos medidas respecto al contenido que infringe nuestras políticas. Entre ellas, podrían incluirse restringir o rechazar fichas gratuitas que muestren infracciones de las políticas para que no se publiquen. También podrían incluirse limitar la visibilidad de las ofertas en algunas cuentas y suspender cuentas por infracciones reiteradas o graves.
+
+Le proporcionaremos información sobre el motivo por el que sus fichas gratuitas infringen nuestras políticas y por qué las rechazamos. Si una de sus fichas gratuitas se ha rechazado o tiene visibilidad limitada, puede corregirla o apelar la decisión. También puede apelar la suspensión de una cuenta en Merchant Center.
+
+Contenido prohibido
+Productos falsificados
+Google prohíbe la venta o promoción de productos falsificados. Los productos falsificados son aquellos que contienen una marca o un logotipo igual que el de otra empresa o difícil de diferenciar. Son productos que imitan los recursos de una marca para hacerse pasar por un producto auténtico de la marca.
+
+Esta política se aplica al contenido de sus fichas gratuitas y de su sitio web.
+
+Productos peligrosos
+Para preservar la seguridad de las personas tanto online como offline, Google no permite incluir en las fichas productos que causen daños, perjuicios o lesiones.
+
+Ejemplos de contenido peligroso: drogas recreativas (químicas o naturales), sustancias psicoactivas, utensilios que faciliten el consumo de drogas, armas, munición, materiales explosivos y fuegos artificiales; instrucciones para la fabricación de explosivos u otros productos nocivos o productos relacionados con el tabaco.
+
+Productos que facilitan conductas fraudulentas
+En Google valoramos la honestidad y la legitimidad, por lo que no permitimos incluir en las fichas productos que faciliten conductas fraudulentas.
+
+Ejemplos de productos que facilitan conductas fraudulentas: software o instrucciones de hacking, documentos falsos o productos para plagiar trabajos académicos.
+
+Contenido inapropiado
+En Google valoramos la diversidad y el respeto a los demás, y procuramos no ofender a los clientes con fichas gratuitas o páginas de destino que muestren contenido desagradable, o promuevan el odio, la intolerancia, la discriminación o la violencia.
+
+Ejemplos de contenido inapropiado u ofensivo: acoso o intimidación a un individuo o grupo, discriminación racial, productos que promuevan el odio hacia determinados colectivos, imágenes explícitas de accidentes o escenas de crímenes, crueldad hacia los animales, asesinato, autolesiones, extorsión o chantaje, venta o comercio de especies en peligro de extinción.
+
+Contenido que no se admite en las fichas gratuitas
+El objetivo de Google es que las empresas puedan mostrar una amplia gama de productos, pero es posible que algunos productos y plataformas de Google no estén optimizados para admitir de manera adecuada todos los tipos de contenido.
+
+Por este motivo, no permitimos que se incluyan en fichas determinados contenidos en los que no ofrecemos una experiencia óptima al cliente.
+
+Prácticas prohibidas
+Uso inadecuado de la red de fichas gratuitas
+Google quiere que las fichas sean útiles, variadas, pertinentes y seguras para los clientes. Por este motivo, hemos reflexionado sobre la publicación de contenido en nuestra red y hemos decidido que no permitimos lo siguiente:
+
+Contenido malicioso
+Sitios que sean de poco valor para los clientes y cuyo objetivo principal sea generar tráfico
+Comercios que traten de obtener una ventaja desleal en el ranking
+Comercios que intenten eludir nuestros procesos de revisión
+Información engañosa
+Google no quiere que los clientes se sientan engañados por el contenido de las fichas gratuitas. Por eso, los anunciantes deben ser claros, sinceros y ofrecerles la información que necesitan para tomar decisiones fundamentadas. Por este motivo, no permitimos lo siguiente:
+
+Fichas que pidan a los clientes iniciar una compra, una descarga u otro compromiso sin proporcionar antes toda la información pertinente ni obtener su consentimiento explícito
+Fichas que representen a su empresa o sus productos de una forma que no sea precisa, realista y veraz
+Contenido restringido
+Las políticas especificadas abajo se aplican a contenido que, en ocasiones, puede tener implicaciones legales o culturales. Las fichas online pueden ser una forma eficaz de llegar a nuevos clientes. No obstante, en determinados temas sensibles, hacemos todo lo posible para no mostrar estas fichas en momentos y lugares en los que puedan resultar inapropiadas.
+
+Esta es la razón por la que permitimos fichas del contenido que se especifica a continuación, pero con algunas limitaciones. Es posible que estas fichas no se muestren a todos los clientes en todas las ubicaciones. Además, puede que los comercios deban cumplir requisitos adicionales para poder mostrar sus fichas a los clientes. No todos los productos, ni todas las funciones y redes, admiten este contenido restringido.
+
+Contenido para adultos
+Google restringe las fichas gratuitas con los siguientes tipos de contenido para adultos:
+
+Artículos para adultos
+Contenido con connotaciones sexuales
+Imágenes de desnudos o semidesnudos
+Si promociona contenido para adultos, asegúrese de evitar lo siguiente:
+
+Infringir las leyes o reglamentos correspondientes del lugar al que se orienta la campaña
+Dirigirse a menores de edad
+Incluir en la ficha contenido sexual explícito
+Promocionar contenido que muestre actos sexuales con menores o no consentidos, incluido el contenido con abuso sexual infantil
+Incluir contenido que podría ser interpretado como el ofrecimiento de actos sexuales a cambio de una compensación
+Ejemplos de contenido para adultos sujeto a restricciones: juguetes sexuales, revistas para adultos, vigorizantes sexuales o promociones de lencería sugerente.
+
+Bebidas alcohólicas
+Google aplica restricciones a la hora de mostrar fichas de bebidas alcohólicas y similares.
+
+Si promociona bebidas alcohólicas, asegúrese de evitar lo siguiente:
+
+Infringir las leyes pertinentes y los estándares del sector de cualquier ubicación de destino
+Dirigirse a individuos cuya edad esté por debajo de la edad legal para consumir bebidas alcohólicas
+Dar a entender que el consumo de alcohol puede mejorar el desempeño social, sexual, profesional, intelectual o deportivo
+Dar a entender que el consumo de alcohol ofrece beneficios terapéuticos o para la salud
+Representar de forma positiva la ingesta excesiva de alcohol, así como mostrar borracheras o competiciones de consumo de bebidas alcohólicas
+Mostrar el consumo de alcohol durante la conducción de un vehículo, el manejo de maquinaria o la realización de cualquier tarea que exija estar alerta y tener destreza
+Ejemplos de bebidas alcohólicas restringidas: cerveza, vino, sake, licores o bebidas alcohólicas de alta graduación, champán, vino fortificado, cerveza sin alcohol, vino sin alcohol o bebidas destiladas sin alcohol.
+
+Contenido protegido por derechos de autor
+Google aplica restricciones a la hora de mostrar contenido protegido por derechos de autor. Si quiere mostrar contenido protegido por derechos de autor y considera que tiene la autorización legal correspondiente, póngase en contacto con nosotros. Para obtener más información sobre cómo gestionamos las cuestiones de derechos de autor o cómo enviar una reclamación relacionada con este tema, utilice este formulario.
+
+Contenido relacionado con los juegos de azar y las apuestas
+Google aplica restricciones a la hora de mostrar contenido relacionado con los juegos de azar y las apuestas.
+
+Ejemplos de contenido restringido relacionado con los juegos de azar y las apuestas: loterías nacionales o privadas, tarjetas rasca y gana físicas, y sitios que ofrecen códigos de bonificación u ofertas promocionales para portales de juegos de azar y apuestas.
+
+Contenido relacionado con la atención sanitaria
+Google aplica restricciones a la hora de mostrar en fichas contenido relacionado con la atención sanitaria, como el siguiente:
+
+Medicamentos sin receta
+Medicamentos con receta
+Fármacos y suplementos no aprobados
+Productos relacionados con la fertilidad y el embarazo
+Las restricciones que se aplican a este contenido pueden variar según el producto que esté mostrando y los países a los que lo oriente. Algunos tipos de contenido, como los suplementos farmacéuticos no aprobados, no se pueden mostrar en ningún lugar.
+
+En función del contenido que muestre y de los países donde se publiquen las fichas, es posible que deba solicitar autorización previa de Google antes de anunciar contenido relacionado con la atención sanitaria.
+
+Marcas
+Google no aplica restricciones al uso de marcas en el título o la descripción de las fichas gratuitas de comercios cuando su fin es promocionar un producto de esa marca o un producto compatible con productos de esa marca. Los comercios deben hacer referencia a las marcas para informar a los clientes de lo que ofrecen. Por su parte, los clientes también necesitan esa información, ya que es relevante para sus búsquedas. Revisaremos las reclamaciones en las que los titulares de marcas afirmen que el uso de estas podría causar confusión sobre el origen de los productos. Para presentar una reclamación relacionada con una marca de la que es titular, rellene este formulario.
+Requisitos del sitio
+Requisitos editoriales y técnicos
+Para ofrecer una experiencia de calidad a los clientes, Google requiere que todas las fichas gratuitas cumplan altos estándares profesionales y editoriales. Solo admitimos fichas claras y que tengan un aspecto profesional. Además, estas fichas deben dirigir a los clientes a productos y páginas de destino relevantes, útiles y con los que sea fácil interactuar.
+
+Ejemplos de fichas que no cumplen estos requisitos editoriales y profesionales:
+
+Una URL visible que no refleja con exactitud la dirección URL de la página de destino. Esto sucedería, por ejemplo, si "google.com" dirigiera a los usuarios a "gmail.com".
+Uso artificioso de palabras, números, letras, puntuación o símbolos, como "GRATIS", "g-r-a-t-i-s" o "grati$".
+Sitios en construcción, dominios aparcados o sitios que simplemente no funcionan.
+Sitios donde se ha inhabilitado el botón de navegación que permite volver a la página anterior.
+Sitios que no se pueden ver en los navegadores habituales.
+Recogida y uso irresponsable de los datos
+Google quiere que los clientes tengan la tranquilidad de que sus datos se respetan y se usan con el debido cuidado. Por eso, los comerciantes y los comercios no deben usar estos datos de forma inadecuada ni recogerlos con fines poco claros o sin adoptar las medidas de seguridad apropiadas.
+Ejemplos de información de usuario delicada: nombre completo; dirección de correo electrónico; dirección postal; número de teléfono; número de documento nacional de identidad, de pensionista, de la seguridad social, de identificación fiscal, de atención sanitaria o del carné de conducir; fecha de nacimiento o apellido de soltera de la madre, además de cualquier dato mencionado anteriormente; situación financiera; afiliación política; orientación sexual; raza u origen étnico; y religión.
+
+Ejemplos de recogida y uso irresponsable de los datos: obtención de los siguientes datos mediante conexiones a un servidor a través de SSL no seguro (https://):
+
+Nombre de usuario o dirección de correo electrónico junto con sus contraseñas
+Número de tarjeta de crédito y débito
+Número de cuenta bancaria y de inversión
+Número de cuenta corriente
+Número de transferencia bancaria
+Número de documento nacional de identidad, de pensionista, de la seguridad social, de identificación fiscal, de atención sanitaria o del carné de conducir
+Acerca de nuestras políticas
+Las fichas gratuitas permiten que empresas de todos los tamaños, en cualquier parte del mundo, promocionen una amplia variedad de productos y sitios web en Google y en toda nuestra red. Queremos ayudarle a llegar a su audiencia y a sus clientes, tanto a los que ya tiene como a los potenciales. Sin embargo, para proporcionar una experiencia segura y positiva a los usuarios, escuchamos sus opiniones e inquietudes sobre los tipos de fichas gratuitas que ven. También nos informamos regularmente sobre los cambios en las tendencias y las prácticas online, así como en los reglamentos y las normas del sector. Además, nuestras políticas también tienen en cuenta nuestros valores y cultura empresarial, así como distintos aspectos operativos, técnicos y empresariales. Por ese motivo, hemos creado una serie de políticas que se aplican a todo el material promocional de la red de Google.
+
+Google requiere que los anunciantes cumplan toda la legislación aplicable, además de las políticas de Google descritas más arriba. Es importante que se familiarice y esté al tanto de los requisitos de los lugares en los que opera su empresa, y los de todos los demás sitios donde se muestren sus fichas. Si encontramos contenido que infringe dichos requisitos, podemos bloquearlo y, en el caso de las infracciones reiteradas o graves, podemos dejar de permitirle que muestre fichas con nosotros.
+
+Tenga en cuenta que, dado que estas limitaciones son específicas de las fichas gratuitas, no afectan a las políticas de otros productos o plataformas de Google, donde las funciones son distintas o se aplican otros mecanismos de inclusión de contenido.
+
+Gestionar las opciones de envío
+Configurar las opciones de envío de toda una cuenta
+Siguiente: Calcular los tiempos de envío en función de la empresa de transporte
+Recordatorios
+Si proporciona varias informaciones de envío para un producto en el mismo país, calcularemos los gastos de envío más bajos para el producto en una situación determinada, y mostraremos esa tarifa y el tiempo de envío correspondiente a los clientes. Si los gastos de envío son los mismos, utilizaremos la información de envío con el tiempo de envío más rápido.
+Puede proporcionar varias dimensiones de envío para un producto del mismo país (por ejemplo, definir una tarifa de envío en función de factores como el peso y el precio) creando una tabla de costes avanzada.
+Los gastos de envío que mande a Merchant Center deben ser lo más parecidos posible a los que figuran en su sitio web. Si no coinciden exactamente, redondee al alza las cantidades que envíe.
+Los precios y los tiempos de entrega configurados mediante el atributo de envío [shipping] prevalecerán sobre los ajustes a nivel de cuenta de la ubicación correspondiente para ese producto en el caso de que se envíe el subatributo de precio [price]. Para evitar comportamientos inesperados, asegúrese de que las opciones de envío sean coherentes con la configuración a nivel de cuenta y los datos de producto a nivel de artículo.
+Es posible que los cambios en las opciones de envío que haya hecho mediante una API automatizada (incluidas las de plataformas de terceros como Shopify) sobrescriban los cambios manuales realizados en Merchant Center.
+Los detalles de las tarifas de envío no se pueden importar automáticamente a Merchant Center si usa una aplicación de terceros para generar tarifas de envío en Shopify. Deberá configurar manualmente las tarifas de envío en su cuenta de Merchant Center.
+Nota: También puede configurar políticas de envío o de devoluciones en Search Console. Si ya ha configurado políticas de devoluciones en Search Console, puede editarlas en este servicio o en Merchant Center.
+Puede configurar sus opciones de envío mediante los métodos que se indican a continuación, cada uno con su propio conjunto de opciones.
+
+ 	Search Console	Creador de tiendas	Merchant Center	Merchant Center con etiquetas de feed	Feeds o API Content
+Mismo envío para todos los productos					
+Condiciones de valor de pedido de la oferta					
+Mismo envío para todos los productos con excepciones	 				
+El envío se basa en variables como el peso	 				
+Gastos de envío nacionales según la empresa de transporte	 				
+Comercio transfronterizo admitido	 				
+Envío urgente	 				
+Entrega el mismo día	 	 			
+Velocidad de envío nacional según la empresa de transporte	 	 			
+Recogida local	 	 	 	 	
+Envío del programa de fidelización	 	 	 	 	 
+El envío varía según la zona	 	 			
+Mismo envío para todos los productos con excepciones	 	 	 		
+El envío puede ser diferente para cada producto	 	 	 	 	
+Recogida hoy	 	 	 	 	
+Paso 1 de 6: Añada atributos relacionados con el envío a los productos (opcional)
+Etiqueta de envío
+La información de envío puede asociarse a todos los productos o a grupos de productos concretos, y la información de estos últimos se puede especificar con el atributo de etiqueta de envío [shipping_label].
+El atributo de etiqueta de envío se debe añadir a los productos antes de configurar las opciones de envío.
+Peso para el envío y dimensiones del paquete
+Para especificar los gastos de envío en función del peso, envíe el atributo de peso para el envío [shipping_weight].
+Para usar los gastos de envío calculados por la empresa de transporte, introduzca el peso y las dimensiones del paquete de su producto mediante los siguientes atributos:
+Peso para el envío [shipping_weight]
+Longitud del paquete [shipping_length], anchura del paquete [shipping_width], altura del paquete [shipping_height]
+Consulte cómo hacer cambios rápidos en la información de productos en Merchant Center.
+
+Consulte cómo añadir productos de un archivo a Merchant Center.
+
+Consulte cómo añadir productos a Merchant Center con Hojas de cálculo de Google.
+
+Paso 2 de 6: Cree la información de envío
+En su cuenta de Merchant Center, vaya al menú de navegación de la izquierda y seleccione Productos y tienda.
+Seleccione Envíos y devoluciones.
+En la pestaña "Políticas de envío", haga clic en Añadir política de envío.
+Nota: Puede configurar hasta 20 políticas de envío por país.
+
+Paso 3 de 6: Elija los países a los que hace envíos
+Seleccione uno o varios países a los que hace envíos que compartan los gastos y las opciones de envío. Debe ser el lugar al que quiere hacer el envío y no tiene por qué ser el país desde el que se envía el pedido ni donde se encuentra su empresa.
+
+Puede especificar varios países en la misma información de envío o crear varias informaciones de envío para cada país. Para indicar opciones específicas de un país, como la tarifa de las empresas de transporte, cree una información de envío diferente para ese país en concreto.
+Si convierte una información de envío con cualquiera de estas opciones en una configuración multipaís, estas opciones se eliminarán.
+Paso 4 de 6: Elija los productos que quiere asociar a esta información de envío
+Seleccione "Todos los productos" o "Productos específicos".
+Si selecciona "Productos específicos", elija una de las etiquetas de envío que se han detectado en sus datos de producto.
+Nota: Solo puede usar la opción "Productos específicos" si:
+
+Ya tiene activada la información de envío para todos los productos.
+La etiqueta de envío está añadida a sus productos.
+Si no hay etiquetas de envío disponibles en la lista, compruebe que ha añadido el atributo de etiqueta de envío [shipping_label] a sus productos.
+
+Paso 5 de 6: Decida cómo quiere determinar el tiempo de envío
+Elija cómo quiere determinar el tiempo de envío entre estas dos opciones:
+
+Permitir que Google determine en su nombre el tiempo de envío en función de la empresa de transporte (solo en EE. UU.).
+Introducir manualmente tiempos de envío específicos.
+En "Hora límite para pedidos", seleccione hasta qué hora se pueden realizar los pedidos para que se procesen el mismo día. Seleccione también la zona horaria correspondiente a la hora calculada. Por ejemplo, si la hora límite son las 15:00 (EST), los pedidos que se realicen después de esa hora no se procesarán hasta el siguiente día hábil.
+En "Tiempo de preparación (días)", introduzca el número mínimo y máximo de días que puede tardar ese proceso. Añada el valor "0" si procesa los artículos el mismo día en el que se piden. Para elegir los días de la semana en que procesa pedidos, seleccione un intervalo en el menú desplegable (por ejemplo, lun-vie o lun-sáb).
+En "Tiempo de transporte (días)", seleccione la opción de tiempo de envío y especifique el número mínimo y máximo de días que puede tardar el transporte. Los comerciantes pueden elegir entre dos opciones:
+Todos los destinos
+Destino por zona
+Las zonas pueden crearse y editarse con códigos postales y usarse posteriormente para definir el tiempo de envío. La configuración manual de zonas de envío está limitada a 100 zonas.
+Impacto de los festivos en la fecha de entrega estimada
+La fecha de entrega estimada de los productos cuyos tiempos de preparación o de envío se solapen con un festivo nacional se ampliará un día. Los días festivos de los siguientes países se consideran días no hábiles cuando se calcula la fecha de entrega estimada: Alemania, Australia, Brasil, Canadá, Corea del Sur, Estados Unidos, Francia, India, Japón, Nueva Zelanda y Reino Unido.
+
+Ejemplo
+A continuación, encontrará un ejemplo de fecha de entrega estimada en el que se han utilizado los siguientes ajustes en Merchant Center:
+
+Hora límite para hacer un pedido: 15:00 (EST)
+De 0 a 1 día de preparación (se completa de lunes a viernes)
+De 3 a 5 días de transporte (se completa de lunes a sábado)
+Google usa los intervalos máximos de preparación y de entrega para calcular la fecha de llegada. Si un cliente hace un pedido un miércoles a las 20:00 (EST), la fecha de entrega estimada será el jueves de la semana siguiente.
+
+Fecha de entrega mínima estimada:
+6 días naturales	Fecha de entrega máxima estimada:
+9 días naturales
+Día del pedido	Día de la semana	Estado	Día del pedido	Día de la semana	Estado
+Día 1	Miércoles	Pedido realizado después de la hora límite	Día 1	Miércoles	Pedido realizado después de la hora límite
+Día 2	Jueves	Tiempo de preparación	Día 2	Jueves	Comienza el tiempo de preparación (Día 0*)
+Día 3	Viernes	Tiempo de transporte	Día 3	Viernes	Termina el tiempo de preparación (Día 1)
+Día 4	Sábado	Tiempo de transporte	Día 4	Sábado	Tiempo de transporte
+Día 5	Domingo	Ninguna acción	Día 5	Domingo	Ninguna acción
+Día 6	Lunes	Tiempo de transporte (incluido el día de entrega)	Día 6	Lunes	Tiempo de transporte
+ 	 	 	Día 7	Martes	Tiempo de transporte
+ 	 	 	Día 8	Miércoles	Tiempo de transporte
+ 	 	 	Día 9	Jueves	Tiempo de transporte (incluido el día de entrega)
+* "Día 0" se refiere al mismo día para los pedidos realizados antes de la hora límite. En el caso de los que se han efectuado después, "Día 0" representa el siguiente día hábil. En otras palabras, el tiempo de preparación empieza a contar a partir del "Día 0", con independencia de si el pedido se ha realizado antes o después de la hora límite.
+
+Funciones de tiempo de envío por región
+Las regiones permiten a los comerciantes compartir manualmente diferentes tiempos de envío en función de la ubicación de los clientes. Una región es un área geográfica definida por un conjunto de códigos postales.
+
+Actualmente, se pueden definir tiempos de envío por región mediante códigos postales en los siguientes países: Alemania, Australia, Brasil, Canadá, Estados Unidos, Francia, India, Nueva Zelanda y Reino Unido.
+
+Para mostrar esta información, especifique el tiempo de preparación del pedido y el tiempo de transporte de sus productos. Información sobre cómo configurar el tiempo de entrega estimado
+
+Paso 6 de 6: Calcule los gastos de envío
+Seleccione la moneda que coincida con el precio [price] de los productos asociados a esta información de envío.
+Es posible que en el país de destino se rechacen los artículos si no hay un servicio de envío que coincida con la moneda y el país de destino de los productos. Los gastos de envío y el precio del producto se convertirán y mostrarán en el país de destino elegido por el usuario.
+Puede elegir entre dos condiciones de valor de pedido:
+"Envío gratuito si se supera un valor de pedido concreto"
+"No se hacen envíos por debajo de un valor de pedido concreto"
+Elija la opción de gastos de envío que refleje cómo se cobran los envíos en su sitio.
+Opciones de gastos de envío	Qué gastos cobra	Tipo de gastos de envío	Ejemplo
+Envío gratuito	Todos los pedidos tienen envío gratuito.	Envío gratuito	 
+Envío gratuito si se supera un importe concreto	Cobra a sus clientes los pedidos que no alcanzan el valor de pedido mínimo.	El envío gratuito depende del valor del pedido.	
+El envío gratuito depende del valor del pedido.
+
+Envío gratuito en pedidos superiores a 100 EUR.
+
+Envío de pago	Todos los pedidos tienen los mismos gastos de envío.	Tarifa fija	5 EUR para todos los pedidos.
+Cobra a sus clientes exactamente lo que paga por el envío con empresas de transporte comunes.	
+Empresa de transporte (disponible en Alemania, Australia, Estados Unidos y Reino Unido).
+
+También deberá enviar el atributo de peso para el envío y de dimensiones.
+
+Las tarifas para todos los clientes se calculan automáticamente en función de las tarifas que ofrecen las empresas de transporte más habituales y se actualizan si estas cambian.
+
+Si quiere obtener más información, consulte la sección de más abajo.
+
+Cobra a sus clientes exactamente lo que paga por el envío con empresas de transporte comunes.
+Los gastos de envío dependen del valor del pedido.	Precio	
+En pedidos inferiores a 20 EUR, cobra 5 EUR.
+
+En pedidos de 20 EUR o más, cobra 2 EUR.
+
+La tarifa de envío la determina el peso del paquete.	
+Peso
+
+También deberá enviar el atributo de peso para el envío.
+
+En productos de hasta 5 kg, cobra 5 EUR.
+
+En productos de 5,0001 kg o más, el envío es gratuito.
+
+Según el destino (solo para Alemania, Australia, Brasil, Canadá, Estados Unidos, Francia, India, Japón, Nueva Zelanda o Reino Unido)	
+Destino
+
+Consulte más información sobre los costes por región.
+
+No se hacen envíos a Hawái.
+ 	La tarifa de envío viene determinada por el número de artículos.	Cantidad
+
+Debe añadir un intervalo de cantidad.	La tarifa de envío para las compras de entre 1 y 10 productos es de 10 EUR, y de 20 EUR para los pedidos que incluyen entre 11 y 100 productos.
+Gastos de envío por cantidad
+Los gastos de envío también pueden determinarse en función de la cantidad. Esto significa que la tarifa se basará en el número de artículos que tenga. Si utiliza esta opción, tendrá que añadir un intervalo de cantidades.
+
+Ejemplo:
+
+La tarifa de envío para las compras de entre 1 y 10 productos es de 10 EUR, y de 20 EUR para los pedidos que incluyen entre 11 y 100 productos.
+
+Tabla de costes avanzada
+También puede utilizar una tabla de costes avanzada, que calcula los gastos de envío en función de varios factores.
+
+Puede crear una tabla de costes avanzada con un máximo de 25 filas, 10 columnas y 2 dimensiones. Además, puede proporcionar varias dimensiones de envío para un producto del mismo país (por ejemplo, definir una tarifa de envío en función de factores como el peso y el precio). A continuación, se indican los factores que puede usar para calcular los costes:
+
+Precio
+Peso
+Destino
+Número de artículos
+Coste por región
+Las regiones permiten a los comerciantes compartir manualmente diferentes gastos en función de la ubicación de los clientes. Los gastos se determinan en función de la ubicación de los clientes, según los destinos (estado o región) y el código postal. En el siguiente gráfico se muestra la disponibilidad de los gastos de envío por región y código postal:
+
+Destino por estado o región	Alemania, Australia, Brasil, Estados Unidos, Francia, India, Japón y Nueva Zelanda
+Destino según código postal	Alemania, Australia, Brasil, Canadá, Estados Unidos, Francia, India, Nueva Zelanda y Reino Unido
+Tipo de tarifas para los gastos de envío
+Además de las tarifas fijas, los envíos gratuitos y las tarifas de empresas de transporte, también puede usar los tipos de tarifas de la siguiente tabla para configurar los gastos de envío:
+
+Qué gastos cobra	Opción de envío	Ejemplo
+N/A	No se envía	No se envían pedidos de menos de 5 EUR.
+Los gastos de envío se cobran según un porcentaje del valor del pedido.	Porcentaje del precio del producto	En pedidos con un valor de 50 EUR, cobra un 10 %, lo que supone unos gastos de envío de 5 EUR.
+La tarifa de envío depende de la distancia a la que se encuentre el cliente.	Destino	Puede definir un coste para cada destino por región.
+Tarifas de empresas de transporte (solo para Alemania, Australia, Estados Unidos y Reino Unido)
+Utilice esta opción si cobra tarifas calculadas por las empresas de transporte principales. Puede elegir entre las empresas de transporte (por ejemplo, UPS, TNT o Hermes) y los servicios admitidos (por ejemplo, Ground, Next Day Air o 3 Day Select).
+Región	Empresas de transporte admitidas	Servicio
+Australia	Australia Post	Regular Parcel
+Express Post
+TNT	Road Express
+Overnight Express
+TOLL	Road Delivery
+Overnight Priority
+Alemania	DHL	Paket
+Päckchen
+DPD	Express 12
+Express
+Classic Parcel
+Hermes	Päckchen
+Paketklasse S
+Paketklasse M
+Paketklasse L
+UPS	Express
+Express Saver
+Standard
+Reino Unido	DHL UK	Express
+Express 12
+DPD UK	Express 12
+Express Next Day
+Standard Parcel 12
+Standard Parcel Next Day
+Standard Parcel Two Day
+RMG (Royal Mail)	1st Class Small Parcel
+1st Class Medium Parcel
+2nd Class Small Parcel
+2nd Class Medium Parcel
+TNT	Express
+Express 10
+Express 12
+UPS UK	Express
+Express Saver
+Standard
+Yodel	B2C 48HR
+B2C 72HR
+B2C Packet
+Estados Unidos	FedEx	Ground
+Home Delivery
+Express Saver
+First Overnight
+Priority Overnight
+Standard Overnight
+2Day
+UPS	2nd Day Air
+2nd Day Air AM
+3 Day Select
+Ground
+Next Day Air
+Next Day Air Early AM
+Next Day Air Saver
+USPS	Priority Mail Express
+Media Mail
+Retail Ground
+Priority Mail
+First Class Mail
+First Class Package
+Nota: Si selecciona FedEx como empresa de transporte, Google determinará el servicio de FedEx que tenga el menor coste para la fecha de entrega correspondiente. Por ejemplo: FedEx Standard Overnight® (no FedEx First Overnight® ni FedEx Priority Overnight®) o FedEx 2Day® (no FedEx 2Day® AM).
+Para usar esta opción, haga lo siguiente:
+
+En "Servicio de empresa de transporte", seleccione una de las empresas de transporte admitidas junto con el servicio (por ejemplo, UPS Ground). Las empresas de transporte son diferentes en cada zona de servicio.
+Introduzca el código postal de origen correspondiente al lugar desde el que se enviará el paquete (por ejemplo, "94043").
+Si es necesario, seleccione "Ajustar manualmente las tarifas de envío" para modificar las tarifas estándar de su empresa de transporte. Por ejemplo, puede ofrecer un descuento.
+Modificación de las tarifas
+Las empresas de transporte aplican sus tarifas comerciales estándar, pero puede modificarlas (al alza o a la baja) en un determinado porcentaje o en una cantidad fija.
+
+Algunas empresas de transporte tienen diversas tarifas para fines comerciales y personales. Google utiliza tarifas comerciales (por ejemplo, "Standard" [Estándar] para FedEx y "Daily" [Diaria] para UPS). Si aplica gastos de envío no comerciales (a menudo llamados "minoristas"), es probable que tenga que ajustarlos al alza entre un 50 y un 60 %.
+
+Gestionar las opciones de envío
+Envío [shipping]
+Siguiente: Guía de prácticas recomendadas para optimizar la configuración de envíos y devoluciones
+El atributo de envío [shipping] le permite indicar el tiempo y los gastos de envío de un producto. Utilícelo cuando no haya definido las opciones de envío a nivel de cuenta en Merchant Center o si quiere anularlas en productos concretos.
+
+Por ejemplo, puede utilizar el atributo de envío [shipping] para anular la configuración de envío de productos voluminosos o frágiles.
+
+Secciones de este artículo
+Cuándo debe usarse
+Formato
+Requisitos mínimos
+Prácticas recomendadas
+Ejemplos
+Cuándo debe usarse
+This icon represents whether the sourced content is dependent where the product attribute is used Depende: es posible que deba enviar este atributo según el producto o los países en los que se muestren sus productos.
+
+Los gastos de envío cubren los costes que aplica la empresa de transporte y otros gastos directamente relacionados con el envío. Se consideran gastos de envío todos los cargos que incluyan los términos "preparación", "entrega", "envío", "logística" o "empresa de transporte". El envío puede incluir las tasas transfronterizas si el coste de estas aparece en las condiciones de envío de su sitio web. También deben contemplarse los costes de los seguros relacionados con cualquiera de los cinco términos anteriores.
+
+La información sobre el envío también incluye el tiempo de envío, es decir, el tiempo que transcurre desde el momento en que el cliente realiza un pedido hasta que lo recibe. El tiempo de envío engloba tanto el tiempo de preparación (también denominado tiempo de procesamiento) como el tiempo de transporte. El tiempo de preparación se refiere al periodo que transcurre desde que se realiza el pedido hasta que se entrega a la empresa de transporte. Por su parte, el tiempo de transporte es el periodo que transcurre desde que el pedido se entrega a la empresa de transporte hasta que el cliente lo recibe.
+
+El tiempo y los gastos de envío son los motivos más frecuentes por los que los usuarios deciden no comprar un producto. Por tanto, para que sus anuncios y fichas gratuitas den mejores resultados, es importante mostrar información precisa.
+
+En el caso de los programas para los que no sea obligatorio indicar los gastos de envío, también puede utilizar el atributo de envío [shipping] para especificar los países a los que se envían sus productos.
+
+Los gastos de envío se pueden proporcionar mediante el atributo de envío [shipping] o a nivel de cuenta.
+
+​​​​​​​Consulte cómo configurar servicios de envío en Merchant Center
+
+
+
+Required Es obligatorio indicar los gastos de envío en los anuncios de shopping y las fichas gratuitas que se muestren en los siguientes países:
+
+Australia
+Austria
+Bélgica
+Brasil
+Canadá
+Chequia
+Dinamarca
+Finlandia
+Francia
+Alemania
+Grecia
+Hungría
+India
+Irlanda
+Israel
+Italia
+Japón
+Nueva Zelanda
+Países Bajos
+Noruega
+Polonia
+Portugal
+Rumanía
+Eslovaquia
+Corea del Sur
+España
+Suecia
+Suiza
+Reino Unido
+Estados Unidos
+Es posible que se le pida que indique los gastos de envío en otros países para cumplir las leyes y normativas locales.
+
+También puede utilizar este atributo para indicar otros países a los que envía cada producto.
+
+Use este atributo cuando no haya definido los gastos de envío de un producto en Merchant Center o, si ya los ha definido, cuando necesite anularlos (por ejemplo, para productos voluminosos o frágiles).
+
+Subatributos
+El atributo de envío [shipping] utiliza subatributos para definir el país, la zona de reparto, el servicio, el precio, el tiempo de preparación y el tiempo de transporte.
+
+Estos son los distintos subatributos:
+
+País [country] (obligatorio)
+País al que se puede enviar el producto. El formato del código de país que proporcione debe seguir la norma ISO 3166-1 (por ejemplo: CH).
+
+Zona de reparto (opcional)
+Zona a la que se puede enviar el producto. Proporcione solo una de las siguientes opciones:
+Región [region] (opcional)
+Envíe una región, un estado, un territorio o una prefectura. Esta opción está disponible en Alemania, Australia, Brasil, Estados Unidos, Francia, India, Japón y Nueva Zelanda. Utilice un código de subdivisión con el formato que se indica en las tablas de códigos de la norma ISO 3166-2 (AU, BR, FR, DE, IN, JP, NZ y US) sin especificar el prefijo del país (por ejemplo, 03, AP, ARA, AUK, BE, NSW, NY o RJ).
+Código postal [postal_code] (opcional)
+Envíe un intervalo de códigos postales. Esta opción está disponible en Alemania, Australia, Brasil, Canadá, Estados Unidos, Francia, India y Nueva Zelanda.
+Utilice un código postal (por ejemplo, 94043 para Estados Unidos y 2009 para Australia).
+Utilice un intervalo de códigos postales (por ejemplo, 94002-95460 para Estados Unidos y 2009-3000 para Australia).
+Utilice un intervalo de códigos postales con un prefijo con comodín ( * ) (por ejemplo, 94*).
+Utilice un intervalo de códigos postales con dos prefijos con comodines ( * ) (por ejemplo, "94*-95*").
+Brasil
+Canadá
+Reino Unido
+ID de ubicación [location_id] (opcional)
+Envíe un ID de criterios numéricos de su ubicación definido por la API de Google Ads (API de AdWords) (por ejemplo, para California, utilice 21137). Esta opción se admite en Alemania (estado), Australia (estado), Brasil (estado), Estados Unidos (estado), Francia (región), India (estado y territorio), Japón (prefectura) y Nueva Zelanda (región).
+Nombre del grupo de ubicaciones [location_group_name] (opcional)
+Envíe un grupo de ubicaciones que haya definido en el ajuste "Región" de Merchant Center. Utilice el ID de región para el nombre del grupo de ubicaciones. Aquí debe usar los mismos nombres de grupo (por ejemplo, Costa Occidental, el interior de Australia). Esta opción está disponible en Alemania, Australia, Brasil, Canadá, Estados Unidos, Francia, India, Nueva Zelanda y Reino Unido.
+Servicio [service] (opcional en determinadas condiciones)
+Nota: El subatributo de servicio [service] es opcional en determinadas condiciones. Si utiliza el atributo de envío a nivel de producto y quiere ofrecer varias opciones de envío, es obligatorio incluir el subatributo de servicio [service]. Funciona igual que el nombre de política a nivel de cuenta para que Google pueda identificar que se trata de un servicio de envío diferente.
+
+Utilice este subatributo si tiene varias opciones de envío para una sola ubicación. Por ejemplo, las opciones de envío "Estándar" y "Urgente".
+Precio [price] (es obligatorio si quiere reemplazar el tiempo de envío; de lo contrario, es opcional)
+Indique unos gastos de envío fijos y separe los decimales con un punto [.] (por ejemplo: 3.00 EUR). No utilice comas [,], puesto que el sistema podría interpretar el precio incorrectamente.
+Si envía el subatributo de precio [price] del atributo de envío [shipping], se ignorará la configuración del servicio de envío de la cuenta (incluidos los tiempos de entrega y el valor de pedido mínimo) de la ubicación correspondiente para el producto en cuestión.
+Tiempo de preparación (opcional)
+Indique cuánto tiempo puede tardar un producto en prepararse. Envíe los siguientes subatributos:
+Tiempo mínimo de preparación [min_handling_time]
+Número mínimo de días transcurridos desde que se realiza el pedido hasta que se entrega a la empresa de transporte.
+Tiempo máximo de preparación [max_handling_time]
+Número máximo de días transcurridos desde que se realiza el pedido hasta que se entrega a la empresa de transporte. También puede usar los atributos independientes de tiempo de preparación en lugar de los subatributos de tiempo de preparación del envío. Si usa tanto los subatributos de tiempo de preparación como los atributos independientes de tiempo de preparación, solo se tendrán en cuenta los subatributos de envío.
+Tenga en cuenta solo los días hábiles. Por ejemplo, si un cliente hace su pedido un martes y el envío sale del almacén el viernes como muy tarde, el tiempo máximo de preparación es de 3 días.
+Hora límite de preparación [handling_cutoff_time] (opcional): especifica la hora exacta del día en la que se debe hacer un pedido para que se procese ese mismo día hábil. Es una cadena con el formato HHMM (por ejemplo, "1530") para las 15:30. Si no se configura, se usará una hora límite de preparación predeterminada.
+Zona horaria de la hora límite de preparación [handling_cutoff_timezone] (opcional): define la zona horaria de la hora límite especificada. Usa el formato de zona horaria de la IANA (por ejemplo, "America/Los_Angeles"). Si no se especifica, el sistema usará de forma predeterminada la zona horaria del destino de envío.
+Tiempo de transporte (opcional)
+Indique cuánto tiempo puede tardar un producto en llegar. Envíe los siguientes subatributos:
+Tiempo mínimo de transporte [min_transit_time]
+Número mínimo de días transcurridos desde que el producto se entrega a la empresa de transporte hasta que el cliente lo recibe.
+Tiempo máximo de transporte [max_transit_time]
+Número máximo de días transcurridos desde que el producto se entrega a la empresa de transporte hasta que el cliente lo recibe.
+Nota: Para que Google pueda calcular el tiempo de envío, debe proporcionar los valores de tiempo máximo de preparación [max_handling_time], el subatributo de envío o el atributo independiente, y el subatributo de tiempo máximo de transporte [max_transit_time] del atributo de envío [shipping]. También debe facilitar un valor para el subatributo de precio [price] del atributo de envío [shipping], ya que, de lo contrario, los subatributos de tiempo de preparación y de tiempo de transporte no se considerarán válidos.
+Formato
+Siga estas directrices de formato para que Google entienda los datos que envía. Más información sobre cómo enviar atributos y valores de atributo
+
+Tipo	Caracteres Unicode (recomendamos usar solo ASCII)
+Valores admitidos	
+Para AUD, CAD, CHF, EUR, GBP, NZD, SGD y USD:
+0-1000
+
+Para RO:
+0-3000
+
+Para AED, BRL, CNY, DKK, HKD, ILS, MYR, NOK, PLN, SAR, SEK y TRY:
+0-5000
+
+Para ARS, CZK, MXN, THB, TWD, UAH y ZAR:
+0-20.000
+
+Para INR, JPY, PHP y RUB:
+0-100.000
+
+Para KRW:
+0-1.000.000
+
+Para HUF:
+0-300.000
+
+Para CLP:
+0-500.000
+
+Para COP:
+0-2.000.000
+
+Para IDR:
+0-10.000.000
+
+Para VND:
+0-20.000.000
+
+Campo repetido
+(¿Qué es esto?)
+
+Envíe el atributo de envío [shipping] hasta 100 veces por producto
+Propiedad de schema.org
+(¿Qué es esto?)
+
+Offer.shippingDetails,
+
+Type: OfferShippingDetails (más información sobre las propiedades admitidas para el envío en el Centro de la Búsqueda de Google)
+
+Formato de archivo	Entrada de ejemplo
+Feeds de texto	
+Para definir el formato del nombre, debe especificar los subatributos que quiere proporcionar. Incluya el atributo de envío [shipping] y añada entre paréntesis los nombres de los subatributos que quiera enviar, separados por dos puntos (:).
+
+Por ejemplo, si quiere enviar los subatributos de país, código postal, precio, tiempo de preparación, tiempo de transporte, hora límite de preparación y zona horaria de la hora límite de preparación, indique lo siguiente:
+
+Nombre
+
+shipping(country:postal_code:price:min_handling_time:max_handling_time:
+min_transit_time:max_transit_time:handling_cutoff_time:handling_cutoff_timezone)
+
+Si asigna un nombre a los subatributos que va a utilizar, puede enviarlos en cualquier orden. No obstante, si proporciona los valores de los subatributos, pero no les asigna un nombre, supondremos que los valores del atributo incluyen los subatributos en este orden:
+
+País [country]
+Región [region]
+Servicio de envío [service]
+Precio [price]
+Para dar formato al valor, envíe el valor de cada uno de los subatributos en el mismo orden en que aparecen en el nombre y separados por dos puntos (:). No utilice comillas. Ejemplo:
+
+Nombre shipping(country:postal_code:price:min_handling_time:max_handling_time:
+min_transit_time:max_transit_time:handling_cutoff_time)
+Valor posible US:80302:6.49:”1530” USD:1:3:2:5:”1530”
+
+Si quiere añadir varios países, envíe el atributo (con el mismo nombre) varias veces. Por ejemplo:
+
+Nombre shipping(country:postal_code:price:min_handling_time:max_handling_time:
+min_transit_time:max_transit_time)
+Valor posible US:94002-95460:0 USD:1:3:2:5
+
+Nombre shipping(country:postal_code:price)
+Valor posible US:900*-901*:15.99 USD
+
+Si no desea proporcionar un subatributo opcional para un producto en concreto, debe añadir igualmente los dos puntos (:) y dejar el apartado correspondiente en blanco. Ejemplo:
+
+Nombre shipping
+Valor posible US:::6.49 USD
+
+Nombre shipping(country:region:price)
+Valor posible US::6.49 USD
+
+Feeds XML	
+Incluya los subatributos opcionales si lo cree conveniente. Para especificar gastos de envío diferentes según la ubicación de entrega, proporcione varios atributos de hora límite de preparación [handling_cutoff_time] y de envío [shipping] que incluyan los subatributos correspondientes.
+
+g:handling_cutoff_time
+
+g:country US/g:country
+
+G:cutoff_time “1530”/g:cutoff_time
+
+G:cutoff_timezone “America/Los_Angeles”/g:cutoff_timezone
+
+/g:handling_cutoff_time
+
+g:handling_cutoff_time
+
+g:country CA/g:country
+
+G:cutoff_time “1900”/g:cutoff_time
+
+/g:handling_cutoff_time
+
+g:handling_cutoff_time
+
+G:cutoff_time “1600”/g:cutoff_time
+
+/g:handling_cutoff_time
+
+ 
+
+g:shipping
+
+g:country US/g:country
+
+g:region MA/g:region
+
+g:service Ground/g:service
+
+g:price 6.49 USD/g:price
+
+g:min_handling_time 1/g:min_handling_time
+
+g:max_handling_time 3/g:max_handling_time
+
+g:min_transit_time 2/g:min_transit_time
+
+g:max_transit_time 5/g:max_transit_time
+
+/g:shipping
+
+g:shipping
+
+g:country US/g:country
+
+g:region MA/g:region
+
+g:service Express/g:service
+
+g:price 15.99 USD/g:price
+
+g:min_handling_time 1/g:min_handling_time
+
+g:max_handling_time 3/g:max_handling_time
+
+g:min_transit_time 2/g:min_transit_time
+
+g:max_transit_time 5/g:max_transit_time
+
+/g:shipping
+
+Para dar formato a sus datos para la API Content, consulte la API Content for Shopping.
+
+Nota: Para que nuestro sistema reconozca este atributo de datos de producto correctamente, envíe el archivo de su feed de datos en un formato admitido.
+Requisitos mínimos
+A continuación se indican los requisitos que debe cumplir para mostrar su producto. Si no los cumple, rechazaremos el producto y se lo notificaremos en su cuenta de Merchant Center.
+
+Proporcione información completa y correcta sobre el envío, incluidos los gastos y el tiempo de envío.
+Los gastos y el tiempo de envío son dos de los motivos más frecuentes por los que los clientes deciden no comprar un producto. Por tanto, para que sus anuncios y fichas sean eficaces, es importante que su configuración de envío sea precisa y esté actualizada.
+Incluya todos los gastos de envío pertinentes. Indique todos los gastos que conlleva la compra, que pueden denominarse "envío", "entrega", "preparación", "logística" o "transporte".
+Si no puede proporcionar la tarifa exacta de los gastos de envío, realice una estimación por lo alto. Envíe una cifra igual o superior a lo que los usuarios pagarían normalmente. Tenga en cuenta que una estimación demasiado alta puede afectar negativamente al rendimiento del producto.
+Use la tarifa para envíos directos a personas. No utilice otras tarifas, como la de envío a tienda o tarifas para las que sea necesaria una suscripción.
+Muestre los detalles del producto en la página de destino a todos los usuarios. Asegúrese de que, cuando un usuario haga clic en su anuncio, pueda ver los detalles del producto, aunque su empresa no realice envíos a la ubicación de ese usuario.
+Cumpla las leyes locales a la hora de enviar la información sobre envíos.
+Proporcione el subatributo de país. Indique siempre el subatributo de país [country] cuando use el atributo de envío [shipping] para asegurarse de que sus productos se envíen correctamente.
+Prácticas recomendadas
+Aquí tiene una serie de prácticas recomendadas para ir más allá de los requisitos básicos y optimizar los datos de producto para mejorar así el rendimiento.
+
+Nota: Para ofrecer a sus clientes las mejores opciones de envío, puede crear hasta 20 políticas de envío diferentes en Google Merchant Center. Esto significa que puede ofrecer envío gratuito para pedidos grandes o tarifas diferentes en función de la ubicación del cliente.
+Utilice la configuración de envío de la cuenta en Merchant Center. Puede crear tarifas fijas simples o modelos complejos personalizados. Use el atributo de envío [shipping] como último recurso para anular las opciones que haya configurado en Merchant Center.
+Proporcione un precio de envío que se pueda mostrar en la moneda del país de destino (según lo establecido en la normativa ISO 4217). Por ejemplo, en lugar de 1.0012 EUR, indique 1.01 EUR. Si el precio no se puede mostrar en la moneda del país de destino, lo redondearemos a un valor que sí se pueda mostrar.
+Utilice los atributos de días hábiles de preparación del envío [shipping_handling_business_days] y de días hábiles de transporte [shipping_transit_business_days] si los días hábiles de preparación y transporte no son los predeterminados (de lunes a sábado). Personalice estos atributos cuando sea necesario para proporcionar a los clientes tiempos de entrega estimados precisos.
+Si proporciona el atributo varias veces, no indique información contradictoria. Por ejemplo, no introduzca dos precios diferentes para la misma zona o la misma clase de servicio.
+Facilite las promociones de envío mediante el feed de promociones. Es decir, si ofrece envíos gratuitos durante unas rebajas de verano de dos semanas, suba una promoción de envío al feed de promociones de comercios e indique las fechas en las que estará disponible. Al usar el código promocional correspondiente, los consumidores disfrutarán de envíos gratuitos cuando tramiten su compra en el sitio web.
+Envíe todos los cargos adicionales relacionados con el envío que cobre como comerciante y que no sean recaudados por un Gobierno. Por ejemplo, los cargos por servicio, procesamiento, activación y gestión. No proporcione esta información como parte del atributo de precio [price]. Debe incluir los gastos de envío en el atributo de envío [shipping] o mediante las opciones de envío de Merchant Center.
+No incluya en los gastos de envío tarifas impuestas por el Gobierno, como derechos de importación, tarifas de reciclaje, derechos de autor o gastos de envío específicos de cada Estado.
+Proporcione los gastos de envío para todas las regiones a las que haga envíos. Si no incluye los gastos de envío para alguna región a la que realiza envíos, ya sea en los datos de producto o en la configuración de envío de su cuenta, es posible que se rechace su producto o su cuenta.
+Adapte sus campañas de shopping en Google Ads en función de su configuración de envío y de la disponibilidad de cada producto.
+Nota: Si destina su feed de datos principal a un país en el que es obligatorio ofrecer la información de envío y también vende sus productos en un país donde no es obligatorio (y, por tanto, no ha indicado las opciones de envío), es posible que el producto siga mostrando una anotación de "precio + gastos de envío" cuando aparezca en la pestaña Shopping del país en el que no haya proporcionado la información de envío. Para evitar que se incluyan anotaciones de "precio + gastos de envío", asegúrese de que solo vende productos en países en los que no sea obligatorio mostrar la información de envío.
+Directrices adicionales
+Lea cada sección detenidamente para determinar si los requisitos se aplican a su país o producto. Si no cumple los requisitos que le corresponden, rechazaremos su producto y se lo notificaremos en su cuenta de Merchant Center.
+
+Estados Unidos
+Alemania, Austria, Bélgica, Bulgaria, Chipre, Croacia, Dinamarca, Eslovaquia, Eslovenia, España, Estonia, Finlandia, Francia, Grecia, Hungría, Irlanda, Islandia, Italia, Letonia, Lituania, Luxemburgo, Malta, Noruega, Países Bajos, Polonia, Portugal, Reino Unido, República Checa, Rumanía y Suecia.
+Argentina y Chile
+Francia
+Excluir destinos de envío
+Compruebe que la disponibilidad que figura en su página de destino coincide con la configuración de entrega de sus datos de producto. Si no entrega sus productos en todo el país de destino, proporcione solo los gastos de envío para las zonas a donde realiza envíos.
+Envíos desde fuera del país de destino
+Descargas y suscripciones de software
+Indique que el coste del envío es 0 (si los gastos de envío son obligatorios para su país de destino) cuando anuncie un producto intangible, como una suscripción de software, contenido digital o software descargable. Puede proporcionar los gastos de envío mediante el atributo de envío [shipping] o en la configuración de envío de su cuenta.
+Anulaciones de la política de envío a nivel de producto
+Cuando se usa el atributo de envío para configurar el envío a nivel de producto, puede proporcionar diferentes gastos o tiempos de envío en función de factores como las regiones mediante la anulación del atributo de envío. Hay dos formas de anular el atributo de envío y cada oferta de envío puede tener hasta 100 anulaciones de envío:
+
+Políticas de envío separadas por comas (,)
+
+Ejemplo:
+
+ID de artículo	Título	Envío
+1	Producto 1	US:94*:$1:0:1:2:3,US:95*:$5:0:1:2:3
+Columnas de envío adicionales
+
+Ejemplo:
+
+ID de artículo	Envío	Envío
+XXX	US:94*:$1:0:1:2:3	US:95*:$5:0:1:2:3
+Ejemplos
+Formato del texto
+Para definir el formato del nombre, incluya shipping y, a continuación, añada entre paréntesis los nombres de los subatributos que quiera enviar separados por dos puntos (:).
+
+Por ejemplo, si quiere indicar el país [country], el código postal [postal_code] y el precio [price]:
+
+Nombre shipping(country:postal_code:price)
+
+Para configurar el formato del valor, proporcione el valor de cada subatributo en el mismo orden que en el nombre y separados por dos puntos ( : ).
+
+Por ejemplo:
+
+Nombre shipping(country:postal_code:price)
+Valor posible US:80302:6.49 USD
+Valor posible US:30*:12.75 USD
+
+También puede indicar únicamente el precio.
+
+Por ejemplo:
+
+Nombre shipping(price)
+Valor posible 6.49 USD
+
+Aunque no incluya subatributos en el nombre, debe enviar valores para estos cuatro subatributos en este orden: país [country], región [region], servicio [service], precio [price].
+
+Por ejemplo:
+
+Nombre shipping
+Valor posible US:CA:Express:6.49 USD
+
+Si no quiere proporcionar un subatributo opcional (como service) para un producto en concreto, debe añadir igualmente dos puntos (:) y dejar el apartado en blanco.
+
+Por ejemplo:
+
+Nombre shipping
+Valor posible US:::6.49 USD
+
+Nombre shipping(country:region:price)
+Valor posible US::6.49 USD
+
+Campos repetidos (ejemplo de envío regional)
+Texto
+Puede proporcionar un máximo de 100 valores de envío por producto y así indicar diferentes gastos para cada ubicación. Si quiere añadir varias ubicaciones, indique el atributo (con el mismo nombre) varias veces. Por ejemplo:
+
+Datos de producto de camas ortopédicas para perros
+
+Atributo	Valor
+Título [title]	Cama ortopédica para perros XXL
+Envío [shipping]	US:94002-95460:0 USD
+Envío [shipping]	US:900*-901*:0 USD
+Envío [shipping]	US:902*-930*:15.99 USD
+XML
+Para indicar varios grupos de entrega en un feed XML, incluya un atributo adicional para cada uno. Puede proporcionar un máximo de 100 atributos de envío [shipping] para cada producto.
+
+<g:shipping>
+<g:country>US</g:country>
+<g:region>CA</g:region>
+<g:service>Express</g:service>
+<g:price>0 USD</g:price>
+</g:shipping>
+<g:shipping>
+<g:country>US</g:country>
+<g:region>OR</g:region>
+<g:service>Ground</g:service>
+<g:price>4.99 USD</g:price>
+</g:shipping>
+<g:shipping>
+<g:country>US</g:country>
+<g:region>WA</g:region>
+<g:service>Ground</g:service>
+<g:price>6.49 USD</g:price>
+</g:shipping>
+
+Códigos postales
+En Alemania, Australia, Brasil, Canadá, Estados Unidos, Francia, India, Nueva Zelanda y Reino Unido, puede enviar códigos postales mediante el subatributo [postal_code]. Hay varias formas de proporcionar estos valores según la zona.
+
+Australia y Estados Unidos
+
+Un código postal (por ejemplo: 94043).
+Un intervalo de códigos postales (por ejemplo, 94002-95460).
+Utilice un intervalo de códigos postales con un prefijo con comodín ( * ) (por ejemplo, 94*).
+Utilice un intervalo de códigos postales con dos prefijos con comodines ( * ) (por ejemplo, "94*-95*").
+Brasil
+
+Utilice los códigos antes del guion (por ejemplo, si el código postal es 30260-070, utilice 30260).
+Canadá
+
+Utilice el FSA del código postal. No incluya la unidad de envío local (por ejemplo, M5H).
+Utilice un intervalo de FSAs con un prefijo con comodín ( * ) (por ejemplo, K*).
+Reino Unido
+
+Use el código externo (por ejemplo, si el código postal es N1C 4AG, utilice N1C).
+Use un intervalo de códigos externos (SW1A-SW1Y).
+Utilice un intervalo de códigos externos mediante un código de zona con un comodín ( * ) (por ejemplo, N*). Incluya la zona completa sin el código parcial del distrito antes del asterisco ( * ). Por ejemplo, N* cubre el norte de Londres (N1-N22), pero no otros códigos de zona que empiecen por N. En el caso de los códigos postales del noroeste, debe indicar NW*.
+Envío gratuito, suscripciones de software y descargas
+Incluya el envío gratuito proporcionando un valor de 0 EUR en la moneda del país de destino para el subatributo de precio [price] del atributo de envío [shipping]. Si se trata de un producto intangible (por ejemplo, una descarga única o una suscripción de software), también debe asignar al envío el valor 0. Por ejemplo:
+
+Datos de producto de una suscripción de un año al software Google Security a un precio de 29,90 EUR
+
+Atributo	Valor
+Título [title]	Software de seguridad de Google, Basic Edition (1 año de suscripción)
+Precio [price]	29.90 EUR
+Categoría de producto de Google [google_product_category]	Software > Software informático > Software de seguridad y antivirus
+Marca [brand]	Google
+Envío [shipping]	US:::0 EUR
+Enlace de imagen [image_link]	http://www.example.com/image1.jpg
+

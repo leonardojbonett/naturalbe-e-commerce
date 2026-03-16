@@ -1,15 +1,29 @@
 <!DOCTYPE html>
 <html lang="es-CO">
 <head>
-  <!-- Google Tag Manager -->
+  <!-- Google Tag Manager (strict interaction-only) -->
   <script>
-  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-M7MF395K');
+  (function(w,d,l,i){
+    w[l]=w[l]||[];
+    var loaded=false;
+    function loadGtm(){
+      if(loaded) return;
+      loaded=true;
+      w[l].push({'gtm.start': new Date().getTime(), event:'gtm.js'});
+      var s=d.createElement('script');
+      var dl=l!=='dataLayer' ? '&l='+l : '';
+      s.async=true;
+      s.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+      d.head.appendChild(s);
+    }
+    ['pointerdown','keydown','touchstart','scroll'].forEach(function(evt){
+      w.addEventListener(evt, loadGtm, { once:true, passive:true });
+    });
+  })(window,document,'dataLayer','GTM-M7MF395K');
   </script>
-  <!-- End Google Tag Manager -->
+  <!-- End Google Tag Manager (strict interaction-only) -->
+
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="robots" content="noindex,follow">
@@ -17,6 +31,23 @@
   <meta name="description" content="Pago cancelado en Natural Be. Puedes reintentar tu compra.">
   <link rel="canonical" href="https://naturalbe.com.co/pago-cancelado.html">
   <link rel="stylesheet" href="/static/css/main.min.css?v=2026-02-23-4">
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '869358656017955');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=869358656017955&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
 </head>
 <body>
   <!-- Google Tag Manager (noscript) -->
@@ -24,17 +55,48 @@
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
 
-  <main class="page-shell" style="padding-top:2rem;padding-bottom:2rem;">
+  <main class="page-shell" style="padding-top:2rem;padding-bottom:2rem;max-width:560px;margin:0 auto;">
     <p class="section-subtitle">Natural Be</p>
-    <h1 class="section-title">Pago no completado</h1>
-    <p>No se confirmó el pago. Puedes intentarlo de nuevo o finalizar por WhatsApp.</p>
-    <div class="hero-actions hero-actions--spaced">
-      <a class="btn-primary" href="/checkout.html">Reintentar pago</a>
-      <a class="btn-secondary" href="https://wa.me/573137212923" target="_blank" rel="noopener">Finalizar por WhatsApp</a>
+    <h1 class="section-title">El pago no se completó</h1>
+    <p style="color:#475569;margin-bottom:0.25rem;">
+      Tranquilo/a, <strong>tu información está segura</strong> y no se realizó ningún cobro.
+      Esto puede ocurrir por un error temporal o al cancelar el proceso.
+    </p>
+    <p style="color:#475569;margin-bottom:1.5rem;">Tu carrito está guardado. Puedes reintentar en segundos.</p>
+
+    <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:1.5rem;">
+      <span style="border:1px solid #dbe4ef;border-radius:999px;padding:0.3rem 0.7rem;font-size:0.8rem;background:#fff;">Sin cobro realizado</span>
+      <span style="border:1px solid #dbe4ef;border-radius:999px;padding:0.3rem 0.7rem;font-size:0.8rem;background:#fff;">Datos seguros</span>
+      <span style="border:1px solid #dbe4ef;border-radius:999px;padding:0.3rem 0.7rem;font-size:0.8rem;background:#fff;">Carrito guardado</span>
     </div>
+
+    <div class="hero-actions hero-actions--spaced" style="flex-direction:column;gap:0.75rem;">
+      <button class="btn-primary" type="button" id="restoreCartBtn" style="width:100%;">Recuperar carrito y reintentar pago</button>
+      <a class="btn-secondary" href="https://wa.me/573137212923?text=Hola%2C+tuve+un+problema+al+pagar+y+necesito+ayuda+para+finalizar+mi+compra." target="_blank" rel="noopener" style="width:100%;text-align:center;">Finalizar con ayuda por WhatsApp</a>
+      <a class="btn-secondary" href="/categoria/suplementos" style="width:100%;text-align:center;">Volver al catálogo</a>
+    </div>
+    <p style="margin-top:1.5rem;color:#94a3b8;font-size:0.82rem;">
+      ¿Necesitas ayuda? Escríbenos al
+      <a href="https://wa.me/573137212923" target="_blank" rel="noopener" style="color:#0b6e4f;">WhatsApp +57 313 721 2923</a>
+    </p>
   </main>
 
+  <script>
+    (function () {
+      var btn = document.getElementById('restoreCartBtn');
+      if (!btn) return;
+      btn.addEventListener('click', function () {
+        try {
+          var backup = localStorage.getItem('naturalbe_cart_backup');
+          if (backup) localStorage.setItem('naturalbe_cart', backup);
+        } catch (_) {}
+        window.location.href = '/checkout.html';
+      });
+    })();
+  </script>
   <script src="/static/js/tracking.js?v=2026-02-16" defer></script>
   <script src="/static/js/site-pause.js" defer></script>
 </body>
 </html>
+
+

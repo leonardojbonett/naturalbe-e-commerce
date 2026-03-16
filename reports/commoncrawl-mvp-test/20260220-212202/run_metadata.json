@@ -1,0 +1,11 @@
+{
+  "generated_at": "2026-02-20T21:22:05.272034",
+  "index_id": "CC-MAIN-2026-04",
+  "domains": [
+    "naturalbe.com.co"
+  ],
+  "index_pages_per_domain": 1,
+  "fetch_pages_per_domain": 2,
+  "pages_analyzed_total": 0,
+  "output_dir": "reports\\commoncrawl-mvp-test\\20260220-212202"
+}

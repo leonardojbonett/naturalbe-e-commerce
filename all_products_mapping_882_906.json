@@ -1,0 +1,127 @@
+{
+  "882": {
+    "id": "882",
+    "seo_title": "Gold Standard 100% Isolate ON 3 lb – Proteína Aislada | Natural Be",
+    "seo_description": "Gold Standard 100% Isolate ON 3 lb. Proteína Aislada pura sin grasa, sin carbs, sin lactosa. Formato intermedio de la línea. $385.000. Envío Colombia."
+  },
+  "883": {
+    "id": "883",
+    "seo_title": "Serious Mass Optimum Nutrition 6 lb – Hipercalórico | Natural Be",
+    "seo_description": "Serious Mass Optimum Nutrition 6 lb. El hipercalórico #1 del mundo en el formato familiar. Mejor precio por kg que el de 3 lb. $245.000. Envío Colombia."
+  },
+  "884": {
+    "id": "884",
+    "seo_title": "Serious Mass Optimum Nutrition 12 lb – Tarro Grande Volume | Natural Be",
+    "seo_description": "Serious Mass ON 12 lb. El mayor formato del hipercalórico #1. Mejor precio por kg de toda la línea Serious Mass. Para volumen serio. $410.000."
+  },
+  "885": {
+    "id": "885",
+    "seo_title": "⚠ seo_title truncado con \"Naturally Flavored 2\" a mitad. item_group_id: null — considerar agrupar con ID 879 (4.8 lb) bajo el mismo grupo Naturally Flavored.",
+    "seo_description": "Gold Standard 100% Whey Naturally Flavored ON 2 lb. Sin colorantes ni saborizantes artificiales. La versión clean en formato de entrada. $225.600."
+  },
+  "886": {
+    "id": "886",
+    "seo_title": "Gold Standard 100% Casein ON – Proteína Nocturna Oferta | Natural Be",
+    "seo_description": "Gold Standard 100% Casein Optimum Nutrition. Liberación lenta de proteína ideal para tomar antes de dormir. En oferta $300.000. Envío Colombia."
+  },
+  "887": {
+    "id": "887",
+    "seo_title": "Platinum Hydrowhey ON – Whey Hidrolizado Premium | Natural Be",
+    "seo_description": "Platinum Hydrowhey Optimum Nutrition. Proteína Whey Hidrolizada de ultra-rápida absorción — la más avanzada de ON para máxima recuperación. $450.000."
+  },
+  "888": {
+    "id": "888",
+    "seo_title": "⚠ seo_title truncado con \"Prote\". item_group_id: \"optimum-nutrition-gold-standard-100-whey-protein-proteina-whey\" — comparte grupo con IDs 874, 875, 880, 881 y 889. Verificar que todos lo tengan activo.",
+    "seo_description": "Gold Standard 100% Whey Protein ON 2 lb. La proteína más vendida del mundo en el formato de entrada. Ideal para empezar. $231.000. Envío Colombia."
+  },
+  "889": {
+    "id": "889",
+    "seo_title": "Gold Standard Whey ON 22 Servicios – Probar antes de 2 lb | Natural Be",
+    "seo_description": "Gold Standard 100% Whey ON 22 servicios. Entre el tarro de 10 y el de 2 lb — ideal para 3 semanas de uso. $187.000. Envío Colombia."
+  },
+  "890": {
+    "id": "890",
+    "seo_title": "Essential Amino Energy + Hydration ON 30 Serv – Electrolitos | Natural Be",
+    "seo_description": "Essential Amino Energy + Hydration ON, 30 servicios. BCAA + Energía + Electrolitos en una sola fórmula para hidratación activa durante el entrenamiento. $143.000."
+  },
+  "891": {
+    "id": "891",
+    "seo_title": "⚠ BUG: seo_title y titulo_google tenían \"Creatine+ 40 40 serv\" (duplicado). Es importante diferenciar este producto de los IDs 893/894 (Micronized Powder pura): este tiene cofactores adicionales.",
+    "seo_description": "Creatine+ ON, 40 servicios. Creatina Monohidrato + cofactores para mayor fuerza, potencia y recuperación. $123.000. Envío Colombia."
+  },
+  "892": {
+    "id": "892",
+    "seo_title": "⚠ BUG: seo_title truncado con \"Aminoáci\" y titulo_google con \"30 30 serv\" (duplicado). La diferencia con ID 890 (Hydration) y ID 895 (65 serv) debe quedar clara en la descripción.",
+    "seo_description": "Essential Amino Energy ON clásico, 30 servicios. BCAA + cafeína natural para energía intra y post-entrenamiento. El más popular de la gama. $138.000."
+  },
+  "893": {
+    "id": "893",
+    "seo_title": "⚠ BUG: seo_title truncado con \"Cr\" y titulo_google con \"120 120 serv\" (duplicado). Diferenciar de ID 891 (Creatine+ con cofactores): este es creatina pura, sin aditivos, mejor precio.",
+    "seo_description": "Creatine Micronized Powder ON 120 servicios. Creatina Monohidrato pura sin aditivos, el mayor frasco. Mejor precio por servicio. $185.000."
+  },
+  "894": {
+    "id": "894",
+    "seo_title": "⚠ BUG: seo_title truncado con \"Crea\" y titulo_google con \"60 60 serv\" (duplicado). Considera activar item_group_id junto con ID 893 (120 serv) para agruparlos como variantes de tamaño.",
+    "seo_description": "Creatine Micronized Powder ON 60 servicios. Creatina Monohidrato pura para empezar un ciclo de 2 meses. $128.000. Envío Colombia."
+  },
+  "895": {
+    "id": "895",
+    "seo_title": "⚠ BUG CRÍTICO: nombre tenía \"65 serv.\" con punto, generando \"65 . 65 serv\" en el seo_title. El slug indica \"fruit-punch\" pero el nombre no menciona el sabor — inconsistencia a corregir en el nombre del producto.",
+    "seo_description": "Essential Amino Energy ON Fruit Punch, 65 servicios. El tarro grande del clásico Amino Energy. Mejor precio por servicio. $226.000."
+  },
+  "896": {
+    "id": "896",
+    "seo_title": "⚠ seo_title original truncado con \"x – Proteína\". El \"x\" sobrante en el nombre proviene de \"Polvo x 850 gr\" — el generador no procesó el número.",
+    "seo_description": "Ensure Advance Vainilla + HMB 850 gr. 28 vitaminas, HMB y proteína para recuperar masa muscular en adultos. Respaldo Abbott. En oferta $125.500."
+  },
+  "897": {
+    "id": "897",
+    "seo_title": "⚠ BUG: seo_title truncado con \"85\". titulo_google tenía \"Pediasure Complemento Nutricional Pediasure...\" con marca + nombre completo redundante.",
+    "seo_description": "Pediasure Peptigro Vainilla 850 gr. Marca #1 recomendada por pediatras. 5 grupos de nutrientes para crecer fuerte. En oferta $91.480. Envío Colombia."
+  },
+  "898": {
+    "id": "898",
+    "seo_title": "Ensure Advance Vainilla + HMB 400 gr – Formato Prueba | Natural Be",
+    "seo_description": "Ensure Advance Vainilla + HMB 400 gr. Formato de prueba de la fórmula clínica Abbott para adultos. HMB + proteína + 28 vitaminas. $79.400. Envío Colombia."
+  },
+  "899": {
+    "id": "899",
+    "seo_title": "⚠ BUG: seo_title truncado con \"40\" y el numero 40 solo. Hay tres tamaños Pediasure Peptigro (399, 897, 902) — los tres deben tener item_group_id compartido para agruparse en Google Shopping.",
+    "seo_description": "Pediasure Peptigro Vainilla 400 gr. Marca #1 de pediatras. Formato accesible para conocer Pediasure. 5 grupos de nutrientes. $59.550. Envío Colombia."
+  },
+  "900": {
+    "id": "900",
+    "seo_title": "⚠ BUG: seo_title tenía \"Lata x\" (gramaje cortado). Este es el único Pediasure para adolescentes (10-17 años) — se diferencia del Peptigro (2-13 años). Esa diferencia de edad debe aparecer en el título.",
+    "seo_description": "Pediasure 10+ Vainilla 850 gr. Nutrición especializada para preadolescentes de 10 a 17 años en etapa de máximo desarrollo. $119.450. Envío Colombia."
+  },
+  "901": {
+    "id": "901",
+    "seo_title": "⚠ BUG: seo_title y titulo_google tenían \"Ensure Vainilla Polvo x\" (el \"x 400 gr\" estaba incompleto/truncado). La diferencia entre Ensure básico (901) y Ensure Advance (896/898) es que Advance tiene HMB y es para recuperación de masa muscular.",
+    "seo_description": "Ensure Vainilla Polvo 400 gr. 28 vitaminas y minerales, proteína, omega-3 y fibra FOS para adultos que necesitan reforzar su nutrición. Abbott. $78.300."
+  },
+  "902": {
+    "id": "902",
+    "seo_title": "⚠ BUG: seo_title truncado con \"16\". item_group_id activo — el grupo incluye los tres formatos Peptigro (897, 899, 902). Verificar que los tres lo tengan para activar el carrusel de variantes en Google Shopping.",
+    "seo_description": "Pediasure Peptigro Vainilla 1600 gr. El mayor formato de la línea: mejor precio por kg para niños que usan Pediasure con regularidad. $196.450. Envío Colombia."
+  },
+  "903": {
+    "id": "903",
+    "seo_title": "⚠ BUG: seo_title tenía \"Lata x\" (gramaje cortado). El sabor fresa es el diferenciador vs los otros Peptigro (todos vainilla) — ese argumento no aparecía en ningún campo.",
+    "seo_description": "Pediasure Peptigro Fresa Lata 400 gr. El sabor fresa: favorito de los niños que rechazan el vainilla. Misma fórmula clínica. $59.550. Envío Colombia."
+  },
+  "904": {
+    "id": "904",
+    "seo_title": "⚠ BUG: seo_title tenía \"Polvo x\" (gramaje truncado). El diferenciador de Glucerna (diabetes/control glucémico) es el más importante de todos los productos médicos del catálogo y no aparecía en ningún campo visible.",
+    "seo_description": "Glucerna Vainilla 400 gr. Fórmula clínica Abbott para personas con diabetes o hiperglucemia. Estabiliza el azúcar en 4 semanas. $88.400. Envío Colombia."
+  },
+  "905": {
+    "id": "905",
+    "seo_title": "Ensure Advance Chocolate + HMB 400 gr – Nutrición Adulto | Natural Be",
+    "seo_description": "Ensure Advance Chocolate + HMB 400 gr. El sabor chocolate de la fórmula clínica Abbott para recuperación muscular en adultos. HMB + proteína + 28 vitaminas. $79.400."
+  },
+  "906": {
+    "id": "906",
+    "seo_title": "Nutren Senior Nestlé Vainilla 370 gr – Adulto Mayor | Natural Be",
+    "seo_description": "Nutren Senior Nestlé Vainilla 370 gr. Nutrición equilibrada para adultos mayores: músculos, huesos, energía e inmunidad. En oferta $55.912. Envío Colombia."
+  }
+}

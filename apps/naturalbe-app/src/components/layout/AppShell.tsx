@@ -8,7 +8,7 @@ export function AppShell() {
     <div className="app-root">
       <header className="app-header">
         <div className="container header-row">
-          <strong className="brand">Natural Be App</strong>
+          <strong className="brand">Natural Be</strong>
           <nav className="header-nav" aria-label="Navegacion principal">
             <NavLink
               to="/"

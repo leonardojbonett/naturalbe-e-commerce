@@ -24,9 +24,9 @@
           </a>
           <button id="menuToggle" class="hamburger-btn" type="button" aria-label="Abrir menu" aria-haspopup="dialog" aria-expanded="false" aria-controls="mobileMenu">Menu</button>
         </div>
-        <form class="market-search" data-search-form>
+        <form class="market-search" data-search-form action="/categoria/suplementos" method="get">
           <label class="sr-only" for="siteSearch">Buscar</label>
-          <input id="siteSearch" type="search" placeholder="Buscar suplementos, marcas o objetivos">
+          <input id="siteSearch" name="q" type="search" placeholder="Buscar suplementos, marcas o objetivos">
           <button type="submit">Buscar</button>
         </form>
         <div class="market-actions">

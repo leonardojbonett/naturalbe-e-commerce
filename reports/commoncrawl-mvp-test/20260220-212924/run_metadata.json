@@ -1,0 +1,23 @@
+{
+  "generated_at": "2026-02-20T21:29:37.292303",
+  "index_candidates": [
+    "CC-MAIN-2026-04",
+    "CC-MAIN-2025-51",
+    "CC-MAIN-2025-47",
+    "CC-MAIN-2025-43"
+  ],
+  "index_used_by_domain": {
+    "funat.com.co": "CC-MAIN-2025-47",
+    "healthyamerica.co": "",
+    "millenniumnaturalsystems.com": ""
+  },
+  "domains": [
+    "funat.com.co",
+    "healthyamerica.co",
+    "millenniumnaturalsystems.com"
+  ],
+  "index_pages_per_domain": 1,
+  "fetch_pages_per_domain": 2,
+  "pages_analyzed_total": 1,
+  "output_dir": "reports\\commoncrawl-mvp-test\\20260220-212924"
+}

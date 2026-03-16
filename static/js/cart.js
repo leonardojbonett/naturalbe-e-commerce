@@ -46,6 +46,26 @@
         if (/^\s*javascript:/i.test(raw)) return '#';
         return raw;
     };
+    const normalizeProductSlug = (value) => String(value || '')
+        .trim()
+        .replace(/^\/+|\/+$/g, '')
+        .replace(/^producto\//i, '')
+        .replace(/\.html?$/i, '');
+    const resolveProductUrl = (product) => {
+        if (!product) return '#';
+        if (window.NaturalBe && typeof window.NaturalBe.buildProductURL === 'function') {
+            return window.NaturalBe.buildProductURL(product);
+        }
+        const slug = normalizeProductSlug(product.slug || product.product_slug || '');
+        if (slug) return `/producto/${encodeURIComponent(slug)}`;
+        const rawUrl = String(product.url || '');
+        const match = rawUrl.match(/\/producto\/([^/?#]+)(?:\.html?)?(?:[?#].*)?$/i);
+        if (match && match[1]) {
+            const slugFromUrl = normalizeProductSlug(match[1]);
+            if (slugFromUrl) return `/producto/${encodeURIComponent(slugFromUrl)}`;
+        }
+        return sanitizeUrl(rawUrl || '#');
+    };
     const toJsString = (value) => JSON.stringify(String(value || ''));
     const toJsStringAttr = (value) => escapeHtml(toJsString(value));
 
@@ -288,7 +308,7 @@
         saveCart();
         updateCartUI();
         showCartNotification(name);
-        showMiniCart(name);
+        showMiniCart(name, image);
 
         if (typeof nbGa4EcomEvent === 'function' && typeof nbMapProductToGa4Item === 'function') {
             const isPack = isPackProduct(trackingProduct);
@@ -332,17 +352,21 @@
         drawer.setAttribute('aria-hidden', 'true');
         drawer.innerHTML = `
         <div class="mini-cart-header">
-            <span>Carrito actualizado</span>
-            <button type="button" class="btn-ghost" data-mini-close>Cerrar</button>
+            <span class="mini-cart-title"><span class="mini-cart-check" aria-hidden="true">✓</span>¡Agregado al carrito!</span>
+            <button type="button" class="mini-cart-close" aria-label="Cerrar" data-mini-close>×</button>
         </div>
         <div class="mini-cart-body">
-            <p class="mini-cart-product" data-mini-product>Producto agregado</p>
-            <p><strong data-mini-count>0</strong> items · <strong data-mini-total>$0</strong></p>
-            <p class="mini-cart-shipping">Envío $15.000 · Gratis desde $100.000.</p>
+            <div class="mini-cart-product-row">
+                <img class="mini-cart-thumb" data-mini-image src="${PLACEHOLDER_IMAGE}" alt="" loading="lazy" decoding="async">
+                <p class="mini-cart-product" data-mini-product>Producto agregado</p>
+            </div>
+            <p class="mini-cart-meta"><strong data-mini-count>0</strong> productos</p>
+            <p class="mini-cart-subtotal">Subtotal <strong data-mini-total>$0</strong></p>
+            <p class="mini-cart-shipping">Incluye descuentos disponibles.</p>
         </div>
         <div class="mini-cart-actions">
             <button type="button" class="btn-primary" data-mini-view>Ver carrito</button>
-            <button type="button" class="btn-ghost" data-mini-continue>Seguir comprando</button>
+            <button type="button" class="btn-ghost" data-mini-continue>Continuar comprando</button>
         </div>
     `;
         document.body.appendChild(drawer);
@@ -360,7 +384,7 @@
         return drawer;
     }
 
-    function updateMiniCartSummary(productName, drawerOverride) {
+    function updateMiniCartSummary(productName, productImage, drawerOverride) {
         const drawer = drawerOverride || ensureMiniCart();
         if (!drawer) return;
         const total = getCartTotal();
@@ -369,16 +393,21 @@
         const productEl = drawer.querySelector('[data-mini-product]');
         const countEl = drawer.querySelector('[data-mini-count]');
         const totalEl = drawer.querySelector('[data-mini-total]');
+        const imageEl = drawer.querySelector('[data-mini-image]');
         if (productEl && productName) productEl.textContent = productName;
         if (countEl) countEl.textContent = count;
         if (totalEl) totalEl.textContent = totalText;
+        if (imageEl && productImage) {
+            imageEl.src = sanitizeUrl(productImage || PLACEHOLDER_IMAGE);
+            imageEl.alt = productName ? `Imagen de ${productName}` : 'Producto agregado';
+        }
     }
 
-    function showMiniCart(productName) {
+    function showMiniCart(productName, productImage) {
         if (!NB_MINI_CART_ENABLED) return;
         const drawer = ensureMiniCart();
         if (!drawer) return;
-        updateMiniCartSummary(productName);
+        updateMiniCartSummary(productName, productImage);
         drawer.classList.add('is-open');
         drawer.setAttribute('aria-hidden', 'false');
         if (miniCartTimer) clearTimeout(miniCartTimer);
@@ -460,7 +489,7 @@
 
         const miniDrawer = document.getElementById('miniCart');
         if (miniDrawer) {
-            updateMiniCartSummary(null, miniDrawer);
+            updateMiniCartSummary(null, null, miniDrawer);
         }
 
         if (cart.length === 0) {
@@ -566,6 +595,18 @@
                 lastCartFocused.focus();
             }
         }
+    }
+
+    function bindCartTriggers(scope = document) {
+        if (!scope || typeof scope.querySelectorAll !== 'function') return;
+        scope.querySelectorAll('[data-cart-trigger]').forEach((trigger) => {
+            if (!trigger || trigger.dataset.nbCartBound === '1') return;
+            trigger.dataset.nbCartBound = '1';
+            trigger.addEventListener('click', (event) => {
+                event.preventDefault();
+                toggleCart();
+            });
+        });
     }
 
     function closeCartOnOutsideClick(event) {
@@ -827,7 +868,7 @@
             const badges = [];
             const safeName = escapeHtml(p.name || '');
             const safeDesc = escapeHtml(p.description || '');
-            const safeUrl = escapeHtml(sanitizeUrl(p.url || '#'));
+            const safeUrl = escapeHtml(sanitizeUrl(resolveProductUrl(p)));
             const safeCategory = escapeHtml(p.category || '');
             const safeBadgeLabel = escapeHtml(p.badgeLabel || '');
             const safeIdAttr = escapeHtml(String(p.id != null ? p.id : ''));
@@ -1045,17 +1086,44 @@
             sugg.style.display = 'none';
             return;
         }
-        const t = term.toLowerCase();
-        const products = (typeof PRODUCTS !== 'undefined') ? PRODUCTS.filter(p => !isPromoProduct(p) && p.name.toLowerCase().includes(t)) : [];
-        const categories = Array.from(new Set((typeof PRODUCTS !== 'undefined') ? PRODUCTS.filter(p => !isPromoProduct(p)).map(p => p.category).filter(Boolean) : []))
-            .filter(c => c.toLowerCase().includes(t) && c.toLowerCase() !== 'packs');
-        const items = [];
-        products.forEach(p => {
-            items.push({ type: 'producto', label: p.name, url: p.url || '#', category: p.category });
-        });
-        categories.forEach(c => {
-            items.push({ type: 'categoria', label: `Ver todos los productos de ${c}`, category: c });
-        });
+        const baseProducts = (typeof PRODUCTS !== 'undefined')
+            ? PRODUCTS.filter(p => !isPromoProduct(p))
+            : [];
+        const engine = getSearchEngine();
+        let items = [];
+        if (engine && typeof engine.getSuggestions === 'function') {
+            items = engine.getSuggestions(term, { products: baseProducts, maxItems: 8 }).map((item) => {
+                if (item.type === 'producto') {
+                    const productMatch = baseProducts.find((p) => {
+                        const pname = String(p.name || p.nombre || '');
+                        return pname === String(item.label || '');
+                    });
+                    return {
+                        type: 'producto',
+                        label: String(item.label || ''),
+                        url: String(item.url || (productMatch ? resolveProductUrl(productMatch) : '#')),
+                        category: String(item.category || (productMatch ? (productMatch.category || productMatch.categoria || '') : ''))
+                    };
+                }
+                return {
+                    type: 'categoria',
+                    label: String(item.label || ''),
+                    category: String(item.category || '')
+                };
+            });
+        }
+        if (!items.length) {
+            const t = term.toLowerCase();
+            const products = baseProducts.filter(p => String(p.name || p.nombre || '').toLowerCase().includes(t));
+            const categories = Array.from(new Set(baseProducts.map(p => p.category || p.categoria).filter(Boolean)))
+                .filter(c => String(c).toLowerCase().includes(t) && String(c).toLowerCase() !== 'packs');
+            products.forEach(p => {
+                items.push({ type: 'producto', label: p.name || p.nombre, url: resolveProductUrl(p), category: p.category || p.categoria });
+            });
+            categories.forEach(c => {
+                items.push({ type: 'categoria', label: `Ver todos los productos de ${c}`, category: c });
+            });
+        }
 
         if (!items.length) {
             sugg.innerHTML = '';
@@ -1162,6 +1230,7 @@
     // Init
     // ---------------------------
     document.addEventListener('DOMContentLoaded', function () {
+        bindCartTriggers();
         const productsGrid = document.getElementById('productsGrid');
         const runCatalog = () => ensureProductsReady().then(() => {
             if (productsGrid && typeof PRODUCTS !== 'undefined') {
@@ -1246,6 +1315,7 @@
 
     document.addEventListener('DOMContentLoaded', updateCartUI);
     document.addEventListener('DOMContentLoaded', () => {
+        bindCartTriggers();
         const cartModal = document.getElementById('cartModal');
         if (cartModal) {
             cartModal.setAttribute('aria-hidden', 'true');
@@ -1280,9 +1350,13 @@
     window.saveCart = saveCart;
     window.setupFilters = setupFilters;
     window.showCartNotification = showCartNotification;
+    window.bindCartTriggers = bindCartTriggers;
     window.toggleCart = toggleCart;
     window.updateCartUI = updateCartUI;
     window.updateQuantity = updateQuantity;
+
+    // Soporta carga diferida de cart.js tras DOMContentLoaded.
+    bindCartTriggers();
 })();
 
 

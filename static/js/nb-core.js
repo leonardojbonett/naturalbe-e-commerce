@@ -53,11 +53,25 @@
   };
 
   NB.buildProductURL = function buildProductURL(product) {
-    if (!product) return '/product.html';
-    const slug = product.slug || product.product_slug || '';
+    if (!product) return '/categoria/suplementos';
+    const normalizeSlug = (raw) => {
+      return String(raw || '')
+        .trim()
+        .replace(/^\/+|\/+$/g, '')
+        .replace(/^producto\//i, '')
+        .replace(/\.html?$/i, '');
+    };
+    const slug = normalizeSlug(product.slug || product.product_slug || '');
     if (slug) {
       return `/producto/${encodeURIComponent(slug)}`;
     }
-    return '/product.html';
+    const url = String(product.url || '');
+    const pathMatch = url.match(/\/producto\/([^/?#]+)(?:\.html?)?(?:[?#].*)?$/i);
+    if (pathMatch && pathMatch[1]) {
+      const slugFromUrl = normalizeSlug(pathMatch[1]);
+      if (slugFromUrl) return `/producto/${encodeURIComponent(slugFromUrl)}`;
+    }
+    return '/categoria/suplementos';
   };
 })();
+

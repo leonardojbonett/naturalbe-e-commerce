@@ -1,0 +1,165 @@
+name: NaturalBe App CI
+
+on:
+  pull_request:
+    paths:
+      - "apps/naturalbe-app/**"
+      - ".github/workflows/naturalbe-app-ci.yml"
+  push:
+    branches:
+      - main
+    paths:
+      - "apps/naturalbe-app/**"
+      - ".github/workflows/naturalbe-app-ci.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: naturalbe-app-ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  quality-and-metrics-pr:
+    if: github.event_name == 'pull_request' || github.ref != 'refs/heads/main'
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: apps/naturalbe-app
+
+    env:
+      REQUIRE_METRICS_FILE: "false"
+      THRESHOLD_CATALOG_P95_MS: "900"
+      THRESHOLD_PRODUCT_P95_MS: "650"
+      THRESHOLD_NAV_TO_PDP_P95_MS: "700"
+      THRESHOLD_LCP_P95_MS: "2500"
+      THRESHOLD_INP_P95_MS: "250"
+      THRESHOLD_CLS_P95: "0.1"
+      THRESHOLD_P95_DELTA_PCT: "20"
+      METRICS_BASELINE_PATH: ".tmp/orders/metrics-baseline.json"
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: apps/naturalbe-app/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Typecheck
+        run: npm run typecheck
+
+      - name: Tests
+        run: npm run test
+
+      - name: Build
+        run: npm run build
+
+      - name: Metrics summary (if log exists)
+        run: npm run metrics:summary
+
+      - name: Metrics regression gate
+        shell: bash
+        run: |
+          if [[ -f ".tmp/orders/metrics.jsonl" ]]; then
+            npm run metrics:check
+          else
+            if [[ "${REQUIRE_METRICS_FILE}" == "true" ]]; then
+              echo "metrics.jsonl is required but was not found."
+              exit 1
+            fi
+            echo "::warning::metrics.jsonl not found. Skipping metrics regression gate."
+          fi
+
+      - name: Upload metrics artifacts (if any)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: naturalbe-metrics
+          path: |
+            apps/naturalbe-app/.tmp/orders/metrics.jsonl
+            apps/naturalbe-app/.tmp/orders/metrics-summary.md
+            apps/naturalbe-app/.tmp/orders/metrics-summary.html
+            apps/naturalbe-app/.tmp/orders/metrics-summary.json
+            apps/naturalbe-app/.tmp/orders/metrics-baseline.json
+          if-no-files-found: ignore
+
+  quality-and-metrics-main-strict:
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: apps/naturalbe-app
+
+    env:
+      REQUIRE_METRICS_FILE: "true"
+      THRESHOLD_CATALOG_P95_MS: "900"
+      THRESHOLD_PRODUCT_P95_MS: "650"
+      THRESHOLD_NAV_TO_PDP_P95_MS: "700"
+      THRESHOLD_LCP_P95_MS: "2500"
+      THRESHOLD_INP_P95_MS: "250"
+      THRESHOLD_CLS_P95: "0.1"
+      THRESHOLD_P95_DELTA_PCT: "20"
+      METRICS_BASELINE_PATH: ".tmp/orders/metrics-baseline.json"
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: apps/naturalbe-app/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Typecheck
+        run: npm run typecheck
+
+      - name: Tests
+        run: npm run test
+
+      - name: Build
+        run: npm run build
+
+      - name: Metrics summary
+        run: npm run metrics:summary
+
+      - name: Metrics regression gate
+        shell: bash
+        run: |
+          if [[ -f ".tmp/orders/metrics.jsonl" ]]; then
+            npm run metrics:check
+          else
+            echo "metrics.jsonl is required but was not found."
+            exit 1
+          fi
+
+      - name: Upload metrics artifacts (if any)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: naturalbe-metrics-main
+          path: |
+            apps/naturalbe-app/.tmp/orders/metrics.jsonl
+            apps/naturalbe-app/.tmp/orders/metrics-summary.md
+            apps/naturalbe-app/.tmp/orders/metrics-summary.html
+            apps/naturalbe-app/.tmp/orders/metrics-summary.json
+            apps/naturalbe-app/.tmp/orders/metrics-baseline.json
+          if-no-files-found: ignore

@@ -1,0 +1,6 @@
+Contact: mailto:seguridad@naturalbe.com.co
+Contact: https://naturalbe.com.co/perfil/equipo-natural-be.html
+Expires: 2027-02-20T00:00:00Z
+Preferred-Languages: es, en
+Canonical: https://naturalbe.com.co/.well-known/security.txt
+Policy: https://naturalbe.com.co/privacidad.html

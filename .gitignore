@@ -1,0 +1,3 @@
+.tmp/
+.catalog_cache/
+__pycache__/

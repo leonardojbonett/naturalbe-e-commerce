@@ -253,12 +253,18 @@
     const safePrice = escapeHtml(formatCOP(price));
     const safeUrl = escapeHtml(url);
     const safeImg = escapeHtml(img);
+    const safeProductId = escapeHtml(String(product?.id || product?.slug || ''));
 
     return `
       <article class="product-card">
-        <a class="product-card__media" href="${safeUrl}">
-          <img src="${safeImg}" alt="${safeBrand} ${safeName}" loading="lazy" decoding="async" width="320" height="240" onerror="this.onerror=null;this.src='${PLACEHOLDER_IMAGE}';">
-        </a>
+        <div class="product-card__media-wrap">
+          <a class="product-card__media" href="${safeUrl}">
+            <img src="${safeImg}" alt="${safeBrand} ${safeName}" loading="lazy" decoding="async" width="320" height="240" onerror="this.onerror=null;this.src='${PLACEHOLDER_IMAGE}';">
+          </a>
+          <div class="product-card__quick-add">
+            <button class="btn-primary" type="button" data-add-to-cart="1" data-product-id="${safeProductId}" data-product-name="${safeName}" data-product-price="${price}" data-product-image="${safeImg}">Agregar al carrito</button>
+          </div>
+        </div>
         <div class="product-card__body">
           <h3 class="product-card__title">
             <a href="${safeUrl}">${safeName}</a>
@@ -267,12 +273,28 @@
           <div class="product-card__price">
             <span>${safePrice}</span>
           </div>
-          <div class="product-card__actions">
-            <a class="btn-primary" href="${safeUrl}">Ver producto</a>
+          <div class="product-card__actions product-card__actions--detail">
+            <a class="btn-ghost" href="${safeUrl}">Ver detalle</a>
           </div>
         </div>
       </article>
     `;
+  };
+
+  const attachAddToCartHandler = (container) => {
+    if (!container || container.dataset.cartBound === '1') return;
+    container.addEventListener('click', (event) => {
+      const btn = event.target.closest('[data-add-to-cart]');
+      if (!btn) return;
+      if (typeof addToCart !== 'function') return;
+      addToCart(
+        String(btn.dataset.productId || ''),
+        String(btn.dataset.productName || ''),
+        Number(btn.dataset.productPrice || 0),
+        String(btn.dataset.productImage || '')
+      );
+    });
+    container.dataset.cartBound = '1';
   };
 
   const renderList = (list, container) => {
@@ -281,6 +303,7 @@
       container.innerHTML = '';
       return;
     }
+    attachAddToCartHandler(container);
     container.innerHTML = list.map((entry) => buildCardHtml(entry.product)).join('');
   };
 

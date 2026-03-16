@@ -6,6 +6,7 @@
   ];
   const DEFAULT_CATALOG_VERSION = '1';
   const FALLBACK_IMAGE = '/static/img/placeholder.webp';
+  const PROSA_FALLBACK_IMAGE = '/static/img/maquillaje/prosa-placeholder.svg';
 
   /*
     Esquema de producto normalizado:
@@ -38,6 +39,7 @@
     const categoria = p.categoria || p.category || 'otros';
     const productId = p.product_id || p.productId || '';
     const slug = p.slug || '';
+    const isProsa = String(p.marca || '').toLowerCase() === 'prosa' || String(slug).toLowerCase().startsWith('prosa-');
     const isFile = window.location && window.location.protocol === 'file:';
     const basePath = isFile
       ? './'
@@ -45,7 +47,17 @@
     const localImage = isFile ? './static/img/placeholder.webp' : `${basePath.replace(/\/?$/, '/') }static/img/placeholder.webp`;
     const normalizeAsset = (src) => {
       if (!src) return '';
-      if (/^https?:\/\//i.test(src)) return src;
+      if (/^https?:\/\//i.test(src)) {
+        // productosprosacolombia.com is currently serving anti-bot HTML instead of image bytes.
+        if (/https?:\/\/(?:www\.)?productosprosacolombia\.com\//i.test(src)) {
+          const viaCdn = src.replace(
+            /^https?:\/\/(?:www\.)?productosprosacolombia\.com\//i,
+            'https://i0.wp.com/productosprosacolombia.com/'
+          );
+          return isProsa ? viaCdn : PROSA_FALLBACK_IMAGE;
+        }
+        return src;
+      }
       if (/^[a-zA-Z]:[\\/]/.test(src)) return src;
       if (isFile && src.startsWith('/')) return `.${src}`;
       if (src.startsWith('//')) return `/${src.replace(/^\/+/, '')}`;
@@ -99,7 +111,7 @@
       seo_description: p.seo_description || '',
       rating_value: Number(p.rating_value || 0),
       rating_count: Number(p.rating_count || 0),
-      url: p.url || p.link || (slug ? `/producto/${encodeURIComponent(slug)}` : '/product.html'),
+      url: p.url || p.link || (slug ? `/producto/${encodeURIComponent(slug)}` : '/categoria/suplementos'),
       product_id: productId,
       // Compatibilidad con codigo existente
       name: p.nombre || p.name || '',
@@ -206,3 +218,4 @@
   // Disparar evento cuando products-data está listo
   window.dispatchEvent(new CustomEvent('ProductsDataReady'));
 })();
+

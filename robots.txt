@@ -3,11 +3,14 @@ Allow: /
 Disallow: /admin/
 Disallow: /carrito/
 Disallow: /cache_images/
+Disallow: /cache_images*/
 Disallow: /cache_images_v3/
 Disallow: /cache_images_v5/
 Disallow: /cache_images_v7/
 Disallow: /cache_images_v8/
 Disallow: /cache_images_final/
+Disallow: /product.html
+Disallow: /category.html
 Disallow: /*.report.html$
 Disallow: /*?*add-to-cart=*
 Disallow: /*?*page=*
@@ -16,8 +19,12 @@ Disallow: /*?*category=*
 Disallow: /*?*cat=*
 Disallow: /*?categoria=*
 Disallow: /*?*objective=*
+Disallow: /*?*objetivo=*
+Disallow: /*?*brand=*
+Disallow: /*?*q=*
 
 Sitemap: https://naturalbe.com.co/sitemap.xml
+Sitemap: https://naturalbe.com.co/sitemap-products.xml
 Sitemap: https://naturalbe.com.co/sitemap-images.xml
 
 User-agent: AhrefsBot

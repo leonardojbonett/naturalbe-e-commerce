@@ -4,6 +4,18 @@
 (function() {
   'use strict';
 
+  function readNaturalBeCart() {
+    try {
+      const primary = localStorage.getItem('naturalbe_cart');
+      const legacy = localStorage.getItem('nb-cart');
+      const raw = primary || legacy || '[]';
+      const parsed = JSON.parse(raw);
+      return Array.isArray(parsed) ? parsed : [];
+    } catch (_) {
+      return [];
+    }
+  }
+
   // Configuración de analytics para Colombia
   const analyticsConfig = {
     // Events personalizados para e-commerce colombiano
@@ -101,15 +113,14 @@
 
       const images = document.querySelectorAll('img[data-src], img[src]');
       images.forEach(img => {
-        // Lazy loading nativo
-        if (!img.loading) {
+        // Lazy loading nativo sin tocar posibles candidatos LCP
+        if (!img.loading && img.fetchpriority !== 'high') {
           img.loading = 'lazy';
         }
 
         // Optimizar tamaños para móvil
         if (img.width > 400) {
           img.width = Math.min(img.width, 400);
-          img.height = 'auto';
         }
 
         // Prioridad para imágenes above the fold
@@ -174,8 +185,7 @@
         this.optimizeStickyHeader(header);
       }
 
-      // Floating action button para carrito
-      this.createFloatingCartButton();
+      // P0: se elimina FAB duplicado; el sitio ya usa .cart-float nativo.
     }
 
     // Agregar gestos swipe
@@ -212,6 +222,7 @@
     optimizeStickyHeader(header) {
       let lastScrollY = window.scrollY;
       let ticking = false;
+      header.style.willChange = 'transform';
 
       const updateHeader = () => {
         const scrollY = window.scrollY;
@@ -240,78 +251,12 @@
 
     // Crear botón flotante de carrito
     createFloatingCartButton() {
-      if (document.querySelector('.floating-cart-btn')) return;
-
-      const button = document.createElement('button');
-      button.className = 'floating-cart-btn';
-      button.innerHTML = `
-        <span class="cart-icon">🛒</span>
-        <span class="cart-count">0</span>
-      `;
-      
-      button.addEventListener('click', () => {
-        // Abrir carrito
-        const cartTrigger = document.querySelector('[data-cart-trigger]');
-        if (cartTrigger) cartTrigger.click();
-      });
-
-      // Estilos
-      const styles = document.createElement('style');
-      styles.textContent = `
-        .floating-cart-btn {
-          position: fixed;
-          bottom: 20px;
-          right: 20px;
-          width: 56px;
-          height: 56px;
-          border-radius: 50%;
-          background: #3b82f6;
-          color: white;
-          border: none;
-          box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
-          z-index: 1000;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          font-size: 20px;
-          cursor: pointer;
-          transition: transform 0.2s;
-        }
-        .floating-cart-btn:hover {
-          transform: scale(1.1);
-        }
-        .floating-cart-btn .cart-count {
-          position: absolute;
-          top: -5px;
-          right: -5px;
-          background: #ef4444;
-          color: white;
-          border-radius: 50%;
-          width: 20px;
-          height: 20px;
-          font-size: 12px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-        }
-      `;
-      document.head.appendChild(styles);
-
-      document.body.appendChild(button);
-
-      // Actualizar contador
-      this.updateFloatingCartCount();
+      return;
     }
 
     // Actualizar contador del carrito flotante
     updateFloatingCartCount() {
-      const cart = JSON.parse(localStorage.getItem('nb-cart') || '[]');
-      const count = cart.reduce((sum, item) => sum + item.quantity, 0);
-      const countElement = document.querySelector('.floating-cart-btn .cart-count');
-      if (countElement) {
-        countElement.textContent = count;
-        countElement.style.display = count > 0 ? 'flex' : 'none';
-      }
+      return;
     }
 
     // Optimizar formularios para móvil
@@ -489,10 +434,12 @@
 
     // Modo 3G
     enable3GMode() {
-      // Lazy loading agresivo
+      // Lazy loading selectivo: preservar LCP y imágenes above-the-fold
       document.querySelectorAll('img').forEach(img => {
+        if (img.fetchpriority === 'high' || img.loading === 'eager') return;
+        const rect = img.getBoundingClientRect();
+        if (rect.top < window.innerHeight * 1.2) return;
         img.loading = 'lazy';
-        img.fetchpriority = 'low';
       });
 
       // Reducir peticiones
@@ -582,13 +529,19 @@
     // Trackear interacciones del usuario
     trackUserInteractions() {
       let interactionCount = 0;
-      const interactions = ['click', 'touchstart', 'scroll'];
-
-      interactions.forEach(eventType => {
+      let lastScrollTime = 0;
+      ['click', 'touchstart'].forEach(eventType => {
         document.addEventListener(eventType, () => {
           interactionCount++;
           this.performanceMetrics.userInteractions = interactionCount;
         }, { passive: true });
+      });
+      window.addEventListener('scroll', () => {
+        const now = Date.now();
+        if (now - lastScrollTime > 500) {
+          lastScrollTime = now;
+          this.performanceMetrics.scrollEvents = (this.performanceMetrics.scrollEvents || 0) + 1;
+        }
       });
     }
 
@@ -751,8 +704,8 @@
 
     // Trackear engagement del usuario
     trackUserEngagement() {
-      let timeOnPage = 0;
-      let lastActivity = Date.now();
+      let activeStart = Date.now();
+      let engagedMs = 0;
 
       // Trackear scroll
       let maxScroll = 0;
@@ -761,66 +714,55 @@
           (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100
         );
         maxScroll = Math.max(maxScroll, scrollPercent);
-        lastActivity = Date.now();
       }, { passive: true });
 
-      // Trackear tiempo en página
-      setInterval(() => {
-        timeOnPage += 5; // Cada 5 segundos
-        lastActivity = Date.now();
-      }, 5000);
+      function pauseEngagement() {
+        engagedMs += Math.max(0, Date.now() - activeStart);
+      }
+      function resumeEngagement() {
+        activeStart = Date.now();
+      }
+
+      document.addEventListener('visibilitychange', () => {
+        if (document.visibilityState === 'hidden') {
+          pauseEngagement();
+        } else {
+          resumeEngagement();
+        }
+      }, { passive: true });
 
       // Enviar datos al salir
-      window.addEventListener('beforeunload', () => {
+      const flushEngagement = () => {
+        if (document.visibilityState !== 'hidden') pauseEngagement();
         const engagementData = {
-          time_on_page: timeOnPage,
+          time_on_page: Math.round(engagedMs / 1000),
           max_scroll: maxScroll,
           session_duration: Date.now() - this.sessionData.startTime
         };
-
         this.trackCustomEvent('user_engagement', engagementData);
-      });
+      };
+      window.addEventListener('pagehide', flushEngagement, { once: true });
+      window.addEventListener('beforeunload', flushEngagement, { once: true });
     }
 
     // Trackear eventos de e-commerce
     trackEcommerceEvents() {
-      // View product
       document.addEventListener('click', (e) => {
-        const productCard = e.target.closest('.product-card');
-        if (productCard) {
-          const productId = productCard.dataset.productId;
-          const product = this.getProductData(productId);
-          if (product) {
-            this.trackEvent('view_item', {
-              currency: 'COP',
-              value: product.precio,
-              items: [this.formatProductForGA(product)]
-            });
-          }
-        }
-      });
-
-      // Add to cart
-      document.addEventListener('click', (e) => {
-        if (e.target.closest('[data-add-to-cart]')) {
-          const button = e.target.closest('[data-add-to-cart]');
+        const addToCartButton = e.target.closest('[data-add-to-cart]');
+        if (addToCartButton) {
           const product = {
-            item_id: button.dataset.productId,
-            item_name: button.dataset.productName,
-            price: parseFloat(button.dataset.productPrice),
+            item_id: addToCartButton.dataset.productId,
+            item_name: addToCartButton.dataset.productName,
+            price: parseFloat(addToCartButton.dataset.productPrice),
             quantity: 1
           };
-
           this.trackEvent('add_to_cart', {
             currency: 'COP',
             value: product.price,
             items: [product]
           });
         }
-      });
 
-      // View cart
-      document.addEventListener('click', (e) => {
         if (e.target.closest('[data-cart-trigger]')) {
           const cart = this.getCartData();
           this.trackEvent('view_cart', {
@@ -829,19 +771,24 @@
             items: cart.items
           });
         }
-      });
+
+        const waElement = e.target.closest('[data-wa-content]');
+        if (waElement) {
+          this.trackEvent('whatsapp_click', {
+            content_name: waElement.dataset.waContent
+          });
+        }
+
+        if (e.target.closest('[data-calculate-shipping]')) {
+          this.trackEvent('shipping_calculate', {
+            city: document.querySelector('[name*="city"], [name*="ciudad"]')?.value
+          });
+        }
+      }, { passive: true });
     }
 
     // Trackear eventos colombianos
     trackColombianEvents() {
-      // Click en WhatsApp
-      document.addEventListener('click', (e) => {
-        if (e.target.closest('[data-wa-content]')) {
-          this.trackEvent('whatsapp_click', {
-            content_name: e.target.closest('[data-wa-content]').dataset.waContent
-          });
-        }
-      });
 
       // Selección de ubicación
       document.addEventListener('change', (e) => {
@@ -850,16 +797,7 @@
             city: e.target.value
           });
         }
-      });
-
-      // Cálculo de envío
-      document.addEventListener('click', (e) => {
-        if (e.target.closest('[data-calculate-shipping]')) {
-          this.trackEvent('shipping_calculate', {
-            city: document.querySelector('[name*="city"], [name*="ciudad"]')?.value
-          });
-        }
-      });
+      }, { passive: true });
     }
 
     // Obtener datos del producto
@@ -884,7 +822,7 @@
 
     // Obtener datos del carrito
     getCartData() {
-      const cart = JSON.parse(localStorage.getItem('nb-cart') || '[]');
+      const cart = readNaturalBeCart();
       const items = cart.map(item => ({
         item_id: item.id,
         item_name: item.name,
@@ -940,34 +878,13 @@
     sendToAnalyticsEndpoint(data) {
       // Aquí podrías enviar a tu propio backend
       console.log('Analytics Event:', data);
-      
-      // Opcional: Enviar a Google Analytics Measurement Protocol
-      this.sendToMeasurementProtocol(data);
+      // P0.5: no enviar Measurement Protocol desde cliente.
     }
 
     // Enviar a Measurement Protocol
     sendToMeasurementProtocol(data) {
-      const measurementId = 'G-DM18HLQ3R8';
-      const apiSecret = 'YOUR_API_SECRET'; // Necesitarás configurar esto
-      
-      const payload = {
-        client_id: this.getSessionId(),
-        user_id: this.getUserId(),
-        events: [{
-          name: data.event,
-          parameters: {
-            ...data.parameters,
-            engagement_time_msec: 100,
-            session_id: this.sessionData.sessionId
-          }
-        }]
-      };
-
-      // Enviar a GA4 Measurement Protocol
-      fetch(`https://www.google-analytics.com/mp/collect?measurement_id=${measurementId}&api_secret=${apiSecret}`, {
-        method: 'POST',
-        body: JSON.stringify(payload)
-      }).catch(err => console.log('Analytics error:', err));
+      // Desactivado por seguridad: GA4 Measurement Protocol requiere api_secret server-side.
+      return;
     }
 
     // Obtener ID de usuario
@@ -984,8 +901,29 @@
   let ecommerceAnalytics;
 
   function initMobileAnalytics() {
+    if (mobileOptimizer || ecommerceAnalytics) return;
     mobileOptimizer = new MobileOptimizer();
     ecommerceAnalytics = new EcommerceAnalytics();
+  }
+
+  function initAfterLCP() {
+    if (!('PerformanceObserver' in window)) {
+      initMobileAnalytics();
+      return;
+    }
+    try {
+      const lcpObserver = new PerformanceObserver((list, obs) => {
+        const entries = list.getEntries();
+        if (entries && entries.length) {
+          obs.disconnect();
+          initMobileAnalytics();
+        }
+      });
+      lcpObserver.observe({ type: 'largest-contentful-paint', buffered: true });
+      setTimeout(initMobileAnalytics, 2500);
+    } catch (_) {
+      initMobileAnalytics();
+    }
   }
 
   // Exponer globalmente
@@ -1002,9 +940,9 @@
 
   // Auto-inicializar
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initMobileAnalytics);
+    document.addEventListener('DOMContentLoaded', initAfterLCP);
   } else {
-    initMobileAnalytics();
+    initAfterLCP();
   }
 
 })();

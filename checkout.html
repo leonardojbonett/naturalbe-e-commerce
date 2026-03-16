@@ -1,12 +1,20 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-M7MF395K');</script>
+  <!-- End Google Tag Manager -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="robots" content="noindex, follow">
   <title>Checkout seguro | Natural Be</title>
   <meta name="description" content="Completa tus datos de envío y continúa tu pago seguro con Wompi en Natural Be.">
   <link rel="canonical" href="https://naturalbe.com.co/checkout.html">
+  <script src="/static/js/checkout-clarity-loader.js" defer></script>
   <style>
     :root { color-scheme: light; }
     html, body { margin: 0; padding: 0; }
@@ -72,6 +80,31 @@
       margin: 0.75rem 0 0;
       color: #64748b;
       font-size: 0.92rem;
+    }
+    .checkout-stepper {
+      margin: 0.9rem 0 1.1rem;
+    }
+    .checkout-stepper ol {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: flex;
+      gap: 0.45rem;
+      flex-wrap: wrap;
+    }
+    .checkout-stepper li {
+      border: 1px solid #dbe4ef;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.86);
+      color: #334155;
+      padding: 0.34rem 0.7rem;
+      font-size: 0.82rem;
+      font-weight: 700;
+    }
+    .checkout-stepper li.is-active {
+      border-color: #2563eb;
+      color: #1e40af;
+      background: #eff6ff;
     }
     .checkout-trust {
       display: flex;
@@ -267,8 +300,29 @@
       .wompi-primary-btn, .wompi-secondary-btn { font-size: 0.95rem; padding: 0.74rem 0.8rem; }
     }
   </style>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '869358656017955');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=869358656017955&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
 </head>
 <body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M7MF395K"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
   <main class="checkout-shell">
     <div class="checkout-topbar">
       <strong>Natural Be Checkout</strong>
@@ -279,11 +333,19 @@
       <p>Estás a un paso de finalizar tu compra. Completa tus datos y paga de forma segura con Wompi.</p>
       <div class="checkout-trust" aria-label="Beneficios del checkout">
         <span>Pago seguro con Wompi</span>
+        <span>Pago contraentrega en casi toda Colombia</span>
         <span>Entrega 24-48h</span>
         <span>Soporte por WhatsApp</span>
       </div>
       <p class="checkout-note">No guardamos datos de tarjeta en este sitio. El pago se procesa en la pasarela oficial.</p>
     </header>
+    <nav aria-label="Progreso de compra" class="checkout-stepper">
+      <ol>
+        <li class="is-active" aria-current="step">1. Datos</li>
+        <li>2. Pago</li>
+        <li>3. Confirmación</li>
+      </ol>
+    </nav>
 
     <section class="checkout-layout">
       <article class="checkout-card">
@@ -302,15 +364,19 @@
         </div>
         <div class="checkout-summary-row">
           <span>Envío</span>
-          <strong>$15.000 o gratis desde $100.000</strong>
+          <strong id="checkoutShipping">$15.000 o gratis desde $100.000</strong>
         </div>
         <div class="checkout-summary-row total">
           <span>Total estimado</span>
           <strong id="checkoutTotal">$0</strong>
         </div>
         <p class="checkout-helper">Al continuar aceptas los términos de pago y envío de Natural Be.</p>
+        <div class="checkout-helper">
+          Tienes <strong>5 días calendario</strong> para devoluciones.
+          <a href="/devoluciones">Ver política completa</a>.
+        </div>
         <div class="checkout-cta">
-          <button id="wompiCheckoutBtn" class="btn-primary" type="button">Continuar a Wompi</button>
+          <button id="wompiCheckoutBtn" class="btn-primary" type="button">Pagar ahora de forma segura</button>
         </div>
         <div class="checkout-cta">
           <a class="btn-ghost" href="/categoria/suplementos">Seguir comprando</a>
@@ -319,108 +385,13 @@
     </section>
   </main>
 
-  <script>
-    // Runtime de carrito minimo para checkout dedicado (sin modal).
-    (function initCheckoutRuntime() {
-      const STORAGE_KEY = 'naturalbe_cart';
-
-      function safeParseCart() {
-        try {
-          const raw = localStorage.getItem(STORAGE_KEY) || '[]';
-          const parsed = JSON.parse(raw);
-          return Array.isArray(parsed) ? parsed : [];
-        } catch (_) {
-          return [];
-        }
-      }
-
-      function saveCart(nextCart) {
-        try {
-          localStorage.setItem(STORAGE_KEY, JSON.stringify(nextCart));
-        } catch (_) {
-          // noop
-        }
-      }
-
-      function formatCOP(value) {
-        return `$${Number(value || 0).toLocaleString('es-CO')}`;
-      }
-
-      var cart = safeParseCart();
-      window.cart = cart;
-      window.getCartTotal = function getCartTotal() {
-        return cart.reduce((sum, item) => sum + Number(item.price || 0) * Number(item.quantity || 0), 0);
-      };
-      window.clearCartForce = function clearCartForce() {
-        cart = [];
-        window.cart = cart;
-        saveCart(cart);
-      };
-      window.clearCart = window.clearCartForce;
-      window.buildCartEcomItems = function buildCartEcomItems(items) {
-        return (Array.isArray(items) ? items : []).map((item) => ({
-          item_id: item.id,
-          item_name: item.name,
-          price: Number(item.price || 0),
-          quantity: Number(item.quantity || 1),
-          item_category: item.category || null
-        }));
-      };
-
-      function renderSummary() {
-        const itemsEl = document.getElementById('checkoutItems');
-        const subtotalEl = document.getElementById('checkoutSubtotal');
-        const totalEl = document.getElementById('checkoutTotal');
-        if (!itemsEl || !subtotalEl || !totalEl) return;
-
-        if (!cart.length) {
-          itemsEl.innerHTML = '<p class="checkout-empty">Tu carrito está vacío. Agrega productos para continuar.</p>';
-          subtotalEl.textContent = '$0';
-          totalEl.textContent = '$0';
-          const checkoutBtn = document.getElementById('wompiCheckoutBtn');
-          if (checkoutBtn) checkoutBtn.disabled = true;
-          return;
-        }
-
-        itemsEl.innerHTML = cart.map((item) => {
-          const name = String(item.name || 'Producto');
-          const qty = Number(item.quantity || 1);
-          const subtotal = Number(item.price || 0) * qty;
-          return `
-            <div class="checkout-item">
-              <span>${name} x${qty}</span>
-              <strong>${formatCOP(subtotal)}</strong>
-            </div>
-          `;
-        }).join('');
-
-        const subtotal = window.getCartTotal();
-        subtotalEl.textContent = formatCOP(subtotal);
-        totalEl.textContent = subtotal >= 100000 ? formatCOP(subtotal) : formatCOP(subtotal + 15000);
-      }
-
-      window.addEventListener('DOMContentLoaded', renderSummary);
-    })();
-  </script>
-
+  <script src="/static/js/checkout-runtime.js"></script>
   <script src="/static/js/wompi-config.js"></script>
-  <script src="/static/js/tracking.js?v=2026-02-16"></script>
-  <script src="/static/js/wompi-estatico-completo.min.js"></script>
-  <script>
-    (function initCheckoutPageWompi() {
-      const btn = document.getElementById('wompiCheckoutBtn');
-      if (btn) {
-        btn.addEventListener('click', function () {
-          if (typeof window.checkoutWompi === 'function') {
-            window.checkoutWompi();
-          }
-        });
-      }
-
-      if (window.cart && window.cart.length && typeof window.checkoutWompi === 'function') {
-        window.checkoutWompi();
-      }
-    })();
-  </script>
+  <script src="/static/js/tracking.js?v=2026-03-04-clarity-silent"></script>
+  <script src="/static/js/wompi-estatico-completo.min.js?v=2026-03-01-2"></script>
+  <script src="/static/js/checkout-init.js"></script>
+  <script src="/static/js/checkout-ux-guards.js?v=2026-03-01-1"></script>
+  <script src="/static/js/site-pause.js" defer></script>
 </body>
 </html>
+
